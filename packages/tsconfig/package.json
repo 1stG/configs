@@ -1,0 +1,17 @@
+{
+  "name": "@1stg/tsconfig",
+  "version": "0.1.0",
+  "description": "Personal but Shareable TypeScript Configuration for all 1stG.me projects.",
+  "repository": "git@github.com:1stG/configs.git",
+  "author": "JounQin <admin@1stg.me>",
+  "license": "MIT",
+  "main": "tsconfig.json",
+  "tsconfig": "tsconfig.json",
+  "peerDependencies": {
+    "tslib": "^1.10.0",
+    "typescript": "^3.5.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
