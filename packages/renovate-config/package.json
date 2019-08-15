@@ -1,0 +1,24 @@
+{
+  "name": "@1stg/renovate-config",
+  "version": "0.1.0",
+  "description": "Personal but Shareable Renovate Configuration for all 1stG.me projects.",
+  "repository": "git@github.com:1stG/configs.git",
+  "author": "JounQin <admin@1stg.me>",
+  "license": "MIT",
+  "renovate-config": {
+    "default": {
+      "extends": [
+        "config:base",
+        "schedule:earlyMondays"
+      ],
+      "automerge": true,
+      "major": {
+        "automerge": false
+      },
+      "rangeStrategy": "bump"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

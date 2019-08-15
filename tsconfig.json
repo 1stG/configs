@@ -1,0 +1,6 @@
+{
+  "extends": "./node_modules/@1stg/tsconfig/tsconfig.json", // for type-coverage
+  "compilerOptions": {
+    "noEmit": true
+  }
+}

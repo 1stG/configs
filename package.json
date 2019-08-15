@@ -1,0 +1,50 @@
+{
+  "name": "@1stg/configs",
+  "version": "0.1.0",
+  "description": "Personal but Shareable Configurations for all 1stG.me projects.",
+  "repository": "git@github.com:1stG/configs.git",
+  "author": "JounQin <admin@1stg.me>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "prettier-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
+    "lint": "node --preserve-symlinks node_modules/.bin/eslint . --ext js,jsx,mdx,ts,tsx,vue",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@1stg/babel-preset": "link:packages/babel-preset",
+    "@1stg/eslint-config": "link:packages/eslint-config",
+    "@1stg/husky-config": "link:packages/husky-config",
+    "@1stg/lint-staged": "link:packages/lint-staged",
+    "@1stg/prettier-config": "link:packages/prettier-config",
+    "@1stg/renovate-config": "link:packages/renovate-config",
+    "@1stg/tsconfig": "link:packages/tsconfig",
+    "@babel/core": "^7.5.5",
+    "@commitlint/config-conventional": "^8.1.0",
+    "@types/jest": "^24.0.17",
+    "@types/node": "^12.7.2",
+    "@types/react": "^16.9.1",
+    "commitlint": "^8.1.0",
+    "eslint": "^6.1.0",
+    "husky": "^3.0.3",
+    "jest": "^24.8.0",
+    "lerna": "^3.16.4",
+    "lerna-changelog": "^0.8.2",
+    "lint-staged": "^9.2.1",
+    "prettier": "^1.18.2",
+    "react": "^16.9.0",
+    "ts-jest": "^24.0.2",
+    "tslib": "^1.10.0",
+    "typescript": "^3.5.3",
+    "vue": "^2.6.10"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "prettier": "@1stg/prettier-config"
+}
