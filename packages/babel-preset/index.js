@@ -20,21 +20,26 @@ module.exports = declare((api, opts) => {
     presets.push(require('@babel/preset-typescript'))
   }
 
-  if (react) {
-    presets.push([
-      require('@babel/preset-react'),
-      {
-        development: api.env('development'),
-      },
-    ])
-
-    if (api.env('production')) {
-      plugins.push([
+  const reactPreset = [
+    require('@babel/preset-react'),
+    {
+      development: api.env('development'),
+    },
+  ]
+  const reactPlugin = api.env('production')
+    ? [
         require('babel-plugin-transform-react-remove-prop-types'),
         {
           removeImport: true,
         },
-      ])
+      ]
+    : undefined
+
+  if (react) {
+    presets.push(reactPreset)
+
+    if (reactPlugin) {
+      plugins.push(reactPlugin)
     }
   }
 
@@ -45,10 +50,11 @@ module.exports = declare((api, opts) => {
   return {
     plugins,
     presets,
-    overrides: [
+    overrides: !vue && [
       {
-        test: /\.tsx?$/,
-        plugins: [require('@babel/preset-typescript')],
+        test: /\.[jt]sx$/,
+        plugins: reactPlugin && [reactPlugin],
+        presets: [reactPreset],
       },
     ],
   }
