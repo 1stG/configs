@@ -1,6 +1,6 @@
 {
   "name": "@1stg/eslint-config",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Personal but Shareable ESLint Configuration for all 1stG.me projects.",
   "repository": "git@github.com:1stG/configs.git",
   "author": "JounQin <admin@1stg.me>",
@@ -13,7 +13,7 @@
     "@1stg/tsconfig": "^0.1.0",
     "@typescript-eslint/eslint-plugin": "^2.0.0",
     "@typescript-eslint/parser": "^2.0.0",
-    "babel-eslint": "^10.0.2",
+    "babel-eslint": "^11.0.0-beta.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-config-standard": "^13.0.1",
     "eslint-import-resolver-typescript": "JounQin/eslint-import-resolver-typescript#feat/resolve_dts",

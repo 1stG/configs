@@ -1,6 +1,6 @@
 {
   "name": "@1stg/babel-preset",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Personal but Shareable Babel Preset for all 1stG.me projects.",
   "repository": "git@github.com:1stG/configs.git",
   "author": "JounQin <admin@1stg.me>",
@@ -9,7 +9,12 @@
     "@babel/core": "^7.5.5"
   },
   "dependencies": {
-    "@babel/plugin-proposal-optional-chaining": "^7.2.0"
+    "@babel/helper-plugin-utils": "^7.0.0",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "babel-preset-proposal-typescript": "^1.2.3"
   },
   "publishConfig": {
     "access": "public"

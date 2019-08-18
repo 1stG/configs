@@ -1,12 +1,22 @@
 const fs = require('fs')
 const path = require('path')
 
+const BABEL_CONFIG = path.resolve('babel.config.js')
+
+let configFile
+
+try {
+  configFile = fs.existsSync(BABEL_CONFIG)
+    ? BABEL_CONFIG
+    : require.resolve('@1stg/babel-preset/config')
+} catch {}
+
 exports.js = {
   files: '*.{mjs,js,jsx}',
   parser: 'babel-eslint',
-  parserOptions: {
+  parserOptions: configFile && {
     babelOptions: {
-      configFile: require.resolve('@1stg/babel-preset'),
+      configFile,
     },
   },
   plugins: ['babel'],
@@ -36,6 +46,7 @@ exports.ts = {
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:import/typescript',
     'prettier/@typescript-eslint',
   ],
   plugins: ['@typescript-eslint'],

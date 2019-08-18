@@ -44,6 +44,6 @@ export default class Test extends Basic {
 }
 
 try {
-  const y = obj.x
+  const y = obj?.x ?? 1
   console.log(y)
 } catch {}
