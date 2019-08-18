@@ -3,7 +3,7 @@ const { declare } = require('@babel/helper-plugin-utils')
 module.exports = declare((api, opts) => {
   api.assertVersion(7)
 
-  const { modules = false, react, typescript } = opts
+  const { modules = false, react, typescript, vue } = opts
 
   const plugins = []
   const presets = [
@@ -38,8 +38,18 @@ module.exports = declare((api, opts) => {
     }
   }
 
+  if (vue) {
+    presets.push('@vue/babel-preset-jsx')
+  }
+
   return {
     plugins,
     presets,
+    overrides: [
+      {
+        test: /\.tsx?$/,
+        plugins: [require('@babel/preset-typescript')],
+      },
+    ],
   }
 })

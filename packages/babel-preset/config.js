@@ -1,10 +1,3 @@
 module.exports = {
-  presets: [
-    [
-      '@1stg',
-      {
-        react: true,
-      },
-    ],
-  ],
+  presets: ['@1stg'],
 }
