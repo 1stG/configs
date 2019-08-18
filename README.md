@@ -1,6 +1,6 @@
 # configs
 
-[![Travis](https://img.shields.io/travis/com/1stg/configs.svg)](https://travis-com.org/1stg/configs)
+[![Travis](https://img.shields.io/travis/com/1stg/configs.svg)](https://travis-ci.com/1stg/configs)
 [![David](https://img.shields.io/david/1stg/configs.svg)](https://david-dm.org/1stg/configs)
 [![David Dev](https://img.shields.io/david/dev/1stg/configs.svg)](https://david-dm.org/1stg/configs?type=dev)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)

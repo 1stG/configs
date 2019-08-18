@@ -1,0 +1,21 @@
+{
+  "name": "@1stg/stylelint-config",
+  "version": "0.1.0",
+  "description": "Personal but Shareable Stylelint Configuration for all 1stG.me projects.",
+  "repository": "git@github.com:1stG/configs.git",
+  "author": "JounQin <admin@1stg.me>",
+  "license": "MIT",
+  "peerDependencies": {
+    "stylelint": "^10.1.0"
+  },
+  "dependencies": {
+    "stylelint-config-prettier": "^5.2.0",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-high-performance-animation": "^1.2.1",
+    "stylelint-prettier": "^1.1.1",
+    "stylelint-scss": "^3.9.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

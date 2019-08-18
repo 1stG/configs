@@ -1,0 +1,16 @@
+@if (1 == 1) {
+  color: red;
+}
+
+a {
+  font-size: 10px;
+  font-weight: 400;
+}
+
+$a: 1 !default;
+
+@if (true) {
+  $a: 2 !default;
+} @else {
+  $a: 3 !default;
+}

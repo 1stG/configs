@@ -25,3 +25,8 @@ export default Vue.extend({
   },
 })
 </script>
+<style>
+div {
+  color: red;
+}
+</style>

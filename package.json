@@ -1,6 +1,6 @@
 {
   "name": "@1stg/configs",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "Personal but Shareable Configurations for all 1stG.me projects.",
   "repository": "git@github.com:1stG/configs.git",
   "author": "JounQin <admin@1stg.me>",
@@ -10,8 +10,13 @@
     "packages/*"
   ],
   "scripts": {
-    "prettier-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
-    "lint": "node --preserve-symlinks node_modules/.bin/eslint . --ext js,jsx,mdx,ts,tsx,vue",
+    "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
+    "stylelint-check": "stylelint-config-prettier-check",
+    "lint:es": "eslint . --ext js,jsx,mdx,ts,tsx,vue",
+    "lint:style:css": "stylelint --config @1stg/stylelint-config test/*.{css,less}",
+    "lint:style:scss": "stylelint --config @1stg/stylelint-config/scss test/*.{scss,vue}",
+    "lint:style": "run-p lint:style:*",
+    "lint": "run-p lint:*",
     "test": "jest"
   },
   "devDependencies": {
@@ -21,6 +26,7 @@
     "@1stg/lint-staged": "link:packages/lint-staged",
     "@1stg/prettier-config": "link:packages/prettier-config",
     "@1stg/renovate-config": "link:packages/renovate-config",
+    "@1stg/stylelint-config": "link:packages/stylelint-config",
     "@1stg/tsconfig": "link:packages/tsconfig",
     "@babel/core": "^7.5.5",
     "@commitlint/config-conventional": "^8.1.0",
@@ -34,8 +40,10 @@
     "lerna": "^3.16.4",
     "lerna-changelog": "^0.8.2",
     "lint-staged": "^9.2.1",
+    "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2",
     "react": "^16.9.0",
+    "stylelint": "^10.1.0",
     "ts-jest": "^24.0.2",
     "tslib": "^1.10.0",
     "typescript": "^3.5.3",
@@ -46,5 +54,9 @@
       "@commitlint/config-conventional"
     ]
   },
-  "prettier": "@1stg/prettier-config"
+  "prettier": "@1stg/prettier-config",
+  "stylelint": {
+    "extends": "@1stg/stylelint-config/scss",
+    "ignoreFiles": "*.less"
+  }
 }
