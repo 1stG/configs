@@ -5,9 +5,16 @@ module.exports = declare((api, opts) => {
 
   const { modules = false, react, typescript, vue } = opts
 
+  const proposalTypeScriptPreset = require('babel-preset-proposal-typescript')
+
   const plugins = []
   const presets = [
-    require('babel-preset-proposal-typescript'),
+    [
+      proposalTypeScriptPreset,
+      {
+        isTSX: vue,
+      },
+    ],
     [
       require('@babel/preset-env'),
       {
@@ -50,12 +57,22 @@ module.exports = declare((api, opts) => {
   return {
     plugins,
     presets,
-    overrides: !vue && [
-      {
-        test: /\.(js|md|ts)x$/,
-        plugins: reactPlugin && [reactPlugin],
-        presets: [reactPreset],
-      },
-    ],
+    overrides: vue
+      ? undefined
+      : [
+          {
+            test: /\.(js|md|ts)x$/,
+            plugins: reactPlugin && [reactPlugin],
+            presets: [
+              [
+                proposalTypeScriptPreset,
+                {
+                  isTSX: true, // enable jsx plugin for mdx
+                },
+              ],
+              reactPreset,
+            ],
+          },
+        ],
   }
 })

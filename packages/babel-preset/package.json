@@ -1,6 +1,6 @@
 {
   "name": "@1stg/babel-preset",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Personal but Shareable Babel Preset for all 1stG.me projects.",
   "repository": "git@github.com:1stG/configs.git",
   "author": "JounQin <admin@1stg.me>",
@@ -16,7 +16,7 @@
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "@vue/babel-preset-jsx": "^1.1.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "babel-preset-proposal-typescript": "^1.2.4"
+    "babel-preset-proposal-typescript": "^1.2.6"
   },
   "publishConfig": {
     "access": "public"
