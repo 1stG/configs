@@ -38,7 +38,7 @@ export default class Test extends Basic {
   constructor() {
     super()
     this.path = path
-    this.name = { key: 'key', value: obj['value'] }
+    this.name = { key: 'key', value: obj.value }
     generator()
   }
 }

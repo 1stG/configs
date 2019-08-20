@@ -52,7 +52,7 @@ module.exports = declare((api, opts) => {
     presets,
     overrides: !vue && [
       {
-        test: /\.[jt]sx$/,
+        test: /\.(js|md|ts)x$/,
         plugins: reactPlugin && [reactPlugin],
         presets: [reactPreset],
       },

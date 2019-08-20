@@ -7,7 +7,7 @@
   "license": "MIT",
   "peerDependencies": {
     "commitlint": "^8.1.0",
-    "lint-staged": "^9.2.1"
+    "lint-staged": "^9.2.3"
   },
   "publishConfig": {
     "access": "public"
