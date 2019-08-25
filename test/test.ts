@@ -26,11 +26,11 @@ function foo(cb1: (p: boolean) => void) {
   bar('')
 }
 
-foo(function() {
-  foo(function() {
-    foo(function() {
-      foo(function() {
-        foo(function() {
+foo(() => {
+  foo(() => {
+    foo(() => {
+      foo(() => {
+        foo(() => {
           // Do something
         })
       })
@@ -40,6 +40,7 @@ foo(function() {
 
 const obj: Record<string, string | undefined> = {}
 
+// tslint:disable-next-line: max-classes-per-file
 export default class Test extends Basic implements X {
   path: typeof path
 
@@ -60,5 +61,8 @@ export default class Test extends Basic implements X {
 
 try {
   const y = obj.x
+  // tslint:disable-next-line: no-console
   console.log(y)
-} catch {}
+} catch {
+  //
+}

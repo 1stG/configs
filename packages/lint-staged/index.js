@@ -1,7 +1,28 @@
-module.exports = {
-  '*.{mdx,mjs,js,jsx,ts,tsx,vue}': ['eslint --fix', 'git add'],
-  '*.{css,less}': ['stylelint --config @1stg/stylelint-config'],
-  '*.{sass,scss,vue}': ['stylelint --config @1stg/stylelint-config/scss'],
-  '.*rc': ['prettier --write', 'git add'],
-  '*.{gql,html,json,md,vue,yml}': ['prettier --write', 'git add'],
+const config = Object.assign({}, require('./base'))
+
+let eslint = false
+
+try {
+  require.resolve('eslint')
+  eslint = true
+} catch (e) {}
+
+let tslint = false
+
+try {
+  require.resolve('tslint')
+  tslint = true
+} catch (e) {}
+
+if (eslint && tslint) {
+  const key = '*.{ts,tsx}'
+  Object.assign(config, {
+    [key]: require('./ts-eslint')[key].concat(require('./ts-tslint')[key]),
+  })
+} else if (eslint) {
+  Object.assign(config, require('./ts-eslint'))
+} else if (tslint) {
+  Object.assign(config, require('./ts-tslint'))
 }
+
+module.exports = config

@@ -1,0 +1,32 @@
+{
+  "extends": ["tslint:recommended", "tslint-config-prettier"],
+  "rulesDirectory": ["rxjs-tslint", "tslint-plugin-prettier"],
+  "rules": {
+    "interface-name": [true, "never-prefix"],
+    "member-access": [true, "no-public"],
+    "no-non-null-assertion": false,
+    "no-restricted-globals": [true, "name", "length", "event"],
+    "ordered-imports": [
+      true,
+      {
+        "grouped-imports": true,
+        "import-sources-order": "lowercase-first",
+        "named-imports-order": "lowercase-last"
+      }
+    ],
+    "prettier": true,
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-leading-underscore",
+      "allow-pascal-case"
+    ],
+
+    // rxjs
+    "rxjs-collapse-imports": true,
+    "rxjs-pipeable-operators-only": true,
+    "rxjs-no-static-observable-methods": true,
+    "rxjs-proper-imports": true
+  }
+}

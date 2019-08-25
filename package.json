@@ -10,9 +10,12 @@
     "packages/*"
   ],
   "scripts": {
-    "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
-    "stylelint-check": "stylelint-config-prettier-check",
+    "check:eslint": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
+    "check:stylelint": "stylelint-config-prettier-check",
+    "check:tslint": "tslint-config-prettier-check ./tslint.json",
+    "check": "run-p check:*",
     "lint:es": "eslint . --ext js,jsx,mdx,ts,tsx,vue",
+    "lint:ts": "tslint -p . -t stylish",
     "lint:style:css": "stylelint --config @1stg/stylelint-config test/*.{css,less}",
     "lint:style:scss": "stylelint --config @1stg/stylelint-config/scss test/*.{scss,vue}",
     "lint:style": "run-p lint:style:*",

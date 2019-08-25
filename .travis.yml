@@ -18,8 +18,7 @@ install:
   - yarn lerna bootstrap
 
 script:
-  - yarn eslint-check
-  - yarn stylelint-check
+  - yarn run check
   - yarn lint
   - yarn test
 
