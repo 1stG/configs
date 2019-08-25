@@ -6,6 +6,7 @@
     "member-access": [true, "no-public"],
     "no-non-null-assertion": false,
     "no-restricted-globals": [true, "name", "length", "event"],
+    "object-literal-sort-keys": false,
     "ordered-imports": [
       true,
       {

@@ -12,10 +12,12 @@ module.exports = {
     },
     {
       files: [
+        'angular.json',
         'jsconfig.json',
         'tsconfig.json',
         'tsconfig.*.json',
         'tslint.json',
+        'tslint.*.json',
       ],
       options: {
         parser: 'json',
