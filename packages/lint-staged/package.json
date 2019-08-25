@@ -1,15 +1,17 @@
 {
   "name": "@1stg/lint-staged",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Personal but Shareable lint-staged Configuration for all 1stG.me projects.",
   "repository": "git@github.com:1stG/configs.git",
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "peerDependencies": {
-    "eslint": "^6.2.1",
+    "eslint": "^6.2.2",
     "husky": "^3.0.4",
     "prettier": "^1.18.2",
-    "stylelint": "^10.1.0"
+    "stylelint": "^10.1.0",
+    "tslint": "^5.19.0",
+    "typescript": "^3.5.3"
   },
   "publishConfig": {
     "access": "public"
