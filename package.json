@@ -23,14 +23,6 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@1stg/babel-preset": "link:packages/babel-preset",
-    "@1stg/eslint-config": "link:packages/eslint-config",
-    "@1stg/husky-config": "link:packages/husky-config",
-    "@1stg/lint-staged": "link:packages/lint-staged",
-    "@1stg/prettier-config": "link:packages/prettier-config",
-    "@1stg/renovate-config": "link:packages/renovate-config",
-    "@1stg/stylelint-config": "link:packages/stylelint-config",
-    "@1stg/tsconfig": "link:packages/tsconfig",
     "@babel/core": "^7.5.5",
     "@commitlint/config-conventional": "^8.1.0",
     "@types/jest": "^24.0.18",
@@ -42,7 +34,7 @@
     "jest": "^24.9.0",
     "lerna": "^3.16.4",
     "lerna-changelog": "^0.8.2",
-    "lint-staged": "^9.2.3",
+    "lint-staged": "^9.2.4",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2",
     "react": "^16.9.0",

@@ -127,11 +127,33 @@ exports.ts = {
     '@typescript-eslint/unbound-method': 2,
     '@typescript-eslint/unified-signatures': 2,
     'import/default': 0,
+    'import/named': 0,
     'import/no-duplicates': 2,
     'import/no-named-as-default': 0,
     'import/no-named-as-default-member': 0,
     'no-empty-function': 0,
     'no-useless-constructor': 0,
+  },
+}
+
+let TSLINT_CONFIG = path.resolve('tslint.json')
+
+try {
+  TSLINT_CONFIG = fs.existsSync(TSLINT_CONFIG)
+    ? TSLINT_CONFIG
+    : require.resolve('@1stg/tslint-config')
+} catch (e) {}
+
+exports.tslint = {
+  files: '*.{ts,tsx}',
+  plugins: ['@typescript-eslint/tslint'],
+  rules: {
+    '@typescript-eslint/tslint/config': [
+      2,
+      TSLINT_CONFIG && {
+        lintFile: TSLINT_CONFIG,
+      },
+    ],
   },
 }
 
@@ -212,6 +234,13 @@ exports.jest = {
   extends: ['plugin:jest/recommended'],
 }
 
+let tslint = false
+
+try {
+  require.resolve('tslint')
+  tslint = true
+} catch (e) {}
+
 exports.overrides = [
   exports.js,
   exports.ts,
@@ -223,3 +252,7 @@ exports.overrides = [
   exports.mdx,
   exports.jest,
 ]
+
+if (!tslint) {
+  exports.overrides.push(exports.tslint)
+}
