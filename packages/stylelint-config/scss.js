@@ -25,7 +25,7 @@ module.exports = {
       },
     ],
     'scss/operator-no-unspaced': true,
-    'scss/selector-nest-combinators': 'never',
+    'scss/selector-nest-combinators': 'always',
     'scss/selector-no-redundant-nesting-selector': true,
   },
 }
