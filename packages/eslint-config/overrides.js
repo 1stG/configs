@@ -159,7 +159,12 @@ exports.tslint = {
 
 exports.react = {
   files: '*.{js,jsx,tsx}',
-  extends: ['plugin:react/recommended', 'prettier/react'],
+  extends: [
+    'standard-react',
+    'plugin:react/recommended',
+    'prettier',
+    'prettier/react',
+  ],
   settings: {
     react: {
       version: 'detect',
@@ -221,8 +226,13 @@ exports.vue = {
   plugins: ['vue'],
 }
 
+exports.md = {
+  files: '*.md',
+  extends: ['plugin:mdx/recommended'],
+}
+
 exports.mdx = Object.assign({}, exports.react, {
-  files: ['*.mdx'],
+  files: '*.mdx',
   extends: exports.react.extends.concat([
     'plugin:mdx/recommended',
     'plugin:mdx/overrides',
@@ -249,6 +259,7 @@ exports.overrides = [
   exports.reactTs,
   exports.dTs,
   exports.vue,
+  exports.md,
   exports.mdx,
   exports.jest,
 ]
