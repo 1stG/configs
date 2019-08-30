@@ -1,6 +1,6 @@
 {
   "name": "@1stg/tslint-config",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Personal but Shareable TSLint Configuration for all 1stG.me projects.",
   "repository": "git@github.com:1stG/configs.git",
   "author": "JounQin <admin@1stg.me>",
@@ -8,7 +8,7 @@
   "main": "tslint.json",
   "peerDependencies": {
     "tslint": "^5.19.0",
-    "typescript": "^3.5.3"
+    "typescript": "^3.6.2"
   },
   "publishConfig": {
     "access": "public"

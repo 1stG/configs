@@ -9,7 +9,7 @@ try {
   configFile = fs.existsSync(BABEL_CONFIG)
     ? BABEL_CONFIG
     : require.resolve('@1stg/babel-preset/config')
-} catch {}
+} catch (e) {}
 
 exports.js = {
   files: '*.{mjs,js,jsx}',

@@ -1,6 +1,6 @@
 {
   "name": "@1stg/stylelint-config",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Personal but Shareable Stylelint Configuration for all 1stG.me projects.",
   "repository": "git@github.com:1stG/configs.git",
   "author": "JounQin <admin@1stg.me>",
@@ -13,7 +13,7 @@
     "stylelint-config-standard": "^18.3.0",
     "stylelint-high-performance-animation": "^1.2.1",
     "stylelint-prettier": "^1.1.1",
-    "stylelint-scss": "^3.9.4"
+    "stylelint-scss": "^3.10.0"
   },
   "publishConfig": {
     "access": "public"
