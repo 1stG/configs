@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "paths": {
+      "*": ["src/app/*"]
+    },
+    "target": "es2015"
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true,
+    "strictMetadataEmit": true,
+    "trace": true
+  }
+}

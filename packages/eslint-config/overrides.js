@@ -136,10 +136,12 @@ exports.ts = {
   },
 }
 
-let TSLINT_CONFIG = path.resolve('tslint.json')
+const TSLINT_CONFIG = path.resolve('tslint.json')
+
+let lintFile
 
 try {
-  TSLINT_CONFIG = fs.existsSync(TSLINT_CONFIG)
+  lintFile = fs.existsSync(TSLINT_CONFIG)
     ? TSLINT_CONFIG
     : require.resolve('@1stg/tslint-config')
 } catch (e) {}
@@ -150,16 +152,19 @@ exports.tslint = {
   rules: {
     '@typescript-eslint/tslint/config': [
       2,
-      TSLINT_CONFIG && {
-        lintFile: TSLINT_CONFIG,
+      {
+        lintFile,
       },
     ],
+    // `ordered-imports` of tslint is better for now
+    'import/order': 0,
   },
 }
 
 exports.react = {
   files: '*.{js,jsx,tsx}',
   extends: [
+    'standard-jsx', // for Vue
     'standard-react',
     'plugin:react/recommended',
     'prettier',
@@ -209,6 +214,7 @@ exports.dTs = {
     '@typescript-eslint/require-await': 0,
     '@typescript-eslint/restrict-plus-operands': 0,
     '@typescript-eslint/unbound-method': 0,
+    '@typescript-eslint/tslint/config': 0,
     'import/no-duplicates': 0,
     'import/order': 0,
   },
@@ -254,6 +260,7 @@ try {
 exports.overrides = [
   exports.js,
   exports.ts,
+  lintFile && tslint && exports.tslint,
   exports.react,
   exports.reactHooks,
   exports.reactTs,
@@ -262,8 +269,4 @@ exports.overrides = [
   exports.md,
   exports.mdx,
   exports.jest,
-]
-
-if (!tslint) {
-  exports.overrides.push(exports.tslint)
-}
+].filter(_ => _)

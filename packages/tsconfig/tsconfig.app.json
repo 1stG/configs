@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": false,
+    "declarationMap": false,
+    "lib": ["dom", "esnext"],
+    "jsx": "react",
+    "paths": {
+      "*": ["src/*"]
+    }
+  }
+}
