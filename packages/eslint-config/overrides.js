@@ -235,6 +235,9 @@ exports.vue = {
 exports.md = {
   files: '*.md',
   extends: ['plugin:mdx/recommended'],
+  rules: {
+    'prettier/prettier': 0, // disable temporarily due to its buggy
+  },
 }
 
 exports.mdx = Object.assign({}, exports.react, {

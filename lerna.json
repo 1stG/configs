@@ -18,7 +18,7 @@
       ],
       "conventionalCommits": true,
       "gitReset": false,
-      "message": "chore(release): %s"
+      "message": "chore: release package(s)"
     },
     "publish": {
       "ignoreChanges": [
