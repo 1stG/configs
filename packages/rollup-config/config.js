@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-import { camelCase, flatMap, startCase } from 'lodash'
+import { camelCase, flatMap, upperFirst } from 'lodash'
 import { terser } from 'rollup-plugin-terser'
 import typescript from 'rollup-plugin-typescript'
 import { globals } from 'umd-globals'
@@ -70,7 +70,7 @@ export default ({
           `${outDir}${format}${isProd ? '.min' : ''}.js`,
         ),
         format,
-        name: globals[pkg] || startCase(camelCase(pkg)),
+        name: globals[pkg] || upperFirst(camelCase(pkg)),
         globals,
       },
       external,
