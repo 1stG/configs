@@ -236,7 +236,12 @@ exports.md = {
   files: '*.md',
   extends: ['plugin:mdx/recommended'],
   rules: {
-    'prettier/prettier': 0, // disable temporarily due to its buggy
+    'prettier/prettier': [
+      2,
+      {
+        parser: 'markdown',
+      },
+    ],
   },
 }
 

@@ -21,6 +21,7 @@ script:
   - yarn run check
   - yarn lint
   - yarn test
+  - yarn build
 
 before_deploy:
   - npm set //registry.npmjs.org/:_authToken $NPM_TOKEN
@@ -32,7 +33,7 @@ before_deploy:
 deploy:
   - provider: script
     skip_cleanup: true
-    script: yarn lerna publish from-package --create-release github --yes
+    script: yarn lerna publish --create-release github --yes
     on:
       branch: master
   - provider: script
