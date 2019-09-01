@@ -53,6 +53,7 @@
     ]
   },
   "eslintIgnore": [
+    "CHANGELOG.md",
     "packages/rollup-config/cjs.js",
     "packages/rollup-config/esm.js"
   ],
