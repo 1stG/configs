@@ -54,10 +54,12 @@ export default ({
       return []
     }
 
-    const { peerDependencies: externals } = require(path.resolve(
+    const { name, peerDependencies: externals } = require(path.resolve(
       pkgPath,
       'package.json',
     ))
+
+    pkg = pkg || name
 
     const external = Object.keys(externals)
     return formats.map(format => ({
