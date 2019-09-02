@@ -10,13 +10,13 @@ const { NODE_ENV } = process.env
 
 const isProd = NODE_ENV === 'production'
 
-const plugins = [typescript()]
+const plugins = []
 
 if (isProd) {
   plugins.push(terser())
 }
 
-const DEFAULT_FORMATS = ['cjs', 'esm', 'umd']
+const DEFAULT_FORMATS = ['cjs', 'esm', 'es2015', 'umd']
 const DEFAULT_INPUT = 'src/index.ts'
 
 export default ({
@@ -34,6 +34,7 @@ export default ({
 
   if (!monorepo && !fs.existsSync(srcPath) && input === DEFAULT_INPUT) {
     input = 'index.ts'
+    outDir = ''
   }
 
   if (outDir && !outDir.endsWith('/')) {
@@ -62,20 +63,27 @@ export default ({
     pkg = pkg || name
 
     const external = Object.keys(externals)
-    return formats.map(format => ({
-      input: pkgInput,
-      output: {
-        file: path.resolve(
-          pkgPath,
-          `${outDir}${format}${isProd ? '.min' : ''}.js`,
-        ),
-        format,
-        name: globals[pkg] || upperFirst(camelCase(pkg)),
-        globals,
-      },
-      external,
-      plugins,
-    }))
+    return formats.map(format => {
+      const isEsVersion = /^es(\d+|next)$/.test(format)
+      return {
+        input: pkgInput,
+        output: {
+          file: path.resolve(
+            pkgPath,
+            `${outDir}${format}${isProd ? '.min' : ''}.js`,
+          ),
+          format: isEsVersion ? 'esm' : format,
+          name: globals[pkg] || upperFirst(camelCase(pkg)),
+          globals,
+        },
+        external,
+        plugins: [
+          typescript({
+            target: isEsVersion ? format : 'es5',
+          }),
+        ].concat(plugins),
+      }
+    })
   })
 
   console.assert(

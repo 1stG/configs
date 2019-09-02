@@ -5,7 +5,7 @@ import builtins from 'builtin-modules'
 import config from './packages/rollup-config/config'
 import pkg from './packages/rollup-config/package.json'
 
-const FORMATS = ['cjs', 'esm']
+const FORMATS = ['cjs', 'esm', 'es2015']
 
 const resolved = config({
   formats: FORMATS,

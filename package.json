@@ -55,6 +55,7 @@
   "eslintIgnore": [
     "CHANGELOG.md",
     "packages/rollup-config/cjs.js",
+    "packages/rollup-config/es2015.js",
     "packages/rollup-config/esm.js"
   ],
   "prettier": "@1stg/prettier-config",

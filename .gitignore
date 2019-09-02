@@ -1,3 +1,4 @@
 node_modules
 packages/rollup-config/cjs.js
+packages/rollup-config/es2015.js
 packages/rollup-config/esm.js
