@@ -1,5 +1,6 @@
 const rules = {
   'plugin/no-low-performance-animation-properties': true,
+  'plugin/no-unsupported-browser-features': true,
   'selector-pseudo-element-colon-notation': 'single',
 }
 
@@ -24,6 +25,9 @@ if (angular) {
 
 module.exports = {
   extends: ['stylelint-config-standard'],
-  plugins: ['stylelint-high-performance-animation'],
+  plugins: [
+    'stylelint-high-performance-animation',
+    'stylelint-no-unsupported-browser-features',
+  ],
   rules,
 }
