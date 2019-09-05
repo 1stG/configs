@@ -1,0 +1,14 @@
+{
+  "name": "@1stg/browserslist-config",
+  "version": "0.0.0",
+  "description": "Personal but Shareable Browserslist Configuration for all 1stG.me projects.",
+  "repository": "git@github.com:1stG/configs.git",
+  "author": "JounQin <admin@1stg.me>",
+  "license": "MIT",
+  "peerDependencies": {
+    "browserslist": "^4.7.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

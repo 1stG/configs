@@ -19,6 +19,7 @@ install:
 
 script:
   - yarn run check
+  - yarn browserslist
   - yarn build
   - yarn lint
   - yarn test
