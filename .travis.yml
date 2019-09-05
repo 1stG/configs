@@ -19,9 +19,9 @@ install:
 
 script:
   - yarn run check
+  - yarn build
   - yarn lint
   - yarn test
-  - yarn build
 
 before_deploy:
   - npm set //registry.npmjs.org/:_authToken $NPM_TOKEN
