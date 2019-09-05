@@ -6,6 +6,7 @@ const rules = {
 let angular = false
 
 try {
+  // eslint-disable-next-line node/no-missing-require
   require.resolve('@angular/core')
   angular = true
 } catch (e) {}

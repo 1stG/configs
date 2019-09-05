@@ -1,8 +1,10 @@
 {
   "extends": "./node_modules/@1stg/tsconfig/tsconfig.json", // for type-coverage
   "compilerOptions": {
+    "baseUrl": ".",
     "jsx": "preserve",
     "incremental": false,
     "noEmit": true
-  }
+  },
+  "exclude": ["node_modules"]
 }

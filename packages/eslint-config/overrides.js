@@ -26,21 +26,28 @@ exports.js = {
     'babel/no-invalid-this': 2,
     'babel/no-unused-expressions': 2,
     'babel/valid-typeof': 2,
+    'node/no-unsupported-features/es-syntax': 0,
   },
 }
 
 const BASE_TSCONFIG = path.resolve('tsconfig.base.json')
 const DEFAULT_TSCONFIG = path.resolve('tsconfig.json')
 
+let project
+
+try {
+  project = fs.existsSync(BASE_TSCONFIG)
+    ? BASE_TSCONFIG
+    : fs.existsSync(DEFAULT_TSCONFIG)
+    ? DEFAULT_TSCONFIG
+    : require.resolve('@1stg/tsconfig')
+} catch (e) {}
+
 exports.ts = {
   files: '*.{ts,tsx}',
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: fs.existsSync(BASE_TSCONFIG)
-      ? BASE_TSCONFIG
-      : fs.existsSync(DEFAULT_TSCONFIG)
-      ? DEFAULT_TSCONFIG
-      : require.resolve('@1stg/tsconfig'),
+    project,
   },
   extends: [
     'plugin:@typescript-eslint/eslint-recommended',
@@ -133,6 +140,7 @@ exports.ts = {
     'import/no-named-as-default-member': 0,
     'no-empty-function': 0,
     'no-useless-constructor': 0,
+    'node/no-unsupported-features/es-syntax': 0,
   },
 }
 
@@ -230,6 +238,9 @@ exports.vue = {
   },
   extends: ['plugin:vue/recommended', 'prettier/vue'],
   plugins: ['vue'],
+  rules: {
+    'node/no-unsupported-features/es-syntax': 0,
+  },
 }
 
 exports.md = {

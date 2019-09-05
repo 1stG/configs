@@ -6,7 +6,7 @@
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "peerDependencies": {
-    "eslint": "^6.2.2",
+    "eslint": "^6.3.0",
     "lint-staged": "^9.2.5",
     "prettier": "^1.18.2"
   },

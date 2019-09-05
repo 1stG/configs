@@ -2,6 +2,8 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:import/recommended',
+    'plugin:node/recommended',
+    'plugin:promise/recommended',
     'standard',
     'plugin:prettier/recommended',
     'prettier/standard',
@@ -21,6 +23,8 @@ module.exports = {
       },
     ],
     'no-empty-function': 2,
+    'node/no-unpublished-import': 0,
+    'node/no-unpublished-require': 0,
     'prefer-const': 2,
   },
 }

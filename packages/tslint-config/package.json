@@ -6,12 +6,12 @@
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "main": "tslint.json",
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "tslint": "^5.19.0",
     "typescript": "^3.6.2"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "dependencies": {
     "codelyzer": "^5.1.0",

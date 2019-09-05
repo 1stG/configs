@@ -1,10 +1,13 @@
 {
+  "$schema": "http://json.schemastore.org/tsconfig",
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "declaration": false,
     "declarationMap": false,
     "paths": {
-      "*": ["src/*"]
+      "*": [
+        "src/*"
+      ]
     }
   }
 }

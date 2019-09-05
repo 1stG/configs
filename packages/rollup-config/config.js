@@ -3,27 +3,56 @@ import path from 'path'
 
 import { camelCase, flatMap, upperFirst } from 'lodash'
 import { terser } from 'rollup-plugin-terser'
+import babel from 'rollup-plugin-babel'
+import commonjs from 'rollup-plugin-commonjs'
+import nodeResolve from 'rollup-plugin-node-resolve'
 import typescript from 'rollup-plugin-typescript'
-import { globals } from 'umd-globals'
+import { getGlobals } from 'umd-globals'
 
 const { NODE_ENV } = process.env
 
 const isProd = NODE_ENV === 'production'
 
-const plugins = []
+const plugins = [
+  nodeResolve({
+    mainFields: [
+      'esnext',
+      'es2015',
+      'esm2015',
+      'fesm2015',
+      'fesm5',
+      'module',
+      'main',
+    ],
+  }),
+  commonjs(),
+]
 
 if (isProd) {
   plugins.push(terser())
 }
 
-const DEFAULT_FORMATS = ['cjs', 'esm', 'es2015', 'umd']
-const DEFAULT_INPUT = 'src/index.ts'
+const DEFAULT_FORMATS = ['cjs', 'esm', 'umd']
+
+let isTsProject = false
+
+try {
+  require.resolve('typescript')
+  DEFAULT_FORMATS.push('es2015')
+  isTsProject = true
+} catch (e) {}
+
+const DEFAULT_EXT = isTsProject ? 'ts' : 'js'
+
+const DEFAULT_INPUT = 'src/index' + DEFAULT_EXT
 
 export default ({
   formats = DEFAULT_FORMATS,
   monorepo,
   input = DEFAULT_INPUT,
   outDir = 'lib',
+  exports,
+  umdGlobals,
 } = {}) => {
   const pkgsPath = path.resolve('packages')
   const srcPath = path.resolve('src')
@@ -33,7 +62,7 @@ export default ({
   }
 
   if (!monorepo && !fs.existsSync(srcPath) && input === DEFAULT_INPUT) {
-    input = 'index.ts'
+    input = 'index.' + DEFAULT_EXT
     outDir = ''
   }
 
@@ -43,6 +72,8 @@ export default ({
 
   const pkgs = monorepo ? fs.readdirSync(pkgsPath) : ['']
   const isAbsolute = path.isAbsolute(input)
+
+  const globals = getGlobals(umdGlobals)
 
   const configs = flatMap(pkgs, pkg => {
     const pkgPath = path.resolve(monorepo ? pkgsPath : '', pkg)
@@ -75,12 +106,25 @@ export default ({
           format: isEsVersion ? 'esm' : format,
           name: globals[pkg] || upperFirst(camelCase(pkg)),
           globals,
+          exports,
         },
         external,
         plugins: [
-          typescript({
-            target: isEsVersion ? format : 'es5',
-          }),
+          typescript(
+            isTsProject
+              ? {
+                  target: isEsVersion ? format : 'es5',
+                }
+              : babel(
+                  isEsVersion
+                    ? {
+                        targets: {
+                          esmodules: true,
+                        },
+                      }
+                    : {},
+                ),
+          ),
         ].concat(plugins),
       }
     })
