@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.7.0...@1stg/eslint-config@0.8.0) (2019-09-05)
+
+
+### Features
+
+* enable eslint-plugin-compat, disable node query temporarily ([a003dac](https://github.com/1stG/configs/commit/a003dac))
+
+
+
+
+
 # [0.7.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.6.0...@1stg/eslint-config@0.7.0) (2019-09-05)
 
 
