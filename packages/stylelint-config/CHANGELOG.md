@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/1stG/configs/compare/@1stg/stylelint-config@0.5.0...@1stg/stylelint-config@0.6.0) (2019-09-05)
+
+
+### Features
+
+* add stylelint-no-unsupported-browser-features plugin support ([7ce98a9](https://github.com/1stG/configs/commit/7ce98a9))
+
+
+
+
+
 # [0.5.0](https://github.com/1stG/configs/compare/@1stg/stylelint-config@0.4.0...@1stg/stylelint-config@0.5.0) (2019-09-05)
 
 
