@@ -16,10 +16,12 @@ before_install:
 install:
   - yarn --frozen-lockfile
   - yarn lerna bootstrap
+  - yarn global add postcss-cli
 
 script:
   - yarn run check
   - yarn browserslist
+  - yarn cross-env NODE_ENV=production postcss test/test.css --verbose
   - yarn build
   - yarn lint
   - yarn test
