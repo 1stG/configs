@@ -1,7 +1,7 @@
 # configs
 
 [![Travis](https://img.shields.io/travis/com/1stg/configs.svg)](https://travis-ci.com/1stg/configs)
-[![GitHub release](https://img.shields.io/github/release/rx-ts/eslint-mdx)](https://github.com/rx-ts/eslint-mdx/releases)
+[![GitHub release](https://img.shields.io/github/release/1stg/configs)](https://github.com/1stg/configs/releases)
 [![David Dev](https://img.shields.io/david/dev/1stg/configs.svg)](https://david-dm.org/1stg/configs?type=dev)
 
 [![Conventional Commits](https://img.shields.io/badge/conventional%20commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
