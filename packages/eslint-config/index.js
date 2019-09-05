@@ -1,6 +1,7 @@
 module.exports = {
   extends: [
     'eslint:recommended',
+    'plugin:compat/recommended',
     'plugin:import/recommended',
     'plugin:node/recommended',
     'plugin:promise/recommended',
