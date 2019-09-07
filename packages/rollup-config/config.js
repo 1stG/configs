@@ -42,7 +42,7 @@ try {
   isTsProject = true
 } catch (e) {}
 
-const DEFAULT_EXT = isTsProject ? 'ts' : 'js'
+const DEFAULT_EXT = isTsProject ? '.ts' : '.js'
 
 const DEFAULT_INPUT = 'src/index' + DEFAULT_EXT
 
@@ -62,7 +62,7 @@ export default ({
   }
 
   if (!monorepo && !fs.existsSync(srcPath) && input === DEFAULT_INPUT) {
-    input = 'index.' + DEFAULT_EXT
+    input = 'index' + DEFAULT_EXT
     outDir = ''
   }
 
