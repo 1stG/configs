@@ -143,6 +143,14 @@ exports.ts = {
     'node/no-missing-import': [
       2,
       {
+        allowModules: ['unist'],
+        tryExtensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.node'],
+      },
+    ],
+    'node/no-missing-require': [
+      2,
+      {
+        allowModules: ['unist'],
         tryExtensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.node'],
       },
     ],
@@ -191,6 +199,12 @@ exports.react = {
   },
   rules: {
     'node/no-missing-import': [
+      2,
+      {
+        tryExtensions: ['.tsx', '.jsx', '.js', '.json', '.node'],
+      },
+    ],
+    'node/no-missing-require': [
       2,
       {
         tryExtensions: ['.tsx', '.jsx', '.js', '.json', '.node'],
@@ -254,6 +268,12 @@ exports.vue = {
   plugins: ['vue'],
   rules: {
     'node/no-missing-import': [
+      2,
+      {
+        tryExtensions: ['.vue', '.ts', '.tsx', '.js', '.jsx', '.json', '.node'],
+      },
+    ],
+    'node/no-missing-require': [
       2,
       {
         tryExtensions: ['.vue', '.ts', '.tsx', '.js', '.jsx', '.json', '.node'],
