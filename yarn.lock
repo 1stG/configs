@@ -4650,13 +4650,15 @@ eslint-import-resolver-typescript@JounQin/eslint-import-resolver-typescript#feat
     resolve "^1.4.0"
     tsconfig-paths "^3.6.0"
 
-eslint-mdx@^1.4.2:
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/eslint-mdx/-/eslint-mdx-1.4.2.tgz#c15e82ceb04b6930a76555ae82a59f5458671866"
-  integrity sha512-QoBjkXM9mKWQi7dwwqKwr0ZP9RMLECad7aa00nLBw1ZfpTT8/ix5EIWs3j1OM9jTXHePi6Lkdefb7KxF/QN2xg==
+eslint-mdx@^1.4.3:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/eslint-mdx/-/eslint-mdx-1.4.3.tgz#d6c7370a28733320cf3a8170d48a6a5c5cfb214f"
+  integrity sha512-sJinZ5qWlz7CzhjjnsMzYwl5XXAXa6YYWkkZYk6IQ8wDIyhUpNSuF13tPHuhDDwMtozSuhzbgTpp2iefA5Uj1w==
   dependencies:
+    espree "^6.1.1"
     remark-mdx "^1.4.3"
     remark-parse "^7.0.1"
+    unified "^8.3.2"
 
 eslint-module-utils@^2.4.0:
   version "2.4.1"
@@ -4718,16 +4720,19 @@ eslint-plugin-jest@^22.17.0:
   dependencies:
     "@typescript-eslint/experimental-utils" "^1.13.0"
 
-eslint-plugin-mdx@^1.4.2:
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-mdx/-/eslint-plugin-mdx-1.4.2.tgz#10269692420ecd9b84877a260825937989b535db"
-  integrity sha512-mjCrQwwHPeh3EpyVXyRU5ekGhQgk9ed6Xy6KflFnhiR6jB5Sd8XAXJb+axP6QzGrwxptY8yhabgXuR7ZDAUllw==
+eslint-plugin-mdx@^1.4.3:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-mdx/-/eslint-plugin-mdx-1.4.3.tgz#ea38ef3049aab36c84ff6258a46b048ee0b51998"
+  integrity sha512-9L6nB0VjLutrR8lII1sXZg0fSLPOKA7EJ0AhLYEvQung/2/ghZ0mMwTVmSiOdXzAA6sSkZbE0Yi3vPsSTesIDA==
   dependencies:
     cosmiconfig "^5.2.1"
-    eslint-mdx "^1.4.2"
+    eslint-mdx "^1.4.3"
     rebass "^4.0.5"
-    remark-lint-file-extension "^1.0.3"
+    remark-mdx "^1.4.4"
+    remark-parse "^7.0.1"
     remark-stringify "^7.0.2"
+    unified "^8.3.2"
+    vfile "^4.0.1"
 
 eslint-plugin-node@^10.0.0:
   version "10.0.0"
@@ -9905,7 +9910,7 @@ remark-lint-fenced-code-marker@^1.0.0:
     unist-util-position "^3.0.0"
     unist-util-visit "^1.1.1"
 
-remark-lint-file-extension@^1.0.0, remark-lint-file-extension@^1.0.3:
+remark-lint-file-extension@^1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/remark-lint-file-extension/-/remark-lint-file-extension-1.0.3.tgz#a7fc78fbf041e513c618b2cca0f2160ee37daa13"
   integrity sha512-P5gzsxKmuAVPN7Kq1W0f8Ss0cFKfu+OlezYJWXf+5qOa+9Y5GqHEUOobPnsmNFZrVMiM7JoqJN2C9ZjrUx3N6Q==
@@ -10329,7 +10334,7 @@ remark-lint@^6.0.0, remark-lint@^6.0.5:
   dependencies:
     remark-message-control "^4.0.0"
 
-remark-mdx@^1.4.3:
+remark-mdx@^1.4.3, remark-mdx@^1.4.4:
   version "1.4.4"
   resolved "https://registry.yarnpkg.com/remark-mdx/-/remark-mdx-1.4.4.tgz#0e6d3c5ecbdfe4b133a85310fd19e76b1ee3ea82"
   integrity sha512-yz/kvkczimzJ3AT1ZbDPBw2V2TQd9D+0RM30kUi2NMW1CElYcMey1DtmAb0V2xJzjHtAIdh6qi2+uXyBH7lBJw==
@@ -10486,10 +10491,10 @@ remark-preset-lint-recommended@^3.0.3:
     remark-lint-no-unused-definitions "^1.0.0"
     remark-lint-ordered-list-marker-style "^1.0.0"
 
-remark-preset-prettier@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/remark-preset-prettier/-/remark-preset-prettier-0.1.1.tgz#9afdf35f47c3f879bb16cffbfd1ffa59a1a40f41"
-  integrity sha512-RaN9nqE/uCarQk4nFU8CLK2atOzWnMEc4MNQs819JvrOGRfiH7OHnKyHDiKfcYeHtyH3ECKYZDB2qvTLLn7hUg==
+remark-preset-prettier@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/remark-preset-prettier/-/remark-preset-prettier-0.2.0.tgz#cb369b86ce7d7980e90879fe468bae501fc06969"
+  integrity sha512-JC79MERKMoOrokjCsnMe1RXxH5KrZ2veg5eGRDzUbfKliXSTVMMvvw3PoZ5Gng8MhPrpOd+DkE+jpu937aS/wQ==
 
 remark-stringify@^6.0.0:
   version "6.0.4"
@@ -12084,7 +12089,7 @@ unified-message-control@^1.0.0:
     unist-util-visit "^1.0.0"
     vfile-location "^2.0.0"
 
-unified@8.3.2:
+unified@8.3.2, unified@^8.3.2:
   version "8.3.2"
   resolved "https://registry.yarnpkg.com/unified/-/unified-8.3.2.tgz#aed69d0e577d6ef27268431c63a10faef60e63ab"
   integrity sha512-NDtUAXcd4c+mKppCbsZHzmhkKEQuhveZNBrFYmNgMIMk2K9bc8hmG3mLEGVtRmSNodobwyMePAnvIGVWZfPdzQ==
@@ -12334,7 +12339,7 @@ vfile@^3.0.0:
     unist-util-stringify-position "^1.0.0"
     vfile-message "^1.0.0"
 
-vfile@^4.0.0:
+vfile@^4.0.0, vfile@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/vfile/-/vfile-4.0.1.tgz#fc3d43a1c71916034216bf65926d5ee3c64ed60c"
   integrity sha512-lRHFCuC4SQBFr7Uq91oJDJxlnftoTLQ7eKIpMdubhYcVMho4781a8MWXLy3qZrZ0/STD1kRiKc0cQOHm4OkPeA==
