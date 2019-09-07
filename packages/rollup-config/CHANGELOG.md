@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.5.1...@1stg/rollup-config@0.6.0) (2019-09-07)
+
+
+### Features
+
+* **rollup:** mark builtin-modules as external for engines.node ([8f50586](https://github.com/1stG/configs/commit/8f50586))
+* **rollup:** support mark dependencies as external for engines.node ([a3fa2de](https://github.com/1stG/configs/commit/a3fa2de))
+
+
+
+
+
 ## [0.5.1](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.5.0...@1stg/rollup-config@0.5.1) (2019-09-07)
 
 
