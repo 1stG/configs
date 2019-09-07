@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.1](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.5.0...@1stg/rollup-config@0.5.1) (2019-09-07)
+
+
+### Bug Fixes
+
+* support hanle scoped package umd global name automatically ([da47f7c](https://github.com/1stG/configs/commit/da47f7c))
+
+
+
+
+
 # [0.5.0](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.4.1...@1stg/rollup-config@0.5.0) (2019-09-07)
 
 
