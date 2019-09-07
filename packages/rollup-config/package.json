@@ -5,11 +5,15 @@
   "repository": "git@github.com:1stG/configs.git",
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
+  "engines": {
+    "node": ">=6.9.0"
+  },
   "module": "module.js",
   "peerDependencies": {
     "rollup": "^1.20.3"
   },
   "dependencies": {
+    "builtin-modules": "^3.1.0",
     "lodash": "^4.17.15",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",

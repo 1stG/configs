@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
+import builtins from 'builtin-modules'
 import { flatMap } from 'lodash'
 import { terser } from 'rollup-plugin-terser'
 import babel from 'rollup-plugin-babel'
@@ -91,16 +92,16 @@ export default ({
 
     const {
       name,
-      engines = {},
+      engines: { node } = {},
       dependencies = {},
       peerDependencies = {},
     } = require(path.resolve(pkgPath, 'package.json'))
 
     pkg = pkg || name
 
-    const external = Object.keys(peerDependencies).concat(
-      engines.node ? Object.keys(dependencies) : [],
-      externals,
+    const external = externals.concat(
+      Object.keys(peerDependencies),
+      node ? Object.keys(dependencies).concat(builtins) : [],
     )
 
     return formats.map(format => {
@@ -129,6 +130,7 @@ export default ({
                     ? {
                         targets: {
                           esmodules: true,
+                          node,
                         },
                       }
                     : {},
