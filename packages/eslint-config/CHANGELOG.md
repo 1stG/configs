@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.1](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.9.0...@1stg/eslint-config@0.9.1) (2019-09-07)
+
+
+### Bug Fixes
+
+* **deps:** upgrade eslint-plugin-mdx and remark-preset-prettier ([c735d6d](https://github.com/1stG/configs/commit/c735d6d))
+
+
+
+
+
 # [0.9.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.8.2...@1stg/eslint-config@0.9.0) (2019-09-07)
 
 
