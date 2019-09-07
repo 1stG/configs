@@ -35,7 +35,7 @@ if (isProd) {
   plugins.push(terser())
 }
 
-const DEFAULT_FORMATS = ['cjs', 'esm', 'umd']
+const DEFAULT_FORMATS = ['cjs', 'esm']
 
 let isTsProject = false
 
@@ -50,7 +50,7 @@ const DEFAULT_EXT = isTsProject ? '.ts' : '.js'
 const DEFAULT_INPUT = 'src/index' + DEFAULT_EXT
 
 export default ({
-  formats = DEFAULT_FORMATS,
+  formats,
   monorepo,
   input = DEFAULT_INPUT,
   outDir = 'lib',
@@ -104,7 +104,10 @@ export default ({
       node ? Object.keys(dependencies).concat(builtins) : [],
     )
 
-    return formats.map(format => {
+    return (formats && formats.length
+      ? formats
+      : DEFAULT_FORMATS.concat(node ? [] : 'umd')
+    ).map(format => {
       const isEsVersion = /^es(\d+|next)$/.test(format)
       return {
         input: pkgInput,
