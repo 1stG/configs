@@ -63,6 +63,19 @@ exports.ts = {
         alwaysTryTypes: true,
       },
     },
+    node: {
+      resolvePaths: [path.resolve('node_modules/@types')],
+      tryExtensions: [
+        '.ts',
+        '.tsx',
+        '.d.ts',
+        '.vue',
+        '.js',
+        '.jsx',
+        '.json',
+        '.node',
+      ],
+    },
   },
   rules: {
     '@typescript-eslint/adjacent-overload-signatures': 2,
@@ -140,20 +153,6 @@ exports.ts = {
     'import/no-named-as-default-member': 0,
     'no-empty-function': 0,
     'no-useless-constructor': 0,
-    'node/no-missing-import': [
-      2,
-      {
-        allowModules: ['unist'],
-        tryExtensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.node'],
-      },
-    ],
-    'node/no-missing-require': [
-      2,
-      {
-        allowModules: ['unist'],
-        tryExtensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.node'],
-      },
-    ],
     'node/no-unsupported-features/es-syntax': 0,
   },
 }
@@ -196,20 +195,6 @@ exports.react = {
     react: {
       version: 'detect',
     },
-  },
-  rules: {
-    'node/no-missing-import': [
-      2,
-      {
-        tryExtensions: ['.tsx', '.jsx', '.js', '.json', '.node'],
-      },
-    ],
-    'node/no-missing-require': [
-      2,
-      {
-        tryExtensions: ['.tsx', '.jsx', '.js', '.json', '.node'],
-      },
-    ],
   },
 }
 
@@ -260,25 +245,21 @@ exports.vue = {
   files: ['*.vue'],
   parser: 'vue-eslint-parser',
   parserOptions: {
-    // TODO: find out how to split .js and .ts files
     parser: '@typescript-eslint/parser',
     extraFileExtensions: ['.vue'],
   },
-  extends: ['plugin:vue/recommended', 'prettier/vue'],
-  plugins: ['vue'],
+  settings: exports.ts.settings,
+  extends: [
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:import/typescript',
+    'prettier/@typescript-eslint',
+    'plugin:vue/recommended',
+    'prettier/vue',
+  ],
+  plugins: ['@typescript-eslint', 'vue'],
   rules: {
-    'node/no-missing-import': [
-      2,
-      {
-        tryExtensions: ['.vue', '.ts', '.tsx', '.js', '.jsx', '.json', '.node'],
-      },
-    ],
-    'node/no-missing-require': [
-      2,
-      {
-        tryExtensions: ['.vue', '.ts', '.tsx', '.js', '.jsx', '.json', '.node'],
-      },
-    ],
+    '@typescript-eslint/explicit-function-return-type': 0,
     'node/no-unsupported-features/es-syntax': 0,
   },
 }

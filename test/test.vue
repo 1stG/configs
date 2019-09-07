@@ -6,6 +6,8 @@
 <script lang="ts">
 import Vue from 'vue'
 
+import { Point } from 'unist'
+
 export default Vue.extend({
   data() {
     return {
@@ -13,6 +15,9 @@ export default Vue.extend({
     }
   },
   methods: {
+    getLine(point: Point) {
+      return point.line
+    },
     async reverse() {
       await new Promise(resolve => {
         setTimeout(resolve, 500)

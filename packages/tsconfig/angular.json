@@ -1,6 +1,6 @@
 {
   "$schema": "http://json.schemastore.org/tsconfig",
-  "extends": "./tsconfig.app.json",
+  "extends": "./app.json",
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "paths": {

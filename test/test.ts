@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import { Position } from 'unist'
 import { promisify } from 'util'
 
 import { content } from './_test'
@@ -12,6 +13,7 @@ class Basic {
 
 interface X {
   m: number
+  p?: Position
 }
 
 function* generator() {
