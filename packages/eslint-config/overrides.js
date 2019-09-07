@@ -140,6 +140,12 @@ exports.ts = {
     'import/no-named-as-default-member': 0,
     'no-empty-function': 0,
     'no-useless-constructor': 0,
+    'node/no-missing-import': [
+      2,
+      {
+        tryExtensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '.node'],
+      },
+    ],
     'node/no-unsupported-features/es-syntax': 0,
   },
 }
@@ -182,6 +188,14 @@ exports.react = {
     react: {
       version: 'detect',
     },
+  },
+  rules: {
+    'node/no-missing-import': [
+      2,
+      {
+        tryExtensions: ['.tsx', '.jsx', '.js', '.json', '.node'],
+      },
+    ],
   },
 }
 
@@ -239,6 +253,12 @@ exports.vue = {
   extends: ['plugin:vue/recommended', 'prettier/vue'],
   plugins: ['vue'],
   rules: {
+    'node/no-missing-import': [
+      2,
+      {
+        tryExtensions: ['.vue', '.ts', '.tsx', '.js', '.jsx', '.json', '.node'],
+      },
+    ],
     'node/no-unsupported-features/es-syntax': 0,
   },
 }

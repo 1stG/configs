@@ -2,10 +2,12 @@ import fs from 'fs'
 import path from 'path'
 import { promisify } from 'util'
 
+import { content } from './_test'
+
 promisify(fs.readFile)
 
 class Basic {
-  prop!: string
+  prop: string = content
 }
 
 interface X {
