@@ -1,4 +1,6 @@
-module.exports = ctx => {
+const { NODE_ENV = 'development' } = process.env
+
+module.exports = ({ env = NODE_ENV } = {}) => {
   const config = {
     plugins: [
       require('postcss-preset-env'),
@@ -8,7 +10,7 @@ module.exports = ctx => {
     ],
   }
 
-  if (ctx.env === 'production') {
+  if (env === 'production') {
     config.plugins.push(
       require('cssnano', {
         preset: [
