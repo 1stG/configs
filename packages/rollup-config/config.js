@@ -54,6 +54,7 @@ export default ({
   input = DEFAULT_INPUT,
   outDir = 'lib',
   exports,
+  externals = [],
   umdGlobals,
 } = {}) => {
   const pkgsPath = path.resolve('packages')
@@ -88,14 +89,20 @@ export default ({
       return []
     }
 
-    const { name, peerDependencies: externals } = require(path.resolve(
-      pkgPath,
-      'package.json',
-    ))
+    const {
+      name,
+      engines = {},
+      dependencies = {},
+      peerDependencies = {},
+    } = require(path.resolve(pkgPath, 'package.json'))
 
     pkg = pkg || name
 
-    const external = Object.keys(externals)
+    const external = Object.keys(peerDependencies).concat(
+      engines.node ? Object.keys(dependencies) : [],
+      externals,
+    )
+
     return formats.map(format => {
       const isEsVersion = /^es(\d+|next)$/.test(format)
       return {
