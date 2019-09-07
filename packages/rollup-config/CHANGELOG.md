@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.6.0...@1stg/rollup-config@0.7.0) (2019-09-07)
+
+
+### Features
+
+* **rollup:** do not include umd for engines.node by default ([5a6c919](https://github.com/1stG/configs/commit/5a6c919))
+
+
+
+
+
 # [0.6.0](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.5.1...@1stg/rollup-config@0.6.0) (2019-09-07)
 
 
