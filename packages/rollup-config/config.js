@@ -1,14 +1,14 @@
 import fs from 'fs'
 import path from 'path'
 
-import { camelCase, flatMap, upperFirst } from 'lodash'
+import { flatMap } from 'lodash'
 import { terser } from 'rollup-plugin-terser'
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
 import json from 'rollup-plugin-json'
 import nodeResolve from 'rollup-plugin-node-resolve'
 import typescript from 'rollup-plugin-typescript'
-import { getGlobals } from 'umd-globals'
+import { getGlobals, normalizePkg, upperCamelCase } from 'umd-globals'
 
 const { NODE_ENV } = process.env
 
@@ -106,7 +106,7 @@ export default ({
             `${outDir}${format}${isProd ? '.min' : ''}.js`,
           ),
           format: isEsVersion ? 'esm' : format,
-          name: globals[pkg] || upperFirst(camelCase(pkg)),
+          name: globals[pkg] || upperCamelCase(normalizePkg(pkg)),
           globals,
           exports,
         },
