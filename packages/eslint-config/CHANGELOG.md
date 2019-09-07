@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.8.2...@1stg/eslint-config@0.9.0) (2019-09-07)
+
+
+### Features
+
+* **eslint-plugin-node:** resolve packages in [@types](https://github.com/types) automatically ([abb24e6](https://github.com/1stG/configs/commit/abb24e6))
+
+
+
+
+
 ## [0.8.2](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.8.1...@1stg/eslint-config@0.8.2) (2019-09-07)
 
 

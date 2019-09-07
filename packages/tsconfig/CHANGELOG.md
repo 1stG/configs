@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/1stG/configs/compare/@1stg/tsconfig@0.4.0...@1stg/tsconfig@0.5.0) (2019-09-07)
+
+
+### Features
+
+* **eslint-plugin-node:** resolve packages in [@types](https://github.com/types) automatically ([abb24e6](https://github.com/1stG/configs/commit/abb24e6))
+
+
+
+
+
 # [0.4.0](https://github.com/1stG/configs/compare/@1stg/tsconfig@0.3.0...@1stg/tsconfig@0.4.0) (2019-09-05)
 
 
