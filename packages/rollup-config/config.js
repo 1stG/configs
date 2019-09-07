@@ -5,6 +5,7 @@ import { camelCase, flatMap, upperFirst } from 'lodash'
 import { terser } from 'rollup-plugin-terser'
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
+import json from 'rollup-plugin-json'
 import nodeResolve from 'rollup-plugin-node-resolve'
 import typescript from 'rollup-plugin-typescript'
 import { getGlobals } from 'umd-globals'
@@ -26,6 +27,7 @@ const plugins = [
     ],
   }),
   commonjs(),
+  json(),
 ]
 
 if (isProd) {
