@@ -154,6 +154,8 @@ exports.ts = {
     'no-empty-function': 0,
     'no-useless-constructor': 0,
     'node/no-unsupported-features/es-syntax': 0,
+    // @typescript-eslint/no-floating-promises has already handled this case
+    'promise/catch-or-return': 0,
   },
 }
 
@@ -261,6 +263,7 @@ exports.vue = {
   rules: {
     '@typescript-eslint/explicit-function-return-type': 0,
     'node/no-unsupported-features/es-syntax': 0,
+    'promise/catch-or-return': 0,
   },
 }
 
