@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.7.0...@1stg/rollup-config@0.8.0) (2019-09-09)
+
+
+### Features
+
+* **rollup:** detect available extensions automatically ([e0deecf](https://github.com/1stG/configs/commit/e0deecf))
+* **rollup:** enable rollup-plugin-replace for production build ([542f081](https://github.com/1stG/configs/commit/542f081))
+
+
+
+
+
 # [0.7.0](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.6.0...@1stg/rollup-config@0.7.0) (2019-09-07)
 
 
