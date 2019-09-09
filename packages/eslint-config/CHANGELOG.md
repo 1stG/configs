@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.2](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.9.1...@1stg/eslint-config@0.9.2) (2019-09-09)
+
+
+### Bug Fixes
+
+* **eslint:** disable promise/catch-or-return for ts files ([d4bc677](https://github.com/1stG/configs/commit/d4bc677))
+
+
+
+
+
 ## [0.9.1](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.9.0...@1stg/eslint-config@0.9.1) (2019-09-07)
 
 
