@@ -8,6 +8,7 @@ import { terser } from 'rollup-plugin-terser'
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
 import json from 'rollup-plugin-json'
+import replace from 'rollup-plugin-replace'
 import nodeResolve from 'rollup-plugin-node-resolve'
 import typescript from 'rollup-plugin-typescript'
 import { getGlobals, normalizePkg, upperCamelCase } from 'umd-globals'
@@ -34,7 +35,12 @@ const plugins = [
 ]
 
 if (isProd) {
-  plugins.push(terser())
+  plugins.push(
+    replace({
+      'process.env.NODE_ENV': NODE_ENV,
+    }),
+    terser(),
+  )
 }
 
 const DEFAULT_FORMATS = ['cjs', 'es2015', 'esm']
