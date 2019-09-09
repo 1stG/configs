@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import Module from 'module'
 
 import builtins from 'builtin-modules'
 import { flatMap } from 'lodash'
@@ -22,6 +23,7 @@ const plugins = [
       'es2015',
       'esm2015',
       'fesm2015',
+      'esm5',
       'fesm5',
       'module',
       'main',
@@ -35,24 +37,30 @@ if (isProd) {
   plugins.push(terser())
 }
 
-const DEFAULT_FORMATS = ['cjs', 'esm']
+const DEFAULT_FORMATS = ['cjs', 'es2015', 'esm']
 
-let isTsProject = false
+let isTsAvailable = false
 
 try {
   require.resolve('typescript')
-  DEFAULT_FORMATS.push('es2015')
-  isTsProject = true
+  isTsAvailable = true
 } catch (e) {}
 
-const DEFAULT_EXT = isTsProject ? '.ts' : '.js'
+const EXTENSIONS = Object.keys(Module._extensions)
 
-const DEFAULT_INPUT = 'src/index' + DEFAULT_EXT
+if (isTsAvailable) {
+  EXTENSIONS.unshift('.ts', '.tsx')
+}
+
+const tryExtensions = filepath => {
+  const ext = EXTENSIONS.find(ext => fs.existsSync(filepath + ext))
+  return ext ? filepath + ext : filepath
+}
 
 export default ({
   formats,
   monorepo,
-  input = DEFAULT_INPUT,
+  input,
   outDir = 'lib',
   exports,
   externals = [],
@@ -65,10 +73,12 @@ export default ({
     monorepo = fs.existsSync(pkgsPath)
   }
 
-  if (!monorepo && !fs.existsSync(srcPath) && input === DEFAULT_INPUT) {
-    input = 'index' + DEFAULT_EXT
+  if (!monorepo && !fs.existsSync(srcPath) && input == null) {
+    input = 'index'
     outDir = ''
   }
+
+  input = tryExtensions(input || 'src/index')
 
   if (outDir && !outDir.endsWith('/')) {
     outDir = outDir + '/'
@@ -81,7 +91,7 @@ export default ({
 
   const configs = flatMap(pkgs, pkg => {
     const pkgPath = path.resolve(monorepo ? pkgsPath : '', pkg)
-    const pkgInput = path.resolve(pkgPath, input)
+    const pkgInput = tryExtensions(path.resolve(pkgPath, input))
 
     if (
       !fs.existsSync(pkgInput) ||
@@ -104,11 +114,20 @@ export default ({
       node ? Object.keys(dependencies).concat(builtins) : [],
     )
 
-    return (formats && formats.length
-      ? formats
-      : DEFAULT_FORMATS.concat(node ? [] : 'umd')
-    ).map(format => {
-      const isEsVersion = /^es(\d+|next)$/.test(format)
+    const isTsInput = /\.tsx?/.test(pkgInput)
+    const pkgFormats =
+      formats && formats.length
+        ? formats
+        : DEFAULT_FORMATS.concat(node ? [] : 'umd')
+    const pkgGlobals = external.reduce((pkgGlobals, pkg) => {
+      if (pkgGlobals[pkg] == null) {
+        pkgGlobals[pkg] = upperCamelCase(normalizePkg(pkg))
+      }
+      return pkgGlobals
+    }, globals)
+
+    return pkgFormats.map(format => {
+      const isEsVersion = /^es(\d+|next)$/.test(format) && format !== 'es5'
       return {
         input: pkgInput,
         output: {
@@ -117,28 +136,31 @@ export default ({
             `${outDir}${format}${isProd ? '.min' : ''}.js`,
           ),
           format: isEsVersion ? 'esm' : format,
-          name: globals[pkg] || upperCamelCase(normalizePkg(pkg)),
+          name: pkgGlobals[pkg] || upperCamelCase(normalizePkg(pkg)),
           globals,
           exports,
         },
         external,
         plugins: [
-          typescript(
-            isTsProject
-              ? {
-                  target: isEsVersion ? format : 'es5',
-                }
-              : babel(
-                  isEsVersion
-                    ? {
-                        targets: {
-                          esmodules: true,
-                          node,
-                        },
-                      }
-                    : {},
-                ),
-          ),
+          isTsAvailable && isTsInput
+            ? typescript({
+                target: isEsVersion ? format : 'es5',
+              })
+            : babel({
+                exclude: ['*.min.js', '*.production.js'],
+                presets: [
+                  [
+                    '@babel/preset-env',
+                    isEsVersion
+                      ? {
+                          targets: {
+                            esmodules: true,
+                          },
+                        }
+                      : undefined,
+                  ],
+                ],
+              }),
         ].concat(plugins),
       }
     })
