@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.1](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.9.0...@1stg/rollup-config@0.9.1) (2019-09-10)
+
+
+### Bug Fixes
+
+* **rollup:** .js suffix could be be omitted ([95c2aa7](https://github.com/1stG/configs/commit/95c2aa7))
+
+
+
+
+
 # [0.9.0](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.8.0...@1stg/rollup-config@0.9.0) (2019-09-10)
 
 
