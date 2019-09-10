@@ -16,7 +16,7 @@
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "@vue/babel-preset-jsx": "^1.1.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "babel-preset-proposal-typescript": "^1.3.0"
+    "babel-preset-proposal-typescript": "^1.4.1"
   },
   "publishConfig": {
     "access": "public"

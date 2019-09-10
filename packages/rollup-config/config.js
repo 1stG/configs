@@ -13,11 +13,9 @@ import nodeResolve from 'rollup-plugin-node-resolve'
 import typescript from 'rollup-plugin-typescript'
 import { getGlobals, normalizePkg, upperCamelCase } from 'umd-globals'
 
-const { NODE_ENV } = process.env
+const PRODUCTION = 'production'
 
-const isProd = NODE_ENV === 'production'
-
-const plugins = [
+const BASIC_PLUGINS = [
   nodeResolve({
     mainFields: [
       'esnext',
@@ -33,15 +31,6 @@ const plugins = [
   commonjs(),
   json(),
 ]
-
-if (isProd) {
-  plugins.push(
-    replace({
-      'process.env.NODE_ENV': NODE_ENV,
-    }),
-    terser(),
-  )
-}
 
 const DEFAULT_FORMATS = ['cjs', 'es2015', 'esm']
 
@@ -63,7 +52,7 @@ const tryExtensions = filepath => {
   return ext ? filepath + ext : filepath
 }
 
-export default ({
+const configBase = ({
   formats,
   monorepo,
   input,
@@ -71,6 +60,7 @@ export default ({
   exports,
   externals = [],
   globals: umdGlobals,
+  prod = process.env.NODE_ENV === PRODUCTION,
 } = {}) => {
   const pkgsPath = path.resolve(
     typeof monorepo === 'string' ? monorepo : 'packages',
@@ -141,7 +131,7 @@ export default ({
         output: {
           file: path.resolve(
             pkgPath,
-            `${outputDir}${format}${isProd ? '.min' : ''}.js`,
+            `${outputDir}${format}${prod ? '.min' : ''}.js`,
           ),
           format: isEsVersion ? 'esm' : format,
           name: pkgGlobals[pkg] || upperCamelCase(normalizePkg(pkg)),
@@ -169,7 +159,17 @@ export default ({
                   ],
                 ],
               }),
-        ].concat(plugins),
+        ].concat(
+          BASIC_PLUGINS,
+          prod
+            ? [
+                replace({
+                  'process.env.NODE_ENV': JSON.stringify(PRODUCTION),
+                }),
+                terser(),
+              ]
+            : [],
+        ),
       }
     })
   })
@@ -181,3 +181,14 @@ export default ({
 
   return configs
 }
+
+export default (options = {}) =>
+  configBase(options).concat(
+    options.prod
+      ? configBase(
+          Object.assign({}, options, {
+            prod: false,
+          }),
+        )
+      : [],
+  )

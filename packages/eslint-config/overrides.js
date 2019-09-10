@@ -59,7 +59,7 @@ exports.ts = {
   plugins: ['@typescript-eslint'],
   settings: {
     'import/resolver': {
-      typescript: {
+      ts: {
         alwaysTryTypes: true,
       },
     },

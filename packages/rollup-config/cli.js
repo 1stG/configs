@@ -21,7 +21,7 @@ program
     parseArrayArgs,
   )
   .option(
-    '-m, --monorepo <boolean | path>',
+    '-m, --monorepo <false | path>',
     'whether consider the project as a monorepo, or custom the packages path',
   )
   .option(
@@ -38,6 +38,10 @@ program
     'JSON string to be parsed as umd globals map',
     JSON.stringify,
   )
+  .option(
+    '-p, --prod <boolean>',
+    'whether to enable production(.min.js) bundle together at the same time',
+  )
   .parse(process.argv)
 
 config(
@@ -50,5 +54,6 @@ config(
     'exports',
     'externals',
     'globals',
+    'prod',
   ),
 ).map(options => rollup(options).then(bundle => bundle.write(options)))
