@@ -9,7 +9,7 @@
     "node": ">=6.9.0"
   },
   "bin": {
-    "r": "cli"
+    "r": "cli.js"
   },
   "module": "module.js",
   "peerDependencies": {

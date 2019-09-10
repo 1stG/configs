@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-/* eslint-disable node/shebang */
 const program = require('commander')
 const { pick } = require('lodash')
 const { rollup } = require('rollup')
