@@ -15,6 +15,7 @@ module.exports = {
     polyfills: [
       'console',
       'Array.isArray',
+      'JSON',
       'Object.assign',
       'Object.keys',
       'Promise',

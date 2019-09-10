@@ -67,27 +67,29 @@ export default ({
   formats,
   monorepo,
   input,
-  outDir = 'lib',
+  outputDir = 'lib',
   exports,
   externals = [],
-  umdGlobals,
+  globals: umdGlobals,
 } = {}) => {
-  const pkgsPath = path.resolve('packages')
+  const pkgsPath = path.resolve(
+    typeof monorepo === 'string' ? monorepo : 'packages',
+  )
   const srcPath = path.resolve('src')
 
-  if (typeof monorepo !== 'boolean') {
+  if (monorepo !== false) {
     monorepo = fs.existsSync(pkgsPath)
   }
 
-  if (!monorepo && !fs.existsSync(srcPath) && input == null) {
+  if (!fs.existsSync(srcPath) && input == null) {
     input = 'index'
-    outDir = ''
+    outputDir = ''
   }
 
   input = tryExtensions(input || 'src/index')
 
-  if (outDir && !outDir.endsWith('/')) {
-    outDir = outDir + '/'
+  if (outputDir && !outputDir.endsWith('/')) {
+    outputDir = outputDir + '/'
   }
 
   const pkgs = monorepo ? fs.readdirSync(pkgsPath) : ['']
@@ -139,7 +141,7 @@ export default ({
         output: {
           file: path.resolve(
             pkgPath,
-            `${outDir}${format}${isProd ? '.min' : ''}.js`,
+            `${outputDir}${format}${isProd ? '.min' : ''}.js`,
           ),
           format: isEsVersion ? 'esm' : format,
           name: pkgGlobals[pkg] || upperCamelCase(normalizePkg(pkg)),
