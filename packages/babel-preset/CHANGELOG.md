@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.1](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.6.0...@1stg/babel-preset@0.6.1) (2019-09-10)
+
+
+### Bug Fixes
+
+* **deps:** enable eslint-import-resolver-ts, add prod option for rollup ([3471316](https://github.com/1stG/configs/commit/3471316))
+
+
+
+
+
 # [0.6.0](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.5.0...@1stg/babel-preset@0.6.0) (2019-09-05)
 
 

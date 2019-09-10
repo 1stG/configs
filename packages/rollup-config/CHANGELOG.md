@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.2](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.9.1...@1stg/rollup-config@0.9.2) (2019-09-10)
+
+
+### Bug Fixes
+
+* **deps:** enable eslint-import-resolver-ts, add prod option for rollup ([3471316](https://github.com/1stG/configs/commit/3471316))
+
+
+
+
+
 ## [0.9.1](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.9.0...@1stg/rollup-config@0.9.1) (2019-09-10)
 
 

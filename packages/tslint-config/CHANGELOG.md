@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/1stG/configs/compare/@1stg/tslint-config@0.3.0...@1stg/tslint-config@0.3.1) (2019-09-10)
+
+
+### Bug Fixes
+
+* **deps:** enable eslint-import-resolver-ts, add prod option for rollup ([3471316](https://github.com/1stG/configs/commit/3471316))
+
+
+
+
+
 # [0.3.0](https://github.com/1stG/configs/compare/@1stg/tslint-config@0.2.0...@1stg/tslint-config@0.3.0) (2019-09-05)
 
 
