@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.8.0...@1stg/rollup-config@0.9.0) (2019-09-10)
+
+
+### Features
+
+* **rollup:** add cli support to simplify usage ([dfb7ef7](https://github.com/1stG/configs/commit/dfb7ef7))
+
+
+
+
+
 # [0.8.0](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.7.0...@1stg/rollup-config@0.8.0) (2019-09-09)
 
 
