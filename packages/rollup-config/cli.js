@@ -34,12 +34,12 @@ program
     parseArrayArgs,
   )
   .option(
-    '-g, --globals',
+    '-g, --globals <json>',
     'JSON string to be parsed as umd globals map',
     JSON.stringify,
   )
   .option(
-    '-p, --prod <boolean>',
+    '-p, --prod [boolean]',
     'whether to enable production(.min.js) bundle together at the same time',
   )
   .parse(process.argv)
