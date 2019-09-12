@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.9.3...@1stg/eslint-config@0.10.0) (2019-09-12)
+
+
+### Features
+
+* **eslint:** enable `excludedFiles` feature to simplify ts linter ([63f9332](https://github.com/1stG/configs/commit/63f9332))
+
+
+
+
+
 ## [0.9.3](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.9.2...@1stg/eslint-config@0.9.3) (2019-09-10)
 
 
