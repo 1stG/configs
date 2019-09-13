@@ -9,9 +9,12 @@ exports.isMonorepo =
   fs.existsSync(path.resolve('lerna.json')) ||
   !!require(path.resolve('package.json')).workspaces
 
+const pkgs = path.resolve('packages')
+
 exports.allowModules = exports.isMonorepo
-  ? fs.statSync('packages').isDirectory() &&
+  ? fs.existsSync(pkgs) &&
+    fs.statSync(pkgs).isDirectory() &&
     fs
-      .readdirSync('packages')
-      .map(pkg => require(path.resolve(`packages/${pkg}/package.json`)).name)
+      .readdirSync(pkgs)
+      .map(pkg => require(path.resolve(pkgs, pkg, 'package.json')).name)
   : undefined

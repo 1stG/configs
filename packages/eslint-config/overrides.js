@@ -299,6 +299,9 @@ exports.mdx = Object.assign({}, exports.react, {
 exports.jest = {
   files: '*.{spec,test}.{js,jsx,ts,tsx}',
   extends: ['plugin:jest/recommended'],
+  rules: {
+    'node/no-extraneous-import': 0,
+  },
 }
 
 let tslint = false
