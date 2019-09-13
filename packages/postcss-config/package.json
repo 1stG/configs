@@ -6,7 +6,7 @@
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "peerDependencies": {
-    "postcss": "^7.0.17"
+    "postcss": "^7.0.18"
   },
   "publishConfig": {
     "access": "public"

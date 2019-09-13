@@ -1,3 +1,5 @@
+const { allowModules } = require('./_util')
+
 module.exports = {
   extends: [
     'eslint:recommended',
@@ -9,7 +11,11 @@ module.exports = {
     'plugin:prettier/recommended',
     'prettier/standard',
   ],
-  plugins: ['standard', 'prettier'],
+  settings: {
+    node: {
+      allowModules,
+    },
+  },
   rules: {
     'import/order': [
       2,

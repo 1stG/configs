@@ -1,16 +1,12 @@
-const fs = require('fs')
-
 const { overrides } = require('@1stg/eslint-config/overrides')
+const { allowModules } = require('@1stg/eslint-config/_util')
 
 module.exports = {
   extends: '@1stg',
   overrides,
   settings: {
     node: {
-      allowModules: fs
-        .readdirSync('packages')
-        .map(pkg => `@1stg/${pkg}`)
-        .concat('tslint', 'typescript'),
+      allowModules: allowModules.concat('tslint', 'typescript'),
     },
     polyfills: [
       'console',

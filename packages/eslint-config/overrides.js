@@ -1,13 +1,18 @@
 const fs = require('fs')
 const path = require('path')
 
+const { identity, isMonorepo } = require('./_util')
+
 const BABEL_CONFIG = path.resolve('babel.config.js')
+const BABEL_RC_CONFIG = path.resolve('.babelrc.js')
 
 let configFile
 
 try {
   configFile = fs.existsSync(BABEL_CONFIG)
     ? BABEL_CONFIG
+    : fs.existsSync(BABEL_RC_CONFIG)
+    ? BABEL_RC_CONFIG
     : require.resolve('@1stg/babel-preset/config')
 } catch (e) {}
 
@@ -33,15 +38,42 @@ exports.js = {
 const BASE_TSCONFIG = path.resolve('tsconfig.base.json')
 const DEFAULT_TSCONFIG = path.resolve('tsconfig.json')
 
+const PROJECT_TSCONFIG = fs.existsSync(BASE_TSCONFIG)
+  ? BASE_TSCONFIG
+  : fs.existsSync(DEFAULT_TSCONFIG)
+  ? DEFAULT_TSCONFIG
+  : undefined
+
 let project
 
 try {
-  project = fs.existsSync(BASE_TSCONFIG)
-    ? BASE_TSCONFIG
-    : fs.existsSync(DEFAULT_TSCONFIG)
-    ? DEFAULT_TSCONFIG
-    : require.resolve('@1stg/tsconfig')
+  project = PROJECT_TSCONFIG || require.resolve('@1stg/tsconfig')
 } catch (e) {}
+
+const resolveSettings = {
+  'import/resolver': {
+    ts: {
+      alwaysTryTypes: true,
+      directory: [
+        PROJECT_TSCONFIG,
+        isMonorepo && 'packages/**/tsconfig.json',
+      ].filter(identity),
+    },
+  },
+  node: {
+    resolvePaths: [path.resolve('node_modules/@types')],
+    tryExtensions: [
+      '.ts',
+      '.tsx',
+      '.d.ts',
+      '.vue',
+      '.js',
+      '.jsx',
+      '.json',
+      '.node',
+    ],
+  },
+}
 
 exports.ts = [
   {
@@ -54,26 +86,7 @@ exports.ts = [
       'prettier/@typescript-eslint',
     ],
     plugins: ['@typescript-eslint'],
-    settings: {
-      'import/resolver': {
-        ts: {
-          alwaysTryTypes: true,
-        },
-      },
-      node: {
-        resolvePaths: [path.resolve('node_modules/@types')],
-        tryExtensions: [
-          '.ts',
-          '.tsx',
-          '.d.ts',
-          '.vue',
-          '.js',
-          '.jsx',
-          '.json',
-          '.node',
-        ],
-      },
-    },
+    settings: resolveSettings,
     rules: {
       '@typescript-eslint/adjacent-overload-signatures': 2,
       '@typescript-eslint/array-type': [
@@ -241,7 +254,7 @@ exports.vue = {
     parser: '@typescript-eslint/parser',
     extraFileExtensions: ['.vue'],
   },
-  settings: exports.ts[0].settings,
+  settings: resolveSettings,
   extends: [
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
@@ -277,6 +290,10 @@ exports.mdx = Object.assign({}, exports.react, {
     'plugin:mdx/recommended',
     'plugin:mdx/overrides',
   ]),
+  settings: Object.assign({}, exports.react.settings, resolveSettings),
+  rules: {
+    'node/no-unsupported-features/es-syntax': 0,
+  },
 })
 
 exports.jest = {
@@ -291,16 +308,17 @@ try {
   tslint = true
 } catch (e) {}
 
-exports.overrides = [
-  exports.js,
-  ...exports.ts,
-  exports.dTs,
-  lintFile && tslint && exports.tslint,
-  exports.react,
-  exports.reactHooks,
-  exports.reactTs,
-  exports.vue,
-  exports.md,
-  exports.mdx,
-  exports.jest,
-].filter(_ => _)
+exports.overrides = exports.ts
+  .concat([
+    exports.js,
+    exports.dTs,
+    lintFile && tslint && exports.tslint,
+    exports.react,
+    exports.reactHooks,
+    exports.reactTs,
+    exports.vue,
+    exports.md,
+    exports.mdx,
+    exports.jest,
+  ])
+  .filter(identity)
