@@ -188,6 +188,13 @@ exports.dTs = {
   },
 }
 
+let tslint = false
+
+try {
+  require.resolve('tslint')
+  tslint = true
+} catch (e) {}
+
 const TSLINT_CONFIG = path.resolve('tslint.json')
 
 let lintFile
@@ -299,23 +306,20 @@ exports.mdx = Object.assign({}, exports.react, {
 exports.jest = {
   files: '*.{spec,test}.{js,jsx,ts,tsx}',
   extends: ['plugin:jest/recommended'],
+}
+
+exports.test = {
+  files: '{test,tests}/*.{js,jsx,mdx,ts,tsx,vue}',
   rules: {
     'node/no-extraneous-import': 0,
   },
 }
 
-let tslint = false
-
-try {
-  require.resolve('tslint')
-  tslint = true
-} catch (e) {}
-
 exports.overrides = exports.ts
   .concat([
     exports.js,
     exports.dTs,
-    lintFile && tslint && exports.tslint,
+    tslint && lintFile && exports.tslint,
     exports.react,
     exports.reactHooks,
     exports.reactTs,
@@ -323,5 +327,6 @@ exports.overrides = exports.ts
     exports.md,
     exports.mdx,
     exports.jest,
+    exports.test,
   ])
   .filter(identity)

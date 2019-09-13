@@ -1,3 +1,5 @@
+const path = require('path')
+
 const config = Object.assign({}, require('./base'))
 
 let eslint = false
@@ -7,10 +9,10 @@ try {
   eslint = true
 } catch (e) {}
 
-let tslint = false
+let tslint
 
 try {
-  require.resolve('tslint')
+  require.resolve(path.resolve('tslint.json'))
   tslint = true
 } catch (e) {}
 

@@ -21,7 +21,7 @@ install:
 script:
   - yarn run check
   - yarn browserslist
-  - yarn cross-env NODE_ENV=production postcss test/test.css --verbose
+  - NODE_ENV=production postcss tests/test.css --verbose
   - yarn build
   - yarn lint
   - yarn test
