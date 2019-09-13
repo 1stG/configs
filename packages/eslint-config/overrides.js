@@ -309,7 +309,7 @@ exports.jest = {
 }
 
 exports.test = {
-  files: '{test,tests}/**/*.{js,jsx,mdx,ts,tsx,vue}',
+  files: '**/{test,tests}/**/*.{js,jsx,mdx,ts,tsx,vue}',
   rules: {
     'node/no-extraneous-import': 0,
   },
