@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.6.1 (2019-09-13)
+
+
+### Bug Fixes
+
+* **eslint:** disable node/no-extraneous-import in tests? folder ([aa231f1](https://github.com/1stG/configs/commit/aa231f1))
+
+
+
+
+
 # [0.6.0](https://github.com/1stG/configs/compare/@1stg/lint-staged@0.5.0...@1stg/lint-staged@0.6.0) (2019-09-05)
 
 

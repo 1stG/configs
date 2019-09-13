@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.4](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.10.3...@1stg/eslint-config@0.10.4) (2019-09-13)
+
+
+### Bug Fixes
+
+* **eslint:** disable node/no-extraneous-import in tests? folder ([aa231f1](https://github.com/1stG/configs/commit/aa231f1))
+
+
+
+
+
 ## [0.10.3](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.10.2...@1stg/eslint-config@0.10.3) (2019-09-13)
 
 
