@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.2](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.10.1...@1stg/eslint-config@0.10.2) (2019-09-13)
+
+
+### Bug Fixes
+
+* **eslint:** readdirSync breaks if packages does not exist ([f10c8dd](https://github.com/1stG/configs/commit/f10c8dd))
+
+
+
+
+
 ## [0.10.1](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.10.0...@1stg/eslint-config@0.10.1) (2019-09-13)
 
 
