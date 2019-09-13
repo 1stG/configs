@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.6](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.10.5...@1stg/eslint-config@0.10.6) (2019-09-13)
+
+
+### Bug Fixes
+
+* **eslint:** match deeper and deeper test files! ([3053871](https://github.com/1stG/configs/commit/3053871))
+
+
+
+
+
 ## [0.10.5](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.10.4...@1stg/eslint-config@0.10.5) (2019-09-13)
 
 
