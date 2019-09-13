@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.3](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.10.2...@1stg/eslint-config@0.10.3) (2019-09-13)
+
+
+### Bug Fixes
+
+* **eslint:** statSync also breaks if packages does not exist ([0f7a37f](https://github.com/1stG/configs/commit/0f7a37f))
+
+
+
+
+
 ## [0.10.2](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.10.1...@1stg/eslint-config@0.10.2) (2019-09-13)
 
 
