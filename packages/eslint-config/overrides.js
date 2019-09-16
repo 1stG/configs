@@ -67,10 +67,12 @@ const resolveSettings = {
       '.tsx',
       '.d.ts',
       '.vue',
+      '.mjs',
       '.js',
       '.jsx',
       '.json',
       '.node',
+      '.mdx',
     ],
   },
 }

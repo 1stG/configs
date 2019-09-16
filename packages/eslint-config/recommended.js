@@ -1,3 +1,6 @@
+const { overrides } = require('./overrides')
+
 module.exports = {
-  extends: ['@1stg', '@1stg/overrides'],
+  extends: ['@1stg'],
+  overrides,
 }

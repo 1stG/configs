@@ -1,9 +1,7 @@
-const { overrides } = require('@1stg/eslint-config/overrides')
 const { allowModules } = require('@1stg/eslint-config/_util')
 
 module.exports = {
-  extends: '@1stg',
-  overrides,
+  extends: '@1stg/eslint-config/recommended',
   settings: {
     node: {
       allowModules: allowModules.concat('tslint', 'typescript'),
