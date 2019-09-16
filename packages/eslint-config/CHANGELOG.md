@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.10.6...@1stg/eslint-config@0.11.0) (2019-09-16)
+
+
+### Features
+
+* **eslint:** bump eslint version, use overrides in npm pkg ([8e02136](https://github.com/1stG/configs/commit/8e02136))
+
+
+
+
+
 ## [0.10.6](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.10.5...@1stg/eslint-config@0.10.6) (2019-09-13)
 
 
