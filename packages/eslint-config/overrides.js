@@ -280,25 +280,9 @@ exports.vue = {
   },
 }
 
-exports.md = {
-  files: '*.md',
-  extends: ['plugin:mdx/recommended'],
-  rules: {
-    'prettier/prettier': [
-      2,
-      {
-        parser: 'markdown',
-      },
-    ],
-  },
-}
-
 exports.mdx = Object.assign({}, exports.react, {
-  files: '*.mdx',
-  extends: exports.react.extends.concat([
-    'plugin:mdx/recommended',
-    'plugin:mdx/overrides',
-  ]),
+  files: '*.{md,mdx}',
+  extends: exports.react.extends.concat(['plugin:mdx/recommended']),
   settings: Object.assign({}, exports.react.settings, resolveSettings),
   rules: {
     'node/no-unsupported-features/es-syntax': 0,
@@ -326,7 +310,6 @@ exports.overrides = exports.ts
     exports.reactHooks,
     exports.reactTs,
     exports.vue,
-    exports.md,
     exports.mdx,
     exports.jest,
     exports.test,

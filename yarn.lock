@@ -4657,10 +4657,10 @@ eslint-plugin-jest@^22.17.0:
   dependencies:
     "@typescript-eslint/experimental-utils" "^1.13.0"
 
-eslint-plugin-mdx@^1.4.6:
-  version "1.4.6"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-mdx/-/eslint-plugin-mdx-1.4.6.tgz#c68d5308faa267ddc32f593600c9ff950c86e4f5"
-  integrity sha512-pqeALniX92Fyxq+wIXsZ2Z+KCZIigEmWjR6huXvIHwDkaPIxryOg5fqsqYpQ4IGDrqrkRUJnnWQBaiWK7Jdzgg==
+eslint-plugin-mdx@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-mdx/-/eslint-plugin-mdx-1.5.0.tgz#aee249a01e1f86c2e6d1f365fde04c0a21120154"
+  integrity sha512-BiNhdW6HUprzixfxmBYyjH0FSvi6EfI7ZYwqvR9i9aQM4yUFdu2C83ifPTWbH4xDFU1OQHF0xeW4eg/K+SjdVA==
   dependencies:
     cosmiconfig "^5.2.1"
     eslint-mdx "^1.4.5"
