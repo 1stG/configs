@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.1](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.11.0...@1stg/eslint-config@0.11.1) (2019-09-16)
+
+
+### Bug Fixes
+
+* **deps:** upgrade eslint-plugin-mdx, use recommended config directly ([6c54a92](https://github.com/1stG/configs/commit/6c54a92))
+
+
+
+
+
 # [0.11.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.10.6...@1stg/eslint-config@0.11.0) (2019-09-16)
 
 
