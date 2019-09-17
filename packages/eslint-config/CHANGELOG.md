@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.11.1...@1stg/eslint-config@0.12.0) (2019-09-17)
+
+
+### Features
+
+* **eslint-config:** support angular/webpack out of box, more rules ([657eb68](https://github.com/1stG/configs/commit/657eb68))
+
+
+
+
+
 ## [0.11.1](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.11.0...@1stg/eslint-config@0.11.1) (2019-09-16)
 
 
