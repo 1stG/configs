@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.2](https://github.com/1stG/configs/compare/@1stg/stylelint-config@0.6.1...@1stg/stylelint-config@0.6.2) (2019-09-17)
+
+
+### Bug Fixes
+
+* **stylelint:** bump (peer) dependencies ([f25d458](https://github.com/1stG/configs/commit/f25d458))
+
+
+
+
+
 ## [0.6.1](https://github.com/1stG/configs/compare/@1stg/stylelint-config@0.6.0...@1stg/stylelint-config@0.6.1) (2019-09-13)
 
 
