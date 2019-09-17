@@ -14,6 +14,17 @@ module.exports = {
   settings: {
     node: {
       allowModules,
+      tryExtensions: [
+        '.ts',
+        '.tsx',
+        '.vue',
+        '.mjs',
+        '.js',
+        '.jsx',
+        '.json',
+        '.node',
+        '.mdx',
+      ],
     },
   },
   rules: {

@@ -48,7 +48,7 @@ const obj: Record<string, string | undefined> = {}
 export default class Test extends Basic implements X {
   path: typeof path
 
-  m = 0
+  readonly m = 0
 
   name: {
     key: string

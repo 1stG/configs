@@ -2,6 +2,8 @@ language: node_js
 
 node_js: --lts
 
+env: EFF_NO_LINK_RULES=true
+
 cache:
   - yarn
   - directories:

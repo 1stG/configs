@@ -50,6 +50,14 @@ try {
   project = PROJECT_TSCONFIG || require.resolve('@1stg/tsconfig')
 } catch (e) {}
 
+let isNgAvailable
+
+try {
+  // eslint-disable-next-line node/no-missing-require
+  require.resolve('@angular/core')
+  isNgAvailable = true
+} catch (e) {}
+
 const resolveSettings = {
   'import/resolver': {
     ts: {
@@ -61,7 +69,10 @@ const resolveSettings = {
     },
   },
   node: {
-    resolvePaths: [path.resolve('node_modules/@types')],
+    resolvePaths: [
+      path.resolve('node_modules/@types'),
+      isNgAvailable && path.resolve('src/app'),
+    ].filter(identity),
     tryExtensions: [
       '.ts',
       '.tsx',
@@ -76,6 +87,14 @@ const resolveSettings = {
     ],
   },
 }
+
+let isWebpackAvailable
+
+try {
+  // eslint-disable-next-line node/no-missing-require
+  require.resolve('webpack')
+  isWebpackAvailable = true
+} catch (e) {}
 
 exports.ts = [
   {
@@ -95,6 +114,21 @@ exports.ts = [
         2,
         {
           default: 'array-simple',
+        },
+      ],
+      '@typescript-eslint/camelcase': [
+        2,
+        {
+          properties: 'never',
+          ignoreDestructuring: true,
+          allow: isWebpackAvailable && [
+            '__non_webpack_require__',
+            '__webpack_chunk_load__',
+            '__webpack_hash__',
+            '__webpack_modules__',
+            '__webpack_public_path__',
+            '__webpack_require__',
+          ],
         },
       ],
       '@typescript-eslint/consistent-type-definitions': [2, 'interface'],
@@ -160,6 +194,7 @@ exports.ts = [
       'no-useless-constructor': 0,
       'node/no-unsupported-features/es-syntax': 0,
       // @typescript-eslint/no-floating-promises has already handled this case
+      'promise/always-return': 0,
       'promise/catch-or-return': 0,
     },
   },
@@ -170,17 +205,55 @@ exports.ts = [
       project,
     },
     extends: ['plugin:@typescript-eslint/recommended-requiring-type-checking'],
+    rules: Object.assign(
+      {
+        '@typescript-eslint/no-floating-promises': [
+          2,
+          {
+            ignoreVoid: true,
+          },
+        ],
+        '@typescript-eslint/no-magic-numbers': [
+          2,
+          {
+            enforceConst: true,
+            ignoreArrayIndexes: true,
+            ignoreEnums: true,
+            ignoreNumericLiteralTypes: true,
+            ignoreReadonlyClassProperties: true,
+          },
+        ],
+        '@typescript-eslint/no-unnecessary-condition': [
+          2,
+          {
+            ignoreRhs: true,
+          },
+        ],
+        '@typescript-eslint/no-unnecessary-qualifier': 2,
+        '@typescript-eslint/no-unnecessary-type-arguments': 2,
+        '@typescript-eslint/prefer-readonly': 2,
+        '@typescript-eslint/restrict-plus-operands': 2,
+        '@typescript-eslint/strict-boolean-expressions': [
+          2,
+          {
+            allowNullable: true,
+            ignoreRhs: true,
+          },
+        ],
+        'no-constant-condition': 0,
+      },
+      isNgAvailable && {
+        '@typescript-eslint/member-naming': 0,
+      },
+    ),
+  },
+  isNgAvailable && {
+    files: ['*.component.ts', '*.module.ts', 'component.ts', 'module.ts'],
     rules: {
-      '@typescript-eslint/no-floating-promises': 2,
-      '@typescript-eslint/no-misused-promises': 2,
-      '@typescript-eslint/no-unnecessary-qualifier': 2,
-      '@typescript-eslint/no-unnecessary-type-arguments': 2,
-      '@typescript-eslint/prefer-readonly': 2,
-      '@typescript-eslint/restrict-plus-operands': 2,
-      '@typescript-eslint/unbound-method': 2,
+      '@typescript-eslint/no-extraneous-class': 0,
     },
   },
-]
+].filter(identity)
 
 exports.dTs = {
   files: '*.d.ts',
