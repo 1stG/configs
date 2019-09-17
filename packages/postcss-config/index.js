@@ -1,20 +1,21 @@
 const { NODE_ENV = 'development' } = process.env
 
-module.exports = ({ env = NODE_ENV } = {}) => {
+module.exports = (options = {}) => {
   const config = {
     plugins: [
-      require('postcss-preset-env'),
-      require('postcss-import'),
-      require('postcss-normalize'),
+      require('postcss-preset-env', options.presetEnv),
+      require('postcss-import', options.import),
+      require('postcss-normalize', options.normalize),
+      require('postcss-url', options.url),
       require('autoprefixer'),
     ],
   }
 
-  if (env === 'production') {
+  if ((options.env || NODE_ENV) === 'production') {
     config.plugins.push(
       require('cssnano', {
         preset: [
-          'default',
+          options.advanced ? 'advanced' : 'default',
           {
             discardComments: {
               removeAll: true,
