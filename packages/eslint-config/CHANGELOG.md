@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.1](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.0...@1stg/eslint-config@0.12.1) (2019-09-17)
+
+
+### Bug Fixes
+
+* **eslint-config:** remove @typescript-eslint/strict-boolean-expressions rule ([3b24b4e](https://github.com/1stG/configs/commit/3b24b4e))
+
+
+
+
+
 # [0.12.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.11.1...@1stg/eslint-config@0.12.0) (2019-09-17)
 
 
