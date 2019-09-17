@@ -233,13 +233,6 @@ exports.ts = [
         '@typescript-eslint/no-unnecessary-type-arguments': 2,
         '@typescript-eslint/prefer-readonly': 2,
         '@typescript-eslint/restrict-plus-operands': 2,
-        '@typescript-eslint/strict-boolean-expressions': [
-          2,
-          {
-            allowNullable: true,
-            ignoreRhs: true,
-          },
-        ],
         'no-constant-condition': 0,
       },
       isNgAvailable && {
