@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/1stG/configs/compare/@1stg/lint-staged@0.6.1...@1stg/lint-staged@0.7.0) (2019-09-18)
+
+
+### Features
+
+* **lint-staged:** add imagemin support ([851afd5](https://github.com/1stG/configs/commit/851afd5))
+
+
+
+
+
 ## 0.6.1 (2019-09-13)
 
 
