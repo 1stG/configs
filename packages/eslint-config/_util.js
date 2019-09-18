@@ -50,4 +50,21 @@ exports.webpackSpecVars = [
   'DEBUG',
 ]
 
-exports.magicNumbers = [-1, 0, 1, 2, 7, 12, 24, 60, 500, 1000]
+exports.magicNumbers = [
+  -1,
+  0,
+  1,
+  2,
+  7,
+  12,
+  15,
+  24,
+  30,
+  50,
+  60,
+  100,
+  365,
+  500,
+  1000,
+  3600,
+]
