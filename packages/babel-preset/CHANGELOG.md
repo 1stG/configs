@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.6.2...@1stg/babel-preset@0.7.0) (2019-09-18)
+
+
+### Features
+
+* **babel-preset:** prefer fast-async over generator ([ef2d2f9](https://github.com/1stG/configs/commit/ef2d2f9))
+
+
+
+
+
 ## [0.6.2](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.6.1...@1stg/babel-preset@0.6.2) (2019-09-13)
 
 
