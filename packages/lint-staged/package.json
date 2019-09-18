@@ -14,9 +14,10 @@
     "prettier": "^1.18.2"
   },
   "dependencies": {
+    "@prettier/plugin-pug": "^1.0.3",
     "imagemin": "^7.0.0",
     "imagemin-gifsicle": "^6.0.1",
-    "imagemin-jpegtran": "",
+    "imagemin-jpegtran": "^6.0.0",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-optipng": "^7.0.0",
     "imagemin-pngquant": "^8.0.0",

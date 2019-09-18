@@ -62,6 +62,5 @@ const minifyFile = filename =>
 
 Promise.all(process.argv.slice(2).map(minifyFile)).catch(e => {
   console.error(e)
-  // eslint-disable-next-line no-process-exit
-  process.exit(1)
+  process.exitCode = 1
 })
