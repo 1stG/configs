@@ -1,5 +1,5 @@
 const fs = require('fs')
-const path = require('path')
+const { resolve } = require('path')
 
 const {
   identity,
@@ -8,11 +8,12 @@ const {
   isSrcDirAvailable,
   isSrcAppDirAvailable,
   isWebpackAvailable,
+  magicNumbers,
   webpackSpecVars,
 } = require('./_util')
 
-const BABEL_CONFIG = path.resolve('babel.config.js')
-const BABEL_RC_CONFIG = path.resolve('.babelrc.js')
+const BABEL_CONFIG = resolve('babel.config.js')
+const BABEL_RC_CONFIG = resolve('.babelrc.js')
 
 let configFile
 
@@ -43,8 +44,8 @@ exports.js = {
   },
 }
 
-const BASE_TSCONFIG = path.resolve('tsconfig.base.json')
-const DEFAULT_TSCONFIG = path.resolve('tsconfig.json')
+const BASE_TSCONFIG = resolve('tsconfig.base.json')
+const DEFAULT_TSCONFIG = resolve('tsconfig.json')
 
 const PROJECT_TSCONFIG = fs.existsSync(BASE_TSCONFIG)
   ? BASE_TSCONFIG
@@ -72,9 +73,9 @@ const resolveSettings = {
   },
   node: {
     resolvePaths: [
-      path.resolve('node_modules/@types'),
-      isSrcDirAvailable && path.resolve('src/app'),
-      isNgAvailable && isSrcAppDirAvailable && path.resolve('src/app'),
+      resolve('node_modules/@types'),
+      isSrcDirAvailable && resolve('src/app'),
+      isNgAvailable && isSrcAppDirAvailable && resolve('src/app'),
     ].filter(identity),
     tryExtensions: [
       '.ts',
@@ -204,6 +205,7 @@ exports.ts = [
         2,
         {
           enforceConst: true,
+          ignore: magicNumbers,
           ignoreArrayIndexes: true,
           ignoreEnums: true,
           ignoreNumericLiteralTypes: true,
@@ -221,6 +223,7 @@ exports.ts = [
       '@typescript-eslint/prefer-readonly': 2,
       '@typescript-eslint/restrict-plus-operands': 2,
       'no-constant-condition': 0,
+      'no-magic-numbers': 0,
     },
   },
 ]
@@ -240,7 +243,7 @@ try {
   tslint = true
 } catch (e) {}
 
-const TSLINT_CONFIG = path.resolve('tslint.json')
+const TSLINT_CONFIG = resolve('tslint.json')
 
 let lintFile
 

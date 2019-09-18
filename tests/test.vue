@@ -21,6 +21,7 @@ export default Vue.extend({
     },
     async reverse() {
       await new Promise(resolve => {
+        // eslint-disable-next-line no-magic-numbers
         setTimeout(resolve, 500)
       })
       this.msg = this.msg

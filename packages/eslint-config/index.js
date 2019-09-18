@@ -6,6 +6,7 @@ const {
   allowModules,
   isSrcDirAvailable,
   isWebpackAvailable,
+  magicNumbers,
   webpackSpecVars,
 } = require('./_util')
 
@@ -60,6 +61,14 @@ module.exports = {
       },
     ],
     'no-empty-function': 2,
+    'no-magic-numbers': [
+      2,
+      {
+        enforceConst: true,
+        ignore: magicNumbers,
+        ignoreArrayIndexes: true,
+      },
+    ],
     'node/no-unpublished-import': 0,
     'node/no-unpublished-require': 0,
     'prefer-const': 2,
