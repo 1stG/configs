@@ -358,7 +358,7 @@ exports.test = {
 }
 
 exports.overrides = exports.ts
-  .concat([
+  .concat(
     exports.js,
     exports.dTs,
     tslint && lintFile && exports.tslint,
@@ -370,5 +370,5 @@ exports.overrides = exports.ts
     exports.mdx,
     exports.jest,
     exports.test,
-  ])
+  )
   .filter(identity)

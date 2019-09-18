@@ -1,27 +1,10 @@
-const rules = {
-  'plugin/no-low-performance-animation-properties': true,
-  'plugin/no-unsupported-browser-features': true,
-  'selector-pseudo-element-colon-notation': 'single',
-}
-
-let angular = false
+let isAngularAvailable
 
 try {
-  // eslint-disable-next-line node/no-missing-require
+  // eslint-disable-next-line node/no-extraneous-require
   require.resolve('@angular/core')
-  angular = true
+  isAngularAvailable = true
 } catch (e) {}
-
-if (angular) {
-  Object.assign(rules, {
-    'selector-pseudo-element-no-unknown': [
-      true,
-      {
-        ignorePseudoElements: ['ng-deep'],
-      },
-    ],
-  })
-}
 
 module.exports = {
   extends: ['stylelint-config-standard'],
@@ -29,5 +12,19 @@ module.exports = {
     'stylelint-high-performance-animation',
     'stylelint-no-unsupported-browser-features',
   ],
-  rules,
+  rules: Object.assign(
+    {
+      'plugin/no-low-performance-animation-properties': true,
+      'plugin/no-unsupported-browser-features': true,
+      'selector-pseudo-element-colon-notation': 'single',
+    },
+    isAngularAvailable && {
+      'selector-pseudo-element-no-unknown': [
+        true,
+        {
+          ignorePseudoElements: ['ng-deep'],
+        },
+      ],
+    },
+  ),
 }

@@ -1,9 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
-exports.identity = function(_) {
-  return _
-}
+exports.identity = _ => _
 
 exports.isMonorepo =
   fs.existsSync(path.resolve('lerna.json')) ||
@@ -29,13 +27,13 @@ try {
 } catch (e) {}
 
 try {
-  // eslint-disable-next-line node/no-missing-require
+  // eslint-disable-next-line node/no-extraneous-require
   require.resolve('@angular/core')
   exports.isNgAvailable = true
 } catch (e) {}
 
 try {
-  // eslint-disable-next-line node/no-missing-require
+  // eslint-disable-next-line node/no-extraneous-require
   require.resolve('webpack')
   exports.isWebpackAvailable = true
 } catch (e) {}
