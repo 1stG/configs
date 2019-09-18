@@ -1,7 +1,15 @@
 const fs = require('fs')
 const path = require('path')
 
-const { identity, isMonorepo } = require('./_util')
+const {
+  identity,
+  isMonorepo,
+  isNgAvailable,
+  isSrcDirAvailable,
+  isSrcAppDirAvailable,
+  isWebpackAvailable,
+  webpackSpecVars,
+} = require('./_util')
 
 const BABEL_CONFIG = path.resolve('babel.config.js')
 const BABEL_RC_CONFIG = path.resolve('.babelrc.js')
@@ -50,14 +58,6 @@ try {
   project = PROJECT_TSCONFIG || require.resolve('@1stg/tsconfig')
 } catch (e) {}
 
-let isNgAvailable
-
-try {
-  // eslint-disable-next-line node/no-missing-require
-  require.resolve('@angular/core')
-  isNgAvailable = true
-} catch (e) {}
-
 const resolveSettings = {
   'import/resolver': {
     ts: {
@@ -71,7 +71,8 @@ const resolveSettings = {
   node: {
     resolvePaths: [
       path.resolve('node_modules/@types'),
-      isNgAvailable && path.resolve('src/app'),
+      isSrcDirAvailable && path.resolve('src/app'),
+      isNgAvailable && isSrcAppDirAvailable && path.resolve('src/app'),
     ].filter(identity),
     tryExtensions: [
       '.ts',
@@ -87,14 +88,6 @@ const resolveSettings = {
     ],
   },
 }
-
-let isWebpackAvailable
-
-try {
-  // eslint-disable-next-line node/no-missing-require
-  require.resolve('webpack')
-  isWebpackAvailable = true
-} catch (e) {}
 
 exports.ts = [
   {
@@ -121,14 +114,7 @@ exports.ts = [
         {
           properties: 'never',
           ignoreDestructuring: true,
-          allow: isWebpackAvailable && [
-            '__non_webpack_require__',
-            '__webpack_chunk_load__',
-            '__webpack_hash__',
-            '__webpack_modules__',
-            '__webpack_public_path__',
-            '__webpack_require__',
-          ],
+          allow: isWebpackAvailable && webpackSpecVars,
         },
       ],
       '@typescript-eslint/consistent-type-definitions': [2, 'interface'],
@@ -205,48 +191,37 @@ exports.ts = [
       project,
     },
     extends: ['plugin:@typescript-eslint/recommended-requiring-type-checking'],
-    rules: Object.assign(
-      {
-        '@typescript-eslint/no-floating-promises': [
-          2,
-          {
-            ignoreVoid: true,
-          },
-        ],
-        '@typescript-eslint/no-magic-numbers': [
-          2,
-          {
-            enforceConst: true,
-            ignoreArrayIndexes: true,
-            ignoreEnums: true,
-            ignoreNumericLiteralTypes: true,
-            ignoreReadonlyClassProperties: true,
-          },
-        ],
-        '@typescript-eslint/no-unnecessary-condition': [
-          2,
-          {
-            ignoreRhs: true,
-          },
-        ],
-        '@typescript-eslint/no-unnecessary-qualifier': 2,
-        '@typescript-eslint/no-unnecessary-type-arguments': 2,
-        '@typescript-eslint/prefer-readonly': 2,
-        '@typescript-eslint/restrict-plus-operands': 2,
-        'no-constant-condition': 0,
-      },
-      isNgAvailable && {
-        '@typescript-eslint/member-naming': 0,
-      },
-    ),
-  },
-  isNgAvailable && {
-    files: ['*.component.ts', '*.module.ts', 'component.ts', 'module.ts'],
     rules: {
-      '@typescript-eslint/no-extraneous-class': 0,
+      '@typescript-eslint/no-floating-promises': [
+        2,
+        {
+          ignoreVoid: true,
+        },
+      ],
+      '@typescript-eslint/no-magic-numbers': [
+        2,
+        {
+          enforceConst: true,
+          ignoreArrayIndexes: true,
+          ignoreEnums: true,
+          ignoreNumericLiteralTypes: true,
+          ignoreReadonlyClassProperties: true,
+        },
+      ],
+      '@typescript-eslint/no-unnecessary-condition': [
+        2,
+        {
+          ignoreRhs: true,
+        },
+      ],
+      '@typescript-eslint/no-unnecessary-qualifier': 2,
+      '@typescript-eslint/no-unnecessary-type-arguments': 2,
+      '@typescript-eslint/prefer-readonly': 2,
+      '@typescript-eslint/restrict-plus-operands': 2,
+      'no-constant-condition': 0,
     },
   },
-].filter(identity)
+]
 
 exports.dTs = {
   files: '*.d.ts',
@@ -288,6 +263,21 @@ exports.tslint = {
     'import/order': 0,
   },
 }
+
+exports.angular = [
+  {
+    files: '*.ts',
+    rules: {
+      '@typescript-eslint/member-naming': 0,
+    },
+  },
+  {
+    files: ['*.component.ts', '*.module.ts', 'component.ts', 'module.ts'],
+    rules: {
+      '@typescript-eslint/no-extraneous-class': 0,
+    },
+  },
+]
 
 exports.react = {
   files: '*.{js,jsx,tsx}',
@@ -375,6 +365,7 @@ exports.overrides = exports.ts
     exports.react,
     exports.reactHooks,
     exports.reactTs,
+    isNgAvailable && exports.angular,
     exports.vue,
     exports.mdx,
     exports.jest,

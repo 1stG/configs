@@ -1,4 +1,13 @@
-const { allowModules } = require('./_util')
+const path = require('path')
+
+const { getGlobals } = require('eslint-plugin-mdx')
+
+const {
+  allowModules,
+  isSrcDirAvailable,
+  isWebpackAvailable,
+  webpackSpecVars,
+} = require('./_util')
 
 module.exports = {
   extends: [
@@ -14,6 +23,7 @@ module.exports = {
   settings: {
     node: {
       allowModules,
+      resolvePaths: isSrcDirAvailable && [path.resolve('src')],
       tryExtensions: [
         '.ts',
         '.tsx',
@@ -27,7 +37,16 @@ module.exports = {
       ],
     },
   },
+  globals: isWebpackAvailable && getGlobals(webpackSpecVars),
   rules: {
+    camelcase: [
+      2,
+      {
+        properties: 'never',
+        ignoreDestructuring: true,
+        allow: isWebpackAvailable && webpackSpecVars,
+      },
+    ],
     'import/order': [
       2,
       {
