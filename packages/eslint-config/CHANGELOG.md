@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.5](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.4...@1stg/eslint-config@0.12.5) (2019-09-18)
+
+
+### Bug Fixes
+
+* **eslint-config:** add common ignorable magic numbers ([5f8f2e1](https://github.com/1stG/configs/commit/5f8f2e1))
+
+
+
+
+
 ## [0.12.4](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.3...@1stg/eslint-config@0.12.4) (2019-09-18)
 
 
