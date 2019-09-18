@@ -3,11 +3,17 @@ const { declare } = require('@babel/helper-plugin-utils')
 module.exports = declare((api, opts) => {
   api.assertVersion(7)
 
-  const { modules = false, react, typescript, vue } = opts
+  const {
+    generator,
+    modules = false,
+    react,
+    typescript,
+    vue,
+    useBuiltIns = 'usage',
+  } = opts
 
   const proposalTypeScriptPreset = require('babel-preset-proposal-typescript')
 
-  const plugins = []
   const presets = [
     [
       proposalTypeScriptPreset,
@@ -19,9 +25,31 @@ module.exports = declare((api, opts) => {
       require('@babel/preset-env'),
       {
         modules,
+        exclude: generator
+          ? undefined
+          : [
+              '@babel/transform-async-to-generator',
+              '@babel/transform-regenerator',
+            ],
+        corejs: {
+          version: 3,
+          proposals: true,
+        },
+        useBuiltIns,
       },
     ],
   ]
+
+  const plugins = []
+
+  if (!generator) {
+    plugins.push([
+      'module:fast-async',
+      {
+        useRuntimeModule: true,
+      },
+    ])
+  }
 
   if (typescript) {
     presets.push(require('@babel/preset-typescript'))
