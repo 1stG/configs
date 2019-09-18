@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.4](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.3...@1stg/eslint-config@0.12.4) (2019-09-18)
+
+
+### Bug Fixes
+
+* **eslint-config:** refactor vue config based on ts config without types ([e5fc2a1](https://github.com/1stG/configs/commit/e5fc2a1))
+
+
+
+
+
 ## [0.12.3](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.2...@1stg/eslint-config@0.12.3) (2019-09-18)
 
 
