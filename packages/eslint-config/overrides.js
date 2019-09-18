@@ -52,20 +52,22 @@ const PROJECT_TSCONFIG = fs.existsSync(BASE_TSCONFIG)
   ? DEFAULT_TSCONFIG
   : undefined
 
+const TS_CONFIGS = [
+  PROJECT_TSCONFIG,
+  isMonorepo && 'packages/**/tsconfig.json',
+].filter(identity)
+
 let project
 
 try {
-  project = PROJECT_TSCONFIG || require.resolve('@1stg/tsconfig')
+  project = TS_CONFIGS.length ? TS_CONFIGS : require.resolve('@1stg/tsconfig')
 } catch (e) {}
 
 const resolveSettings = {
   'import/resolver': {
     ts: {
       alwaysTryTypes: true,
-      directory: [
-        PROJECT_TSCONFIG,
-        isMonorepo && 'packages/**/tsconfig.json',
-      ].filter(identity),
+      directory: TS_CONFIGS,
     },
   },
   node: {
@@ -89,101 +91,101 @@ const resolveSettings = {
   },
 }
 
-exports.ts = [
-  {
-    files: '*.{ts,tsx}',
-    parser: '@typescript-eslint/parser',
-    extends: [
-      'plugin:@typescript-eslint/eslint-recommended',
-      'plugin:@typescript-eslint/recommended',
-      'plugin:import/typescript',
-      'prettier/@typescript-eslint',
+const tsBase = {
+  files: '*.{ts,tsx}',
+  extends: [
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:import/typescript',
+    'prettier/@typescript-eslint',
+  ],
+  settings: resolveSettings,
+  rules: {
+    '@typescript-eslint/adjacent-overload-signatures': 2,
+    '@typescript-eslint/array-type': [
+      2,
+      {
+        default: 'array-simple',
+      },
     ],
-    plugins: ['@typescript-eslint'],
-    settings: resolveSettings,
-    rules: {
-      '@typescript-eslint/adjacent-overload-signatures': 2,
-      '@typescript-eslint/array-type': [
-        2,
-        {
-          default: 'array-simple',
+    '@typescript-eslint/camelcase': [
+      2,
+      {
+        properties: 'never',
+        ignoreDestructuring: true,
+        allow: isWebpackAvailable && webpackSpecVars,
+      },
+    ],
+    '@typescript-eslint/consistent-type-definitions': [2, 'interface'],
+    '@typescript-eslint/explicit-function-return-type': 0,
+    '@typescript-eslint/explicit-member-accessibility': [
+      2,
+      {
+        accessibility: 'no-public',
+        overrides: {
+          parameterProperties: 'off',
         },
-      ],
-      '@typescript-eslint/camelcase': [
-        2,
-        {
-          properties: 'never',
-          ignoreDestructuring: true,
-          allow: isWebpackAvailable && webpackSpecVars,
-        },
-      ],
-      '@typescript-eslint/consistent-type-definitions': [2, 'interface'],
-      '@typescript-eslint/explicit-function-return-type': 0,
-      '@typescript-eslint/explicit-member-accessibility': [
-        2,
-        {
-          accessibility: 'no-public',
-          overrides: {
-            parameterProperties: 'off',
-          },
-        },
-      ],
-      '@typescript-eslint/member-naming': [
-        2,
-        {
-          private: '^_',
-        },
-      ],
-      '@typescript-eslint/member-ordering': 2,
-      '@typescript-eslint/no-empty-function': 2,
-      '@typescript-eslint/no-extraneous-class': 2,
-      '@typescript-eslint/no-for-in-array': 2,
-      '@typescript-eslint/no-non-null-assertion': 0,
-      '@typescript-eslint/no-parameter-properties': 0,
-      '@typescript-eslint/no-require-imports': 2,
-      '@typescript-eslint/no-this-alias': [
-        2,
-        {
-          allowDestructuring: true,
-          allowedNames: ['self'],
-        },
-      ],
-      '@typescript-eslint/no-type-alias': [
-        2,
-        {
-          allowAliases: 'in-unions-and-intersections',
-          allowCallbacks: 'always',
-          allowLiterals: 'in-unions-and-intersections',
-          allowMappedTypes: 'always',
-        },
-      ],
-      '@typescript-eslint/no-useless-constructor': 2,
-      '@typescript-eslint/no-unused-vars': [
-        2,
-        {
-          argsIgnorePattern: '^_',
-        },
-      ],
-      '@typescript-eslint/prefer-for-of': 2,
-      '@typescript-eslint/prefer-function-type': 2,
-      '@typescript-eslint/triple-slash-reference': [
-        2,
-        { types: 'prefer-import' },
-      ],
-      '@typescript-eslint/unified-signatures': 2,
-      'import/default': 0,
-      'import/named': 0,
-      'import/no-duplicates': 2,
-      'import/no-named-as-default': 0,
-      'import/no-named-as-default-member': 0,
-      'no-empty-function': 0,
-      'no-useless-constructor': 0,
-      'node/no-unsupported-features/es-syntax': 0,
-      // @typescript-eslint/no-floating-promises has already handled this case
-      'promise/always-return': 0,
-      'promise/catch-or-return': 0,
-    },
+      },
+    ],
+    '@typescript-eslint/member-naming': [
+      2,
+      {
+        private: '^_',
+      },
+    ],
+    '@typescript-eslint/member-ordering': 2,
+    '@typescript-eslint/no-empty-function': 2,
+    '@typescript-eslint/no-extraneous-class': 2,
+    '@typescript-eslint/no-for-in-array': 2,
+    '@typescript-eslint/no-non-null-assertion': 0,
+    '@typescript-eslint/no-parameter-properties': 0,
+    '@typescript-eslint/no-require-imports': 2,
+    '@typescript-eslint/no-this-alias': [
+      2,
+      {
+        allowDestructuring: true,
+        allowedNames: ['self'],
+      },
+    ],
+    '@typescript-eslint/no-type-alias': [
+      2,
+      {
+        allowAliases: 'in-unions-and-intersections',
+        allowCallbacks: 'always',
+        allowLiterals: 'in-unions-and-intersections',
+        allowMappedTypes: 'always',
+      },
+    ],
+    '@typescript-eslint/no-useless-constructor': 2,
+    '@typescript-eslint/no-unused-vars': [
+      2,
+      {
+        argsIgnorePattern: '^_',
+      },
+    ],
+    '@typescript-eslint/prefer-for-of': 2,
+    '@typescript-eslint/prefer-function-type': 2,
+    '@typescript-eslint/triple-slash-reference': [
+      2,
+      { types: 'prefer-import' },
+    ],
+    '@typescript-eslint/unified-signatures': 2,
+    'import/default': 0,
+    'import/named': 0,
+    'import/no-duplicates': 2,
+    'import/no-named-as-default': 0,
+    'import/no-named-as-default-member': 0,
+    'no-empty-function': 0,
+    'no-useless-constructor': 0,
+    'node/no-unsupported-features/es-syntax': 0,
+    // @typescript-eslint/no-floating-promises has already handled this case
+    'promise/always-return': 0,
+    'promise/catch-or-return': 0,
   },
+}
+
+exports.ts = [
+  tsBase,
   {
     files: '*.{ts,tsx}',
     excludedFiles: '*.d.ts',
@@ -312,29 +314,14 @@ exports.reactTs = {
   },
 }
 
-exports.vue = {
+exports.vue = Object.assign({}, tsBase, {
   files: ['*.vue'],
-  parser: 'vue-eslint-parser',
   parserOptions: {
     parser: '@typescript-eslint/parser',
     extraFileExtensions: ['.vue'],
   },
-  settings: resolveSettings,
-  extends: [
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:import/typescript',
-    'prettier/@typescript-eslint',
-    'plugin:vue/recommended',
-    'prettier/vue',
-  ],
-  plugins: ['@typescript-eslint', 'vue'],
-  rules: {
-    '@typescript-eslint/explicit-function-return-type': 0,
-    'node/no-unsupported-features/es-syntax': 0,
-    'promise/catch-or-return': 0,
-  },
-}
+  extends: tsBase.extends.concat('plugin:vue/recommended', 'prettier/vue'),
+})
 
 exports.mdx = Object.assign({}, exports.react, {
   files: '*.{md,mdx}',
