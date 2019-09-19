@@ -20,7 +20,6 @@
     "lint:style:scss": "stylelint tests/*.{scss,vue}",
     "lint": "run-p lint:**",
     "test": "jest",
-    "r": "packages/rollup-config/cli.js",
     "build": "rollup -c"
   },
   "devDependencies": {

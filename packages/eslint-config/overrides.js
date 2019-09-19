@@ -74,7 +74,7 @@ const resolveSettings = {
   node: {
     resolvePaths: [
       resolve('node_modules/@types'),
-      isSrcDirAvailable && resolve('src/app'),
+      isSrcDirAvailable && !isNgAvailable && resolve('src'),
       isNgAvailable && isSrcAppDirAvailable && resolve('src/app'),
     ].filter(identity),
     tryExtensions: [

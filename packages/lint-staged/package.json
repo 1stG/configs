@@ -8,6 +8,9 @@
   "engines": {
     "node": ">=8.0.0"
   },
+  "bin": {
+    "i": "imagemin.js"
+  },
   "peerDependencies": {
     "eslint": "^6.3.0",
     "lint-staged": "^9.2.5",
