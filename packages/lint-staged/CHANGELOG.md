@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.3](https://github.com/1stG/configs/compare/@1stg/lint-staged@0.7.2...@1stg/lint-staged@0.7.3) (2019-09-20)
+
+
+### Bug Fixes
+
+* **lint-staged:** only enable stylelint if it is available ([2ce6de3](https://github.com/1stG/configs/commit/2ce6de3))
+
+
+
+
+
 ## [0.7.2](https://github.com/1stG/configs/compare/@1stg/lint-staged@0.7.1...@1stg/lint-staged@0.7.2) (2019-09-19)
 
 
