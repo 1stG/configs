@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.8](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.7...@1stg/eslint-config@0.12.8) (2019-09-20)
+
+
+### Bug Fixes
+
+* **eslint-config:** only enable compat plugin if browserslist installed specifically ([6ce0240](https://github.com/1stG/configs/commit/6ce0240))
+
+
+
+
+
 ## [0.12.7](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.6...@1stg/eslint-config@0.12.7) (2019-09-19)
 
 
