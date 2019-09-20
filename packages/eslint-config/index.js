@@ -4,6 +4,8 @@ const { getGlobals } = require('eslint-plugin-mdx')
 
 const {
   allowModules,
+  identity,
+  isBrowserslistEnabled,
   isSrcDirAvailable,
   isWebpackAvailable,
   magicNumbers,
@@ -13,14 +15,14 @@ const {
 module.exports = {
   extends: [
     'eslint:recommended',
-    'plugin:compat/recommended',
+    isBrowserslistEnabled && 'plugin:compat/recommended',
     'plugin:import/recommended',
     'plugin:node/recommended',
     'plugin:promise/recommended',
     'standard',
     'plugin:prettier/recommended',
     'prettier/standard',
-  ],
+  ].filter(identity),
   settings: {
     node: {
       allowModules,
