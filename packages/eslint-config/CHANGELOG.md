@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.10](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.9...@1stg/eslint-config@0.12.10) (2019-09-21)
+
+
+### Bug Fixes
+
+* **eslint-config:** disable rule node/no-extraneous-require like node/no-extraneous-import for test(s) ([eb88521](https://github.com/1stG/configs/commit/eb88521))
+
+
+
+
+
 ## [0.12.9](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.8...@1stg/eslint-config@0.12.9) (2019-09-21)
 
 
