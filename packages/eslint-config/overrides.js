@@ -345,6 +345,7 @@ exports.test = {
   files: '**/{test,tests}/**/*.{js,jsx,mdx,ts,tsx,vue}',
   rules: {
     'node/no-extraneous-import': 0,
+    'node/no-extraneous-require': 0,
   },
 }
 
