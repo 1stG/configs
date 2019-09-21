@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.9.5 (2019-09-21)
+
+
+### Bug Fixes
+
+* **rollup-config:** regression of input and outputDir which should always be scoped ([f2fcc15](https://github.com/1stG/configs/commit/f2fcc15))
+
+
+
+
+
 ## [0.9.4](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.9.3...@1stg/rollup-config@0.9.4) (2019-09-13)
 
 
