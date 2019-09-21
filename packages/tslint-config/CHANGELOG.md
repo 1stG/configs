@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.3.3 (2019-09-21)
+
+
+### Bug Fixes
+
+* disable ban-ts-ignore, enable allow-empty-catch ([3bb2b34](https://github.com/1stG/configs/commit/3bb2b34))
+
+
+
+
+
 ## [0.3.2](https://github.com/1stG/configs/compare/@1stg/tslint-config@0.3.1...@1stg/tslint-config@0.3.2) (2019-09-13)
 
 
