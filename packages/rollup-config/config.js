@@ -65,35 +65,38 @@ const configBase = ({
   const pkgsPath = path.resolve(
     typeof monorepo === 'string' ? monorepo : 'packages',
   )
-  const srcPath = path.resolve('src')
 
   if (monorepo !== false) {
     monorepo = fs.existsSync(pkgsPath)
   }
 
-  if (!fs.existsSync(srcPath) && input == null) {
-    input = 'index'
-    outputDir = ''
-  }
-
-  input = tryExtensions(input || 'src/index')
-
-  if (outputDir && !outputDir.endsWith('/')) {
-    outputDir = outputDir + '/'
-  }
-
   const pkgs = monorepo ? fs.readdirSync(pkgsPath) : ['']
-  const isAbsolute = path.isAbsolute(input)
 
   const globals = getGlobals(umdGlobals)
 
   const configs = flatMap(pkgs, pkg => {
     const pkgPath = path.resolve(monorepo ? pkgsPath : '', pkg)
-    const pkgInput = tryExtensions(path.resolve(pkgPath, input))
+    const srcPath = path.resolve(pkgPath, 'src')
+
+    let pkgInput = input
+    let pkgOutputDir = outputDir
+
+    if (!fs.existsSync(srcPath) && pkgInput == null) {
+      pkgInput = 'index'
+      pkgOutputDir = ''
+    }
+
+    pkgInput = tryExtensions(path.resolve(pkgPath, pkgInput || 'src/index'))
+
+    const isAbsolute = path.isAbsolute(pkgInput)
+
+    if (pkgOutputDir && !pkgOutputDir.endsWith('/')) {
+      pkgOutputDir = pkgOutputDir + '/'
+    }
 
     if (
       !fs.existsSync(pkgInput) ||
-      (isAbsolute && !input.startsWith(pkgPath))
+      (isAbsolute && !pkgInput.startsWith(pkgPath))
     ) {
       return []
     }
@@ -131,7 +134,7 @@ const configBase = ({
         output: {
           file: path.resolve(
             pkgPath,
-            `${outputDir}${format}${prod ? '.min' : ''}.js`,
+            `${pkgOutputDir}${format}${prod ? '.min' : ''}.js`,
           ),
           format: isEsVersion ? 'esm' : format,
           name: pkgGlobals[pkg] || upperCamelCase(normalizePkg(pkg)),
