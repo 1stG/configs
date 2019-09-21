@@ -2,8 +2,10 @@
   "extends": ["tslint:recommended", "tslint-config-prettier"],
   "rulesDirectory": ["rxjs-tslint", "tslint-plugin-prettier"],
   "rules": {
+    "ban-ts-ignore": false,
     "interface-name": [true, "never-prefix"],
     "member-access": [true, "no-public"],
+    "no-empty": [true, "allow-empty-catch"],
     "no-non-null-assertion": false,
     "no-restricted-globals": [true, "name", "length", "event"],
     "object-literal-sort-keys": false,

@@ -109,6 +109,7 @@ const tsBase = {
         default: 'array-simple',
       },
     ],
+    '@typescript-eslint/ban-ts-ignore': 0,
     '@typescript-eslint/camelcase': [
       2,
       {
