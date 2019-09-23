@@ -1,6 +1,5 @@
 import fs from 'fs'
 import path from 'path'
-import Module from 'module'
 
 import builtins from 'builtin-modules'
 import { flatMap } from 'lodash'
@@ -37,11 +36,11 @@ const DEFAULT_FORMATS = ['cjs', 'es2015', 'esm']
 let isTsAvailable = false
 
 try {
-  require.resolve('typescript')
-  isTsAvailable = true
+  isTsAvailable = !!require.resolve('typescript')
 } catch (e) {}
 
-const EXTENSIONS = Object.keys(Module._extensions)
+// eslint-disable-next-line node/no-deprecated-api
+const EXTENSIONS = Object.keys(require.extensions)
 
 if (isTsAvailable) {
   EXTENSIONS.unshift('.ts', '.tsx')

@@ -29,7 +29,7 @@ program
     'Specify export mode (auto, default, named, none)',
   )
   .option(
-    '-ex, --externals <package>',
+    '-x, --externals <package>',
     'extra external packages, peerDependencies, and dependencies for node by default',
     parseArrayArgs,
   )
