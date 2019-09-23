@@ -6,6 +6,7 @@
     "interface-name": [true, "never-prefix"],
     "member-access": [true, "no-public"],
     "no-empty": [true, "allow-empty-catch"],
+    "no-reference": false,
     "no-non-null-assertion": false,
     "no-restricted-globals": [true, "name", "length", "event"],
     "object-literal-sort-keys": false,

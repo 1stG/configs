@@ -169,7 +169,11 @@ const tsBase = {
     '@typescript-eslint/prefer-function-type': 2,
     '@typescript-eslint/triple-slash-reference': [
       2,
-      { types: 'prefer-import' },
+      {
+        lib: 'never',
+        path: 'always',
+        types: 'prefer-import',
+      },
     ],
     '@typescript-eslint/unified-signatures': 2,
     'import/default': 0,
