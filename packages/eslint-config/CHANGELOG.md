@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.12](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.11...@1stg/eslint-config@0.12.12) (2019-09-23)
+
+
+### Bug Fixes
+
+* check package.json existence, add compose tsconfig ([47da218](https://github.com/1stG/configs/commit/47da218))
+
+
+
+
+
 ## [0.12.11](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.10...@1stg/eslint-config@0.12.11) (2019-09-23)
 
 

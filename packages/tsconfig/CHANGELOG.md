@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.3](https://github.com/1stG/configs/compare/@1stg/tsconfig@0.5.2...@1stg/tsconfig@0.5.3) (2019-09-23)
+
+
+### Bug Fixes
+
+* check package.json existence, add compose tsconfig ([47da218](https://github.com/1stG/configs/commit/47da218))
+
+
+
+
+
 ## 0.5.2 (2019-09-23)
 
 
