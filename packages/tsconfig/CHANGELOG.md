@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.5.2 (2019-09-23)
+
+
+### Bug Fixes
+
+* allow triple-slash for path, add more common tsconfigs ([69996d3](https://github.com/1stG/configs/commit/69996d3))
+
+
+
+
+
 ## [0.5.1](https://github.com/1stG/configs/compare/@1stg/tsconfig@0.5.0...@1stg/tsconfig@0.5.1) (2019-09-13)
 
 

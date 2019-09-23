@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.4](https://github.com/1stG/configs/compare/@1stg/tslint-config@0.3.3...@1stg/tslint-config@0.3.4) (2019-09-23)
+
+
+### Bug Fixes
+
+* allow triple-slash for path, add more common tsconfigs ([69996d3](https://github.com/1stG/configs/commit/69996d3))
+
+
+
+
+
 ## 0.3.3 (2019-09-21)
 
 
