@@ -16,9 +16,10 @@ try {
   const pkgs = path.resolve('packages')
   exports.allowModules =
     exports.isMonorepo &&
-    fs
-      .readdirSync(pkgs)
-      .map(pkg => require(path.resolve(pkgs, pkg, 'package.json')).name)
+    fs.readdirSync(pkgs).reduce((acc, pkg) => {
+      const pkgJson = path.resolve(pkgs, pkg, 'package.json')
+      return fs.existsSync(pkgJson) ? acc.concat(require(pkgJson).name) : acc
+    }, [])
 } catch (e) {}
 
 try {
