@@ -2198,10 +2198,10 @@
     once "^1.4.0"
     universal-user-agent "^4.0.0"
 
-"@pkgr/named-exports@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@pkgr/named-exports/-/named-exports-0.1.0.tgz#ea825262ec4c3919b63547137a55a194ede37b90"
-  integrity sha512-zFFLUY6LzHOo2+SKj7Ad+XtIPCUu5Ej/q57CLOPtB+DTBhcHzSOlibc3+9uB89kpIxRRAKETnzj6kJHqZ57jwA==
+"@pkgr/named-exports@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@pkgr/named-exports/-/named-exports-0.2.0.tgz#dc3098ade7b3581ae4da271e042abecd01b1e7a7"
+  integrity sha512-jB389/eTiVH22BebEsKbnXSMtX3pVrI3Jsunh1le/ienb63//ffWsNIbj6awKJQejswL9+1iNcYsqdu6DCgqnA==
 
 "@pkgr/umd-globals@^0.2.0":
   version "0.2.0"

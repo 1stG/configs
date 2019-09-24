@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@babel/preset-env": "^7.6.2",
-    "@pkgr/named-exports": "^0.1.0",
+    "@pkgr/named-exports": "^0.2.0",
     "@pkgr/umd-globals": "^0.2.0",
     "builtin-modules": "^3.1.0",
     "commander": "^3.0.1",
