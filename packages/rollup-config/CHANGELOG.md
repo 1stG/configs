@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.1](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.10.0...@1stg/rollup-config@0.10.1) (2019-09-24)
+
+
+### Bug Fixes
+
+* **rollup-config:** upgrade @pkgr/names-exports to 0.2.0 which supports prettier better ([0b6d251](https://github.com/1stG/configs/commit/0b6d251))
+
+
+
+
+
 # [0.10.0](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.9.7...@1stg/rollup-config@0.10.0) (2019-09-24)
 
 
