@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/1stG/configs/compare/@1stg/prettier-config@0.3.0...@1stg/prettier-config@0.3.1) (2019-09-24)
+
+
+### Bug Fixes
+
+* **prettier-config:** upgrade prettier-plugin-pkg which works better like offical prettier json fomatter ([ba4b64d](https://github.com/1stG/configs/commit/ba4b64d))
+
+
+
+
+
 # 0.3.0 (2019-09-24)
 
 
