@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.2](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.10.1...@1stg/rollup-config@0.10.2) (2019-09-24)
+
+
+### Bug Fixes
+
+* **rollup-config:** change external to function - rollup/rollup[#3129](https://github.com/1stG/configs/issues/3129) ([4eb7acd](https://github.com/1stG/configs/commit/4eb7acd))
+
+
+
+
+
 ## [0.10.1](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.10.0...@1stg/rollup-config@0.10.1) (2019-09-24)
 
 
