@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.7](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.9.6...@1stg/rollup-config@0.9.7) (2019-09-24)
+
+
+### Bug Fixes
+
+* **rollup-config:** never set outDir to empty string automatically ([5682862](https://github.com/1stG/configs/commit/5682862))
+
+
+
+
+
 ## [0.9.6](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.9.5...@1stg/rollup-config@0.9.6) (2019-09-23)
 
 
