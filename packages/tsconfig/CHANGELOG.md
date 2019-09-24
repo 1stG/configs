@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.5](https://github.com/1stG/configs/compare/@1stg/tsconfig@0.5.4...@1stg/tsconfig@0.5.5) (2019-09-24)
+
+
+### Bug Fixes
+
+* **tsconfig:** typo compose should be composite ([b9896cd](https://github.com/1stG/configs/commit/b9896cd))
+
+
+
+
+
 ## [0.5.4](https://github.com/1stG/configs/compare/@1stg/tsconfig@0.5.3...@1stg/tsconfig@0.5.4) (2019-09-23)
 
 
