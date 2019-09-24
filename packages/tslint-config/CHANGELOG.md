@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/1stG/configs/compare/@1stg/tslint-config@0.3.4...@1stg/tslint-config@0.4.0) (2019-09-24)
+
+
+### Features
+
+* enable @pkgr/named-exports and prettier-plugin-pkg ([f7b1bc6](https://github.com/1stG/configs/commit/f7b1bc6))
+
+
+
+
+
 ## [0.3.4](https://github.com/1stG/configs/compare/@1stg/tslint-config@0.3.3...@1stg/tslint-config@0.3.4) (2019-09-23)
 
 

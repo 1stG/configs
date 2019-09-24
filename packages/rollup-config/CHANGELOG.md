@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.9.7...@1stg/rollup-config@0.10.0) (2019-09-24)
+
+
+### Features
+
+* enable @pkgr/named-exports and prettier-plugin-pkg ([f7b1bc6](https://github.com/1stG/configs/commit/f7b1bc6))
+
+
+
+
+
 ## [0.9.7](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.9.6...@1stg/rollup-config@0.9.7) (2019-09-24)
 
 

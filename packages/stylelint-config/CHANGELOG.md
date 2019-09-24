@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/1stG/configs/compare/@1stg/stylelint-config@0.6.3...@1stg/stylelint-config@0.7.0) (2019-09-24)
+
+
+### Features
+
+* enable @pkgr/named-exports and prettier-plugin-pkg ([f7b1bc6](https://github.com/1stG/configs/commit/f7b1bc6))
+
+
+
+
+
 ## [0.6.3](https://github.com/1stG/configs/compare/@1stg/stylelint-config@0.6.2...@1stg/stylelint-config@0.6.3) (2019-09-18)
 
 
