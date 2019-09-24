@@ -82,7 +82,6 @@ const configBase = ({
 
     if (!fs.existsSync(srcPath) && pkgInput == null) {
       pkgInput = 'index'
-      pkgOutputDir = ''
     }
 
     pkgInput = tryExtensions(path.resolve(pkgPath, pkgInput || 'src/index'))
