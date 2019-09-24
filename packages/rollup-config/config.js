@@ -72,7 +72,9 @@ const configBase = ({
 
   const pkgs = monorepo ? fs.readdirSync(pkgsPath) : ['']
 
-  const globals = getGlobals(umdGlobals)
+  const globals = getGlobals({
+    globals: umdGlobals,
+  })
 
   const configs = flatMap(pkgs, pkg => {
     const pkgPath = path.resolve(monorepo ? pkgsPath : '', pkg)

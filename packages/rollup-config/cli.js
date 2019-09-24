@@ -36,7 +36,7 @@ program
   .option(
     '-g, --globals <json>',
     'JSON string to be parsed as umd globals map',
-    JSON.stringify,
+    JSON.parse,
   )
   .option(
     '-p, --prod [boolean]',
