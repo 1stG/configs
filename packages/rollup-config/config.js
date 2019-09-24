@@ -10,7 +10,8 @@ import json from 'rollup-plugin-json'
 import replace from 'rollup-plugin-replace'
 import nodeResolve from 'rollup-plugin-node-resolve'
 import typescript from 'rollup-plugin-typescript'
-import { getGlobals, normalizePkg, upperCamelCase } from 'umd-globals'
+import { getGlobals, normalizePkg, upperCamelCase } from '@pkgr/umd-globals'
+import { namedExports } from '@pkgr/named-exports'
 
 const PRODUCTION = 'production'
 
@@ -27,7 +28,7 @@ const BASIC_PLUGINS = [
       'main',
     ],
   }),
-  commonjs(),
+  commonjs({ namedExports }),
   json(),
 ]
 

@@ -1,23 +1,9 @@
 {
   "$schema": "http://json.schemastore.org/tslint",
-  "extends": [
-    "./tslint.json",
-    "codelyzer",
-    "tslint-config-prettier"
-  ],
+  "extends": ["./tslint.json", "codelyzer", "tslint-config-prettier"],
   "rules": {
-    "component-selector": [
-      true,
-      "element",
-      "rx",
-      "kebab-case"
-    ],
-    "directive-selector": [
-      true,
-      "attribute",
-      "rx",
-      "camelCase"
-    ],
+    "component-selector": [true, "element", "rx", "kebab-case"],
+    "directive-selector": [true, "attribute", "rx", "camelCase"],
     "no-input-rename": false,
     "template-no-negated-async": false,
     "use-component-view-encapsulation": false

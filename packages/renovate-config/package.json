@@ -5,6 +5,9 @@
   "repository": "git@github.com:1stG/configs.git",
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "renovate-config": {
     "default": {
       "extends": [
@@ -17,8 +20,5 @@
       },
       "rangeStrategy": "bump"
     }
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

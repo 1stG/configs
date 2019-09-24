@@ -10,22 +10,22 @@
     "packages/*"
   ],
   "scripts": {
+    "build": "rollup -c",
+    "check": "run-p check:*",
     "check:eslint": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "check:stylelint": "stylelint-config-prettier-check",
     "check:tslint": "tslint-config-prettier-check ./tslint.json",
-    "check": "run-p check:*",
+    "lint": "run-p lint:**",
     "lint:es": "eslint . --ext js,jsx,md,mdx,ts,tsx,vue -f friendly",
-    "lint:ts": "tslint -p . -t stylish",
-    "lint:tsc": "tsc",
     "lint:style:css": "stylelint --config stylelint.common.js tests/*.{css,less}",
     "lint:style:scss": "stylelint tests/*.{scss,vue}",
-    "lint": "run-p lint:**",
-    "test": "jest",
-    "build": "rollup -c"
+    "lint:ts": "tslint -p . -t stylish",
+    "lint:tsc": "tsc",
+    "test": "jest"
   },
   "devDependencies": {
     "@angular/core": "^8.2.7",
-    "@babel/core": "^7.6.0",
+    "@babel/core": "^7.6.2",
     "@commitlint/cli": "^8.2.0",
     "@types/jest": "^24.0.18",
     "@types/node": "^12.7.5",
@@ -63,15 +63,10 @@
   "eslintIgnore": [
     "lib",
     "node_modules",
-    "!/.*.js",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "!.*.js"
   ],
   "prettier": "@1stg/prettier-config",
-  "remarkConfig": {
-    "plugins": [
-      "@1stg/remark-config"
-    ]
-  },
   "stylelint": {
     "extends": "@1stg/stylelint-config/scss",
     "ignoreFiles": "*.less"
