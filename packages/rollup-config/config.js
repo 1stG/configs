@@ -109,8 +109,6 @@ const configBase = ({
       peerDependencies = {},
     } = require(path.resolve(pkgPath, 'package.json'))
 
-    pkg = pkg || name
-
     const external = externals.concat(
       Object.keys(peerDependencies),
       node ? Object.keys(dependencies).concat(builtins) : [],
@@ -138,7 +136,7 @@ const configBase = ({
             `${pkgOutputDir}${format}${prod ? '.min' : ''}.js`,
           ),
           format: isEsVersion ? 'esm' : format,
-          name: pkgGlobals[pkg] || upperCamelCase(normalizePkg(pkg)),
+          name: pkgGlobals[name] || upperCamelCase(normalizePkg(name)),
           globals,
           exports,
         },
