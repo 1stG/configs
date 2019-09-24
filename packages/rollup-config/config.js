@@ -140,7 +140,8 @@ const configBase = ({
           globals,
           exports,
         },
-        external,
+        external: id =>
+          external.some(pkg => id === pkg || id.startsWith(pkg + '/')),
         plugins: [
           isTsAvailable && isTsInput
             ? typescript({
