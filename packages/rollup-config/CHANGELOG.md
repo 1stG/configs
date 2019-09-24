@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.4](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.10.3...@1stg/rollup-config@0.10.4) (2019-09-24)
+
+
+### Bug Fixes
+
+* **rollup-config:** should use package name instead of directory name to generate umd globals~ ([a17bb02](https://github.com/1stG/configs/commit/a17bb02))
+
+
+
+
+
 ## [0.10.3](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.10.2...@1stg/rollup-config@0.10.3) (2019-09-24)
 
 
