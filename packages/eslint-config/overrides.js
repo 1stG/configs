@@ -236,6 +236,7 @@ exports.ts = [
 exports.dTs = {
   files: '*.d.ts',
   rules: {
+    '@typescript-eslint/no-namespace': 0,
     'import/no-duplicates': 0,
     'import/order': 0,
   },
