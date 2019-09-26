@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.2](https://github.com/1stG/configs/compare/@1stg/tslint-config@0.4.1...@1stg/tslint-config@0.4.2) (2019-09-26)
+
+
+### Bug Fixes
+
+* **tslint-config:** should be tslint-angular instead of codelyzer directly ([26c81e1](https://github.com/1stG/configs/commit/26c81e1))
+
+
+
+
+
 ## [0.4.1](https://github.com/1stG/configs/compare/@1stg/tslint-config@0.4.0...@1stg/tslint-config@0.4.1) (2019-09-26)
 
 
