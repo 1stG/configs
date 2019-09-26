@@ -1,6 +1,6 @@
 {
   "$schema": "http://json.schemastore.org/tslint",
-  "extends": ["./tslint.json", "codelyzer", "tslint-config-prettier"],
+  "extends": ["./tslint.json", "tslint-angular", "tslint-config-prettier"],
   "rules": {
     "component-selector": [true, "element", "rx", "kebab-case"],
     "directive-selector": [true, "attribute", "rx", "camelCase"],
