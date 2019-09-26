@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.2.2 (2019-09-26)
+
+
+### Bug Fixes
+
+* **deps:** bump dependencies, add tslint-config/eslint, disable no-namespace for .d.ts ([8b340e8](https://github.com/1stG/configs/commit/8b340e8))
+
+
+
+
+
 ## [0.2.1](https://github.com/1stG/configs/compare/@1stg/remark-config@0.2.0...@1stg/remark-config@0.2.1) (2019-09-07)
 
 

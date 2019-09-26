@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.13](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.12...@1stg/eslint-config@0.12.13) (2019-09-26)
+
+
+### Bug Fixes
+
+* **deps:** bump dependencies, add tslint-config/eslint, disable no-namespace for .d.ts ([8b340e8](https://github.com/1stG/configs/commit/8b340e8))
+
+
+
+
+
 ## [0.12.12](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.11...@1stg/eslint-config@0.12.12) (2019-09-23)
 
 
