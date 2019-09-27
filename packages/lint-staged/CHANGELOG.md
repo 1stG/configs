@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.2](https://github.com/1stG/configs/compare/@1stg/lint-staged@0.8.1...@1stg/lint-staged@0.8.2) (2019-09-27)
+
+
+### Bug Fixes
+
+* **lint-staged:** add tsc --noEmit for tsx? files via function... ([6091744](https://github.com/1stG/configs/commit/6091744))
+
+
+
+
+
 ## [0.8.1](https://github.com/1stG/configs/compare/@1stg/lint-staged@0.8.0...@1stg/lint-staged@0.8.1) (2019-09-27)
 
 
