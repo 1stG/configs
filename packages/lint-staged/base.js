@@ -13,8 +13,8 @@ try {
 } catch (e) {}
 
 const config = {
-  '.*rc': ['prettier --write', 'git add'],
-  '*.{js,jsx,md,mdx,mjs,vue}': ['eslint --fix', 'git add'],
+  '.!(*browserslist|npm|yarn)rc': ['prettier --write', 'git add'],
+  '*.{js,jsx,md,mdx,mjs,vue}': ['eslint -f friendly --fix', 'git add'],
   '*.{gql,html,json,pug,vue,toml,yaml,yml}': ['prettier --write', 'git add'],
 }
 

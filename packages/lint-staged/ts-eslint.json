@@ -1,6 +1,6 @@
 {
   "*.{ts,tsx}": [
-    "eslint --fix",
+    "eslint -f friendly --fix",
     "git add"
   ]
 }

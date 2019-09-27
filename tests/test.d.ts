@@ -1,6 +1,4 @@
 declare module 'x' {
-  import React from 'react'
-
   namespace X {
     interface Options {
       prop: string
@@ -13,11 +11,17 @@ declare module 'x' {
 }
 
 declare module 'y' {
-  import React from 'react'
-
   namespace Y {
     type Comp = React.ComponentType & {}
   }
 
   export = Y
+}
+
+declare module 'z' {
+  namespace Z {
+    type Comp = React.ComponentType & {}
+  }
+
+  export = Z
 }

@@ -44,7 +44,6 @@ foo(() => {
 
 const obj: Record<string, string | undefined> = {}
 
-// tslint:disable-next-line: max-classes-per-file
 export default class Test extends Basic implements X {
   path: typeof path
 
@@ -65,8 +64,5 @@ export default class Test extends Basic implements X {
 
 try {
   const y = obj.x
-  // tslint:disable-next-line: no-console
   console.log(y)
-} catch {
-  //
-}
+} catch {}

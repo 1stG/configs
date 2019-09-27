@@ -17,10 +17,7 @@ try {
 } catch (e) {}
 
 if (eslint && tslint) {
-  const key = '*.{ts,tsx}'
-  Object.assign(config, {
-    [key]: require('./ts-eslint')[key].concat(require('./ts-tslint')[key]),
-  })
+  Object.assign(config, require('./ts-eslint'), require('./ts-tslint'))
 } else if (eslint) {
   Object.assign(config, require('./ts-eslint'))
 } else if (tslint) {
