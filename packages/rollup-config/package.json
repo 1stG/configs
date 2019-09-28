@@ -6,7 +6,7 @@
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "engines": {
-    "node": ">=6.9.0"
+    "node": ">=7.0.0"
   },
   "bin": {
     "r": "cli.js"
@@ -24,6 +24,7 @@
     "debug": "^4.1.1",
     "jsox": "^1.1.114",
     "lodash": "^4.17.15",
+    "rollup-plugin-alias": "^2.0.1",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-json": "^4.0.0",

@@ -11,6 +11,7 @@ module.exports = {
       'Array.isArray',
       'JSON',
       'Object.assign',
+      'Object.entries',
       'Object.keys',
       'Promise',
     ],

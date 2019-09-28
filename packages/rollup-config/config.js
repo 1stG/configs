@@ -4,13 +4,14 @@ import path from 'path'
 import builtins from 'builtin-modules'
 import debug from 'debug'
 import { flatMap } from 'lodash'
-import { terser } from 'rollup-plugin-terser'
+import alias from 'rollup-plugin-alias'
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
 import json from 'rollup-plugin-json'
 import postcss from 'rollup-plugin-postcss'
 import replace from 'rollup-plugin-replace'
 import nodeResolve from 'rollup-plugin-node-resolve'
+import { terser } from 'rollup-plugin-terser'
 import typescript from 'rollup-plugin-typescript'
 import { getGlobals, normalizePkg, upperCamelCase } from '@pkgr/umd-globals'
 import { namedExports } from '@pkgr/named-exports'
@@ -64,6 +65,7 @@ const configBase = ({
   exports,
   externals = [],
   globals: umdGlobals,
+  aliases = [],
   postcss: postcssOpts,
   prod = process.env.NODE_ENV === PRODUCTION,
 } = {}) => {
@@ -148,6 +150,26 @@ const configBase = ({
         external: id =>
           external.some(pkg => id === pkg || id.startsWith(pkg + '/')),
         plugins: [
+          alias({
+            resolve: EXTENSIONS,
+            entries: Array.isArray(aliases)
+              ? aliases
+              : Object.entries(aliases).reduce(
+                  (entries, [find, replacement]) => {
+                    if (
+                      ['', 'null', 'undefined'].includes(find.trim()) &&
+                      replacement != null
+                    ) {
+                      entries.push({
+                        find,
+                        replacement,
+                      })
+                    }
+                    return entries
+                  },
+                  [],
+                ),
+          }),
           isTsAvailable && isTsInput
             ? typescript({
                 target: isEsVersion ? format : 'es5',

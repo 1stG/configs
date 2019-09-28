@@ -43,6 +43,11 @@ program
     JSOX.parse,
   )
   .option(
+    '-a, --aliases <jsox>',
+    'entries setting for rollup-plugin-alias, could be array or object',
+    JSOX.parse,
+  )
+  .option(
     '-w, --watch [boolean]',
     'whether to enable watch mode for development',
   )
@@ -62,6 +67,7 @@ const options = pick(
   'exports',
   'externals',
   'globals',
+  'aliases',
   'postcss',
   'prod',
 )
