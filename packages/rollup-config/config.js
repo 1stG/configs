@@ -43,7 +43,7 @@ const resolve = node =>
 const BASIC_PLUGINS = [
   commonjs({ namedExports }),
   json(),
-  url({ include: IMAGE_EXTENSIONS }),
+  url({ include: IMAGE_EXTENSIONS.map(ext => `**/*${ext}`) }),
 ]
 
 const DEFAULT_FORMATS = ['cjs', 'es2015', 'esm']
@@ -66,7 +66,20 @@ const tryExtensions = filepath => {
   return ext ? filepath + ext : filepath
 }
 
-const configBase = ({
+const tryRegExp = exp => {
+  if (typeof exp !== 'string' || !(exp = exp.trim())) {
+    return exp
+  }
+  const matched = /^\/(.*)\/([gimsuy]*)$/.exec(exp)
+  if (matched) {
+    try {
+      return new RegExp(matched[1], matched[2])
+    } catch {}
+  }
+  return exp
+}
+
+const config = ({
   formats,
   monorepo,
   input,
@@ -162,22 +175,14 @@ const configBase = ({
           alias({
             resolve: EXTENSIONS.concat(ASSETS_EXTENSIONS),
             entries: Array.isArray(aliases)
-              ? aliases
-              : Object.entries(aliases).reduce(
-                  (entries, [find, replacement]) => {
-                    if (
-                      ['', 'null', 'undefined'].includes(find.trim()) &&
-                      replacement != null
-                    ) {
-                      entries.push({
-                        find,
-                        replacement,
-                      })
-                    }
-                    return entries
-                  },
-                  [],
-                ),
+              ? aliases.map(({ find, replacement }) => ({
+                  find: tryRegExp(find),
+                  replacement,
+                }))
+              : Object.entries(aliases).map(([find, replacement]) => ({
+                  find: tryRegExp(find),
+                  replacement,
+                })),
           }),
           isTsAvailable && isTsInput
             ? typescript({
@@ -224,14 +229,8 @@ const configBase = ({
 }
 
 export default (options = {}) => {
-  const configs = configBase(options).concat(
-    options.prod
-      ? configBase(
-          Object.assign({}, options, {
-            prod: false,
-          }),
-        )
-      : [],
+  const configs = config(options).concat(
+    options.prod ? config(Object.assign({}, options, { prod: false })) : [],
   )
 
   info('configs: %O', configs)
