@@ -15,6 +15,7 @@
     "check:eslint": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "check:stylelint": "stylelint-config-prettier-check",
     "check:tslint": "tslint-config-prettier-check ./tslint.json",
+    "dev": "DEBUG=r:* r -i $PWD/packages/rollup-config/config -w",
     "lint": "run-p lint:**",
     "lint:es": "eslint . --ext js,jsx,md,mdx,ts,tsx,vue -f friendly",
     "lint:style:css": "stylelint --config stylelint.common.js tests/*.{css,less}",

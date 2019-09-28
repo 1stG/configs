@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 const program = require('commander')
 const debug = require('debug')
+const JSOX = require('jsox')
 const { pick } = require('lodash')
-const { rollup } = require('rollup')
+const { rollup, watch } = require('rollup')
 
 const config = require('./lib/cjs')
 const { version } = require('./package.json')
@@ -37,10 +38,15 @@ program
     parseArrayArgs,
   )
   .option(
-    '-g, --globals <json>',
+    '-g, --globals <jsox>',
     'JSON string to be parsed as umd globals map',
-    JSON.parse,
+    JSOX.parse,
   )
+  .option(
+    '-w, --watch [boolean]',
+    'whether to enable watch mode for development',
+  )
+  .option('--postcss [jsox]', 'options for rollup-plugin-postcss', JSOX.parse)
   .option(
     '-p, --prod [boolean]',
     'whether to enable production(.min.js) bundle together at the same time',
@@ -56,12 +62,41 @@ const options = pick(
   'exports',
   'externals',
   'globals',
+  'postcss',
   'prod',
 )
 
 info('options: %O', options)
 
-config(options).map(opts =>
+const startWatcher = configs => {
+  const watcher = watch(configs)
+  watcher.on('event', event => {
+    switch (event.code) {
+      case 'START':
+        info('🚀 (re)starting...')
+        break
+      case 'END':
+        info('🎉 bundled successfully.')
+        break
+      case 'ERROR':
+        console.error(event)
+        break
+      case 'FATAL':
+        console.error(event)
+        watcher.close()
+        break
+    }
+  })
+}
+
+const configs = config(options)
+
+if (program.watch) {
+  startWatcher(configs)
+  return
+}
+
+configs.map(opts =>
   rollup(opts)
     .then(bundle => bundle.write(opts))
     .catch(e => {

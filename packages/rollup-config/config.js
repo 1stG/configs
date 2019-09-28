@@ -8,6 +8,7 @@ import { terser } from 'rollup-plugin-terser'
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
 import json from 'rollup-plugin-json'
+import postcss from 'rollup-plugin-postcss'
 import replace from 'rollup-plugin-replace'
 import nodeResolve from 'rollup-plugin-node-resolve'
 import typescript from 'rollup-plugin-typescript'
@@ -63,6 +64,7 @@ const configBase = ({
   exports,
   externals = [],
   globals: umdGlobals,
+  postcss: postcssOpts,
   prod = process.env.NODE_ENV === PRODUCTION,
 } = {}) => {
   const pkgsPath = path.resolve(
@@ -167,6 +169,7 @@ const configBase = ({
               }),
         ].concat(
           BASIC_PLUGINS,
+          postcss(postcssOpts),
           prod
             ? [
                 replace({
