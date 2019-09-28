@@ -38,20 +38,25 @@ program
     parseArrayArgs,
   )
   .option(
-    '-g, --globals <jsox>',
+    '-g, --globals <json5>',
     'JSON string to be parsed as umd globals map',
     JSON5.parse,
   )
   .option(
-    '-a, --aliases <jsox>',
+    '-a, --aliases <json5>',
     'entries setting for rollup-plugin-alias, could be array or object',
     JSON5.parse,
+  )
+  .option(
+    '-s, --source-map <boolean>',
+    'whether or not to enable sourceMap generation for CommonJS modules, which may cause performance issue',
+    false,
   )
   .option(
     '-w, --watch [boolean]',
     'whether to enable watch mode for development',
   )
-  .option('--postcss [jsox]', 'options for rollup-plugin-postcss', JSON5.parse)
+  .option('--postcss [json5]', 'options for rollup-plugin-postcss', JSON5.parse)
   .option(
     '-p, --prod [boolean]',
     'whether to enable production(.min.js) bundle together at the same time',
@@ -68,6 +73,7 @@ const options = pick(
   'externals',
   'globals',
   'aliases',
+  'sourceMap',
   'postcss',
   'prod',
 )

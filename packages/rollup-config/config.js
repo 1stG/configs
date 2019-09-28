@@ -2,13 +2,14 @@ import fs from 'fs'
 import path from 'path'
 
 import alias from '@rxts/rollup-plugin-alias'
-import builtins from 'builtin-modules'
+import builtinModules from 'builtin-modules'
 import debug from 'debug'
 import { flatMap } from 'lodash'
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
 import json from 'rollup-plugin-json'
 import postcss from 'rollup-plugin-postcss'
+import nodeBuiltins from 'rollup-plugin-node-builtins'
 import replace from 'rollup-plugin-replace'
 import nodeResolve from 'rollup-plugin-node-resolve'
 import { terser } from 'rollup-plugin-terser'
@@ -25,8 +26,9 @@ const STYLE_EXTENSIONS = ['.css', '.less', 'sass', '.scss', '.styl', '.stylus']
 const IMAGE_EXTENSIONS = ['.gif', '.jpeg', '.jpg', '.png', '.svg', '.webp']
 const ASSETS_EXTENSIONS = STYLE_EXTENSIONS.concat(IMAGE_EXTENSIONS)
 
-const resolve = node =>
+const resolve = ({ deps, node } = {}) =>
   nodeResolve({
+    dedupe: node ? undefined : deps,
     mainFields: [
       !node && 'browser',
       'esnext',
@@ -40,13 +42,17 @@ const resolve = node =>
     ].filter(Boolean),
   })
 
-const BASIC_PLUGINS = [
+const cjs = sourceMap =>
   commonjs({
     // TODO: add package @pkgr/cjs-ignore ?
+    // see also: https://github.com/rollup/rollup-plugin-commonjs/issues/244#issuecomment-536168280
     // hard-coded temporarily
     ignore: ['react-draggable'],
     namedExports,
-  }),
+    sourceMap,
+  })
+
+const BASIC_PLUGINS = [
   json(),
   url({ include: IMAGE_EXTENSIONS.map(ext => `**/*${ext}`) }),
 ]
@@ -84,6 +90,13 @@ const tryRegExp = exp => {
   return exp
 }
 
+const onwarn = (warning, warn) => {
+  if (warning.code === 'THIS_IS_UNDEFINED') {
+    return
+  }
+  warn(warning)
+}
+
 const config = ({
   formats,
   monorepo,
@@ -93,6 +106,7 @@ const config = ({
   externals = [],
   globals: umdGlobals,
   aliases = [],
+  sourceMap = false,
   postcss: postcssOpts,
   prod = process.env.NODE_ENV === PRODUCTION,
 } = {}) => {
@@ -143,9 +157,11 @@ const config = ({
       peerDependencies = {},
     } = require(path.resolve(pkgPath, 'package.json'))
 
+    const deps = Object.keys(dependencies)
+
     const external = externals.concat(
       Object.keys(peerDependencies),
-      node ? Object.keys(dependencies).concat(builtins) : [],
+      node ? deps.concat(builtinModules) : [],
     )
 
     const isTsInput = /\.tsx?/.test(pkgInput)
@@ -176,6 +192,7 @@ const config = ({
         },
         external: id =>
           external.some(pkg => id === pkg || id.startsWith(pkg + '/')),
+        onwarn,
         plugins: [
           alias({
             resolve: EXTENSIONS.concat(ASSETS_EXTENSIONS),
@@ -208,19 +225,24 @@ const config = ({
                   ],
                 ],
               }),
-        ].concat(
-          resolve(node),
-          BASIC_PLUGINS,
-          postcss(postcssOpts),
-          prod
-            ? [
-                replace({
-                  'process.env.NODE_ENV': JSON.stringify(PRODUCTION),
-                }),
-                terser(),
-              ]
-            : [],
-        ),
+        ]
+          .concat(
+            !node && nodeBuiltins({ crypto: true }),
+            resolve({
+              deps,
+              node: !!node,
+            }),
+            cjs(sourceMap),
+            BASIC_PLUGINS,
+            postcss(postcssOpts),
+            prod && [
+              replace({
+                'process.env.NODE_ENV': JSON.stringify(PRODUCTION),
+              }),
+              terser(),
+            ],
+          )
+          .filter(Boolean),
       }
     })
   })

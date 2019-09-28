@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@babel/preset-env": "^7.6.2",
-    "@pkgr/named-exports": "^0.2.2",
+    "@pkgr/named-exports": "^0.2.3",
     "@pkgr/umd-globals": "^0.2.2",
     "@rxts/rollup-plugin-alias": "^0.1.0-beta",
     "builtin-modules": "^3.1.0",
@@ -28,6 +28,7 @@
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-replace": "^2.2.0",
