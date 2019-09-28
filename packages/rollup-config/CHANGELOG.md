@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.11.8...@1stg/rollup-config@0.12.0) (2019-09-28)
+
+
+### Features
+
+* **rollup-config:** fine, add exclude support for app ([5d98da0](https://github.com/1stG/configs/commit/5d98da0))
+
+
+
+
+
 ## [0.11.8](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.11.7...@1stg/rollup-config@0.11.8) (2019-09-28)
 
 
