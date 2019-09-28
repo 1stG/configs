@@ -9,8 +9,6 @@ import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
 import json from 'rollup-plugin-json'
 import postcss from 'rollup-plugin-postcss'
-import nodeBuiltins from 'rollup-plugin-node-builtins'
-import nodeGlobals from 'rollup-plugin-node-globals'
 import replace from 'rollup-plugin-replace'
 import nodeResolve from 'rollup-plugin-node-resolve'
 import { terser } from 'rollup-plugin-terser'
@@ -23,7 +21,15 @@ const info = debug('r:info')
 
 const PRODUCTION = 'production'
 
-const STYLE_EXTENSIONS = ['.css', '.less', 'sass', '.scss', '.styl', '.stylus']
+const STYLE_EXTENSIONS = [
+  '.css',
+  '.less',
+  '.pcss',
+  '.sass',
+  '.scss',
+  '.styl',
+  '.stylus',
+]
 const IMAGE_EXTENSIONS = ['.gif', '.jpeg', '.jpg', '.png', '.svg', '.webp']
 const ASSETS_EXTENSIONS = STYLE_EXTENSIONS.concat(IMAGE_EXTENSIONS)
 
@@ -42,6 +48,7 @@ const resolve = ({ deps, node } = {}) =>
       'jsnext:main',
       'main',
     ].filter(Boolean),
+    preferBuiltins: node,
   })
 
 const cjs = sourceMap =>
@@ -49,7 +56,7 @@ const cjs = sourceMap =>
     // TODO: add package @pkgr/cjs-ignore ?
     // see also: https://github.com/rollup/rollup-plugin-commonjs/issues/244#issuecomment-536168280
     // hard-coded temporarily
-    ignore: ['react-draggable'],
+    ignore: ['invariant', 'react-draggable'],
     namedExports,
     sourceMap,
   })
@@ -229,7 +236,6 @@ const config = ({
               }),
         ]
           .concat(
-            !node && [nodeGlobals(), nodeBuiltins({ crypto: true })],
             resolve({
               deps,
               node: !!node,
