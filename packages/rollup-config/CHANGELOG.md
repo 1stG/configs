@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.10.6...@1stg/rollup-config@0.11.0) (2019-09-28)
+
+
+### Features
+
+* **rollup-config:** add jsox, postcss and watch support ([c20541c](https://github.com/1stG/configs/commit/c20541c))
+
+
+
+
+
 ## [0.10.6](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.10.5...@1stg/rollup-config@0.10.6) (2019-09-28)
 
 
