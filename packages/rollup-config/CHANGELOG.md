@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.1](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.11.0...@1stg/rollup-config@0.11.1) (2019-09-28)
+
+
+### Bug Fixes
+
+* **rollup-config:** add alias support like webpack :tada: ([1f44bcb](https://github.com/1stG/configs/commit/1f44bcb))
+
+
+
+
+
 # [0.11.0](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.10.6...@1stg/rollup-config@0.11.0) (2019-09-28)
 
 
