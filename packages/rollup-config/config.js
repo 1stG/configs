@@ -10,6 +10,7 @@ import commonjs from 'rollup-plugin-commonjs'
 import json from 'rollup-plugin-json'
 import postcss from 'rollup-plugin-postcss'
 import nodeBuiltins from 'rollup-plugin-node-builtins'
+import nodeGlobals from 'rollup-plugin-node-globals'
 import replace from 'rollup-plugin-replace'
 import nodeResolve from 'rollup-plugin-node-resolve'
 import { terser } from 'rollup-plugin-terser'
@@ -38,6 +39,7 @@ const resolve = ({ deps, node } = {}) =>
       'esm5',
       'fesm5',
       'module',
+      'jsnext:main',
       'main',
     ].filter(Boolean),
   })
@@ -227,7 +229,7 @@ const config = ({
               }),
         ]
           .concat(
-            !node && nodeBuiltins({ crypto: true }),
+            !node && [nodeGlobals(), nodeBuiltins({ crypto: true })],
             resolve({
               deps,
               node: !!node,
