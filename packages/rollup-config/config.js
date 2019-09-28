@@ -25,9 +25,10 @@ const STYLE_EXTENSIONS = ['.css', '.less', 'sass', '.scss', '.styl', '.stylus']
 const IMAGE_EXTENSIONS = ['.gif', '.jpeg', '.jpg', '.png', '.svg', '.webp']
 const ASSETS_EXTENSIONS = STYLE_EXTENSIONS.concat(IMAGE_EXTENSIONS)
 
-const BASIC_PLUGINS = [
+const resolve = node =>
   nodeResolve({
     mainFields: [
+      !node && 'browser',
       'esnext',
       'es2015',
       'esm2015',
@@ -36,8 +37,10 @@ const BASIC_PLUGINS = [
       'fesm5',
       'module',
       'main',
-    ],
-  }),
+    ].filter(Boolean),
+  })
+
+const BASIC_PLUGINS = [
   commonjs({ namedExports }),
   json(),
   url({ include: IMAGE_EXTENSIONS }),
@@ -196,6 +199,7 @@ const configBase = ({
                 ],
               }),
         ].concat(
+          resolve(node),
           BASIC_PLUGINS,
           postcss(postcssOpts),
           prod
