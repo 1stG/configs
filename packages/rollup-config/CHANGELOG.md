@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.8](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.11.7...@1stg/rollup-config@0.11.8) (2019-09-28)
+
+
+### Bug Fixes
+
+* **rollup-config:** remove outdated rollup plugins, add jsox back ([aefa304](https://github.com/1stG/configs/commit/aefa304))
+
+
+
+
+
 ## [0.11.7](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.11.6...@1stg/rollup-config@0.11.7) (2019-09-28)
 
 
