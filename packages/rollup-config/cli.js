@@ -107,6 +107,7 @@ configs.map(opts =>
     .then(bundle => bundle.write(opts))
     .catch(e => {
       console.error(e)
-      process.exitCode = 1
+      // eslint-disable-next-line no-process-exit
+      process.exit(1)
     }),
 )

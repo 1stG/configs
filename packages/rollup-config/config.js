@@ -13,12 +13,17 @@ import replace from 'rollup-plugin-replace'
 import nodeResolve from 'rollup-plugin-node-resolve'
 import { terser } from 'rollup-plugin-terser'
 import typescript from 'rollup-plugin-typescript'
+import url from 'rollup-plugin-url'
 import { getGlobals, normalizePkg, upperCamelCase } from '@pkgr/umd-globals'
 import { namedExports } from '@pkgr/named-exports'
 
 const info = debug('r:info')
 
 const PRODUCTION = 'production'
+
+const STYLE_EXTENSIONS = ['.css', '.less', 'sass', '.scss', '.styl', '.stylus']
+const IMAGE_EXTENSIONS = ['.gif', '.jpeg', '.jpg', '.png', '.svg', '.webp']
+const ASSETS_EXTENSIONS = STYLE_EXTENSIONS.concat(IMAGE_EXTENSIONS)
 
 const BASIC_PLUGINS = [
   nodeResolve({
@@ -35,6 +40,7 @@ const BASIC_PLUGINS = [
   }),
   commonjs({ namedExports }),
   json(),
+  url({ include: IMAGE_EXTENSIONS }),
 ]
 
 const DEFAULT_FORMATS = ['cjs', 'es2015', 'esm']
@@ -151,7 +157,7 @@ const configBase = ({
           external.some(pkg => id === pkg || id.startsWith(pkg + '/')),
         plugins: [
           alias({
-            resolve: EXTENSIONS,
+            resolve: EXTENSIONS.concat(ASSETS_EXTENSIONS),
             entries: Array.isArray(aliases)
               ? aliases
               : Object.entries(aliases).reduce(
