@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.4](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.11.3...@1stg/rollup-config@0.11.4) (2019-09-28)
+
+
+### Bug Fixes
+
+* **rollup-config:** try to resolve alias find as RegExp automatically :tada: ([645798c](https://github.com/1stG/configs/commit/645798c))
+
+
+
+
+
 ## [0.11.3](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.11.2...@1stg/rollup-config@0.11.3) (2019-09-28)
 
 
