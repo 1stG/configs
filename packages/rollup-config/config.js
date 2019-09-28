@@ -1,10 +1,10 @@
 import fs from 'fs'
 import path from 'path'
 
+import alias from '@rxts/rollup-plugin-alias'
 import builtins from 'builtin-modules'
 import debug from 'debug'
 import { flatMap } from 'lodash'
-import alias from 'rollup-plugin-alias'
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
 import json from 'rollup-plugin-json'
@@ -41,7 +41,12 @@ const resolve = node =>
   })
 
 const BASIC_PLUGINS = [
-  commonjs({ namedExports }),
+  commonjs({
+    // TODO: add package @pkgr/cjs-ignore ?
+    // hard-coded temporarily
+    ignore: ['react-draggable'],
+    namedExports,
+  }),
   json(),
   url({ include: IMAGE_EXTENSIONS.map(ext => `**/*${ext}`) }),
 ]

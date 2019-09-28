@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const program = require('commander')
 const debug = require('debug')
-const JSOX = require('jsox')
+const JSON5 = require('json5')
 const { pick } = require('lodash')
 const { rollup, watch } = require('rollup')
 
@@ -40,18 +40,18 @@ program
   .option(
     '-g, --globals <jsox>',
     'JSON string to be parsed as umd globals map',
-    JSOX.parse,
+    JSON5.parse,
   )
   .option(
     '-a, --aliases <jsox>',
     'entries setting for rollup-plugin-alias, could be array or object',
-    JSOX.parse,
+    JSON5.parse,
   )
   .option(
     '-w, --watch [boolean]',
     'whether to enable watch mode for development',
   )
-  .option('--postcss [jsox]', 'options for rollup-plugin-postcss', JSOX.parse)
+  .option('--postcss [jsox]', 'options for rollup-plugin-postcss', JSON5.parse)
   .option(
     '-p, --prod [boolean]',
     'whether to enable production(.min.js) bundle together at the same time',
