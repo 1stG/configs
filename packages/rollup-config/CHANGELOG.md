@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.6](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.11.5...@1stg/rollup-config@0.11.6) (2019-09-28)
+
+
+### Bug Fixes
+
+* **rollup-config:** add sourceMap config, dedupe for non node env ([6295c70](https://github.com/1stG/configs/commit/6295c70))
+
+
+
+
+
 ## [0.11.5](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.11.4...@1stg/rollup-config@0.11.5) (2019-09-28)
 
 
