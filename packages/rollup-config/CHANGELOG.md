@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.5](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.11.4...@1stg/rollup-config@0.11.5) (2019-09-28)
+
+
+### Bug Fixes
+
+* **rollup-config:** use json5 instead of jsox, enable resolve alias automatically ([ef12168](https://github.com/1stG/configs/commit/ef12168))
+
+
+
+
+
 ## [0.11.4](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.11.3...@1stg/rollup-config@0.11.4) (2019-09-28)
 
 
