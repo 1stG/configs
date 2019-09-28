@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.2](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.11.1...@1stg/rollup-config@0.11.2) (2019-09-28)
+
+
+### Bug Fixes
+
+* **rollup-config:** resolve assets automatically, add url plugin support ([7f523fb](https://github.com/1stG/configs/commit/7f523fb))
+
+
+
+
+
 ## [0.11.1](https://github.com/1stG/configs/compare/@1stg/rollup-config@0.11.0...@1stg/rollup-config@0.11.1) (2019-09-28)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@1stg/rollup-config",
-  "version": "0.11.1",
+  "version": "0.11.2",
   "description": "Personal but Shareable Rollup Configuration for all 1stG.me projects.",
   "repository": "git@github.com:1stG/configs.git",
   "author": "JounQin <admin@1stg.me>",
