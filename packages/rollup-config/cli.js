@@ -18,6 +18,7 @@ const parseArrayArgs = (curr, prev) => {
 program
   .version(version)
   .option('-i, --input <filename>', 'input entry file path')
+  .option('--exclude <path>', 'exclude package(s) for monorepo', parseArrayArgs)
   .option('-o, --output-dir [output]', 'output destination directory')
   .option(
     '-f, --formats <format>',
@@ -66,6 +67,7 @@ program
 const options = pick(
   program,
   'input',
+  'exclude',
   'outputDir',
   'formats',
   'monorepo',

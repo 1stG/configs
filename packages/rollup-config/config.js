@@ -110,6 +110,7 @@ const config = ({
   formats,
   monorepo,
   input,
+  exclude = [],
   outputDir = 'lib',
   exports,
   externals = [],
@@ -165,6 +166,10 @@ const config = ({
       dependencies = {},
       peerDependencies = {},
     } = require(path.resolve(pkgPath, 'package.json'))
+
+    if (exclude.includes(name) || exclude.includes(pkg)) {
+      return []
+    }
 
     const deps = Object.keys(dependencies)
 
