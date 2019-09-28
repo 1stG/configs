@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 
 import builtins from 'builtin-modules'
+import debug from 'debug'
 import { flatMap } from 'lodash'
 import { terser } from 'rollup-plugin-terser'
 import babel from 'rollup-plugin-babel'
@@ -12,6 +13,8 @@ import nodeResolve from 'rollup-plugin-node-resolve'
 import typescript from 'rollup-plugin-typescript'
 import { getGlobals, normalizePkg, upperCamelCase } from '@pkgr/umd-globals'
 import { namedExports } from '@pkgr/named-exports'
+
+const info = debug('r:info')
 
 const PRODUCTION = 'production'
 
@@ -185,8 +188,8 @@ const configBase = ({
   return configs
 }
 
-export default (options = {}) =>
-  configBase(options).concat(
+export default (options = {}) => {
+  const configs = configBase(options).concat(
     options.prod
       ? configBase(
           Object.assign({}, options, {
@@ -195,3 +198,8 @@ export default (options = {}) =>
         )
       : [],
   )
+
+  info('configs: %O', configs)
+
+  return configs
+}

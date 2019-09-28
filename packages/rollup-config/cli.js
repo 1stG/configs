@@ -1,10 +1,13 @@
 #!/usr/bin/env node
 const program = require('commander')
+const debug = require('debug')
 const { pick } = require('lodash')
 const { rollup } = require('rollup')
 
 const config = require('./lib/cjs')
 const { version } = require('./package.json')
+
+const info = debug('r:info')
 
 const parseArrayArgs = (curr, prev) => {
   curr = curr.split(',')
@@ -44,16 +47,25 @@ program
   )
   .parse(process.argv)
 
-config(
-  pick(
-    program,
-    'input',
-    'outputDir',
-    'formats',
-    'monorepo',
-    'exports',
-    'externals',
-    'globals',
-    'prod',
-  ),
-).map(options => rollup(options).then(bundle => bundle.write(options)))
+const options = pick(
+  program,
+  'input',
+  'outputDir',
+  'formats',
+  'monorepo',
+  'exports',
+  'externals',
+  'globals',
+  'prod',
+)
+
+info('options: %O', options)
+
+config(options).map(opts =>
+  rollup(opts)
+    .then(bundle => bundle.write(opts))
+    .catch(e => {
+      console.error(e)
+      process.exitCode = 1
+    }),
+)

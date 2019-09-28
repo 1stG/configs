@@ -10,7 +10,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "rollup -c",
+    "build": "DEBUG=r:* rollup -c",
     "check": "run-p check:*",
     "check:eslint": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "check:stylelint": "stylelint-config-prettier-check",
