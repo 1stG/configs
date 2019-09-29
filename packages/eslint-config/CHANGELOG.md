@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.15](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.14...@1stg/eslint-config@0.12.15) (2019-09-29)
+
+
+### Bug Fixes
+
+* **eslint-config:** no need to enable tslint twice if tslint.json presents ([6505628](https://github.com/1stG/configs/commit/6505628))
+
+
+
+
+
 ## [0.12.14](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.13...@1stg/eslint-config@0.12.14) (2019-09-29)
 
 
