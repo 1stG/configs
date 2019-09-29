@@ -9,14 +9,13 @@ let isImageminAvailable
 
 try {
   // eslint-disable-next-line node/no-extraneous-require
-  isImageminAvailable = !!require.resolve('@1stg/imagemin')
+  isImageminAvailable = !!require.resolve('@pkgr/imagemin')
 } catch (e) {}
 
 const config = {
   '.!(*browserslist|npm|yarn)rc': ['prettier --write', 'git add'],
   '*.{js,jsx,md,mdx,mjs,vue}': ['eslint -f friendly --fix', 'git add'],
   '*.{gql,html,json,pug,vue,toml,yaml,yml}': ['prettier --write', 'git add'],
-  '*.ts?(x)': () => 'tsc --noEmit',
 }
 
 if (isStylelintAvailable) {

@@ -24,7 +24,6 @@ script:
   - yarn run check
   - yarn browserslist
   - NODE_ENV=production postcss tests/test.css --verbose
-  - yarn build
   - yarn lint
   - yarn test
 

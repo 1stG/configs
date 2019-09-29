@@ -2198,15 +2198,56 @@
     once "^1.4.0"
     universal-user-agent "^4.0.0"
 
-"@pkgr/named-exports@^0.2.3":
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/@pkgr/named-exports/-/named-exports-0.2.3.tgz#812d20384e8bed05c15805ea54a71f3940bcf70b"
-  integrity sha512-b/xD79VwTGytC2IYYy2vDzrWfLHFx2VFW+ujjUgeBn0RdXtAOnm0tBtjmg0QiKDNukO3BhxtiOXgPt4oNWsC7Q==
+"@pkgr/imagemin@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@pkgr/imagemin/-/imagemin-0.1.0.tgz#e02f01c80b86c174fa5073c4dc54693b4fd4fd11"
+  integrity sha512-1zmEa1+67Ms9AZL6hpvF/NRON+g5zPMvTADFmr/qKeZMWURZfj1cXpb9nx8mxPqiPQN9z2xf6ZeSM/mANSAyfw==
+  dependencies:
+    esm "^3.2.25"
+    imagemin "^7.0.0"
+    imagemin-gifsicle "^6.0.1"
+    imagemin-jpegtran "^6.0.0"
+    imagemin-mozjpeg "^8.0.0"
+    imagemin-optipng "^7.0.0"
+    imagemin-pngquant "^8.0.0"
+    imagemin-svgo "^7.0.0"
+    imagemin-upng "^1.3.0"
+    imagemin-webp "^5.1.0"
 
-"@pkgr/umd-globals@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@pkgr/umd-globals/-/umd-globals-0.2.2.tgz#3ef9803bdcfde67806d3b06b20edae0b9f272ab3"
-  integrity sha512-hKRNzCZMs9ZOLdLb5hWFiCTDydpUlcPmA2lpYrYrC6Wpews1p/LUfaHPKZzw1C4SN8KjJAunU4eF5Ym+2AY1GA==
+"@pkgr/named-exports@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@pkgr/named-exports/-/named-exports-0.3.0.tgz#fffb72c50eb359f71d22066f5ae9eefa9a8c15e2"
+  integrity sha512-oNStMLh73dEmn443mmqPtdzAqY7FzudJDQXsgBI0lk0m/DI8SqH50IwHVX4NQaaAeIQ+5mx52qEaO34khHIUuA==
+
+"@pkgr/rollup@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@pkgr/rollup/-/rollup-0.2.0.tgz#0f9489ca21a6a242c2b523b3f4afdba51bccde87"
+  integrity sha512-X0hVXvVdILFFtcbQX6Iow//+p8iFFHWxoqQq0yJ1Zf4+UetgMxT4BA7/DwcQ5Y+TrOsSgdIiwnE5uyJOva10Ag==
+  dependencies:
+    "@babel/preset-env" "^7.6.2"
+    "@pkgr/named-exports" "^0.3.0"
+    "@pkgr/umd-globals" "^0.3.0"
+    "@rxts/rollup-plugin-alias" "^0.1.0-beta"
+    builtin-modules "^3.1.0"
+    commander "^3.0.2"
+    debug "^4.1.1"
+    esm "^3.2.25"
+    jsox "^1.1.115"
+    lodash-es "^4.17.15"
+    rollup-plugin-babel "^4.3.3"
+    rollup-plugin-commonjs "^10.1.0"
+    rollup-plugin-json "^4.0.0"
+    rollup-plugin-node-resolve "^5.2.0"
+    rollup-plugin-postcss "^2.0.3"
+    rollup-plugin-replace "^2.2.0"
+    rollup-plugin-terser "^5.1.2"
+    rollup-plugin-typescript "^1.0.1"
+    rollup-plugin-url "^2.2.2"
+
+"@pkgr/umd-globals@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@pkgr/umd-globals/-/umd-globals-0.3.0.tgz#ba82ddc4b6c2f864b4635fa8a6257f65f57b40b3"
+  integrity sha512-tnSeL23iFiqgmN6ISWG5cTJ/Cv7Kol81MolfPowYj63rAtEXyr0p1uHBXxFWUyM7WNUGJSUw98xdOdTzh1+BaQ==
 
 "@prettier/plugin-pug@^1.0.3":
   version "1.0.3"
@@ -2388,7 +2429,7 @@
   resolved "https://registry.yarnpkg.com/@types/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#1ee30d79544ca84d68d4b3cdb0af4f205663dd2d"
   integrity sha512-OCutwjDZ4aFS6PB1UZ988C4YgwlBHJd6wCeQqaLdmadZ/7e+w79+hbMUFC1QXDNCmdyoRfAFdm0RypzwR+Qpag==
 
-"@types/estree@0.0.39":
+"@types/estree@*", "@types/estree@0.0.39":
   version "0.0.39"
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
   integrity sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==
@@ -2454,7 +2495,7 @@
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
   integrity sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
 
-"@types/node@*", "@types/node@^12.0.2", "@types/node@^12.7.5", "@types/node@^12.7.8":
+"@types/node@*", "@types/node@^12.0.2", "@types/node@^12.7.8":
   version "12.7.8"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.7.8.tgz#cb1bf6800238898bc2ff6ffa5702c3cadd350708"
   integrity sha512-FMdVn84tJJdV+xe+53sYiZS4R5yn1mAIxfj+DVoNiQjTYz1+OYmjwEZr1ev9nU0axXwda0QDbYl06QHanRVH3A==
@@ -2881,7 +2922,7 @@ acorn@^6.0.1, acorn@^6.0.2, acorn@^6.2.1:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.3.0.tgz#0087509119ffa4fc0a0041d1e93a417e68cb856e"
   integrity sha512-/czfa8BwS88b9gWQVhc8eknunSA2DoJpJyTQkhheIf5E48u1N0R4q/YxxsAeqRrmK9TQ/uYfgLDfZo91UlANIA==
 
-acorn@^7.0.0:
+acorn@^7.0.0, acorn@^7.1.0:
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.1.0.tgz#949d36f2c292535da602283586c2477c57eb2d6c"
   integrity sha512-kL5CuoXA/dgxlBbVrflsflzQ3PAas7RYZB52NOm/6839iVYJgKMJ3cQJD+t2i5+qFa8h3MDpEOJiS64E8JLnSQ==
@@ -4176,7 +4217,7 @@ commander@^2.11.0, commander@^2.12.1, commander@^2.20.0, commander@~2.20.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.0.tgz#d58bb2b5c1ee8f87b0d340027e9e94e222c5a422"
   integrity sha512-7j2y+40w61zy6YC2iRNpUe/NwhNyoXrYpHMrSunaMG64nRnaf96zO/KMQR4OyN/UnE5KLyEBnKHd4aG3rskjpQ==
 
-commander@^3.0.1:
+commander@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/commander/-/commander-3.0.2.tgz#6837c3fb677ad9933d1cfba42dd14d5117d6b39e"
   integrity sha512-Gar0ASD4BDyKC4hl4DwHqDrmvjoxWKZigVnAbn5H1owvm4CxCPdb0HQDehwNYMJpla5+M2tPmPARzhtYuwpHow==
@@ -5570,10 +5611,10 @@ eslint-plugin-promise@^4.2.1:
   resolved "https://registry.yarnpkg.com/eslint-plugin-promise/-/eslint-plugin-promise-4.2.1.tgz#845fd8b2260ad8f82564c1222fce44ad71d9418a"
   integrity sha512-VoM09vT7bfA7D+upt+FjeBO5eHIJQBUWki1aPvB+vbNiHS3+oGIJGIeyBtKQTME6UPXXy3vV07OL1tHd3ANuDw==
 
-eslint-plugin-react-hooks@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-2.0.1.tgz#e898ec26a0a335af6f7b0ad1f0bedda7143ed756"
-  integrity sha512-xir+3KHKo86AasxlCV8AHRtIZPHljqCRRUYgASkbatmt0fad4+5GgC7zkT7o/06hdKM6MIwp8giHVXqBPaarHQ==
+eslint-plugin-react-hooks@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-2.1.1.tgz#b416390b642113f444ee175b667c3222a045a98e"
+  integrity sha512-AYitPYzwHyKpZKpzMH5sCkld68vP8wn29Lq716h4jk1ll9Gp4BBFoPq/iCjBBT35eXFJvOPjgMlvhIXFB0OhXg==
 
 eslint-plugin-react@>=7.0.0, eslint-plugin-react@^7.14.3:
   version "7.14.3"
@@ -5685,6 +5726,11 @@ eslint@^6.4.0:
     table "^5.2.3"
     text-table "^0.2.0"
     v8-compile-cache "^2.0.3"
+
+esm@^3.2.25:
+  version "3.2.25"
+  resolved "https://registry.yarnpkg.com/esm/-/esm-3.2.25.tgz#342c18c29d56157688ba5ce31f8431fbb795cc10"
+  integrity sha512-U1suiZ2oDVWv4zPO56S0NcR5QriEahGtdN2OR6FiOG4WJvcjBVFB0qI4+eKoWFH483PKGuLuu6V8Z4T5g63UVA==
 
 espree@^4.1.0:
   version "4.1.0"
@@ -8508,6 +8554,11 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
+lodash-es@^4.17.15:
+  version "4.17.15"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.15.tgz#21bd96839354412f23d7a10340e5eac6ee455d78"
+  integrity sha512-rlrc3yU3+JNOpZ9zj5pQtxnx2THmvRykwL4Xlxoa8I9lHBlVbbyPhgyPMioxVZ4NqyxaVVtaJnzsyOidQIhyyQ==
+
 lodash._reinterpolate@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz#0ccf2d89166af03b3663c796538b75ac6e114d9d"
@@ -11050,7 +11101,7 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier-plugin-pkg@^0.4.3:
+prettier-plugin-pkg@^0.4.4:
   version "0.4.4"
   resolved "https://registry.yarnpkg.com/prettier-plugin-pkg/-/prettier-plugin-pkg-0.4.4.tgz#e7b20cba16995d04fe22b0aa2fe3974d9dc8a757"
   integrity sha512-3rIuIjGLoe8tNdG6I1ybAybNxy3O5SgpZsqypxTzPN4hkBtYbGAhBey1ROclKsFpH6SBYny9Y2djXq9y1b+adQ==
@@ -11302,10 +11353,10 @@ react-is@^16.8.1, react-is@^16.8.4:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.9.0.tgz#21ca9561399aad0ff1a7701c01683e8ca981edcb"
   integrity sha512-tJBzzzIgnnRfEm046qRcURvwQnZVXmuCbscxUO5RWrGTXpon2d4c8mI0D8WE6ydVIm29JiLB6+RslkIvym9Rjw==
 
-react@^16.9.0:
-  version "16.9.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.9.0.tgz#40ba2f9af13bc1a38d75dbf2f4359a5185c4f7aa"
-  integrity sha512-+7LQnFBwkiw+BobzOF6N//BdoNw0ouwmSJTEm9cglOOmsg/TMiFHZLe2sEoN5M7LgJTj9oHH0gxklfnQe66S1w==
+react@^16.10.1:
+  version "16.10.1"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.10.1.tgz#967c1e71a2767dfa699e6ba702a00483e3b0573f"
+  integrity sha512-2bisHwMhxQ3XQz4LiJJwG3360pY965pTl/MRrZYxIBKVj4fOHoDs5aZAkYXGxDRO1Li+SyjTAilQEbOmtQJHzA==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
@@ -12655,14 +12706,14 @@ rollup-pluginutils@^2.0.1, rollup-pluginutils@^2.5.0, rollup-pluginutils@^2.6.0,
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^1.21.4:
-  version "1.21.4"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-1.21.4.tgz#00a41a30f90095db890301b226cbe2918e4cf54d"
-  integrity sha512-Pl512XVCmVzgcBz5h/3Li4oTaoDcmpuFZ+kdhS/wLreALz//WuDAMfomD3QEYl84NkDu6Z6wV9twlcREb4qQsw==
+rollup@^1.22.0:
+  version "1.22.0"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-1.22.0.tgz#a5b2672c0eebe9f2b6454220f785dbc09b64b4bc"
+  integrity sha512-x4l4ZrV/Mr/x/jvFTmwROdEAhbZjx16yDRTVSKWh/i4oJDuW2dVEbECT853mybYCz7BAitU8ElGlhx7dNjw3qQ==
   dependencies:
-    "@types/estree" "0.0.39"
-    "@types/node" "^12.7.5"
-    acorn "^7.0.0"
+    "@types/estree" "*"
+    "@types/node" "*"
+    acorn "^7.1.0"
 
 rsvp@^4.8.4:
   version "4.8.5"
@@ -13732,7 +13783,16 @@ terser-webpack-plugin@^1.4.1:
     webpack-sources "^1.4.0"
     worker-farm "^1.7.0"
 
-terser@^4.1.0, terser@^4.1.2:
+terser@^4.1.0:
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/terser/-/terser-4.3.4.tgz#ad91bade95619e3434685d69efa621a5af5f877d"
+  integrity sha512-Kcrn3RiW8NtHBP0ssOAzwa2MsIRQ8lJWiBG/K7JgqPlomA3mtb2DEmp4/hrUA+Jujx+WZ02zqd7GYD+QRBB/2Q==
+  dependencies:
+    commander "^2.20.0"
+    source-map "~0.6.1"
+    source-map-support "~0.5.12"
+
+terser@^4.1.2:
   version "4.3.2"
   resolved "https://registry.yarnpkg.com/terser/-/terser-4.3.2.tgz#ed830de484b0103652799063e605618e80f97f93"
   integrity sha512-obxk4x19Zlzj9zY4QeXj9iPCb5W8YGn4v3pn4/fHj0Nw8+R7N02Kvwvz9VpOItCZZD8RC+vnYCDL0gP6FAJ7Xg==
