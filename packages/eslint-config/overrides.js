@@ -251,29 +251,32 @@ try {
 } catch (e) {}
 
 const TSLINT_CONFIG = resolve('tslint.json')
+const tslintConfigAvailable = fs.existsSync(TSLINT_CONFIG)
 
-let lintFile
+let lintFile = tslintConfigAvailable ? TSLINT_CONFIG : undefined
 
 try {
-  lintFile = fs.existsSync(TSLINT_CONFIG)
-    ? TSLINT_CONFIG
-    : require.resolve('@1stg/tslint-config')
+  lintFile = lintFile || require.resolve('@1stg/tslint-config')
 } catch (e) {}
 
 exports.tslint = {
   files: '*.{ts,tsx}',
   excludedFiles: '*.d.ts',
-  plugins: ['@typescript-eslint/tslint'],
-  rules: {
-    '@typescript-eslint/tslint/config': [
-      2,
-      {
-        lintFile,
-      },
-    ],
-    // `ordered-imports` of tslint is better for now
-    'import/order': 0,
-  },
+  plugins: tslintConfigAvailable ? ['@typescript-eslint/tslint'] : undefined,
+  rules: Object.assign(
+    {
+      // `ordered-imports` of tslint is better for now
+      'import/order': 0,
+    },
+    tslintConfigAvailable || {
+      '@typescript-eslint/tslint/config': [
+        2,
+        {
+          lintFile,
+        },
+      ],
+    },
+  ),
 }
 
 exports.angular = [
@@ -304,6 +307,9 @@ exports.react = {
     react: {
       version: 'detect',
     },
+  },
+  rules: {
+    'react/jsx-boolean-value': [2, 'always'],
   },
 }
 
@@ -337,9 +343,9 @@ exports.mdx = Object.assign({}, exports.react, {
   files: '*.{md,mdx}',
   extends: exports.react.extends.concat(['plugin:mdx/recommended']),
   settings: Object.assign({}, exports.react.settings, resolveSettings),
-  rules: {
+  rules: Object.assign({}, exports.react.rules, {
     'node/no-unsupported-features/es-syntax': 0,
-  },
+  }),
 })
 
 exports.jest = {
