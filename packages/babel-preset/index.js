@@ -40,7 +40,7 @@ module.exports = declare((api, opts) => {
     ],
   ]
 
-  const plugins = []
+  const plugins = [require('@babel/plugin-proposal-class-properties')]
 
   if (!generator) {
     plugins.push([
