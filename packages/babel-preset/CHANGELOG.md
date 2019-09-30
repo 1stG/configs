@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.7.1 (2019-09-30)
+
+
+### Bug Fixes
+
+* **babel-preset:** class-properties is still proposal and required, which has not been shipped in preset-env ([e3995bc](https://github.com/1stG/configs/commit/e3995bc))
+
+
+
+
+
 # [0.7.0](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.6.2...@1stg/babel-preset@0.7.0) (2019-09-18)
 
 
