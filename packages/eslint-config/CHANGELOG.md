@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.16](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.15...@1stg/eslint-config@0.12.16) (2019-09-30)
+
+
+### Bug Fixes
+
+* **eslint-config:** add 1024 as magic number, extends jest rules from test ([e41f0cf](https://github.com/1stG/configs/commit/e41f0cf))
+
+
+
+
+
 ## [0.12.15](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.14...@1stg/eslint-config@0.12.15) (2019-09-29)
 
 
