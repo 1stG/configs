@@ -1,6 +1,6 @@
 {
   "extends": ["@1stg/tslint-config/react", "tslint-config-eslint/prettier"],
   "linterOptions": {
-    "exclude": ["node_modules/**"]
+    "exclude": ["**/node_modules/**"]
   }
 }

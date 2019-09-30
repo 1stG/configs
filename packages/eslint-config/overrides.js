@@ -348,17 +348,18 @@ exports.mdx = Object.assign({}, exports.react, {
   }),
 })
 
-exports.jest = {
-  files: '*.{spec,test}.{js,jsx,ts,tsx}',
-  extends: ['plugin:jest/recommended'],
-}
-
 exports.test = {
   files: '**/{test,tests}/**/*.{js,jsx,mdx,ts,tsx,vue}',
   rules: {
     'node/no-extraneous-import': 0,
     'node/no-extraneous-require': 0,
   },
+}
+
+exports.jest = {
+  files: '*.{spec,test}.{js,jsx,ts,tsx}',
+  extends: ['plugin:jest/recommended'],
+  rules: exports.test.rules,
 }
 
 exports.overrides = exports.ts

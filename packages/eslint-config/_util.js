@@ -81,5 +81,6 @@ exports.magicNumbers = [
   365,
   500,
   1000,
+  1024,
   3600,
 ]
