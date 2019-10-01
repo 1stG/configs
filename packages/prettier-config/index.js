@@ -14,6 +14,7 @@ module.exports = {
       files: [
         'angular.json',
         'jsconfig.json',
+        'settings.json',
         'tsconfig.json',
         'tsconfig.*.json',
         'tslint.json',

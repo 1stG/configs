@@ -1,47 +1,63 @@
+/* eslint-disable node/no-extraneous-require */
 const fs = require('fs')
-const path = require('path')
+const { resolve } = require('path')
 
-exports.identity = _ => _
+const isGlob = require('is-glob')
+const globSync = require('tiny-glob/sync')
+
+exports.tryFile = filePath => (fs.existsSync(filePath) ? filePath : undefined)
 
 let pkg = {}
 
 try {
-  pkg = require(path.resolve('package.json'))
+  pkg = require(resolve('package.json'))
 } catch (e) {}
 
-exports.isMonorepo =
-  fs.existsSync(path.resolve('lerna.json')) || !!pkg.workspaces
+let lernaConfig
 
 try {
-  const pkgs = path.resolve('packages')
-  exports.allowModules =
-    exports.isMonorepo &&
-    fs.readdirSync(pkgs).reduce((acc, pkg) => {
-      const pkgJson = path.resolve(pkgs, pkg, 'package.json')
+  lernaConfig = require(resolve('lerna.json'))
+} catch (e) {}
+
+const pkgsPath = (lernaConfig && lernaConfig.packages) || pkg.workspaces
+
+exports.isMonorepo = Array.isArray(pkgsPath)
+
+if (exports.isMonorepo) {
+  const pkgs = pkgsPath.reduce(
+    (acc, pkg) =>
+      acc
+        .concat(
+          isGlob(pkg)
+            ? globSync(pkg).map(sub => resolve(sub))
+            : exports.tryFile(resolve(pkg)),
+        )
+        .filter(Boolean),
+    [],
+  )
+
+  try {
+    exports.allowModules = pkgs.reduce((acc, pkg) => {
+      const pkgJson = resolve(pkg, 'package.json')
       return fs.existsSync(pkgJson) ? acc.concat(require(pkgJson).name) : acc
     }, [])
+  } catch (e) {}
+}
+
+try {
+  exports.isSrcDirAvailable = fs.statSync(resolve('src')).isDirectory()
 } catch (e) {}
 
 try {
-  exports.isSrcDirAvailable = fs.statSync(path.resolve('src')).isDirectory()
+  exports.isSrcAppDirAvailable = fs.statSync(resolve('src/app')).isDirectory()
 } catch (e) {}
 
 try {
-  exports.isSrcAppDirAvailable = fs
-    .statSync(path.resolve('src/app'))
-    .isDirectory()
+  exports.isNgAvailable = !!require.resolve('@angular/core')
 } catch (e) {}
 
 try {
-  // eslint-disable-next-line node/no-extraneous-require
-  require.resolve('@angular/core')
-  exports.isNgAvailable = true
-} catch (e) {}
-
-try {
-  // eslint-disable-next-line node/no-extraneous-require
-  require.resolve('webpack')
-  exports.isWebpackAvailable = true
+  exports.isWebpackAvailable = !!require.resolve('webpack')
 } catch (e) {}
 
 // https://webpack.js.org/api/module-variables/#__resourcequery-webpack-specific
@@ -55,12 +71,6 @@ exports.webpackSpecVars = [
   '__webpack_require__',
   'DEBUG',
 ]
-
-try {
-  // eslint-disable-next-line node/no-extraneous-require
-  require.resolve('browserslist')
-  exports.isBrowserslistEnabled = pkg.devDependencies.browserslist
-} catch (e) {}
 
 exports.magicNumbers = [
   -1,

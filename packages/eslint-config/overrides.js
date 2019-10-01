@@ -2,13 +2,13 @@ const fs = require('fs')
 const { resolve } = require('path')
 
 const {
-  identity,
   isMonorepo,
   isNgAvailable,
   isSrcDirAvailable,
   isSrcAppDirAvailable,
   isWebpackAvailable,
   magicNumbers,
+  tryFile,
   webpackSpecVars,
 } = require('./_util')
 
@@ -18,11 +18,10 @@ const BABEL_RC_CONFIG = resolve('.babelrc.js')
 let configFile
 
 try {
-  configFile = fs.existsSync(BABEL_CONFIG)
-    ? BABEL_CONFIG
-    : fs.existsSync(BABEL_RC_CONFIG)
-    ? BABEL_RC_CONFIG
-    : require.resolve('@1stg/babel-preset/config')
+  configFile =
+    tryFile(BABEL_CONFIG) ||
+    tryFile(BABEL_RC_CONFIG) ||
+    require.resolve('@1stg/babel-preset/config')
 } catch (e) {}
 
 exports.js = {
@@ -40,23 +39,15 @@ exports.js = {
     'babel/no-invalid-this': 2,
     'babel/no-unused-expressions': 2,
     'babel/valid-typeof': 2,
-    'node/no-unsupported-features/es-syntax': 0,
   },
 }
 
-const BASE_TSCONFIG = resolve('tsconfig.base.json')
-const DEFAULT_TSCONFIG = resolve('tsconfig.json')
-
-const PROJECT_TSCONFIG = fs.existsSync(BASE_TSCONFIG)
-  ? BASE_TSCONFIG
-  : fs.existsSync(DEFAULT_TSCONFIG)
-  ? DEFAULT_TSCONFIG
-  : undefined
-
 const TS_CONFIGS = [
-  PROJECT_TSCONFIG,
+  tryFile(resolve('tsconfig.eslint.json')) ||
+    tryFile(resolve('tsconfig.base.json')) ||
+    tryFile(resolve('tsconfig.json')),
   isMonorepo && 'packages/**/tsconfig.json',
-].filter(identity)
+].filter(Boolean)
 
 let project
 
@@ -76,7 +67,7 @@ const resolveSettings = {
       resolve('node_modules/@types'),
       isSrcDirAvailable && !isNgAvailable && resolve('src'),
       isNgAvailable && isSrcAppDirAvailable && resolve('src/app'),
-    ].filter(identity),
+    ].filter(Boolean),
     tryExtensions: [
       '.ts',
       '.tsx',
@@ -158,6 +149,13 @@ const tsBase = {
         allowMappedTypes: 'always',
       },
     ],
+    '@typescript-eslint/no-use-before-define': [
+      2,
+      {
+        classes: false,
+        functions: false,
+      },
+    ],
     '@typescript-eslint/no-useless-constructor': 2,
     '@typescript-eslint/no-unused-vars': [
       2,
@@ -183,8 +181,8 @@ const tsBase = {
     'import/no-named-as-default-member': 0,
     'no-empty-function': 0,
     'no-useless-constructor': 0,
-    'node/no-unsupported-features/es-syntax': 0,
-    // @typescript-eslint/no-floating-promises has already handled this case
+    'node/no-missing-import': 0, // TypeScript itself has handle this
+    // @typescript-eslint/no-floating-promises has already handled there case
     'promise/always-return': 0,
     'promise/catch-or-return': 0,
   },
@@ -236,7 +234,9 @@ exports.ts = [
 exports.dTs = {
   files: '*.d.ts',
   rules: {
+    '@typescript-eslint/no-extraneous-class': 0,
     '@typescript-eslint/no-namespace': 0,
+    '@typescript-eslint/no-unused-vars': 0,
     'import/no-duplicates': 0,
     'import/order': 0,
     'node/no-extraneous-import': 0,
@@ -246,8 +246,7 @@ exports.dTs = {
 let tslint = false
 
 try {
-  require.resolve('tslint')
-  tslint = true
+  tslint = !!require.resolve('tslint')
 } catch (e) {}
 
 const TSLINT_CONFIG = resolve('tslint.json')
@@ -310,6 +309,7 @@ exports.react = {
   },
   rules: {
     'react/jsx-boolean-value': [2, 'always'],
+    'react/jsx-handler-names': 0,
   },
 }
 
@@ -343,23 +343,33 @@ exports.mdx = Object.assign({}, exports.react, {
   files: '*.{md,mdx}',
   extends: exports.react.extends.concat(['plugin:mdx/recommended']),
   settings: Object.assign({}, exports.react.settings, resolveSettings),
-  rules: Object.assign({}, exports.react.rules, {
-    'node/no-unsupported-features/es-syntax': 0,
-  }),
 })
+
+const nonSourceRules = {
+  'node/no-extraneous-import': 0,
+  'node/no-extraneous-require': 0,
+  'node/no-unsupported-features/es-builtins': 0,
+}
 
 exports.test = {
   files: '**/{__test__,test,tests}/**/*.{js,jsx,mdx,ts,tsx,vue}',
-  rules: {
-    'node/no-extraneous-import': 0,
-    'node/no-extraneous-require': 0,
-  },
+  rules: nonSourceRules,
 }
 
 exports.jest = {
   files: '*.{spec,test}.{js,jsx,ts,tsx}',
   extends: ['plugin:jest/recommended'],
   rules: exports.test.rules,
+}
+
+exports.stories = {
+  files: '**/stories/**/*.{js,jsx,mdx,ts,tsx,vue}',
+  rules: nonSourceRules,
+}
+
+exports.config = {
+  files: ['.*rc.js', '*.config.{js,ts}'],
+  rules: nonSourceRules,
 }
 
 exports.overrides = exports.ts
@@ -375,5 +385,7 @@ exports.overrides = exports.ts
     exports.mdx,
     exports.jest,
     exports.test,
+    exports.stories,
+    exports.config,
   )
-  .filter(identity)
+  .filter(Boolean)
