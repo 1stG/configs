@@ -25,7 +25,7 @@ module.exports = ({
       require('postcss-modules', {
         globalModulePaths: [
           /[\\/]node_modules[\\/]/,
-          /\.global\.(p?css|less|s[ac]ss|styl(us)?)$/,
+          /(\bglobals?[\\/][-\w]+|\.globals?)\.(p?css|less|s[ac]ss|styl(us)?)$/,
         ],
         generateScopedName: isProd
           ? '[hash:base64:10]'
