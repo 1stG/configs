@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.3.1 (2019-10-01)
+
+
+### Bug Fixes
+
+* **postcss-config:** add postcss-modules support, skip npm and .global.* files  automatically ([b4e7d15](https://github.com/1stG/configs/commit/b4e7d15))
+* **rollup-config:** upgrade @pkgr/names-exports to 0.2.0 which supports prettier better ([0b6d251](https://github.com/1stG/configs/commit/0b6d251))
+
+
+
+
+
 # [0.3.0](https://github.com/1stG/configs/compare/@1stg/postcss-config@0.2.1...@1stg/postcss-config@0.3.0) (2019-09-17)
 
 
