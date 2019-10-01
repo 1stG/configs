@@ -349,7 +349,7 @@ exports.mdx = Object.assign({}, exports.react, {
 })
 
 exports.test = {
-  files: '**/{test,tests}/**/*.{js,jsx,mdx,ts,tsx,vue}',
+  files: '**/{__test__,test,tests}/**/*.{js,jsx,mdx,ts,tsx,vue}',
   rules: {
     'node/no-extraneous-import': 0,
     'node/no-extraneous-require': 0,
