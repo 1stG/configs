@@ -5,6 +5,9 @@
   "repository": "git@github.com:1stG/configs.git",
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "peerDependencies": {
     "@babel/core": "^7.6.2"
   },
@@ -16,6 +19,7 @@
     "@babel/preset-typescript": "^7.6.0",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "@vue/babel-preset-jsx": "^1.1.0",
+    "babel-plugin-import": "^1.12.2",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "babel-preset-proposal-typescript": "^1.4.1",
     "core-js": "^3.2.1",
