@@ -309,7 +309,13 @@ exports.react = {
   },
   rules: {
     'react/jsx-boolean-value': [2, 'always'],
-    'react/jsx-handler-names': 0,
+    'react/jsx-handler-names': [
+      2,
+      {
+        eventHandlerPrefix: false,
+        eventHandlerPropPrefix: 'on',
+      },
+    ],
   },
 }
 
