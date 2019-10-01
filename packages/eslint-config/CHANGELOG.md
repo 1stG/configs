@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.18](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.17...@1stg/eslint-config@0.12.18) (2019-10-01)
+
+
+### Bug Fixes
+
+* **browserslist-config:** update modern queries, bump dep versions ([d749107](https://github.com/1stG/configs/commit/d749107))
+* **eslint-config:** disable some no so useful rules, add stories and config ([74d1a69](https://github.com/1stG/configs/commit/74d1a69))
+
+
+
+
+
 ## [0.12.17](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.16...@1stg/eslint-config@0.12.17) (2019-10-01)
 
 

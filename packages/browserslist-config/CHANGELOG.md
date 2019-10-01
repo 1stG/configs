@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.2.2 (2019-10-01)
+
+
+### Bug Fixes
+
+* **browserslist-config:** update modern queries, bump dep versions ([d749107](https://github.com/1stG/configs/commit/d749107))
+
+
+
+
+
 ## [0.2.1](https://github.com/1stG/configs/compare/@1stg/browserslist-config@0.2.0...@1stg/browserslist-config@0.2.1) (2019-09-07)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.4](https://github.com/1stG/configs/compare/@1stg/prettier-config@0.3.3...@1stg/prettier-config@0.3.4) (2019-10-01)
+
+
+### Bug Fixes
+
+* **eslint-config:** disable some no so useful rules, add stories and config ([74d1a69](https://github.com/1stG/configs/commit/74d1a69))
+
+
+
+
+
 ## [0.3.3](https://github.com/1stG/configs/compare/@1stg/prettier-config@0.3.2...@1stg/prettier-config@0.3.3) (2019-09-29)
 
 
