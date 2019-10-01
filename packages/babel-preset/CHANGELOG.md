@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.2](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.7.1...@1stg/babel-preset@0.7.2) (2019-10-01)
+
+
+### Bug Fixes
+
+* **babel-preset:** add babel-plugin-import support with builtin antd support ([2854921](https://github.com/1stG/configs/commit/2854921))
+
+
+
+
+
 ## 0.7.1 (2019-09-30)
 
 
