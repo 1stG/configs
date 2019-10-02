@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/1stG/configs/compare/@1stg/prettier-config@0.4.0...@1stg/prettier-config@0.4.1) (2019-10-02)
+
+
+### Bug Fixes
+
+* **lint-staged:** enabled prettier-plugin-sh for a lot of files :tada: ([7f74c65](https://github.com/1stG/configs/commit/7f74c65))
+
+
+
+
+
 # [0.4.0](https://github.com/1stG/configs/compare/@1stg/prettier-config@0.3.4...@1stg/prettier-config@0.4.0) (2019-10-02)
 
 

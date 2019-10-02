@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.4](https://github.com/1stG/configs/compare/@1stg/lint-staged@0.8.3...@1stg/lint-staged@0.8.4) (2019-10-02)
+
+
+### Bug Fixes
+
+* **lint-staged:** enabled prettier-plugin-sh for a lot of files :tada: ([7f74c65](https://github.com/1stG/configs/commit/7f74c65))
+
+
+
+
+
 ## [0.8.3](https://github.com/1stG/configs/compare/@1stg/lint-staged@0.8.2...@1stg/lint-staged@0.8.3) (2019-09-29)
 
 
