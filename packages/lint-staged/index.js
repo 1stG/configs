@@ -5,15 +5,13 @@ const config = Object.assign({}, require('./base'))
 let eslint = false
 
 try {
-  require.resolve('eslint')
-  eslint = true
+  eslint = !!require.resolve('eslint')
 } catch (e) {}
 
 let tslint
 
 try {
-  require.resolve(path.resolve('tslint.json'))
-  tslint = true
+  tslint = !!require.resolve(path.resolve('tslint.json'))
 } catch (e) {}
 
 if (eslint && tslint) {

@@ -13,9 +13,17 @@ try {
 } catch (e) {}
 
 const config = {
-  '.!(*browserslist|npm|yarn)rc': ['prettier --write', 'git add'],
   '*.{js,jsx,md,mdx,mjs,vue}': ['eslint -f friendly --fix', 'git add'],
-  '*.{gql,html,json,pug,vue,toml,yaml,yml}': ['prettier --write', 'git add'],
+  '*.{*ignore,*sh,env,gql,html,json,pug,vue,toml,yaml,yml}': [
+    'prettier --write',
+    'git add',
+  ],
+  '.!(*browserslist|npm|yarn)rc': ['prettier --write', 'git add'],
+  '.{editorconfig|browserslistrc|npmrc|yarnrc}': [
+    'prettier --write --parser sh',
+    'git add',
+  ],
+  Dockerfile: ['prettier --write', 'git add'],
 }
 
 if (isStylelintAvailable) {
