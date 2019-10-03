@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.19](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.18...@1stg/eslint-config@0.12.19) (2019-10-03)
+
+
+### Bug Fixes
+
+* **babel-preset:** detect react-hot-loader and enable it automatically ([795a2fe](https://github.com/1stG/configs/commit/795a2fe))
+
+
+
+
+
 ## [0.12.18](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.17...@1stg/eslint-config@0.12.18) (2019-10-01)
 
 
