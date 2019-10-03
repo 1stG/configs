@@ -1,14 +1,13 @@
+/* eslint-disable node/no-extraneous-require */
 let isStylelintAvailable
 
 try {
-  // eslint-disable-next-line node/no-extraneous-require
   isStylelintAvailable = !!require.resolve('stylelint')
 } catch (e) {}
 
 let isImageminAvailable
 
 try {
-  // eslint-disable-next-line node/no-extraneous-require
   isImageminAvailable = !!require.resolve('@pkgr/imagemin')
 } catch (e) {}
 

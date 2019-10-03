@@ -1,3 +1,4 @@
+/* eslint-disable node/no-extraneous-require */
 const { declare } = require('@babel/helper-plugin-utils')
 
 const DEFAULT_ANTD_OPTIONS = {
@@ -83,10 +84,18 @@ module.exports = declare(
       presets.push(require('@babel/preset-typescript'))
     }
 
+    let reactHotLoaderAvailable = false
+
+    try {
+      reactHotLoaderAvailable = !!require.resolve('react-hot-loader/babel')
+    } catch (e) {}
+
+    const isDev = api.env('development')
+
     const reactPreset = [
       require('@babel/preset-react'),
       {
-        development: api.env('development'),
+        development: isDev,
       },
     ]
     const reactPlugin = api.env('production')
@@ -96,7 +105,7 @@ module.exports = declare(
             removeImport: true,
           },
         ]
-      : undefined
+      : isDev && reactHotLoaderAvailable && require('react-hot-loader/babel')
 
     if (react) {
       presets.push(reactPreset)
@@ -118,7 +127,7 @@ module.exports = declare(
         : [
             {
               test: /\.(js|md|ts)x$/,
-              plugins: reactPlugin && [reactPlugin],
+              plugins: reactPlugin ? [reactPlugin] : undefined,
               presets: [
                 [
                   proposalTypeScriptPreset,

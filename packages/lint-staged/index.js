@@ -2,7 +2,7 @@ const path = require('path')
 
 const config = Object.assign({}, require('./base'))
 
-let eslint = false
+let eslint
 
 try {
   eslint = !!require.resolve('eslint')

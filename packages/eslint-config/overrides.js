@@ -182,6 +182,7 @@ const tsBase = {
     'no-empty-function': 0,
     'no-useless-constructor': 0,
     'node/no-missing-import': 0, // TypeScript itself has handle this
+    'node/shebang': 0,
     // @typescript-eslint/no-floating-promises has already handled there case
     'promise/always-return': 0,
     'promise/catch-or-return': 0,
