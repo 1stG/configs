@@ -2,6 +2,6 @@
   "$schema": "http://json.schemastore.org/tslint",
   "extends": [
     "./tslint.json",
-    "tslint-config-eslint"
+    "tslint-config-eslint/prettier"
   ]
 }

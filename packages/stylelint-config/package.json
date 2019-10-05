@@ -14,7 +14,7 @@
     "stylelint-high-performance-animation": "^1.2.1",
     "stylelint-no-unsupported-browser-features": "^3.0.2",
     "stylelint-prettier": "^1.1.1",
-    "stylelint-scss": "^3.11.0"
+    "stylelint-scss": "^3.11.1"
   },
   "publishConfig": {
     "access": "public"

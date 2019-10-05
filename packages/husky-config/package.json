@@ -6,8 +6,8 @@
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "peerDependencies": {
-    "@commitlint/cli": "^8.1.0",
-    "lint-staged": "^9.2.5"
+    "@commitlint/cli": "^8.2.0",
+    "lint-staged": "^9.4.1"
   },
   "publishConfig": {
     "access": "public"
