@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.7.1 (2019-10-05)
+
+
+### Bug Fixes
+
+* **deps:** upgrade buggy/outdated (dev)Dependencies ([7dceac0](https://github.com/1stG/configs/commit/7dceac0))
+* **lint-staged:** add tsc --noEmit for tsx? files via function... ([6091744](https://github.com/1stG/configs/commit/6091744))
+
+
+
+
+
 # [0.7.0](https://github.com/1stG/configs/compare/@1stg/stylelint-config@0.6.3...@1stg/stylelint-config@0.7.0) (2019-09-24)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.20](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.19...@1stg/eslint-config@0.12.20) (2019-10-05)
+
+
+### Bug Fixes
+
+* **deps:** upgrade buggy/outdated (dev)Dependencies ([7dceac0](https://github.com/1stG/configs/commit/7dceac0))
+
+
+
+
+
 ## [0.12.19](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.18...@1stg/eslint-config@0.12.19) (2019-10-03)
 
 

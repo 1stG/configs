@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.4](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.7.3...@1stg/babel-preset@0.7.4) (2019-10-05)
+
+
+### Bug Fixes
+
+* **babel-preset:** enable remove-console on production except error and warn ([cbd95c9](https://github.com/1stG/configs/commit/cbd95c9))
+
+
+
+
+
 ## [0.7.3](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.7.2...@1stg/babel-preset@0.7.3) (2019-10-03)
 
 
