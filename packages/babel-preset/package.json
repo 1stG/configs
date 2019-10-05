@@ -21,6 +21,7 @@
     "@vue/babel-preset-jsx": "^1.1.0",
     "babel-plugin-import": "^1.12.2",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "babel-preset-proposal-typescript": "^1.4.1",
     "core-js": "^3.2.1",
     "fast-async": "^7.0.6"

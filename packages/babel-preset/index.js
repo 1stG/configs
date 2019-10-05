@@ -21,6 +21,9 @@ module.exports = declare(
   ) => {
     api.assertVersion(7)
 
+    const isDev = api.env('development')
+    const isProd = api.env('production')
+
     const proposalTypeScriptPreset = require('babel-preset-proposal-typescript')
 
     const presets = [
@@ -50,6 +53,15 @@ module.exports = declare(
     ]
 
     const plugins = [require('@babel/plugin-proposal-class-properties')]
+
+    if (isProd) {
+      plugins.push([
+        require('babel-plugin-transform-remove-console'),
+        {
+          exclude: ['error', 'warn'],
+        },
+      ])
+    }
 
     if (!generator) {
       plugins.push([
@@ -89,8 +101,6 @@ module.exports = declare(
     try {
       reactHotLoaderAvailable = !!require.resolve('react-hot-loader/babel')
     } catch (e) {}
-
-    const isDev = api.env('development')
 
     const reactPreset = [
       require('@babel/preset-react'),
