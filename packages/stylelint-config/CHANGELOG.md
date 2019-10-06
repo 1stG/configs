@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.2](https://github.com/1stG/configs/compare/@1stg/stylelint-config@0.7.1...@1stg/stylelint-config@0.7.2) (2019-10-06)
+
+
+### Bug Fixes
+
+* **stylelint-config:** add modules config, support :local and :global selector ([b68f83a](https://github.com/1stG/configs/commit/b68f83a))
+
+
+
+
+
 ## 0.7.1 (2019-10-05)
 
 
