@@ -16,3 +16,15 @@ $a: 1 !default;
 } @else {
   $a: 3 !default;
 }
+
+:local {
+  .a {
+    color: red;
+  }
+
+  :global {
+    .b {
+      color: green;
+    }
+  }
+}

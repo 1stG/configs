@@ -67,7 +67,13 @@
   ],
   "prettier": "@1stg/prettier-config",
   "stylelint": {
-    "extends": "@1stg/stylelint-config/scss",
-    "ignoreFiles": "*.less"
+    "extends": [
+      "@1stg/stylelint-config/scss",
+      "@1stg/stylelint-config/modules"
+    ],
+    "ignoreFiles": "*.less",
+    "rules": {
+      "plugin/no-unsupported-browser-features": null
+    }
   }
 }
