@@ -3468,10 +3468,10 @@ babel-preset-jest@^24.9.0:
     "@babel/plugin-syntax-object-rest-spread" "^7.0.0"
     babel-plugin-jest-hoist "^24.9.0"
 
-babel-preset-proposal-typescript@^1.4.3:
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/babel-preset-proposal-typescript/-/babel-preset-proposal-typescript-1.4.3.tgz#f7a7736b224716c7d3e0938787d2e98ef64a56e5"
-  integrity sha512-4dGPYDjwRjATQVS8GeYGIU/kFD1M97aZi8to7cYVtKClIQhTdrOyUK8tKVH9JJZDfIzg1LNp8eJB0F0+31qKjw==
+babel-preset-proposal-typescript@^1.4.5:
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/babel-preset-proposal-typescript/-/babel-preset-proposal-typescript-1.4.5.tgz#02afa131c2f9df97f63d7e2a42c1ac547404bc89"
+  integrity sha512-Hq+nxgMav16QEUYbOpAv8OQ4Kad6Wt4xvXuVETgn9vVKUcT3ProzQL2OKAFKTkC0xeJZ/MswPm+pQXybwgGu5Q==
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-proposal-class-properties" "^7.5.5"

@@ -17,6 +17,9 @@ module.exports = declare(
       typescript,
       vue,
       useBuiltIns = 'usage',
+      decoratorsLegacy = true,
+      classLoose = decoratorsLegacy === true,
+      decoratorsBeforeExport = decoratorsLegacy === true ? undefined : true,
     },
   ) => {
     api.assertVersion(7)
@@ -26,14 +29,13 @@ module.exports = declare(
 
     const proposalTypeScriptPreset = require('babel-preset-proposal-typescript')
 
-    const nonTsOptions = {
-      classLoose: false,
-      decoratorsLegacy: false,
-      decoratorsBeforeExport: true,
-    }
+    const proposalTsOptions = Object.assign({
+      classLoose,
+      decoratorsLegacy,
+    })
 
     const presets = [
-      [proposalTypeScriptPreset, nonTsOptions],
+      [proposalTypeScriptPreset, proposalTsOptions],
       [
         require('@babel/preset-env'),
         {
@@ -53,7 +55,21 @@ module.exports = declare(
       ],
     ]
 
-    const plugins = []
+    const plugins = [
+      [
+        '@babel/plugin-proposal-decorators',
+        Object.assign({
+          decoratorsBeforeExport,
+          legacy: decoratorsLegacy,
+        }),
+      ],
+      [
+        '@babel/plugin-proposal-class-properties',
+        {
+          loose: classLoose,
+        },
+      ],
+    ]
 
     if (isProd) {
       plugins.push([
@@ -126,8 +142,6 @@ module.exports = declare(
       }
     }
 
-    const reactPlugins = reactPlugin ? [reactPlugin] : undefined
-
     if (vue) {
       presets.push('@vue/babel-preset-jsx')
     }
@@ -135,52 +149,20 @@ module.exports = declare(
     return {
       plugins,
       presets,
-      overrides: [
-        {
-          test: /\.tsx?$/,
-          presets: [proposalTypeScriptPreset],
-          plugins: [
-            [
-              '@babel/plugin-proposal-decorators',
-              {
-                legacy: true,
-              },
-            ],
-            [
-              '@babel/plugin-proposal-class-properties',
-              {
-                loose: true,
-              },
-            ],
-          ],
-        },
-      ].concat(
-        vue
-          ? []
-          : [
-              {
-                test: /\.(js|md)x$/,
-                plugins: reactPlugins,
-                presets: [
-                  [
-                    proposalTypeScriptPreset,
-                    Object.assign(
-                      {
-                        isTSX: true,
-                      },
-                      nonTsOptions,
-                    ),
-                  ],
-                  reactPreset,
+      overrides: vue
+        ? undefined
+        : [
+            {
+              test: /\.(js|md|ts)x$/,
+              presets: [
+                [
+                  proposalTypeScriptPreset,
+                  Object.assign({ isTSX: true }, proposalTsOptions),
                 ],
-              },
-              {
-                test: /\.tsx$/,
-                plugins: reactPlugins,
-                presets: [reactPreset],
-              },
-            ],
-      ),
+              ],
+              plugins: reactPlugin ? [reactPlugin] : undefined,
+            },
+          ],
     }
   },
 )
