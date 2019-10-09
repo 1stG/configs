@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.6](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.7.5...@1stg/babel-preset@0.7.6) (2019-10-09)
+
+
+### Bug Fixes
+
+* **babel-preset:** add missing class-properties for .tsx? ([0c949f2](https://github.com/1stG/configs/commit/0c949f2))
+
+
+
+
+
 ## [0.7.5](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.7.4...@1stg/babel-preset@0.7.5) (2019-10-09)
 
 
