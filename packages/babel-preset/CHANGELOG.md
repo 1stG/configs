@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.7](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.7.6...@1stg/babel-preset@0.7.7) (2019-10-09)
+
+
+### Bug Fixes
+
+* **babel-preset:** shoud provide default options for class properties and decorators ([cdd686a](https://github.com/1stG/configs/commit/cdd686a))
+
+
+
+
+
 ## [0.7.6](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.7.5...@1stg/babel-preset@0.7.6) (2019-10-09)
 
 
