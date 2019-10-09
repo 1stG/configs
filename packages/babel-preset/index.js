@@ -26,13 +26,14 @@ module.exports = declare(
 
     const proposalTypeScriptPreset = require('babel-preset-proposal-typescript')
 
+    const nonTsOptions = {
+      classLoose: false,
+      decoratorsLegacy: false,
+      decoratorsBeforeExport: true,
+    }
+
     const presets = [
-      [
-        proposalTypeScriptPreset,
-        {
-          isTSX: vue,
-        },
-      ],
+      [proposalTypeScriptPreset, nonTsOptions],
       [
         require('@babel/preset-env'),
         {
@@ -52,7 +53,7 @@ module.exports = declare(
       ],
     ]
 
-    const plugins = [require('@babel/plugin-proposal-class-properties')]
+    const plugins = []
 
     if (isProd) {
       plugins.push([
@@ -125,6 +126,8 @@ module.exports = declare(
       }
     }
 
+    const reactPlugins = reactPlugin ? [reactPlugin] : undefined
+
     if (vue) {
       presets.push('@vue/babel-preset-jsx')
     }
@@ -132,23 +135,46 @@ module.exports = declare(
     return {
       plugins,
       presets,
-      overrides: vue
-        ? undefined
-        : [
-            {
-              test: /\.(js|md|ts)x$/,
-              plugins: reactPlugin ? [reactPlugin] : undefined,
-              presets: [
-                [
-                  proposalTypeScriptPreset,
-                  {
-                    isTSX: true, // enable jsx plugin for mdx
-                  },
-                ],
-                reactPreset,
-              ],
-            },
+      overrides: [
+        {
+          test: /\.tsx?$/,
+          presets: [proposalTypeScriptPreset],
+          plugins: [
+            [
+              '@babel/plugin-proposal-decorators',
+              {
+                legacy: true,
+              },
+            ],
           ],
+        },
+      ].concat(
+        vue
+          ? []
+          : [
+              {
+                test: /\.(js|md)x$/,
+                plugins: reactPlugins,
+                presets: [
+                  [
+                    proposalTypeScriptPreset,
+                    Object.assign(
+                      {
+                        isTSX: true,
+                      },
+                      nonTsOptions,
+                    ),
+                  ],
+                  reactPreset,
+                ],
+              },
+              {
+                test: /\.tsx$/,
+                plugins: reactPlugins,
+                presets: [reactPreset],
+              },
+            ],
+      ),
     }
   },
 )
