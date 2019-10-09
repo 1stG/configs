@@ -146,6 +146,12 @@ module.exports = declare(
                 legacy: true,
               },
             ],
+            [
+              '@babel/plugin-proposal-class-properties',
+              {
+                loose: true,
+              },
+            ],
           ],
         },
       ].concat(
