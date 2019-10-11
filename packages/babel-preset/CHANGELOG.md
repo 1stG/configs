@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.8](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.7.7...@1stg/babel-preset@0.7.8) (2019-10-11)
+
+
+### Bug Fixes
+
+* **babel-preset:** support isTSX option and enable for vue by default ([1b762dd](https://github.com/1stG/configs/commit/1b762dd))
+
+
+
+
+
 ## [0.7.7](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.7.6...@1stg/babel-preset@0.7.7) (2019-10-09)
 
 
