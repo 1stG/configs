@@ -16,6 +16,8 @@ module.exports = declare(
       react,
       typescript,
       vue,
+      isTSX = vue,
+      metadata,
       useBuiltIns = 'usage',
       decoratorsLegacy = true,
       classLoose = decoratorsLegacy === true,
@@ -32,6 +34,7 @@ module.exports = declare(
     const proposalTsOptions = Object.assign({
       classLoose,
       decoratorsLegacy,
+      isTSX,
     })
 
     const presets = [
@@ -55,13 +58,23 @@ module.exports = declare(
       ],
     ]
 
+    if (typescript) {
+      presets.push([
+        require('@babel/preset-typescript'),
+        {
+          isTSX,
+          allExtensions: isTSX,
+        },
+      ])
+    }
+
     const plugins = [
       [
         '@babel/plugin-proposal-decorators',
-        Object.assign({
+        {
           decoratorsBeforeExport,
           legacy: decoratorsLegacy,
-        }),
+        },
       ],
       [
         '@babel/plugin-proposal-class-properties',
@@ -70,6 +83,10 @@ module.exports = declare(
         },
       ],
     ]
+
+    if (metadata) {
+      plugins.unshift(require('babel-plugin-transform-typescript-metadata'))
+    }
 
     if (isProd) {
       plugins.push([
@@ -109,10 +126,6 @@ module.exports = declare(
       }
     }
 
-    if (typescript) {
-      presets.push(require('@babel/preset-typescript'))
-    }
-
     let reactHotLoaderAvailable = false
 
     try {
@@ -149,7 +162,7 @@ module.exports = declare(
     return {
       plugins,
       presets,
-      overrides: vue
+      overrides: isTSX
         ? undefined
         : [
             {
