@@ -2,7 +2,6 @@ const fs = require('fs')
 const { resolve } = require('path')
 
 const {
-  isMonorepo,
   isNgAvailable,
   isSrcDirAvailable,
   isSrcAppDirAvailable,
@@ -34,8 +33,13 @@ exports.js = {
   },
   plugins: ['babel'],
   rules: {
-    'babel/new-cap': 2,
+    camelcase: 0,
+    'new-cap': 0,
+    'no-invalid-this': 0,
+    'no-unused-expressions': 0,
+    'valid-typeof': 0,
     'babel/camelcase': 2,
+    'babel/new-cap': 2,
     'babel/no-invalid-this': 2,
     'babel/no-unused-expressions': 2,
     'babel/valid-typeof': 2,
@@ -46,7 +50,6 @@ const TS_CONFIGS = [
   tryFile(resolve('tsconfig.eslint.json')) ||
     tryFile(resolve('tsconfig.base.json')) ||
     tryFile(resolve('tsconfig.json')),
-  isMonorepo && 'packages/**/tsconfig.json',
 ].filter(Boolean)
 
 let project
@@ -180,6 +183,7 @@ const tsBase = {
     'import/no-named-as-default': 0,
     'import/no-named-as-default-member': 0,
     'no-empty-function': 0,
+    'no-unused-vars': 0,
     'no-useless-constructor': 0,
     'node/no-missing-import': 0, // TypeScript itself has handle this
     'node/shebang': 0,
@@ -294,8 +298,7 @@ exports.angular = [
   },
 ]
 
-exports.react = {
-  files: '*.{js,jsx,tsx}',
+const reactJsx = {
   extends: [
     'standard-jsx', // for Vue
     'standard-react',
@@ -308,17 +311,32 @@ exports.react = {
       version: 'detect',
     },
   },
-  rules: {
-    'react/jsx-boolean-value': [2, 'always'],
-    'react/jsx-handler-names': [
-      2,
-      {
-        eventHandlerPrefix: false,
-        eventHandlerPropPrefix: 'on',
-      },
-    ],
-  },
 }
+
+exports.react = [
+  Object.assign(
+    {
+      files: '*.{js,jsx,tsx}',
+      rules: {
+        'react/jsx-boolean-value': [2, 'always'],
+        'react/jsx-handler-names': [
+          2,
+          {
+            eventHandlerPrefix: false,
+            eventHandlerPropPrefix: 'on',
+          },
+        ],
+      },
+    },
+    reactJsx,
+  ),
+  {
+    files: '*.tsx',
+    rules: {
+      'react/display-name': 0,
+    },
+  },
+]
 
 exports.reactHooks = {
   files: '*.{js,jsx,ts,tsx}',
@@ -346,10 +364,10 @@ exports.vue = Object.assign({}, tsBase, {
   extends: tsBase.extends.concat('plugin:vue/recommended', 'prettier/vue'),
 })
 
-exports.mdx = Object.assign({}, exports.react, {
+exports.mdx = Object.assign({}, reactJsx, {
   files: '*.{md,mdx}',
-  extends: exports.react.extends.concat(['plugin:mdx/recommended']),
-  settings: Object.assign({}, exports.react.settings, resolveSettings),
+  extends: reactJsx.extends.concat(['plugin:mdx/recommended']),
+  settings: Object.assign({}, reactJsx.settings, resolveSettings),
 })
 
 const nonSourceRules = {
