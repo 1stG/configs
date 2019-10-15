@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.21](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.20...@1stg/eslint-config@0.12.21) (2019-10-15)
+
+
+### Bug Fixes
+
+* **eslint-config:** disable some redundant rules ([837f6f3](https://github.com/1stG/configs/commit/837f6f3c051e3704247cccf5044ff8f0c285209e))
+
+
+
+
+
 ## [0.12.20](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.19...@1stg/eslint-config@0.12.20) (2019-10-05)
 
 
