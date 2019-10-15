@@ -2,7 +2,9 @@ language: node_js
 
 node_js: --lts
 
-env: EFF_NO_LINK_RULES=true
+env:
+  - EFF_NO_LINK_RULES=true
+  - PARSER_NO_WATCH=true
 
 cache:
   - yarn
