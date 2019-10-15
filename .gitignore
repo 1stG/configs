@@ -1,3 +1,4 @@
 *.log
+.eslintcache
 lib
 node_modules
