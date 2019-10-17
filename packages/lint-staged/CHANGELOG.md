@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.9](https://github.com/1stG/configs/compare/@1stg/lint-staged@0.8.8...@1stg/lint-staged@0.8.9) (2019-10-17)
+
+
+### Bug Fixes
+
+* **lint-staged:** enable stylelint cache to speed up ([08e4636](https://github.com/1stG/configs/commit/08e46362b9adbcf608afa81a6108dc665df73895))
+
+
+
+
+
 ## [0.8.8](https://github.com/1stG/configs/compare/@1stg/lint-staged@0.8.7...@1stg/lint-staged@0.8.8) (2019-10-17)
 
 
