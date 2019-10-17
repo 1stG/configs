@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.10](https://github.com/1stG/configs/compare/@1stg/lint-staged@0.8.9...@1stg/lint-staged@0.8.10) (2019-10-17)
+
+
+### Bug Fixes
+
+* **lint-staged:** enable PARSER_NO_WATCH for @typescript-eslint/parser ([d8c3b45](https://github.com/1stG/configs/commit/d8c3b4522e4f2b2d6f9581244da303ca65364127))
+
+
+
+
+
 ## [0.8.9](https://github.com/1stG/configs/compare/@1stg/lint-staged@0.8.8...@1stg/lint-staged@0.8.9) (2019-10-17)
 
 
