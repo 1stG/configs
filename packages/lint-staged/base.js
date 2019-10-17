@@ -26,7 +26,7 @@ const config = {
 }
 
 if (isStylelintAvailable) {
-  config['*.{css,less,sass,scss,vue}'] = ['stylelint --fix', 'git add']
+  config['*.{css,less,sass,scss,vue}'] = ['stylelint --cache --fix', 'git add']
 }
 
 if (isImageminAvailable) {
