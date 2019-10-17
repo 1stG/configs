@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.1.1 (2019-10-17)
+
+
+### Bug Fixes
+
+* **commitlint-config:** enable lerna-scopes with conventional, close [#7](https://github.com/1stG/configs/issues/7) ([4393955](https://github.com/1stG/configs/commit/4393955fd0beb9bfb7c3f32a5e5f842fbd222a61))
+
+
+
+
+
 # 0.1.0 (2019-09-17)
 
 
