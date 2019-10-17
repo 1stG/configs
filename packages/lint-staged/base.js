@@ -13,7 +13,7 @@ try {
 
 const config = {
   '*.{js,jsx,md,mdx,mjs,vue}': ['eslint --cache -f friendly --fix', 'git add'],
-  '*.{*ignore,*sh,env,gql,html,json,pug,vue,toml,yaml,yml}': [
+  '*.{*ignore,*sh,env,env.*,gql,html,json,pug,vue,toml,yaml,yml}': [
     'prettier --write',
     'git add',
   ],
