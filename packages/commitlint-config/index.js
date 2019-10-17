@@ -7,5 +7,8 @@ try {
 } catch (e) {}
 
 module.exports = isLernaAvailable
-  ? require('@commitlint/config-lerna-scopes')
+  ? require('lodash.merge')(
+      require('@commitlint/config-conventional'),
+      require('@commitlint/config-lerna-scopes'),
+    )
   : require('@commitlint/config-conventional')
