@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.8](https://github.com/1stG/configs/compare/@1stg/lint-staged@0.8.7...@1stg/lint-staged@0.8.8) (2019-10-17)
+
+
+### Bug Fixes
+
+* **lint-staged:** enable eslint cache ([e93b8ce](https://github.com/1stG/configs/commit/e93b8ce14b288838d48354fae4697befa38824fc))
+
+
+
+
+
 ## [0.8.7](https://github.com/1stG/configs/compare/@1stg/lint-staged@0.8.6...@1stg/lint-staged@0.8.7) (2019-10-15)
 
 
