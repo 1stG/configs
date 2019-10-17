@@ -1,6 +1,6 @@
 {
   "*.{ts,tsx}": [
-    "eslint --cache -f friendly --fix",
+    "cross-env PARSER_NO_WATCH=true eslint --cache -f friendly --fix",
     "git add"
   ]
 }
