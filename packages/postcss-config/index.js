@@ -1,8 +1,8 @@
-const { NODE_ENV = 'development' } = process.env
+const DEV = 'development'
 
 module.exports = ({
   advanced,
-  env,
+  env = process.env.NODE_ENV || DEV,
   import: importOptions,
   modules,
   normalize,
@@ -18,7 +18,8 @@ module.exports = ({
     require('autoprefixer'),
   ]
 
-  const isProd = (env || NODE_ENV) === 'production'
+  const isDev = env === DEV
+  const isProd = env === 'production'
 
   if (modules) {
     plugins.push(
@@ -52,7 +53,7 @@ module.exports = ({
 
   return {
     ...options,
-    map: !isProd,
+    map: isDev,
     plugins,
   }
 }

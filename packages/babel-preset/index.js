@@ -138,7 +138,7 @@ module.exports = declare(
         development: isDev,
       },
     ]
-    const reactPlugin = api.env('production')
+    const reactPlugin = isProd
       ? [
           require('babel-plugin-transform-react-remove-prop-types'),
           {

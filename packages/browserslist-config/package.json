@@ -6,7 +6,7 @@
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "peerDependencies": {
-    "browserslist": "^4.7.0"
+    "browserslist": "^4.7.1"
   },
   "publishConfig": {
     "access": "public"

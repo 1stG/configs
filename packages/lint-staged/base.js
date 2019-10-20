@@ -12,7 +12,10 @@ try {
 } catch (e) {}
 
 const config = {
-  '*.{js,jsx,md,mdx,mjs,vue}': ['eslint --cache -f friendly --fix', 'git add'],
+  '*.{js,jsx,md,mdx,mjs,vue}': [
+    'cross-env EFF_NO_LINK_RULES=true eslint --cache -f friendly --fix',
+    'git add',
+  ],
   '*.{*ignore,*sh,env,env.*,gql,html,json,pug,vue,toml,yaml,yml}': [
     'prettier --write',
     'git add',

@@ -1,2 +1,2 @@
-extends @1stg/browserslist-config
-> 0%
+extends @1stg/browserslist-config/modern
+>0%
