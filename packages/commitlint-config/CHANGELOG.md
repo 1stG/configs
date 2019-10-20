@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2](https://github.com/1stG/configs/compare/@1stg/commitlint-config@0.1.1...@1stg/commitlint-config@0.1.2) (2019-10-20)
+
+
+### Bug Fixes
+
+* a lot of tiny improvements ([06fb545](https://github.com/1stG/configs/commit/06fb545d9687e6da47b3e367bdb1b89553fc3c86))
+
+
+
+
+
 ## 0.1.1 (2019-10-17)
 
 

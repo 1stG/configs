@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.9](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.7.8...@1stg/babel-preset@0.7.9) (2019-10-20)
+
+
+### Bug Fixes
+
+* a lot of tiny improvements ([06fb545](https://github.com/1stG/configs/commit/06fb545d9687e6da47b3e367bdb1b89553fc3c86))
+
+
+
+
+
 ## [0.7.8](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.7.7...@1stg/babel-preset@0.7.8) (2019-10-11)
 
 
