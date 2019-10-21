@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.22](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.21...@1stg/eslint-config@0.12.22) (2019-10-21)
+
+
+### Bug Fixes
+
+* **eslint-config:** disable node/shebang for {bin,cli}.ts ([42cdbf0](https://github.com/1stG/configs/commit/42cdbf0199d16b94192ab707b765f780ada5cb81))
+
+
+
+
+
 ## [0.12.21](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.20...@1stg/eslint-config@0.12.21) (2019-10-15)
 
 
