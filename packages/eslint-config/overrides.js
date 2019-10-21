@@ -196,6 +196,12 @@ const tsBase = {
 exports.ts = [
   tsBase,
   {
+    files: '{bin,cli}.ts',
+    rules: {
+      'node/shebang': 0,
+    },
+  },
+  {
     files: '*.{ts,tsx}',
     excludedFiles: '*.d.ts',
     parserOptions: {
