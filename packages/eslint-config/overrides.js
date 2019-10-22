@@ -25,7 +25,7 @@ try {
     require.resolve('@1stg/babel-preset/config')
 } catch (e) {}
 
-exports.js = {
+const jsBase = {
   files: '*.{mjs,js,jsx}',
   parser: 'babel-eslint',
   parserOptions: configFile && {
@@ -47,6 +47,8 @@ exports.js = {
     'babel/valid-typeof': 2,
   },
 }
+
+exports.js = jsBase
 
 const TS_CONFIGS = [
   tryFile(resolve('tsconfig.eslint.json')) ||
@@ -306,14 +308,13 @@ exports.angular = [
   },
 ]
 
-const jsx = {
+const reactJsx = {
   extends: [
-    'standard-jsx', // for Vue
-    isReactAvailable && 'standard-react',
-    isReactAvailable && 'plugin:react/recommended',
+    'standard-react',
+    'plugin:react/recommended',
     'prettier',
-    isReactAvailable && 'prettier/react',
-  ].filter(Boolean),
+    'prettier/react',
+  ],
   settings: {
     react: {
       version: 'detect',
@@ -336,7 +337,7 @@ exports.react = [
         ],
       },
     },
-    jsx,
+    reactJsx,
   ),
   {
     files: '*.tsx',
@@ -363,19 +364,31 @@ exports.reactTs = {
   },
 }
 
-exports.vue = Object.assign({}, tsBase, {
-  files: ['*.vue'],
-  parserOptions: {
-    parser: '@typescript-eslint/parser',
-    extraFileExtensions: ['.vue'],
-  },
-  extends: tsBase.extends.concat('plugin:vue/recommended', 'prettier/vue'),
-})
+const vueExtends = ['standard-jsx', 'plugin:vue/recommended', 'prettier/vue']
 
-exports.mdx = Object.assign({}, jsx, {
+exports.vue = [
+  Object.assign({}, jsBase, {
+    parser: 'vue-eslint-parser',
+    extends: vueExtends,
+    parserOptions: {
+      parser: jsBase.parser,
+    },
+  }),
+  Object.assign({}, tsBase, {
+    parser: 'vue-eslint-parser',
+    files: '*.{vue,ts,tsx}',
+    parserOptions: {
+      parser: '@typescript-eslint/parser',
+      extraFileExtensions: ['.vue'],
+    },
+    extends: tsBase.extends.concat(vueExtends),
+  }),
+]
+
+exports.mdx = Object.assign({}, reactJsx, {
   files: '*.{md,mdx}',
-  extends: jsx.extends.concat(['plugin:mdx/recommended']),
-  settings: Object.assign({}, jsx.settings, resolveSettings),
+  extends: reactJsx.extends.concat(['plugin:mdx/recommended']),
+  settings: Object.assign({}, reactJsx.settings, resolveSettings),
 })
 
 const nonSourceRules = {
