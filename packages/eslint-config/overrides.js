@@ -3,8 +3,10 @@ const { resolve } = require('path')
 
 const {
   isNgAvailable,
+  isReactAvailable,
   isSrcDirAvailable,
   isSrcAppDirAvailable,
+  isVueAvailable,
   isWebpackAvailable,
   magicNumbers,
   tryFile,
@@ -304,14 +306,14 @@ exports.angular = [
   },
 ]
 
-const reactJsx = {
+const jsx = {
   extends: [
     'standard-jsx', // for Vue
-    'standard-react',
-    'plugin:react/recommended',
+    isReactAvailable && 'standard-react',
+    isReactAvailable && 'plugin:react/recommended',
     'prettier',
-    'prettier/react',
-  ],
+    isReactAvailable && 'prettier/react',
+  ].filter(Boolean),
   settings: {
     react: {
       version: 'detect',
@@ -334,7 +336,7 @@ exports.react = [
         ],
       },
     },
-    reactJsx,
+    jsx,
   ),
   {
     files: '*.tsx',
@@ -370,10 +372,10 @@ exports.vue = Object.assign({}, tsBase, {
   extends: tsBase.extends.concat('plugin:vue/recommended', 'prettier/vue'),
 })
 
-exports.mdx = Object.assign({}, reactJsx, {
+exports.mdx = Object.assign({}, jsx, {
   files: '*.{md,mdx}',
-  extends: reactJsx.extends.concat(['plugin:mdx/recommended']),
-  settings: Object.assign({}, reactJsx.settings, resolveSettings),
+  extends: jsx.extends.concat(['plugin:mdx/recommended']),
+  settings: Object.assign({}, jsx.settings, resolveSettings),
 })
 
 const nonSourceRules = {
@@ -408,11 +410,11 @@ exports.overrides = exports.ts
     exports.js,
     exports.dTs,
     tslint && lintFile && exports.tslint,
-    exports.react,
-    exports.reactHooks,
-    exports.reactTs,
+    isReactAvailable && exports.react,
+    isReactAvailable && exports.reactHooks,
+    isReactAvailable && exports.reactTs,
     isNgAvailable && exports.angular,
-    exports.vue,
+    isVueAvailable && exports.vue,
     exports.mdx,
     exports.jest,
     exports.test,

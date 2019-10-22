@@ -57,6 +57,14 @@ try {
 } catch (e) {}
 
 try {
+  exports.isReactAvailable = !!require.resolve('react')
+} catch (e) {}
+
+try {
+  exports.isVueAvailable = !!require.resolve('vue')
+} catch (e) {}
+
+try {
   exports.isWebpackAvailable = !!require.resolve('webpack')
 } catch (e) {}
 
