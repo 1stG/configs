@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.1](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.13.0...@1stg/eslint-config@0.13.1) (2019-10-22)
+
+
+### Bug Fixes
+
+* set parser option for vue correctly ([a9804e0](https://github.com/1stG/configs/commit/a9804e042131cb05eb7fcab6dcb26b3f62015d9b))
+* treat mdx as jsx correctly, remove standard-jsx for vue ([e9e488f](https://github.com/1stG/configs/commit/e9e488ffdd1685a5881f46c4824c4ec37f4f10d1))
+* **eslint-config:** split react and vue config correctly ([ce82dd8](https://github.com/1stG/configs/commit/ce82dd82ea4d8c8caca0f67162ce42db7558277c))
+
+
+
+
+
 # [0.13.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.22...@1stg/eslint-config@0.13.0) (2019-10-22)
 
 

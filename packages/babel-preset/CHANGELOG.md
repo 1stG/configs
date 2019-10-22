@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.10](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.7.9...@1stg/babel-preset@0.7.10) (2019-10-22)
+
+
+### Bug Fixes
+
+* treat mdx as jsx correctly, remove standard-jsx for vue ([e9e488f](https://github.com/1stG/configs/commit/e9e488ffdd1685a5881f46c4824c4ec37f4f10d1))
+
+
+
+
+
 ## [0.7.9](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.7.8...@1stg/babel-preset@0.7.9) (2019-10-20)
 
 
