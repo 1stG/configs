@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.13.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.22...@1stg/eslint-config@0.13.0) (2019-10-22)
+
+
+### Features
+
+* **eslint-config:** check react and vue availability like angular ([c6fcb11](https://github.com/1stG/configs/commit/c6fcb11f765230c2b00bf6f4927f9df0948b5961))
+
+
+
+
+
 ## [0.12.22](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.12.21...@1stg/eslint-config@0.12.22) (2019-10-21)
 
 
