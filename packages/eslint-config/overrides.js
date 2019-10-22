@@ -364,15 +364,12 @@ exports.reactTs = {
   },
 }
 
-const vueExtends = ['standard-jsx', 'plugin:vue/recommended', 'prettier/vue']
+const vueExtends = ['plugin:vue/recommended', 'prettier', 'prettier/vue']
 
 exports.vue = [
   Object.assign({}, jsBase, {
     parser: 'vue-eslint-parser',
     extends: vueExtends,
-    parserOptions: {
-      parser: jsBase.parser,
-    },
   }),
   Object.assign({}, tsBase, {
     parser: 'vue-eslint-parser',
@@ -385,11 +382,11 @@ exports.vue = [
   }),
 ]
 
-exports.mdx = Object.assign({}, reactJsx, {
+exports.mdx = {
   files: '*.{md,mdx}',
-  extends: reactJsx.extends.concat(['plugin:mdx/recommended']),
+  extends: reactJsx.extends.concat('plugin:mdx/recommended'),
   settings: Object.assign({}, reactJsx.settings, resolveSettings),
-})
+}
 
 const nonSourceRules = {
   'node/no-extraneous-import': 0,

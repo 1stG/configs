@@ -4,16 +4,12 @@ module.exports = {
   extends: '@1stg/eslint-config/recommended',
   settings: {
     node: {
-      allowModules: allowModules.concat('tslint', 'typescript'),
+      allowModules: allowModules.concat(
+        'react-hot-loader',
+        'tslint',
+        'typescript',
+        'webpack',
+      ),
     },
-    polyfills: [
-      'console',
-      'Array.isArray',
-      'JSON',
-      'Object.assign',
-      'Object.entries',
-      'Object.keys',
-      'Promise',
-    ],
   },
 }

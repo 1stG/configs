@@ -170,7 +170,7 @@ module.exports = declare(
               presets: [
                 [
                   proposalTypeScriptPreset,
-                  Object.assign({ isTSX: true }, proposalTsOptions),
+                  Object.assign({}, proposalTsOptions, { isTSX: true }),
                 ],
               ],
               plugins: reactPlugin ? [reactPlugin] : undefined,
