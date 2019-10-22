@@ -2511,7 +2511,7 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@typescript-eslint/eslint-plugin-tslint@^2.5.0", "@typescript-eslint/eslint-plugin-tslint@~2.4.0":
+"@typescript-eslint/eslint-plugin-tslint@~2.4.0":
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin-tslint/-/eslint-plugin-tslint-2.4.0.tgz#917b3b67b446f1b653c3a7b322b7dc4e66d0235f"
   integrity sha512-NcylbtFfrShsbm/+sPF5XLAveCjJh3U+PMpDCtw4mlJhMYECy0CBhloN2Ki/lIVLFFfICo+cHwDE7i3U8ZL5Tg==
@@ -2519,7 +2519,7 @@
     "@typescript-eslint/experimental-utils" "2.4.0"
     lodash.memoize "^4.1.2"
 
-"@typescript-eslint/eslint-plugin@^2.5.0", "@typescript-eslint/eslint-plugin@~2.4.0":
+"@typescript-eslint/eslint-plugin@~2.4.0":
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-2.4.0.tgz#aaf6b542ff75b78f4191a8bf1c519184817caa24"
   integrity sha512-se/YCk7PUoyMwSm/u3Ii9E+BgDUc736uw/lXCDpXEqRgPGsoBTtS8Mntue/vZX8EGyzGplYuePBuVyhZDM9EpQ==
@@ -2548,7 +2548,7 @@
     "@typescript-eslint/typescript-estree" "1.13.0"
     eslint-scope "^4.0.0"
 
-"@typescript-eslint/parser@^2.5.0", "@typescript-eslint/parser@~2.4.0":
+"@typescript-eslint/parser@~2.4.0":
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-2.4.0.tgz#fe43ed5fec14af03d3594fce2c3b7ec4c8df0243"
   integrity sha512-IouAKi/grJ4MFrwdXIJ1GHAwbPWYgkT3b/x8Q49F378c9nwgxVkO76e0rZeUVpwHMaUuoKG2sUeK0XGkwdlwkw==
