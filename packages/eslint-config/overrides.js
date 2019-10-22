@@ -369,6 +369,9 @@ const vueExtends = ['plugin:vue/recommended', 'prettier', 'prettier/vue']
 exports.vue = [
   Object.assign({}, jsBase, {
     parser: 'vue-eslint-parser',
+    parserOptions: Object.assign({}, jsBase.parserOptions, {
+      parser: jsBase.parser,
+    }),
     extends: vueExtends,
   }),
   Object.assign({}, tsBase, {
