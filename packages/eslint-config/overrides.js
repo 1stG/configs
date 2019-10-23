@@ -388,6 +388,7 @@ exports.vue = [
 exports.mdx = {
   files: '*.{md,mdx}',
   extends: reactJsx.extends.concat('plugin:mdx/recommended'),
+  parserOptions: jsBase.parserOptions,
   settings: Object.assign({}, reactJsx.settings, resolveSettings),
 }
 

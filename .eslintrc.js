@@ -5,6 +5,7 @@ module.exports = {
   settings: {
     node: {
       allowModules: allowModules.concat(
+        '@pkgr/imagemin',
         'react-hot-loader',
         'tslint',
         'typescript',

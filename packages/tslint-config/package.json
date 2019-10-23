@@ -11,7 +11,7 @@
     "typescript": ">=3.5.3"
   },
   "dependencies": {
-    "codelyzer": "^5.1.2",
+    "codelyzer": "^5.2.0",
     "rxjs-tslint": "^0.1.7",
     "tslint-angular": "^3.0.2",
     "tslint-config-eslint": "^0.1.1",
