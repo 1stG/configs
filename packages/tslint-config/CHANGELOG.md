@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.4](https://github.com/1stG/configs/compare/@1stg/tslint-config@0.4.3...@1stg/tslint-config@0.4.4) (2019-10-23)
+
+
+### Bug Fixes
+
+* **eslint-config:** upgrade eslint-mdx to fix issue of typescript-eslint ([355e578](https://github.com/1stG/configs/commit/355e578dc59cd7c26d80cdac22b365c9857caed0))
+
+
+
+
+
 ## 0.4.3 (2019-10-05)
 
 
