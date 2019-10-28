@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.5](https://github.com/1stG/configs/compare/@1stg/stylelint-config@0.7.4...@1stg/stylelint-config@0.7.5) (2019-10-28)
+
+
+### Bug Fixes
+
+* **stylelint-config:** support v-deep pseudo element ([c28c5aa](https://github.com/1stG/configs/commit/c28c5aa2024af8913ff7beafacf1cc6e0279662a))
+
+
+
+
+
 ## [0.7.4](https://github.com/1stG/configs/compare/@1stg/stylelint-config@0.7.3...@1stg/stylelint-config@0.7.4) (2019-10-20)
 
 
