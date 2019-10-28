@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.4](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.13.3...@1stg/eslint-config@0.13.4) (2019-10-28)
+
+
+### Bug Fixes
+
+* **eslint-config:** rename isNgAvailable to isNgAvailable ([9471805](https://github.com/1stG/configs/commit/9471805156f94b713c47eeb3a977ac85dab7e476))
+
+
+
+
+
 ## [0.13.3](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.13.2...@1stg/eslint-config@0.13.3) (2019-10-28)
 
 
