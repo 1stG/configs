@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.3](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.13.2...@1stg/eslint-config@0.13.3) (2019-10-28)
+
+
+### Bug Fixes
+
+* **eslint-config:** use @pkgr/utils to simplify codes ([0ae5b71](https://github.com/1stG/configs/commit/0ae5b7182acd934681081a4d5a756b4ec7b711b2))
+
+
+
+
+
 ## [0.13.2](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.13.1...@1stg/eslint-config@0.13.2) (2019-10-23)
 
 
