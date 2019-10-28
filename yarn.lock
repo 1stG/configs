@@ -2186,10 +2186,10 @@
     once "^1.4.0"
     universal-user-agent "^4.0.0"
 
-"@pkgr/utils@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@pkgr/utils/-/utils-0.1.0.tgz#2e919cfffda5760dd651f29e1019d66e1e573f79"
-  integrity sha512-N+QcR0kAJrfbU2ZWGms/xnJyZ8FW/N9CYjiC/GPgoXt+1KgilW2OBzJ7je1act7IslUymW3xVRTONziv3DlkWw==
+"@pkgr/utils@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@pkgr/utils/-/utils-0.1.2.tgz#fb6349ca3a7229898c780387b3d2ee266d943927"
+  integrity sha512-+YH5q0uaC6iYEQyBKwtPibjgTPQ1oMSkqStDkV+VISB67QHXXZCB0fUaz5SA6Kv796hCIYVPfgYsOPl89C+/OA==
   dependencies:
     chalk "^2.4.2"
     cross-spawn "^7.0.1"

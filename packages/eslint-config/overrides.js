@@ -2,7 +2,7 @@ const fs = require('fs')
 const { resolve } = require('path')
 
 const {
-  isNgAvailable,
+  isAngularAvailable,
   isReactAvailable,
   isVueAvailable,
   tryFile,
@@ -68,8 +68,8 @@ const resolveSettings = {
   node: {
     resolvePaths: [
       resolve('node_modules/@types'),
-      isSrcDirAvailable && !isNgAvailable && 'src',
-      isNgAvailable && isSrcAppDirAvailable && 'src/app',
+      isSrcDirAvailable && !isAngularAvailable && 'src',
+      isAngularAvailable && isSrcAppDirAvailable && 'src/app',
     ].filter(Boolean),
     tryExtensions: [
       '.ts',
@@ -410,7 +410,7 @@ exports.overrides = exports.ts
     isReactAvailable && exports.react,
     isReactAvailable && exports.reactHooks,
     isReactAvailable && exports.reactTs,
-    isNgAvailable && exports.angular,
+    isAngularAvailable && exports.angular,
     isVueAvailable && exports.vue,
     exports.mdx,
     exports.jest,
