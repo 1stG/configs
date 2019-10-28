@@ -1,21 +1,7 @@
-/* eslint-disable node/no-extraneous-require */
-let isStylelintAvailable
-
-try {
-  isStylelintAvailable = !!require.resolve('stylelint')
-} catch (e) {}
-
-let isImageminAvailable
-
-try {
-  isImageminAvailable = !!require.resolve('@pkgr/imagemin')
-} catch (e) {}
+const { isPkgAvailable } = require('@pkgr/utils')
 
 const config = {
-  '*.{js,jsx,md,mdx,mjs,vue}': [
-    'cross-env EFF_NO_LINK_RULES=true eslint --cache -f friendly --fix',
-    'git add',
-  ],
+  '*.{js,jsx,md,mdx,mjs,vue}': ['eslint --cache -f friendly --fix', 'git add'],
   '*.{*ignore,*sh,env,env.*,gql,html,json,pug,vue,toml,yaml,yml}': [
     'prettier --write',
     'git add',
@@ -28,11 +14,11 @@ const config = {
   Dockerfile: ['prettier --write', 'git add'],
 }
 
-if (isStylelintAvailable) {
+if (isPkgAvailable('stylelint')) {
   config['*.{css,less,sass,scss,vue}'] = ['stylelint --cache --fix', 'git add']
 }
 
-if (isImageminAvailable) {
+if (isPkgAvailable('@pkgr/imagemin')) {
   config['*.{gif,jpeg,jpg,png,svg,webp}'] = ['i', 'git add']
 }
 

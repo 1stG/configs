@@ -2203,6 +2203,14 @@
     prettier "~1.18.2"
     pug-lexer "~4.1.0"
 
+"@prettier/plugin-pug@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@prettier/plugin-pug/-/plugin-pug-1.0.5.tgz#106cd11184e70d7b2427fa227fa98c5c82c6f9ea"
+  integrity sha512-P6RcdQE650maZgUvDIREJARCZua+ldLUNzwiul1akPyUNvJEw4IBpApzpoSWfqI5QeRx4rmZOQuUTmgIw2KS8g==
+  dependencies:
+    prettier "~1.18.2"
+    pug-lexer "~4.1.0"
+
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@samverschueren/stream-to-observable/-/stream-to-observable-0.3.0.tgz#ecdf48d532c58ea477acfcab80348424f8d0662f"

@@ -1,18 +1,10 @@
-const path = require('path')
+const { isPkgAvailable, tryFile } = require('@pkgr/utils')
 
 const config = Object.assign({}, require('./base'))
 
-let eslint
+const eslint = isPkgAvailable('eslint')
 
-try {
-  eslint = !!require.resolve('eslint')
-} catch (e) {}
-
-let tslint
-
-try {
-  tslint = !!require.resolve(path.resolve('tslint.json'))
-} catch (e) {}
+const tslint = isPkgAvailable('tslint') && tryFile('tslint.json')
 
 if (eslint && tslint) {
   Object.assign(config, require('./ts-eslint'), require('./ts-tslint'))
