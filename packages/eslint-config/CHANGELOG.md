@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.5](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.13.4...@1stg/eslint-config@0.13.5) (2019-10-28)
+
+
+### Bug Fixes
+
+* **eslint-config:** angular rules should take higher priority ([a4860d4](https://github.com/1stG/configs/commit/a4860d4ce2d6e6c011901c12eb4b87b251afc7e2))
+
+
+
+
+
 ## [0.13.4](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.13.3...@1stg/eslint-config@0.13.4) (2019-10-28)
 
 
