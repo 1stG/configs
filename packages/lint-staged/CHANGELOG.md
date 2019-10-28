@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.12](https://github.com/1stG/configs/compare/@1stg/lint-staged@0.8.11...@1stg/lint-staged@0.8.12) (2019-10-28)
+
+
+### Bug Fixes
+
+* **lint-staged:** use @pkgr/utils to simplify codes ([bdc23e6](https://github.com/1stG/configs/commit/bdc23e6cd9cfbdb909880c0a16484b80aae3de00))
+
+
+
+
+
 ## [0.8.11](https://github.com/1stG/configs/compare/@1stg/lint-staged@0.8.10...@1stg/lint-staged@0.8.11) (2019-10-20)
 
 
