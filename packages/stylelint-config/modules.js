@@ -3,7 +3,7 @@ module.exports = {
     'selector-pseudo-class-no-unknown': [
       true,
       {
-        ignorePseudoClasses: ['local', 'global'],
+        ignorePseudoClasses: ['export', 'local', 'global'],
       },
     ],
   },

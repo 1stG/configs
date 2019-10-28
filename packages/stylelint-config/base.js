@@ -1,10 +1,4 @@
-let isAngularAvailable
-
-try {
-  // eslint-disable-next-line node/no-extraneous-require
-  require.resolve('@angular/core')
-  isAngularAvailable = true
-} catch (e) {}
+const { isAngularAvailable, isVueAvailable } = require('@pkgr/utils')
 
 module.exports = {
   extends: ['stylelint-config-standard'],
@@ -18,11 +12,11 @@ module.exports = {
       'plugin/no-unsupported-browser-features': true,
       'selector-pseudo-element-colon-notation': 'single',
     },
-    isAngularAvailable && {
+    (isAngularAvailable || isVueAvailable) && {
       'selector-pseudo-element-no-unknown': [
         true,
         {
-          ignorePseudoElements: ['ng-deep'],
+          ignorePseudoElements: [isAngularAvailable ? 'ng-deep' : 'v-deep'],
         },
       ],
     },
