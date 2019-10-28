@@ -2,10 +2,9 @@
 const fs = require('fs')
 const { resolve } = require('path')
 
+const { tryFile, tryPkg } = require('@pkgr/utils')
 const isGlob = require('is-glob')
 const globSync = require('tiny-glob/sync')
-
-exports.tryFile = filePath => (fs.existsSync(filePath) ? filePath : undefined)
 
 let pkg = {}
 
@@ -30,18 +29,24 @@ if (exports.isMonorepo) {
         .concat(
           isGlob(pkg)
             ? globSync(pkg).map(sub => resolve(sub))
-            : exports.tryFile(resolve(pkg)),
+            : tryFile(resolve(pkg)),
         )
         .filter(Boolean),
     [],
   )
 
-  try {
-    exports.allowModules = pkgs.reduce((acc, pkg) => {
-      const pkgJson = resolve(pkg, 'package.json')
-      return fs.existsSync(pkgJson) ? acc.concat(require(pkgJson).name) : acc
-    }, [])
-  } catch (e) {}
+  exports.allowModules = pkgs.reduce((acc, pkg) => {
+    const pkgJson = resolve(pkg, 'package.json')
+    if (!fs.existsSync(pkgJson)) {
+      return acc
+    }
+    const { name, peerDependencies = {}, dependencies = {} } = require(pkgJson)
+    return acc.concat(
+      name,
+      Object.keys(peerDependencies),
+      Object.keys(dependencies),
+    )
+  }, [])
 }
 
 try {
@@ -52,21 +57,7 @@ try {
   exports.isSrcAppDirAvailable = fs.statSync(resolve('src/app')).isDirectory()
 } catch (e) {}
 
-try {
-  exports.isNgAvailable = !!require.resolve('@angular/core')
-} catch (e) {}
-
-try {
-  exports.isReactAvailable = !!require.resolve('react')
-} catch (e) {}
-
-try {
-  exports.isVueAvailable = !!require.resolve('vue')
-} catch (e) {}
-
-try {
-  exports.isWebpackAvailable = !!require.resolve('webpack')
-} catch (e) {}
+exports.isWebpackAvailable = tryPkg('webpack')
 
 // https://webpack.js.org/api/module-variables/#__resourcequery-webpack-specific
 exports.webpackSpecVars = [
@@ -78,6 +69,15 @@ exports.webpackSpecVars = [
   '__webpack_public_path__',
   '__webpack_require__',
   'DEBUG',
+]
+
+exports.camelCaseRule = [
+  2,
+  {
+    properties: 'never',
+    ignoreDestructuring: true,
+    allow: exports.isWebpackAvailable && exports.webpackSpecVars,
+  },
 ]
 
 exports.magicNumbers = [
@@ -101,4 +101,5 @@ exports.magicNumbers = [
   1000,
   1024,
   3600,
+  8080,
 ]

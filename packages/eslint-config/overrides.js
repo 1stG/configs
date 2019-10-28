@@ -4,26 +4,22 @@ const { resolve } = require('path')
 const {
   isNgAvailable,
   isReactAvailable,
+  isVueAvailable,
+  tryFile,
+  tryPkg,
+} = require('@pkgr/utils')
+
+const {
+  camelCaseRule,
   isSrcDirAvailable,
   isSrcAppDirAvailable,
-  isVueAvailable,
-  isWebpackAvailable,
   magicNumbers,
-  tryFile,
-  webpackSpecVars,
 } = require('./_util')
 
-const BABEL_CONFIG = resolve('babel.config.js')
-const BABEL_RC_CONFIG = resolve('.babelrc.js')
-
-let configFile
-
-try {
-  configFile =
-    tryFile(BABEL_CONFIG) ||
-    tryFile(BABEL_RC_CONFIG) ||
-    require.resolve('@1stg/babel-preset/config')
-} catch (e) {}
+const configFile =
+  tryFile(resolve('babel.config.js')) ||
+  tryFile(resolve('.babelrc.js')) ||
+  tryPkg('@1stg/babel-preset/config')
 
 const jsBase = {
   files: '*.{mjs,js,jsx}',
@@ -40,7 +36,13 @@ const jsBase = {
     'no-invalid-this': 0,
     'no-unused-expressions': 0,
     'valid-typeof': 0,
-    'babel/camelcase': 2,
+    'babel/camelcase': [
+      2,
+      {
+        properties: 'never',
+        ignoreDestructuring: true,
+      },
+    ],
     'babel/new-cap': 2,
     'babel/no-invalid-this': 2,
     'babel/no-unused-expressions': 2,
@@ -50,30 +52,24 @@ const jsBase = {
 
 exports.js = jsBase
 
-const TS_CONFIGS = [
+const project =
   tryFile(resolve('tsconfig.eslint.json')) ||
-    tryFile(resolve('tsconfig.base.json')) ||
-    tryFile(resolve('tsconfig.json')),
-].filter(Boolean)
-
-let project
-
-try {
-  project = TS_CONFIGS.length ? TS_CONFIGS : require.resolve('@1stg/tsconfig')
-} catch (e) {}
+  tryFile(resolve('tsconfig.base.json')) ||
+  tryFile(resolve('tsconfig.json')) ||
+  tryPkg('@1stg/tsconfig')
 
 const resolveSettings = {
   'import/resolver': {
     ts: {
       alwaysTryTypes: true,
-      directory: TS_CONFIGS,
+      directory: project,
     },
   },
   node: {
     resolvePaths: [
       resolve('node_modules/@types'),
-      isSrcDirAvailable && !isNgAvailable && resolve('src'),
-      isNgAvailable && isSrcAppDirAvailable && resolve('src/app'),
+      isSrcDirAvailable && !isNgAvailable && 'src',
+      isNgAvailable && isSrcAppDirAvailable && 'src/app',
     ].filter(Boolean),
     tryExtensions: [
       '.ts',
@@ -108,14 +104,7 @@ const tsBase = {
       },
     ],
     '@typescript-eslint/ban-ts-ignore': 0,
-    '@typescript-eslint/camelcase': [
-      2,
-      {
-        properties: 'never',
-        ignoreDestructuring: true,
-        allow: isWebpackAvailable && webpackSpecVars,
-      },
-    ],
+    '@typescript-eslint/camelcase': camelCaseRule,
     '@typescript-eslint/consistent-type-definitions': [2, 'interface'],
     '@typescript-eslint/explicit-function-return-type': 0,
     '@typescript-eslint/explicit-member-accessibility': [
@@ -258,20 +247,14 @@ exports.dTs = {
   },
 }
 
-let tslint = false
-
-try {
-  tslint = !!require.resolve('tslint')
-} catch (e) {}
+const tslint = tryPkg('tslint')
 
 const TSLINT_CONFIG = resolve('tslint.json')
 const tslintConfigAvailable = fs.existsSync(TSLINT_CONFIG)
 
-let lintFile = tslintConfigAvailable ? TSLINT_CONFIG : undefined
-
-try {
-  lintFile = lintFile || require.resolve('@1stg/tslint-config')
-} catch (e) {}
+const lintFile = tslintConfigAvailable
+  ? TSLINT_CONFIG
+  : tryPkg('@1stg/tslint-config')
 
 exports.tslint = {
   files: '*.{ts,tsx}',

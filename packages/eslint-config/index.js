@@ -1,9 +1,8 @@
-const path = require('path')
-
 const { getGlobals } = require('eslint-plugin-mdx')
 
 const {
   allowModules,
+  camelCaseRule,
   isSrcDirAvailable,
   isWebpackAvailable,
   magicNumbers,
@@ -23,7 +22,7 @@ module.exports = {
   settings: {
     node: {
       allowModules,
-      resolvePaths: isSrcDirAvailable && [path.resolve('src')],
+      resolvePaths: isSrcDirAvailable ? 'src' : undefined,
       tryExtensions: [
         '.ts',
         '.tsx',
@@ -39,14 +38,7 @@ module.exports = {
   },
   globals: isWebpackAvailable && getGlobals(webpackSpecVars),
   rules: {
-    camelcase: [
-      2,
-      {
-        properties: 'never',
-        ignoreDestructuring: true,
-        allow: isWebpackAvailable && webpackSpecVars,
-      },
-    ],
+    camelcase: camelCaseRule,
     'import/order': [
       2,
       {
