@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.6](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.13.5...@1stg/eslint-config@0.13.6) (2019-10-30)
+
+
+### Bug Fixes
+
+* **eslint-config:** enable import/external-module-folders option ([8e89e14](https://github.com/1stG/configs/commit/8e89e14ca69213fc84b91936705520e20fe6e5f5))
+
+
+
+
+
 ## [0.13.5](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.13.4...@1stg/eslint-config@0.13.5) (2019-10-28)
 
 
