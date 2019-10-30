@@ -5,7 +5,6 @@
 </template>
 <script lang="ts">
 import Vue from 'vue'
-
 import { Point } from 'unist'
 
 export default Vue.extend({

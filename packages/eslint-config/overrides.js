@@ -59,6 +59,11 @@ const project =
   tryPkg('@1stg/tsconfig')
 
 const resolveSettings = {
+  'import/external-module-folders': [
+    'node_modules',
+    'node_modules/@d-ts',
+    'node_modules/@types',
+  ],
   'import/resolver': {
     ts: {
       alwaysTryTypes: true,
@@ -67,7 +72,8 @@ const resolveSettings = {
   },
   node: {
     resolvePaths: [
-      resolve('node_modules/@types'),
+      tryFile('node_modules/@d-ts', true),
+      tryFile('node_modules/@types', true),
       isSrcDirAvailable && !isAngularAvailable && 'src',
       isAngularAvailable && isSrcAppDirAvailable && 'src/app',
     ].filter(Boolean),
