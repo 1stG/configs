@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.1](https://github.com/1stG/configs/compare/@1stg/prettier-config@0.5.0...@1stg/prettier-config@0.5.1) (2019-10-31)
+
+
+### Bug Fixes
+
+* **prettier-config:** add semi angular/vue configs ([db79637](https://github.com/1stG/configs/commit/db79637d66aa1fff62d0f63c203f62e2e1daf0f0))
+
+
+
+
+
 # [0.5.0](https://github.com/1stG/configs/compare/@1stg/prettier-config@0.4.3...@1stg/prettier-config@0.5.0) (2019-10-31)
 
 
