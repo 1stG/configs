@@ -3,9 +3,6 @@
   "extends": "./app.json",
   "compilerOptions": {
     "emitDecoratorMetadata": true,
-    "paths": {
-      "*": ["src/app/*"]
-    },
     "target": "es2015"
   },
   "angularCompilerOptions": {

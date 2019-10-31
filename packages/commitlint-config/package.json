@@ -5,12 +5,11 @@
   "repository": "git@github.com:1stG/configs.git",
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
-  "peerDependencies": {
-    "@commitlint/cli": "^8.2.0"
-  },
   "dependencies": {
+    "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
-    "@commitlint/config-lerna-scopes": "^8.2.0"
+    "@commitlint/config-lerna-scopes": "^8.2.0",
+    "@pkgr/utils": "^0.2.0"
   },
   "publishConfig": {
     "access": "public"

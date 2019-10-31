@@ -12,6 +12,7 @@ const {
 module.exports = {
   extends: [
     'eslint:recommended',
+    'plugin:sonarjs/recommended',
     'plugin:import/recommended',
     'plugin:node/recommended',
     'plugin:promise/recommended',
@@ -19,6 +20,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'prettier/standard',
   ],
+  plugins: ['sonarjs'],
   settings: {
     node: {
       allowModules,

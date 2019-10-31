@@ -7,7 +7,7 @@
   "license": "MIT",
   "main": "tsconfig.json",
   "peerDependencies": {
-    "typescript": ">=3.5.3"
+    "typescript": ">=3.0.0"
   },
   "optionalDependencies": {
     "tslib": "^1.10.0"

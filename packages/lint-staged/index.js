@@ -2,15 +2,20 @@ const { isPkgAvailable, tryFile } = require('@pkgr/utils')
 
 const config = Object.assign({}, require('./base'))
 
-const eslint = isPkgAvailable('eslint')
+if (isPkgAvailable('eslint')) {
+  Object.assign(
+    config,
+    {
+      '*.{js,jsx,md,mdx,mjs,vue}': [
+        'eslint --cache -f friendly --fix',
+        'git add',
+      ],
+    },
+    require('./ts-eslint'),
+  )
+}
 
-const tslint = isPkgAvailable('tslint') && tryFile('tslint.json')
-
-if (eslint && tslint) {
-  Object.assign(config, require('./ts-eslint'), require('./ts-tslint'))
-} else if (eslint) {
-  Object.assign(config, require('./ts-eslint'))
-} else if (tslint) {
+if (isPkgAvailable('tslint') && tryFile('tslint.json')) {
   Object.assign(config, require('./ts-tslint'))
 }
 

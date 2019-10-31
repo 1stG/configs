@@ -1,5 +1,5 @@
 {
-  "extends": ["tslint:recommended", "tslint-config-prettier"],
+  "extends": ["tslint:recommended", "tslint-sonarts", "tslint-config-prettier"],
   "rulesDirectory": ["rxjs-tslint", "tslint-plugin-prettier"],
   "rules": {
     "ban-ts-ignore": false,
@@ -15,7 +15,15 @@
       {
         "grouped-imports": true,
         "import-sources-order": "lowercase-first",
-        "named-imports-order": "lowercase-last"
+        "named-imports-order": "lowercase-last",
+        "groups": [
+          // common node builtin modules
+          "^(http[2s]?|fs|module|path|util|vm|worker_threads)$",
+          "^(@[^/]|[^@.])",
+          "^(@|app[\\w-]*)/",
+          "^(../)+",
+          "^(?!\\./.*\\.(p?css|less|s[ac]ss|styl(us)?))"
+        ]
       }
     ],
     "prettier": true,
@@ -32,5 +40,8 @@
     "rxjs-pipeable-operators-only": true,
     "rxjs-no-static-observable-methods": true,
     "rxjs-proper-imports": true
+  },
+  "linterOptions": {
+    "exclude": ["**/node_modules/**", "**/dist/**", "**/lib/**"]
   }
 }

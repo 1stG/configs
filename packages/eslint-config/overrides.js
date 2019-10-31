@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/no-duplicate-string */
 const fs = require('fs')
 const { resolve } = require('path')
 

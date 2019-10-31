@@ -5,23 +5,12 @@
     "declaration": false,
     "declarationMap": false,
     "paths": {
-      "dayjs": [
-        "dayjs/esm"
-      ],
-      "dayjs/*": [
-        "dayjs/esm/*"
-      ],
-      "lodash": [
-        "lodash-es"
-      ],
-      "moment": [
-        "dayjs/esm"
-      ],
       "*": [
         "src/*"
       ]
     },
     "outDir": "dist",
-    "strictFunctionTypes": false
+    "strictFunctionTypes": false,
+    "strictNullChecks": false
   }
 }

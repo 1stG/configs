@@ -9,7 +9,7 @@
     "node": ">=4.0.0"
   },
   "peerDependencies": {
-    "postcss": "^7.0.18"
+    "postcss": ">=7.0.0"
   },
   "dependencies": {
     "autoprefixer": "^9.7.0",

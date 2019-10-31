@@ -1,5 +1,6 @@
-/* eslint-disable node/no-extraneous-require */
+/* eslint-disable sonarjs/cognitive-complexity */
 const { declare } = require('@babel/helper-plugin-utils')
+const { isPkgAvailable } = require('@pkgr/utils')
 
 const DEFAULT_ANTD_OPTIONS = {
   libraryName: 'antd',
@@ -126,12 +127,6 @@ module.exports = declare(
       }
     }
 
-    let reactHotLoaderAvailable = false
-
-    try {
-      reactHotLoaderAvailable = !!require.resolve('react-hot-loader/babel')
-    } catch (e) {}
-
     const reactPreset = [
       require('@babel/preset-react'),
       {
@@ -145,7 +140,10 @@ module.exports = declare(
             removeImport: true,
           },
         ]
-      : isDev && reactHotLoaderAvailable && require('react-hot-loader/babel')
+      : isDev &&
+        isPkgAvailable('react-hot-loader/babel') &&
+        // eslint-disable-next-line node/no-missing-require
+        require('react-hot-loader/babel')
 
     if (react) {
       presets.push(reactPreset)

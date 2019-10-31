@@ -16,7 +16,10 @@ module.exports = {
       'selector-pseudo-element-no-unknown': [
         true,
         {
-          ignorePseudoElements: [isAngularAvailable ? 'ng-deep' : 'v-deep'],
+          ignorePseudoElements: [
+            isAngularAvailable && 'ng-deep',
+            isVueAvailable && 'v-deep',
+          ].filter(Boolean),
         },
       ],
     },

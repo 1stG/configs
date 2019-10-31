@@ -6,12 +6,12 @@
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "peerDependencies": {
-    "prettier": "^1.18.2"
+    "prettier": ">=1.18.0"
   },
   "dependencies": {
-    "@prettier/plugin-pug": "^1.0.4",
+    "@prettier/plugin-pug": "^1.0.5",
     "prettier-plugin-pkg": "^0.4.4",
-    "prettier-plugin-sh": "^0.2.1",
+    "prettier-plugin-sh": "^0.2.2",
     "prettier-plugin-toml": "^0.3.1"
   },
   "publishConfig": {

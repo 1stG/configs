@@ -1,7 +1,8 @@
 import fs from 'fs'
 import path from 'path'
-import { Position } from 'unist'
 import { promisify } from 'util'
+
+import { Position } from 'unist'
 
 import { content } from './_test'
 
@@ -51,7 +52,7 @@ export default class Test extends Basic implements X {
 
   name: {
     key: string
-    value: string | undefined
+    value?: string
   }
 
   constructor() {
