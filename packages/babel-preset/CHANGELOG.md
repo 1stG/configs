@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.7.10...@1stg/babel-preset@0.8.0) (2019-10-31)
+
+
+### Features
+
+* enable sonar for eslint/tslint, refactor dependencies declaration ([a27422f](https://github.com/1stG/configs/commit/a27422fa05e87f5d3800ca63a4c7ef3ba052b715))
+
+
+
+
+
 ## [0.7.10](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.7.9...@1stg/babel-preset@0.7.10) (2019-10-22)
 
 

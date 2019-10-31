@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.13.6...@1stg/eslint-config@0.14.0) (2019-10-31)
+
+
+### Features
+
+* enable sonar for eslint/tslint, refactor dependencies declaration ([a27422f](https://github.com/1stG/configs/commit/a27422fa05e87f5d3800ca63a4c7ef3ba052b715))
+
+
+
+
+
 ## [0.13.6](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.13.5...@1stg/eslint-config@0.13.6) (2019-10-30)
 
 

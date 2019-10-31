@@ -1,6 +1,6 @@
 {
   "name": "@1stg/eslint-config",
-  "version": "0.13.6",
+  "version": "0.14.0",
   "description": "Personal but Shareable ESLint Configuration for all 1stG.me projects.",
   "repository": "git@github.com:1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/eslint-config",
@@ -22,7 +22,6 @@
     "eslint-formatter-friendly": "^7.0.0",
     "eslint-import-resolver-ts": "^0.4.2",
     "eslint-plugin-babel": "^5.3.0",
-    "eslint-plugin-sonarjs": "^0.4.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^23.0.2",
     "eslint-plugin-mdx": "^1.6.1",
@@ -31,6 +30,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^2.2.0",
+    "eslint-plugin-sonarjs": "^0.4.0",
     "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-vue": "^5.2.3",
     "is-glob": "^4.0.1",
