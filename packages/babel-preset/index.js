@@ -14,6 +14,7 @@ module.exports = declare(
       generator,
       import: importOptions,
       modules = false,
+      esmodules,
       react,
       typescript,
       vue,
@@ -53,6 +54,9 @@ module.exports = declare(
           corejs: {
             version: 3,
             proposals: true,
+          },
+          targets: {
+            esmodules,
           },
           useBuiltIns,
         },
