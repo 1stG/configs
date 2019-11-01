@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.2](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.14.1...@1stg/eslint-config@0.14.2) (2019-11-01)
+
+
+### Bug Fixes
+
+* **eslint-config:** remove isSrcDirAvailable from resolvePaths ([aa218d2](https://github.com/1stG/configs/commit/aa218d28bf2fa0a309fab12656e05615c1c764d8))
+
+
+
+
+
 ## [0.14.1](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.14.0...@1stg/eslint-config@0.14.1) (2019-11-01)
 
 
