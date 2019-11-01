@@ -10,7 +10,7 @@ const {
   tryPkg,
 } = require('@pkgr/utils')
 
-const { camelCaseRule, isSrcDirAvailable, magicNumbers } = require('./_util')
+const { camelCaseRule, magicNumbers } = require('./_util')
 
 const configFile =
   tryFile(resolve('babel.config.js')) ||
@@ -70,7 +70,6 @@ const resolveSettings = {
     resolvePaths: [
       tryFile('node_modules/@d-ts', true),
       tryFile('node_modules/@types', true),
-      isSrcDirAvailable && 'src',
     ].filter(Boolean),
     tryExtensions: [
       '.ts',

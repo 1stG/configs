@@ -48,10 +48,6 @@ if (exports.isMonorepo) {
   }, [])
 }
 
-try {
-  exports.isSrcDirAvailable = fs.statSync(resolve('src')).isDirectory()
-} catch (e) {}
-
 exports.isWebpackAvailable = isPkgAvailable('webpack')
 
 // https://webpack.js.org/api/module-variables/#__resourcequery-webpack-specific
