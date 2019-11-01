@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.2](https://github.com/1stG/configs/compare/@1stg/prettier-config@0.5.1...@1stg/prettier-config@0.5.2) (2019-11-01)
+
+
+### Bug Fixes
+
+* refactor nested configurations, add scss/loose config ([71f27d9](https://github.com/1stG/configs/commit/71f27d9a7cebec9135f2f6ffc5e4a10f121097df))
+
+
+
+
+
 ## [0.5.1](https://github.com/1stG/configs/compare/@1stg/prettier-config@0.5.0...@1stg/prettier-config@0.5.1) (2019-10-31)
 
 
