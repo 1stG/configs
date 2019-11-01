@@ -1,8 +1,7 @@
-/* eslint-disable node/no-extraneous-require */
 const fs = require('fs')
 const { resolve } = require('path')
 
-const { tryFile, tryPkg } = require('@pkgr/utils')
+const { isPkgAvailable, tryFile } = require('@pkgr/utils')
 const isGlob = require('is-glob')
 const globSync = require('tiny-glob/sync')
 
@@ -53,11 +52,7 @@ try {
   exports.isSrcDirAvailable = fs.statSync(resolve('src')).isDirectory()
 } catch (e) {}
 
-try {
-  exports.isSrcAppDirAvailable = fs.statSync(resolve('src/app')).isDirectory()
-} catch (e) {}
-
-exports.isWebpackAvailable = tryPkg('webpack')
+exports.isWebpackAvailable = isPkgAvailable('webpack')
 
 // https://webpack.js.org/api/module-variables/#__resourcequery-webpack-specific
 exports.webpackSpecVars = [
@@ -76,7 +71,7 @@ exports.camelCaseRule = [
   {
     properties: 'never',
     ignoreDestructuring: true,
-    allow: exports.isWebpackAvailable && exports.webpackSpecVars,
+    allow: exports.isWebpackAvailable ? exports.webpackSpecVars : undefined,
   },
 ]
 
@@ -98,6 +93,7 @@ exports.magicNumbers = [
   100,
   365,
   500,
+  768,
   1000,
   1024,
   3600,

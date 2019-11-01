@@ -38,7 +38,7 @@ module.exports = {
       ],
     },
   },
-  globals: isWebpackAvailable && getGlobals(webpackSpecVars),
+  globals: isWebpackAvailable ? getGlobals(webpackSpecVars) : undefined,
   rules: {
     camelcase: camelCaseRule,
     'import/order': [
