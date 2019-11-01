@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.2](https://github.com/1stG/configs/compare/@1stg/tslint-config@0.5.0...@1stg/tslint-config@0.5.2) (2019-11-01)
+
+
+### Bug Fixes
+
+* **tslint-config:** module starts with app should not be considered as npm package ([bbd16f9](https://github.com/1stG/configs/commit/bbd16f9b1bb2d002f1e23631f147879ebd6de721))
+
+
+
+
+
 # [0.5.0](https://github.com/1stG/configs/compare/@1stg/tslint-config@0.4.4...@1stg/tslint-config@0.5.0) (2019-10-31)
 
 

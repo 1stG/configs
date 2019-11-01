@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.8.0...@1stg/babel-preset@0.8.1) (2019-11-01)
+
+
+### Bug Fixes
+
+* **babel-preset:** add esmodules option ([1dfecdc](https://github.com/1stG/configs/commit/1dfecdc04ca7cb4d084e88573c05ee337e3d910f))
+
+
+
+
+
 # [0.8.0](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.7.10...@1stg/babel-preset@0.8.0) (2019-10-31)
 
 
