@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.2](https://github.com/1stG/configs/compare/@1stg/stylelint-config@0.8.1...@1stg/stylelint-config@0.8.2) (2019-11-01)
+
+
+### Bug Fixes
+
+* **stylelint-config:** loose rules should inherit from base ([9809fbc](https://github.com/1stG/configs/commit/9809fbcdc67c76bc0007a4e76d15a66940b7f7c6))
+
+
+
+
+
 ## [0.8.1](https://github.com/1stG/configs/compare/@1stg/stylelint-config@0.8.0...@1stg/stylelint-config@0.8.1) (2019-11-01)
 
 
