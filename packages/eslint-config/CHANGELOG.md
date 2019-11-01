@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.1](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.14.0...@1stg/eslint-config@0.14.1) (2019-11-01)
+
+
+### Bug Fixes
+
+* **eslint-config:** remove isSrcAppDirAvailable which seems useless ([7906321](https://github.com/1stG/configs/commit/7906321ed3605a833c4cd4a10b0fdca69ad14bd3))
+
+
+
+
+
 # [0.14.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.13.6...@1stg/eslint-config@0.14.0) (2019-10-31)
 
 
