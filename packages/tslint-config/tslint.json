@@ -19,7 +19,7 @@
         "groups": [
           // common node builtin modules
           "^(http[2s]?|fs|module|path|util|vm|worker_threads)$",
-          "^(@[^/]|[^@.])",
+          "^(?!app[\\w-]*/)(@[^/]|[^@.])",
           "^(@|app[\\w-]*)/",
           "^(../)+",
           "^(?!\\./.*\\.(p?css|less|s[ac]ss|styl(us)?))"
