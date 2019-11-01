@@ -12,5 +12,6 @@ module.exports = require('.')
     'not kaios < 3',
     'not op_mini all',
     'not op_mob < 50',
+    'not safari < 6',
     'not samsung < 10',
   )
