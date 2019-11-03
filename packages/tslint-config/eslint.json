@@ -5,6 +5,7 @@
     "tslint-config-eslint/prettier"
   ],
   "rules": {
+    "cognitive-complexity": false,
     "max-switch-cases": false,
     "no-big-function": false,
     "no-collapsible-if": false,
