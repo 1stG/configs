@@ -1,6 +1,6 @@
 {
   "name": "@1stg/app-config",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Personal but Shareable App Configuration for all 1stG.me projects.",
   "repository": "git+https://github.com/1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/app-config",
@@ -10,7 +10,7 @@
     "node": ">=10.0.0"
   },
   "dependencies": {
-    "@1stg/babel-preset": "^0.8.2",
+    "@1stg/babel-preset": "^0.9.0",
     "@1stg/browserslist-config": "^0.3.1",
     "@1stg/commitlint-config": "^0.2.1",
     "@1stg/eslint-config": "^0.14.4",

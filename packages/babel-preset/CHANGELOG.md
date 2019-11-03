@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.8.2...@1stg/babel-preset@0.9.0) (2019-11-03)
+
+
+### Features
+
+* **babel-preset:** add babel-plugin-transform-commonjs for tree shaking ([7d93dbe](https://github.com/1stG/configs/commit/7d93dbebac7c7b660ae1379279b5d8de7365873d))
+
+
+
+
+
 ## [0.8.2](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.8.1...@1stg/babel-preset@0.8.2) (2019-11-03)
 
 
