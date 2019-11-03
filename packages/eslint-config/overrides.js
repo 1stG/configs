@@ -238,6 +238,7 @@ exports.ts = [
 exports.dTs = {
   files: '*.d.ts',
   rules: {
+    '@typescript-eslint/no-explicit-any': 0,
     '@typescript-eslint/no-extraneous-class': 0,
     '@typescript-eslint/no-namespace': 0,
     '@typescript-eslint/no-unused-vars': 0,
