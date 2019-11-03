@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.5](https://github.com/1stG/configs/compare/@1stg/tslint-config@0.5.4...@1stg/tslint-config@0.5.5) (2019-11-03)
+
+
+### Bug Fixes
+
+* **tslint-config:** disable cognitive-complexity and no-extra-semicolon ([6344b1c](https://github.com/1stG/configs/commit/6344b1c2a3fecce151867c660528e846375fb440))
+
+
+
+
+
 ## [0.5.4](https://github.com/1stG/configs/compare/@1stg/tslint-config@0.5.3-beta.0...@1stg/tslint-config@0.5.4) (2019-11-03)
 
 **Note:** Version bump only for package @1stg/tslint-config
