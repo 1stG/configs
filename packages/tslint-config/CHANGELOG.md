@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.3-beta.0](https://github.com/1stG/configs/compare/@1stg/tslint-config@0.5.3...@1stg/tslint-config@0.5.3-beta.0) (2019-11-03)
+
+
+### Bug Fixes
+
+* **tslint-config:** add async_hooks and child_process to builtin group ([821081b](https://github.com/1stG/configs/commit/821081bf57cb88161d6fa280129122a059a8232a))
+
+
+
+
+
 ## [0.5.3](https://github.com/1stG/configs/compare/@1stg/tslint-config@0.5.2...@1stg/tslint-config@0.5.3) (2019-11-03)
 
 
