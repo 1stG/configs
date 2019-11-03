@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.4](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.14.3...@1stg/eslint-config@0.14.4) (2019-11-03)
+
+
+### Bug Fixes
+
+* **eslint-config:** disable @typescript-eslint/no-explicit-any for .d.ts ([808ee1e](https://github.com/1stG/configs/commit/808ee1e3154248a128873860c713d60c7a30f840))
+
+
+
+
+
 ## [0.14.3](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.14.2...@1stg/eslint-config@0.14.3) (2019-11-03)
 
 
