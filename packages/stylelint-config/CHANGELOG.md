@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.3](https://github.com/1stG/configs/compare/@1stg/stylelint-config@0.8.2...@1stg/stylelint-config@0.8.3) (2019-11-03)
+
+
+### Bug Fixes
+
+* bump @pkgr/utils version, dTs config takes highest priority ([e980ddb](https://github.com/1stG/configs/commit/e980ddb9645e3e9a85fc439efe2c1ad6dfb1cd1e))
+
+
+
+
+
 ## [0.8.2](https://github.com/1stG/configs/compare/@1stg/stylelint-config@0.8.1...@1stg/stylelint-config@0.8.2) (2019-11-01)
 
 

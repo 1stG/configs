@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.1](https://github.com/1stG/configs/compare/@1stg/tsconfig@0.7.0...@1stg/tsconfig@0.7.1) (2019-11-03)
+
+
+### Bug Fixes
+
+* bump @pkgr/utils version, dTs config takes highest priority ([e980ddb](https://github.com/1stG/configs/commit/e980ddb9645e3e9a85fc439efe2c1ad6dfb1cd1e))
+
+
+
+
+
 # [0.7.0](https://github.com/1stG/configs/compare/@1stg/tsconfig@0.6.1...@1stg/tsconfig@0.7.0) (2019-10-31)
 
 
