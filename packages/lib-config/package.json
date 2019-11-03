@@ -19,7 +19,7 @@
     "@1stg/remark-config": "^0.2.2",
     "@1stg/tsconfig": "^0.7.0",
     "@babel/core": "^7.6.4",
-    "@pkgr/rollup": "^0.6.5",
+    "@pkgr/rollup": "^0.8.0",
     "eslint": "^6.6.0",
     "husky": "^3.0.9",
     "jest": "^24.9.0",

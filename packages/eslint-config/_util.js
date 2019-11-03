@@ -1,45 +1,19 @@
-const fs = require('fs')
 const { resolve } = require('path')
 
-const { isPkgAvailable, tryFile } = require('@pkgr/utils')
-const isGlob = require('is-glob')
-const globSync = require('tiny-glob/sync')
+const {
+  isMonorepo,
+  isPkgAvailable,
+  monorepoPkgs,
+  tryRequirePkg,
+} = require('@pkgr/utils')
 
-let pkg = {}
-
-try {
-  pkg = require(resolve('package.json'))
-} catch (e) {}
-
-let lernaConfig
-
-try {
-  lernaConfig = require(resolve('lerna.json'))
-} catch (e) {}
-
-const pkgsPath = (lernaConfig && lernaConfig.packages) || pkg.workspaces
-
-exports.isMonorepo = Array.isArray(pkgsPath)
-
-if (exports.isMonorepo) {
-  const pkgs = pkgsPath.reduce(
-    (acc, pkg) =>
-      acc
-        .concat(
-          isGlob(pkg)
-            ? globSync(pkg).map(sub => resolve(sub))
-            : tryFile(resolve(pkg)),
-        )
-        .filter(Boolean),
-    [],
-  )
-
-  exports.allowModules = pkgs.reduce((acc, pkg) => {
-    const pkgJson = resolve(pkg, 'package.json')
-    if (!fs.existsSync(pkgJson)) {
+if (isMonorepo) {
+  exports.allowModules = monorepoPkgs.reduce((acc, pkg) => {
+    const pkgJson = tryRequirePkg(resolve(pkg, 'package.json'))
+    if (!pkgJson) {
       return acc
     }
-    const { name, peerDependencies = {}, dependencies = {} } = require(pkgJson)
+    const { name, peerDependencies = {}, dependencies = {} } = pkgJson
     return acc.concat(
       name,
       Object.keys(peerDependencies),

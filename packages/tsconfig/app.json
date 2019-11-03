@@ -1,6 +1,6 @@
 {
   "$schema": "http://json.schemastore.org/tsconfig",
-  "extends": "./tsconfig.json",
+  "extends": "./loose.json",
   "compilerOptions": {
     "declaration": false,
     "declarationMap": false,
@@ -9,8 +9,6 @@
         "src/*"
       ]
     },
-    "outDir": "dist",
-    "strictFunctionTypes": false,
-    "strictNullChecks": false
+    "outDir": "dist"
   }
 }

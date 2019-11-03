@@ -405,7 +405,6 @@ exports.config = {
 exports.overrides = exports.ts
   .concat(
     exports.js,
-    exports.dTs,
     tslint && lintFile && exports.tslint,
     isReactAvailable && exports.react,
     isReactAvailable && exports.reactHooks,
@@ -417,5 +416,6 @@ exports.overrides = exports.ts
     exports.test,
     exports.stories,
     exports.config,
+    exports.dTs,
   )
   .filter(Boolean)
