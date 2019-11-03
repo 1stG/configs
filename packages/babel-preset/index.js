@@ -1,6 +1,6 @@
 /* eslint-disable sonarjs/cognitive-complexity */
 const { declare } = require('@babel/helper-plugin-utils')
-const { isPkgAvailable } = require('@pkgr/utils')
+const { tryRequirePkg } = require('@pkgr/utils')
 
 const DEFAULT_ANTD_OPTIONS = {
   libraryName: 'antd',
@@ -20,6 +20,7 @@ module.exports = declare(
       vue,
       isTSX = vue,
       metadata,
+      synchronousImport,
       useBuiltIns = 'usage',
       decoratorsLegacy = true,
       classLoose = decoratorsLegacy === true,
@@ -75,16 +76,22 @@ module.exports = declare(
 
     const plugins = [
       [
-        '@babel/plugin-proposal-decorators',
+        require('@babel/plugin-proposal-decorators'),
         {
           decoratorsBeforeExport,
           legacy: decoratorsLegacy,
         },
       ],
       [
-        '@babel/plugin-proposal-class-properties',
+        require('@babel/plugin-proposal-class-properties'),
         {
           loose: classLoose,
+        },
+      ],
+      [
+        require('babel-plugin-transform-commonjs'),
+        {
+          synchronousImport,
         },
       ],
     ]
@@ -144,10 +151,7 @@ module.exports = declare(
             removeImport: true,
           },
         ]
-      : isDev &&
-        isPkgAvailable('react-hot-loader/babel') &&
-        // eslint-disable-next-line node/no-missing-require
-        require('react-hot-loader/babel')
+      : isDev && tryRequirePkg('react-hot-loader/babel')
 
     if (react) {
       presets.push(reactPreset)
