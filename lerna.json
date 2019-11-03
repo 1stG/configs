@@ -22,11 +22,11 @@
     },
     "publish": {
       "ignoreChanges": [
-        "**/tests/**",
-        "**/*.md",
+        "*.md",
         "**/.*",
-        "tsconfig.json",
-        "tslint.json"
+        "tests",
+        "/tsconfig.json",
+        "/tslint.json"
       ]
     }
   }
