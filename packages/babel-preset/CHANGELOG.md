@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.1](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.9.0...@1stg/babel-preset@0.9.1) (2019-11-04)
+
+
+### Bug Fixes
+
+* **babel-preset:** remove transform-commonjs which breaks webpack app ([d676053](https://github.com/1stG/configs/commit/d676053a53c59de07eca07f66cf06c2de9980405))
+
+
+
+
+
 # [0.9.0](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.8.2...@1stg/babel-preset@0.9.0) (2019-11-03)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.7](https://github.com/1stG/configs/compare/@1stg/lib-config@0.1.6...@1stg/lib-config@0.1.7) (2019-11-04)
+
+
+### Bug Fixes
+
+* **babel-preset:** remove transform-commonjs which breaks webpack app ([d676053](https://github.com/1stG/configs/commit/d676053a53c59de07eca07f66cf06c2de9980405))
+
+
+
+
+
 ## [0.1.6](https://github.com/1stG/configs/compare/@1stg/lib-config@0.1.5...@1stg/lib-config@0.1.6) (2019-11-03)
 
 **Note:** Version bump only for package @1stg/lib-config
