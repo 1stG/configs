@@ -20,7 +20,6 @@ module.exports = declare(
       vue,
       isTSX = vue,
       metadata,
-      synchronousImport,
       useBuiltIns = 'usage',
       decoratorsLegacy = true,
       classLoose = decoratorsLegacy === true,
@@ -86,12 +85,6 @@ module.exports = declare(
         require('@babel/plugin-proposal-class-properties'),
         {
           loose: classLoose,
-        },
-      ],
-      [
-        require('babel-plugin-transform-commonjs'),
-        {
-          synchronousImport,
         },
       ],
     ]

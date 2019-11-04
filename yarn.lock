@@ -2223,16 +2223,16 @@
   resolved "https://registry.yarnpkg.com/@pkgr/named-exports/-/named-exports-0.4.0.tgz#2ee994cfea1e50d888adb0df1e7c4625651dcec8"
   integrity sha512-DXWo3ZQWp1XBE7q9M3n/M+8GTuz8Ob0/qAeJMOH5qWDTRv6eU/UAkfHNo340/53+gX5MdiHRqByexNrB6db25g==
 
-"@pkgr/rollup@^0.8.0":
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/@pkgr/rollup/-/rollup-0.8.0.tgz#1831e212f1ec50364aa7bfd5b8a1b03225b47538"
-  integrity sha512-xSccCwSlS2B9y03A7CrmUr35Gex5WSiFGnf4FM7YITYdoLvXjZoCjiuPxyO0wqolYW8kKI058cD7RPE+gpb0Jw==
+"@pkgr/rollup@^0.8.2":
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/@pkgr/rollup/-/rollup-0.8.2.tgz#139a374ece1d16be3fb38fafdb230b61fddcafbd"
+  integrity sha512-OAqqTRLJD/yKrGPRdbd7vSSaV1FEVb/HbVHOqPWByZRN5Hpc1E8u/TAQqczE8Q6Y14QBEG84ICY0aJmM57W1DQ==
   dependencies:
     "@babel/preset-env" "^7.6.3"
     "@pkgr/es-modules" "^0.2.1"
     "@pkgr/named-exports" "^0.4.0"
     "@pkgr/umd-globals" "^0.3.0"
-    "@pkgr/utils" "^0.3.0"
+    "@pkgr/utils" "^0.3.2"
     "@rollup/plugin-replace" "^2.2.0"
     "@rxts/rollup-plugin-alias" "^0.1.1"
     builtin-modules "^3.1.0"
@@ -2263,6 +2263,18 @@
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@pkgr/utils/-/utils-0.3.0.tgz#f04d5ecf3b8db7652f6a031d96923a5dcb39fd1f"
   integrity sha512-ouLVujG7AHr9KI2Ops/u++c/p777UEYIzqOtrO0u8UQQHYmcdgmWWZ1UoFduA0IHRAfoSW0O4ti6jhpoAK2ulQ==
+  dependencies:
+    chalk "^2.4.2"
+    cross-spawn "^7.0.1"
+    is-glob "^4.0.1"
+    open "^7.0.0"
+    tiny-glob "^0.2.6"
+    tslib "^1.10.0"
+
+"@pkgr/utils@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@pkgr/utils/-/utils-0.3.2.tgz#bacb4b42ab7efd12e485f515310fe983b599d911"
+  integrity sha512-jtF9DwHlzIl4lHUdW1JfwH6gZW7C3cpo7Ep/bu31zBBnB7UrE4qSTb0f62U4VQnNYJ2ujMk5kUOClaIZbf6Alg==
   dependencies:
     chalk "^2.4.2"
     cross-spawn "^7.0.1"
@@ -3199,13 +3211,6 @@ babel-plugin-syntax-jsx@^6.18.0:
   version "6.18.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-jsx/-/babel-plugin-syntax-jsx-6.18.0.tgz#0af32a9a6e13ca7a3fd5069e62d7b0f58d0d8946"
   integrity sha1-CvMqmm4Tyno/1QaeYtew9Y0NiUY=
-
-babel-plugin-transform-commonjs@^1.1.6:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/babel-plugin-transform-commonjs/-/babel-plugin-transform-commonjs-1.1.6.tgz#56927c87f0eba74e8037ff44d84057218fbf8a2c"
-  integrity sha512-nLPA5wR1LzYmJkYZSjIZVv5Fjqr+lBmgNCGCvUjHKnNGG1OX/kfWggUJECaowEW3D8SaLOyuOU2x4UQw6G5Rwg==
-  dependencies:
-    "@babel/helper-plugin-utils" "^7.0.0"
 
 babel-plugin-transform-react-remove-prop-types@^0.4.24:
   version "0.4.24"
