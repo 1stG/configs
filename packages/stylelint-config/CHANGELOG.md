@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.4](https://github.com/1stG/configs/compare/@1stg/stylelint-config@0.8.3...@1stg/stylelint-config@0.8.4) (2019-11-05)
+
+
+### Bug Fixes
+
+* **stylelint-config:** disable dollar-variable-default and media-feature-value-dollar-variable for loose ([a825a76](https://github.com/1stG/configs/commit/a825a76ebe604f0e4bb67904bcf70eff9825b035))
+
+
+
+
+
 ## [0.8.3](https://github.com/1stG/configs/compare/@1stg/stylelint-config@0.8.2...@1stg/stylelint-config@0.8.3) (2019-11-03)
 
 
