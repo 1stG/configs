@@ -4,6 +4,7 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 0,
     '@typescript-eslint/no-floating-promises': 0,
     '@typescript-eslint/no-magic-numbers': 0,
+    '@typescript-eslint/no-type-alias': 0,
     '@typescript-eslint/no-unnecessary-condition': 0,
     '@typescript-eslint/restrict-plus-operands': 0,
     '@typescript-eslint/unbound-method': 0,
