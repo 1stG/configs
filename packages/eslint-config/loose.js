@@ -1,6 +1,7 @@
 module.exports = {
   extends: ['@1stg/eslint-config/recommended'],
   rules: {
+    '@typescript-eslint/member-ordering': 0,
     '@typescript-eslint/no-explicit-any': 0,
     '@typescript-eslint/no-floating-promises': 0,
     '@typescript-eslint/no-magic-numbers': 0,
