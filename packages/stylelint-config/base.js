@@ -9,7 +9,13 @@ module.exports = {
   rules: Object.assign(
     {
       'plugin/no-low-performance-animation-properties': true,
-      'plugin/no-unsupported-browser-features': true,
+      'plugin/no-unsupported-browser-features': [
+        true,
+        {
+          ignore: ['css3-cursors', 'css-resize', 'rem'],
+          severity: 'warning',
+        },
+      ],
       'selector-pseudo-element-colon-notation': 'single',
     },
     (isAngularAvailable || isVueAvailable) && {
