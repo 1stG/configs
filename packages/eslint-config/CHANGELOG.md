@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.5](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.14.4...@1stg/eslint-config@0.14.5) (2019-11-05)
+
+
+### Bug Fixes
+
+* **eslint-config:** disable no-type-alias in loose config ([420f61a](https://github.com/1stG/configs/commit/420f61ae7c21254d83e166b1c3585a00f0074f5b))
+
+
+
+
+
 ## [0.14.4](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.14.3...@1stg/eslint-config@0.14.4) (2019-11-03)
 
 
