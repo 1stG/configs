@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.6](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.14.5...@1stg/eslint-config@0.14.6) (2019-11-05)
+
+
+### Bug Fixes
+
+* **eslint-config:** disable member-ordering in loose config ([e118451](https://github.com/1stG/configs/commit/e1184514f9a7f235527e33a81e81c6b768b4d990))
+
+
+
+
+
 ## [0.14.5](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.14.4...@1stg/eslint-config@0.14.5) (2019-11-05)
 
 
