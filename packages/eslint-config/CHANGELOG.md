@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.14.6...@1stg/eslint-config@0.15.0) (2019-11-08)
+
+
+### Features
+
+* **eslint-config:** export recommended config as default, try ts like other types ([a6238f6](https://github.com/1stG/configs/commit/a6238f6b781e64c21294cacbb2d5e6a4fac5a3bc))
+
+
+
+
+
 ## [0.14.6](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.14.5...@1stg/eslint-config@0.14.6) (2019-11-05)
 
 
