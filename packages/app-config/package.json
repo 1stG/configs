@@ -1,6 +1,6 @@
 {
   "name": "@1stg/app-config",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "Personal but Shareable App Configuration for all 1stG.me projects.",
   "repository": "git+https://github.com/1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/app-config",
@@ -17,7 +17,7 @@
     "@1stg/husky-config": "^0.4.0",
     "@1stg/lint-staged": "^0.10.0",
     "@1stg/postcss-config": "^0.4.1",
-    "@1stg/prettier-config": "^0.6.0",
+    "@1stg/prettier-config": "^0.6.1",
     "@1stg/remark-config": "^0.2.2",
     "@1stg/stylelint-config": "^0.8.5",
     "@1stg/tsconfig": "^0.7.1",

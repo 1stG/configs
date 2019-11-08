@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.1](https://github.com/1stG/configs/compare/@1stg/prettier-config@0.6.0...@1stg/prettier-config@0.6.1) (2019-11-08)
+
+
+### Bug Fixes
+
+* **prettier-config:** add quote config for ruby files ([94cec5e](https://github.com/1stG/configs/commit/94cec5e08e5eec488feaaa6d1aaa8e0c61099f30))
+
+
+
+
+
 # [0.6.0](https://github.com/1stG/configs/compare/@1stg/prettier-config@0.5.2...@1stg/prettier-config@0.6.0) (2019-11-08)
 
 
