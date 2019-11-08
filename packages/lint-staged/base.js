@@ -2,7 +2,7 @@
 const { isPkgAvailable } = require('@pkgr/utils')
 
 const config = {
-  '*.{*ignore,*sh,env,env.*,gql,html,json,properties,pug,vue,toml,yaml,yml}': [
+  '*.{*ignore,*sh,env,env.*,gql,html,json,properties,pug,rb,vue,toml,yaml,yml}': [
     'prettier --write',
     'git add',
   ],

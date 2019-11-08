@@ -9,8 +9,9 @@
     "lint-staged": ">=9.0.0"
   },
   "dependencies": {
-    "@pkgr/utils": "^0.3.0",
-    "@prettier/plugin-pug": "^1.0.5",
+    "@pkgr/utils": "^0.3.2",
+    "@prettier/plugin-pug": "^1.0.6",
+    "@prettier/plugin-ruby": "^0.15.1",
     "cross-env": "^6.0.3",
     "prettier": "^1.18.2",
     "prettier-plugin-sh": "^0.2.2",
