@@ -1,10 +1,11 @@
 /* eslint-disable sonarjs/no-duplicate-string */
-const fs = require('fs')
 const { resolve } = require('path')
 
 const {
   isAngularAvailable,
   isReactAvailable,
+  isPkgAvailable,
+  isTsAvailable,
   isVueAvailable,
   tryFile,
   tryPkg,
@@ -248,32 +249,28 @@ exports.dTs = {
   },
 }
 
-const tslint = tryPkg('tslint')
-
-const TSLINT_CONFIG = resolve('tslint.json')
-const tslintConfigAvailable = fs.existsSync(TSLINT_CONFIG)
-
-const lintFile = tslintConfigAvailable
-  ? TSLINT_CONFIG
-  : tryPkg('@1stg/tslint-config')
+const TSLINT_CONFIG = tryFile(resolve('tslint.json'))
+const lintFile = TSLINT_CONFIG || tryPkg('@1stg/tslint-config')
 
 exports.tslint = {
   files: '*.{ts,tsx}',
   excludedFiles: '*.d.ts',
-  plugins: tslintConfigAvailable ? ['@typescript-eslint/tslint'] : undefined,
+  plugins: TSLINT_CONFIG ? ['@typescript-eslint/tslint'] : undefined,
   rules: Object.assign(
     {
       // `ordered-imports` of tslint is better for now
       'import/order': 0,
     },
-    tslintConfigAvailable || {
-      '@typescript-eslint/tslint/config': [
-        2,
-        {
-          lintFile,
+    TSLINT_CONFIG
+      ? undefined
+      : {
+          '@typescript-eslint/tslint/config': [
+            2,
+            {
+              lintFile,
+            },
+          ],
         },
-      ],
-    },
   ),
 }
 
@@ -403,10 +400,11 @@ exports.config = {
   rules: nonSourceRules,
 }
 
-exports.overrides = exports.ts
+exports.overrides = []
   .concat(
-    exports.js,
-    tslint && lintFile && exports.tslint,
+    isPkgAvailable('@babel/core') && exports.js,
+    isTsAvailable && exports.ts,
+    isPkgAvailable('tslint') && lintFile && exports.tslint,
     isReactAvailable && exports.react,
     isReactAvailable && exports.reactHooks,
     isReactAvailable && exports.reactTs,
