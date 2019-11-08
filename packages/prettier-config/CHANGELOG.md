@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/1stG/configs/compare/@1stg/prettier-config@0.5.2...@1stg/prettier-config@0.6.0) (2019-11-08)
+
+
+### Features
+
+* **prettier-config:** support format ruby files ([df7fdd1](https://github.com/1stG/configs/commit/df7fdd10b29bde9610f81f61efdf44cd69e82902))
+
+
+
+
+
 ## [0.5.2](https://github.com/1stG/configs/compare/@1stg/prettier-config@0.5.1...@1stg/prettier-config@0.5.2) (2019-11-01)
 
 
