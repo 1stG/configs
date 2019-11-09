@@ -9,7 +9,7 @@
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
     "@commitlint/config-lerna-scopes": "^8.2.0",
-    "@pkgr/utils": "^0.3.0"
+    "@pkgr/utils": "^0.3.2"
   },
   "publishConfig": {
     "access": "public"

@@ -11,7 +11,7 @@ module.exports = declare(
   (
     api,
     {
-      generator,
+      async = 'fast',
       import: importOptions,
       modules = false,
       esmodules,
@@ -45,12 +45,13 @@ module.exports = declare(
         require('@babel/preset-env'),
         {
           modules,
-          exclude: generator
-            ? undefined
-            : [
-                '@babel/transform-async-to-generator',
-                '@babel/transform-regenerator',
-              ],
+          exclude:
+            async === 'generator'
+              ? undefined
+              : [
+                  '@babel/transform-async-to-generator',
+                  '@babel/transform-regenerator',
+                ],
           corejs: {
             version: 3,
             proposals: true,
@@ -102,13 +103,15 @@ module.exports = declare(
       ])
     }
 
-    if (!generator) {
+    if (async === 'fast') {
       plugins.push([
         require('fast-async'),
         {
           useRuntimeModule: true,
         },
       ])
+    } else if (async === 'promises') {
+      plugins.push(require('babel-plugin-transform-async-to-promises'))
     }
 
     if (importOptions) {
@@ -159,8 +162,8 @@ module.exports = declare(
     }
 
     return {
-      plugins,
       presets,
+      plugins,
       overrides: isTSX
         ? undefined
         : [
