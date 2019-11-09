@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.1](https://github.com/1stG/configs/compare/@1stg/lint-staged@0.10.0...@1stg/lint-staged@0.10.1) (2019-11-09)
+
+
+### Bug Fixes
+
+* **babel-preset:** support fast/generator/promises or exclude async transformer ([99a9666](https://github.com/1stG/configs/commit/99a9666a2228ea66de3b81d4bad4707ecba7232e)), closes [#8](https://github.com/1stG/configs/issues/8)
+
+
+
+
+
 # [0.10.0](https://github.com/1stG/configs/compare/@1stg/lint-staged@0.9.1...@1stg/lint-staged@0.10.0) (2019-11-08)
 
 
