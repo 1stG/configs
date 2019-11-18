@@ -24,14 +24,14 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@angular/core": "^8.2.13",
+    "@angular/core": "^8.2.14",
     "@types/jest": "^24.0.22",
-    "@types/node": "^12.12.7",
+    "@types/node": "^12.12.8",
     "@types/react": "^16.9.11",
     "@types/unist": "^2.0.3",
     "lerna": "^3.18.4",
     "npm-run-all": "^4.1.5",
-    "react": "^16.11.0",
+    "react": "^16.12.0",
     "ts-jest": "^24.1.0",
     "tslint": "^5.20.1",
     "vue": "^2.6.10"

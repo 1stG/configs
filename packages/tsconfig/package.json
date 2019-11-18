@@ -9,7 +9,7 @@
   "peerDependencies": {
     "typescript": ">=3.0.0"
   },
-  "optionalDependencies": {
+  "dependencies": {
     "tslib": "^1.10.0"
   },
   "publishConfig": {

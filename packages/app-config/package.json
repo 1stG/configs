@@ -23,14 +23,14 @@
     "@1stg/tsconfig": "^0.7.1",
     "@babel/core": "^7.7.2",
     "@pkgr/es-modules": "^0.2.1",
-    "@pkgr/imagemin": "^0.3.0",
+    "@pkgr/imagemin": "^0.3.1",
     "browserslist": "^4.7.2",
     "eslint": "^6.6.0",
-    "husky": "^3.0.9",
-    "lint-staged": "^9.4.2",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.4.3",
     "postcss": "^7.0.21",
     "prettier": "^1.19.1",
-    "stylelint": "^11.1.1",
+    "stylelint": "^12.0.0",
     "tslib": "^1.10.0"
   },
   "publishConfig": {
