@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.2](https://github.com/1stG/configs/compare/@1stg/tsconfig@0.7.1...@1stg/tsconfig@0.7.2) (2019-11-18)
+
+
+### Bug Fixes
+
+* **deps:** bump (dev)Dependencies ([1a02a42](https://github.com/1stG/configs/commit/1a02a42ea2b786a8f59c46214fc05e82291febd4))
+
+
+
+
+
 ## [0.7.1](https://github.com/1stG/configs/compare/@1stg/tsconfig@0.7.0...@1stg/tsconfig@0.7.1) (2019-11-03)
 
 

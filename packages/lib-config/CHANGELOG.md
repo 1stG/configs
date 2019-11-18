@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.14](https://github.com/1stG/configs/compare/@1stg/lib-config@0.1.13...@1stg/lib-config@0.1.14) (2019-11-18)
+
+
+### Bug Fixes
+
+* **deps:** bump (dev)Dependencies ([1a02a42](https://github.com/1stG/configs/commit/1a02a42ea2b786a8f59c46214fc05e82291febd4))
+
+
+
+
+
 ## [0.1.13](https://github.com/1stG/configs/compare/@1stg/lib-config@0.1.12...@1stg/lib-config@0.1.13) (2019-11-09)
 
 
