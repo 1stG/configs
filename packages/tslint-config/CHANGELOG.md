@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.7](https://github.com/1stG/configs/compare/@1stg/tslint-config@0.5.6...@1stg/tslint-config@0.5.7) (2019-11-26)
+
+
+### Bug Fixes
+
+* tslint-config extend tslint-config-eslint/sonar ([#9](https://github.com/1stG/configs/issues/9)) ([1c6eb75](https://github.com/1stG/configs/commit/1c6eb75e63d21dbac45e0681982d19f666a79f05))
+
+
+
+
+
 ## [0.5.6](https://github.com/1stG/configs/compare/@1stg/tslint-config@0.5.5...@1stg/tslint-config@0.5.6) (2019-11-09)
 
 
