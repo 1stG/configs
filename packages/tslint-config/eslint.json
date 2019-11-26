@@ -2,20 +2,7 @@
   "$schema": "http://json.schemastore.org/tslint",
   "extends": [
     "./tslint.json",
+    "tslint-config-eslint/sonar",
     "tslint-config-eslint/prettier"
-  ],
-  "rules": {
-    "cognitive-complexity": false,
-    "max-switch-cases": false,
-    "no-big-function": false,
-    "no-collapsible-if": false,
-    "no-duplicate-string": false,
-    "no-duplicated-branches": false,
-    "no-identical-functions": false,
-    "no-inverted-boolean-check": false,
-    "no-redundant-boolean": false,
-    "no-small-switch": false,
-    "no-useless-catch": false,
-    "prefer-immediate-return": false
-  }
+  ]
 }

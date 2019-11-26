@@ -13336,10 +13336,10 @@ tslint-angular@^3.0.2:
   resolved "https://registry.yarnpkg.com/tslint-angular/-/tslint-angular-3.0.2.tgz#6f7480cc34f26fcc03df18d7ec3d5ce364b65064"
   integrity sha512-UgeGO776Z7VvzCnW6pOsbL3qs7PwzZatKkk2OzQO45H9Zf4T+bNBz87nFkB96W/swyCHmpK2M0vl61n0biFVTQ==
 
-tslint-config-eslint@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/tslint-config-eslint/-/tslint-config-eslint-0.2.0.tgz#5c0d240a0902b91d03def31a7c712cf75af2a0a1"
-  integrity sha512-3K8tHLpvBWBK+PvvWC6Sgctkx0K5Mgsq/lGg/A4daHREdM9Yn+7sqCTqm60VyUJaLrHz00qtwhqy+KG1jh512w==
+tslint-config-eslint@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/tslint-config-eslint/-/tslint-config-eslint-0.2.1.tgz#365a4059082a6419603c4973bd4eba1554b67135"
+  integrity sha512-+Rck9+2y/dPR+D/dq4pX4xt91lZMlZS63uCuFOzRDsr97G4lfR94SwqVqnCT0vIHrjdyqvtd7oLV33xsylCNrg==
 
 tslint-config-prettier@^1.18.0:
   version "1.18.0"
@@ -13453,7 +13453,7 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@>=2.8.3, typescript@^3.7.2:
+typescript@>=2.8.3:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.7.2.tgz#27e489b95fa5909445e9fef5ee48d81697ad18fb"
   integrity sha512-ml7V7JfiN2Xwvcer+XAf2csGO1bPBdRbFCkYBczNZggrBZ9c7G3riSUeJmqEU5uOtXNPMhE3n+R4FA/3YOAWOQ==
