@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.7](https://github.com/1stG/configs/compare/@1stg/stylelint-config@0.8.6...@1stg/stylelint-config@0.8.7) (2019-12-11)
+
+
+### Bug Fixes
+
+* **deps:** bump all (dev)Dependencies, support prettier .*shrc files ([cab346c](https://github.com/1stG/configs/commit/cab346c8d6b41197bfddc2ff408e92e58816661d))
+
+
+
+
+
 ## [0.8.6](https://github.com/1stG/configs/compare/@1stg/stylelint-config@0.8.5...@1stg/stylelint-config@0.8.6) (2019-11-18)
 
 

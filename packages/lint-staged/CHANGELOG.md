@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.3](https://github.com/1stG/configs/compare/@1stg/lint-staged@0.10.2...@1stg/lint-staged@0.10.3) (2019-12-11)
+
+
+### Bug Fixes
+
+* **deps:** bump all (dev)Dependencies, support prettier .*shrc files ([cab346c](https://github.com/1stG/configs/commit/cab346c8d6b41197bfddc2ff408e92e58816661d))
+
+
+
+
+
 ## [0.10.2](https://github.com/1stG/configs/compare/@1stg/lint-staged@0.10.1...@1stg/lint-staged@0.10.2) (2019-11-18)
 
 
