@@ -11,6 +11,12 @@ module.exports = {
       },
     },
     {
+      files: ['.bashrc', '.cshrc', '.zshrc'],
+      options: {
+        parser: 'sh',
+      },
+    },
+    {
       files: [
         'angular.json',
         'jsconfig.json',

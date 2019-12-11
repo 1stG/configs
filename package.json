@@ -17,27 +17,30 @@
     "lint": "run-p lint:*",
     "lint:es": "cross-env PARSER_NO_WATCH=true eslint . --cache --ext js,jsx,md,mdx,ts,tsx,vue -f friendly",
     "lint:style": "run-p lint:style:*",
-    "lint:style:css": "stylelint --cache --config stylelint.common.js tests/*.{css,less}",
-    "lint:style:scss": "stylelint --cache tests/*.{scss,vue}",
+    "lint:style:css": "stylelint --cache --config stylelint.common.js 'tests/*.{css,less}'",
+    "lint:style:scss": "stylelint --cache 'tests/*.{scss,vue}'",
     "lint:ts": "tslint -p . -t stylish",
     "lint:tsc": "tsc",
+    "postinstall": "yarn-deduplicate",
     "test": "jest"
   },
   "devDependencies": {
     "@angular/core": "^8.2.14",
     "@types/jest": "^24.0.22",
-    "@types/node": "^12.12.8",
-    "@types/react": "^16.9.11",
+    "@types/node": "^12.12.17",
+    "@types/react": "^16.9.16",
     "@types/unist": "^2.0.3",
-    "lerna": "^3.18.4",
+    "core-js": "^3.4.8",
+    "lerna": "^3.19.0",
     "npm-run-all": "^4.1.5",
     "react": "^16.12.0",
-    "ts-jest": "^24.1.0",
+    "ts-jest": "^24.2.0",
     "tslint": "^5.20.1",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "yarn-deduplicate": "^1.1.1"
   },
   "resolutions": {
-    "typescript": "^3.7.2"
+    "typescript": "^3.7.3"
   },
   "commitlint": {
     "extends": [
