@@ -19,6 +19,7 @@ module.exports = {
     'standard',
     'plugin:prettier/recommended',
     'prettier/standard',
+    'prettier/unicorn',
   ],
   settings: {
     node: {
@@ -76,7 +77,5 @@ module.exports = {
       },
     ],
     'unicorn/prevent-abbreviations': 0,
-    'unicorn/no-nested-ternary': 0,
-    'unicorn/number-literal-case': 0,
   },
 }

@@ -27,6 +27,7 @@ const jsBase = {
     },
   },
   plugins: ['babel'],
+  extends: ['prettier/babel'],
   rules: {
     camelcase: 0,
     'new-cap': 0,
