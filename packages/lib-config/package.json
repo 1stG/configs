@@ -18,12 +18,12 @@
     "@1stg/prettier-config": "^0.6.4",
     "@1stg/remark-config": "^0.2.2",
     "@1stg/tsconfig": "^0.7.2",
-    "@babel/core": "^7.7.5",
-    "@pkgr/rollup": "^0.8.6",
-    "eslint": "^6.7.2",
-    "husky": "^3.1.0",
+    "@babel/core": "^7.8.0",
+    "@pkgr/rollup": "^0.8.10",
+    "eslint": "^6.8.0",
+    "husky": "^4.0.7",
     "jest": "^24.9.0",
-    "lint-staged": "^9.4.3",
+    "lint-staged": "^9.5.0",
     "prettier": "^1.19.1"
   },
   "publishConfig": {
