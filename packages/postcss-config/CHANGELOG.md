@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/1stG/configs/compare/@1stg/postcss-config@0.4.4...@1stg/postcss-config@0.5.0) (2020-01-12)
+
+
+### Features
+
+* **eslint-config:** add eslint-plugin-unicorn support ([2e2a117](https://github.com/1stG/configs/commit/2e2a1179a92907ec72c65be5389d24ef5d98be22))
+
+
+
+
+
 ## [0.4.4](https://github.com/1stG/configs/compare/@1stg/postcss-config@0.4.3...@1stg/postcss-config@0.4.4) (2020-01-12)
 
 **Note:** Version bump only for package @1stg/postcss-config
