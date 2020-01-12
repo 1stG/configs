@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.1](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.16.0...@1stg/eslint-config@0.16.1) (2020-01-12)
+
+
+### Bug Fixes
+
+* **eslint-config:** enable prettier/babel and prettier/unicorn configs ([5e7421e](https://github.com/1stG/configs/commit/5e7421efc805047c2ca812baff54de57c0691be0))
+
+
+
+
+
 # [0.16.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.15.4...@1stg/eslint-config@0.16.0) (2020-01-12)
 
 
