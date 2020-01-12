@@ -11,15 +11,15 @@ const {
 module.exports = {
   extends: [
     'eslint:recommended',
-    'plugin:sonarjs/recommended',
     'plugin:import/recommended',
     'plugin:node/recommended',
     'plugin:promise/recommended',
+    'plugin:sonarjs/recommended',
+    'plugin:unicorn/recommended',
     'standard',
     'plugin:prettier/recommended',
     'prettier/standard',
   ],
-  plugins: ['sonarjs'],
   settings: {
     node: {
       allowModules,
@@ -65,5 +65,18 @@ module.exports = {
     'node/no-unpublished-import': 0,
     'node/no-unpublished-require': 0,
     'prefer-const': 2,
+    'unicorn/filename-case': [
+      2,
+      {
+        cases: {
+          kebabCase: true,
+          pascalCase: true,
+        },
+        ignore: ['README.md'],
+      },
+    ],
+    'unicorn/prevent-abbreviations': 0,
+    'unicorn/no-nested-ternary': 0,
+    'unicorn/number-literal-case': 0,
   },
 }

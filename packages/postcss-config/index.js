@@ -25,8 +25,8 @@ module.exports = ({
     plugins.push(
       require('postcss-modules', {
         globalModulePaths: [
-          /[\\/]node_modules[\\/]/,
-          /(\bglobals?[\\/][-\w]+|\.globals?)\.(p?css|less|s[ac]ss|styl(us)?)$/,
+          /[/\\]node_modules[/\\]/,
+          /(\bglobals?[/\\][\w-]+|\.globals?)\.(p?css|less|s[ac]ss|styl(us)?)$/,
         ],
         generateScopedName: isProd
           ? '[hash:base64:10]'
