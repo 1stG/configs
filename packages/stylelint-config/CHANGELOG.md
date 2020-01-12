@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.8](https://github.com/1stG/configs/compare/@1stg/stylelint-config@0.8.7...@1stg/stylelint-config@0.8.8) (2020-01-12)
+
+**Note:** Version bump only for package @1stg/stylelint-config
+
+
+
+
+
 ## [0.8.7](https://github.com/1stG/configs/compare/@1stg/stylelint-config@0.8.6...@1stg/stylelint-config@0.8.7) (2019-12-11)
 
 
