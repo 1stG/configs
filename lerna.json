@@ -26,7 +26,8 @@
         "**/.*",
         "tests",
         "/tsconfig.json",
-        "/tslint.json"
+        "/tslint.json",
+        "/yarn.lock"
       ]
     }
   }

@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "@1stg/stylelint-config/scss",
+    "@1stg/stylelint-config/modules"
+  ],
+  "ignoreFiles": "*.less",
+  "rules": {
+    "plugin/no-unsupported-browser-features": null
+  }
+}

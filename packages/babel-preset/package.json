@@ -12,12 +12,12 @@
     "@babel/core": ">=7.8.0"
   },
   "dependencies": {
-    "@babel/helper-plugin-utils": "^7.8.0",
-    "@babel/plugin-proposal-class-properties": "^7.8.0",
-    "@babel/plugin-proposal-decorators": "^7.8.0",
-    "@babel/preset-env": "^7.8.0",
-    "@babel/preset-react": "^7.8.0",
-    "@babel/preset-typescript": "^7.8.0",
+    "@babel/helper-plugin-utils": "^7.8.3",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
     "@pkgr/utils": "^0.3.4",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "@vue/babel-preset-jsx": "^1.1.2",
@@ -27,7 +27,7 @@
     "babel-plugin-transform-remove-console": "^6.9.4",
     "babel-plugin-transform-typescript-metadata": "^0.2.2",
     "babel-preset-proposal-typescript": "^1.5.0",
-    "core-js": "^3.6.3",
+    "core-js": "^3.6.4",
     "fast-async": "^7.0.6"
   },
   "publishConfig": {

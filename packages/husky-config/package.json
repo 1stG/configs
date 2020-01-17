@@ -9,7 +9,7 @@
     "husky": ">=3.0.0"
   },
   "dependencies": {
-    "@commitlint/cli": "^8.3.4",
+    "@commitlint/cli": "^8.3.5",
     "lint-staged": "^9.5.0"
   },
   "publishConfig": {
