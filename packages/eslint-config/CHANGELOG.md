@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.2](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.16.1...@1stg/eslint-config@0.16.2) (2020-01-17)
+
+
+### Bug Fixes
+
+* **deps:** bump all (dev)Dependencies ([2faaabd](https://github.com/1stG/configs/commit/2faaabd1de4072bbad92a891457c714aec468f99))
+* **eslint-config:** change some unicorn rules ([92770ed](https://github.com/1stG/configs/commit/92770ed541c513c220cde9f60b1011c342c71cc9))
+
+
+
+
+
 ## [0.16.1](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.16.0...@1stg/eslint-config@0.16.1) (2020-01-12)
 
 
