@@ -66,6 +66,13 @@ module.exports = {
     'node/no-unpublished-import': 0,
     'node/no-unpublished-require': 0,
     'prefer-const': 2,
+    'unicorn/catch-error-name': [
+      2,
+      {
+        name: 'error',
+        caughtErrorsIgnorePattern: '^e(rr)?$',
+      },
+    ],
     'unicorn/filename-case': [
       2,
       {
@@ -73,7 +80,7 @@ module.exports = {
           kebabCase: true,
           pascalCase: true,
         },
-        ignore: ['README.md'],
+        ignore: ['CHANGELOG.md', 'README.md'],
       },
     ],
     'unicorn/prevent-abbreviations': 0,
