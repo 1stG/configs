@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.5](https://github.com/1stG/configs/compare/@1stg/husky-config@0.4.4...@1stg/husky-config@0.4.5) (2020-01-26)
+
+
+### Bug Fixes
+
+* **deps:** bump all (dev)Dependencies, ignore UPPER_CASE markdown filenames ([a679e88](https://github.com/1stG/configs/commit/a679e88b31383b94d889a9a7de9aff1b14d2e91c))
+
+
+
+
+
 ## [0.4.4](https://github.com/1stG/configs/compare/@1stg/husky-config@0.4.3...@1stg/husky-config@0.4.4) (2020-01-17)
 
 

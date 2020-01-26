@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.7](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.9.6...@1stg/babel-preset@0.9.7) (2020-01-26)
+
+
+### Bug Fixes
+
+* **deps:** bump all (dev)Dependencies, ignore UPPER_CASE markdown filenames ([a679e88](https://github.com/1stG/configs/commit/a679e88b31383b94d889a9a7de9aff1b14d2e91c))
+
+
+
+
+
 ## [0.9.6](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.9.5...@1stg/babel-preset@0.9.6) (2020-01-17)
 
 
