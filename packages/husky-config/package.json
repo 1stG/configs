@@ -6,11 +6,11 @@
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "peerDependencies": {
-    "husky": ">=3.0.0"
+    "husky": ">=3.0.0",
+    "lint-staged": ">=9.0.0"
   },
   "dependencies": {
-    "@commitlint/cli": "^8.3.5",
-    "lint-staged": "^9.5.0"
+    "@commitlint/cli": "^8.3.5"
   },
   "publishConfig": {
     "access": "public"

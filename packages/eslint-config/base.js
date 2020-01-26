@@ -80,7 +80,8 @@ module.exports = {
           kebabCase: true,
           pascalCase: true,
         },
-        ignore: ['CHANGELOG.md', 'README.md'],
+        // ignore UPPER_CASE markdown filenames
+        ignore: [/^[A-Z](([\dA-Z]+_)*[\dA-Z]+)?\.mdx?$/],
       },
     ],
     'unicorn/prevent-abbreviations': 0,
