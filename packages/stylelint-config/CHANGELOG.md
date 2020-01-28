@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.8.11 (2020-01-28)
+
+
+### Bug Fixes
+
+* **deps:** bump all (dev)Dependencies, migrate to GitHub Actions ([8b3b84c](https://github.com/1stG/configs/commit/8b3b84cdba15439891bb5650d11dbac51ceb8eca))
+
+
+
+
+
 ## [0.8.10](https://github.com/1stG/configs/compare/@1stg/stylelint-config@0.8.9...@1stg/stylelint-config@0.8.10) (2020-01-26)
 
 
