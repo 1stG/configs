@@ -22,12 +22,11 @@
     },
     "publish": {
       "ignoreChanges": [
-        "*.md",
-        "**/.*",
-        "tests",
-        "/tsconfig.json",
-        "/tslint.json",
-        "/yarn.lock"
+        "**/*.md",
+        "**/tests/**",
+        "**/tsconfig.json",
+        "**/tslint.json",
+        "**/yarn.lock"
       ]
     }
   }

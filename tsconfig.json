@@ -1,5 +1,5 @@
 {
-  "extends": "./packages/tsconfig/tsconfig.json", // for type-coverage
+  "extends": "./packages/tsconfig/tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
     "jsx": "preserve",

@@ -14,7 +14,7 @@
     "@prettier/plugin-ruby": "^0.17.0",
     "cross-env": "^7.0.0",
     "prettier": "^1.19.1",
-    "prettier-plugin-sh": "^0.2.4",
+    "prettier-plugin-sh": "^0.2.8",
     "prettier-plugin-toml": "^0.3.1"
   },
   "publishConfig": {
