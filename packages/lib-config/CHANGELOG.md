@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.2.0 (2020-01-31)
+
+
+### Features
+
+* **tslint-config:** migrate rxjs-tslint to @rxts/rxjs-tslint ([a46a510](https://github.com/1stG/configs/commit/a46a510829a8eacbdda062223e2fd7749a899779))
+
+
+
+
+
 ## 0.1.21 (2020-01-28)
 
 
