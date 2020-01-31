@@ -11,8 +11,8 @@
     "typescript": ">=3.0.0"
   },
   "dependencies": {
+    "@rxts/rxjs-tslint": "^0.2.0",
     "codelyzer": "^5.2.1",
-    "rxjs-tslint": "^0.1.7",
     "tslint-angular": "^3.0.2",
     "tslint-config-eslint": "^0.2.1",
     "tslint-config-prettier": "^1.18.0",

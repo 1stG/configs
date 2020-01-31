@@ -16,6 +16,11 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
+      - name: Setup yarn
+        run: |
+          curl -o- -L https://yarnpkg.com/install.sh | bash
+          export PATH="$HOME/.yarn/bin:$PATH"
+
       - name: Get yarn cache
         id: yarn-cache
         run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -26,11 +31,6 @@ jobs:
           key: ${{ matrix.os }}-${{ matrix.node }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ matrix.os }}-${{ matrix.node }}-yarn-
-
-      - name: Setup yarn
-        run: |
-          curl -o- -L https://yarnpkg.com/install.sh | bash
-          export PATH="$HOME/.yarn/bin:$PATH"
 
       - name: Install Dependencies
         run: yarn --frozen-lockfile

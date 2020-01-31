@@ -26,22 +26,22 @@
   },
   "devDependencies": {
     "@angular/core": "^8.2.14",
-    "@types/jest": "^25.1.0",
-    "@types/node": "^13.5.0",
+    "@types/jest": "^25.1.1",
+    "@types/node": "^13.5.3",
     "@types/react": "^16.9.19",
     "@types/unist": "^2.0.3",
     "core-js": "^3.6.4",
     "lerna": "^3.20.2",
     "npm-run-all": "^4.1.5",
     "react": "^16.12.0",
-    "ts-jest": "^25.0.0",
+    "ts-jest": "^25.1.0",
     "tslint": "^6.0.0",
     "type-coverage": "^2.4.0",
     "vue": "^2.6.11",
     "yarn-deduplicate": "^1.1.1"
   },
   "resolutions": {
-    "@babel/core": "^7.8.3",
+    "@babel/core": "^7.8.4",
     "eslint-plugin-prettier": "^3.1.2",
     "prettier": "prettier/prettier",
     "typescript": "^3.7.5"

@@ -1,6 +1,6 @@
 {
   "extends": ["tslint:recommended", "tslint-sonarts", "tslint-config-prettier"],
-  "rulesDirectory": ["rxjs-tslint", "tslint-plugin-prettier"],
+  "rulesDirectory": ["@rxts/rxjs-tslint", "tslint-plugin-prettier"],
   "rules": {
     "ban-ts-ignore": false,
     "interface-name": [true, "never-prefix"],
