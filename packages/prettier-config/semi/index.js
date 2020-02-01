@@ -1,1 +1,1 @@
-module.exports = Object.assign({}, require('..'), { semi: true })
+module.exports = Object.assign({}, require('../base'), { semi: true })

@@ -3,9 +3,9 @@ const baseConfig = require('./base')
 module.exports = Object.assign({}, baseConfig, {
   overrides: baseConfig.overrides.concat([
     {
-      files: '*.html',
+      files: '*.ts',
       options: {
-        parser: 'vue',
+        parser: 'babel-ts',
       },
     },
   ]),

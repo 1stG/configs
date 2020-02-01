@@ -1,1 +1,1 @@
-module.exports = Object.assign({}, require('.'), { singleQuote: false })
+module.exports = Object.assign({}, require('./base'), { singleQuote: false })

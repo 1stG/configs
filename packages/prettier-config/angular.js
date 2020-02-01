@@ -1,4 +1,4 @@
-const baseConfig = require('.')
+const baseConfig = require('./base')
 
 module.exports = Object.assign({}, baseConfig, {
   overrides: baseConfig.overrides.concat([
