@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.11.1 (2020-02-01)
+
+
+### Bug Fixes
+
+* **prettier-config:** add arrowParens avoid to prevent regression via prettier 2.0 ([1336067](https://github.com/1stG/configs/commit/1336067722a0f86c3040a185b01ba1b9aaee112d))
+
+
+
+
+
 # 0.11.0 (2020-01-31)
 
 
