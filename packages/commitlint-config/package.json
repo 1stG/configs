@@ -1,6 +1,6 @@
 {
   "name": "@1stg/commitlint-config",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "Personal but Shareable Commitlint Configuration for all 1stG.me projects.",
   "repository": "git@github.com:1stG/configs.git",
   "author": "JounQin <admin@1stg.me>",

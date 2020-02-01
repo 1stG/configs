@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.8.0 (2020-02-01)
+
+
+### Features
+
+* **prettier-config:** add next config for babel-ts parser ([0804cc8](https://github.com/1stG/configs/commit/0804cc8a71e1f0c7de2dab0b5f26bf9d3ff2b7a4))
+
+
+
+
+
 ## 0.7.1 (2020-02-01)
 
 

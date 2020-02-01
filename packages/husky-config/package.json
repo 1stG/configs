@@ -1,6 +1,6 @@
 {
   "name": "@1stg/husky-config",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "Personal but Shareable husky Configuration for all 1stG.me projects.",
   "repository": "git@github.com:1stG/configs.git",
   "author": "JounQin <admin@1stg.me>",
