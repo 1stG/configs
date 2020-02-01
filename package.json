@@ -27,7 +27,7 @@
   "devDependencies": {
     "@angular/core": "^8.2.14",
     "@types/jest": "^25.1.1",
-    "@types/node": "^13.5.3",
+    "@types/node": "^13.7.0",
     "@types/react": "^16.9.19",
     "@types/unist": "^2.0.3",
     "core-js": "^3.6.4",
@@ -43,7 +43,7 @@
   "resolutions": {
     "@babel/core": "^7.8.4",
     "eslint-plugin-prettier": "^3.1.2",
-    "prettier": "prettier/prettier",
+    "prettier": "prettier/prettier#next",
     "typescript": "^3.7.5"
   },
   "typeCoverage": {

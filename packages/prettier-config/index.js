@@ -1,4 +1,5 @@
 module.exports = {
+  arrowParens: 'avoid',
   htmlWhitespaceSensitivity: 'ignore',
   semi: false,
   singleQuote: true,

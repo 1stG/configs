@@ -22,10 +22,7 @@ export default Vue.extend({
       await new Promise(resolve => {
         setTimeout(resolve, 500)
       })
-      this.msg = this.msg
-        .split('')
-        .reverse()
-        .join('')
+      this.msg = this.msg.split('').reverse().join('')
     },
   },
 })

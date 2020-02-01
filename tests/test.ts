@@ -17,7 +17,7 @@ interface X {
   p?: Position
 }
 
-function* generator() {
+function *generator() {
   yield '44'
   yield '55'
 }
