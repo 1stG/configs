@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.11.2 (2020-02-07)
+
+
+### Bug Fixes
+
+* **lint-staged:** remove `git add` commands ([6595d7f](https://github.com/1stG/configs/commit/6595d7f9c745fa70c60136e26a459da83b686600))
+
+
+
+
+
 ## 0.11.1 (2020-02-07)
 
 
