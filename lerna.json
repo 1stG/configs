@@ -23,6 +23,9 @@
     "publish": {
       "ignoreChanges": [
         "**/*.md",
+        "**/.*",
+        "**/coverage/**",
+        "**/node_modules/**",
         "**/tests/**",
         "**/tsconfig.json",
         "**/tslint.json",

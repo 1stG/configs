@@ -6,10 +6,7 @@ if (isPkgAvailable('eslint')) {
   Object.assign(
     config,
     {
-      '*.{js,jsx,md,mdx,mjs,vue}': [
-        'eslint --cache -f friendly --fix',
-        'git add',
-      ],
+      '*.{js,jsx,md,mdx,mjs,vue}': ['eslint --cache -f friendly --fix'],
     },
     require('./ts-eslint'),
   )

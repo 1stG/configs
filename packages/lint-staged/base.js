@@ -4,22 +4,20 @@ const { isPkgAvailable } = require('@pkgr/utils')
 const config = {
   '*.{*ignore,*sh,env,env.*,gql,html,json,properties,pug,rb,vue,toml,yaml,yml}': [
     'prettier --write',
-    'git add',
   ],
-  '.!(*browserslist|npm|yarn)rc': ['prettier --write', 'git add'],
+  '.!(*browserslist|npm|yarn)rc': ['prettier --write'],
   '.{editorconfig|browserslistrc|npmrc|yarnrc}': [
     'prettier --write --parser sh',
-    'git add',
   ],
-  Dockerfile: ['prettier --write', 'git add'],
+  Dockerfile: ['prettier --write'],
 }
 
 if (isPkgAvailable('stylelint')) {
-  config['*.{css,less,sass,scss,vue}'] = ['stylelint --cache --fix', 'git add']
+  config['*.{css,less,sass,scss,vue}'] = ['stylelint --cache --fix']
 }
 
 if (isPkgAvailable('@pkgr/imagemin')) {
-  config['*.{gif,jpeg,jpg,png,svg,webp}'] = ['i', 'git add']
+  config['*.{gif,jpeg,jpg,png,svg,webp}'] = ['i']
 }
 
 module.exports = config

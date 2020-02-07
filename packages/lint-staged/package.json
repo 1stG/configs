@@ -6,10 +6,10 @@
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "peerDependencies": {
-    "lint-staged": ">=9.0.0"
+    "lint-staged": ">=10.0.0"
   },
   "dependencies": {
-    "@pkgr/utils": "^0.3.8",
+    "@pkgr/utils": "^0.3.9",
     "@prettier/plugin-pug": "^1.1.5",
     "@prettier/plugin-ruby": "^0.17.0",
     "cross-env": "^7.0.0",
