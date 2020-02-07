@@ -1,6 +1,5 @@
 {
   "!(*.d).ts?(x)": [
-    "tslint -p . -t stylish --fix",
-    "git add"
+    "tslint -p . -t stylish --fix"
   ]
 }
