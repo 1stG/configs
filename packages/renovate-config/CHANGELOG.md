@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.5.1 (2020-02-07)
+
+
+### Bug Fixes
+
+* downgrade husky temporarily, remove `git add` in lint-staged config ([50c4532](https://github.com/1stG/configs/commit/50c453214ffab7459e3b7b977a9cb6219941b012))
+
+
+
+
+
 # 0.5.0 (2020-02-01)
 
 
