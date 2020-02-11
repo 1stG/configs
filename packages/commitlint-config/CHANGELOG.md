@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.5.0 (2020-02-11)
+
+
+### Features
+
+* **eslint-config:** disable some too strict unicorn rules ([337ee1c](https://github.com/1stG/configs/commit/337ee1cf8253b861773a41898572c5e4584ee05b))
+
+
+
+
+
 ## 0.4.2 (2020-02-07)
 
 
