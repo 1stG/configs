@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.7.1 (2020-02-11)
+
+
+### Bug Fixes
+
+* **eslint-config:** set sortCharacterClasses false for regex-shorthand ([a60f2e2](https://github.com/1stG/configs/commit/a60f2e2bf9f0925aa19b917254ec180501b579ca))
+
+
+
+
+
 # 0.7.0 (2020-02-11)
 
 
