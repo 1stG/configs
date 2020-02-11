@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['@1stg/eslint-config/recommended'],
+  extends: ['@1stg'],
   rules: {
     '@typescript-eslint/member-ordering': 0,
     '@typescript-eslint/no-explicit-any': 0,
@@ -12,5 +12,6 @@ module.exports = {
     'no-magic-numbers': 0,
     'promise/always-return': 0,
     'promise/catch-or-return': 0,
+    'unicorn/explicit-length-check': 0,
   },
 }

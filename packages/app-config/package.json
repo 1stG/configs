@@ -22,15 +22,15 @@
     "@1stg/stylelint-config": "^0.10.2",
     "@1stg/tsconfig": "^0.9.2",
     "@babel/core": "^7.8.4",
-    "@pkgr/es-modules": "^0.2.4",
-    "@pkgr/imagemin": "^0.3.8",
+    "@pkgr/es-modules": "^0.3.0",
+    "@pkgr/imagemin": "^0.4.0",
     "browserslist": "^4.8.6",
     "eslint": "^6.8.0",
     "husky": "^3.1.0",
     "lint-staged": "^10.0.7",
     "postcss": "^7.0.26",
     "prettier": "^1.19.1",
-    "stylelint": "^13.0.0",
+    "stylelint": "^13.1.0",
     "tslib": "^1.10.0"
   },
   "publishConfig": {

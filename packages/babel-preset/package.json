@@ -18,7 +18,7 @@
     "@babel/preset-env": "^7.8.4",
     "@babel/preset-react": "^7.8.3",
     "@babel/preset-typescript": "^7.8.3",
-    "@pkgr/utils": "^0.3.9",
+    "@pkgr/utils": "^0.4.0",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "@vue/babel-preset-jsx": "^1.1.2",
     "babel-plugin-import": "^1.13.0",

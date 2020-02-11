@@ -73,6 +73,7 @@ module.exports = {
         caughtErrorsIgnorePattern: '^e(rr)?$',
       },
     ],
+    'unicorn/consistent-function-scoping': 0,
     'unicorn/filename-case': [
       2,
       {
