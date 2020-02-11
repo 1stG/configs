@@ -86,5 +86,11 @@ module.exports = {
       },
     ],
     'unicorn/prevent-abbreviations': 0,
+    'unicorn/regex-shorthand': [
+      2,
+      {
+        sortCharacterClasses: false,
+      },
+    ],
   },
 }
