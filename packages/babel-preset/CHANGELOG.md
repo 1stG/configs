@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.12.2 (2020-02-12)
+
+
+### Bug Fixes
+
+* **dpes:** upgrade husky ([abc4f63](https://github.com/1stG/configs/commit/abc4f6394e7866d954fc25162fff404fcbbe14ad))
+
+
+
+
+
 ## 0.12.1 (2020-02-11)
 
 
