@@ -24,9 +24,11 @@
       "ignoreChanges": [
         "**/*.md",
         "**/.*",
+        "**/.*/**",
         "**/coverage/**",
         "**/node_modules/**",
         "**/tests/**",
+        "**/lerna.json",
         "**/tsconfig.json",
         "**/tslint.json",
         "**/yarn.lock"
