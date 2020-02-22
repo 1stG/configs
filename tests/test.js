@@ -6,7 +6,7 @@ promisify(fs.readFile())
 
 class Basic {}
 
-function *generator() {
+function* generator() {
   yield '44'
   yield '55'
 }

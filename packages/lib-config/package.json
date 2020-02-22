@@ -19,12 +19,13 @@
     "@1stg/remark-config": "^0.5.2",
     "@1stg/tsconfig": "^0.10.2",
     "@babel/core": "^7.8.4",
-    "@pkgr/rollup": "^0.10.0",
+    "@pkgr/rollup": "^0.10.2",
     "eslint": "^6.8.0",
-    "husky": "^4.2.2",
+    "husky": "^4.2.3",
     "jest": "^25.1.0",
     "lint-staged": "^10.0.7",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "tslib": "^1.11.0"
   },
   "publishConfig": {
     "access": "public"

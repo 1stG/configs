@@ -10,9 +10,9 @@ jobs:
         os: [macOS-latest, ubuntu-latest]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v1
 
-      - uses: actions/setup-node@master
+      - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
 
