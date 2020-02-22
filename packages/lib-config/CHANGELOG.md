@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.3](https://github.com/1stG/configs/compare/@1stg/lib-config@0.4.2...@1stg/lib-config@0.4.3) (2020-02-22)
+
+**Note:** Version bump only for package @1stg/lib-config
+
+
+
+
+
 ## 0.4.2 (2020-02-12)
 
 
