@@ -56,9 +56,11 @@ module.exports = declare(
             version: 3,
             proposals: true,
           },
-          targets: {
-            esmodules,
-          },
+          targets: esmodules
+            ? {
+                esmodules,
+              }
+            : undefined,
           useBuiltIns,
         },
       ],
