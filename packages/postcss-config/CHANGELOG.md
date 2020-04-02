@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.3](https://github.com/1stG/configs/compare/@1stg/postcss-config@0.8.2...@1stg/postcss-config@0.8.3) (2020-04-02)
+
+
+### Bug Fixes
+
+* **deps:** bump all (dev)Dependencies ([31f5f14](https://github.com/1stG/configs/commit/31f5f14ccdd79d1bd95977891b0f0a3eb5e33540))
+
+
+
+
+
 ## 0.8.2 (2020-02-12)
 
 
