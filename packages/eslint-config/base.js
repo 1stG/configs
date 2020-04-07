@@ -61,6 +61,7 @@ module.exports = {
         ignoreArrayIndexes: true,
       },
     ],
+    'no-process-exit': 0, // suspended by unicorn/no-process-exit
     'node/no-unsupported-features/es-syntax': 0,
     'node/no-unsupported-features/node-builtins': 0,
     'node/no-unpublished-import': 0,
