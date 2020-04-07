@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.19.5](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.19.4...@1stg/eslint-config@0.19.5) (2020-04-07)
+
+
+### Bug Fixes
+
+* **eslint-config:** disable duplicate rule no-process-exit ([c74bbcb](https://github.com/1stG/configs/commit/c74bbcbc6ef843b92d181fc7e2be22ccb94abc66))
+* **eslint-config:** disable prefer-number-properties for loose config ([d5caba9](https://github.com/1stG/configs/commit/d5caba9f78a79e6d39d9650780082ab052aefb16))
+
+
+
+
+
 ## [0.19.4](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.19.3...@1stg/eslint-config@0.19.4) (2020-04-02)
 
 

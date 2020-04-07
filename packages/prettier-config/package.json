@@ -1,6 +1,6 @@
 {
   "name": "@1stg/prettier-config",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "description": "Personal but Shareable Prettier Configuration for all 1stG.me projects.",
   "repository": "git@github.com:1stG/configs.git",
   "author": "JounQin <admin@1stg.me>",
