@@ -11,9 +11,9 @@
   "dependencies": {
     "@pkgr/utils": "^0.4.3",
     "@prettier/plugin-pug": "^1.2.0",
-    "@prettier/plugin-ruby": "^0.18.0",
+    "@prettier/plugin-ruby": "^0.18.1",
     "cross-env": "^7.0.2",
-    "prettier": "^2.0.2",
+    "prettier": "^2.0.4",
     "prettier-plugin-sh": "^0.3.0",
     "prettier-plugin-toml": "^0.3.1"
   },
