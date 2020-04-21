@@ -12,7 +12,7 @@
     "default": {
       "extends": [
         "config:base",
-        "schedule:earlyMondays"
+        "schedule:monthly"
       ],
       "automerge": true,
       "major": {

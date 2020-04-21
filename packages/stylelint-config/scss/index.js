@@ -8,6 +8,7 @@ module.exports = {
     'scss/at-import-partial-extension-blacklist': ['sass', 'scss'],
     'scss/at-mixin-argumentless-call-parentheses': 'never',
     'scss/at-rule-no-unknown': true,
+    'scss/comment-no-empty': true,
     'scss/dollar-variable-default': [
       true,
       {
