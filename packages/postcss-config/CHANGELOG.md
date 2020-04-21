@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/1stG/configs/compare/@1stg/postcss-config@0.8.4...@1stg/postcss-config@0.9.0) (2020-04-21)
+
+
+### Features
+
+* bump versions, change schedule to monthly ([ae34961](https://github.com/1stG/configs/commit/ae349611e3a3ae07a3f276d3d5ca4f90c8fdae37))
+
+
+
+
+
 ## [0.8.4](https://github.com/1stG/configs/compare/@1stg/postcss-config@0.8.3...@1stg/postcss-config@0.8.4) (2020-04-07)
 
 

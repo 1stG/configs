@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/1stG/configs/compare/@1stg/app-config@0.4.5...@1stg/app-config@0.5.0) (2020-04-21)
+
+
+### Features
+
+* bump versions, change schedule to monthly ([ae34961](https://github.com/1stG/configs/commit/ae349611e3a3ae07a3f276d3d5ca4f90c8fdae37))
+
+
+
+
+
 ## [0.4.5](https://github.com/1stG/configs/compare/@1stg/app-config@0.4.4...@1stg/app-config@0.4.5) (2020-04-07)
 
 
