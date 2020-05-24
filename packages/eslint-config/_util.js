@@ -36,15 +36,6 @@ exports.webpackSpecVars = [
   'DEBUG',
 ]
 
-exports.camelCaseRule = [
-  2,
-  {
-    properties: 'never',
-    ignoreDestructuring: true,
-    allow: exports.isWebpackAvailable ? exports.webpackSpecVars : undefined,
-  },
-]
-
 exports.magicNumbers = [
   -1,
   0,

@@ -4,7 +4,9 @@ declare module 'x' {
       prop: string
     }
 
-    type Comp = React.ComponentType & {}
+    type Comp = React.ComponentType & {
+      x: string
+    }
   }
 
   export = X
@@ -12,7 +14,9 @@ declare module 'x' {
 
 declare module 'y' {
   namespace Y {
-    type Comp = React.ComponentType & {}
+    type Comp = React.ComponentType & {
+      y: string
+    }
   }
 
   export = Y
@@ -20,7 +24,9 @@ declare module 'y' {
 
 declare module 'z' {
   namespace Z {
-    type Comp = React.ComponentType & {}
+    type Comp = React.ComponentType & {
+      z: string
+    }
   }
 
   export = Z

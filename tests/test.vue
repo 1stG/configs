@@ -11,7 +11,7 @@ export default Vue.extend({
   data() {
     return {
       msg: 'Hello Vue!',
-      x_y: 'Z',
+      xY: 'Z',
     }
   },
   methods: {

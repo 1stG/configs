@@ -11,7 +11,7 @@ const {
   tryPkg,
 } = require('@pkgr/utils')
 
-const { camelCaseRule, magicNumbers } = require('./_util')
+const { magicNumbers } = require('./_util')
 
 const configFile =
   tryFile(resolve('babel.config.js')) ||
@@ -105,8 +105,7 @@ const tsBase = {
         default: 'array-simple',
       },
     ],
-    '@typescript-eslint/ban-ts-ignore': 0,
-    '@typescript-eslint/camelcase': camelCaseRule,
+    '@typescript-eslint/ban-ts-comment': 0,
     '@typescript-eslint/consistent-type-definitions': [2, 'interface'],
     '@typescript-eslint/explicit-function-return-type': 0,
     '@typescript-eslint/explicit-member-accessibility': [
@@ -118,13 +117,42 @@ const tsBase = {
         },
       },
     ],
-    '@typescript-eslint/member-naming': [
+    '@typescript-eslint/explicit-module-boundary-types': 0,
+    '@typescript-eslint/member-ordering': 2,
+    '@typescript-eslint/naming-convention': [
       2,
       {
-        private: '^_',
+        selector: 'default',
+        format: ['camelCase'],
+      },
+      {
+        selector: 'variable',
+        format: ['camelCase', 'UPPER_CASE'],
+      },
+      {
+        selector: 'parameter',
+        format: ['camelCase'],
+        leadingUnderscore: 'allow',
+      },
+      {
+        selector: 'property',
+        format: ['camelCase'],
+        filter: {
+          regex: '[-. ]',
+          match: false,
+        },
+      },
+      {
+        selector: 'memberLike',
+        modifiers: ['private'],
+        format: ['camelCase'],
+        leadingUnderscore: 'require',
+      },
+      {
+        selector: 'typeLike',
+        format: ['PascalCase'],
       },
     ],
-    '@typescript-eslint/member-ordering': 2,
     '@typescript-eslint/no-empty-function': 2,
     '@typescript-eslint/no-extraneous-class': 2,
     '@typescript-eslint/no-for-in-array': 2,
@@ -172,6 +200,7 @@ const tsBase = {
       },
     ],
     '@typescript-eslint/unified-signatures': 2,
+    camelcase: 0,
     'import/default': 0,
     'import/named': 0,
     'import/no-duplicates': 2,
@@ -221,12 +250,7 @@ exports.ts = [
           ignoreReadonlyClassProperties: true,
         },
       ],
-      '@typescript-eslint/no-unnecessary-condition': [
-        2,
-        {
-          ignoreRhs: true,
-        },
-      ],
+      '@typescript-eslint/no-unnecessary-condition': 2,
       '@typescript-eslint/no-unnecessary-qualifier': 2,
       '@typescript-eslint/no-unnecessary-type-arguments': 2,
       '@typescript-eslint/prefer-readonly': 2,
@@ -276,12 +300,6 @@ exports.tslint = {
 }
 
 exports.angular = [
-  {
-    files: '*.ts',
-    rules: {
-      '@typescript-eslint/member-naming': 0,
-    },
-  },
   {
     files: ['*.component.ts', '*.module.ts', 'component.ts', 'module.ts'],
     rules: {

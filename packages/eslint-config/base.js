@@ -2,7 +2,6 @@ const { getGlobals } = require('eslint-plugin-mdx')
 
 const {
   allowModules,
-  camelCaseRule,
   isWebpackAvailable,
   magicNumbers,
   webpackSpecVars,
@@ -39,7 +38,14 @@ module.exports = {
   },
   globals: isWebpackAvailable ? getGlobals(webpackSpecVars) : undefined,
   rules: {
-    camelcase: camelCaseRule,
+    camelcase: [
+      2,
+      {
+        properties: 'never',
+        ignoreDestructuring: true,
+        allow: isWebpackAvailable ? webpackSpecVars : undefined,
+      },
+    ],
     'import/order': [
       2,
       {
@@ -86,6 +92,8 @@ module.exports = {
         ignore: [/^[A-Z](([\dA-Z]+_)*[\dA-Z]+)?\.mdx?$/],
       },
     ],
+    'unicorn/no-null': 0,
+    'unicorn/no-reduce': 0,
     'unicorn/prevent-abbreviations': 0,
   },
 }
