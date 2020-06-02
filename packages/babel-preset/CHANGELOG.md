@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.2](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.13.1...@1stg/babel-preset@0.13.2) (2020-06-02)
+
+
+### Bug Fixes
+
+* **eslint-config:** disable some too strict rules in loose mode ([078eda1](https://github.com/1stG/configs/commit/078eda1ba61fd66d802f58f2e6a0fb3f86d75fe7))
+
+
+
+
+
 ## [0.13.1](https://github.com/1stG/configs/compare/@1stg/babel-preset@0.13.0...@1stg/babel-preset@0.13.1) (2020-05-24)
 
 **Note:** Version bump only for package @1stg/babel-preset
