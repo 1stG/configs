@@ -301,9 +301,20 @@ exports.tslint = {
 
 exports.angular = [
   {
-    files: ['*.component.ts', '*.module.ts', 'component.ts', 'module.ts'],
+    files: [
+      '*.directive.ts',
+      '*.component.ts',
+      '*.interceptor.ts',
+      '*.guard.ts',
+      '*.module.ts',
+      '*.pipe.ts',
+      '*.service.ts',
+      'component.ts',
+      'module.ts',
+    ],
     rules: {
       '@typescript-eslint/no-extraneous-class': 0,
+      'no-use-before-define': 0,
     },
   },
 ]

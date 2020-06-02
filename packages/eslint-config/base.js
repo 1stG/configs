@@ -77,7 +77,7 @@ module.exports = {
       2,
       {
         name: 'error',
-        caughtErrorsIgnorePattern: '^e(rr)?$',
+        ignore: ['^e(rr)?$'],
       },
     ],
     'unicorn/consistent-function-scoping': 0,
