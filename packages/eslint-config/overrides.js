@@ -119,40 +119,7 @@ const tsBase = {
     ],
     '@typescript-eslint/explicit-module-boundary-types': 0,
     '@typescript-eslint/member-ordering': 2,
-    '@typescript-eslint/naming-convention': [
-      2,
-      {
-        selector: 'default',
-        format: ['camelCase'],
-      },
-      {
-        selector: 'variable',
-        format: ['camelCase', 'UPPER_CASE'],
-      },
-      {
-        selector: 'parameter',
-        format: ['camelCase'],
-        leadingUnderscore: 'allow',
-      },
-      {
-        selector: 'property',
-        format: ['camelCase'],
-        filter: {
-          regex: '[-. ]',
-          match: false,
-        },
-      },
-      {
-        selector: 'memberLike',
-        modifiers: ['private'],
-        format: ['camelCase'],
-        leadingUnderscore: 'require',
-      },
-      {
-        selector: 'typeLike',
-        format: ['PascalCase'],
-      },
-    ],
+    '@typescript-eslint/naming-convention': 0, // TODO: find better config
     '@typescript-eslint/no-empty-function': 2,
     '@typescript-eslint/no-extraneous-class': 2,
     '@typescript-eslint/no-for-in-array': 2,
