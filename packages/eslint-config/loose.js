@@ -17,6 +17,7 @@ module.exports = {
     'promise/always-return': 0,
     'promise/catch-or-return': 0,
     'unicorn/explicit-length-check': 0,
+    'unicorn/no-fn-reference-in-iterator': 0,
     'unicorn/prefer-number-properties': 0,
   },
 }

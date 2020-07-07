@@ -10,7 +10,7 @@
     "lint-staged": ">=9.0.0"
   },
   "dependencies": {
-    "@commitlint/cli": "^8.3.5"
+    "@commitlint/cli": "^9.0.1"
   },
   "publishConfig": {
     "access": "public"
