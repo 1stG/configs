@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.5](https://github.com/1stG/configs/compare/@1stg/prettier-config@0.10.4...@1stg/prettier-config@0.10.5) (2020-07-07)
+
+**Note:** Version bump only for package @1stg/prettier-config
+
+
+
+
+
 ## [0.10.4](https://github.com/1stG/configs/compare/@1stg/prettier-config@0.10.3...@1stg/prettier-config@0.10.4) (2020-06-18)
 
 

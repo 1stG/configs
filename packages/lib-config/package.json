@@ -1,6 +1,6 @@
 {
   "name": "@1stg/lib-config",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "Personal but Shareable Library Configuration for all 1stG.me projects.",
   "repository": "git+https://github.com/1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/lib-config",
@@ -10,13 +10,13 @@
     "node": ">=10.0.0"
   },
   "dependencies": {
-    "@1stg/babel-preset": "^0.13.2",
-    "@1stg/commitlint-config": "^0.5.5",
-    "@1stg/eslint-config": "^0.20.4",
-    "@1stg/husky-config": "^0.7.2",
-    "@1stg/lint-staged": "^0.14.3",
-    "@1stg/prettier-config": "^0.10.4",
-    "@1stg/remark-config": "^0.5.3",
+    "@1stg/babel-preset": "^0.13.3",
+    "@1stg/commitlint-config": "^0.5.6",
+    "@1stg/eslint-config": "^0.20.5",
+    "@1stg/husky-config": "^0.7.3",
+    "@1stg/lint-staged": "^0.14.4",
+    "@1stg/prettier-config": "^0.10.5",
+    "@1stg/remark-config": "^0.5.4",
     "@1stg/tsconfig": "^0.10.3",
     "@babel/core": "^7.10.4",
     "@pkgr/rollup": "^0.10.4",
