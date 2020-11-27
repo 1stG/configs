@@ -50,7 +50,7 @@ jobs:
       - name: Check Postcss
         if: matrix.os == 'macOS-latest'
         run: |
-          yarn global add postcss-cli
+          yarn global add postcss postcss-cli
           NODE_ENV=production postcss tests/test.css --verbose
 
       # - name: Codecov
