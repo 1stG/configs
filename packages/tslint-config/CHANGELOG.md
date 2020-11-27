@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.1](https://github.com/1stG/configs/compare/@1stg/tslint-config@0.9.0...@1stg/tslint-config@0.9.1) (2020-11-27)
+
+
+### Bug Fixes
+
+* miss lint files param ([78e7e50](https://github.com/1stG/configs/commit/78e7e5071c45846b361276c50e0dc35b6a22844f))
+
+
+
+
+
 # [0.9.0](https://github.com/1stG/configs/compare/@1stg/tslint-config@0.8.5...@1stg/tslint-config@0.9.0) (2020-11-27)
 
 
