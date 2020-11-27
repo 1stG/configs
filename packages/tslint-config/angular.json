@@ -14,16 +14,19 @@
     "use-component-view-encapsulation": false,
     "validate-decorators": {
       "severity": "warning",
-      "options": {
-        "Component": {
-          "argument": 0,
-          "properties": {
-            "!host": "\\[class\\]",
-            "!moduleId": ".*",
-            "changeDetection": "\\.OnPush$"
+      "options": [
+        {
+          "Component": {
+            "argument": 0,
+            "properties": {
+              "!host": "\\[class\\]",
+              "!moduleId": ".*",
+              "changeDetection": "\\.OnPush$"
+            }
           }
-        }
-      }
+        },
+        "src/**/!(*.spec).ts"
+      ]
     }
   }
 }
