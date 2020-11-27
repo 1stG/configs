@@ -10,22 +10,8 @@
     "node": ">=10.0.0"
   },
   "dependencies": {
-    "@1stg/babel-preset": "^0.13.3",
-    "@1stg/commitlint-config": "^0.5.6",
-    "@1stg/eslint-config": "^0.20.5",
-    "@1stg/husky-config": "^0.7.3",
-    "@1stg/lint-staged": "^0.14.4",
-    "@1stg/prettier-config": "^0.10.5",
-    "@1stg/remark-config": "^0.5.4",
-    "@1stg/tsconfig": "^0.10.3",
-    "@babel/core": "^7.10.4",
-    "@pkgr/rollup": "^0.10.4",
-    "eslint": "^7.4.0",
-    "husky": "^4.2.5",
-    "jest": "^26.1.0",
-    "lint-staged": "^10.2.11",
-    "prettier": "^2.0.5",
-    "tslib": "^2.0.0"
+    "@1stg/common-config": "^0.0.1",
+    "@pkgr/rollup": "^0.10.4"
   },
   "publishConfig": {
     "access": "public"

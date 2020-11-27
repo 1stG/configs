@@ -1,0 +1,32 @@
+{
+  "name": "@1stg/common-config",
+  "version": "0.0.1",
+  "description": "Personal but Shareable Common Configuration for all 1stG.me projects.",
+  "repository": "git+https://github.com/1stG/configs.git",
+  "homepage": "https://github.com/1stG/configs/tree/master/packages/common-config",
+  "author": "JounQin <admin@1stg.me>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "dependencies": {
+    "@1stg/babel-preset": "^0.13.3",
+    "@1stg/commitlint-config": "^0.5.6",
+    "@1stg/eslint-config": "^0.20.5",
+    "@1stg/husky-config": "^0.7.3",
+    "@1stg/lint-staged": "^0.14.4",
+    "@1stg/prettier-config": "^0.10.5",
+    "@1stg/remark-config": "^0.5.4",
+    "@1stg/tsconfig": "^0.10.3",
+    "@babel/core": "^7.10.4",
+    "eslint": "^7.4.0",
+    "husky": "^4.2.5",
+    "jest": "^26.1.0",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "tslib": "^2.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

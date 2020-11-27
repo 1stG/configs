@@ -10,28 +10,15 @@
     "node": ">=10.0.0"
   },
   "dependencies": {
-    "@1stg/babel-preset": "^0.13.3",
     "@1stg/browserslist-config": "^0.6.2",
-    "@1stg/commitlint-config": "^0.5.6",
-    "@1stg/eslint-config": "^0.20.5",
-    "@1stg/husky-config": "^0.7.3",
-    "@1stg/lint-staged": "^0.14.4",
+    "@1stg/common-config": "^0.0.1",
     "@1stg/postcss-config": "^0.9.2",
-    "@1stg/prettier-config": "^0.10.5",
-    "@1stg/remark-config": "^0.5.4",
     "@1stg/stylelint-config": "^0.12.3",
-    "@1stg/tsconfig": "^0.10.3",
-    "@babel/core": "^7.10.4",
     "@pkgr/es-modules": "^0.3.2",
     "@pkgr/imagemin": "^0.4.4",
     "browserslist": "^4.13.0",
-    "eslint": "^7.4.0",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.11",
     "postcss": "^7.0.32",
-    "prettier": "^2.0.5",
-    "stylelint": "^13.6.1",
-    "tslib": "^2.0.0"
+    "stylelint": "^13.6.1"
   },
   "publishConfig": {
     "access": "public"
