@@ -1,5 +1,5 @@
 /* eslint-disable sonarjs/no-duplicate-string */
-const { resolve } = require('path')
+const path = require('path')
 
 const {
   isAngularAvailable,
@@ -14,8 +14,8 @@ const {
 const { magicNumbers } = require('./_util')
 
 const configFile =
-  tryFile(resolve('babel.config.js')) ||
-  tryFile(resolve('.babelrc.js')) ||
+  tryFile(path.resolve('babel.config.js')) ||
+  tryFile(path.resolve('.babelrc.js')) ||
   tryPkg('@1stg/babel-preset/config')
 
 const jsBase = {
@@ -51,9 +51,9 @@ const jsBase = {
 exports.js = jsBase
 
 const project =
-  tryFile(resolve('tsconfig.eslint.json')) ||
-  tryFile(resolve('tsconfig.base.json')) ||
-  tryFile(resolve('tsconfig.json')) ||
+  tryFile(path.resolve('tsconfig.eslint.json')) ||
+  tryFile(path.resolve('tsconfig.base.json')) ||
+  tryFile(path.resolve('tsconfig.json')) ||
   tryPkg('@1stg/tsconfig')
 
 const resolveSettings = {
@@ -175,6 +175,7 @@ const tsBase = {
     'import/no-named-as-default-member': 0,
     'no-empty-function': 0,
     'no-unused-vars': 0,
+    'no-use-before-define': 0,
     'no-useless-constructor': 0,
     'node/no-missing-import': 0, // TypeScript itself has handle this
     'node/shebang': 0,
@@ -241,7 +242,7 @@ exports.dTs = {
   },
 }
 
-const TSLINT_CONFIG = tryFile(resolve('tslint.json'))
+const TSLINT_CONFIG = tryFile(path.resolve('tslint.json'))
 const lintFile = TSLINT_CONFIG || tryPkg('@1stg/tslint-config')
 
 exports.tslint = {
@@ -281,7 +282,6 @@ exports.angular = [
     ],
     rules: {
       '@typescript-eslint/no-extraneous-class': 0,
-      'no-use-before-define': 0,
     },
   },
 ]

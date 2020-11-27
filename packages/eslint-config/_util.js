@@ -1,4 +1,4 @@
-const { resolve } = require('path')
+const path = require('path')
 
 const {
   isMonorepo,
@@ -9,7 +9,7 @@ const {
 
 if (isMonorepo) {
   exports.allowModules = monorepoPkgs.reduce((acc, pkg) => {
-    const pkgJson = tryRequirePkg(resolve(pkg, 'package.json'))
+    const pkgJson = tryRequirePkg(path.resolve(pkg, 'package.json'))
     if (!pkgJson) {
       return acc
     }

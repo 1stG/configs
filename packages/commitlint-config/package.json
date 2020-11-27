@@ -6,10 +6,9 @@
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "dependencies": {
-    "@commitlint/cli": "^9.0.1",
-    "@commitlint/config-conventional": "^9.0.1",
-    "@commitlint/config-lerna-scopes": "^9.0.1",
-    "@pkgr/utils": "^0.4.4"
+    "@commitlint/config-conventional": "^11.0.0",
+    "@commitlint/config-lerna-scopes": "^11.0.0",
+    "@pkgr/utils": "^0.4.5"
   },
   "publishConfig": {
     "access": "public"

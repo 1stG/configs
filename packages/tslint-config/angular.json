@@ -19,7 +19,6 @@
           "argument": 0,
           "properties": {
             "!host": "\\[class\\]",
-            "!styles": ".*",
             "!moduleId": ".*",
             "changeDetection": "\\.OnPush$"
           }
