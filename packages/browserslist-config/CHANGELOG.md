@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/1stG/configs/compare/@1stg/browserslist-config@0.6.3...@1stg/browserslist-config@1.0.0) (2021-01-26)
+
+**Note:** Version bump only for package @1stg/browserslist-config
+
+
+
+
+
 ## [0.6.3](https://github.com/1stG/configs/compare/@1stg/browserslist-config@0.6.2...@1stg/browserslist-config@0.6.3) (2021-01-26)
 
 **Note:** Version bump only for package @1stg/browserslist-config
