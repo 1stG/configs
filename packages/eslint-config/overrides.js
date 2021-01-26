@@ -179,6 +179,8 @@ const tsBase = {
     // @typescript-eslint/no-floating-promises has already handled there case
     'promise/always-return': 0,
     'promise/catch-or-return': 0,
+    // ts itself has guaranteed it
+    'unicorn/no-array-callback-reference': 0,
   },
 }
 
