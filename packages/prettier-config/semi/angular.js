@@ -1,1 +1,1 @@
-module.exports = Object.assign({}, require('../angular'), { semi: true })
+module.exports = { ...require('../angular'), semi: true }

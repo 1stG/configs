@@ -1,6 +1,6 @@
 const { isPkgAvailable, tryFile } = require('@pkgr/utils')
 
-const config = Object.assign({}, require('./base'))
+const config = { ...require('./base') }
 
 if (isPkgAvailable('eslint')) {
   Object.assign(

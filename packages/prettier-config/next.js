@@ -1,12 +1,14 @@
 const baseConfig = require('./base')
 
-module.exports = Object.assign({}, baseConfig, {
-  overrides: baseConfig.overrides.concat([
+module.exports = {
+  ...baseConfig,
+  overrides: [
+    ...baseConfig.overrides,
     {
-      files: '*.ts',
+      files: ['*.ts', '*.tsx'],
       options: {
         parser: 'babel-ts',
       },
     },
-  ]),
-})
+  ],
+}

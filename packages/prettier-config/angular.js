@@ -1,12 +1,14 @@
 const baseConfig = require('./base')
 
-module.exports = Object.assign({}, baseConfig, {
-  overrides: baseConfig.overrides.concat([
+module.exports = {
+  ...baseConfig,
+  overrides: [
+    ...baseConfig.overrides,
     {
       files: '*.html',
       options: {
         parser: 'angular',
       },
     },
-  ]),
-})
+  ],
+}

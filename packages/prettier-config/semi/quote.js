@@ -1,1 +1,1 @@
-module.exports = Object.assign({}, require('../quote'), { semi: true })
+module.exports = { ...require('../quote'), semi: true }

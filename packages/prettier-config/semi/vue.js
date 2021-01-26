@@ -1,1 +1,1 @@
-module.exports = Object.assign({}, require('../vue'), { semi: true })
+module.exports = { ...require('../vue'), semi: true }

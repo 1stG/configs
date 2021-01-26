@@ -20,31 +20,28 @@ const configFile =
 
 const jsBase = {
   files: '*.{mjs,js,jsx}',
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   parserOptions: configFile && {
     babelOptions: {
       configFile,
     },
   },
-  plugins: ['babel'],
+  plugins: ['@babel'],
   extends: ['prettier/babel'],
   rules: {
-    camelcase: 0,
-    'new-cap': 0,
-    'no-invalid-this': 0,
-    'no-unused-expressions': 0,
-    'valid-typeof': 0,
-    'babel/camelcase': [
+    camelcase: [
       2,
       {
         properties: 'never',
         ignoreDestructuring: true,
       },
     ],
-    'babel/new-cap': 2,
-    'babel/no-invalid-this': 2,
-    'babel/no-unused-expressions': 2,
-    'babel/valid-typeof': 2,
+    'new-cap': 0,
+    'no-invalid-this': 0,
+    'no-unused-expressions': 0,
+    '@babel/new-cap': 2,
+    '@babel/no-invalid-this': 2,
+    '@babel/no-unused-expressions': 2,
   },
 }
 
@@ -63,9 +60,9 @@ const resolveSettings = {
     'node_modules/@types',
   ],
   'import/resolver': {
-    ts: {
+    typescript: {
       alwaysTryTypes: true,
-      directory: project,
+      project,
     },
   },
   node: {
@@ -249,12 +246,10 @@ exports.tslint = {
   files: '*.{ts,tsx}',
   excludedFiles: '*.d.ts',
   plugins: TSLINT_CONFIG ? ['@typescript-eslint/tslint'] : undefined,
-  rules: Object.assign(
-    {
-      // `ordered-imports` of tslint is better for now
-      'import/order': 0,
-    },
-    TSLINT_CONFIG
+  rules: {
+    // `ordered-imports` of tslint is better for now
+    'import/order': 0,
+    ...(TSLINT_CONFIG
       ? undefined
       : {
           '@typescript-eslint/tslint/config': [
@@ -263,8 +258,8 @@ exports.tslint = {
               lintFile,
             },
           ],
-        },
-  ),
+        }),
+  },
 }
 
 exports.angular = [
@@ -301,22 +296,20 @@ const reactJsx = {
 }
 
 exports.react = [
-  Object.assign(
-    {
-      files: '*.{js,jsx,tsx}',
-      rules: {
-        'react/jsx-boolean-value': [2, 'always'],
-        'react/jsx-handler-names': [
-          2,
-          {
-            eventHandlerPrefix: false,
-            eventHandlerPropPrefix: 'on',
-          },
-        ],
-      },
+  {
+    files: '*.{js,jsx,tsx}',
+    rules: {
+      'react/jsx-boolean-value': [2, 'always'],
+      'react/jsx-handler-names': [
+        2,
+        {
+          eventHandlerPrefix: false,
+          eventHandlerPropPrefix: 'on',
+        },
+      ],
     },
-    reactJsx,
-  ),
+    ...reactJsx,
+  },
   {
     files: '*.tsx',
     rules: {
@@ -345,29 +338,29 @@ exports.reactTs = {
 const vueExtends = ['plugin:vue/recommended', 'prettier', 'prettier/vue']
 
 exports.vue = [
-  Object.assign({}, jsBase, {
+  {
+    ...jsBase,
     parser: 'vue-eslint-parser',
-    parserOptions: Object.assign({}, jsBase.parserOptions, {
-      parser: jsBase.parser,
-    }),
+    parserOptions: { ...jsBase.parserOptions, parser: jsBase.parser },
     extends: vueExtends,
-  }),
-  Object.assign({}, tsBase, {
+  },
+  {
+    ...tsBase,
     parser: 'vue-eslint-parser',
     files: '*.{vue,ts,tsx}',
     parserOptions: {
       parser: '@typescript-eslint/parser',
       extraFileExtensions: ['.vue'],
     },
-    extends: tsBase.extends.concat(vueExtends),
-  }),
+    extends: [...tsBase.extends, ...vueExtends],
+  },
 ]
 
 exports.mdx = {
   files: '*.{md,mdx}',
-  extends: reactJsx.extends.concat('plugin:mdx/recommended'),
+  extends: [...reactJsx.extends, 'plugin:mdx/recommended'],
   parserOptions: jsBase.parserOptions,
-  settings: Object.assign({}, reactJsx.settings, resolveSettings),
+  settings: { ...reactJsx.settings, ...resolveSettings },
 }
 
 const nonSourceRules = {
@@ -398,6 +391,7 @@ exports.config = {
 }
 
 exports.overrides = []
+  // eslint-disable-next-line unicorn/prefer-spread
   .concat(
     isPkgAvailable('@babel/core') && exports.js,
     isTsAvailable && exports.ts,

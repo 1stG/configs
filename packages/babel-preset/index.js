@@ -33,11 +33,7 @@ module.exports = declare(
 
     const proposalTypeScriptPreset = require('babel-preset-proposal-typescript')
 
-    const proposalTsOptions = Object.assign({
-      classLoose,
-      decoratorsLegacy,
-      isTSX,
-    })
+    const proposalTsOptions = { classLoose, decoratorsLegacy, isTSX }
 
     const presets = [
       [proposalTypeScriptPreset, proposalTsOptions],
@@ -121,7 +117,7 @@ module.exports = declare(
       if (importOptions === true) {
         plugins.push([importPlugin, DEFAULT_ANTD_OPTIONS])
       } else if (Array.isArray(importOptions)) {
-        plugins.push([importPlugin, DEFAULT_ANTD_OPTIONS].concat(importOptions))
+        plugins.push([importPlugin, DEFAULT_ANTD_OPTIONS, ...importOptions])
       } else {
         plugins.push(
           [
@@ -174,7 +170,7 @@ module.exports = declare(
               presets: [
                 [
                   proposalTypeScriptPreset,
-                  Object.assign({}, proposalTsOptions, { isTSX: true }),
+                  { ...proposalTsOptions, isTSX: true },
                 ],
               ],
               plugins: reactPlugin ? [reactPlugin] : undefined,

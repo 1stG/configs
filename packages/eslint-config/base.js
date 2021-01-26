@@ -73,6 +73,7 @@ module.exports = {
     'node/no-unpublished-import': 0,
     'node/no-unpublished-require': 0,
     'prefer-const': 2,
+    'prefer-object-spread': 2,
     'unicorn/catch-error-name': [
       2,
       {
@@ -92,8 +93,8 @@ module.exports = {
         ignore: [/^[A-Z](([\dA-Z]+_)*[\dA-Z]+)?\.mdx?$/],
       },
     ],
+    'unicorn/no-array-reduce': 0,
     'unicorn/no-null': 0,
-    'unicorn/no-reduce': 0,
     'unicorn/prevent-abbreviations': 0,
   },
 }

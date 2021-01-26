@@ -16,9 +16,9 @@
     "@1stg/stylelint-config": "^0.13.0",
     "@pkgr/es-modules": "^0.3.3",
     "@pkgr/imagemin": "^0.4.5",
-    "browserslist": "^4.14.7",
-    "postcss": "^8.1.10",
-    "stylelint": "^13.8.0"
+    "browserslist": "^4.16.1",
+    "postcss": "^8.2.4",
+    "stylelint": "^13.9.0"
   },
   "publishConfig": {
     "access": "public"

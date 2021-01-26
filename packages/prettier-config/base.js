@@ -3,6 +3,7 @@ module.exports = {
   semi: false,
   singleQuote: true,
   trailingComma: 'all',
+  xmlWhitespaceSensitivity: 'ignore',
   overrides: [
     {
       files: ['.*rc', '*.json'],
