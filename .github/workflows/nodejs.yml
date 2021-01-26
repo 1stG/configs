@@ -80,7 +80,7 @@ jobs:
           git remote set-url origin "https://$GITHUB_ACTOR:$GH_TOKEN@github.com/$GITHUB_REPOSITORY.git"
           git checkout master
           npm set //registry.npmjs.org/:_authToken $NPM_TOKEN
-          yarn lerna publish --create-release github --yes
+          yarn lerna publish --conventional-commits --create-release github --yes
         env:
           CI: 'true'
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -90,7 +90,7 @@ jobs:
         if: matrix.node == 12 && matrix.os == 'macOS-latest' && github.event_name == 'push' && github.ref	== 'refs/heads/develop'
         run: |
           npm set //registry.npmjs.org/:_authToken $NPM_TOKEN
-          yarn lerna publish --canary --conventional-prerelease --force-publish --preid beta --pre-dist-tag beta --yes
+          yarn lerna publish  --conventional-commits --canary --conventional-prerelease --force-publish --preid beta --pre-dist-tag beta --yes
         env:
           CI: 'true'
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
