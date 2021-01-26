@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.0.0...@1stg/eslint-config@1.0.1) (2021-01-26)
+
+
+### Bug Fixes
+
+* **eslint-config:** disable unicorn/no-array-callback-reference for ts files ([10f3ce8](https://github.com/1stG/configs/commit/10f3ce82d9c1832731fcb044733c60e383a6bdcd))
+
+
+
+
+
 # [1.0.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@0.21.1...@1stg/eslint-config@1.0.0) (2021-01-26)
 
 **Note:** Version bump only for package @1stg/eslint-config
