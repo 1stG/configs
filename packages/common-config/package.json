@@ -18,10 +18,10 @@
     "@1stg/prettier-config": "^1.0.0",
     "@1stg/remark-config": "^1.0.0",
     "@1stg/tsconfig": "^1.0.0",
-    "@babel/core": "^7.12.10",
-    "eslint": "^7.18.0",
+    "@babel/core": "^7.12.16",
+    "eslint": "^7.20.0",
     "husky": "^4.3.8",
-    "lint-staged": "^10.5.3",
+    "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
     "tslib": "^2.1.0"
   },

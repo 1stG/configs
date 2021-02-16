@@ -19,5 +19,6 @@ module.exports = {
     'unicorn/explicit-length-check': 0,
     'unicorn/no-fn-reference-in-iterator': 0,
     'unicorn/prefer-number-properties': 0,
+    'unicorn/prefer-spread': 0,
   },
 }
