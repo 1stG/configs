@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/1stG/configs/compare/@1stg/common-config@1.0.1...@1stg/common-config@1.1.0) (2021-02-16)
+
+
+### Features
+
+* **eslint-config:** disable unicorn/prefer-spread for loose config ([7d42c93](https://github.com/1stG/configs/commit/7d42c936003b63ee7296201f0f692c886933c6fc))
+
+
+
+
+
 ## [1.0.1](https://github.com/1stG/configs/compare/@1stg/common-config@1.0.0...@1stg/common-config@1.0.1) (2021-01-26)
 
 **Note:** Version bump only for package @1stg/common-config
