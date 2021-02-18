@@ -12,10 +12,10 @@
   resolved "https://registry.yarnpkg.com/@angular/core/-/core-9.0.0.tgz#227dc53e1ac81824f998c6e76000b7efc522641e"
   integrity sha512-6Pxgsrf0qF9iFFqmIcWmjJGkkCaCm6V5QNnxMy2KloO3SDq6QuMVRbN9RtC8Urmo25LP+eZ6ZgYqFYpdD8Hd9w==
 
-"@angular/core@^11.2.0":
-  version "11.2.0"
-  resolved "https://registry.yarnpkg.com/@angular/core/-/core-11.2.0.tgz#309ae61d55b21fca0b644a6571109741d64b2467"
-  integrity sha512-jnbnJTW2GwfkRoXG8J4zs5FMcahMZwo6jrZGe9FiXjCYG9cLEuOXy4h99Z1s/o0vc/VXyWgym7SmeEgv+urf8g==
+"@angular/core@^11.2.1":
+  version "11.2.1"
+  resolved "https://registry.yarnpkg.com/@angular/core/-/core-11.2.1.tgz#d0bfd48cfe0d9e5340614ae364cba20c4cb084ac"
+  integrity sha512-FfMMG9yWW1xfZmHp8NtXJlNbLrgZ5Fm7FguRfTAuH007gDoknm+V3INKGyQfYOsIlxuJCSzyEeM3270lmbzYaQ==
   dependencies:
     tslib "^2.0.0"
 
@@ -5975,10 +5975,10 @@ eslint-plugin-import@^2.22.1:
     resolve "^1.17.0"
     tsconfig-paths "^3.9.0"
 
-eslint-plugin-jest@^24.1.3:
-  version "24.1.3"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-24.1.3.tgz#fa3db864f06c5623ff43485ca6c0e8fc5fe8ba0c"
-  integrity sha512-dNGGjzuEzCE3d5EPZQ/QGtmlMotqnYWD/QpCZ1UuZlrMAdhG5rldh0N0haCvhGnUkSeuORS5VNROwF9Hrgn3Lg==
+eslint-plugin-jest@^24.1.5:
+  version "24.1.5"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-24.1.5.tgz#1e866a9f0deac587d0a3d5d7cefe99815a580de2"
+  integrity sha512-FIP3lwC8EzEG+rOs1y96cOJmMVpdFNreoDJv29B5vIupVssRi8zrSY3QadogT0K3h1Y8TMxJ6ZSAzYUmFCp2hg==
   dependencies:
     "@typescript-eslint/experimental-utils" "^4.0.1"
 
@@ -14613,14 +14613,6 @@ ts-jest@^26.5.1:
     semver "7.x"
     yargs-parser "20.x"
 
-ts-lib-utils@^2.14.8:
-  version "2.14.8"
-  resolved "https://registry.yarnpkg.com/ts-lib-utils/-/ts-lib-utils-2.14.8.tgz#23c153cf846e41d1ec4d83823033ce2f5d9ab33b"
-  integrity sha512-Yy+3zvKVOdCPUVgPPRXig9BBygFdvDUggoq2JH/jlUu3GSuBWKWf3awDq76L6cMqOD1sUOzME2Zq2/Vy0l7xLQ==
-  dependencies:
-    glob "7"
-    tslib "1 || 2"
-
 tsconfig-paths@^3.9.0:
   version "3.9.0"
   resolved "https://registry.yarnpkg.com/tsconfig-paths/-/tsconfig-paths-3.9.0.tgz#098547a6c4448807e8fcb8eae081064ee9a3c90b"
@@ -14738,23 +14730,23 @@ type-check@~0.3.2:
   dependencies:
     prelude-ls "~1.1.2"
 
-type-coverage-core@^2.14.9:
-  version "2.14.9"
-  resolved "https://registry.yarnpkg.com/type-coverage-core/-/type-coverage-core-2.14.9.tgz#0be4eaf962a72210edb0098360b4eb9c206a8538"
-  integrity sha512-+DegReRzFMFf+6D6D1fC/c7ZG5Jz/X4+nlkPoTEz9hbP6O71U0UXtyHXyauvGhZH7zgomLGGVn+ByL8TBbvU8A==
+type-coverage-core@^2.15.1:
+  version "2.15.1"
+  resolved "https://registry.yarnpkg.com/type-coverage-core/-/type-coverage-core-2.15.1.tgz#a0e7bc279be56f1a44d1702ddef5285cc3190f0f"
+  integrity sha512-dwdp0nnbMre0cw3H2/pXkqtLixtHrr+6JcQSASuVbDUrvWrgUcYIDccUdrsg6p2xeQmHdfaqAh4TsX8/aYFL3A==
   dependencies:
+    glob "7"
     minimatch "3"
-    ts-lib-utils "^2.14.8"
     tslib "1 || 2"
     tsutils "3"
 
-type-coverage@^2.14.9:
-  version "2.14.9"
-  resolved "https://registry.yarnpkg.com/type-coverage/-/type-coverage-2.14.9.tgz#77a723d7c46d2a5986967ee50e24424c3630644a"
-  integrity sha512-D/IJnYD/9ObE+BJhlVnZ6rUx+y+Y1g1wZXE83jMmz8IxoRsXIs5KblKCZN42n0Npjn6MQVrUtR2regWWl/fxNA==
+type-coverage@^2.15.1:
+  version "2.15.1"
+  resolved "https://registry.yarnpkg.com/type-coverage/-/type-coverage-2.15.1.tgz#157e5000a65048c7808e36837a0eedf9a5039cba"
+  integrity sha512-HvqD19WtsUlmbSCY3De/HcKUyohjgtQoNHdlVjed8WcySGVgEjGpjF4pZUiLZDVsZf3+VwNvkHoLewLEWXWdQQ==
   dependencies:
     minimist "1"
-    type-coverage-core "^2.14.9"
+    type-coverage-core "^2.15.1"
 
 type-detect@4.0.8:
   version "4.0.8"

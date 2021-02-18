@@ -9,6 +9,7 @@
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true,
     "strictMetadataEmit": true,
+    "strictTemplates": true,
     "trace": true
   }
 }
