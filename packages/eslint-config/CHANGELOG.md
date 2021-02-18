@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.2.0...@1stg/eslint-config@1.2.1) (2021-02-18)
+
+
+### Bug Fixes
+
+* **eslint-config:** disable no-array-for-each for loose config ([591a36e](https://github.com/1stG/configs/commit/591a36ecb6567926a8471d29840c986e2d53d003))
+
+
+
+
+
 # [1.2.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.1.0...@1stg/eslint-config@1.2.0) (2021-02-18)
 
 
