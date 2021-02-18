@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/1stG/configs/compare/@1stg/tsconfig@1.0.0...@1stg/tsconfig@1.1.0) (2021-02-18)
+
+
+### Features
+
+* **tsconfig:** enable strictTemplates for angular ([d3db8df](https://github.com/1stG/configs/commit/d3db8df00abef1deb85e03f430495ba4618a4e6b))
+
+
+
+
+
 # [1.0.0](https://github.com/1stG/configs/compare/@1stg/tsconfig@0.10.3...@1stg/tsconfig@1.0.0) (2021-01-26)
 
 **Note:** Version bump only for package @1stg/tsconfig
