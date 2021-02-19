@@ -10,7 +10,7 @@
     "eslint": ">=6.0.0"
   },
   "dependencies": {
-    "@babel/eslint-parser": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.17",
     "@babel/eslint-plugin": "^7.12.13",
     "@pkgr/utils": "^0.4.5",
     "@typescript-eslint/eslint-plugin": "^4.15.1",
@@ -22,6 +22,7 @@
     "eslint-config-standard-react": "^11.0.1",
     "eslint-formatter-friendly": "^7.0.0",
     "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jest": "^24.1.5",
     "eslint-plugin-mdx": "^1.8.2",
@@ -31,7 +32,7 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-sonarjs": "^0.6.0",
-    "eslint-plugin-unicorn": "^28.0.1",
+    "eslint-plugin-unicorn": "^28.0.2",
     "eslint-plugin-vue": "^7.6.0"
   },
   "publishConfig": {

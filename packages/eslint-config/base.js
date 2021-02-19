@@ -10,6 +10,7 @@ const {
 module.exports = {
   extends: [
     'eslint:recommended',
+    'plugin:eslint-comments/recommended',
     'plugin:import/recommended',
     'plugin:node/recommended',
     'plugin:promise/recommended',
@@ -38,6 +39,7 @@ module.exports = {
   },
   globals: isWebpackAvailable ? getGlobals(webpackSpecVars) : undefined,
   rules: {
+    'arrow-body-style': 2,
     camelcase: [
       2,
       {
@@ -46,10 +48,22 @@ module.exports = {
         allow: isWebpackAvailable ? webpackSpecVars : undefined,
       },
     ],
+    'eslint-comments/disable-enable-pair': [
+      2,
+      {
+        allowWholeFile: true,
+      },
+    ],
     'import/order': [
       2,
       {
         'newlines-between': 'always',
+      },
+    ],
+    'no-else-return': [
+      2,
+      {
+        allowElseIf: false,
       },
     ],
     'no-empty': [

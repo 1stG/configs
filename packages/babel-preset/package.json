@@ -15,9 +15,9 @@
     "@babel/helper-plugin-utils": "^7.12.13",
     "@babel/plugin-proposal-class-properties": "^7.12.13",
     "@babel/plugin-proposal-decorators": "^7.12.13",
-    "@babel/preset-env": "^7.12.16",
+    "@babel/preset-env": "^7.12.17",
     "@babel/preset-react": "^7.12.13",
-    "@babel/preset-typescript": "^7.12.16",
+    "@babel/preset-typescript": "^7.12.17",
     "@pkgr/utils": "^0.4.5",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.2.1",
     "@vue/babel-preset-jsx": "^1.2.4",
@@ -27,7 +27,7 @@
     "babel-plugin-transform-remove-console": "^6.9.4",
     "babel-plugin-transform-typescript-metadata": "^0.3.1",
     "babel-preset-proposal-typescript": "^2.0.0",
-    "core-js": "^3.8.3",
+    "core-js": "^3.9.0",
     "fast-async": "^7.0.6"
   },
   "publishConfig": {
