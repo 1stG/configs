@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@1stg/prettier-config": "^1.1.0",
-    "@pkgr/utils": "^0.4.5",
+    "@pkgr/utils": "^0.6.0",
     "cross-env": "^7.0.3",
     "prettier": "^2.2.1"
   },

@@ -39,7 +39,8 @@ module.exports = {
   },
   globals: isWebpackAvailable ? getGlobals(webpackSpecVars) : undefined,
   rules: {
-    'arrow-body-style': 2,
+    // blocked by https://github.com/prettier/eslint-config-prettier/issues/174
+    // 'arrow-body-style': 2,
     camelcase: [
       2,
       {

@@ -12,7 +12,7 @@
   "dependencies": {
     "@babel/eslint-parser": "^7.12.17",
     "@babel/eslint-plugin": "^7.12.13",
-    "@pkgr/utils": "^0.4.5",
+    "@pkgr/utils": "^0.6.0",
     "@typescript-eslint/eslint-plugin": "^4.15.1",
     "@typescript-eslint/eslint-plugin-tslint": "^4.15.1",
     "@typescript-eslint/parser": "^4.15.1",

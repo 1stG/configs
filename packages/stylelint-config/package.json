@@ -9,7 +9,7 @@
     "stylelint": ">=11.0.0"
   },
   "dependencies": {
-    "@pkgr/utils": "^0.4.5",
+    "@pkgr/utils": "^0.6.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-high-performance-animation": "^1.5.2",
