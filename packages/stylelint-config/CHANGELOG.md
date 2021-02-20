@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/1stG/configs/compare/@1stg/stylelint-config@1.1.0...@1stg/stylelint-config@1.1.1) (2021-02-20)
+
+
+### Bug Fixes
+
+* **eslint-config:** arrow-body-style conflict with prettier ([b738f32](https://github.com/1stG/configs/commit/b738f32af23adb2e518e7693e26fb62ad851ef2f))
+
+
+
+
+
 # [1.1.0](https://github.com/1stG/configs/compare/@1stg/stylelint-config@1.0.0...@1stg/stylelint-config@1.1.0) (2021-02-16)
 
 

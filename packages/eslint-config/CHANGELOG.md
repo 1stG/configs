@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.2.1...@1stg/eslint-config@1.3.0) (2021-02-20)
+
+
+### Bug Fixes
+
+* **eslint-config:** arrow-body-style conflict with prettier ([b738f32](https://github.com/1stG/configs/commit/b738f32af23adb2e518e7693e26fb62ad851ef2f))
+
+
+### Features
+
+* **eslint-config:** enable eslint-comments, enforce function style ([5bb2286](https://github.com/1stG/configs/commit/5bb2286d5ccf6e1dc9dbd05d8e0aa8d36b43f147))
+
+
+
+
+
 ## [1.2.1](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.2.0...@1stg/eslint-config@1.2.1) (2021-02-18)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/1stG/configs/compare/@1stg/app-config@1.1.2...@1stg/app-config@1.1.3) (2021-02-20)
+
+
+### Bug Fixes
+
+* **eslint-config:** arrow-body-style conflict with prettier ([b738f32](https://github.com/1stG/configs/commit/b738f32af23adb2e518e7693e26fb62ad851ef2f))
+
+
+
+
+
 ## [1.1.2](https://github.com/1stG/configs/compare/@1stg/app-config@1.1.1...@1stg/app-config@1.1.2) (2021-02-18)
 
 **Note:** Version bump only for package @1stg/app-config
