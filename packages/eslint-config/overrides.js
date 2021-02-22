@@ -5,10 +5,12 @@ const {
   isAngularAvailable,
   isReactAvailable,
   isPkgAvailable,
+  isSvelteAvailable,
   isTsAvailable,
   isVueAvailable,
   tryFile,
   tryPkg,
+  tryRequirePkg,
 } = require('@pkgr/utils')
 
 const { magicNumbers } = require('./_util')
@@ -19,7 +21,7 @@ const configFile =
   tryPkg('@1stg/babel-preset/config')
 
 const jsBase = {
-  files: '*.{mjs,js,jsx}',
+  files: ['*.mjs', '*.js', '*.jsx'],
   parser: '@babel/eslint-parser',
   parserOptions: configFile && {
     babelOptions: {
@@ -27,7 +29,6 @@ const jsBase = {
     },
   },
   plugins: ['@babel'],
-  extends: ['prettier/babel'],
   rules: {
     camelcase: [
       2,
@@ -75,6 +76,7 @@ const resolveSettings = {
       '.tsx',
       '.d.ts',
       '.vue',
+      '.svelte',
       '.mjs',
       '.js',
       '.jsx',
@@ -86,12 +88,12 @@ const resolveSettings = {
 }
 
 const tsBase = {
-  files: '*.{ts,tsx}',
+  files: ['*.ts', '*.tsx'],
   extends: [
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:import/typescript',
-    'prettier/@typescript-eslint',
+    'prettier',
   ],
   settings: resolveSettings,
   rules: {
@@ -284,12 +286,7 @@ exports.angular = [
 ]
 
 const reactJsx = {
-  extends: [
-    'standard-react',
-    'plugin:react/recommended',
-    'prettier',
-    'prettier/react',
-  ],
+  extends: ['standard-react', 'plugin:react/recommended', 'prettier'],
   settings: {
     react: {
       version: 'detect',
@@ -337,26 +334,56 @@ exports.reactTs = {
   },
 }
 
-const vueExtends = ['plugin:vue/recommended', 'prettier', 'prettier/vue']
+const vueExtends = ['plugin:vue/recommended', 'prettier']
 
 exports.vue = [
   {
     ...jsBase,
+    files: [...jsBase.files, !isTsAvailable && '*.vue'].filter(Boolean),
     parser: 'vue-eslint-parser',
-    parserOptions: { ...jsBase.parserOptions, parser: jsBase.parser },
+    parserOptions: {
+      ...jsBase.parserOptions,
+      parser: jsBase.parser,
+    },
     extends: vueExtends,
   },
-  {
+  isTsAvailable && {
     ...tsBase,
+    files: [...tsBase.files, '*.vue'],
     parser: 'vue-eslint-parser',
-    files: '*.{vue,ts,tsx}',
     parserOptions: {
       parser: '@typescript-eslint/parser',
       extraFileExtensions: ['.vue'],
     },
     extends: [...tsBase.extends, ...vueExtends],
   },
-]
+].filter(Boolean)
+
+const svelteBase = {
+  files: '*.svelte',
+  plugins: ['svelte3'],
+  processor: 'svelte3/svelte3',
+  rules: {
+    'prettier/prettier': 0, // https://github.com/sveltejs/eslint-plugin-svelte3/issues/16
+  },
+}
+
+exports.svelte = isTsAvailable
+  ? {
+      ...tsBase,
+      ...svelteBase,
+      parserOptions: {
+        extraFileExtensions: ['.svelte'],
+      },
+      settings: {
+        ...tsBase.settings,
+        'svelte3/typescript': tryRequirePkg('typescript'),
+      },
+    }
+  : {
+      ...jsBase,
+      ...svelteBase,
+    }
 
 exports.mdx = {
   files: '*.{md,mdx}',
@@ -402,6 +429,7 @@ exports.overrides = []
     isReactAvailable && exports.reactHooks,
     isReactAvailable && exports.reactTs,
     isVueAvailable && exports.vue,
+    isSvelteAvailable && exports.svelte,
     isAngularAvailable && exports.angular,
     exports.mdx,
     exports.jest,

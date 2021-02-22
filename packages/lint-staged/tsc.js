@@ -1,4 +1,4 @@
 module.exports = {
-  ...require('.'),
+  ...require('./base'),
   '*.ts?(x)': () => 'tsc --incremental false --noEmit',
 }

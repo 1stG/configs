@@ -1,19 +1,33 @@
-/* eslint-disable sonarjs/no-duplicate-string */
-const { isPkgAvailable } = require('@pkgr/utils')
+const { isPkgAvailable, tryFile } = require('@pkgr/utils')
 
-const config = {
-  '*.{*sh,env,env.*,gql,html,json,properties,pug,rb,vue,toml,yaml,yml}': [
-    'prettier --write',
-  ],
-  '.!(*browserslist|npm|yarn)rc': ['prettier --write'],
-  '.{editorconfig|browserslistrc|npmrc|yarnrc}': [
-    'prettier --write --parser sh',
-  ],
-  Dockerfile: ['prettier --write'],
+const config = [
+  '*.{*sh,env,env.*,gql,html,json,properties,pug,rb,svelte,vue,toml,yaml,yml}',
+  '.(editorconfig|*rc)',
+  'Dockerfile',
+].reduce(
+  (acc, files) =>
+    Object.assign(acc, {
+      [files]: ['prettier --write'],
+    }),
+  {},
+)
+
+if (isPkgAvailable('eslint')) {
+  Object.assign(
+    config,
+    {
+      '*.{js,jsx,md,mdx,mjs,svelte,vue}': ['eslint --cache -f friendly --fix'],
+    },
+    require('./ts-eslint'),
+  )
 }
 
 if (isPkgAvailable('stylelint')) {
   config['*.{css,less,sass,scss,vue}'] = ['stylelint --cache --fix']
+}
+
+if (isPkgAvailable('tslint') && tryFile('tslint.json')) {
+  Object.assign(config, require('./ts-tslint'))
 }
 
 if (isPkgAvailable('@pkgr/imagemin')) {

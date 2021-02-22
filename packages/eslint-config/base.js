@@ -18,8 +18,6 @@ module.exports = {
     'plugin:unicorn/recommended',
     'standard',
     'plugin:prettier/recommended',
-    'prettier/standard',
-    'prettier/unicorn',
   ],
   settings: {
     node: {
@@ -28,6 +26,7 @@ module.exports = {
         '.ts',
         '.tsx',
         '.vue',
+        '.svelte',
         '.mjs',
         '.js',
         '.jsx',
@@ -39,8 +38,7 @@ module.exports = {
   },
   globals: isWebpackAvailable ? getGlobals(webpackSpecVars) : undefined,
   rules: {
-    // blocked by https://github.com/prettier/eslint-config-prettier/issues/174
-    // 'arrow-body-style': 2,
+    'arrow-body-style': 2,
     camelcase: [
       2,
       {
@@ -82,6 +80,7 @@ module.exports = {
         ignoreArrayIndexes: true,
       },
     ],
+    'no-negated-condition': 2,
     'no-process-exit': 0, // suspended by unicorn/no-process-exit
     'node/no-unsupported-features/es-syntax': 0,
     'node/no-unsupported-features/node-builtins': 0,

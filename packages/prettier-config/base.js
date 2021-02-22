@@ -4,6 +4,7 @@ module.exports = {
   singleQuote: true,
   trailingComma: 'all',
   xmlWhitespaceSensitivity: 'ignore',
+  svelteIndentScriptAndStyle: false, // align with default option of `vueIndentScriptAndStyle`
   overrides: [
     {
       files: ['.*rc', '*.json'],
@@ -12,7 +13,7 @@ module.exports = {
       },
     },
     {
-      files: ['.bashrc', '.cshrc', '.zshrc'],
+      files: ['.browserslistrc', '.npmrc', '.yarnrc'],
       options: {
         parser: 'sh',
       },

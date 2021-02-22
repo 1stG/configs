@@ -2520,10 +2520,10 @@
   resolved "https://registry.yarnpkg.com/@pkgr/named-exports/-/named-exports-0.5.2.tgz#7293755fbcdd09b022a9c0960f4cf4b99ace69c4"
   integrity sha512-aUhOB6ypvMEFZVTiIImt6Dwfn0Lbxi7o4deSbLTaKxn6cHnAWLXfVr1D3kfIkRL5NeiLFhdZKhlQ/a9vaCGABg==
 
-"@pkgr/rollup@^0.11.2":
-  version "0.11.2"
-  resolved "https://registry.yarnpkg.com/@pkgr/rollup/-/rollup-0.11.2.tgz#e5b74ffb5ba5f9d4c64ebee221537591d77ded98"
-  integrity sha512-f27p/hvs1g2Qt35t+jC1bByzOCBQ2DLG183szgcVl/UYYZ3OYAEuUFI82Mmfq4A8RZwVFgvGlScFZ6hzx7ulig==
+"@pkgr/rollup@^0.11.3":
+  version "0.11.3"
+  resolved "https://registry.yarnpkg.com/@pkgr/rollup/-/rollup-0.11.3.tgz#4bc4b2df74ecf2642fea2d48d5fff6dee73d89a6"
+  integrity sha512-zxceQLj5fJIKW/q601FXj0rc3KZX9y/rnymkRtEoFlI1ZN8mp95JymLfeOU3+X1nxZZKcMniBaIMu1+9TGXiDQ==
   dependencies:
     "@babel/plugin-transform-runtime" "^7.12.17"
     "@babel/preset-env" "^7.11.0"
@@ -5666,10 +5666,10 @@ escodegen@^1.14.1:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-prettier@^7.2.0:
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-7.2.0.tgz#f4a4bd2832e810e8cc7c1411ec85b3e85c0c53f9"
-  integrity sha512-rV4Qu0C3nfJKPOAhFujFxB7RMP+URFyQqqOZW9DMRD7ZDTFyjaIlETU3xzHELt++4ugC0+Jm084HQYkkJe+Ivg==
+eslint-config-prettier@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.0.0.tgz#024d661444319686c588c8849c8da33815dbdb1c"
+  integrity sha512-5EaAVPsIHu+grmm5WKjxUia4yHgRrbkd8I0ffqUSwixCPMVBrbS97UnzlEY/Q7OWo584vgixefM0kJnUfo/VjA==
 
 eslint-config-standard-jsx@^10.0.0:
   version "10.0.0"
@@ -5844,6 +5844,11 @@ eslint-plugin-sonarjs@^0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-sonarjs/-/eslint-plugin-sonarjs-0.6.0.tgz#3ee3b04f1f9587ef02b255a5d2f96e500c4789bb"
   integrity sha512-y+sXXWsYVW2kNEjmZI87laFspwC/hic7wyMjsPFoST8aQ2hESUVavkZjnTeVdHMOmlmcloKkyX/GJJetmfBY4Q==
+
+eslint-plugin-svelte3@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-svelte3/-/eslint-plugin-svelte3-3.1.1.tgz#dabd16dd0c8af82fd625ac0c0d76d43cf23139ca"
+  integrity sha512-fZ8YA7vPYMW6jEOhHLfl/IS6rXh92NkzR8UxMleXWT/QHKzTwkMl/f6WiEM9MUU7jxG6YzWE0MJVDoQvGTzI2A==
 
 eslint-plugin-unicorn@^28.0.2:
   version "28.0.2"
@@ -11226,6 +11231,11 @@ prettier-plugin-sh@^0.6.0:
   dependencies:
     mvdan-sh "^0.5.0"
 
+prettier-plugin-svelte@^2.1.6:
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-svelte/-/prettier-plugin-svelte-2.1.6.tgz#ae10e16d89c94c72a937574eb840501104ff4565"
+  integrity sha512-eg6MhH394IYsljIcLMgCx/wozObkUFZJ1GkH+Nj8sZQilnNCFTeSBcEohBaNa9hr5RExvlJQJ8a2CEjMMrwL8g==
+
 prettier-plugin-toml@^0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/prettier-plugin-toml/-/prettier-plugin-toml-0.3.1.tgz#71b5291ef9c2a20865d2dfe1dbc24435bcb596b5"
@@ -13580,10 +13590,10 @@ stylelint-scss@^3.19.0:
     postcss-selector-parser "^6.0.2"
     postcss-value-parser "^4.1.0"
 
-stylelint@^13.10.0:
-  version "13.10.0"
-  resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-13.10.0.tgz#67b0c6f378c3fa61aa569a55d38feb8570b0b587"
-  integrity sha512-eDuLrL0wzPKbl5/TbNGZcbw0lTIGbDEr5W6lCODvb1gAg0ncbgCRt7oU0C2VFDvbrcY0A3MFZOwltwTRmc0XCw==
+stylelint@^13.11.0:
+  version "13.11.0"
+  resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-13.11.0.tgz#591981fbdd68c9d3d3e6147a0cd6a07539fc216d"
+  integrity sha512-DhrKSWDWGZkCiQMtU+VroXM6LWJVC8hSK24nrUngTSQvXGK75yZUq4yNpynqrxD3a/fzKMED09V+XxO4z4lTbw==
   dependencies:
     "@stylelint/postcss-css-in-js" "^0.37.2"
     "@stylelint/postcss-markdown" "^0.36.2"
@@ -13674,6 +13684,11 @@ supports-hyperlinks@^2.0.0:
   dependencies:
     has-flag "^4.0.0"
     supports-color "^7.0.0"
+
+svelte@^3.32.3:
+  version "3.32.3"
+  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.32.3.tgz#db0c50c65573ecffe4e2f4924e4862d8f9feda74"
+  integrity sha512-5etu/wDwtewhnYO/631KKTjSmFrKohFLWNm1sWErVHXqGZ8eJLqrW0qivDSyYTcN8GbUqsR4LkIhftNFsjNehg==
 
 svg-tags@^1.0.0:
   version "1.0.0"
