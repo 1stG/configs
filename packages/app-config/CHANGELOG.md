@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/1stG/configs/compare/@1stg/app-config@1.1.3...@1stg/app-config@1.2.0) (2021-02-22)
+
+
+### Features
+
+* better support for svelte ([9dcd408](https://github.com/1stG/configs/commit/9dcd4082e7af1848277c19e59fb1cc575e37b16b))
+
+
+
+
+
 ## [1.1.3](https://github.com/1stG/configs/compare/@1stg/app-config@1.1.2...@1stg/app-config@1.1.3) (2021-02-20)
 
 
