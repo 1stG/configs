@@ -385,8 +385,13 @@ exports.svelte = isTsAvailable
       ...svelteBase,
     }
 
+exports.md = {
+  files: '*.md',
+  extends: ['plugin:mdx/recommended'],
+}
+
 exports.mdx = {
-  files: '*.{md,mdx}',
+  files: '*.mdx',
   extends: [...reactJsx.extends, 'plugin:mdx/recommended'],
   parserOptions: jsBase.parserOptions,
   settings: { ...reactJsx.settings, ...resolveSettings },
@@ -399,7 +404,7 @@ const nonSourceRules = {
 }
 
 exports.test = {
-  files: '**/{__test__,test,tests}/**/*.{js,jsx,mdx,ts,tsx,vue}',
+  files: '**/{__test__,test,tests}/**/*.{js,jsx,mdx,mjs,svelte,ts,tsx,vue}',
   rules: nonSourceRules,
 }
 
@@ -410,7 +415,7 @@ exports.jest = {
 }
 
 exports.stories = {
-  files: '**/stories/**/*.{js,jsx,mdx,ts,tsx,vue}',
+  files: '**/stories/**/*.{js,jsx,mdx,mjs,svelte,ts,tsx,vue}',
   rules: nonSourceRules,
 }
 
@@ -431,6 +436,7 @@ exports.overrides = []
     isVueAvailable && exports.vue,
     isSvelteAvailable && exports.svelte,
     isAngularAvailable && exports.angular,
+    exports.md,
     exports.mdx,
     exports.jest,
     exports.test,
