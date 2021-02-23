@@ -1,6 +1,6 @@
 {
   "name": "@1stg/stylelint-config",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Personal but Shareable Stylelint Configuration for all 1stG.me projects.",
   "repository": "git@github.com:1stG/configs.git",
   "author": "JounQin <admin@1stg.me>",

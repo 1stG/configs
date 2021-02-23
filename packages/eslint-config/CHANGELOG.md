@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.4.1...@1stg/eslint-config@1.5.0) (2021-02-23)
+
+
+### Features
+
+* **stylelint-config:** use @rxts/stylelint-prettier to fix as workaround ([ccee42c](https://github.com/1stG/configs/commit/ccee42c8836a99989dd9c7a830c1094776dd499c))
+
+
+
+
+
 ## [1.4.1](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.4.0...@1stg/eslint-config@1.4.1) (2021-02-23)
 
 
