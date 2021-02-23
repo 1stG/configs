@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.5.1...@1stg/eslint-config@1.6.0) (2021-02-23)
+
+
+### Features
+
+* **eslint-config:** use eslint-plugin-svelte for consistency :tada: ([f9e6edd](https://github.com/1stG/configs/commit/f9e6edd8a72eca15cf09256afce3a7d612bd6c4b))
+
+
+
+
+
 ## [1.5.1](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.5.0...@1stg/eslint-config@1.5.1) (2021-02-23)
 
 
