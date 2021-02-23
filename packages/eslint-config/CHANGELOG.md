@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.1](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.5.0...@1stg/eslint-config@1.5.1) (2021-02-23)
+
+
+### Bug Fixes
+
+* **eslint-config:** should not enable js related rules on .md files ([abc8489](https://github.com/1stG/configs/commit/abc848927db655eface5b15a987329acdcbb0527))
+
+
+
+
+
 # [1.5.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.4.1...@1stg/eslint-config@1.5.0) (2021-02-23)
 
 
