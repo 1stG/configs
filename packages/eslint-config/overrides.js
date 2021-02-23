@@ -361,8 +361,8 @@ exports.vue = [
 
 const svelteBase = {
   files: '*.svelte',
-  plugins: ['svelte3'],
-  processor: 'svelte3/svelte3',
+  plugins: ['svelte'],
+  processor: 'svelte/svelte',
   rules: {
     'prettier/prettier': 0, // https://github.com/sveltejs/eslint-plugin-svelte3/issues/16
   },
@@ -377,7 +377,7 @@ exports.svelte = isTsAvailable
       },
       settings: {
         ...tsBase.settings,
-        'svelte3/typescript': tryRequirePkg('typescript'),
+        'svelte/typescript': tryRequirePkg('typescript'),
       },
     }
   : {

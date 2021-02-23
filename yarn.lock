@@ -5901,6 +5901,13 @@ eslint-plugin-svelte3@^3.1.1:
   resolved "https://registry.yarnpkg.com/eslint-plugin-svelte3/-/eslint-plugin-svelte3-3.1.1.tgz#dabd16dd0c8af82fd625ac0c0d76d43cf23139ca"
   integrity sha512-fZ8YA7vPYMW6jEOhHLfl/IS6rXh92NkzR8UxMleXWT/QHKzTwkMl/f6WiEM9MUU7jxG6YzWE0MJVDoQvGTzI2A==
 
+eslint-plugin-svelte@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-svelte/-/eslint-plugin-svelte-1.1.1.tgz#f2c148cee98f1ccde5522cc786ca1282accf5774"
+  integrity sha512-C4N+Tj+bLMPHtoYJPW/h5reIEGiNt/fwkiYreEsFwI1LF0d49pty4UnwMIeZV/86w2+Vlux70u1MAfOQ5o4lhw==
+  dependencies:
+    eslint-plugin-svelte3 "^3.1.1"
+
 eslint-plugin-unicorn@^28.0.2:
   version "28.0.2"
   resolved "https://registry.yarnpkg.com/eslint-plugin-unicorn/-/eslint-plugin-unicorn-28.0.2.tgz#ab9884ebae04590ecd9c1c294330d889a74b7c37"
