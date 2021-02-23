@@ -14,6 +14,7 @@ module.exports = {
     '@typescript-eslint/restrict-plus-operands': 0,
     '@typescript-eslint/unbound-method': 0,
     'no-magic-numbers': 0,
+    'no-negated-condition': 0, // not auto-fixable
     'promise/always-return': 0,
     'promise/catch-or-return': 0,
     'unicorn/explicit-length-check': 0,

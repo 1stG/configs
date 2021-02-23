@@ -12,12 +12,12 @@
     "@babel/core": ">=7.9.0"
   },
   "dependencies": {
-    "@babel/helper-plugin-utils": "^7.12.13",
-    "@babel/plugin-proposal-class-properties": "^7.12.13",
-    "@babel/plugin-proposal-decorators": "^7.12.13",
-    "@babel/preset-env": "^7.12.17",
+    "@babel/helper-plugin-utils": "^7.13.0",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-proposal-decorators": "^7.13.0",
+    "@babel/preset-env": "^7.13.0",
     "@babel/preset-react": "^7.12.13",
-    "@babel/preset-typescript": "^7.12.17",
+    "@babel/preset-typescript": "^7.13.0",
     "@pkgr/utils": "^0.6.0",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.2.1",
     "@vue/babel-preset-jsx": "^1.2.4",
