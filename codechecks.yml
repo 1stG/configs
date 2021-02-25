@@ -9,4 +9,5 @@ checks:
       ignoreCatch: true
       ignoreFiles:
         - '**/*.d.ts'
+      ignoreNonNullAssertion: true
       strict: true
