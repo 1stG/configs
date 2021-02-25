@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.2](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.7.1...@1stg/eslint-config@1.7.2) (2021-02-25)
+
+
+### Bug Fixes
+
+* disable jest if inavailable ([e24a825](https://github.com/1stG/configs/commit/e24a825a904e435ae815ccbdf1c21144dbb30859))
+
+
+
+
+
 ## [1.7.1](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.7.0...@1stg/eslint-config@1.7.1) (2021-02-25)
 
 
