@@ -2,6 +2,7 @@
 const path = require('path')
 
 const {
+  isAngularAvailable,
   isReactAvailable,
   isPkgAvailable,
   isSvelteAvailable,
@@ -270,6 +271,29 @@ exports.tslint = {
   },
 }
 
+exports.angular = [
+  {
+    files: [
+      '*.directive.ts',
+      '*.component.ts',
+      '*.interceptor.ts',
+      '*.guard.ts',
+      '*.module.ts',
+      '*.pipe.ts',
+      '*.service.ts',
+      '*.validator.ts',
+      'component.ts',
+      'module.ts',
+    ],
+    rules: {
+      /**
+       * @link https://github.com/typescript-eslint/typescript-eslint/issues/3114
+       */
+      '@typescript-eslint/no-extraneous-class': 0,
+    },
+  },
+]
+
 const reactJsx = {
   extends: ['standard-react', 'plugin:react/recommended', 'prettier'],
   settings: {
@@ -415,6 +439,7 @@ exports.overrides = []
     isPkgAvailable('@babel/core') && exports.js,
     isTsAvailable && exports.ts,
     isPkgAvailable('tslint') && lintFile && exports.tslint,
+    isAngularAvailable && exports.angular,
     isReactAvailable && exports.react,
     isReactAvailable && exports.reactHooks,
     isReactAvailable && exports.reactTs,
