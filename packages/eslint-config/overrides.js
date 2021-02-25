@@ -2,7 +2,6 @@
 const path = require('path')
 
 const {
-  isAngularAvailable,
   isReactAvailable,
   isPkgAvailable,
   isSvelteAvailable,
@@ -120,7 +119,12 @@ const tsBase = {
     '@typescript-eslint/member-ordering': 2,
     '@typescript-eslint/naming-convention': 0, // TODO: find better config
     '@typescript-eslint/no-empty-function': 2,
-    '@typescript-eslint/no-extraneous-class': 2,
+    '@typescript-eslint/no-extraneous-class': [
+      2,
+      {
+        allowWithDecorator: true,
+      },
+    ],
     '@typescript-eslint/no-for-in-array': 2,
     '@typescript-eslint/no-non-null-assertion': 0,
     '@typescript-eslint/no-parameter-properties': 0,
@@ -265,25 +269,6 @@ exports.tslint = {
         }),
   },
 }
-
-exports.angular = [
-  {
-    files: [
-      '*.directive.ts',
-      '*.component.ts',
-      '*.interceptor.ts',
-      '*.guard.ts',
-      '*.module.ts',
-      '*.pipe.ts',
-      '*.service.ts',
-      'component.ts',
-      'module.ts',
-    ],
-    rules: {
-      '@typescript-eslint/no-extraneous-class': 0,
-    },
-  },
-]
 
 const reactJsx = {
   extends: ['standard-react', 'plugin:react/recommended', 'prettier'],
@@ -435,7 +420,6 @@ exports.overrides = []
     isReactAvailable && exports.reactTs,
     isVueAvailable && exports.vue,
     isSvelteAvailable && exports.svelte,
-    isAngularAvailable && exports.angular,
     exports.md,
     exports.mdx,
     exports.jest,
