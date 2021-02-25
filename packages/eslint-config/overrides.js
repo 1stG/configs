@@ -447,7 +447,7 @@ exports.overrides = []
     isSvelteAvailable && exports.svelte,
     exports.md,
     exports.mdx,
-    exports.jest,
+    isPkgAvailable('jest') && exports.jest,
     exports.test,
     exports.stories,
     exports.config,
