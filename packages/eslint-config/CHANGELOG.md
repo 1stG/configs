@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.1](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.7.0...@1stg/eslint-config@1.7.1) (2021-02-25)
+
+
+### Bug Fixes
+
+* **eslint-config:** disable no-extraneous-class for angular temporarily ([addaf1b](https://github.com/1stG/configs/commit/addaf1b6f8de7b82054a6cf380b41c06215a8ac0))
+
+
+
+
+
 # [1.7.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.6.0...@1stg/eslint-config@1.7.0) (2021-02-25)
 
 
