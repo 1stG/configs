@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.6.0...@1stg/eslint-config@1.7.0) (2021-02-25)
+
+
+### Features
+
+* **eslint-config:** enable allowWithDecorator for no-extraneous-class ([6be38ee](https://github.com/1stG/configs/commit/6be38ee4ff72af0ceb695f9cf89421b4dbf8bc52))
+
+
+
+
+
 # [1.6.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.5.1...@1stg/eslint-config@1.6.0) (2021-02-23)
 
 
