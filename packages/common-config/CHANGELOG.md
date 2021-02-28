@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.9](https://github.com/1stG/configs/compare/@1stg/common-config@1.2.8...@1stg/common-config@1.2.9) (2021-02-28)
+
+
+### Bug Fixes
+
+* **stylelint-config:** use official stylelint-prettier ([39599d8](https://github.com/1stG/configs/commit/39599d84cc4121d2a6c81272dabf718a1df9c628))
+
+
+
+
+
 ## [1.2.8](https://github.com/1stG/configs/compare/@1stg/common-config@1.2.7...@1stg/common-config@1.2.8) (2021-02-25)
 
 **Note:** Version bump only for package @1stg/common-config

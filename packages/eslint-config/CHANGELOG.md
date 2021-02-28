@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.3](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.7.2...@1stg/eslint-config@1.7.3) (2021-02-28)
+
+
+### Bug Fixes
+
+* **stylelint-config:** use official stylelint-prettier ([39599d8](https://github.com/1stG/configs/commit/39599d84cc4121d2a6c81272dabf718a1df9c628))
+
+
+
+
+
 ## [1.7.2](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.7.1...@1stg/eslint-config@1.7.2) (2021-02-25)
 
 

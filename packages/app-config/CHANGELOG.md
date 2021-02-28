@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.8](https://github.com/1stG/configs/compare/@1stg/app-config@1.2.7...@1stg/app-config@1.2.8) (2021-02-28)
+
+**Note:** Version bump only for package @1stg/app-config
+
+
+
+
+
 ## [1.2.7](https://github.com/1stG/configs/compare/@1stg/app-config@1.2.6...@1stg/app-config@1.2.7) (2021-02-25)
 
 **Note:** Version bump only for package @1stg/app-config

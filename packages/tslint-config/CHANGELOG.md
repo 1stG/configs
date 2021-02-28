@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/1stG/configs/compare/@1stg/tslint-config@1.0.0...@1stg/tslint-config@1.0.1) (2021-02-28)
+
+
+### Bug Fixes
+
+* **stylelint-config:** use official stylelint-prettier ([39599d8](https://github.com/1stG/configs/commit/39599d84cc4121d2a6c81272dabf718a1df9c628))
+
+
+
+
+
 # [1.0.0](https://github.com/1stG/configs/compare/@1stg/tslint-config@0.9.2...@1stg/tslint-config@1.0.0) (2021-01-26)
 
 **Note:** Version bump only for package @1stg/tslint-config
