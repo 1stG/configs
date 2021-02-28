@@ -1,3 +1,3 @@
 module.exports = {
-  extends: [require.resolve('./base'), '@rxts/stylelint-prettier/recommended'],
+  extends: [require.resolve('./base'), 'stylelint-prettier/recommended'],
 }
