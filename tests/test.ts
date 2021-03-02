@@ -2,12 +2,16 @@ import fs from 'fs'
 import path from 'path'
 import { promisify } from 'util'
 
+import { interval } from 'rxjs'
 import { Position } from 'unist'
 
-import { content } from './_test'
+import { TestCase, content } from './_test'
 
 promisify(fs.readFile)
 
+/**
+ * @deprecated
+ */
 class Basic {
   prop: string = content
 }
@@ -45,6 +49,7 @@ foo(() => {
 
 const obj: Record<string, string | undefined> = {}
 
+// eslint-disable-next-line sonar/deprecation -- this is expected
 export default class Test extends Basic implements X {
   path: typeof path
 
@@ -67,3 +72,12 @@ try {
   const y = obj.x
   console.log(y)
 } catch {}
+
+/**
+ * unexpected on ts 4.2, related to:
+ * @link https://github.com/ReactiveX/rxjs/issues/6060
+ * @link https://community.sonarsource.com/t/unexpected-deprecation-warnings-reported/39441
+ */
+interval(1000).subscribe()
+
+new TestCase<number>().subscribe()

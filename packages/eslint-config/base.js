@@ -19,6 +19,7 @@ module.exports = {
     'standard',
     'plugin:prettier/recommended',
   ],
+  plugins: ['sonar'],
   settings: {
     node: {
       allowModules,
@@ -53,6 +54,7 @@ module.exports = {
         allowWholeFile: true,
       },
     ],
+    'eslint-comments/no-unused-disable': 2,
     'import/order': [
       2,
       {
@@ -88,6 +90,7 @@ module.exports = {
     'node/no-unpublished-require': 0,
     'prefer-const': 2,
     'prefer-object-spread': 2,
+    'sonar/deprecation': 1,
     'unicorn/catch-error-name': [
       2,
       {
