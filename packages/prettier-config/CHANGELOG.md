@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/1stG/configs/compare/@1stg/prettier-config@1.3.1...@1stg/prettier-config@1.4.0) (2021-03-02)
+
+
+### Features
+
+* **eslint-config:** enable sonar/deprecation to replace tslint's ([0679fcf](https://github.com/1stG/configs/commit/0679fcfc677d9e01f237e5ed76df80cc739d3d98))
+
+
+
+
+
 ## [1.3.1](https://github.com/1stG/configs/compare/@1stg/prettier-config@1.3.0...@1stg/prettier-config@1.3.1) (2021-02-28)
 
 

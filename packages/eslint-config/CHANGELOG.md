@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.7.3...@1stg/eslint-config@1.8.0) (2021-03-02)
+
+
+### Features
+
+* **eslint-config:** enable sonar/deprecation to replace tslint's ([0679fcf](https://github.com/1stG/configs/commit/0679fcfc677d9e01f237e5ed76df80cc739d3d98))
+
+
+
+
+
 ## [1.7.3](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.7.2...@1stg/eslint-config@1.7.3) (2021-02-28)
 
 
