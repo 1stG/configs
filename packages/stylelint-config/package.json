@@ -1,6 +1,6 @@
 {
   "name": "@1stg/stylelint-config",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Personal but Shareable Stylelint Configuration for all 1stG.me projects.",
   "repository": "git@github.com:1stG/configs.git",
   "author": "JounQin <admin@1stg.me>",
@@ -11,7 +11,7 @@
   "dependencies": {
     "@pkgr/utils": "^0.6.0",
     "stylelint-config-prettier": "^8.0.2",
-    "stylelint-config-standard": "^20.0.0",
+    "stylelint-config-standard": "^21.0.0",
     "stylelint-high-performance-animation": "^1.5.2",
     "stylelint-no-unsupported-browser-features": "^4.1.4",
     "stylelint-prettier": "^1.2.0",

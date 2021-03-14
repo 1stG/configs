@@ -4,6 +4,7 @@
   "rules": {
     "ban-ts-ignore": false,
     "interface-name": [true, "never-prefix"],
+    "max-union-size": [true, 5],
     "member-access": [true, "no-public"],
     "no-empty": [true, "allow-empty-catch"],
     "no-extra-semicolon": false,

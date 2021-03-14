@@ -1,8 +1,11 @@
 {
   "$schema": "http://json.schemastore.org/tsconfig",
-  "extends": "./tsconfig.json",
+  "extends": "./loose.json",
   "compilerOptions": {
-    "declaration": true,
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
     "outDir": "lib"
   }
 }

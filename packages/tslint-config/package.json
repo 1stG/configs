@@ -1,6 +1,6 @@
 {
   "name": "@1stg/tslint-config",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Personal but Shareable TSLint Configuration for all 1stG.me projects.",
   "repository": "git@github.com:1stG/configs.git",
   "author": "JounQin <admin@1stg.me>",
@@ -15,7 +15,7 @@
     "codelyzer": "^6.0.1",
     "ng-tslint": "^1.1.0",
     "tslint-angular": "^3.0.3",
-    "tslint-config-eslint": "^0.3.0",
+    "tslint-config-eslint": "^0.5.2",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^3.0.0-beta.0",
     "tslint-react": "^5.0.0",

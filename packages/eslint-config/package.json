@@ -1,6 +1,6 @@
 {
   "name": "@1stg/eslint-config",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "description": "Personal but Shareable ESLint Configuration for all 1stG.me projects.",
   "repository": "git@github.com:1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/eslint-config",
@@ -10,12 +10,12 @@
     "eslint": ">=6.0.0"
   },
   "dependencies": {
-    "@babel/eslint-parser": "^7.13.8",
-    "@babel/eslint-plugin": "^7.13.0",
+    "@babel/eslint-parser": "^7.13.10",
+    "@babel/eslint-plugin": "^7.13.10",
     "@pkgr/utils": "^0.6.0",
-    "@typescript-eslint/eslint-plugin": "^4.16.1",
-    "@typescript-eslint/eslint-plugin-tslint": "^4.16.1",
-    "@typescript-eslint/parser": "^4.16.1",
+    "@typescript-eslint/eslint-plugin": "^4.17.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^4.17.0",
+    "@typescript-eslint/parser": "^4.17.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-config-standard-jsx": "^10.0.0",
@@ -24,18 +24,18 @@
     "eslint-import-resolver-typescript": "^2.4.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jest": "^24.1.5",
-    "eslint-plugin-mdx": "^1.9.0",
+    "eslint-plugin-jest": "^24.3.1",
+    "eslint-plugin-mdx": "^1.9.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-promise": "^4.3.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "eslint-plugin-sonar": "^0.2.0",
+    "eslint-plugin-sonar": "^0.4.0",
     "eslint-plugin-sonarjs": "^0.6.0",
     "eslint-plugin-svelte": "^1.1.2",
     "eslint-plugin-unicorn": "^28.0.2",
-    "eslint-plugin-vue": "^7.6.0"
+    "eslint-plugin-vue": "^7.7.0"
   },
   "publishConfig": {
     "access": "public"

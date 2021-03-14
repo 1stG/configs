@@ -2,8 +2,7 @@
   "extends": "./packages/tsconfig/tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "jsx": "preserve",
-    "incremental": false,
+    "lib": ["DOM"],
     "noEmit": true
   },
   "exclude": ["node_modules"]

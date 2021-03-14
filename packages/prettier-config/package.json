@@ -1,6 +1,6 @@
 {
   "name": "@1stg/prettier-config",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Personal but Shareable Prettier Configuration for all 1stG.me projects.",
   "repository": "git@github.com:1stG/configs.git",
   "author": "JounQin <admin@1stg.me>",
@@ -11,10 +11,10 @@
   "dependencies": {
     "@prettier/plugin-pug": "^1.13.5",
     "@prettier/plugin-ruby": "^1.5.3",
-    "@prettier/plugin-xml": "^0.13.0",
+    "@prettier/plugin-xml": "^0.13.1",
     "prettier-plugin-pkg": "^0.8.0",
     "prettier-plugin-sh": "^0.6.0",
-    "prettier-plugin-svelte": "^2.1.6",
+    "prettier-plugin-svelte": "^2.2.0",
     "prettier-plugin-toml": "^0.3.1"
   },
   "publishConfig": {
