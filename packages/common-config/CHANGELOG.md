@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.11](https://github.com/1stG/configs/compare/@1stg/common-config@1.2.10...@1stg/common-config@1.2.11) (2021-03-14)
+
+
+### Bug Fixes
+
+* should extends base.json ([59c860b](https://github.com/1stG/configs/commit/59c860b021db7b28afa62a2790fa621a4ad9cb0b))
+
+
+
+
+
 ## [1.2.10](https://github.com/1stG/configs/compare/@1stg/common-config@1.2.9...@1stg/common-config@1.2.10) (2021-03-02)
 
 **Note:** Version bump only for package @1stg/common-config

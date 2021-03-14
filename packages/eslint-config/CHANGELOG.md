@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.8.1](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.8.0...@1stg/eslint-config@1.8.1) (2021-03-14)
+
+
+### Bug Fixes
+
+* should extends base.json ([59c860b](https://github.com/1stG/configs/commit/59c860b021db7b28afa62a2790fa621a4ad9cb0b))
+
+
+
+
+
 # [1.8.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.7.3...@1stg/eslint-config@1.8.0) (2021-03-02)
 
 
