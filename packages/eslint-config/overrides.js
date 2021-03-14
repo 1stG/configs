@@ -142,8 +142,11 @@ const tsBase = {
       {
         allowAliases: 'in-unions-and-intersections',
         allowCallbacks: 'always',
+        allowConditionalTypes: 'always',
+        allowConstructors: 'always',
         allowLiterals: 'in-unions-and-intersections',
         allowMappedTypes: 'always',
+        allowTupleTypes: 'always',
       },
     ],
     '@typescript-eslint/no-use-before-define': [

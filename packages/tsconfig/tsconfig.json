@@ -5,9 +5,9 @@
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "incremental": true,
-    "jsx": "react",
-    "lib": ["dom", "esnext"],
-    "module": "esnext",
+    "jsx": "preserve",
+    "lib": ["ESNext"],
+    "module": "ESNext",
     "moduleResolution": "node",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -16,6 +16,6 @@
     "sourceMap": true,
     "strict": true,
     "stripInternal": true,
-    "target": "es5"
+    "target": "ES2015"
   }
 }

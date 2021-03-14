@@ -1,15 +1,11 @@
 {
   "$schema": "http://json.schemastore.org/tsconfig",
-  "extends": "./app.json",
+  "extends": "./ng-lib.json",
   "compilerOptions": {
-    "emitDecoratorMetadata": true,
-    "target": "es2015"
-  },
-  "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true,
-    "strictMetadataEmit": true,
-    "strictTemplates": true,
-    "trace": true
+    "declaration": false,
+    "paths": {
+      "*": ["src/*"]
+    },
+    "outDir": "dist"
   }
 }

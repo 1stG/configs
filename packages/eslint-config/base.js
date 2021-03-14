@@ -15,11 +15,11 @@ module.exports = {
     'plugin:node/recommended',
     'plugin:promise/recommended',
     'plugin:sonarjs/recommended',
+    'plugin:sonar/recommended',
     'plugin:unicorn/recommended',
     'standard',
     'plugin:prettier/recommended',
   ],
-  plugins: ['sonar'],
   settings: {
     node: {
       allowModules,
@@ -90,7 +90,6 @@ module.exports = {
     'node/no-unpublished-require': 0,
     'prefer-const': 2,
     'prefer-object-spread': 2,
-    'sonar/deprecation': 1,
     'unicorn/catch-error-name': [
       2,
       {
