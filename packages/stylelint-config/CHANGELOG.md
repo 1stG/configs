@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/1stG/configs/compare/@1stg/stylelint-config@1.2.1...@1stg/stylelint-config@1.3.0) (2021-03-14)
+
+
+### Features
+
+* enable plugin:sonar/recommended, refactor tsconfig/tslint files ([70c8a99](https://github.com/1stG/configs/commit/70c8a99f89f3ef276be45c6a02cf10854a00b20a))
+
+
+
+
+
 ## [1.2.1](https://github.com/1stG/configs/compare/@1stg/stylelint-config@1.2.0...@1stg/stylelint-config@1.2.1) (2021-02-28)
 
 
