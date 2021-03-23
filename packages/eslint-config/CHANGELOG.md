@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.1](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.10.0...@1stg/eslint-config@1.10.1) (2021-03-23)
+
+
+### Bug Fixes
+
+* add .*.js files should be considered as non source ([f9a1d3e](https://github.com/1stG/configs/commit/f9a1d3e8158202eeda3351303712792e47b30b51))
+* consider .storybook folder too ([f4841d0](https://github.com/1stG/configs/commit/f4841d0393618f0028248fdeed92035b2dfb114a))
+
+
+
+
+
 # [1.10.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.9.0...@1stg/eslint-config@1.10.0) (2021-03-23)
 
 
