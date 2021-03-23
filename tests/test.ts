@@ -16,6 +16,13 @@ class Basic {
   prop: string = content
 }
 
+const decorator: ClassDecorator = () => {
+  //
+}
+
+@decorator
+export class Empty {}
+
 interface X {
   m: number
   p?: Position
@@ -75,8 +82,7 @@ try {
 
 /**
  * unexpected on ts 4.2, related to:
- * @link https://github.com/ReactiveX/rxjs/issues/6060
- * @link https://community.sonarsource.com/t/unexpected-deprecation-warnings-reported/39441
+ * @link https://github.com/microsoft/TypeScript/issues/43053
  */
 interval(1000).subscribe()
 

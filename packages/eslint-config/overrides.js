@@ -2,7 +2,6 @@
 const path = require('path')
 
 const {
-  isAngularAvailable,
   isReactAvailable,
   isPkgAvailable,
   isSvelteAvailable,
@@ -23,11 +22,15 @@ const configFile =
 const jsBase = {
   files: ['*.mjs', '*.js', '*.jsx'],
   parser: '@babel/eslint-parser',
-  parserOptions: configFile && {
-    babelOptions: {
-      configFile,
-    },
-  },
+  parserOptions: configFile
+    ? {
+        babelOptions: {
+          configFile,
+        },
+      }
+    : {
+        requireConfigFile: false,
+      },
   plugins: ['@babel'],
   rules: {
     camelcase: [
@@ -191,6 +194,8 @@ const tsBase = {
     'promise/catch-or-return': 0,
     // ts itself has guaranteed it
     'unicorn/no-array-callback-reference': 0,
+    // already handled by @typescript-eslint/no-extraneous-class
+    'unicorn/no-static-only-class': 0,
   },
 }
 
@@ -274,29 +279,6 @@ exports.tslint = {
   },
 }
 
-exports.angular = [
-  {
-    files: [
-      '*.directive.ts',
-      '*.component.ts',
-      '*.interceptor.ts',
-      '*.guard.ts',
-      '*.module.ts',
-      '*.pipe.ts',
-      '*.service.ts',
-      '*.validator.ts',
-      'component.ts',
-      'module.ts',
-    ],
-    rules: {
-      /**
-       * @link https://github.com/typescript-eslint/typescript-eslint/issues/3114
-       */
-      '@typescript-eslint/no-extraneous-class': 0,
-    },
-  },
-]
-
 const reactJsx = {
   extends: ['standard-react', 'plugin:react/recommended', 'prettier'],
   settings: {
@@ -318,6 +300,7 @@ exports.react = [
           eventHandlerPropPrefix: 'on',
         },
       ],
+      'sonar/function-name': [2, { format: '^_?[a-zA-Z][a-zA-Z0-9]*\\$?$' }],
     },
     ...reactJsx,
   },
@@ -416,7 +399,7 @@ const nonSourceRules = {
 }
 
 exports.test = {
-  files: '**/{__test__,test,tests}/**/*.{js,jsx,mdx,mjs,svelte,ts,tsx,vue}',
+  files: '**/{__test__,test,tests}/**/*',
   rules: nonSourceRules,
 }
 
@@ -426,8 +409,13 @@ exports.jest = {
   rules: exports.test.rules,
 }
 
+exports.scripts = {
+  files: '**/scripts/**/*',
+  rules: nonSourceRules,
+}
+
 exports.stories = {
-  files: '**/stories/**/*.{js,jsx,mdx,mjs,svelte,ts,tsx,vue}',
+  files: '**/stories/**/*',
   rules: nonSourceRules,
 }
 
@@ -442,7 +430,6 @@ exports.overrides = []
     isPkgAvailable('@babel/core') && exports.js,
     isTsAvailable && exports.ts,
     isPkgAvailable('tslint') && lintFile && exports.tslint,
-    isAngularAvailable && exports.angular,
     isReactAvailable && exports.react,
     isReactAvailable && exports.reactHooks,
     isReactAvailable && exports.reactTs,
@@ -452,6 +439,7 @@ exports.overrides = []
     exports.mdx,
     isPkgAvailable('jest') && exports.jest,
     exports.test,
+    exports.scripts,
     exports.stories,
     exports.config,
     exports.dTs,
