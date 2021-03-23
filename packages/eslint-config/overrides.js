@@ -419,8 +419,8 @@ exports.stories = {
   rules: nonSourceRules,
 }
 
-exports.config = {
-  files: ['.*rc.js', '*.config.{js,ts}'],
+exports.configs = {
+  files: ['.*.js', '*.config.{js,ts}'],
   rules: nonSourceRules,
 }
 
@@ -441,7 +441,7 @@ exports.overrides = []
     exports.test,
     exports.scripts,
     exports.stories,
-    exports.config,
+    exports.configs,
     exports.dTs,
   )
   .filter(Boolean)
