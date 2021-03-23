@@ -20,7 +20,7 @@
     "lint:scss": "stylelint --cache 'tests/*.{scss,vue}'",
     "lint:ts": "tslint -p . -t stylish",
     "lint:tsc": "tsc",
-    "postinstall": "yarn-deduplicate --strategy fewer || exit 0",
+    "postinstall": "simple-git-hooks && yarn-deduplicate --strategy fewer || exit 0",
     "test": "jest ---collectCoverage",
     "typecov": "type-coverage"
   },
