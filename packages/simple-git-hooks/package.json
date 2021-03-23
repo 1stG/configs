@@ -6,6 +6,8 @@
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "peerDependencies": {
+    "@commitlint/cli": ">=11.0.0",
+    "lint-staged": ">=9.0.0",
     "simple-git-hooks": ">=2.2.0"
   },
   "publishConfig": {
