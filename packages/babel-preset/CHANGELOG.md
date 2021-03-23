@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/1stG/configs/compare/@1stg/babel-preset@1.5.0...@1stg/babel-preset@1.6.0) (2021-03-23)
+
+
+### Features
+
+* use @rxts/eslint-plugin-prettier temporarily ([46dde2e](https://github.com/1stG/configs/commit/46dde2eb75ae2594d2351f8ad11ec9a25506db4a))
+
+
+
+
+
 # [1.5.0](https://github.com/1stG/configs/compare/@1stg/babel-preset@1.4.0...@1stg/babel-preset@1.5.0) (2021-03-14)
 
 
