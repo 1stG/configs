@@ -415,7 +415,7 @@ exports.scripts = {
 }
 
 exports.stories = {
-  files: '**/stories/**/*',
+  files: ['**/.storybook/**/*', '**/stories/**/*'],
   rules: nonSourceRules,
 }
 
