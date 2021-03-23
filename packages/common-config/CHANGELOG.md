@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.4](https://github.com/1stG/configs/compare/@1stg/common-config@1.3.3...@1stg/common-config@1.3.4) (2021-03-23)
+
+
+### Bug Fixes
+
+* @commitlint/cli should be installed automatically ([d69b4fb](https://github.com/1stG/configs/commit/d69b4fb2b42e2bfed76e4509c57b82a52f12d68c))
+
+
+
+
+
 ## [1.3.3](https://github.com/1stG/configs/compare/@1stg/common-config@1.3.2...@1stg/common-config@1.3.3) (2021-03-23)
 
 **Note:** Version bump only for package @1stg/common-config
