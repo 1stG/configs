@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.2](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.10.1...@1stg/eslint-config@1.10.2) (2021-03-25)
+
+
+### Bug Fixes
+
+* **eslint-config:** disable no-labels in favor of snoar/no-labels ([2471d37](https://github.com/1stG/configs/commit/2471d373a8ec162e1b5d90a3441299c58571d31a))
+
+
+
+
+
 ## [1.10.1](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.10.0...@1stg/eslint-config@1.10.1) (2021-03-23)
 
 
