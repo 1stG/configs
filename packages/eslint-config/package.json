@@ -29,7 +29,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "npm:@rxts/eslint-plugin-prettier@^3.4.0-1",
     "eslint-plugin-promise": "^4.3.1",
-    "eslint-plugin-react": "^7.23.0",
+    "eslint-plugin-react": "^7.23.1",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-sonar": "^0.4.0",
     "eslint-plugin-sonarjs": "^0.6.0",

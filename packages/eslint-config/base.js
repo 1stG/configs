@@ -74,6 +74,7 @@ module.exports = {
       },
     ],
     'no-empty-function': 2,
+    'no-labels': 0, // sonar/no-labels
     'no-magic-numbers': [
       2,
       {
