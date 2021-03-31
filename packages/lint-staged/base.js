@@ -7,7 +7,7 @@ const config = [
 ].reduce(
   (acc, files) =>
     Object.assign(acc, {
-      [files]: ['prettier --write'],
+      [files]: 'prettier --write',
     }),
   {},
 )
@@ -16,14 +16,14 @@ if (isPkgAvailable('eslint')) {
   Object.assign(
     config,
     {
-      '*.{js,jsx,md,mdx,mjs,svelte,vue}': ['eslint --cache -f friendly --fix'],
+      '*.{js,jsx,md,mdx,mjs,svelte,vue}': 'eslint --cache -f friendly --fix',
     },
     require('./ts-eslint'),
   )
 }
 
 if (isPkgAvailable('stylelint')) {
-  config['*.{css,less,sass,scss,vue}'] = ['stylelint --cache --fix']
+  config['*.{css,less,sass,scss,vue}'] = 'stylelint --cache --fix'
 }
 
 if (isPkgAvailable('tslint') && tryFile('tslint.json')) {
@@ -31,7 +31,7 @@ if (isPkgAvailable('tslint') && tryFile('tslint.json')) {
 }
 
 if (isPkgAvailable('@pkgr/imagemin')) {
-  config['*.{gif,jpeg,jpg,png,svg,webp}'] = ['i']
+  config['*.{gif,jpeg,jpg,png,svg,webp}'] = 'i'
 }
 
 module.exports = config
