@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/1stG/configs/compare/@1stg/lint-staged@1.2.1...@1stg/lint-staged@1.3.0) (2021-03-31)
+
+
+### Features
+
+* **lint-staged:** add ngc config for html and ts files ([87b28a9](https://github.com/1stG/configs/commit/87b28a9a6c45c88d79e262025c1723ba1f2161c6))
+
+
+
+
+
 ## [1.2.1](https://github.com/1stG/configs/compare/@1stg/lint-staged@1.2.0...@1stg/lint-staged@1.2.1) (2021-03-23)
 
 **Note:** Version bump only for package @1stg/lint-staged

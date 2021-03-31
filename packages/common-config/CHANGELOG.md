@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.6](https://github.com/1stG/configs/compare/@1stg/common-config@1.3.5...@1stg/common-config@1.3.6) (2021-03-31)
+
+**Note:** Version bump only for package @1stg/common-config
+
+
+
+
+
 ## [1.3.5](https://github.com/1stG/configs/compare/@1stg/common-config@1.3.4...@1stg/common-config@1.3.5) (2021-03-25)
 
 **Note:** Version bump only for package @1stg/common-config
