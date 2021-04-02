@@ -20,7 +20,7 @@ const configFile =
   tryPkg('@1stg/babel-preset/config')
 
 const jsBase = {
-  files: ['*.mjs', '*.js', '*.jsx'],
+  files: ['*.cjs', '*.mjs', '*.js', '*.jsx'],
   parser: '@babel/eslint-parser',
   parserOptions: configFile
     ? {
@@ -49,7 +49,14 @@ const jsBase = {
   },
 }
 
-exports.js = jsBase
+exports.js = {
+  ...jsBase,
+  extends: ['plugin:jsdoc/recommended'],
+  rules: {
+    ...jsBase.rules,
+    'jsdoc/require-jsdoc': 0,
+  },
+}
 
 const project =
   tryFile(path.resolve('tsconfig.eslint.json')) ||

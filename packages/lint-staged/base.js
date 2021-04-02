@@ -16,7 +16,8 @@ if (isPkgAvailable('eslint')) {
   Object.assign(
     config,
     {
-      '*.{js,jsx,md,mdx,mjs,svelte,vue}': 'eslint --cache -f friendly --fix',
+      '*.{cjs,js,jsx,md,mdx,mjs,svelte,vue}':
+        'eslint --cache -f friendly --fix',
     },
     require('./ts-eslint'),
   )

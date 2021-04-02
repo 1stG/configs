@@ -5,7 +5,9 @@
     "emitDecoratorMetadata": true
   },
   "angularCompilerOptions": {
+    "enableIvy": false,
     "fullTemplateTypeCheck": true,
+    "preserveWhitespaces": false,
     "strictInjectionParameters": true,
     "strictMetadataEmit": true,
     "strictTemplates": true,
