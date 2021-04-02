@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/1stG/configs/compare/@1stg/app-config@1.3.6...@1stg/app-config@1.4.0) (2021-04-02)
+
+
+### Features
+
+* enable eslint-plugin-jsdoc, disable ivy for ng-lib ([988f810](https://github.com/1stG/configs/commit/988f8102eb43a932528561948eab61b97f270551))
+
+
+
+
+
 ## [1.3.6](https://github.com/1stG/configs/compare/@1stg/app-config@1.3.5...@1stg/app-config@1.3.6) (2021-03-31)
 
 **Note:** Version bump only for package @1stg/app-config

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/1stG/configs/compare/@1stg/babel-preset@1.6.0...@1stg/babel-preset@1.7.0) (2021-04-02)
+
+
+### Features
+
+* enable eslint-plugin-jsdoc, disable ivy for ng-lib ([988f810](https://github.com/1stG/configs/commit/988f8102eb43a932528561948eab61b97f270551))
+
+
+
+
+
 # [1.6.0](https://github.com/1stG/configs/compare/@1stg/babel-preset@1.5.0...@1stg/babel-preset@1.6.0) (2021-03-23)
 
 
