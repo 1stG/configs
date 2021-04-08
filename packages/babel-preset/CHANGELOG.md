@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.1](https://github.com/1stG/configs/compare/@1stg/babel-preset@1.7.0...@1stg/babel-preset@1.7.1) (2021-04-08)
+
+
+### Bug Fixes
+
+* disable unicorn/no-unreadable-array-destructuring ([b194734](https://github.com/1stG/configs/commit/b194734bab6dcc003a5e603feb00b860655338e2))
+
+
+
+
+
 # [1.7.0](https://github.com/1stG/configs/compare/@1stg/babel-preset@1.6.0...@1stg/babel-preset@1.7.0) (2021-04-02)
 
 
