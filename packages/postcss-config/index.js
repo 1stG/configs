@@ -11,10 +11,10 @@ module.exports = ({
   ...options
 } = {}) => {
   const plugins = [
-    require('postcss-preset-env', presetEnv),
-    require('postcss-import', importOptions),
-    require('postcss-normalize', normalize),
-    require('postcss-url', url),
+    require('postcss-preset-env')(presetEnv),
+    require('postcss-import')(importOptions),
+    require('postcss-normalize')(normalize),
+    require('postcss-url')(url),
     require('autoprefixer'),
   ]
 
@@ -23,7 +23,7 @@ module.exports = ({
 
   if (modules) {
     plugins.push(
-      require('postcss-modules', {
+      require('postcss-modules')({
         globalModulePaths: [
           /[/\\]node_modules[/\\]/,
           /(\bglobals?[/\\][\w-]+|\.globals?)\.(p?css|less|s[ac]ss|styl(us)?)$/,
@@ -38,7 +38,7 @@ module.exports = ({
 
   if (isProd) {
     plugins.push(
-      require('cssnano', {
+      require('cssnano')({
         preset: [
           advanced ? 'advanced' : 'default',
           {
