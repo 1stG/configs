@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.12.0](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.11.1...@1stg/eslint-config@1.12.0) (2021-04-15)
+
+
+### Features
+
+* use official eslint-plugin-prettier again, fix postcss config ([a05fefc](https://github.com/1stG/configs/commit/a05fefcc7fcc3255dcd3415741697daf69643660))
+
+
+
+
+
 ## [1.11.1](https://github.com/1stG/configs/compare/@1stg/eslint-config@1.11.0...@1stg/eslint-config@1.11.1) (2021-04-08)
 
 
