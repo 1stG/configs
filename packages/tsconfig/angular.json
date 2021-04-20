@@ -9,6 +9,7 @@
     "outDir": "dist"
   },
   "angularCompilerOptions": {
-    "enableIvy": true
+    "enableIvy": true,
+    "strictMetadataEmit": false
   }
 }
