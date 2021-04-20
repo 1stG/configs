@@ -8,7 +8,7 @@
   "dependencies": {
     "@commitlint/config-conventional": "^12.1.1",
     "@commitlint/config-lerna-scopes": "^12.1.1",
-    "@pkgr/utils": "^0.6.0"
+    "@pkgr/utils": "^0.7.0"
   },
   "publishConfig": {
     "access": "public"
