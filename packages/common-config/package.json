@@ -1,6 +1,6 @@
 {
   "name": "@1stg/common-config",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Personal but Shareable Common Configuration for all 1stG.me projects.",
   "repository": "git+https://github.com/1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/common-config",
@@ -10,14 +10,14 @@
     "node": ">=10.0.0"
   },
   "dependencies": {
-    "@1stg/babel-preset": "^1.8.0",
-    "@1stg/commitlint-config": "^1.1.0",
-    "@1stg/eslint-config": "^1.12.0",
-    "@1stg/lint-staged": "^1.4.0",
-    "@1stg/prettier-config": "^1.7.0",
+    "@1stg/babel-preset": "^1.8.1",
+    "@1stg/commitlint-config": "^1.1.1",
+    "@1stg/eslint-config": "^1.12.1",
+    "@1stg/lint-staged": "^1.4.1",
+    "@1stg/prettier-config": "^1.7.1",
     "@1stg/remark-config": "^1.1.0",
     "@1stg/simple-git-hooks": "^0.1.2",
-    "@1stg/tsconfig": "^1.3.0",
+    "@1stg/tsconfig": "^1.3.1",
     "@babel/core": "^7.13.15",
     "@commitlint/cli": "^12.1.1",
     "eslint": "^7.24.0",

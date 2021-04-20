@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.7.1](https://github.com/1stG/configs/compare/@1stg/prettier-config@1.7.0...@1stg/prettier-config@1.7.1) (2021-04-20)
+
+
+### Bug Fixes
+
+* upgrade [@pkgr](https://github.com/pkgr) packages ([044f5fc](https://github.com/1stG/configs/commit/044f5fc19e149b4ea756f026a92176aa44f417be))
+
+
+
+
+
 # [1.7.0](https://github.com/1stG/configs/compare/@1stg/prettier-config@1.6.0...@1stg/prettier-config@1.7.0) (2021-04-02)
 
 

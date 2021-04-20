@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.10](https://github.com/1stG/configs/compare/@1stg/lib-config@1.2.9...@1stg/lib-config@1.2.10) (2021-04-20)
+
+
+### Bug Fixes
+
+* upgrade [@pkgr](https://github.com/pkgr) packages ([044f5fc](https://github.com/1stG/configs/commit/044f5fc19e149b4ea756f026a92176aa44f417be))
+
+
+
+
+
 ## [1.2.9](https://github.com/1stG/configs/compare/@1stg/lib-config@1.2.8...@1stg/lib-config@1.2.9) (2021-04-15)
 
 **Note:** Version bump only for package @1stg/lib-config
