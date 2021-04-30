@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.11](https://github.com/1stG/configs/compare/@1stg/lib-config@1.2.10...@1stg/lib-config@1.2.11) (2021-04-30)
+
+
+### Bug Fixes
+
+* **eslint-config:** bump (dev)Dependencies except babel, disbale few rules ([12d125f](https://github.com/1stG/configs/commit/12d125f63075997e393c8f958189db8556c99b6f))
+
+
+
+
+
 ## [1.2.10](https://github.com/1stG/configs/compare/@1stg/lib-config@1.2.9...@1stg/lib-config@1.2.10) (2021-04-20)
 
 
