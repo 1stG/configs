@@ -55,7 +55,15 @@ exports.js = {
   rules: {
     ...jsBase.rules,
     'jsdoc/require-jsdoc': 0,
+    'jsdoc/require-param-description': 0,
   },
+  settings: isTsAvailable
+    ? {
+        jsdoc: {
+          mode: 'typescript',
+        },
+      }
+    : undefined,
 }
 
 const project =
@@ -366,7 +374,9 @@ const svelteBase = {
   plugins: ['svelte'],
   processor: 'svelte/svelte',
   rules: {
-    'prettier/prettier': 0, // https://github.com/sveltejs/eslint-plugin-svelte3/issues/16
+    'prettier/prettier': 0, // https://github.com/sveltejs/eslint-plugin-svelte3/issues/16,
+    'sonar/label-position': 0,
+    'sonar/no-labels': 0,
   },
 }
 
@@ -416,17 +426,17 @@ exports.jest = {
   rules: exports.test.rules,
 }
 
-exports.scripts = {
+exports.script = exports.scripts = {
   files: '**/scripts/**/*',
   rules: nonSourceRules,
 }
 
-exports.stories = {
+exports.story = exports.stories = {
   files: ['**/.storybook/**/*', '**/stories/**/*'],
   rules: nonSourceRules,
 }
 
-exports.configs = {
+exports.config = exports.configs = {
   files: ['.*.js', '*.config.{js,ts}'],
   rules: nonSourceRules,
 }

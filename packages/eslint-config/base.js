@@ -113,6 +113,8 @@ module.exports = {
     'unicorn/no-array-reduce': 0,
     'unicorn/no-null': 0,
     'unicorn/no-unreadable-array-destructuring': 0, // conflict with `no-unused-vars`
+    'unicorn/prefer-module': 0,
+    'unicorn/prefer-node-protocol': 0,
     'unicorn/prevent-abbreviations': 0,
   },
 }
