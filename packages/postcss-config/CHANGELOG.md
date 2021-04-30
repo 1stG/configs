@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.2](https://github.com/1stG/configs/compare/@1stg/postcss-config@1.5.1...@1stg/postcss-config@1.5.2) (2021-04-30)
+
+
+### Bug Fixes
+
+* **postcss-config:** accept postcss-normalize 9.0.0 for compatibility ([baf9307](https://github.com/1stG/configs/commit/baf93070e7de269abaeb25a88aee7d540717942a))
+
+
+
+
+
 ## [1.5.1](https://github.com/1stG/configs/compare/@1stg/postcss-config@1.5.0...@1stg/postcss-config@1.5.1) (2021-04-30)
 
 
