@@ -9,9 +9,6 @@
 - Updated dependencies [[`397cba1`](https://github.com/1stG/configs/commit/397cba1c6abc657ac4f7d54868d113e3012a05e0)]:
   - @1stg/prettier-config@1.7.3
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
-
 ## [1.4.2](https://github.com/1stG/configs/compare/@1stg/lint-staged@1.4.1...@1stg/lint-staged@1.4.2) (2021-04-30)
 
 ### Bug Fixes

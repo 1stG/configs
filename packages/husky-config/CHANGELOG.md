@@ -6,9 +6,6 @@
 
 - [#18](https://github.com/1stG/configs/pull/18) [`397cba1`](https://github.com/1stG/configs/commit/397cba1c6abc657ac4f7d54868d113e3012a05e0) Thanks [@JounQin](https://github.com/JounQin)! - feat!: bump deps, require node 12, use changesets
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
-
 ## [1.0.3](https://github.com/1stG/configs/compare/@1stg/husky-config@1.0.2...@1stg/husky-config@1.0.3) (2021-03-23)
 
 ### Bug Fixes

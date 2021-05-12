@@ -14,9 +14,6 @@
   - @1stg/lint-staged@1.4.3
   - @1stg/prettier-config@1.7.3
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
-
 ## [1.5.2](https://github.com/1stG/configs/compare/@1stg/common-config@1.5.1...@1stg/common-config@1.5.2) (2021-04-30)
 
 ### Bug Fixes

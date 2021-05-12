@@ -11,9 +11,6 @@
 - Updated dependencies [[`397cba1`](https://github.com/1stG/configs/commit/397cba1c6abc657ac4f7d54868d113e3012a05e0)]:
   - @1stg/common-config@2.0.0
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
-
 ## [1.2.11](https://github.com/1stG/configs/compare/@1stg/lib-config@1.2.10...@1stg/lib-config@1.2.11) (2021-04-30)
 
 ### Bug Fixes
