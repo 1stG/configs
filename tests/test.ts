@@ -80,10 +80,6 @@ try {
   console.log(y)
 } catch {}
 
-/**
- * unexpected on ts 4.2, related to:
- * @link https://github.com/microsoft/TypeScript/issues/43053
- */
 interval(1000).subscribe()
 
 new TestCase<number>().subscribe()
