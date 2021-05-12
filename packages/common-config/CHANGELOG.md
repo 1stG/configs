@@ -1,274 +1,158 @@
 # Change Log
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+## 2.0.0
+
+### Major Changes
+
+- [#18](https://github.com/1stG/configs/pull/18) [`397cba1`](https://github.com/1stG/configs/commit/397cba1c6abc657ac4f7d54868d113e3012a05e0) Thanks [@JounQin](https://github.com/JounQin)! - feat!: bump deps, require node 12, use changesets
+
+### Patch Changes
+
+- Updated dependencies [[`397cba1`](https://github.com/1stG/configs/commit/397cba1c6abc657ac4f7d54868d113e3012a05e0)]:
+  - @1stg/babel-preset@1.8.3
+  - @1stg/eslint-config@2.0.0
+  - @1stg/lint-staged@1.4.3
+  - @1stg/prettier-config@1.7.3
 
 ## [1.5.2](https://github.com/1stG/configs/compare/@1stg/common-config@1.5.1...@1stg/common-config@1.5.2) (2021-04-30)
 
-
 ### Bug Fixes
 
-* **eslint-config:** bump (dev)Dependencies except babel, disbale few rules ([12d125f](https://github.com/1stG/configs/commit/12d125f63075997e393c8f958189db8556c99b6f))
-
-
-
-
+- **eslint-config:** bump (dev)Dependencies except babel, disbale few rules ([12d125f](https://github.com/1stG/configs/commit/12d125f63075997e393c8f958189db8556c99b6f))
 
 ## [1.5.1](https://github.com/1stG/configs/compare/@1stg/common-config@1.5.0...@1stg/common-config@1.5.1) (2021-04-20)
 
 **Note:** Version bump only for package @1stg/common-config
 
-
-
-
-
 # [1.5.0](https://github.com/1stG/configs/compare/@1stg/common-config@1.4.1...@1stg/common-config@1.5.0) (2021-04-15)
-
 
 ### Features
 
-* use official eslint-plugin-prettier again, fix postcss config ([a05fefc](https://github.com/1stG/configs/commit/a05fefcc7fcc3255dcd3415741697daf69643660))
-
-
-
-
+- use official eslint-plugin-prettier again, fix postcss config ([a05fefc](https://github.com/1stG/configs/commit/a05fefcc7fcc3255dcd3415741697daf69643660))
 
 ## [1.4.1](https://github.com/1stG/configs/compare/@1stg/common-config@1.4.0...@1stg/common-config@1.4.1) (2021-04-08)
 
-
 ### Bug Fixes
 
-* disable unicorn/no-unreadable-array-destructuring ([b194734](https://github.com/1stG/configs/commit/b194734bab6dcc003a5e603feb00b860655338e2))
-
-
-
-
+- disable unicorn/no-unreadable-array-destructuring ([b194734](https://github.com/1stG/configs/commit/b194734bab6dcc003a5e603feb00b860655338e2))
 
 # [1.4.0](https://github.com/1stG/configs/compare/@1stg/common-config@1.3.6...@1stg/common-config@1.4.0) (2021-04-02)
 
-
 ### Features
 
-* enable eslint-plugin-jsdoc, disable ivy for ng-lib ([988f810](https://github.com/1stG/configs/commit/988f8102eb43a932528561948eab61b97f270551))
-
-
-
-
+- enable eslint-plugin-jsdoc, disable ivy for ng-lib ([988f810](https://github.com/1stG/configs/commit/988f8102eb43a932528561948eab61b97f270551))
 
 ## [1.3.6](https://github.com/1stG/configs/compare/@1stg/common-config@1.3.5...@1stg/common-config@1.3.6) (2021-03-31)
 
 **Note:** Version bump only for package @1stg/common-config
 
-
-
-
-
 ## [1.3.5](https://github.com/1stG/configs/compare/@1stg/common-config@1.3.4...@1stg/common-config@1.3.5) (2021-03-25)
 
 **Note:** Version bump only for package @1stg/common-config
 
-
-
-
-
 ## [1.3.4](https://github.com/1stG/configs/compare/@1stg/common-config@1.3.3...@1stg/common-config@1.3.4) (2021-03-23)
-
 
 ### Bug Fixes
 
-* @commitlint/cli should be installed automatically ([d69b4fb](https://github.com/1stG/configs/commit/d69b4fb2b42e2bfed76e4509c57b82a52f12d68c))
-
-
-
-
+- @commitlint/cli should be installed automatically ([d69b4fb](https://github.com/1stG/configs/commit/d69b4fb2b42e2bfed76e4509c57b82a52f12d68c))
 
 ## [1.3.3](https://github.com/1stG/configs/compare/@1stg/common-config@1.3.2...@1stg/common-config@1.3.3) (2021-03-23)
 
 **Note:** Version bump only for package @1stg/common-config
 
-
-
-
-
 ## [1.3.2](https://github.com/1stG/configs/compare/@1stg/common-config@1.3.1...@1stg/common-config@1.3.2) (2021-03-23)
 
 **Note:** Version bump only for package @1stg/common-config
-
-
-
-
 
 ## [1.3.1](https://github.com/1stG/configs/compare/@1stg/common-config@1.3.0...@1stg/common-config@1.3.1) (2021-03-23)
 
 **Note:** Version bump only for package @1stg/common-config
 
-
-
-
-
 # [1.3.0](https://github.com/1stG/configs/compare/@1stg/common-config@1.2.10...@1stg/common-config@1.3.0) (2021-03-14)
-
 
 ### Features
 
-* enable plugin:sonar/recommended, refactor tsconfig/tslint files ([70c8a99](https://github.com/1stG/configs/commit/70c8a99f89f3ef276be45c6a02cf10854a00b20a))
-
-
-
-
+- enable plugin:sonar/recommended, refactor tsconfig/tslint files ([70c8a99](https://github.com/1stG/configs/commit/70c8a99f89f3ef276be45c6a02cf10854a00b20a))
 
 ## [1.2.10](https://github.com/1stG/configs/compare/@1stg/common-config@1.2.9...@1stg/common-config@1.2.10) (2021-03-02)
 
 **Note:** Version bump only for package @1stg/common-config
 
-
-
-
-
 ## [1.2.9](https://github.com/1stG/configs/compare/@1stg/common-config@1.2.8...@1stg/common-config@1.2.9) (2021-02-28)
-
 
 ### Bug Fixes
 
-* **stylelint-config:** use official stylelint-prettier ([39599d8](https://github.com/1stG/configs/commit/39599d84cc4121d2a6c81272dabf718a1df9c628))
-
-
-
-
+- **stylelint-config:** use official stylelint-prettier ([39599d8](https://github.com/1stG/configs/commit/39599d84cc4121d2a6c81272dabf718a1df9c628))
 
 ## [1.2.8](https://github.com/1stG/configs/compare/@1stg/common-config@1.2.7...@1stg/common-config@1.2.8) (2021-02-25)
 
 **Note:** Version bump only for package @1stg/common-config
 
-
-
-
-
 ## [1.2.7](https://github.com/1stG/configs/compare/@1stg/common-config@1.2.6...@1stg/common-config@1.2.7) (2021-02-25)
 
 **Note:** Version bump only for package @1stg/common-config
-
-
-
-
 
 ## [1.2.6](https://github.com/1stG/configs/compare/@1stg/common-config@1.2.5...@1stg/common-config@1.2.6) (2021-02-25)
 
 **Note:** Version bump only for package @1stg/common-config
 
-
-
-
-
 ## [1.2.5](https://github.com/1stG/configs/compare/@1stg/common-config@1.2.4...@1stg/common-config@1.2.5) (2021-02-23)
 
 **Note:** Version bump only for package @1stg/common-config
-
-
-
-
 
 ## [1.2.4](https://github.com/1stG/configs/compare/@1stg/common-config@1.2.3...@1stg/common-config@1.2.4) (2021-02-23)
 
 **Note:** Version bump only for package @1stg/common-config
 
-
-
-
-
 ## [1.2.3](https://github.com/1stG/configs/compare/@1stg/common-config@1.2.2...@1stg/common-config@1.2.3) (2021-02-23)
 
 **Note:** Version bump only for package @1stg/common-config
 
-
-
-
-
 ## [1.2.2](https://github.com/1stG/configs/compare/@1stg/common-config@1.2.1...@1stg/common-config@1.2.2) (2021-02-23)
-
 
 ### Bug Fixes
 
-* **eslint-config:** no-negated-condition is not auto-fixable, so disable in loose mode ([68196ad](https://github.com/1stG/configs/commit/68196ad34fbab181f6be4e2bdf63d8ba9de5ecb5))
-
-
-
-
+- **eslint-config:** no-negated-condition is not auto-fixable, so disable in loose mode ([68196ad](https://github.com/1stG/configs/commit/68196ad34fbab181f6be4e2bdf63d8ba9de5ecb5))
 
 ## [1.2.1](https://github.com/1stG/configs/compare/@1stg/common-config@1.2.0...@1stg/common-config@1.2.1) (2021-02-22)
 
 **Note:** Version bump only for package @1stg/common-config
 
-
-
-
-
 # [1.2.0](https://github.com/1stG/configs/compare/@1stg/common-config@1.1.2...@1stg/common-config@1.2.0) (2021-02-20)
-
 
 ### Features
 
-* **eslint-config:** enable eslint-comments, enforce function style ([5bb2286](https://github.com/1stG/configs/commit/5bb2286d5ccf6e1dc9dbd05d8e0aa8d36b43f147))
-
-
-
-
+- **eslint-config:** enable eslint-comments, enforce function style ([5bb2286](https://github.com/1stG/configs/commit/5bb2286d5ccf6e1dc9dbd05d8e0aa8d36b43f147))
 
 ## [1.1.2](https://github.com/1stG/configs/compare/@1stg/common-config@1.1.1...@1stg/common-config@1.1.2) (2021-02-18)
 
 **Note:** Version bump only for package @1stg/common-config
 
-
-
-
-
 ## [1.1.1](https://github.com/1stG/configs/compare/@1stg/common-config@1.1.0...@1stg/common-config@1.1.1) (2021-02-18)
 
 **Note:** Version bump only for package @1stg/common-config
 
-
-
-
-
 # [1.1.0](https://github.com/1stG/configs/compare/@1stg/common-config@1.0.1...@1stg/common-config@1.1.0) (2021-02-16)
-
 
 ### Features
 
-* **eslint-config:** disable unicorn/prefer-spread for loose config ([7d42c93](https://github.com/1stG/configs/commit/7d42c936003b63ee7296201f0f692c886933c6fc))
-
-
-
-
+- **eslint-config:** disable unicorn/prefer-spread for loose config ([7d42c93](https://github.com/1stG/configs/commit/7d42c936003b63ee7296201f0f692c886933c6fc))
 
 ## [1.0.1](https://github.com/1stG/configs/compare/@1stg/common-config@1.0.0...@1stg/common-config@1.0.1) (2021-01-26)
 
 **Note:** Version bump only for package @1stg/common-config
 
-
-
-
-
 # [1.0.0](https://github.com/1stG/configs/compare/@1stg/common-config@0.1.1...@1stg/common-config@1.0.0) (2021-01-26)
 
 **Note:** Version bump only for package @1stg/common-config
-
-
-
-
 
 ## [0.1.1](https://github.com/1stG/configs/compare/@1stg/common-config@0.1.0...@1stg/common-config@0.1.1) (2021-01-26)
 
 **Note:** Version bump only for package @1stg/common-config
 
-
-
-
-
 # 0.1.0 (2020-11-27)
-
 
 ### Features
 
-* add ng-tslint support ([c852371](https://github.com/1stG/configs/commit/c85237108033a51c55ec2b15115453942bcb12cd))
-* upgrade all deps ([b615c2d](https://github.com/1stG/configs/commit/b615c2d6806898fcfeffda3048523a6e5286085c))
+- add ng-tslint support ([c852371](https://github.com/1stG/configs/commit/c85237108033a51c55ec2b15115453942bcb12cd))
+- upgrade all deps ([b615c2d](https://github.com/1stG/configs/commit/b615c2d6806898fcfeffda3048523a6e5286085c))
