@@ -7,7 +7,7 @@
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=12"
   },
   "dependencies": {
     "@1stg/common-config": "^1.5.2",

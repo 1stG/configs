@@ -6,7 +6,7 @@
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=12"
   },
   "peerDependencies": {
     "postcss": ">=7.0.0"
@@ -15,9 +15,9 @@
     "autoprefixer": "^10.2.5",
     "cssnano": "^5.0.2",
     "cssnano-preset-advanced": "^5.0.1",
-    "postcss-import": "^14.0.1",
+    "postcss-import": "^14.0.2",
     "postcss-modules": "^4.0.0",
-    "postcss-normalize": "^9.0.0 || ^10.0.0",
+    "postcss-normalize": "^10.0.0",
     "postcss-preset-env": "^6.7.0",
     "postcss-url": "^10.1.3"
   },

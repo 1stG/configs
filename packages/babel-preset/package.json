@@ -9,13 +9,13 @@
     "node": ">=6.9.0"
   },
   "peerDependencies": {
-    "@babel/core": ">=7.9.0"
+    "@babel/core": ">=7.14.1"
   },
   "dependencies": {
     "@babel/helper-plugin-utils": "^7.13.0",
     "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/plugin-proposal-decorators": "^7.13.15",
-    "@babel/preset-env": "^7.13.15",
+    "@babel/preset-env": "^7.14.1",
     "@babel/preset-react": "^7.13.13",
     "@babel/preset-typescript": "^7.13.0",
     "@pkgr/utils": "^0.7.1",
@@ -26,8 +26,8 @@
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "babel-plugin-transform-typescript-metadata": "^0.3.2",
-    "babel-preset-proposal-typescript": "^2.0.2",
-    "core-js": "^3.11.1",
+    "babel-preset-proposal-typescript": "^2.1.0",
+    "core-js": "^3.12.1",
     "fast-async": "^7.0.6"
   },
   "publishConfig": {

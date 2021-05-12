@@ -12,9 +12,9 @@
     "no-non-null-assertion": false,
     "no-restricted-globals": [true, "name", "length", "event"],
     "object-literal-sort-keys": false,
-    "ordered-imports": [
-      true,
-      {
+    "ordered-imports": {
+      "severity": "warning",
+      "options": {
         "grouped-imports": true,
         "import-sources-order": "lowercase-first",
         "named-imports-order": "lowercase-last",
@@ -27,7 +27,7 @@
           "^(?!\\./.*\\.(p?css|less|s[ac]ss|styl(us)?))"
         ]
       }
-    ],
+    },
     "prettier": true,
     "variable-name": [
       true,

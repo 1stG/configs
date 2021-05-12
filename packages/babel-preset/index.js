@@ -22,7 +22,7 @@ module.exports = declare(
       metadata,
       useBuiltIns = 'usage',
       decoratorsLegacy = true,
-      classLoose = decoratorsLegacy === true,
+      classLoose,
       decoratorsBeforeExport = decoratorsLegacy === true ? undefined : true,
     },
   ) => {
@@ -36,7 +36,6 @@ module.exports = declare(
     const proposalTsOptions = { classLoose, decoratorsLegacy, isTSX }
 
     const presets = [
-      [proposalTypeScriptPreset, proposalTsOptions],
       [
         require('@babel/preset-env'),
         {
@@ -60,6 +59,7 @@ module.exports = declare(
           useBuiltIns,
         },
       ],
+      [proposalTypeScriptPreset, proposalTsOptions],
     ]
 
     if (typescript) {
