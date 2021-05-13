@@ -35,6 +35,18 @@ module.exports = declare(
 
     const proposalTsOptions = { classLoose, decoratorsLegacy, isTSX }
 
+    if (esmodules !== undefined) {
+      console.warn(
+        '`esmodules` option is deprecated, please use top level `targets.esmodules` instead.\n' +
+          'Please view https://babeljs.io/docs/en/options#targetsesmodules for more information.',
+      )
+    }
+
+    /**
+     * presets are processed in last-to-first order
+     *
+     * @see https://babeljs.io/docs/en/presets#preset-ordering
+     */
     const presets = [
       [
         require('@babel/preset-env'),
@@ -63,7 +75,7 @@ module.exports = declare(
     ]
 
     if (typescript) {
-      presets.push([
+      presets.splice(-1, 0, [
         require('@babel/preset-typescript'),
         {
           isTSX,
