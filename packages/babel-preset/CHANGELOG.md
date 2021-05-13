@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.8.4
+
+### Patch Changes
+
+- [#20](https://github.com/1stG/configs/pull/20) [`3bc193a`](https://github.com/1stG/configs/commit/3bc193a6e4ba75e6d4e90c21d9e5e183e77038fb) Thanks [@JounQin](https://github.com/JounQin)! - feat(babel-preset): deprecate `esmodules` option, fix presets order
+
 ## 1.8.3
 
 ### Patch Changes
