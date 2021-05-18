@@ -414,6 +414,7 @@ exports.angular = [
   {
     files: '*.html',
     extends: ['plugin:@angular-eslint/template/recommended'],
+    parser: 'angular-eslint-template-parser',
     rules: {
       'prettier/prettier': 0,
     },
