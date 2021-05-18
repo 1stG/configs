@@ -2,6 +2,7 @@
 const path = require('path')
 
 const {
+  isAngularAvailable,
   isReactAvailable,
   isPkgAvailable,
   isSvelteAvailable,
@@ -397,9 +398,59 @@ exports.svelte = isTsAvailable
       ...svelteBase,
     }
 
+exports.angular = [
+  {
+    files: '*.ts',
+    excludedFiles: '*.d.ts',
+    extends: [
+      'plugin:@angular-eslint/recommended',
+      'plugin:@angular-eslint/template/process-inline-templates',
+      'prettier',
+    ],
+    rules: {
+      '@angular-eslint/prefer-on-push-component-change-detection': 1,
+    },
+  },
+  {
+    files: '*.html',
+    extends: ['plugin:@angular-eslint/template/recommended'],
+    parser: 'angular-eslint-template-parser',
+    rules: {
+      'prettier/prettier': 0,
+    },
+  },
+  {
+    files: '*.html',
+    excludedFiles: '*inline-template-*.component.html',
+    extends: ['prettier'],
+    rules: {
+      'prettier/prettier': [
+        2,
+        {
+          parser: 'angular',
+        },
+      ],
+    },
+  },
+  {
+    files: ['*inline-template-*.component.html'],
+    rules: {
+      'unicorn/filename-case': 0,
+    },
+  },
+]
+
 exports.md = {
   files: '*.md',
   extends: ['plugin:mdx/recommended'],
+  rules: {
+    'prettier/prettier': [
+      2,
+      {
+        parser: 'markdown',
+      },
+    ],
+  },
 }
 
 exports.mdx = {
@@ -452,6 +503,7 @@ exports.overrides = []
     isReactAvailable && exports.reactTs,
     isVueAvailable && exports.vue,
     isSvelteAvailable && exports.svelte,
+    isAngularAvailable && exports.angular,
     exports.md,
     exports.mdx,
     isPkgAvailable('jest') && exports.jest,
