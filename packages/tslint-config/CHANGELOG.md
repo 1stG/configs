@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.0.0
+
+### Major Changes
+
+- [#22](https://github.com/1stG/configs/pull/22) [`f227d44`](https://github.com/1stG/configs/commit/f227d44321aa2ea859c31874634f24cd8dde3652) Thanks [@JounQin](https://github.com/JounQin)! - feat: enable angular-eslint, disable tslint angilar rules
+
 ## 1.3.0
 
 ### Minor Changes
