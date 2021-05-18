@@ -38,6 +38,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
+      - name: Ignore Engines due to Angular
+        # https://github.com/angular/angular/pull/41544#issuecomment-840655866
+        if: matrix.node == 16
+        run: yarn config set ignore-engines true
+
       - name: Install Dependencies
         run: yarn --frozen-lockfile
 

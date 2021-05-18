@@ -6,7 +6,9 @@
     "paths": {
       "*": ["src/*"]
     },
-    "outDir": "dist"
+    "outDir": "dist",
+    "strictFunctionTypes": false,
+    "strictNullChecks": false
   },
   "angularCompilerOptions": {
     "enableIvy": true,
