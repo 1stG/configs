@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.1.1
+
+### Patch Changes
+
+- [#24](https://github.com/1stG/configs/pull/24) [`9cbf6b1`](https://github.com/1stG/configs/commit/9cbf6b1c3bc53a94ab61d52025b4e3170d468c4c) Thanks [@JounQin](https://github.com/JounQin)! - fix(eslint-config): disable spaced-comment on html files
+
 ## 2.1.0
 
 ### Minor Changes
