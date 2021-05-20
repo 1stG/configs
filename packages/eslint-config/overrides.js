@@ -413,6 +413,12 @@ exports.angular = [
   },
   {
     files: '*.html',
+    rules: {
+      'spaced-comment': 0,
+    },
+  },
+  {
+    files: '*.html',
     extends: ['plugin:@angular-eslint/template/recommended'],
     parser: 'angular-eslint-template-parser',
     rules: {

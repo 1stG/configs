@@ -1,6 +1,7 @@
 module.exports = {
   extends: ['@1stg'],
   rules: {
+    '@angular-eslint/template/no-negated-async': 0,
     '@typescript-eslint/member-ordering': 0,
     '@typescript-eslint/naming-convention': 0,
     '@typescript-eslint/no-explicit-any': 0,
