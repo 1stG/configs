@@ -12,7 +12,9 @@ module.exports = {
     '@typescript-eslint/no-unsafe-assignment': 0,
     '@typescript-eslint/no-unsafe-member-access': 0,
     '@typescript-eslint/no-unsafe-return': 0,
+    '@typescript-eslint/prefer-ts-expect-error': 0,
     '@typescript-eslint/restrict-plus-operands': 0,
+    '@typescript-eslint/sort-type-union-intersection-members': 0,
     '@typescript-eslint/unbound-method': 0,
     'no-magic-numbers': 0,
     'no-negated-condition': 0, // not auto-fixable
