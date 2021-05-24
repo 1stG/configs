@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.2.0
+
+### Minor Changes
+
+- [#26](https://github.com/1stG/configs/pull/26) [`4a07080`](https://github.com/1stG/configs/commit/4a070800e004177d09a801438c891def339a82a0) Thanks [@JounQin](https://github.com/JounQin)! - feat: enable stricter ts rules, bump `stylelint-no-unsupported-browser-features`
+
 ## 2.1.1
 
 ### Patch Changes
