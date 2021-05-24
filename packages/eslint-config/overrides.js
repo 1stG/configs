@@ -184,6 +184,9 @@ const tsBase = {
     ],
     '@typescript-eslint/prefer-for-of': 2,
     '@typescript-eslint/prefer-function-type': 2,
+    '@typescript-eslint/prefer-optional-chain': 2,
+    '@typescript-eslint/prefer-ts-expect-error': 2,
+    '@typescript-eslint/sort-type-union-intersection-members': 2,
     '@typescript-eslint/triple-slash-reference': [
       2,
       {
@@ -251,7 +254,16 @@ exports.ts = [
       '@typescript-eslint/no-unnecessary-condition': 2,
       '@typescript-eslint/no-unnecessary-qualifier': 2,
       '@typescript-eslint/no-unnecessary-type-arguments': 2,
+      '@typescript-eslint/prefer-nullish-coalescing': 2,
       '@typescript-eslint/prefer-readonly': 2,
+      '@typescript-eslint/prefer-reduce-type-parameter': 2,
+      '@typescript-eslint/prefer-string-starts-ends-with': 2,
+      '@typescript-eslint/require-array-sort-compare': [
+        2,
+        {
+          ignoreStringArrays: true,
+        },
+      ],
       '@typescript-eslint/restrict-plus-operands': 2,
       'no-constant-condition': 0,
       'no-magic-numbers': 0,

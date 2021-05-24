@@ -6,14 +6,14 @@
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "peerDependencies": {
-    "stylelint": ">=11.0.0"
+    "stylelint": ">=13.0.0"
   },
   "dependencies": {
     "@pkgr/utils": "^0.7.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-high-performance-animation": "^1.5.2",
-    "stylelint-no-unsupported-browser-features": "^4.1.4",
+    "stylelint-no-unsupported-browser-features": "^5.0.1",
     "stylelint-prettier": "^1.2.0",
     "stylelint-scss": "^3.19.0"
   },
