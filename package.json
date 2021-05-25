@@ -31,7 +31,7 @@
     "@changesets/changelog-github": "^0.4.0",
     "@changesets/cli": "^2.16.0",
     "@types/jest": "^26.0.23",
-    "@types/node": "^15.6.0",
+    "@types/node": "^15.6.1",
     "@types/react": "^17.0.6",
     "@types/unist": "^2.0.3",
     "core-js": "^3.12.1",

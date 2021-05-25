@@ -124,6 +124,14 @@ const tsBase = {
       },
     ],
     '@typescript-eslint/ban-ts-comment': 0,
+    '@typescript-eslint/ban-types': [
+      2,
+      {
+        types: {
+          object: false,
+        },
+      },
+    ],
     '@typescript-eslint/consistent-type-definitions': [2, 'interface'],
     '@typescript-eslint/explicit-function-return-type': 0,
     '@typescript-eslint/explicit-member-accessibility': [
@@ -206,15 +214,16 @@ const tsBase = {
     'no-unused-vars': 0,
     'no-use-before-define': 0,
     'no-useless-constructor': 0,
-    'node/no-missing-import': 0, // TypeScript itself has handle this
     'node/shebang': 0,
-    // @typescript-eslint/no-floating-promises has already handled there case
+    // covered by @typescript-eslint/no-floating-promises
     'promise/always-return': 0,
     'promise/catch-or-return': 0,
     // ts itself has guaranteed it
     'unicorn/no-array-callback-reference': 0,
-    // already handled by @typescript-eslint/no-extraneous-class
+    // covered by @typescript-eslint/no-extraneous-class
     'unicorn/no-static-only-class': 0,
+    // covered by @typescript-eslint/no-this-alias
+    'unicorn/no-this-assignment': 0,
   },
 }
 
