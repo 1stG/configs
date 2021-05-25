@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.2.1
+
+### Patch Changes
+
+- [#28](https://github.com/1stG/configs/pull/28) [`44b1e3f`](https://github.com/1stG/configs/commit/44b1e3f58b895d9fb4a5b5ce7dee7f7e6a817f9d) Thanks [@JounQin](https://github.com/JounQin)! - fix: disable some duplicate or unuseful rules
+
 ## 2.2.0
 
 ### Minor Changes
