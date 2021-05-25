@@ -1,11 +1,6 @@
 const { getGlobals } = require('eslint-plugin-mdx')
 
-const {
-  allowModules,
-  isWebpackAvailable,
-  magicNumbers,
-  webpackSpecVars,
-} = require('./_util')
+const { isWebpackAvailable, magicNumbers, webpackSpecVars } = require('./_util')
 
 module.exports = {
   extends: [
@@ -20,23 +15,6 @@ module.exports = {
     'standard',
     'plugin:prettier/recommended',
   ],
-  settings: {
-    node: {
-      allowModules,
-      tryExtensions: [
-        '.ts',
-        '.tsx',
-        '.vue',
-        '.svelte',
-        '.mjs',
-        '.js',
-        '.jsx',
-        '.json',
-        '.node',
-        '.mdx',
-      ],
-    },
-  },
   globals: isWebpackAvailable ? getGlobals(webpackSpecVars) : undefined,
   rules: {
     'arrow-body-style': 2,
@@ -55,6 +33,7 @@ module.exports = {
       },
     ],
     'eslint-comments/no-unused-disable': 2,
+    'import/newline-after-import': 2,
     'import/order': [
       2,
       {
@@ -85,6 +64,13 @@ module.exports = {
     ],
     'no-negated-condition': 2,
     'no-process-exit': 0, // suspended by unicorn/no-process-exit
+
+    // The following rules are duplicate with `eslint-plugin-import`
+    'node/no-extraneous-import': 0,
+    'node/no-extraneous-require': 0,
+    'node/no-missing-import': 0,
+    'node/no-missing-require': 0,
+
     'node/no-unsupported-features/es-syntax': 0,
     'node/no-unsupported-features/node-builtins': 0,
     'node/no-unpublished-import': 0,
