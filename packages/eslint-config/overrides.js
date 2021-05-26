@@ -164,18 +164,6 @@ const tsBase = {
         allowedNames: ['self'],
       },
     ],
-    '@typescript-eslint/no-type-alias': [
-      2,
-      {
-        allowAliases: 'in-unions-and-intersections',
-        allowCallbacks: 'always',
-        allowConditionalTypes: 'always',
-        allowConstructors: 'always',
-        allowLiterals: 'in-unions-and-intersections',
-        allowMappedTypes: 'always',
-        allowTupleTypes: 'always',
-      },
-    ],
     '@typescript-eslint/no-use-before-define': [
       2,
       {
@@ -211,6 +199,15 @@ const tsBase = {
     'import/no-named-as-default': 0,
     'import/no-named-as-default-member': 0,
     'no-empty-function': 0,
+    'no-restricted-syntax': [
+      2,
+      {
+        selector:
+          'TSTypeAliasDeclaration > .typeAnnotation[type=/^(TS.*Keyword|TSTypeReference)$/]',
+        message:
+          'Type alias references `Ts*Keyword`s or `TSTypeReference` directly is not allowed',
+      },
+    ],
     'no-unused-vars': 0,
     'no-use-before-define': 0,
     'no-useless-constructor': 0,

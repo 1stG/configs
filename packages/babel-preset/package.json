@@ -27,7 +27,7 @@
     "babel-plugin-transform-remove-console": "^6.9.4",
     "babel-plugin-transform-typescript-metadata": "^0.3.2",
     "babel-preset-proposal-typescript": "^2.1.0",
-    "core-js": "^3.12.1",
+    "core-js": "^3.13.0",
     "fast-async": "^7.0.6"
   },
   "publishConfig": {
