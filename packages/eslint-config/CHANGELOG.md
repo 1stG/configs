@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.2.3
+
+### Patch Changes
+
+- [`fdde892`](https://github.com/1stG/configs/commit/fdde892e87596f9028cb8a71ab621aaca874d858) Thanks [@JounQin](https://github.com/JounQin)! - fix(eslint-config): allow TSTypeParameterInstantiation and TSQualifiedName
+
 ## 2.2.2
 
 ### Patch Changes
