@@ -203,9 +203,9 @@ const tsBase = {
       2,
       {
         selector:
-          'TSTypeAliasDeclaration > .typeAnnotation[type=/^(TS.*Keyword|TSTypeReference)$/]',
+          'TSTypeAliasDeclaration > .typeAnnotation[type=/^(TS.*Keyword|TSTypeReference)$/]:not(:has(TSTypeParameterInstantiation)):not(:has(TSQualifiedName))',
         message:
-          'Type alias references `Ts*Keyword`s or `TSTypeReference` directly is not allowed',
+          'Type alias references simple `Ts*Keyword`s or `TSTypeReference` only is not allowed',
       },
     ],
     'no-unused-vars': 0,

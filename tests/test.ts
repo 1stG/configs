@@ -83,3 +83,13 @@ try {
 interval(1000).subscribe()
 
 new TestCase<number>().subscribe()
+
+// eslint-disable-next-line no-restricted-syntax
+export type A = number
+// eslint-disable-next-line no-restricted-syntax
+export type B = A
+export type C = Readonly<number[]>
+export type D = readonly number[]
+export type E = A | B
+export type F = number[]
+export type G = NodeJS.Global
