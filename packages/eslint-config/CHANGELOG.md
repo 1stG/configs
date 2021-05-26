@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.2.2
+
+### Patch Changes
+
+- [#30](https://github.com/1stG/configs/pull/30) [`154733e`](https://github.com/1stG/configs/commit/154733e7c710ba5eb428a0997685ac5378bc9319) Thanks [@JounQin](https://github.com/JounQin)! - feat(eslint): replace no-type-alias with no-restricted-syntax
+
 ## 2.2.1
 
 ### Patch Changes
