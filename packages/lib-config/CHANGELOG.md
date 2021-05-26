@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.1.0
+
+### Minor Changes
+
+- [#30](https://github.com/1stG/configs/pull/30) [`154733e`](https://github.com/1stG/configs/commit/154733e7c710ba5eb428a0997685ac5378bc9319) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump jest to v27
+
 ## 2.0.0
 
 ### Major Changes
