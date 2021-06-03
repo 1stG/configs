@@ -12,9 +12,9 @@
     "postcss": ">=7.0.0"
   },
   "dependencies": {
-    "autoprefixer": "^10.2.5",
-    "cssnano": "^5.0.4",
-    "cssnano-preset-advanced": "^5.1.1",
+    "autoprefixer": "^10.2.6",
+    "cssnano": "^5.0.5",
+    "cssnano-preset-advanced": "^5.1.2",
     "postcss-import": "^14.0.2",
     "postcss-modules": "^4.0.0",
     "postcss-normalize": "^10.0.0",

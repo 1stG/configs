@@ -420,6 +420,9 @@ exports.angular = [
   {
     files: '*.ts',
     excludedFiles: '*.d.ts',
+    parserOptions: {
+      project,
+    },
     extends: [
       'plugin:@angular-eslint/recommended',
       'plugin:@angular-eslint/template/process-inline-templates',
