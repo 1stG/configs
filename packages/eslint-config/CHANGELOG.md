@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.2.4
+
+### Patch Changes
+
+- [#34](https://github.com/1stG/configs/pull/34) [`cca16dc`](https://github.com/1stG/configs/commit/cca16dcb6a42ccebe8c44096423a9ecc04f47073) Thanks [@JounQin](https://github.com/JounQin)! - fix(eslint-config): incorrect project due to recommended angular-eslint config
+
 ## 2.2.3
 
 ### Patch Changes
