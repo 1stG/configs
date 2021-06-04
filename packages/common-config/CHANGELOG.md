@@ -1,5 +1,19 @@
 # Change Log
 
+## 2.2.0
+
+### Minor Changes
+
+- [#38](https://github.com/1stG/configs/pull/38) [`fd7f04b`](https://github.com/1stG/configs/commit/fd7f04bce8d62e77a43e2188cd72eda5eebb061f) Thanks [@JounQin](https://github.com/JounQin)! - fix: correct node engines field
+
+### Patch Changes
+
+- Updated dependencies [[`9ffe38a`](https://github.com/1stG/configs/commit/9ffe38a51906df9d3a5934dd0d514d1c8b917bd8), [`9ffe38a`](https://github.com/1stG/configs/commit/9ffe38a51906df9d3a5934dd0d514d1c8b917bd8), [`fd7f04b`](https://github.com/1stG/configs/commit/fd7f04bce8d62e77a43e2188cd72eda5eebb061f)]:
+  - @1stg/babel-preset@2.0.0
+  - @1stg/commitlint-config@1.2.0
+  - @1stg/eslint-config@2.3.0
+  - @1stg/lint-staged@1.5.0
+
 ## 2.1.0
 
 ### Minor Changes
