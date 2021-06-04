@@ -59,10 +59,12 @@ module.exports = declare(
                   '@babel/transform-async-to-generator',
                   '@babel/transform-regenerator',
                 ],
+          bugfixes: true,
           corejs: {
-            version: 3,
+            version: '3.13',
             proposals: true,
           },
+          shippedProposals: true,
           targets: esmodules
             ? {
                 esmodules,
@@ -120,7 +122,7 @@ module.exports = declare(
           useRuntimeModule: true,
         },
       ])
-    } else if (async === 'promises') {
+    } else if (async === 'promise' || async === 'promises') {
       plugins.push(require('babel-plugin-transform-async-to-promises'))
     }
 
@@ -150,14 +152,25 @@ module.exports = declare(
         development: isDev,
       },
     ]
-    const reactPlugin = isProd
-      ? [
-          require('babel-plugin-transform-react-remove-prop-types'),
-          {
-            removeImport: true,
-          },
-        ]
-      : isDev && tryRequirePkg('react-hot-loader/babel')
+
+    let reactPlugin
+
+    if (isProd) {
+      reactPlugin = [
+        require('babel-plugin-transform-react-remove-prop-types'),
+        {
+          removeImport: true,
+        },
+      ]
+    } else if (isDev) {
+      const reactRefreshBabelPlugin = tryRequirePkg('react-refresh/babel')
+      reactPlugin =
+        react &&
+        (react.plugin === 'refresh' ||
+          (react.plugin == null && reactRefreshBabelPlugin))
+          ? reactRefreshBabelPlugin
+          : tryRequirePkg('react-hot-loader/babel')
+    }
 
     if (react) {
       presets.push(reactPreset)
@@ -168,7 +181,22 @@ module.exports = declare(
     }
 
     if (vue) {
-      presets.push('@vue/babel-preset-jsx')
+      const vuePkg = tryRequirePkg('vue/package.json')
+      const majorVersion = +(
+        vue.version || (vue === true ? vuePkg && vuePkg.version : String(vue))
+      ).split('.')[0]
+      if (majorVersion === 3) {
+        plugins.push([
+          require('@vue/babel-plugin-jsx'),
+          {
+            transformOn: true,
+            optimize: true,
+            ...vue.options,
+          },
+        ])
+      } else {
+        presets.push([require('@vue/babel-preset-jsx'), vue.options])
+      }
     }
 
     return {
