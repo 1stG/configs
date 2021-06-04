@@ -5,6 +5,9 @@
   "repository": "git@github.com:1stG/configs.git",
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
+  "engines": {
+    "node": ">=12"
+  },
   "peerDependencies": {
     "lint-staged": ">=10.0.0"
   },
