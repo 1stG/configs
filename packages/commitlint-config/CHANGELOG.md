@@ -8,9 +8,6 @@
 
 - [#38](https://github.com/1stG/configs/pull/38) [`fd7f04b`](https://github.com/1stG/configs/commit/fd7f04bce8d62e77a43e2188cd72eda5eebb061f) Thanks [@JounQin](https://github.com/JounQin)! - fix: correct node engines field
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
-
 ## [1.1.2](https://github.com/1stG/configs/compare/@1stg/commitlint-config@1.1.1...@1stg/commitlint-config@1.1.2) (2021-04-30)
 
 ### Bug Fixes
