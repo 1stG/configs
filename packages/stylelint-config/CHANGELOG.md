@@ -1,13 +1,18 @@
 # Change Log
 
+## 2.1.0
+
+### Minor Changes
+
+- [#36](https://github.com/1stG/configs/pull/36) [`9ffe38a`](https://github.com/1stG/configs/commit/9ffe38a51906df9d3a5934dd0d514d1c8b917bd8) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump pkgr packages
+
+- [#38](https://github.com/1stG/configs/pull/38) [`fd7f04b`](https://github.com/1stG/configs/commit/fd7f04bce8d62e77a43e2188cd72eda5eebb061f) Thanks [@JounQin](https://github.com/JounQin)! - fix: correct node engines field
+
 ## 2.0.0
 
 ### Major Changes
 
 - [#26](https://github.com/1stG/configs/pull/26) [`4a07080`](https://github.com/1stG/configs/commit/4a070800e004177d09a801438c891def339a82a0) Thanks [@JounQin](https://github.com/JounQin)! - feat: enable stricter ts rules, bump `stylelint-no-unsupported-browser-features`
-
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 ## [1.3.2](https://github.com/1stG/configs/compare/@1stg/stylelint-config@1.3.1...@1stg/stylelint-config@1.3.2) (2021-04-30)
 

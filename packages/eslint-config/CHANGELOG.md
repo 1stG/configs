@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.3.0
+
+### Minor Changes
+
+- [#36](https://github.com/1stG/configs/pull/36) [`9ffe38a`](https://github.com/1stG/configs/commit/9ffe38a51906df9d3a5934dd0d514d1c8b917bd8) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump pkgr packages
+
 ## 2.2.4
 
 ### Patch Changes

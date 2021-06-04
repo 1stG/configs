@@ -6,9 +6,6 @@
 
 - [#22](https://github.com/1stG/configs/pull/22) [`f227d44`](https://github.com/1stG/configs/commit/f227d44321aa2ea859c31874634f24cd8dde3652) Thanks [@JounQin](https://github.com/JounQin)! - feat: enable angular-eslint, disable tslint angilar rules
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
-
 ## [1.3.1](https://github.com/1stG/configs/compare/@1stg/tsconfig@1.3.0...@1stg/tsconfig@1.3.1) (2021-04-20)
 
 **Note:** Version bump only for package @1stg/tsconfig
