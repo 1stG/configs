@@ -14,8 +14,8 @@
     "@1stg/common-config": "^2.1.0",
     "@1stg/postcss-config": "^2.0.1",
     "@1stg/stylelint-config": "^2.0.0",
-    "@pkgr/es-modules": "^0.4.0",
-    "@pkgr/imagemin": "^0.6.0",
+    "@pkgr/es-modules": "^0.4.2",
+    "@pkgr/imagemin": "^1.0.1",
     "browserslist": "^4.16.6",
     "postcss": "^8.3.0",
     "stylelint": "^13.13.1"
