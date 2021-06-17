@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.4.0
+
+### Minor Changes
+
+- [#39](https://github.com/1stG/configs/pull/39) [`3a7c0af`](https://github.com/1stG/configs/commit/3a7c0af51a2f6102980966b97e5abf243e4e85a0) Thanks [@JounQin](https://github.com/JounQin)! - feat(eslint-config): only enable eslint-plugin-sonar with typescript available
+
 ## 2.3.0
 
 ### Minor Changes
