@@ -1,5 +1,12 @@
 # Change Log
 
+## 2.4.1
+
+### Patch Changes
+
+- [`455935c`](https://github.com/1stG/configs/commit/455935c9f2fba3fc63d0bf39d518966a43a060b1) Thanks [@JounQin](https://github.com/JounQin)! - - fix(eslint-config): disable prefer-nullish-coalescing which is difficult to use
+  - fix(eslint-config): disable import/namespace for .ts which is redundant
+
 ## 2.4.0
 
 ### Minor Changes
