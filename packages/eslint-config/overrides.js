@@ -85,25 +85,6 @@ const resolveSettings = {
       project,
     },
   },
-  node: {
-    resolvePaths: [
-      tryFile('node_modules/@d-ts', true),
-      tryFile('node_modules/@types', true),
-    ].filter(Boolean),
-    tryExtensions: [
-      '.ts',
-      '.tsx',
-      '.d.ts',
-      '.vue',
-      '.svelte',
-      '.mjs',
-      '.js',
-      '.jsx',
-      '.json',
-      '.node',
-      '.mdx',
-    ],
-  },
 }
 
 const tsBase = {
@@ -195,6 +176,7 @@ const tsBase = {
     camelcase: 0,
     'import/default': 0,
     'import/named': 0,
+    'import/namespace': 0,
     'import/no-duplicates': 2,
     'import/no-named-as-default': 0,
     'import/no-named-as-default-member': 0,
@@ -285,7 +267,6 @@ exports.dTs = {
     '@typescript-eslint/no-unused-vars': 0,
     'import/no-duplicates': 0,
     'import/order': 0,
-    'node/no-extraneous-import': 0,
   },
 }
 
