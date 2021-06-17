@@ -260,7 +260,6 @@ exports.ts = [
       '@typescript-eslint/no-unnecessary-condition': 2,
       '@typescript-eslint/no-unnecessary-qualifier': 2,
       '@typescript-eslint/no-unnecessary-type-arguments': 2,
-      '@typescript-eslint/prefer-nullish-coalescing': 2,
       '@typescript-eslint/prefer-readonly': 2,
       '@typescript-eslint/prefer-reduce-type-parameter': 2,
       '@typescript-eslint/prefer-string-starts-ends-with': 2,
