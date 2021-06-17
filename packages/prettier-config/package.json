@@ -9,7 +9,7 @@
     "prettier": ">=1.18.0"
   },
   "dependencies": {
-    "@prettier/plugin-pug": "^1.15.2",
+    "@prettier/plugin-pug": "^1.15.3",
     "@prettier/plugin-ruby": "^1.5.5",
     "@prettier/plugin-xml": "^0.13.1",
     "prettier-plugin-pkg": "^0.9.0",

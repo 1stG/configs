@@ -1,3 +1,4 @@
+const { isTsAvailable } = require('@pkgr/utils')
 const { getGlobals } = require('eslint-plugin-mdx')
 
 const { isWebpackAvailable, magicNumbers, webpackSpecVars } = require('./_util')
@@ -10,11 +11,11 @@ module.exports = {
     'plugin:node/recommended',
     'plugin:promise/recommended',
     'plugin:sonarjs/recommended',
-    'plugin:sonar/recommended',
+    isTsAvailable && 'plugin:sonar/recommended',
     'plugin:unicorn/recommended',
     'standard',
     'plugin:prettier/recommended',
-  ],
+  ].filter(Boolean),
   globals: isWebpackAvailable ? getGlobals(webpackSpecVars) : undefined,
   rules: {
     'arrow-body-style': 2,
@@ -53,7 +54,7 @@ module.exports = {
       },
     ],
     'no-empty-function': 2,
-    'no-labels': 0, // sonar/no-labels
+    'no-labels': isTsAvailable ? 2 : 0, // sonar/no-labels
     'no-magic-numbers': [
       2,
       {

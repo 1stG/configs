@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@1stg/common-config": "^2.2.0",
-    "@pkgr/rollup": "^1.0.2",
+    "@pkgr/rollup": "^1.1.4",
     "jest": "^27.0.4"
   },
   "publishConfig": {
