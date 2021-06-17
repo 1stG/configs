@@ -2,7 +2,7 @@ const { isPkgAvailable, tryFile } = require('@pkgr/utils')
 
 const config = [
   '*.{*sh,env,env.*,gql,html,json,properties,pug,rb,svelte,vue,toml,yaml,yml}',
-  '.(editorconfig|*rc)',
+  '.*rc',
   'Dockerfile',
 ].reduce(
   (acc, files) =>

@@ -13,9 +13,10 @@
   },
   "dependencies": {
     "@1stg/prettier-config": "^1.7.3",
+    "@1stg/tsconfig": "^1.4.0",
     "@pkgr/utils": "^1.0.1",
     "cross-env": "^7.0.3",
-    "prettier": "^2.3.0"
+    "prettier": "^2.3.1"
   },
   "publishConfig": {
     "access": "public"
