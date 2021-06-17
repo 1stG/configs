@@ -334,7 +334,9 @@ exports.react = [
           eventHandlerPropPrefix: 'on',
         },
       ],
-      'sonar/function-name': [2, { format: '^_?[a-zA-Z][a-zA-Z0-9]*\\$?$' }],
+      'sonar/function-name': isTsAvailable
+        ? [2, { format: '^_?[a-zA-Z][a-zA-Z0-9]*\\$?$' }]
+        : 0,
     },
     ...reactJsx,
   },
