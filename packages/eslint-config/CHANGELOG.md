@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.4.2
+
+### Patch Changes
+
+- [`7b72958`](https://github.com/1stG/configs/commit/7b72958f0aada0141a0b8e9e759b40f5fc9f5be7) Thanks [@JounQin](https://github.com/JounQin)! - fix(eslint-config): no-labels should be disable when ts available
+
 ## 2.4.1
 
 ### Patch Changes
