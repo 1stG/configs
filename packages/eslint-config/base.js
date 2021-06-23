@@ -54,7 +54,7 @@ module.exports = {
       },
     ],
     'no-empty-function': 2,
-    'no-labels': isTsAvailable ? 2 : 0, // sonar/no-labels
+    'no-labels': isTsAvailable ? 0 : 2, // sonar/no-labels
     'no-magic-numbers': [
       2,
       {

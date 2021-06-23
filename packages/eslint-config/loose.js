@@ -16,6 +16,7 @@ module.exports = {
     '@typescript-eslint/restrict-plus-operands': 0,
     '@typescript-eslint/sort-type-union-intersection-members': 0,
     '@typescript-eslint/unbound-method': 0,
+    'accessor-pairs': 0,
     'no-magic-numbers': 0,
     'no-negated-condition': 0, // not auto-fixable
     'promise/always-return': 0,
@@ -24,6 +25,7 @@ module.exports = {
     'unicorn/no-array-for-each': 0,
     'unicorn/no-fn-reference-in-iterator': 0,
     'unicorn/prefer-number-properties': 0,
+    'unicorn/prefer-prototype-methods': 0,
     'unicorn/prefer-spread': 0,
   },
 }
