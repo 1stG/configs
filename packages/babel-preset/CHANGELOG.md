@@ -1,5 +1,13 @@
 # Change Log
 
+## 2.0.1
+
+### Patch Changes
+
+- [`7496ea6`](https://github.com/1stG/configs/commit/7496ea69c3db7272cf4aafa9931c5577ece7d60b) Thanks [@JounQin](https://github.com/JounQin)! - fix(babel-preset): use promises as default async value
+
+  fast-async does not support for await
+
 ## 2.0.0
 
 ### Major Changes
