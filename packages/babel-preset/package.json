@@ -1,6 +1,6 @@
 {
   "name": "@1stg/babel-preset",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Personal but Shareable Babel Preset for all 1stG.me projects.",
   "repository": "git@github.com:1stG/configs.git",
   "author": "JounQin <admin@1stg.me>",
