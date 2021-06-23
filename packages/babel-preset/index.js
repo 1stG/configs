@@ -11,7 +11,7 @@ module.exports = declare(
   (
     api,
     {
-      async = 'fast',
+      async = 'promises',
       import: importOptions,
       modules = false,
       esmodules,

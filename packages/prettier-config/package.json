@@ -14,7 +14,7 @@
     "@prettier/plugin-xml": "^0.13.1",
     "prettier-plugin-pkg": "^0.9.0",
     "prettier-plugin-sh": "^0.6.1",
-    "prettier-plugin-svelte": "^2.3.0",
+    "prettier-plugin-svelte": "^2.3.1",
     "prettier-plugin-toml": "^0.3.1"
   },
   "publishConfig": {
