@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.3.0
+
+### Minor Changes
+
+- [`cf44ba6`](https://github.com/1stG/configs/commit/cf44ba6ab2dc209383c29ec285572eb00bc22dcd) Thanks [@JounQin](https://github.com/JounQin)! - feat(common-config): add markuplint-config
+
 ## 2.2.0
 
 ### Minor Changes
