@@ -1,6 +1,6 @@
 {
   "name": "@1stg/common-config",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Personal but Shareable Common Configuration for all 1stG.me projects.",
   "repository": "git+https://github.com/1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/common-config",
