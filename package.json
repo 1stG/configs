@@ -26,8 +26,8 @@
     "typecov": "type-coverage"
   },
   "devDependencies": {
-    "@angular/compiler": "^12.0.5",
-    "@angular/core": "^12.0.5",
+    "@angular/compiler": "^12.1.0",
+    "@angular/core": "^12.1.0",
     "@changesets/changelog-github": "^0.4.0",
     "@changesets/cli": "^2.16.0",
     "@types/jest": "^26.0.23",
@@ -47,7 +47,6 @@
     "vue-tsc": "^0.2.0"
   },
   "resolutions": {
-    "@babel/core": "^7.14.6",
     "prettier": "^2.3.1"
   },
   "typeCoverage": {
