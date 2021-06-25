@@ -1,6 +1,6 @@
 {
   "name": "@1stg/markuplint-config",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "dependencies": {
     "@markuplint/vue-parser": "^1.0.1-beta.3",
     "@markuplint/vue-spec": "^1.0.1-beta.2",
