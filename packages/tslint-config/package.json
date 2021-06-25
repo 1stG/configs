@@ -2,7 +2,7 @@
   "name": "@1stg/tslint-config",
   "version": "2.0.0",
   "description": "Personal but Shareable TSLint Configuration for all 1stG.me projects.",
-  "repository": "git@github.com:1stG/configs.git",
+  "repository": "git+https://github.com/1stG/configs.git",
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "main": "tslint.json",

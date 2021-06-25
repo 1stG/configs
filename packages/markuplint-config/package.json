@@ -1,9 +1,23 @@
 {
   "name": "@1stg/markuplint-config",
   "version": "0.1.0",
+  "description": "Personal but Shareable markuplint Configuration for all 1stG.me projects.",
+  "repository": "git+https://github.com/1stG/configs.git",
+  "homepage": "https://github.com/1stG/configs/tree/master/packages/markuplint-config",
+  "author": "JounQin <admin@1stg.me>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12"
+  },
+  "peerDependencies": {
+    "markuplint": "^1.0.0"
+  },
   "dependencies": {
     "@markuplint/vue-parser": "^1.0.1-beta.3",
     "@markuplint/vue-spec": "^1.0.1-beta.2",
     "markuplint-angular-parser": "^0.3.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
