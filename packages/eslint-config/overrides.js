@@ -422,7 +422,10 @@ exports.angular = [
   },
   {
     files: '*.html',
-    extends: ['plugin:@angular-eslint/template/recommended'],
+    extends: [
+      'plugin:@angular-eslint/template/recommended',
+      'plugin:markup/recommended',
+    ],
     parser: 'angular-eslint-template-parser',
     rules: {
       'prettier/prettier': 0,
@@ -448,6 +451,11 @@ exports.angular = [
     },
   },
 ]
+
+exports.html = {
+  files: '*.html',
+  extends: 'plugin:markup/recommended',
+}
 
 exports.md = {
   files: '*.md',
@@ -512,7 +520,7 @@ exports.overrides = []
     isReactAvailable && exports.reactTs,
     isVueAvailable && exports.vue,
     isSvelteAvailable && exports.svelte,
-    isAngularAvailable && exports.angular,
+    isAngularAvailable ? exports.angular : exports.html,
     exports.md,
     exports.mdx,
     isPkgAvailable('jest') && exports.jest,
