@@ -1,5 +1,14 @@
 # Change Log
 
+## 2.2.1
+
+### Patch Changes
+
+- [`875f6d5`](https://github.com/1stG/configs/commit/875f6d5dd8e07454f76abaa7ccdd5344b5caf37a) Thanks [@JounQin](https://github.com/JounQin)! - chore(deps): bump prettier plugins
+
+- Updated dependencies [[`875f6d5`](https://github.com/1stG/configs/commit/875f6d5dd8e07454f76abaa7ccdd5344b5caf37a)]:
+  - @1stg/common-config@2.3.1
+
 ## 2.2.0
 
 ### Minor Changes

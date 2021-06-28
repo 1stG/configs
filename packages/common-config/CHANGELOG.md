@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.3.1
+
+### Patch Changes
+
+- [`875f6d5`](https://github.com/1stG/configs/commit/875f6d5dd8e07454f76abaa7ccdd5344b5caf37a) Thanks [@JounQin](https://github.com/JounQin)! - chore(deps): bump prettier plugins
+
+- Updated dependencies [[`875f6d5`](https://github.com/1stG/configs/commit/875f6d5dd8e07454f76abaa7ccdd5344b5caf37a), [`875f6d5`](https://github.com/1stG/configs/commit/875f6d5dd8e07454f76abaa7ccdd5344b5caf37a)]:
+  - @1stg/eslint-config@2.5.1
+  - @1stg/lint-staged@1.6.1
+  - @1stg/prettier-config@1.7.4
+
 ## 2.3.0
 
 ### Minor Changes
