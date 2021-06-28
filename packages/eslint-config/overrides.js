@@ -455,6 +455,14 @@ exports.angular = [
 exports.html = {
   files: '*.html',
   extends: 'plugin:markup/recommended',
+  rules: {
+    'prettier/prettier': [
+      2,
+      {
+        parser: 'html',
+      },
+    ],
+  },
 }
 
 exports.md = {
