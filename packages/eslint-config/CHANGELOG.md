@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.5.1
+
+### Patch Changes
+
+- [`875f6d5`](https://github.com/1stG/configs/commit/875f6d5dd8e07454f76abaa7ccdd5344b5caf37a) Thanks [@JounQin](https://github.com/JounQin)! - fix(eslint-config): set prettier parser for html files
+
 ## 2.5.0
 
 ### Minor Changes
