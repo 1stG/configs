@@ -412,6 +412,12 @@ exports.angular = [
     ],
     rules: {
       '@angular-eslint/prefer-on-push-component-change-detection': 1,
+      '@angular-eslint/template/eqeqeq': [
+        2,
+        {
+          allowNullOrUndefined: true,
+        },
+      ],
     },
   },
   {
