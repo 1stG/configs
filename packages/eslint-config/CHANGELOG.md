@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.5.2
+
+### Patch Changes
+
+- [#48](https://github.com/1stG/configs/pull/48) [`c625c56`](https://github.com/1stG/configs/commit/c625c56889f68d42d7332d94e4c0275c33ee18d9) Thanks [@JounQin](https://github.com/JounQin)! - fix: enable `allowNullOrUndefined` for rule `@angular-eslint/template-eqeqeq`
+
 ## 2.5.1
 
 ### Patch Changes
