@@ -6,9 +6,6 @@
 
 - [#48](https://github.com/1stG/configs/pull/48) [`c625c56`](https://github.com/1stG/configs/commit/c625c56889f68d42d7332d94e4c0275c33ee18d9) Thanks [@JounQin](https://github.com/JounQin)! - chore: support `Chrome >= 69` for alauda
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
-
 # [1.0.0](https://github.com/1stG/configs/compare/@1stg/browserslist-config@0.6.3...@1stg/browserslist-config@1.0.0) (2021-01-26)
 
 **Note:** Version bump only for package @1stg/browserslist-config
