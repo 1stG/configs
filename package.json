@@ -16,7 +16,7 @@
     "check:tslint": "tslint-config-prettier-check ./tslint.json",
     "lint": "run-p lint:*",
     "lint:css": "stylelint --cache --config .stylelint.common.json 'tests/*.{css,html,less}'",
-    "lint:es": "cross-env PARSER_NO_WATCH=true eslint . --cache -f friendly",
+    "lint:es": "eslint . --cache -f friendly",
     "lint:scss": "stylelint --cache 'tests/*.{scss,vue}'",
     "lint:ts": "tslint -p . -t stylish",
     "lint:tsc": "tsc --noEmit",
