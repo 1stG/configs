@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.6.2
+
+### Patch Changes
+
+- [#48](https://github.com/1stG/configs/pull/48) [`c625c56`](https://github.com/1stG/configs/commit/c625c56889f68d42d7332d94e4c0275c33ee18d9) Thanks [@JounQin](https://github.com/JounQin)! - fix: show relative tsconfig path instead
+
 ## 1.6.1
 
 ### Patch Changes
