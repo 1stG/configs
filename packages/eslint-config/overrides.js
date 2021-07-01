@@ -416,19 +416,20 @@ exports.angular = [
   },
   {
     files: '*.html',
-    rules: {
-      'spaced-comment': 0,
-    },
-  },
-  {
-    files: '*.html',
     extends: [
       'plugin:@angular-eslint/template/recommended',
       'plugin:markup/recommended',
     ],
     parser: 'angular-eslint-template-parser',
     rules: {
+      '@angular-eslint/template/eqeqeq': [
+        2,
+        {
+          allowNullOrUndefined: true,
+        },
+      ],
       'prettier/prettier': 0,
+      'spaced-comment': 0,
     },
   },
   {
@@ -442,12 +443,6 @@ exports.angular = [
           parser: 'angular',
         },
       ],
-    },
-  },
-  {
-    files: ['*inline-template-*.component.html'],
-    rules: {
-      'unicorn/filename-case': 0,
     },
   },
 ]
