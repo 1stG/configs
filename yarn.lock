@@ -1866,7 +1866,7 @@
     minimatch "^3.0.4"
     tslib "^2.3.0"
 
-"@markuplint/html-parser@^1.5.1", "@markuplint/html-parser@^1.6.0":
+"@markuplint/html-parser@^1.6.0":
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/@markuplint/html-parser/-/html-parser-1.6.0.tgz#89db77627edb37308c2911fd3a378c3760e5ebc2"
   integrity sha512-R+zegvMbjFGmHMq5aux2B7M0M2U18Wd0Eo3bMe6lojsUzBHtUgWg5s7yasCcNuU/gGw0rj6ZYwFw6Scw1oxgiw==
@@ -1919,7 +1919,7 @@
   dependencies:
     tslib "^2.3.0"
 
-"@markuplint/parser-utils@^1.4.1", "@markuplint/parser-utils@^1.5.0":
+"@markuplint/parser-utils@^1.5.0":
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/@markuplint/parser-utils/-/parser-utils-1.5.0.tgz#03dde74cbc295a9426f32eb45822dfad2735235d"
   integrity sha512-/CNYndna9xCDJmighRmghIlpTeV0zTRGN2GxtiW0I+8hXrAT+i19b79UWEJEIjqtGGj19duDqp4qWcWnFkWflg==
@@ -8461,14 +8461,14 @@ markdown-table@^2.0.0:
   dependencies:
     repeat-string "^1.0.0"
 
-markuplint-angular-parser@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/markuplint-angular-parser/-/markuplint-angular-parser-0.3.1.tgz#3383ec7ac63e86d75b3d9eac17391e8daf837a28"
-  integrity sha512-UCZ2+rtzFnDyROr9IKaeo1+tB0Qg26LLLRiMztqU/aJsrg0w3gZsqE/NhQyDlqpwMrTwg26OxK5DD25J2zleKA==
+markuplint-angular-parser@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/markuplint-angular-parser/-/markuplint-angular-parser-0.3.2.tgz#ebd8ed5d2a0d8d5c2fa5f3ea43353d5d1ba9d11a"
+  integrity sha512-FxBAI6YgGILgT5LE43hTVbke/+jJ4mR7Ii6ron1yhH4tYtM1XXT7slW8OPyGG9uLGDVF208cnigK+I3ugTNpwg==
   dependencies:
-    "@markuplint/html-parser" "^1.5.1"
-    "@markuplint/ml-ast" "^1.5.1"
-    "@markuplint/parser-utils" "^1.4.1"
+    "@markuplint/html-parser" "^1.6.0"
+    "@markuplint/ml-ast" "^1.6.0"
+    "@markuplint/parser-utils" "^1.5.0"
     angular-html-parser "^1.8.0"
     tslib "^2.3.0"
 
