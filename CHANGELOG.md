@@ -12,6 +12,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 - [@1stg/husky-config](./packages/husky-config/CHANGELOG.md)
 - [@1stg/lib-config](./packages/lib-config/CHANGELOG.md)
 - [@1stg/lint-staged](./packages/lint-staged/CHANGELOG.md)
+- [@1stg/markuplint-config](./packages/markuplint-config/CHANGELOG.md)
 - [@1stg/postcss-config](./packages/postcss-config/CHANGELOG.md)
 - [@1stg/prettier-config](./packages/prettier-config/CHANGELOG.md)
 - [@1stg/remark-config](./packages/remark-config/CHANGELOG.md)
