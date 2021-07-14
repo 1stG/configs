@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.5.3
+
+### Patch Changes
+
+- [`a1f65c8`](https://github.com/1stG/configs/commit/a1f65c88e75686697cc724ca960931dc3cf4ef6e) Thanks [@JounQin](https://github.com/JounQin)! - chore(deps): upgrade eslint-plugin-markup for better performance (synckit)
+
 ## 2.5.2
 
 ### Patch Changes
