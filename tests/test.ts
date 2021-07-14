@@ -92,4 +92,4 @@ export type C = Readonly<number[]>
 export type D = readonly number[]
 export type E = A | B
 export type F = number[]
-export type G = NodeJS.Global
+export type G = NodeJS.Immediate

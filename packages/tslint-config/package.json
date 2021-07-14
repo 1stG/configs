@@ -13,7 +13,7 @@
   "dependencies": {
     "@rxts/rxjs-tslint": "^0.2.1",
     "codelyzer": "^6.0.2",
-    "ng-tslint": "^1.1.1",
+    "ng-tslint": "^1.1.2",
     "tslint-angular": "^3.0.3",
     "tslint-config-eslint": "^0.6.2",
     "tslint-config-prettier": "^1.18.0",
