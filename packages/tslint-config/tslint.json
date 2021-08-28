@@ -20,7 +20,7 @@
         "named-imports-order": "lowercase-last",
         "groups": [
           // common node builtin modules
-          "^(async_hooks|child_process|http[2s]?|fs|module|path|util|vm|worker_threads)$",
+          "^(async_hooks|child_process|http[2s]?|fs|module|path|url|util|vm|worker_threads)$",
           "^(?!app[\\w-]*/)(@[^/]|[^@.])",
           "^(@|app[\\w-]*)/",
           "^(../)+",

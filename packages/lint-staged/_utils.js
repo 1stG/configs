@@ -1,6 +1,6 @@
 const path = require('path')
 
-const { tryFile, tryPkg } = require('@pkgr/utils')
+const { isPkgAvailable, tryFile, tryPkg } = require('@pkgr/utils')
 
 exports.tsConfig = path.relative(
   process.cwd(),
@@ -9,3 +9,5 @@ exports.tsConfig = path.relative(
     tryFile(path.resolve('tsconfig.json')) ||
     tryPkg('@1stg/tsconfig'),
 )
+
+exports.typeCoverage = isPkgAvailable('type-coverage') && 'type-coverage'

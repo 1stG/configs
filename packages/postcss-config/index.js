@@ -1,8 +1,8 @@
-const DEV = 'development'
+const { NODE_ENV, __DEV__, __PROD__ } = require('@pkgr/utils')
 
 module.exports = ({
   advanced,
-  env = process.env.NODE_ENV || DEV,
+  env = NODE_ENV,
   import: importOptions,
   modules,
   normalize,
@@ -18,9 +18,6 @@ module.exports = ({
     require('autoprefixer'),
   ]
 
-  const isDev = env === DEV
-  const isProd = env === 'production'
-
   if (modules) {
     plugins.push(
       require('postcss-modules')({
@@ -28,7 +25,7 @@ module.exports = ({
           /[/\\]node_modules[/\\]/,
           /(\bglobals?[/\\][\w-]+|\.globals?)\.(p?css|less|s[ac]ss|styl(us)?)$/,
         ],
-        generateScopedName: isProd
+        generateScopedName: __PROD__
           ? '[hash:base64:10]'
           : '[path][name]__[local]---[hash:base64:5]',
         ...modules,
@@ -36,7 +33,7 @@ module.exports = ({
     )
   }
 
-  if (isProd) {
+  if (__PROD__) {
     plugins.push(
       require('cssnano')({
         preset: [
@@ -53,7 +50,7 @@ module.exports = ({
 
   return {
     ...options,
-    map: isDev,
+    map: __DEV__,
     plugins,
   }
 }

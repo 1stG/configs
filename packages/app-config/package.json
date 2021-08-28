@@ -14,10 +14,10 @@
     "@1stg/common-config": "^2.3.1",
     "@1stg/postcss-config": "^2.1.0",
     "@1stg/stylelint-config": "^2.1.0",
-    "@pkgr/es-modules": "^0.4.2",
-    "@pkgr/imagemin": "^1.0.1",
-    "browserslist": "^4.16.6",
-    "postcss": "^8.3.5",
+    "@pkgr/es-modules": "^0.5.0",
+    "@pkgr/imagemin": "^2.0.3",
+    "browserslist": "^4.16.8",
+    "postcss": "^8.3.6",
     "stylelint": "^13.13.1"
   },
   "publishConfig": {

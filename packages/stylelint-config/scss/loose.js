@@ -1,9 +1,6 @@
-const baseConfig = require('.')
-
 module.exports = {
-  ...baseConfig,
+  extends: './base',
   rules: {
-    ...baseConfig.rules,
     'scss/declaration-nested-properties': null,
     'scss/dollar-variable-default': null,
     'scss/media-feature-value-dollar-variable': null,

@@ -1,7 +1,7 @@
 const { isAngularAvailable, isVueAvailable } = require('@pkgr/utils')
 
 module.exports = {
-  extends: ['stylelint-config-standard'],
+  extends: ['stylelint-config-standard', 'stylelint-prettier/recommended'],
   plugins: [
     'stylelint-high-performance-animation',
     'stylelint-no-unsupported-browser-features',
