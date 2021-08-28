@@ -5,7 +5,7 @@ export default class Test extends React.PureComponent {
 
   b?: string
 
-  render() {
+  override render() {
     return <div>Hello</div>
   }
 }

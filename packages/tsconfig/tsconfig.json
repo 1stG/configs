@@ -9,6 +9,7 @@
     "lib": ["ESNext"],
     "module": "ESNext",
     "moduleResolution": "node",
+    "noImplicitOverride": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "resolveJsonModule": true,
