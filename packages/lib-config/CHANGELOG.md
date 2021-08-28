@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.0.0
+
+### Major Changes
+
+- [#51](https://github.com/1stG/configs/pull/51) [`626afaa`](https://github.com/1stG/configs/commit/626afaad80e57fa7779a7a0ff332cd4dc4836062) Thanks [@JounQin](https://github.com/JounQin)! - feat: upgrade (dev)Dependencies
+
+### Patch Changes
+
+- Updated dependencies [[`626afaa`](https://github.com/1stG/configs/commit/626afaad80e57fa7779a7a0ff332cd4dc4836062)]:
+  - @1stg/common-config@2.4.0
+
 ## 3.0.0
 
 ### Major Changes

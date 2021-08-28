@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.2.0
+
+### Minor Changes
+
+- [#51](https://github.com/1stG/configs/pull/51) [`626afaa`](https://github.com/1stG/configs/commit/626afaad80e57fa7779a7a0ff332cd4dc4836062) Thanks [@JounQin](https://github.com/JounQin)! - feat: upgrade (dev)Dependencies
+
 ## 2.1.0
 
 ### Minor Changes

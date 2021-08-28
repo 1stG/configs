@@ -1,5 +1,22 @@
 # Change Log
 
+## 2.4.0
+
+### Minor Changes
+
+- [#51](https://github.com/1stG/configs/pull/51) [`626afaa`](https://github.com/1stG/configs/commit/626afaad80e57fa7779a7a0ff332cd4dc4836062) Thanks [@JounQin](https://github.com/JounQin)! - feat: upgrade (dev)Dependencies
+
+### Patch Changes
+
+- Updated dependencies [[`626afaa`](https://github.com/1stG/configs/commit/626afaad80e57fa7779a7a0ff332cd4dc4836062)]:
+  - @1stg/babel-preset@2.1.0
+  - @1stg/commitlint-config@1.3.0
+  - @1stg/eslint-config@2.6.0
+  - @1stg/lint-staged@1.7.0
+  - @1stg/markuplint-config@0.1.1
+  - @1stg/prettier-config@1.8.0
+  - @1stg/tsconfig@2.0.0
+
 ## 2.3.1
 
 ### Patch Changes

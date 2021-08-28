@@ -1,5 +1,19 @@
 # Change Log
 
+## 2.3.0
+
+### Minor Changes
+
+- [#51](https://github.com/1stG/configs/pull/51) [`626afaa`](https://github.com/1stG/configs/commit/626afaad80e57fa7779a7a0ff332cd4dc4836062) Thanks [@JounQin](https://github.com/JounQin)! - feat: upgrade (dev)Dependencies
+
+### Patch Changes
+
+- Updated dependencies [[`626afaa`](https://github.com/1stG/configs/commit/626afaad80e57fa7779a7a0ff332cd4dc4836062)]:
+  - @1stg/browserslist-config@1.1.0
+  - @1stg/common-config@2.4.0
+  - @1stg/postcss-config@2.2.0
+  - @1stg/stylelint-config@2.2.0
+
 ## 2.2.1
 
 ### Patch Changes
