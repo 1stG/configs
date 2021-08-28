@@ -1,6 +1,6 @@
 {
   "name": "@1stg/postcss-config",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Personal but Shareable PostCSS Configuration for all 1stG.me projects.",
   "repository": "git+https://github.com/1stG/configs.git",
   "author": "JounQin <admin@1stg.me>",
