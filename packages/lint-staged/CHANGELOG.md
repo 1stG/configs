@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.7.1
+
+### Patch Changes
+
+- [`d688118`](https://github.com/1stG/configs/commit/d688118cd2ac2956636d99d2f48b40a036105916) Thanks [@JounQin](https://github.com/JounQin)! - fix: type-coverage is a bin-only pkg
+
 ## 1.7.0
 
 ### Minor Changes
