@@ -10,4 +10,5 @@ exports.tsConfig = path.relative(
     tryPkg('@1stg/tsconfig'),
 )
 
-exports.typeCoverage = isPkgAvailable('type-coverage') && 'type-coverage'
+exports.typeCoverage =
+  isPkgAvailable('type-coverage/bin/type-coverage') && 'type-coverage'
