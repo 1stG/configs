@@ -14,13 +14,13 @@
   "dependencies": {
     "@babel/helper-plugin-utils": "^7.14.5",
     "@babel/plugin-proposal-class-properties": "^7.14.5",
-    "@babel/plugin-proposal-decorators": "^7.14.5",
-    "@babel/preset-env": "^7.14.7",
+    "@babel/plugin-proposal-decorators": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
     "@babel/preset-react": "^7.14.5",
     "@babel/preset-typescript": "^7.15.0",
-    "@pkgr/utils": "^2.0.0",
+    "@pkgr/utils": "^2.0.1",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.2.1",
-    "@vue/babel-plugin-jsx": "^1.0.6",
+    "@vue/babel-plugin-jsx": "^1.1.0",
     "@vue/babel-preset-jsx": "^1.2.4",
     "babel-plugin-import": "^1.13.3",
     "babel-plugin-transform-async-to-promises": "^0.8.15",
@@ -28,7 +28,7 @@
     "babel-plugin-transform-remove-console": "^6.9.4",
     "babel-plugin-transform-typescript-metadata": "^0.3.2",
     "babel-preset-proposal-typescript": "^2.2.0",
-    "core-js": "^3.16.3",
+    "core-js": "^3.18.2",
     "fast-async": "^7.0.6"
   },
   "publishConfig": {

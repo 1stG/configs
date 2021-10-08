@@ -3,29 +3,19 @@
     {{ msg }}
   </div>
 </template>
-<script lang="ts">
-import Vue from 'vue'
+<script lang="ts" setup>
 import { Point } from 'unist'
 
-export default Vue.extend({
-  data() {
-    return {
-      msg: 'Hello Vue!',
-      xY: 'Z',
-    }
-  },
-  methods: {
-    getLine(point: Point) {
-      return point.line
-    },
-    async reverse() {
-      await new Promise(resolve => {
-        setTimeout(resolve, 500)
-      })
-      this.msg = this.msg.split('').reverse().join('')
-    },
-  },
-})
+export const getLine = (point: Point) => point.line
+
+export let msg = 'Hello Vue!'
+
+export const reverse = async () => {
+  await new Promise(resolve => {
+    setTimeout(resolve, 500)
+  })
+  msg = [...msg].reverse().join('')
+}
 </script>
 <style>
 div {

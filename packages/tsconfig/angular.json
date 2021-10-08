@@ -9,6 +9,7 @@
     "outDir": "dist"
   },
   "angularCompilerOptions": {
+    "compilationMode": "full",
     "enableResourceInlining": false
   }
 }

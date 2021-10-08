@@ -12,13 +12,13 @@
     "postcss": ">=7.0.0"
   },
   "dependencies": {
-    "@pkgr/utils": "^2.0.0",
-    "autoprefixer": "^10.3.3",
+    "@pkgr/utils": "^2.0.1",
+    "autoprefixer": "^10.3.7",
     "cssnano": "^5.0.8",
     "cssnano-preset-advanced": "^5.1.4",
     "postcss-import": "^14.0.2",
     "postcss-modules": "^4.2.2",
-    "postcss-normalize": "^10.0.0",
+    "postcss-normalize": "^10.0.1",
     "postcss-preset-env": "^6.7.0",
     "postcss-url": "^10.1.3"
   },
