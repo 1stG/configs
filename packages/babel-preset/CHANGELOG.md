@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.1.1
+
+### Patch Changes
+
+- [#56](https://github.com/1stG/configs/pull/56) [`e680550`](https://github.com/1stG/configs/commit/e680550d60eec2baa03d9801c4199217ca3bdf5b) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump (dev)Dependencies
+
 ## 2.1.0
 
 ### Minor Changes

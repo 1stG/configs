@@ -1,5 +1,15 @@
 # Change Log
 
+## 1.7.2
+
+### Patch Changes
+
+- [#56](https://github.com/1stG/configs/pull/56) [`e680550`](https://github.com/1stG/configs/commit/e680550d60eec2baa03d9801c4199217ca3bdf5b) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump (dev)Dependencies
+
+- Updated dependencies [[`e680550`](https://github.com/1stG/configs/commit/e680550d60eec2baa03d9801c4199217ca3bdf5b)]:
+  - @1stg/prettier-config@1.8.1
+  - @1stg/tsconfig@2.0.1
+
 ## 1.7.1
 
 ### Patch Changes
