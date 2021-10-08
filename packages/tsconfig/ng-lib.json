@@ -6,6 +6,7 @@
     "enableResourceInlining": true,
     "fullTemplateTypeCheck": true,
     "preserveWhitespaces": false,
+    "strictInputAccessModifiers": true,
     "strictInjectionParameters": true,
     "strictTemplates": true,
     "trace": true
