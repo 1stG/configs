@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.5.0
+
+### Minor Changes
+
+- [`7fdbf0b`](https://github.com/1stG/configs/commit/7fdbf0be421f2115046b5f90daf7658804794b19) Thanks [@JounQin](https://github.com/JounQin)! - feat(eslint): use simple-import-sort to relace import/order
+
+### Patch Changes
+
+- Updated dependencies [[`f90c027`](https://github.com/1stG/configs/commit/f90c0279a9af8821b98eed0f5ded6d8943d7a450)]:
+  - @1stg/eslint-config@2.7.0
+
 ## 2.4.1
 
 ### Patch Changes
