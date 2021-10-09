@@ -5,7 +5,7 @@ import { promisify } from 'util'
 import { interval } from 'rxjs'
 import { Position } from 'unist'
 
-import { TestCase, content } from './_test'
+import { content, TestCase } from './_test'
 
 promisify(fs.readFile)
 

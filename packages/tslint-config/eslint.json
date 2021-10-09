@@ -8,6 +8,7 @@
     "tslint-config-eslint/sonar"
   ],
   "rules": {
+    "ordered-imports": false,
     "validate-decorators": false
   }
 }

@@ -1,3 +1,5 @@
+const { builtinModules } = require('module')
+
 const { isTsAvailable } = require('@pkgr/utils')
 const { getGlobals } = require('eslint-plugin-mdx')
 
@@ -16,6 +18,7 @@ module.exports = {
     'standard',
     'plugin:prettier/recommended',
   ].filter(Boolean),
+  plugins: ['simple-import-sort'],
   globals: isWebpackAvailable ? getGlobals(webpackSpecVars) : undefined,
   rules: {
     'arrow-body-style': 2,
@@ -34,13 +37,9 @@ module.exports = {
       },
     ],
     'eslint-comments/no-unused-disable': 2,
+    'import/first': 2,
     'import/newline-after-import': 2,
-    'import/order': [
-      2,
-      {
-        'newlines-between': 'always',
-      },
-    ],
+    'import/no-duplicates': 2,
     'no-else-return': [
       2,
       {
@@ -78,6 +77,26 @@ module.exports = {
     'node/no-unpublished-require': 0,
     'prefer-const': 2,
     'prefer-object-spread': 2,
+    'simple-import-sort/exports': 2,
+    'simple-import-sort/imports': [
+      2,
+      {
+        groups: [
+          // side effect imports
+          ['^\\u0000'],
+          // common node built-in packages
+          [`^(${builtinModules.join('|')})$`],
+          // packages
+          ['^(?!app[\\w-]*/)(@[^/]|[^@.])'],
+          // app paths
+          ['^(@|app[\\w-]*)/'],
+          // parent imports
+          ['^(../)+'],
+          // relative imports
+          ['^(?!\\./.*\\.(p?css|less|s[ac]ss|styl(us)?))'],
+        ],
+      },
+    ],
     'unicorn/catch-error-name': [
       2,
       {
