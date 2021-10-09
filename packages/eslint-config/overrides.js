@@ -278,8 +278,6 @@ exports.tslint = {
   excludedFiles: '*.d.ts',
   plugins: TSLINT_CONFIG ? ['@typescript-eslint/tslint'] : undefined,
   rules: {
-    // `ordered-imports` of tslint is better for now
-    'import/order': 0,
     ...(TSLINT_CONFIG
       ? undefined
       : {
