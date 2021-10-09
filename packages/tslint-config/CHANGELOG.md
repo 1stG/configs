@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.0.0
+
+### Major Changes
+
+- [#58](https://github.com/1stG/configs/pull/58) [`f90c027`](https://github.com/1stG/configs/commit/f90c0279a9af8821b98eed0f5ded6d8943d7a450) Thanks [@JounQin](https://github.com/JounQin)! - feat(eslint): use simple-import-sort to relace import/order
+
 ## 2.1.0
 
 ### Minor Changes
