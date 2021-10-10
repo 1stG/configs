@@ -1,5 +1,15 @@
 # Change Log
 
+## 2.5.1
+
+### Patch Changes
+
+- [#60](https://github.com/1stG/configs/pull/60) [`3e43adc`](https://github.com/1stG/configs/commit/3e43adc3690da6a44d0ebd1784eea09f238d2edc) Thanks [@JounQin](https://github.com/JounQin)! - feat: workaround for supporting pnpm out of box
+
+- Updated dependencies [[`3e43adc`](https://github.com/1stG/configs/commit/3e43adc3690da6a44d0ebd1784eea09f238d2edc)]:
+  - @1stg/eslint-config@2.7.1
+  - @1stg/prettier-config@1.9.0
+
 ## 2.5.0
 
 ### Minor Changes
