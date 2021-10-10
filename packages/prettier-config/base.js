@@ -5,6 +5,12 @@ module.exports = {
   trailingComma: 'all',
   xmlWhitespaceSensitivity: 'ignore',
   svelteIndentScriptAndStyle: false, // align with default option of `vueIndentScriptAndStyle`
+  /**
+   * Workaround for pnpm, see also @see https://github.com/prettier/prettier/issues/8474
+   */
+  plugins: Object.keys(require('./package.json').dependencies).map(pkg =>
+    require(pkg),
+  ),
   overrides: [
     {
       files: ['.*rc', '*.json'],
