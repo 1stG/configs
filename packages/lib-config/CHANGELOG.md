@@ -1,5 +1,14 @@
 # Change Log
 
+## 4.1.1
+
+### Patch Changes
+
+- [#60](https://github.com/1stG/configs/pull/60) [`3e43adc`](https://github.com/1stG/configs/commit/3e43adc3690da6a44d0ebd1784eea09f238d2edc) Thanks [@JounQin](https://github.com/JounQin)! - feat: workaround for supporting pnpm out of box
+
+- Updated dependencies [[`3e43adc`](https://github.com/1stG/configs/commit/3e43adc3690da6a44d0ebd1784eea09f238d2edc)]:
+  - @1stg/common-config@2.5.1
+
 ## 4.1.0
 
 ### Minor Changes
