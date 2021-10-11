@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.8.2
+
+### Patch Changes
+
+- [`db59ac7`](https://github.com/1stG/configs/commit/db59ac71f5834f0dc4fef358bc3ac2109d28a17a) Thanks [@JounQin](https://github.com/JounQin)! - chore: disable warnOnUnassignedImports
+
 ## 2.8.0
 
 ### Minor Changes
