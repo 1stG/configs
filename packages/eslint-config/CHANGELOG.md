@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.8.0
+
+### Minor Changes
+
+- [`160eac2`](https://github.com/1stG/configs/commit/160eac24ad0163bc44104372b84996df1dd27323) Thanks [@JounQin](https://github.com/JounQin)! - feat(eslint-config): use import/order back
+
 ## 2.7.1
 
 ### Patch Changes
