@@ -45,7 +45,6 @@ module.exports = {
           order: 'asc',
         },
         'newlines-between': 'always',
-        warnOnUnassignedImports: true,
       },
     ],
     'no-else-return': [
