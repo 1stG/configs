@@ -1,6 +1,6 @@
-const { isPkgAvailable } = require('@pkgr/utils')
 const conventionalConfig = require('@commitlint/config-conventional')
 const lernaScopesConfig = require('@commitlint/config-lerna-scopes')
+const { isPkgAvailable } = require('@pkgr/utils')
 
 const MERGE_PROPERTIES = ['rules', 'utils']
 
