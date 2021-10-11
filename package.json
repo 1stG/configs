@@ -45,7 +45,7 @@
     "type-coverage": "^2.18.2",
     "typescript": "^4.4.3",
     "vue": "^3.2.20",
-    "vue-tsc": "^0.28.1"
+    "vue-tsc": "^0.28.2"
   },
   "resolutions": {
     "prettier": "^2.4.1"

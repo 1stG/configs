@@ -1,5 +1,3 @@
-const { builtinModules } = require('module')
-
 const { isTsAvailable } = require('@pkgr/utils')
 const { getGlobals } = require('eslint-plugin-mdx')
 
@@ -40,6 +38,16 @@ module.exports = {
     'import/first': 2,
     'import/newline-after-import': 2,
     'import/no-duplicates': 2,
+    'import/order': [
+      2,
+      {
+        alphabetize: {
+          order: 'asc',
+        },
+        'newlines-between': 'always',
+        warnOnUnassignedImports: true,
+      },
+    ],
     'no-else-return': [
       2,
       {
@@ -78,25 +86,6 @@ module.exports = {
     'prefer-const': 2,
     'prefer-object-spread': 2,
     'simple-import-sort/exports': 2,
-    'simple-import-sort/imports': [
-      2,
-      {
-        groups: [
-          // side effect imports
-          ['^\\u0000'],
-          // common node built-in packages
-          [`^(${builtinModules.join('|')})$`],
-          // packages
-          ['^(?!app[\\w-]*/)(@[^/]|[^@.])'],
-          // app paths
-          ['^(@|app[\\w-]*)/'],
-          // parent imports
-          ['^(../)+'],
-          // relative imports
-          ['^(?!\\./.*\\.(p?css|less|s[ac]ss|styl(us)?))'],
-        ],
-      },
-    ],
     'unicorn/catch-error-name': [
       2,
       {
