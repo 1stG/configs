@@ -22,8 +22,10 @@ module.exports = {
         {
           ignorePseudoElements: [
             isAngularAvailable && 'ng-deep',
-            isVueAvailable && 'v-deep',
-          ].filter(Boolean),
+            isVueAvailable && ['v-deep', 'v-global', 'v-slotted'],
+          ]
+            .filter(Boolean)
+            .flat(),
         },
       ],
     }),
