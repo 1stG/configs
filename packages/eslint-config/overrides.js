@@ -443,6 +443,12 @@ exports.angular = [
       ],
     },
   },
+  {
+    files: '*inline-template-*.component.html',
+    rules: {
+      'unicorn/no-empty-file': 0,
+    },
+  },
 ]
 
 exports.html = {

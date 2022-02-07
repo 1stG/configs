@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['../base'],
+  customSyntax: 'postcss-scss',
   plugins: ['stylelint-scss'],
   rules: {
     'at-rule-no-unknown': null,

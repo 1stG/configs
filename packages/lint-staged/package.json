@@ -14,9 +14,9 @@
   "dependencies": {
     "@1stg/prettier-config": "^1.8.1",
     "@1stg/tsconfig": "^2.0.1",
-    "@pkgr/utils": "^2.0.1",
+    "@pkgr/utils": "^2.0.2",
     "cross-env": "^7.0.3",
-    "prettier": "^2.4.1"
+    "prettier": "^2.5.1"
   },
   "publishConfig": {
     "access": "public"
