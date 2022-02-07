@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.0.0
+
+### Major Changes
+
+- [#64](https://github.com/1stG/configs/pull/64) [`c9743ef`](https://github.com/1stG/configs/commit/c9743efe61c8724bbdcfa33394776f27a6a851d4) Thanks [@JounQin](https://github.com/JounQin)! - feat!: bump all upgradable dependencies, update related usages
+
 ## 2.8.2
 
 ### Patch Changes
