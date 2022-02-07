@@ -1,5 +1,21 @@
 # Change Log
 
+## 3.0.0
+
+### Major Changes
+
+- [#64](https://github.com/1stG/configs/pull/64) [`c9743ef`](https://github.com/1stG/configs/commit/c9743efe61c8724bbdcfa33394776f27a6a851d4) Thanks [@JounQin](https://github.com/JounQin)! - feat!: bump all upgradable dependencies, update related usages
+
+### Patch Changes
+
+- Updated dependencies [[`c9743ef`](https://github.com/1stG/configs/commit/c9743efe61c8724bbdcfa33394776f27a6a851d4)]:
+  - @1stg/babel-preset@2.1.2
+  - @1stg/commitlint-config@2.0.0
+  - @1stg/eslint-config@3.0.0
+  - @1stg/lint-staged@1.7.3
+  - @1stg/markuplint-config@0.2.0
+  - @1stg/prettier-config@1.10.0
+
 ## 2.5.2
 
 ### Patch Changes
