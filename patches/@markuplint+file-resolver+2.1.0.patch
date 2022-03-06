@@ -1,0 +1,12 @@
+diff --git a/node_modules/@markuplint/file-resolver/lib/resolve-parser.js b/node_modules/@markuplint/file-resolver/lib/resolve-parser.js
+index 749546c..3977839 100644
+--- a/node_modules/@markuplint/file-resolver/lib/resolve-parser.js
++++ b/node_modules/@markuplint/file-resolver/lib/resolve-parser.js
+@@ -18,6 +18,7 @@ async function resolveParser(file, parserConfig, parserOptions) {
+             if (path_1.default.basename(file.path).match((0, ml_config_1.toRegxp)(pattern))) {
+                 parserModName = parserConfig[pattern];
+                 matched = true;
++                break;
+             }
+         }
+     }
