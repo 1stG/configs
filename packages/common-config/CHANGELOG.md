@@ -1,5 +1,19 @@
 # Change Log
 
+## 3.1.0
+
+### Minor Changes
+
+- [#67](https://github.com/1stG/configs/pull/67) [`a2ab1a9`](https://github.com/1stG/configs/commit/a2ab1a9b6a275d5c89c329f28780ada21f120b25) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump deps, upgrade markuplint usage
+
+### Patch Changes
+
+- Updated dependencies [[`a2ab1a9`](https://github.com/1stG/configs/commit/a2ab1a9b6a275d5c89c329f28780ada21f120b25)]:
+  - @1stg/babel-preset@2.1.3
+  - @1stg/commitlint-config@2.0.1
+  - @1stg/eslint-config@3.1.0
+  - @1stg/markuplint-config@1.0.0
+
 ## 3.0.0
 
 ### Major Changes
