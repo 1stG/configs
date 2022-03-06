@@ -10,12 +10,12 @@
     "node": ">=12"
   },
   "peerDependencies": {
-    "markuplint": "^1.0.0"
+    "markuplint": "^2.0.0"
   },
   "dependencies": {
-    "@markuplint/vue-parser": "^1.0.3-beta.1",
-    "@markuplint/vue-spec": "^1.0.1-beta.5",
-    "markuplint-angular-parser": "^1.0.1"
+    "@markuplint/vue-parser": "^2.1.0",
+    "@markuplint/vue-spec": "^2.0.0",
+    "markuplint-angular-parser": "^1.1.0"
   },
   "publishConfig": {
     "access": "public"
