@@ -1,5 +1,18 @@
 # Change Log
 
+## 3.1.1
+
+### Patch Changes
+
+- [#69](https://github.com/1stG/configs/pull/69) [`65d9e3f`](https://github.com/1stG/configs/commit/65d9e3fb654f3a8704405a1061ddc10e21a5f420) Thanks [@JounQin](https://github.com/JounQin)! - fix(stylelint): support JavaScript/TypeScript/Markdown files
+
+- Updated dependencies [[`65d9e3f`](https://github.com/1stG/configs/commit/65d9e3fb654f3a8704405a1061ddc10e21a5f420)]:
+  - @1stg/babel-preset@2.1.4
+  - @1stg/eslint-config@3.1.1
+  - @1stg/lint-staged@1.7.4
+  - @1stg/markuplint-config@1.0.1
+  - @1stg/prettier-config@1.10.1
+
 ## 3.1.0
 
 ### Minor Changes
