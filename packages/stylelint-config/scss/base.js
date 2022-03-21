@@ -3,6 +3,7 @@ module.exports = {
   plugins: ['stylelint-scss'],
   rules: {
     'at-rule-no-unknown': null,
+    'function-no-unknown': null,
     'scss/at-each-key-value-single-line': true,
     'scss/at-import-no-partial-leading-underscore': true,
     'scss/at-import-partial-extension-blacklist': ['sass', 'scss'],
@@ -23,6 +24,7 @@ module.exports = {
       },
     ],
     'scss/declaration-nested-properties-no-divided-groups': true,
+    'scss/function-no-unknown': true,
     'scss/media-feature-value-dollar-variable': 'always',
     'scss/no-duplicate-dollar-variables': [
       true,
