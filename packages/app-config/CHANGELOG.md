@@ -1,5 +1,18 @@
 # Change Log
 
+## 3.2.0
+
+### Minor Changes
+
+- [#73](https://github.com/1stG/configs/pull/73) [`fe9be5d`](https://github.com/1stG/configs/commit/fe9be5db15d6db0dec7c8f6cd25f54e29fb10e5f) Thanks [@JounQin](https://github.com/JounQin)! - fix(deps): bump all (dev)Dependencies
+
+### Patch Changes
+
+- Updated dependencies [[`ab20b23`](https://github.com/1stG/configs/commit/ab20b23985847386c90a37dc8713aa077bb0aeb4), [`fe9be5d`](https://github.com/1stG/configs/commit/fe9be5db15d6db0dec7c8f6cd25f54e29fb10e5f)]:
+  - @1stg/stylelint-config@3.1.2
+  - @1stg/common-config@3.2.0
+  - @1stg/postcss-config@2.3.3
+
 ## 3.1.1
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.1.2
+
+### Patch Changes
+
+- [#71](https://github.com/1stG/configs/pull/71) [`ab20b23`](https://github.com/1stG/configs/commit/ab20b23985847386c90a37dc8713aa077bb0aeb4) Thanks [@JounQin](https://github.com/JounQin)! - fix: incorrect function-no-unknown config for scss
+
 ## 3.1.1
 
 ### Patch Changes
