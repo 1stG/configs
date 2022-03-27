@@ -18,6 +18,10 @@
       "major": {
         "automerge": false
       },
+      "postUpdateOptions": [
+        "npmDedupe",
+        "yarnDedupeFewer"
+      ],
       "rangeStrategy": "bump"
     }
   }
