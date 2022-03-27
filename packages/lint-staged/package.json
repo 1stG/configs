@@ -1,6 +1,6 @@
 {
   "name": "@1stg/lint-staged",
-  "version": "1.7.4",
+  "version": "1.7.5",
   "description": "Personal but Shareable lint-staged Configuration for all 1stG.me projects.",
   "repository": "git+https://github.com/1stG/configs.git",
   "author": "JounQin <admin@1stg.me>",
@@ -12,7 +12,7 @@
     "lint-staged": ">=10.0.0"
   },
   "dependencies": {
-    "@1stg/prettier-config": "^1.10.1",
+    "@1stg/prettier-config": "^2.0.0",
     "@1stg/tsconfig": "^2.0.1",
     "@pkgr/utils": "^2.0.2",
     "cross-env": "^7.0.3",

@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.0.0
+
+### Major Changes
+
+- [#73](https://github.com/1stG/configs/pull/73) [`fe9be5d`](https://github.com/1stG/configs/commit/fe9be5db15d6db0dec7c8f6cd25f54e29fb10e5f) Thanks [@JounQin](https://github.com/JounQin)! - fix(deps): bump all (dev)Dependencies
+
 ## 1.10.1
 
 ### Patch Changes
