@@ -16,7 +16,7 @@
     "@1stg/tsconfig": "^2.0.1",
     "@pkgr/utils": "^2.0.2",
     "cross-env": "^7.0.3",
-    "prettier": "^2.6.0"
+    "prettier": "^2.6.1"
   },
   "publishConfig": {
     "access": "public"
