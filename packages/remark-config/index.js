@@ -1,7 +1,21 @@
-module.exports = [
-  require('remark-lint'),
-  require('remark-preset-lint-consistent'),
-  require('remark-preset-lint-markdown-style-guide'),
-  require('remark-preset-lint-recommended'),
-  require('remark-preset-prettier'),
-]
+import remarkLint from 'remark-lint'
+import remarkPresetLintConsistent from 'remark-preset-lint-consistent'
+import remarkPresetLintMarkdownStyleGuide from 'remark-preset-lint-markdown-style-guide'
+import remarkPresetLintRecommended from 'remark-preset-lint-recommended'
+import remarkPresetPrettier from 'remark-preset-prettier'
+import remarkValidateLinks from 'remark-validate-links'
+
+export default {
+  settings: {
+    emphasis: '_',
+    strong: '*',
+  },
+  plugins: [
+    remarkLint,
+    remarkPresetLintConsistent,
+    remarkPresetLintMarkdownStyleGuide,
+    remarkPresetLintRecommended,
+    remarkPresetPrettier,
+    remarkValidateLinks,
+  ],
+}
