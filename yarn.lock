@@ -5318,9 +5318,10 @@ eslint-import-resolver-typescript@^2.7.0:
     resolve "^1.22.0"
     tsconfig-paths "^3.14.1"
 
-"eslint-mdx@https://pkg.csb.dev/mdx-js/eslint-mdx/commit/2c6fb0e5/eslint-mdx":
-  version "1.17.0"
-  resolved "https://pkg.csb.dev/mdx-js/eslint-mdx/commit/2c6fb0e5/eslint-mdx#a0dfe45ebf85ccc9b8b725efea78d5294d85f692"
+eslint-mdx@^2.0.0-next.1:
+  version "2.0.0-next.1"
+  resolved "https://registry.yarnpkg.com/eslint-mdx/-/eslint-mdx-2.0.0-next.1.tgz#1e66a09a2bd43f7dd7a2330241a3acc58b0c0cde"
+  integrity sha512-FbmGjKJPiUnZ1qO5kA60wxV3n6CzOGdLjvdGh+Nu2Oyy2MxzsW3+0Y57Zj4L7C46HSN/znxJbGiVDOKq6eN0Cg==
   dependencies:
     cosmiconfig "^7.0.1"
     remark-mdx "^2.1.0"
@@ -5412,11 +5413,12 @@ eslint-plugin-markup@^0.8.0:
     synckit "^0.6.0"
     tslib "^2.3.1"
 
-"eslint-plugin-mdx@https://pkg.csb.dev/mdx-js/eslint-mdx/commit/2c6fb0e5/eslint-plugin-mdx":
-  version "1.17.0"
-  resolved "https://pkg.csb.dev/mdx-js/eslint-mdx/commit/2c6fb0e5/eslint-plugin-mdx#2d45796ef1b1e4e4a619d0357691ef446bec5b2d"
+eslint-plugin-mdx@^2.0.0-next.1:
+  version "2.0.0-next.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-mdx/-/eslint-plugin-mdx-2.0.0-next.1.tgz#8f61f6cb4ebd1a395868123bc822b4d26a1dba54"
+  integrity sha512-1T8gZZ3pzSveH0vvxRHpdIa+DDRIub/yJZ6K5QotDRFgpFzP4rXongx+2/gL79ReoYRbeVkUpLUW5ACoZeQLlg==
   dependencies:
-    eslint-mdx "https://pkg.csb.dev/mdx-js/eslint-mdx/commit/2c6fb0e5/eslint-mdx"
+    eslint-mdx "^2.0.0-next.1"
     eslint-plugin-markdown "^2.2.1"
     remark-mdx "^2.1.0"
     remark-parse "^10.0.1"
