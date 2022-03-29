@@ -1,5 +1,16 @@
 # Change Log
 
+## 3.3.0
+
+### Minor Changes
+
+- [#74](https://github.com/1stG/configs/pull/74) [`fa99600`](https://github.com/1stG/configs/commit/fa996000c809c99354cbbf1368adaa196684feb1) Thanks [@JounQin](https://github.com/JounQin)! - feat(remark): upgrade remark to ESM only
+
+### Patch Changes
+
+- Updated dependencies [[`fa99600`](https://github.com/1stG/configs/commit/fa996000c809c99354cbbf1368adaa196684feb1)]:
+  - @1stg/common-config@3.3.0
+
 ## 3.2.0
 
 ### Minor Changes
