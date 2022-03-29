@@ -467,14 +467,6 @@ exports.html = {
 exports.md = {
   files: '*.md',
   extends: ['plugin:mdx/recommended'],
-  rules: {
-    'prettier/prettier': [
-      2,
-      {
-        parser: 'markdown',
-      },
-    ],
-  },
 }
 
 exports.mdx = {
