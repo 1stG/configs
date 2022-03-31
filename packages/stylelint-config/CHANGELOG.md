@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.1.3
+
+### Patch Changes
+
+- [#76](https://github.com/1stG/configs/pull/76) [`ce006e3`](https://github.com/1stG/configs/commit/ce006e33d6f870f769ee48e88db44a7a715f4dc7) Thanks [@JounQin](https://github.com/JounQin)! - fix(stylelint-config): allow BEM for selector-class-pattern
+
 ## 3.1.2
 
 ### Patch Changes
