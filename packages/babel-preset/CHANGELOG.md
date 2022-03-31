@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.1.5
+
+### Patch Changes
+
+- [#78](https://github.com/1stG/configs/pull/78) [`82a96c9`](https://github.com/1stG/configs/commit/82a96c9e35961ebcbbe7ece95420e031359ec29f) Thanks [@JounQin](https://github.com/JounQin)! - fix(babel-preset): add jsxRuntime option with automatic as default
+
 ## 2.1.4
 
 ### Patch Changes
