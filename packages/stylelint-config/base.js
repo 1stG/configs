@@ -15,6 +15,13 @@ module.exports = {
         severity: 'warning',
       },
     ],
+    'selector-class-pattern': [
+      '^[a-z]([\\da-z-]+)?(__([\\da-z]+-?)+)?(--([\\da-z]+-?)+){0,2}$',
+      {
+        message: 'Expected class selector to be kebab-case or BEM',
+        resolveNestedSelectors: true,
+      },
+    ],
     'selector-pseudo-element-colon-notation': 'single',
     ...((isAngularAvailable || isVueAvailable) && {
       'selector-pseudo-element-no-unknown': [

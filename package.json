@@ -16,7 +16,7 @@
     "check:tslint": "tslint-config-prettier-check ./tslint.json",
     "lint": "run-p lint:*",
     "lint:es": "eslint . --cache -f friendly",
-    "lint:style": "stylelint --cache 'tests/*.{css,html,js,jsx,less,scss,svelte,ts,tsx,vue}'",
+    "lint:style": "stylelint . --cache",
     "lint:ts": "tslint -p . -t stylish",
     "lint:tsc": "tsc --noEmit",
     "postinstall": "patch-package && simple-git-hooks && yarn-deduplicate --strategy fewer || exit 0",
