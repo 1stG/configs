@@ -1,5 +1,5 @@
 ---
-"@1stg/prettier-config": patch
+"@1stg/prettier-config": minor
 ---
 
 fix(deps): upgrade prettier plugins
