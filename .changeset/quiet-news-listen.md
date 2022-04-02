@@ -1,5 +1,5 @@
 ---
-"@1stg/eslint-config": patch
+"@1stg/eslint-config": minor
 ---
 
 fix(deps): bump eslint-plugin-unicorn
