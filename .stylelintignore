@@ -2,6 +2,7 @@ coverage
 LICENSE
 *.json
 *.lock
+*.sh
 *.svg
 *.tsbuildinfo
 *.yaml
