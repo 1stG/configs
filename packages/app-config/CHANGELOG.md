@@ -1,5 +1,16 @@
 # Change Log
 
+## 3.4.0
+
+### Minor Changes
+
+- [#80](https://github.com/1stG/configs/pull/80) [`0cb1e8d`](https://github.com/1stG/configs/commit/0cb1e8da0758d096da8678acab61c847657233cd) Thanks [@JounQin](https://github.com/JounQin)! - fix(deps): upgrade babel/eslint/prettier plugins
+
+### Patch Changes
+
+- Updated dependencies [[`0cb1e8d`](https://github.com/1stG/configs/commit/0cb1e8da0758d096da8678acab61c847657233cd)]:
+  - @1stg/common-config@3.4.0
+
 ## 3.3.0
 
 ### Minor Changes
