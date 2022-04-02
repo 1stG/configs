@@ -16,7 +16,6 @@ module.exports = declare(
       modules = false,
       esmodules,
       react,
-      jsxRuntime = 'automatic',
       typescript,
       vue,
       isTSX = vue,
@@ -151,7 +150,8 @@ module.exports = declare(
       require('@babel/preset-react'),
       {
         development: isDev,
-        runtime: jsxRuntime,
+        runtime:
+          react && react.jsxRuntime != null ? react.jsxRuntime : 'automatic',
       },
     ]
 
