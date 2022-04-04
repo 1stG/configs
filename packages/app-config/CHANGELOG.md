@@ -1,5 +1,16 @@
 # Change Log
 
+## 3.5.0
+
+### Minor Changes
+
+- [`c51d532`](https://github.com/1stG/configs/commit/c51d5329263b980b02a261ce2328d625be16d996) Thanks [@JounQin](https://github.com/JounQin)! - feat(prettier): enable singleAttributePerLine option
+
+### Patch Changes
+
+- Updated dependencies [[`c51d532`](https://github.com/1stG/configs/commit/c51d5329263b980b02a261ce2328d625be16d996)]:
+  - @1stg/common-config@3.5.0
+
 ## 3.4.0
 
 ### Minor Changes

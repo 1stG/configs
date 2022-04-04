@@ -1,5 +1,15 @@
 # Change Log
 
+## 2.2.0
+
+### Minor Changes
+
+- [`c51d532`](https://github.com/1stG/configs/commit/c51d5329263b980b02a261ce2328d625be16d996) Thanks [@JounQin](https://github.com/JounQin)! - feat(prettier): enable singleAttributePerLine option
+
+### Patch Changes
+
+- [`991ed9d`](https://github.com/1stG/configs/commit/991ed9d9b948211cd19dae8c93f9c310552b8a33) Thanks [@JounQin](https://github.com/JounQin)! - fix(prettier): upgrade pkg and sh plugins
+
 ## 2.1.0
 
 ### Minor Changes
