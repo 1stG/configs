@@ -50,7 +50,7 @@
     "vue-tsc": "^0.33.9"
   },
   "resolutions": {
-    "prettier": "^2.6.1"
+    "prettier": "^2.6.2"
   },
   "typeCoverage": {
     "atLeast": 100,
