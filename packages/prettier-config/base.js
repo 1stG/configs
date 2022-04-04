@@ -1,6 +1,7 @@
 module.exports = {
   arrowParens: 'avoid',
   semi: false,
+  singleAttributePerLine: true,
   singleQuote: true,
   trailingComma: 'all',
   xmlWhitespaceSensitivity: 'ignore',
