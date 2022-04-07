@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.1.0
+
+### Minor Changes
+
+- [#84](https://github.com/1stG/configs/pull/84) [`1d61d6b`](https://github.com/1stG/configs/commit/1d61d6bd9f68f4a117970d9d9c5d791924eba26f) Thanks [@JounQin](https://github.com/JounQin)! - feat(remark): update plugins
+
 ## 2.0.0
 
 ### Major Changes
