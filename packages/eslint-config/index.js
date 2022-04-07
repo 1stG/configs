@@ -1,6 +1,7 @@
+const base = require('./base')
 const { overrides } = require('./overrides')
 
 module.exports = {
-  extends: require.resolve('./base'),
-  overrides,
+  ...base,
+  overrides: [...base.overrides, ...overrides],
 }

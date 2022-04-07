@@ -9,6 +9,8 @@ export default {
   settings: {
     emphasis: '_',
     strong: '*',
+    listItemIndent: 1,
+    tightDefinitions: true,
   },
   plugins: [
     remarkLint,

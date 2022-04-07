@@ -471,9 +471,17 @@ exports.md = {
 
 exports.mdx = {
   files: '*.mdx',
-  extends: [...reactJsx.extends, 'plugin:mdx/recommended'],
+  extends: [
+    ...reactJsx.extends,
+    'plugin:import/recommended',
+    'plugin:mdx/recommended',
+  ],
+  plugins: ['simple-import-sort'],
   parserOptions: jsBase.parserOptions,
   settings: { ...reactJsx.settings, ...resolveSettings },
+  rules: {
+    'simple-import-sort/exports': 2,
+  },
 }
 
 const nonSourceRules = {
