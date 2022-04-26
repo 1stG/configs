@@ -11,8 +11,13 @@ import remarkValidateLinks from 'remark-validate-links'
 
 export default {
   settings: {
+    bullet: '-',
     emphasis: '_',
+    listItemIndent: 'one',
+    quote: "'",
+    rule: '-',
     strong: '*',
+    tightDefinitions: true,
   },
   plugins: [
     remarkLint,
