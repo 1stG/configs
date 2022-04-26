@@ -1,3 +1,4 @@
+import remarkFrontmatter from 'remark-frontmatter'
 import remarkGfm from 'remark-gfm'
 import remarkLint from 'remark-lint'
 import remarkLintNoDuplicateHeadings from 'remark-lint-no-duplicate-headings'
@@ -19,6 +20,7 @@ export default {
     remarkPresetLintMarkdownStyleGuide,
     remarkPresetLintRecommended,
     remarkPresetPrettier,
+    remarkFrontmatter,
     remarkGfm,
     remarkValidateLinks,
     [remarkLintNoDuplicateHeadings, false],
