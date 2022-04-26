@@ -1,4 +1,3 @@
-/* eslint-disable sonarjs/no-duplicate-string */
 const path = require('path')
 
 const {
@@ -270,27 +269,6 @@ exports.dTs = {
   },
 }
 
-const TSLINT_CONFIG = tryFile(path.resolve('tslint.json'))
-const lintFile = TSLINT_CONFIG || tryPkg('@1stg/tslint-config')
-
-exports.tslint = {
-  files: '*.{ts,tsx}',
-  excludedFiles: '*.d.ts',
-  plugins: TSLINT_CONFIG ? ['@typescript-eslint/tslint'] : undefined,
-  rules: {
-    ...(TSLINT_CONFIG
-      ? undefined
-      : {
-          '@typescript-eslint/tslint/config': [
-            2,
-            {
-              lintFile,
-            },
-          ],
-        }),
-  },
-}
-
 const reactJsx = {
   extends: ['standard-react', 'plugin:react/recommended', 'prettier'],
   settings: {
@@ -513,7 +491,6 @@ exports.overrides = []
   .concat(
     isPkgAvailable('@babel/core') && exports.js,
     isTsAvailable && exports.ts,
-    isPkgAvailable('tslint') && lintFile && exports.tslint,
     isReactAvailable && exports.react,
     isReactAvailable && exports.reactHooks,
     isReactAvailable && exports.reactTs,
