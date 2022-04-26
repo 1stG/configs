@@ -193,7 +193,7 @@ const tsBase = {
     'no-unused-vars': 0,
     'no-use-before-define': 0,
     'no-useless-constructor': 0,
-    'node/shebang': 0,
+    'n/shebang': 0,
     // covered by @typescript-eslint/no-floating-promises
     'promise/always-return': 0,
     'promise/catch-or-return': 0,
@@ -211,7 +211,7 @@ exports.ts = [
   {
     files: '{bin,cli}.ts',
     rules: {
-      'node/shebang': 0,
+      'n/shebang': 0,
     },
   },
   {
@@ -477,9 +477,9 @@ exports.mdx = {
 }
 
 const nonSourceRules = {
-  'node/no-extraneous-import': 0,
-  'node/no-extraneous-require': 0,
-  'node/no-unsupported-features/es-builtins': 0,
+  'n/no-extraneous-import': 0,
+  'n/no-extraneous-require': 0,
+  'n/no-unsupported-features/es-builtins': 0,
 }
 
 exports.test = {

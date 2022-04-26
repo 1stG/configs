@@ -8,7 +8,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:eslint-comments/recommended',
     'plugin:import/recommended',
-    'plugin:node/recommended',
+    'plugin:n/recommended',
     'plugin:promise/recommended',
     'plugin:sonarjs/recommended',
     isTsAvailable && 'plugin:sonar/recommended',
@@ -73,15 +73,15 @@ module.exports = {
     'no-process-exit': 0, // suspended by unicorn/no-process-exit
 
     // The following rules are duplicate with `eslint-plugin-import`
-    'node/no-extraneous-import': 0,
-    'node/no-extraneous-require': 0,
-    'node/no-missing-import': 0,
-    'node/no-missing-require': 0,
+    'n/no-extraneous-import': 0,
+    'n/no-extraneous-require': 0,
+    'n/no-missing-import': 0,
+    'n/no-missing-require': 0,
 
-    'node/no-unsupported-features/es-syntax': 0,
-    'node/no-unsupported-features/node-builtins': 0,
-    'node/no-unpublished-import': 0,
-    'node/no-unpublished-require': 0,
+    'n/no-unsupported-features/es-syntax': 0,
+    'n/no-unsupported-features/node-builtins': 0,
+    'n/no-unpublished-import': 0,
+    'n/no-unpublished-require': 0,
     'prefer-const': 2,
     'prefer-object-spread': 2,
     'simple-import-sort/exports': 2,

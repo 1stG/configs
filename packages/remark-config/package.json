@@ -6,9 +6,13 @@
   "repository": "git+https://github.com/1stG/configs.git",
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
+  "engines": {
+    "node": ">=14"
+  },
   "main": "index.js",
   "module": "index.js",
   "dependencies": {
+    "remark-frontmatter": "^4.0.1",
     "remark-gfm": "^3.0.1",
     "remark-lint": "^9.1.1",
     "remark-lint-no-duplicate-headings": "^3.1.1",
