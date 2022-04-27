@@ -1,4 +1,4 @@
-const { isPkgAvailable, tryFile } = require('@pkgr/utils')
+const { isPkgAvailable } = require('@pkgr/utils')
 
 const config = [
   '*.{*sh,env,env.*,gql,html,json,properties,pug,rb,svelte,vue,toml,yaml,yml}',
@@ -13,22 +13,16 @@ const config = [
 )
 
 if (isPkgAvailable('eslint')) {
-  Object.assign(
-    config,
-    {
-      '*.{cjs,js,jsx,md,mdx,mjs,svelte,vue}':
-        'eslint --cache -f friendly --fix',
-    },
-    require('./ts-eslint'),
-  )
+  Object.assign(config, {
+    '*.{cjs,js,jsx,md,mdx,mjs,svelte,vue}': 'eslint --cache -f friendly --fix',
+    '*.{ts,tsx}': [
+      'cross-env PARSER_NO_WATCH=true eslint --cache -f friendly --fix',
+    ],
+  })
 }
 
 if (isPkgAvailable('stylelint')) {
   config['*.{css,less,sass,scss,vue}'] = 'stylelint --cache --fix'
-}
-
-if (isPkgAvailable('tslint') && tryFile('tslint.json')) {
-  Object.assign(config, require('./ts-tslint'))
 }
 
 if (isPkgAvailable('@pkgr/imagemin')) {

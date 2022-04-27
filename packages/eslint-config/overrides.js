@@ -1,4 +1,3 @@
-/* eslint-disable sonarjs/no-duplicate-string */
 const path = require('path')
 
 const {
@@ -193,7 +192,7 @@ const tsBase = {
     'no-unused-vars': 0,
     'no-use-before-define': 0,
     'no-useless-constructor': 0,
-    'node/shebang': 0,
+    'n/shebang': 0,
     // covered by @typescript-eslint/no-floating-promises
     'promise/always-return': 0,
     'promise/catch-or-return': 0,
@@ -211,7 +210,7 @@ exports.ts = [
   {
     files: '{bin,cli}.ts',
     rules: {
-      'node/shebang': 0,
+      'n/shebang': 0,
     },
   },
   {
@@ -267,27 +266,6 @@ exports.dTs = {
     '@typescript-eslint/no-unused-vars': 0,
     'import/no-duplicates': 0,
     'import/order': 0,
-  },
-}
-
-const TSLINT_CONFIG = tryFile(path.resolve('tslint.json'))
-const lintFile = TSLINT_CONFIG || tryPkg('@1stg/tslint-config')
-
-exports.tslint = {
-  files: '*.{ts,tsx}',
-  excludedFiles: '*.d.ts',
-  plugins: TSLINT_CONFIG ? ['@typescript-eslint/tslint'] : undefined,
-  rules: {
-    ...(TSLINT_CONFIG
-      ? undefined
-      : {
-          '@typescript-eslint/tslint/config': [
-            2,
-            {
-              lintFile,
-            },
-          ],
-        }),
   },
 }
 
@@ -477,9 +455,9 @@ exports.mdx = {
 }
 
 const nonSourceRules = {
-  'node/no-extraneous-import': 0,
-  'node/no-extraneous-require': 0,
-  'node/no-unsupported-features/es-builtins': 0,
+  'n/no-extraneous-import': 0,
+  'n/no-extraneous-require': 0,
+  'n/no-unsupported-features/es-builtins': 0,
 }
 
 exports.test = {
@@ -513,7 +491,6 @@ exports.overrides = []
   .concat(
     isPkgAvailable('@babel/core') && exports.js,
     isTsAvailable && exports.ts,
-    isPkgAvailable('tslint') && lintFile && exports.tslint,
     isReactAvailable && exports.react,
     isReactAvailable && exports.reactHooks,
     isReactAvailable && exports.reactTs,

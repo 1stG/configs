@@ -7,14 +7,14 @@
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "engines": {
-    "node": ">=12"
+    "node": ">=14"
   },
   "peerDependencies": {
     "markuplint": "^2.0.0"
   },
   "dependencies": {
-    "@markuplint/vue-parser": "^2.1.0",
-    "@markuplint/vue-spec": "^2.0.2",
+    "@markuplint/vue-parser": "^2.3.0",
+    "@markuplint/vue-spec": "^2.1.0",
     "markuplint-angular-parser": "^1.1.1"
   },
   "publishConfig": {

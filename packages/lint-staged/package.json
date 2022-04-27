@@ -6,7 +6,7 @@
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "engines": {
-    "node": ">=12"
+    "node": ">=14"
   },
   "peerDependencies": {
     "lint-staged": ">=10.0.0"
@@ -14,7 +14,7 @@
   "dependencies": {
     "@1stg/prettier-config": "^2.0.0",
     "@1stg/tsconfig": "^2.0.1",
-    "@pkgr/utils": "^2.0.3",
+    "@pkgr/utils": "^2.1.0",
     "cross-env": "^7.0.3",
     "prettier": "^2.6.2"
   },

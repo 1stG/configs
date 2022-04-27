@@ -7,12 +7,12 @@
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "engines": {
-    "node": ">=12"
+    "node": ">=14"
   },
   "dependencies": {
     "@1stg/common-config": "^3.5.0",
     "@pkgr/rollup": "^3.0.1",
-    "jest": "^27.5.1"
+    "jest": "^28.0.1"
   },
   "publishConfig": {
     "access": "public"

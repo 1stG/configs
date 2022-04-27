@@ -32,8 +32,6 @@ module.exports = {
         'settings.json',
         'tsconfig.json',
         'tsconfig.*.json',
-        'tslint.json',
-        'tslint.*.json',
       ],
       options: {
         parser: 'json',

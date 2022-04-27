@@ -1,3 +1,4 @@
+import remarkFrontmatter from 'remark-frontmatter'
 import remarkGfm from 'remark-gfm'
 import remarkLint from 'remark-lint'
 import remarkLintNoDuplicateHeadings from 'remark-lint-no-duplicate-headings'
@@ -10,8 +11,13 @@ import remarkValidateLinks from 'remark-validate-links'
 
 export default {
   settings: {
+    bullet: '-',
     emphasis: '_',
+    listItemIndent: 'one',
+    quote: "'",
+    rule: '-',
     strong: '*',
+    tightDefinitions: true,
   },
   plugins: [
     remarkLint,
@@ -19,6 +25,7 @@ export default {
     remarkPresetLintMarkdownStyleGuide,
     remarkPresetLintRecommended,
     remarkPresetPrettier,
+    remarkFrontmatter,
     remarkGfm,
     remarkValidateLinks,
     [remarkLintNoDuplicateHeadings, false],

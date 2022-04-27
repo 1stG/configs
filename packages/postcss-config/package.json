@@ -6,14 +6,14 @@
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "engines": {
-    "node": ">=12"
+    "node": ">=14"
   },
   "peerDependencies": {
     "postcss": ">=7.0.0"
   },
   "dependencies": {
-    "@pkgr/utils": "^2.0.3",
-    "autoprefixer": "^10.4.4",
+    "@pkgr/utils": "^2.1.0",
+    "autoprefixer": "^10.4.5",
     "cssnano": "^5.1.7",
     "cssnano-preset-advanced": "^5.3.3",
     "postcss-import": "^14.1.0",

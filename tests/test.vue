@@ -20,6 +20,11 @@ export const reverse = async () => {
   msg = [...msg].reverse().join('')
 }
 </script>
+<script>
+export default {
+  name: 'VTest',
+}
+</script>
 <style>
 div {
   color: red;
