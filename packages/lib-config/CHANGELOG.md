@@ -1,5 +1,16 @@
 # Change Log
 
+## 6.0.0
+
+### Major Changes
+
+- [#86](https://github.com/1stG/configs/pull/86) [`e5a780c`](https://github.com/1stG/configs/commit/e5a780c39c7fc49a3009dbac4bc6bfa18beb3365) Thanks [@JounQin](https://github.com/JounQin)! - feat!: bump deps, drop node 12
+
+### Patch Changes
+
+- Updated dependencies [[`e5a780c`](https://github.com/1stG/configs/commit/e5a780c39c7fc49a3009dbac4bc6bfa18beb3365)]:
+  - @1stg/common-config@4.0.0
+
 ## 5.5.0
 
 ### Minor Changes
