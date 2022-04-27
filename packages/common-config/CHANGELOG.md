@@ -1,5 +1,22 @@
 # Change Log
 
+## 4.0.0
+
+### Major Changes
+
+- [#86](https://github.com/1stG/configs/pull/86) [`e5a780c`](https://github.com/1stG/configs/commit/e5a780c39c7fc49a3009dbac4bc6bfa18beb3365) Thanks [@JounQin](https://github.com/JounQin)! - feat!: bump deps, drop node 12
+
+### Patch Changes
+
+- Updated dependencies [[`e5a780c`](https://github.com/1stG/configs/commit/e5a780c39c7fc49a3009dbac4bc6bfa18beb3365), [`e5a780c`](https://github.com/1stG/configs/commit/e5a780c39c7fc49a3009dbac4bc6bfa18beb3365)]:
+  - @1stg/babel-preset@3.0.0
+  - @1stg/commitlint-config@3.0.0
+  - @1stg/eslint-config@4.0.0
+  - @1stg/lint-staged@2.0.0
+  - @1stg/markuplint-config@2.0.0
+  - @1stg/prettier-config@3.0.0
+  - @1stg/remark-config@3.0.0
+
 ## 3.5.0
 
 ### Minor Changes
