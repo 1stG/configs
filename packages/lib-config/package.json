@@ -12,7 +12,7 @@
   "dependencies": {
     "@1stg/common-config": "^4.0.0",
     "@pkgr/rollup": "^3.0.1",
-    "jest": "^28.0.1"
+    "jest": "^28.1.0"
   },
   "publishConfig": {
     "access": "public"

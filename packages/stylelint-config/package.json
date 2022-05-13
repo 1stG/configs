@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@pkgr/utils": "^2.1.0",
-    "@stylelint/postcss-css-in-js": "^0.37.2",
+    "@stylelint/postcss-css-in-js": "^0.38.0",
     "postcss-html": "^1.4.1",
     "postcss-less": "^6.0.0",
     "postcss-markdown": "^1.2.0",

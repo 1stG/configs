@@ -17,8 +17,8 @@
     "@pkgr/es-modules": "^0.5.2",
     "@pkgr/imagemin": "^3.0.0",
     "browserslist": "^4.20.3",
-    "postcss": "^8.4.12",
-    "stylelint": "^14.7.1"
+    "postcss": "^8.4.13",
+    "stylelint": "^14.8.2"
   },
   "publishConfig": {
     "access": "public"
