@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.1.0
+
+### Minor Changes
+
+- [`8b6765c`](https://github.com/1stG/configs/commit/8b6765c128a427258d53682fffae0c5ac46a5f95) Thanks [@JounQin](https://github.com/JounQin)! - chore(deps): bump all (dev)Dependencies
+
 ## 3.0.0
 
 ### Major Changes

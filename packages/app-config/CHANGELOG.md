@@ -1,5 +1,18 @@
 # Change Log
 
+## 4.1.0
+
+### Minor Changes
+
+- [`8b6765c`](https://github.com/1stG/configs/commit/8b6765c128a427258d53682fffae0c5ac46a5f95) Thanks [@JounQin](https://github.com/JounQin)! - chore(deps): bump all (dev)Dependencies
+
+### Patch Changes
+
+- Updated dependencies [[`8b6765c`](https://github.com/1stG/configs/commit/8b6765c128a427258d53682fffae0c5ac46a5f95)]:
+  - @1stg/common-config@4.1.0
+  - @1stg/postcss-config@3.1.0
+  - @1stg/stylelint-config@4.1.0
+
 ## 4.0.0
 
 ### Major Changes
