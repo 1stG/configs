@@ -1,5 +1,14 @@
 # Change Log
 
+## 6.1.1
+
+### Patch Changes
+
+- [`98d4038`](https://github.com/1stG/configs/commit/98d403872c59ce50f29abbb1991aa432ae3f8151) Thanks [@JounQin](https://github.com/JounQin)! - fix(deps): upgrade eslint-plugin-mdx
+
+- Updated dependencies [[`98d4038`](https://github.com/1stG/configs/commit/98d403872c59ce50f29abbb1991aa432ae3f8151)]:
+  - @1stg/common-config@4.1.1
+
 ## 6.1.0
 
 ### Minor Changes
