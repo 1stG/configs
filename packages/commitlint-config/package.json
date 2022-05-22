@@ -9,9 +9,9 @@
     "node": ">=14"
   },
   "dependencies": {
-    "@commitlint/config-conventional": "^16.2.4",
-    "@commitlint/config-lerna-scopes": "^16.2.4",
-    "@pkgr/utils": "^2.1.0"
+    "@commitlint/config-conventional": "^17.0.0",
+    "@commitlint/config-lerna-scopes": "^17.0.0",
+    "@pkgr/utils": "^2.2.0"
   },
   "publishConfig": {
     "access": "public"

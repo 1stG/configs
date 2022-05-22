@@ -13,7 +13,7 @@
     "markuplint": "^2.0.0"
   },
   "dependencies": {
-    "@markuplint/vue-parser": "^2.3.0",
+    "@markuplint/vue-parser": "^2.3.1",
     "@markuplint/vue-spec": "^2.1.0",
     "markuplint-angular-parser": "^1.1.1"
   },

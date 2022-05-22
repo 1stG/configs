@@ -17,37 +17,42 @@
     "lint:es": "eslint . --cache -f friendly",
     "lint:style": "stylelint . --cache",
     "lint:tsc": "tsc --noEmit",
-    "postinstall": "patch-package && simple-git-hooks && yarn-deduplicate --strategy fewer || exit 0",
+    "prepare": "patch-package && simple-git-hooks && yarn-deduplicate --strategy fewer || exit 0",
     "release": "changeset publish",
-    "test": "jest ---collectCoverage",
+    "test": "jest",
     "typecov": "type-coverage"
   },
   "devDependencies": {
-    "@angular/compiler": "^13.3.8",
-    "@angular/compiler-cli": "^13.3.8",
-    "@angular/core": "^13.3.8",
+    "@angular/compiler": "^13.3.9",
+    "@angular/compiler-cli": "^13.3.9",
+    "@angular/core": "^13.3.9",
     "@changesets/changelog-github": "^0.4.4",
     "@changesets/cli": "^2.22.0",
     "@types/jest": "^27.5.1",
-    "@types/node": "^17.0.33",
+    "@types/node": "^17.0.35",
     "@types/react": "^18.0.9",
     "@types/unist": "^2.0.6",
     "core-js": "^3.22.5",
-    "enhanced-resolve": "^5.9.3",
-    "markuplint": "^2.7.1",
+    "markuplint": "^2.8.0",
     "patch-package": "^6.4.7",
-    "postcss": "^8.4.13",
     "react": "^18.1.0",
     "rxjs": "^7.5.5",
     "svelte": "^3.48.0",
     "ts-jest": "^28.0.2",
     "type-coverage": "^2.21.1",
     "typescript": "^4.6.4",
-    "vue": "^3.2.33",
-    "vue-tsc": "^0.34.13"
+    "vue": "^3.2.35",
+    "vue-tsc": "^0.34.15"
   },
   "resolutions": {
     "prettier": "^2.6.2"
+  },
+  "jest": {
+    "preset": "ts-jest/presets/js-with-babel",
+    "testRegex": [
+      ".*\\.(spec|test)\\.[jt]sx?$"
+    ],
+    "collectCoverage": true
   },
   "typeCoverage": {
     "atLeast": 100,

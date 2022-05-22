@@ -344,6 +344,13 @@ exports.vue = [
     },
     extends: [...tsBase.extends, ...vueExtends],
   },
+  {
+    files: '*.vue',
+    rules: {
+      'no-unused-vars': 0,
+      '@typescript-eslint/no-unused-vars': 0,
+    },
+  },
 ].filter(Boolean)
 
 const svelteBase = {

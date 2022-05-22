@@ -9,11 +9,11 @@
 >
 import { Point } from 'unist'
 
-export const getLine = (point: Point) => point.line
+const getLine = (point: Point) => point.line
 
-export let msg = 'Hello Vue!'
+let msg = 'Hello Vue!'
 
-export const reverse = async () => {
+const reverse = async () => {
   await new Promise(resolve => {
     setTimeout(resolve, 500)
   })
