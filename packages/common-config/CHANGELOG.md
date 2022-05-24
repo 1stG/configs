@@ -1,5 +1,16 @@
 # Change Log
 
+## 4.1.2
+
+### Patch Changes
+
+- [`04a4d10`](https://github.com/1stG/configs/commit/04a4d10ed356e7e01ded23d99661a93fc0b76e5c) Thanks [@JounQin](https://github.com/JounQin)! - chore: upgrade (dev)Dependencies and related usages
+
+- Updated dependencies [[`04a4d10`](https://github.com/1stG/configs/commit/04a4d10ed356e7e01ded23d99661a93fc0b76e5c)]:
+  - @1stg/commitlint-config@3.0.1
+  - @1stg/eslint-config@4.1.2
+  - @1stg/prettier-config@3.1.1
+
 ## 4.1.1
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.1.2
+
+### Patch Changes
+
+- [`04a4d10`](https://github.com/1stG/configs/commit/04a4d10ed356e7e01ded23d99661a93fc0b76e5c) Thanks [@JounQin](https://github.com/JounQin)! - chore: upgrade (dev)Dependencies and related usages
+
 ## 4.1.1
 
 ### Patch Changes
