@@ -6,9 +6,6 @@
 
 - [#73](https://github.com/1stG/configs/pull/73) [`fe9be5d`](https://github.com/1stG/configs/commit/fe9be5db15d6db0dec7c8f6cd25f54e29fb10e5f) Thanks [@JounQin](https://github.com/JounQin)! - fix(deps): bump all (dev)Dependencies
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
-
 # [1.0.0](https://github.com/1stG/configs/compare/@1stg/renovate-config@0.7.0...@1stg/renovate-config@1.0.0) (2021-01-26)
 
 **Note:** Version bump only for package @1stg/renovate-config

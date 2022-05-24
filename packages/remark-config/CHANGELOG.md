@@ -22,9 +22,6 @@
 
 - [#74](https://github.com/1stG/configs/pull/74) [`fa99600`](https://github.com/1stG/configs/commit/fa996000c809c99354cbbf1368adaa196684feb1) Thanks [@JounQin](https://github.com/JounQin)! - feat(remark): upgrade remark to ESM only
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
-
 # [1.1.0](https://github.com/1stG/configs/compare/@1stg/remark-config@1.0.0...@1stg/remark-config@1.1.0) (2021-03-14)
 
 ### Features

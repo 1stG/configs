@@ -25,7 +25,12 @@ module.exports = {
     ],
     'scss/declaration-nested-properties-no-divided-groups': true,
     'scss/function-no-unknown': true,
-    'scss/media-feature-value-dollar-variable': 'always',
+    'scss/media-feature-value-dollar-variable': [
+      'always',
+      {
+        ignore: ['keywords'],
+      },
+    ],
     'scss/no-duplicate-dollar-variables': [
       true,
       {

@@ -46,12 +46,11 @@ jobs:
           NODE_ENV=production postcss tests/test.css --verbose
 
       - name: Codecov
+        uses: codecov/codecov-action@v3
+
+      - name: Codacy Coverage
         run: |
-          yarn global add codecov
-          codecov
-          bash <(curl -Ls https://coverage.codacy.com/get.sh)
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) -- -r coverage/*.json
         env:
-          CI: 'true'
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
           CODACY_ACCOUNT_TOKEN: ${{ secrets.CODACY_ACCOUNT_TOKEN }}
           CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
