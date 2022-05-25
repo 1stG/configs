@@ -1,6 +1,6 @@
 {
   "name": "@1stg/app-config",
-  "version": "4.1.2",
+  "version": "4.1.3",
   "description": "Personal but Shareable App Configuration for all 1stG.me projects.",
   "repository": "git+https://github.com/1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/app-config",
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@1stg/browserslist-config": "^1.1.0",
-    "@1stg/common-config": "^4.1.2",
+    "@1stg/common-config": "^4.1.3",
     "@1stg/postcss-config": "^3.1.0",
     "@1stg/stylelint-config": "^4.1.0",
     "@pkgr/es-modules": "^0.6.0",
