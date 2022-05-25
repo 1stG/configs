@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.1.3
+
+### Patch Changes
+
+- [`53df63f`](https://github.com/1stG/configs/commit/53df63f04a673395ffc68db7b1d2653f462761a2) Thanks [@JounQin](https://github.com/JounQin)! - fix: incorrect version of eslint-plugin-jsdoc
+
 ## 4.1.2
 
 ### Patch Changes
