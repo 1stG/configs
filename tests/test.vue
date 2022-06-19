@@ -3,10 +3,7 @@
     {{ msg }}
   </div>
 </template>
-<script
-  lang="ts"
-  setup
->
+<script lang="ts" setup>
 import { Point } from 'unist'
 
 const getLine = (point: Point) => point.line
