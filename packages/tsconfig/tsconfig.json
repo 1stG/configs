@@ -8,7 +8,7 @@
     "jsx": "preserve",
     "lib": ["ESNext"],
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
     "noImplicitOverride": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
