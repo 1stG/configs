@@ -9,6 +9,7 @@
   "workspaces": [
     "packages/*"
   ],
+  "packageManager": "yarn@1.22.19",
   "scripts": {
     "check": "run-p check:*",
     "check:eslint": "eslint-config-prettier .eslintrc.js",
