@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.2.0
+
+### Minor Changes
+
+- [`3420898`](https://github.com/1stG/configs/commit/3420898665cc8a6d49de1524c0f319fdac6e4e58) Thanks [@JounQin](https://github.com/JounQin)! - feat(stylelint): upgrade stylelint-config-standard
+
 ## 4.1.0
 
 ### Minor Changes

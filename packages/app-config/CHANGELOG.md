@@ -1,5 +1,19 @@
 # Change Log
 
+## 4.2.0
+
+### Minor Changes
+
+- [`d10ccec`](https://github.com/1stG/configs/commit/d10ccecae5d5b2d89e93127d3df015db0c2beb26) Thanks [@JounQin](https://github.com/JounQin)! - feat(tsconfig): add node16 and nodenext configs
+
+### Patch Changes
+
+- [`3420898`](https://github.com/1stG/configs/commit/3420898665cc8a6d49de1524c0f319fdac6e4e58) Thanks [@JounQin](https://github.com/JounQin)! - feat(stylelint): upgrade stylelint-config-standard
+
+- Updated dependencies [[`d10ccec`](https://github.com/1stG/configs/commit/d10ccecae5d5b2d89e93127d3df015db0c2beb26), [`3420898`](https://github.com/1stG/configs/commit/3420898665cc8a6d49de1524c0f319fdac6e4e58)]:
+  - @1stg/common-config@4.2.0
+  - @1stg/stylelint-config@4.2.0
+
 ## 4.1.3
 
 ### Patch Changes
