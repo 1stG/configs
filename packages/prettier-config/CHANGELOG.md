@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.1.2
+
+### Patch Changes
+
+- [`69c1da7`](https://github.com/1stG/configs/commit/69c1da7a60987d23561542710e43c919de11bdf2) Thanks [@JounQin](https://github.com/JounQin)! - fix(deps): upgrade eslint-plugin-mdx and prettier-plugin-pkg
+
 ## 3.1.1
 
 ### Patch Changes
