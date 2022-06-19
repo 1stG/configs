@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.1.0
+
+### Minor Changes
+
+- [`d10ccec`](https://github.com/1stG/configs/commit/d10ccecae5d5b2d89e93127d3df015db0c2beb26) Thanks [@JounQin](https://github.com/JounQin)! - feat(tsconfig): add node16 and nodenext configs
+
 ## 2.0.1
 
 ### Patch Changes
