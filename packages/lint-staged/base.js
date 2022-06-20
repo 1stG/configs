@@ -2,7 +2,7 @@ const { isPkgAvailable } = require('@pkgr/utils')
 
 const config = [
   '*.{*sh,env,env.*,gql,html,json,properties,pug,rb,svelte,vue,toml,yaml,yml}',
-  '.*rc',
+  '.!(nvm)rc',
   'Dockerfile',
 ].reduce(
   (acc, files) =>
