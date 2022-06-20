@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.1.3
+
+### Patch Changes
+
+- [`27662c4`](https://github.com/1stG/configs/commit/27662c45623a5f4607c9a1397de77975c30255a2) Thanks [@JounQin](https://github.com/JounQin)! - fix(prettier): ignore `.nvmrc`, use sh for `.*shrc`
+
 ## 3.1.2
 
 ### Patch Changes
