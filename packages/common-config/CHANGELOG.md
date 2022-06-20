@@ -1,5 +1,14 @@
 # Change Log
 
+## 4.2.3
+
+### Patch Changes
+
+- [`c8c6b0c`](https://github.com/1stG/configs/commit/c8c6b0cf776e5897d7b00e1b6fac16dff047dd81) Thanks [@JounQin](https://github.com/JounQin)! - fix(lint-staged): do not run prettier on .nvmrc
+
+- Updated dependencies [[`c8c6b0c`](https://github.com/1stG/configs/commit/c8c6b0cf776e5897d7b00e1b6fac16dff047dd81)]:
+  - @1stg/lint-staged@2.0.1
+
 ## 4.2.2
 
 ### Patch Changes
