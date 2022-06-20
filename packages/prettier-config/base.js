@@ -15,12 +15,13 @@ module.exports = {
   overrides: [
     {
       files: ['.*rc', '*.json'],
+      excludeFiles: ['.nvmrc'],
       options: {
         parser: 'json-stringify',
       },
     },
     {
-      files: ['.browserslistrc', '.npmrc', '.yarnrc'],
+      files: ['.browserslistrc', '.npmrc', '.yarnrc', '.*shrc'],
       options: {
         parser: 'sh',
       },
