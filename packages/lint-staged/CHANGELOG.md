@@ -1,5 +1,17 @@
 # Change Log
 
+## 2.1.0
+
+### Minor Changes
+
+- [`af649e7`](https://github.com/1stG/configs/commit/af649e731f49166389a6ec4b177a5497c4477028) Thanks [@JounQin](https://github.com/JounQin)! - feat: bump deps, update node engine setting
+
+### Patch Changes
+
+- Updated dependencies [[`af649e7`](https://github.com/1stG/configs/commit/af649e731f49166389a6ec4b177a5497c4477028)]:
+  - @1stg/prettier-config@3.2.0
+  - @1stg/tsconfig@2.2.0
+
 ## 2.0.1
 
 ### Patch Changes
