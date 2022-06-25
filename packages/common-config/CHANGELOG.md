@@ -1,5 +1,23 @@
 # Change Log
 
+## 4.3.0
+
+### Minor Changes
+
+- [`af649e7`](https://github.com/1stG/configs/commit/af649e731f49166389a6ec4b177a5497c4477028) Thanks [@JounQin](https://github.com/JounQin)! - feat: bump deps, update node engine setting
+
+### Patch Changes
+
+- Updated dependencies [[`af649e7`](https://github.com/1stG/configs/commit/af649e731f49166389a6ec4b177a5497c4477028)]:
+  - @1stg/babel-preset@3.1.0
+  - @1stg/commitlint-config@3.1.0
+  - @1stg/eslint-config@4.2.0
+  - @1stg/lint-staged@2.1.0
+  - @1stg/markuplint-config@2.1.0
+  - @1stg/prettier-config@3.2.0
+  - @1stg/remark-config@3.1.0
+  - @1stg/tsconfig@2.2.0
+
 ## 4.2.3
 
 ### Patch Changes
