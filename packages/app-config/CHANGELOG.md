@@ -1,5 +1,18 @@
 # Change Log
 
+## 4.4.0
+
+### Minor Changes
+
+- [`62a9421`](https://github.com/1stG/configs/commit/62a9421e6a2b0fb206b6292a070c8b3b04fe384e) Thanks [@JounQin](https://github.com/JounQin)! - feat: use upgrade prettier-plugin-sh
+
+- [`62a9421`](https://github.com/1stG/configs/commit/62a9421e6a2b0fb206b6292a070c8b3b04fe384e) Thanks [@JounQin](https://github.com/JounQin)! - feat: use @rxts/eslint-plugin-prettier instead
+
+### Patch Changes
+
+- Updated dependencies [[`62a9421`](https://github.com/1stG/configs/commit/62a9421e6a2b0fb206b6292a070c8b3b04fe384e), [`62a9421`](https://github.com/1stG/configs/commit/62a9421e6a2b0fb206b6292a070c8b3b04fe384e)]:
+  - @1stg/common-config@4.4.0
+
 ## 4.3.0
 
 ### Minor Changes
