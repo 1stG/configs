@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.0.0
+
+### Major Changes
+
+- [#98](https://github.com/1stG/configs/pull/98) [`9c2c16d`](https://github.com/1stG/configs/commit/9c2c16d635f490b7c8980e17a39fd7ecd53de008) Thanks [@JounQin](https://github.com/JounQin)! - feat!: upgrade remark-validate-links v12
+
 ## 3.1.0
 
 ### Minor Changes
