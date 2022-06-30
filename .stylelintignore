@@ -2,9 +2,13 @@ coverage
 LICENSE
 *.iml
 *.json
+*.jsonc
+*.json5
 *.lock
+*.log
 *.sh
 *.svg
 *.tsbuildinfo
+*.toml
 *.yaml
 *.yml

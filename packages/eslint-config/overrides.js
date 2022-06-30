@@ -9,7 +9,6 @@ const {
   isVueAvailable,
   tryFile,
   tryPkg,
-  tryRequirePkg,
 } = require('@pkgr/utils')
 
 const { magicNumbers } = require('./_util')
@@ -355,10 +354,8 @@ exports.vue = [
 
 const svelteBase = {
   files: '*.svelte',
-  plugins: ['svelte'],
-  processor: 'svelte/svelte',
+  extends: ['plugin:svelte/recommended'],
   rules: {
-    'prettier/prettier': 0, // https://github.com/sveltejs/eslint-plugin-svelte3/issues/16,
     'sonar/label-position': 0,
     'sonar/no-labels': 0,
   },
@@ -370,10 +367,6 @@ exports.svelte = isTsAvailable
       ...svelteBase,
       parserOptions: {
         extraFileExtensions: ['.svelte'],
-      },
-      settings: {
-        ...tsBase.settings,
-        'svelte/typescript': tryRequirePkg('typescript'),
       },
     }
   : {
@@ -493,6 +486,45 @@ exports.config = exports.configs = {
   rules: nonSourceRules,
 }
 
+exports.json = {
+  files: '*.json',
+  extends: [
+    // eslint-disable-next-line sonarjs/no-duplicate-string
+    'plugin:jsonc/auto-config',
+    'plugin:jsonc/recommended-with-json',
+    // eslint-disable-next-line sonarjs/no-duplicate-string
+    'plugin:jsonc/prettier',
+  ],
+}
+
+exports.jsonc = {
+  files: '*.jsonc',
+  extends: [
+    'plugin:jsonc/auto-config',
+    'plugin:jsonc/recommended-with-jsonc',
+    'plugin:jsonc/prettier',
+  ],
+}
+
+exports.json5 = {
+  files: '*.json5',
+  extends: [
+    'plugin:jsonc/auto-config',
+    'plugin:jsonc/recommended-with-json5',
+    'plugin:jsonc/prettier',
+  ],
+}
+
+exports.toml = {
+  files: '*.toml',
+  extends: ['plugin:toml/recommended'],
+}
+
+exports.yml = exports.yaml = {
+  files: ['*.yml', '*.yaml'],
+  extends: ['plugin:yml/recommended', 'plugin:yml/prettier'],
+}
+
 exports.overrides = []
   // eslint-disable-next-line unicorn/prefer-spread
   .concat(
@@ -512,5 +544,10 @@ exports.overrides = []
     exports.stories,
     exports.configs,
     exports.dTs,
+    exports.json,
+    exports.jsonc,
+    exports.json5,
+    exports.toml,
+    exports.yaml,
   )
   .filter(Boolean)
