@@ -1,5 +1,16 @@
 # Change Log
 
+## 7.0.0
+
+### Major Changes
+
+- [#98](https://github.com/1stG/configs/pull/98) [`9c2c16d`](https://github.com/1stG/configs/commit/9c2c16d635f490b7c8980e17a39fd7ecd53de008) Thanks [@JounQin](https://github.com/JounQin)! - feat!: use official eslint-plugin-prettier and eslint-plugin-svelte v2
+
+### Patch Changes
+
+- Updated dependencies [[`9c2c16d`](https://github.com/1stG/configs/commit/9c2c16d635f490b7c8980e17a39fd7ecd53de008)]:
+  - @1stg/common-config@5.0.0
+
 ## 6.4.0
 
 ### Minor Changes
