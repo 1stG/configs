@@ -3,6 +3,7 @@ LICENSE
 *.iml
 *.json
 *.lock
+*.log
 *.sh
 *.svg
 *.tsbuildinfo

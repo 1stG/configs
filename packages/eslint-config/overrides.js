@@ -9,7 +9,6 @@ const {
   isVueAvailable,
   tryFile,
   tryPkg,
-  tryRequirePkg,
 } = require('@pkgr/utils')
 
 const { magicNumbers } = require('./_util')
@@ -355,10 +354,8 @@ exports.vue = [
 
 const svelteBase = {
   files: '*.svelte',
-  plugins: ['svelte'],
-  processor: 'svelte/svelte',
+  extends: ['plugin:svelte/recommended'],
   rules: {
-    'prettier/prettier': 0, // https://github.com/sveltejs/eslint-plugin-svelte3/issues/16,
     'sonar/label-position': 0,
     'sonar/no-labels': 0,
   },
@@ -370,10 +367,6 @@ exports.svelte = isTsAvailable
       ...svelteBase,
       parserOptions: {
         extraFileExtensions: ['.svelte'],
-      },
-      settings: {
-        ...tsBase.settings,
-        'svelte/typescript': tryRequirePkg('typescript'),
       },
     }
   : {
