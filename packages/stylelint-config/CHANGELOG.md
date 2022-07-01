@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.4.1
+
+### Patch Changes
+
+- [#105](https://github.com/1stG/configs/pull/105) [`bfa71ef`](https://github.com/1stG/configs/commit/bfa71ef014de17f99d1cd613027be8797e5d11f4) Thanks [@JounQin](https://github.com/JounQin)! - feat(prettier): add prettier-plugin-stylus
+
 ## 4.4.0
 
 ### Minor Changes
