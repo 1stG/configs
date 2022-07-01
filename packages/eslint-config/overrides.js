@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('node:path')
 
 const {
   isAngularAvailable,
@@ -86,7 +86,7 @@ const resolveSettings = {
 }
 
 const tsBase = {
-  files: ['*.ts', '*.tsx'],
+  files: ['*.cts', '*.mts', '*.ts', '*.tsx'],
   extends: [
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
@@ -257,7 +257,7 @@ exports.ts = [
 ]
 
 exports.dTs = {
-  files: '*.d.ts',
+  files: ['*.d.cts', '*.d.mts', '*.d.ts'],
   rules: {
     '@typescript-eslint/no-explicit-any': 0,
     '@typescript-eslint/no-extraneous-class': 0,
@@ -487,21 +487,32 @@ exports.config = exports.configs = {
 }
 
 exports.json = {
-  files: '*.json',
+  files: ['.*rc', '*.json'],
+  excludedFiles: ['.browserslistrc', '.npmrc', '.nvmrc', '.yarnrc', '.*shrc'],
   extends: [
     // eslint-disable-next-line sonarjs/no-duplicate-string
     'plugin:jsonc/auto-config',
     'plugin:jsonc/recommended-with-json',
+    // eslint-disable-next-line sonarjs/no-duplicate-string
+    'plugin:json-schema-validator/recommended',
     // eslint-disable-next-line sonarjs/no-duplicate-string
     'plugin:jsonc/prettier',
   ],
 }
 
 exports.jsonc = {
-  files: '*.jsonc',
+  files: [
+    '*.jsonc',
+    'angular.json',
+    'jsconfig.json',
+    'settings.json',
+    'tsconfig.json',
+    'tsconfig.*.json',
+  ],
   extends: [
     'plugin:jsonc/auto-config',
     'plugin:jsonc/recommended-with-jsonc',
+    'plugin:json-schema-validator/recommended',
     'plugin:jsonc/prettier',
   ],
 }
@@ -511,6 +522,7 @@ exports.json5 = {
   extends: [
     'plugin:jsonc/auto-config',
     'plugin:jsonc/recommended-with-json5',
+    'plugin:json-schema-validator/recommended',
     'plugin:jsonc/prettier',
   ],
 }
