@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.1.0
+
+### Minor Changes
+
+- [#104](https://github.com/1stG/configs/pull/104) [`4f267cc`](https://github.com/1stG/configs/commit/4f267cc7d8d04ecd27c60ebdca880676d8706e05) Thanks [@JounQin](https://github.com/JounQin)! - feat(stylelint): enable stylelint-stylus
+
 ## 3.0.0
 
 ### Major Changes

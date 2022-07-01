@@ -1,5 +1,11 @@
 # Change Log
 
+## 5.2.0
+
+### Minor Changes
+
+- [#102](https://github.com/1stG/configs/pull/102) [`ca3a9ff`](https://github.com/1stG/configs/commit/ca3a9ff0bdd1ee5a2bfe5f6f32aedeb5e99f786b) Thanks [@JounQin](https://github.com/JounQin)! - feat(eslint): enable json-schema-validator for toml and yaml
+
 ## 5.1.0
 
 ### Minor Changes

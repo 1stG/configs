@@ -1,5 +1,18 @@
 # Change Log
 
+## 7.2.0
+
+### Minor Changes
+
+- [#104](https://github.com/1stG/configs/pull/104) [`4f267cc`](https://github.com/1stG/configs/commit/4f267cc7d8d04ecd27c60ebdca880676d8706e05) Thanks [@JounQin](https://github.com/JounQin)! - feat(stylelint): enable stylelint-stylus
+
+- [#102](https://github.com/1stG/configs/pull/102) [`ca3a9ff`](https://github.com/1stG/configs/commit/ca3a9ff0bdd1ee5a2bfe5f6f32aedeb5e99f786b) Thanks [@JounQin](https://github.com/JounQin)! - feat(eslint): enable json-schema-validator for toml and yaml
+
+### Patch Changes
+
+- Updated dependencies [[`4f267cc`](https://github.com/1stG/configs/commit/4f267cc7d8d04ecd27c60ebdca880676d8706e05), [`ca3a9ff`](https://github.com/1stG/configs/commit/ca3a9ff0bdd1ee5a2bfe5f6f32aedeb5e99f786b)]:
+  - @1stg/common-config@5.2.0
+
 ## 7.1.0
 
 ### Minor Changes
