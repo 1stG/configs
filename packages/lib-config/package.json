@@ -1,6 +1,6 @@
 {
   "name": "@1stg/lib-config",
-  "version": "7.0.0",
+  "version": "7.1.0",
   "description": "Personal but Shareable Library Configuration for all 1stG.me projects.",
   "repository": "git+https://github.com/1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/lib-config",
@@ -10,7 +10,7 @@
     "node": "^12.20 || ^14.18.0 || >=16.0.0"
   },
   "dependencies": {
-    "@1stg/common-config": "^5.0.0",
+    "@1stg/common-config": "^5.1.0",
     "@pkgr/rollup": "^3.1.2",
     "jest": "^28.1.2"
   },

@@ -1,5 +1,16 @@
 # Change Log
 
+## 7.1.0
+
+### Minor Changes
+
+- [#100](https://github.com/1stG/configs/pull/100) [`ab745b4`](https://github.com/1stG/configs/commit/ab745b43289691a6b6b99f0dee1f68d098f5f6a0) Thanks [@JounQin](https://github.com/JounQin)! - feat(eslint): enable css/es-x/json-schema-validator/regexp plugins
+
+### Patch Changes
+
+- Updated dependencies [[`ab745b4`](https://github.com/1stG/configs/commit/ab745b43289691a6b6b99f0dee1f68d098f5f6a0)]:
+  - @1stg/common-config@5.1.0
+
 ## 7.0.0
 
 ### Major Changes
