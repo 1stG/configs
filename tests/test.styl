@@ -4,7 +4,13 @@ red-border()
 div
   red-border()
 
-shadow(offset-x, args...)
+/**
+ * FIXME:
+ * @see https://github.com/lsdsjy/prettier-plugin-stylus/issues/2
+ * @see https://github.com/lsdsjy/prettier-plugin-stylus/issues/3
+ */
+
+shadow(offset-x, args)
   box-shadow offset-x args
   margin-top offset-x
 
@@ -18,7 +24,7 @@ body
   padding add(10px, 5)
 
 shadow(x, y)
-  x y (y * 1.5) #000
+  x y y * 1.5 #000
 
 .button
   box-shadow shadow(x 2, y 4)

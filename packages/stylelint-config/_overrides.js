@@ -33,7 +33,7 @@ module.exports = loose => ({
     {
       files: ['**/*.styl', '**/*.stylus'],
       customSyntax: 'postcss-styl',
-      extends: ['stylelint-stylus/standard'],
+      extends: ['stylelint-stylus/standard', 'stylelint-prettier/recommended'],
     },
   ],
 })
