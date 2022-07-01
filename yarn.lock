@@ -10603,6 +10603,14 @@ prettier-plugin-sh@^0.12.4:
   dependencies:
     mvdan-sh "^0.10.1"
 
+prettier-plugin-stylus@^0.0.1-beta.1:
+  version "0.0.1-beta.1"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-stylus/-/prettier-plugin-stylus-0.0.1-beta.1.tgz#12ff379a80e5d8394e66fd261748db2f4d7658eb"
+  integrity sha512-3Nql0NP4MDeg3yeQQ+Xwkg+9EuFVwcSfTnxh1yMZpPzhI4pyKh78o9wLYUVO9A4uiME27Ti2OEa9p7IUJrPrbQ==
+  dependencies:
+    prettier "^2.6.2"
+    stylus "^0.57.0"
+
 prettier-plugin-svelte@^2.7.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/prettier-plugin-svelte/-/prettier-plugin-svelte-2.7.0.tgz#ecfa4fe824238a4466a3497df1a96d15cf43cabb"

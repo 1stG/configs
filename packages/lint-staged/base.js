@@ -5,7 +5,7 @@ const isStylelintAvailable = isPkgAvailable('stylelint')
 
 const ESLINT_FILES = 'cjs,js,jsx,md,mdx,mjs,svelte,vue'
 const TS_FILES = 'cts,mts,ts,tsx'
-const STYLELINT_FILES = 'css,less,sass,scss,svelte,vue'
+const STYLELINT_FILES = 'css,less,sass,scss,styl,stylus,svelte,vue'
 
 const config = [
   `*.{*sh,env,env.*,gql,html,json,properties,pug,rb,toml,yaml,yml${
@@ -31,7 +31,7 @@ if (isEslintAvailable) {
 }
 
 if (isStylelintAvailable) {
-  config[`*.{${STYLELINT_FILES},styl,stylus}`] = 'stylelint --cache --fix'
+  config[`*.{${STYLELINT_FILES}}`] = 'stylelint --cache --fix'
 }
 
 if (isPkgAvailable('@pkgr/imagemin')) {
