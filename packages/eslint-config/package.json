@@ -39,7 +39,6 @@
     "eslint-plugin-markup": "^0.9.0",
     "eslint-plugin-mdx": "^2.0.1",
     "eslint-plugin-n": "^15.2.3",
-    "eslint-plugin-node-dependencies": "^0.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.30.1",

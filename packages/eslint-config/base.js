@@ -10,7 +10,6 @@ module.exports = {
     'plugin:css/recommended',
     'plugin:import/recommended',
     'plugin:n/recommended',
-    'plugin:node-dependencies/recommended',
     'plugin:promise/recommended',
     'plugin:regexp/recommended',
     'plugin:sonarjs/recommended',

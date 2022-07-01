@@ -5,4 +5,4 @@
 "@1stg/lib-config": minor
 ---
 
-feat(eslint): enable css/es-x/json-schema-validator/node-dependencies/regexp plugins
+feat(eslint): enable css/es-x/json-schema-validator/regexp plugins
