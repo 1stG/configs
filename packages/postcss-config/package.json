@@ -6,7 +6,7 @@
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "engines": {
-    "node": "^12.20 || ^14.18.0 || >=16.0.0"
+    "node": "^12.20.0 || ^14.18.0 || >=16.0.0"
   },
   "peerDependencies": {
     "postcss": ">=7.0.0"

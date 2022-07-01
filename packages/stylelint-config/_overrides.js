@@ -3,10 +3,12 @@ module.exports = loose => ({
   overrides: [
     {
       files: [
+        '**/*.cjs',
+        '**/*.cts',
         '**/*.js',
         '**/*.jsx',
-        '**/*.cjs',
         '**/*.mjs',
+        '**/*.mts',
         '**/*.ts',
         '**/*.tsx',
       ],
@@ -25,8 +27,13 @@ module.exports = loose => ({
       customSyntax: 'postcss-less',
     },
     {
-      files: ['**/*.scss'],
+      files: ['**/*.sass', '**/*.scss'],
       ...(loose ? require('./scss/loose') : require('./scss')),
+    },
+    {
+      files: ['**/*.styl', '**/*.stylus'],
+      customSyntax: 'postcss-styl',
+      extends: ['stylelint-stylus/standard'],
     },
   ],
 })

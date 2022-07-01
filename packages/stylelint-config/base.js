@@ -11,7 +11,7 @@ module.exports = {
     'plugin/no-unsupported-browser-features': [
       true,
       {
-        ignore: ['css3-cursors', 'css-resize', 'rem'],
+        ignore: ['css3-cursors', 'css-media-resolution', 'css-resize', 'rem'],
         severity: 'warning',
       },
     ],
