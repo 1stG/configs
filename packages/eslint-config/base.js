@@ -7,16 +7,18 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:eslint-comments/recommended',
+    'plugin:css/recommended',
     'plugin:import/recommended',
     'plugin:n/recommended',
     'plugin:promise/recommended',
+    'plugin:regexp/recommended',
     'plugin:sonarjs/recommended',
     isTsAvailable && 'plugin:sonar/recommended',
     'plugin:unicorn/recommended',
     'standard',
     'plugin:prettier/recommended',
   ].filter(Boolean),
-  plugins: ['simple-import-sort'],
+  plugins: ['es-x', 'simple-import-sort'],
   globals: isWebpackAvailable ? getGlobals(webpackSpecVars) : undefined,
   rules: {
     'arrow-body-style': 2,
@@ -108,7 +110,6 @@ module.exports = {
     'unicorn/no-null': 0,
     'unicorn/no-unreadable-array-destructuring': 0, // conflict with `no-unused-vars`
     'unicorn/prefer-module': 0,
-    'unicorn/prefer-node-protocol': 0,
     'unicorn/prefer-object-from-entries': 0,
     'unicorn/prevent-abbreviations': 0,
   },
