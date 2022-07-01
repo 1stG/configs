@@ -31,7 +31,7 @@ if (isEslintAvailable) {
 }
 
 if (isStylelintAvailable) {
-  config[`*.{${STYLELINT_FILES}}`] = 'stylelint --cache --fix'
+  config[`*.{${STYLELINT_FILES},styl,stylus}`] = 'stylelint --cache --fix'
 }
 
 if (isPkgAvailable('@pkgr/imagemin')) {
