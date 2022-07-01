@@ -7,15 +7,6 @@
       "globals": {
         "Button": false
       }
-    },
-    {
-      "files": [
-        "**/app.json",
-        "**/angular.json"
-      ],
-      "rules": {
-        "json-schema-validator/no-invalid": "off"
-      }
     }
   ]
 }

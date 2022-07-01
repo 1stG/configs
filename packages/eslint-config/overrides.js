@@ -529,12 +529,19 @@ exports.json5 = {
 
 exports.toml = {
   files: '*.toml',
-  extends: ['plugin:toml/recommended'],
+  extends: [
+    'plugin:toml/recommended',
+    'plugin:json-schema-validator/recommended',
+  ],
 }
 
 exports.yml = exports.yaml = {
   files: ['*.yml', '*.yaml'],
-  extends: ['plugin:yml/recommended', 'plugin:yml/prettier'],
+  extends: [
+    'plugin:yml/recommended',
+    'plugin:json-schema-validator/recommended',
+    'plugin:yml/prettier',
+  ],
 }
 
 exports.overrides = []

@@ -2301,18 +2301,6 @@
   resolved "https://registry.yarnpkg.com/@pkgr/umd-globals/-/umd-globals-0.8.0.tgz#1249860b007e02b0e60290c11aec86ee66d44798"
   integrity sha512-5YnNlHQN78PQ/OpGNyndo980hZQrbODLDymnamtaSBcBgC0DsAfWLZgxUpmZuSpBWKWTQrfoavR8+NyUMZeOCQ==
 
-"@pkgr/utils@2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@pkgr/utils/-/utils-2.1.0.tgz#66a4be2df4fc8ae50d730666855f6a6df833a725"
-  integrity sha512-Va5LTLVoPIH8CrV170zXLSDtCJ6eG6uVXYwwsDYOOeec0MdkhvJzKaxvA+hGJRWFl5I4VBQBs5pwljaI4TG5OA==
-  dependencies:
-    cross-spawn "^7.0.3"
-    is-glob "^4.0.3"
-    open "^8.4.0"
-    picocolors "^1.0.0"
-    tiny-glob "^0.2.9"
-    tslib "^2.3.1"
-
 "@pkgr/utils@^2.1.0", "@pkgr/utils@^2.2.0":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@pkgr/utils/-/utils-2.2.0.tgz#ccbf06cd010684b477dde40ec833a28f0c2136c4"
@@ -5203,10 +5191,10 @@ eslint-import-resolver-node@^0.3.6:
     debug "^3.2.7"
     resolve "^1.20.0"
 
-eslint-import-resolver-typescript@^3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/eslint-import-resolver-typescript/-/eslint-import-resolver-typescript-3.1.2.tgz#988460fb709205d8f4e8ad58a0cafb3b401e86d5"
-  integrity sha512-M/qdvFCkdYcl2Wy4zHr4iPVbq1vSoKDwzyxg2bO9v7eZ49/fIB+ZWUet7/+UHeqDdFgiTtkr9AJ/vWJwNTbkCQ==
+eslint-import-resolver-typescript@^3.1.3:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/eslint-import-resolver-typescript/-/eslint-import-resolver-typescript-3.1.3.tgz#ffb2014469184d64ff5ee4cb5b944d9115838fb4"
+  integrity sha512-u7YJAWmgJlpwvKsEl0khVJdRsdLNfReL2Sc8hrc21iEEVEOTKH0Ea3nUtfdlhHuQieJ7lFpOJd0LbDaWpb3+RA==
   dependencies:
     debug "^4.3.4"
     enhanced-resolve "^5.10.0"
@@ -5313,12 +5301,11 @@ eslint-plugin-jsdoc@^39.3.3:
     semver "^7.3.7"
     spdx-expression-parse "^3.0.1"
 
-eslint-plugin-json-schema-validator@^3.0.25:
-  version "3.0.25"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-json-schema-validator/-/eslint-plugin-json-schema-validator-3.0.25.tgz#75f82a51510bc895cb72e3080a33abc96f00f750"
-  integrity sha512-Wsr2sKhgUv3fC6ZBN4JSrmhldlpi89KblTQtLBdRkmA0B1ZVG92NdsG5cQs3OSZ5LH7ZHnncYVEU8mYg8fCGag==
+eslint-plugin-json-schema-validator@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-json-schema-validator/-/eslint-plugin-json-schema-validator-3.1.0.tgz#e9f7b523ca8e0f4edd0fe46d8be9f4302b14120f"
+  integrity sha512-mS58nLh1ApTW1RHE0c1KzDs/24YeR6VkHh+Sc7IvdndrDfSvBYE9bt4wFTRjRIwhW/u1bMG/Ebh2L66qw7KGyQ==
   dependencies:
-    "@pkgr/utils" "2.1.0"
     ajv "^8.0.0"
     debug "^4.3.1"
     eslint-utils "^3.0.0"
