@@ -1,5 +1,19 @@
 # Change Log
 
+## 5.2.1
+
+### Patch Changes
+
+- [#107](https://github.com/1stG/configs/pull/107) [`720e694`](https://github.com/1stG/configs/commit/720e694b2f7d9173738a4338b94fa455f70dabe3) Thanks [@JounQin](https://github.com/JounQin)! - fix(prettier): upgrade prettier-plugin-stylus
+
+- [#107](https://github.com/1stG/configs/pull/107) [`720e694`](https://github.com/1stG/configs/commit/720e694b2f7d9173738a4338b94fa455f70dabe3) Thanks [@JounQin](https://github.com/JounQin)! - chore: add website info in author field
+
+- Updated dependencies [[`720e694`](https://github.com/1stG/configs/commit/720e694b2f7d9173738a4338b94fa455f70dabe3), [`720e694`](https://github.com/1stG/configs/commit/720e694b2f7d9173738a4338b94fa455f70dabe3)]:
+  - @1stg/common-config@5.2.1
+  - @1stg/stylelint-config@4.4.2
+  - @1stg/browserslist-config@1.2.1
+  - @1stg/postcss-config@3.2.1
+
 ## 5.2.0
 
 ### Minor Changes

@@ -1,6 +1,6 @@
 {
   "name": "@1stg/remark-config",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "type": "module",
   "description": "Personal but Shareable Remark Configuration for all 1stG.me projects.",
   "repository": "git+https://github.com/1stG/configs.git",
