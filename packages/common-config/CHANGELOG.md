@@ -1,5 +1,22 @@
 # Change Log
 
+## 5.2.3
+
+### Patch Changes
+
+- [#111](https://github.com/1stG/configs/pull/111) [`eb18aaa`](https://github.com/1stG/configs/commit/eb18aaa48903fcc5eb7bf04b34a5b06858936aa7) Thanks [@JounQin](https://github.com/JounQin)! - chore: add donate and funding fields
+
+- Updated dependencies [[`eb18aaa`](https://github.com/1stG/configs/commit/eb18aaa48903fcc5eb7bf04b34a5b06858936aa7)]:
+  - @1stg/babel-preset@3.1.2
+  - @1stg/commitlint-config@3.1.2
+  - @1stg/eslint-config@5.2.3
+  - @1stg/lint-staged@3.1.3
+  - @1stg/markuplint-config@2.1.2
+  - @1stg/prettier-config@3.4.2
+  - @1stg/remark-config@4.0.2
+  - @1stg/simple-git-hooks@0.1.4
+  - @1stg/tsconfig@2.2.2
+
 ## 5.2.2
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # Change Log
 
+## 3.1.3
+
+### Patch Changes
+
+- [#111](https://github.com/1stG/configs/pull/111) [`eb18aaa`](https://github.com/1stG/configs/commit/eb18aaa48903fcc5eb7bf04b34a5b06858936aa7) Thanks [@JounQin](https://github.com/JounQin)! - chore: add donate and funding fields
+
+- Updated dependencies [[`eb18aaa`](https://github.com/1stG/configs/commit/eb18aaa48903fcc5eb7bf04b34a5b06858936aa7)]:
+  - @1stg/prettier-config@3.4.2
+  - @1stg/tsconfig@2.2.2
+
 ## 3.1.2
 
 ### Patch Changes
