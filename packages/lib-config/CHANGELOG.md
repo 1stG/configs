@@ -1,5 +1,14 @@
 # Change Log
 
+## 7.2.3
+
+### Patch Changes
+
+- [#111](https://github.com/1stG/configs/pull/111) [`eb18aaa`](https://github.com/1stG/configs/commit/eb18aaa48903fcc5eb7bf04b34a5b06858936aa7) Thanks [@JounQin](https://github.com/JounQin)! - chore: add donate and funding fields
+
+- Updated dependencies [[`eb18aaa`](https://github.com/1stG/configs/commit/eb18aaa48903fcc5eb7bf04b34a5b06858936aa7)]:
+  - @1stg/common-config@5.2.3
+
 ## 7.2.2
 
 ### Patch Changes
