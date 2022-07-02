@@ -1,5 +1,14 @@
 # Change Log
 
+## 5.2.2
+
+### Patch Changes
+
+- [#109](https://github.com/1stG/configs/pull/109) [`d648751`](https://github.com/1stG/configs/commit/d6487513888f70c553a6329cea52f46c83e48386) Thanks [@JounQin](https://github.com/JounQin)! - fix: exclude some json files which are jsonc actually
+
+- Updated dependencies [[`d648751`](https://github.com/1stG/configs/commit/d6487513888f70c553a6329cea52f46c83e48386)]:
+  - @1stg/common-config@5.2.2
+
 ## 5.2.1
 
 ### Patch Changes
