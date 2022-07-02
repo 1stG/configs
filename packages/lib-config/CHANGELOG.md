@@ -1,5 +1,14 @@
 # Change Log
 
+## 7.2.4
+
+### Patch Changes
+
+- [#113](https://github.com/1stG/configs/pull/113) [`cae8e34`](https://github.com/1stG/configs/commit/cae8e34da5f1162b3a9bd49dad2b85114e84d0e4) Thanks [@JounQin](https://github.com/JounQin)! - fix(eslint): remove plugin:jsonc/auto-config
+
+- Updated dependencies [[`cae8e34`](https://github.com/1stG/configs/commit/cae8e34da5f1162b3a9bd49dad2b85114e84d0e4)]:
+  - @1stg/common-config@5.2.4
+
 ## 7.2.3
 
 ### Patch Changes
