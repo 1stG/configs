@@ -502,8 +502,6 @@ exports.json = {
     'tsconfig.*.json',
   ],
   extends: [
-    // eslint-disable-next-line sonarjs/no-duplicate-string
-    'plugin:jsonc/auto-config',
     'plugin:jsonc/recommended-with-json',
     // eslint-disable-next-line sonarjs/no-duplicate-string
     'plugin:json-schema-validator/recommended',
@@ -522,7 +520,6 @@ exports.jsonc = {
     'tsconfig.*.json',
   ],
   extends: [
-    'plugin:jsonc/auto-config',
     'plugin:jsonc/recommended-with-jsonc',
     'plugin:json-schema-validator/recommended',
     'plugin:jsonc/prettier',
@@ -532,7 +529,6 @@ exports.jsonc = {
 exports.json5 = {
   files: '*.json5',
   extends: [
-    'plugin:jsonc/auto-config',
     'plugin:jsonc/recommended-with-json5',
     'plugin:json-schema-validator/recommended',
     'plugin:jsonc/prettier',
