@@ -10591,15 +10591,15 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier-plugin-pkg@^0.14.1:
-  version "0.14.1"
-  resolved "https://registry.yarnpkg.com/prettier-plugin-pkg/-/prettier-plugin-pkg-0.14.1.tgz#1497d5f521186b401accd3f4c56a5a27e0102d92"
-  integrity sha512-kZpzhngToaUOudqZ2drGCbJbfSitMbTRv3i5eUVWXphqk1vn3PC90RFe1q3jsZOXRy0bELsFrwAxzq6a+wDNDQ==
+prettier-plugin-pkg@^0.15.0:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-pkg/-/prettier-plugin-pkg-0.15.0.tgz#5a8ef642187749e87ad6505c1cce369675144fd5"
+  integrity sha512-HhscJxwM0Jc4Wp/a0kr4yvOwcUtoQVC/1KEPGByUNEv/pdXFY3Ih4/uLF4cEUYM9HkmCQ/PiIoLasc8qWUA9Fg==
 
-prettier-plugin-sh@^0.12.4:
-  version "0.12.4"
-  resolved "https://registry.yarnpkg.com/prettier-plugin-sh/-/prettier-plugin-sh-0.12.4.tgz#39d57b2345111de8fc8a3f28975fa92369502f65"
-  integrity sha512-s0SK0hdng0Qv44Gs5yjUyk/j+LEmgoCpvEZ4LS0GglkeTyCR4gqgCrJ/ksbK+1ZuHB6UJ8e2ReOoln0Qfu2T9w==
+prettier-plugin-sh@^0.12.5:
+  version "0.12.6"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-sh/-/prettier-plugin-sh-0.12.6.tgz#7d0f184c3106a387817afaa136429958a0d1a64a"
+  integrity sha512-Tqzj6mDW/+8umOgZO/qfLcpWYZFnRKYC3T9uK3t5aKpxeIspB7rT70TS3IFjUnYNQOLUM542HRW18L6Imj+uYQ==
   dependencies:
     mvdan-sh "^0.10.1"
 
