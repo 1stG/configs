@@ -1,5 +1,17 @@
 # Change Log
 
+## 3.1.2
+
+### Patch Changes
+
+- [#107](https://github.com/1stG/configs/pull/107) [`720e694`](https://github.com/1stG/configs/commit/720e694b2f7d9173738a4338b94fa455f70dabe3) Thanks [@JounQin](https://github.com/JounQin)! - fix(prettier): upgrade prettier-plugin-stylus
+
+- [#107](https://github.com/1stG/configs/pull/107) [`720e694`](https://github.com/1stG/configs/commit/720e694b2f7d9173738a4338b94fa455f70dabe3) Thanks [@JounQin](https://github.com/JounQin)! - chore: add website info in author field
+
+- Updated dependencies [[`720e694`](https://github.com/1stG/configs/commit/720e694b2f7d9173738a4338b94fa455f70dabe3), [`720e694`](https://github.com/1stG/configs/commit/720e694b2f7d9173738a4338b94fa455f70dabe3)]:
+  - @1stg/prettier-config@3.4.1
+  - @1stg/tsconfig@2.2.1
+
 ## 3.1.1
 
 ### Patch Changes

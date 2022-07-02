@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.1.1
+
+### Patch Changes
+
+- [#107](https://github.com/1stG/configs/pull/107) [`720e694`](https://github.com/1stG/configs/commit/720e694b2f7d9173738a4338b94fa455f70dabe3) Thanks [@JounQin](https://github.com/JounQin)! - chore: add website info in author field
+
 ## 1.1.0
 
 ### Minor Changes
