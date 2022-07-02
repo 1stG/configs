@@ -68,6 +68,7 @@ exports.js = {
 const project =
   tryFile(path.resolve('tsconfig.eslint.json')) ||
   tryFile(path.resolve('tsconfig.base.json')) ||
+  // eslint-disable-next-line sonarjs/no-duplicate-string
   tryFile(path.resolve('tsconfig.json')) ||
   tryPkg('@1stg/tsconfig')
 
@@ -488,7 +489,18 @@ exports.config = exports.configs = {
 
 exports.json = {
   files: ['.*rc', '*.json'],
-  excludedFiles: ['.browserslistrc', '.npmrc', '.nvmrc', '.yarnrc', '.*shrc'],
+  excludedFiles: [
+    '.browserslistrc',
+    '.npmrc',
+    '.nvmrc',
+    '.yarnrc',
+    '.*shrc',
+    'angular.json',
+    'jsconfig.json',
+    'settings.json',
+    'tsconfig.json',
+    'tsconfig.*.json',
+  ],
   extends: [
     // eslint-disable-next-line sonarjs/no-duplicate-string
     'plugin:jsonc/auto-config',
