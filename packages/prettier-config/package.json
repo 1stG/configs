@@ -3,7 +3,7 @@
   "version": "3.4.0",
   "description": "Personal but Shareable Prettier Configuration for all 1stG.me projects.",
   "repository": "git+https://github.com/1stG/configs.git",
-  "author": "JounQin <admin@1stg.me>",
+  "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
   "license": "MIT",
   "peerDependencies": {
     "prettier": ">=1.18.0"
@@ -14,7 +14,7 @@
     "@prettier/plugin-xml": "^2.2.0",
     "prettier-plugin-pkg": "^0.14.1",
     "prettier-plugin-sh": "^0.12.4",
-    "prettier-plugin-stylus": "^0.0.1-beta.1",
+    "prettier-plugin-stylus": "^0.0.1-beta.3",
     "prettier-plugin-svelte": "^2.7.0",
     "prettier-plugin-toml": "^0.3.1"
   },

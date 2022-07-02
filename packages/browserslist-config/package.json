@@ -3,7 +3,7 @@
   "version": "1.2.0",
   "description": "Personal but Shareable Browserslist Configuration for all 1stG.me projects.",
   "repository": "git+https://github.com/1stG/configs.git",
-  "author": "JounQin <admin@1stg.me>",
+  "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
   "license": "MIT",
   "peerDependencies": {
     "browserslist": ">=4.0.0"

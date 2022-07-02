@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Personal but Shareable Configurations for all 1stG.me projects.",
   "repository": "git@github.com:1stG/configs.git",
-  "author": "JounQin <admin@1stg.me>",
+  "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
   "license": "MIT",
   "private": true,
   "workspaces": [
