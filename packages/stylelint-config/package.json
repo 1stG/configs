@@ -44,7 +44,7 @@
     "stylelint": ">=13.0.0"
   },
   "dependencies": {
-    "@pkgr/utils": "^2.2.0",
+    "@pkgr/utils": "^2.3.0",
     "@stylelint/postcss-css-in-js": "^0.38.0",
     "postcss-html": "^1.4.1",
     "postcss-less": "^6.0.0",
