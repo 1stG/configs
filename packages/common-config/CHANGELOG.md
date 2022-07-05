@@ -1,5 +1,16 @@
 # Change Log
 
+## 5.2.5
+
+### Patch Changes
+
+- [#115](https://github.com/1stG/configs/pull/115) [`c750c5d`](https://github.com/1stG/configs/commit/c750c5dc7525aaa868ec8d1f6f90b110f7bdd208) Thanks [@JounQin](https://github.com/JounQin)! - feat: bump deps
+
+- Updated dependencies [[`c750c5d`](https://github.com/1stG/configs/commit/c750c5dc7525aaa868ec8d1f6f90b110f7bdd208), [`c750c5d`](https://github.com/1stG/configs/commit/c750c5dc7525aaa868ec8d1f6f90b110f7bdd208)]:
+  - @1stg/eslint-config@5.2.5
+  - @1stg/markuplint-config@2.1.3
+  - @1stg/prettier-config@3.5.0
+
 ## 5.2.4
 
 ### Patch Changes
