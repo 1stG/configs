@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.5.0
+
+### Minor Changes
+
+- [#115](https://github.com/1stG/configs/pull/115) [`c750c5d`](https://github.com/1stG/configs/commit/c750c5dc7525aaa868ec8d1f6f90b110f7bdd208) Thanks [@JounQin](https://github.com/JounQin)! - feat: upgrade prettier-plugin-pkg
+
 ## 3.4.2
 
 ### Patch Changes
