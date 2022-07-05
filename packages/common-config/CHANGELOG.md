@@ -1,5 +1,17 @@
 # Change Log
 
+## 5.2.6
+
+### Patch Changes
+
+- Updated dependencies [[`5b9ae0a`](https://github.com/1stG/configs/commit/5b9ae0aa2df2fabf119bc79c1d735be1894830c7), [`5b9ae0a`](https://github.com/1stG/configs/commit/5b9ae0aa2df2fabf119bc79c1d735be1894830c7)]:
+  - @1stg/simple-git-hooks@0.2.0
+  - @1stg/babel-preset@3.1.3
+  - @1stg/commitlint-config@3.1.3
+  - @1stg/eslint-config@5.2.6
+  - @1stg/lint-staged@3.1.4
+  - @1stg/prettier-config@3.5.1
+
 ## 5.2.5
 
 ### Patch Changes
