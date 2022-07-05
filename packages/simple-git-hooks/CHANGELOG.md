@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.2.0
+
+### Minor Changes
+
+- [#117](https://github.com/1stG/configs/pull/117) [`5b9ae0a`](https://github.com/1stG/configs/commit/5b9ae0aa2df2fabf119bc79c1d735be1894830c7) Thanks [@JounQin](https://github.com/JounQin)! - feat: detect script runner automatically
+
+### Patch Changes
+
+- [#117](https://github.com/1stG/configs/pull/117) [`5b9ae0a`](https://github.com/1stG/configs/commit/5b9ae0aa2df2fabf119bc79c1d735be1894830c7) Thanks [@JounQin](https://github.com/JounQin)! - chore: upgrade @pkgr/utils
+
 ## 0.1.4
 
 ### Patch Changes
