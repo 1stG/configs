@@ -1,4 +1,9 @@
-const { jsoncFiles, nonJsonRcFiles } = require('@1stg/config')
+const {
+  iniRcFiles,
+  jsoncFiles,
+  nonJsonRcFiles,
+  shRcFiles,
+} = require('@1stg/config')
 
 module.exports = {
   arrowParens: 'avoid',
@@ -16,6 +21,18 @@ module.exports = {
   ),
   overrides: [
     {
+      files: iniRcFiles,
+      options: {
+        parser: 'ini',
+      },
+    },
+    {
+      files: jsoncFiles,
+      options: {
+        parser: 'json',
+      },
+    },
+    {
       files: ['.*rc', '*.json'],
       excludeFiles: [...nonJsonRcFiles, ...jsoncFiles],
       options: {
@@ -23,15 +40,9 @@ module.exports = {
       },
     },
     {
-      files: ['.browserslistrc', '.npmrc', '.yarnrc', '.*shrc'],
+      files: shRcFiles,
       options: {
         parser: 'sh',
-      },
-    },
-    {
-      files: jsoncFiles,
-      options: {
-        parser: 'json',
       },
     },
   ],

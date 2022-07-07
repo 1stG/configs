@@ -1,9 +1,12 @@
+exports.iniRcFiles = ['.npmrc', '.yarnrc']
+
+exports.shRcFiles = ['.*shrc']
+
 exports.nonJsonRcFiles = [
+  ...exports.iniRcFiles,
+  ...exports.shRcFiles,
   '.browserslistrc',
-  '.npmrc',
   '.nvmrc',
-  '.yarnrc',
-  '.*shrc',
 ]
 
 exports.jsoncFiles = [

@@ -44,6 +44,7 @@
     "lint-staged": ">=10.0.0"
   },
   "dependencies": {
+    "@1stg/config": "^0.0.0",
     "@1stg/prettier-config": "^3.5.1",
     "@1stg/tsconfig": "^2.2.2",
     "@pkgr/utils": "^2.3.0",
