@@ -1,8 +1,6 @@
 {
   "extends": "./packages/tsconfig/angular",
   "compilerOptions": {
-    "baseUrl": ".",
-    "lib": ["DOM"]
-  },
-  "exclude": ["node_modules"]
+    "baseUrl": "."
+  }
 }
