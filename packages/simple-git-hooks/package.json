@@ -1,7 +1,7 @@
 {
   "name": "@1stg/simple-git-hooks",
   "version": "0.2.0",
-  "description": "Personal but Shareable simple-git-hooks Configuration for all 1stG.me projects.",
+  "description": "Personal but Shareable simple-git-hooks Configuration for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
   "donate": {

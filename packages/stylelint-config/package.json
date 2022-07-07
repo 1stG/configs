@@ -1,7 +1,7 @@
 {
   "name": "@1stg/stylelint-config",
   "version": "4.4.4",
-  "description": "Personal but Shareable Stylelint Configuration for all 1stG.me projects.",
+  "description": "Personal but Shareable Stylelint Configuration for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
   "donate": {
@@ -46,7 +46,7 @@
   "dependencies": {
     "@pkgr/utils": "^2.3.0",
     "@stylelint/postcss-css-in-js": "^0.38.0",
-    "postcss-html": "^1.4.1",
+    "postcss-html": "^1.5.0",
     "postcss-less": "^6.0.0",
     "postcss-markdown": "^1.2.0",
     "postcss-scss": "^4.0.4",

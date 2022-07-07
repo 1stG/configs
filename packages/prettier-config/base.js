@@ -1,3 +1,5 @@
+const { jsoncFiles, nonJsonRcFiles } = require('@1stg/config')
+
 module.exports = {
   arrowParens: 'avoid',
   semi: false,
@@ -15,7 +17,7 @@ module.exports = {
   overrides: [
     {
       files: ['.*rc', '*.json'],
-      excludeFiles: ['.nvmrc'],
+      excludeFiles: [...nonJsonRcFiles, ...jsoncFiles],
       options: {
         parser: 'json-stringify',
       },
@@ -27,13 +29,7 @@ module.exports = {
       },
     },
     {
-      files: [
-        'angular.json',
-        'jsconfig.json',
-        'settings.json',
-        'tsconfig.json',
-        'tsconfig.*.json',
-      ],
+      files: jsoncFiles,
       options: {
         parser: 'json',
       },

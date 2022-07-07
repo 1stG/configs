@@ -8,6 +8,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 - [@1stg/browserslist-config](./packages/browserslist-config/CHANGELOG.md)
 - [@1stg/commitlint-config](./packages/commitlint-config/CHANGELOG.md)
 - [@1stg/common-config](./packages/common-config/CHANGELOG.md)
+- [@1stg/config](./packages/config/CHANGELOG.md)
 - [@1stg/eslint-config](./packages/eslint-config/CHANGELOG.md)
 - [@1stg/husky-config](./packages/husky-config/CHANGELOG.md)
 - [@1stg/lib-config](./packages/lib-config/CHANGELOG.md)

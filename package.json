@@ -1,7 +1,7 @@
 {
   "name": "@1stg/configs",
   "version": "0.0.0",
-  "description": "Personal but Shareable Configurations for all 1stG.me projects.",
+  "description": "Personal but Shareable Configurations for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
   "license": "MIT",
@@ -24,14 +24,14 @@
     "typecov": "type-coverage"
   },
   "devDependencies": {
-    "@angular/compiler": "^14.0.4",
-    "@angular/compiler-cli": "^14.0.4",
-    "@angular/core": "^14.0.4",
+    "@angular/compiler": "^14.0.5",
+    "@angular/compiler-cli": "^14.0.5",
+    "@angular/core": "^14.0.5",
     "@changesets/changelog-github": "^0.4.5",
     "@changesets/cli": "^2.23.0",
     "@types/jest": "^28.1.4",
-    "@types/node": "^18.0.1",
-    "@types/react": "^18.0.14",
+    "@types/node": "^18.0.3",
+    "@types/react": "^18.0.15",
     "@types/unist": "^2.0.6",
     "markuplint": "^2.9.0",
     "patch-package": "^6.4.7",
@@ -42,7 +42,7 @@
     "type-coverage": "^2.21.2",
     "typescript": "^4.7.4",
     "vue": "^3.2.37",
-    "vue-tsc": "^0.38.2"
+    "vue-tsc": "^0.38.3"
   },
   "resolutions": {
     "prettier": "^2.7.1"

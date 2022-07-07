@@ -11,7 +11,7 @@
 [![Code Style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![changesets](https://img.shields.io/badge/maintained%20with-changesets-176de3.svg)](https://github.com/atlassian/changesets)
 
-> Personal but Shareable Configurations for all 1stG.me projects.
+> Personal but Shareable Configurations for all 1stG.me projects
 
 ## Sponsors
 

@@ -1,7 +1,7 @@
 {
   "name": "@1stg/app-config",
   "version": "5.2.6",
-  "description": "Personal but Shareable App Configuration for all 1stG.me projects.",
+  "description": "Personal but Shareable App Configuration for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/app-config",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
@@ -46,7 +46,7 @@
     "@1stg/common-config": "^5.2.6",
     "@1stg/postcss-config": "^3.2.3",
     "@1stg/stylelint-config": "^4.4.4",
-    "@pkgr/es-modules": "^0.6.1",
+    "@pkgr/es-modules": "^0.6.2",
     "@pkgr/imagemin": "^3.1.1",
     "browserslist": "^4.21.1",
     "postcss": "^8.4.14",

@@ -1,5 +1,6 @@
 const path = require('node:path')
 
+const { jsoncFiles, nonJsonRcFiles } = require('@1stg/config')
 const {
   isAngularAvailable,
   isReactAvailable,
@@ -68,7 +69,6 @@ exports.js = {
 const project =
   tryFile(path.resolve('tsconfig.eslint.json')) ||
   tryFile(path.resolve('tsconfig.base.json')) ||
-  // eslint-disable-next-line sonarjs/no-duplicate-string
   tryFile(path.resolve('tsconfig.json')) ||
   tryPkg('@1stg/tsconfig')
 
@@ -355,7 +355,11 @@ exports.vue = [
 
 const svelteBase = {
   files: '*.svelte',
-  extends: ['plugin:svelte/recommended'],
+  extends: [
+    'plugin:svelte/recommended',
+    'plugin:svelte/prettier',
+    'plugin:prettier/recommended',
+  ],
   rules: {
     'sonar/label-position': 0,
     'sonar/no-labels': 0,
@@ -489,18 +493,7 @@ exports.config = exports.configs = {
 
 exports.json = {
   files: ['.*rc', '*.json'],
-  excludedFiles: [
-    '.browserslistrc',
-    '.npmrc',
-    '.nvmrc',
-    '.yarnrc',
-    '.*shrc',
-    'angular.json',
-    'jsconfig.json',
-    'settings.json',
-    'tsconfig.json',
-    'tsconfig.*.json',
-  ],
+  excludedFiles: [...nonJsonRcFiles, ...jsoncFiles],
   extends: [
     'plugin:jsonc/recommended-with-json',
     // eslint-disable-next-line sonarjs/no-duplicate-string
@@ -511,14 +504,7 @@ exports.json = {
 }
 
 exports.jsonc = {
-  files: [
-    '*.jsonc',
-    'angular.json',
-    'jsconfig.json',
-    'settings.json',
-    'tsconfig.json',
-    'tsconfig.*.json',
-  ],
+  files: jsoncFiles,
   extends: [
     'plugin:jsonc/recommended-with-jsonc',
     'plugin:json-schema-validator/recommended',

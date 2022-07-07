@@ -1,7 +1,7 @@
 {
   "name": "@1stg/common-config",
   "version": "5.2.6",
-  "description": "Personal but Shareable Common Configuration for all 1stG.me projects.",
+  "description": "Personal but Shareable Common Configuration for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/common-config",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
