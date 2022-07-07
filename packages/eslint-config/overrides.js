@@ -355,7 +355,11 @@ exports.vue = [
 
 const svelteBase = {
   files: '*.svelte',
-  extends: ['plugin:svelte/recommended'],
+  extends: [
+    'plugin:svelte/recommended',
+    'plugin:svelte/prettier',
+    'plugin:prettier/recommended',
+  ],
   rules: {
     'sonar/label-position': 0,
     'sonar/no-labels': 0,
@@ -495,9 +499,9 @@ exports.json = {
     '.nvmrc',
     '.yarnrc',
     '.*shrc',
+    '.vscode/*.json',
     'angular.json',
     'jsconfig.json',
-    'settings.json',
     'tsconfig.json',
     'tsconfig.*.json',
   ],
@@ -512,12 +516,13 @@ exports.json = {
 
 exports.jsonc = {
   files: [
+    '*.code-workspace',
     '*.jsonc',
     'angular.json',
     'jsconfig.json',
-    'settings.json',
     'tsconfig.json',
     'tsconfig.*.json',
+    '.vscode/*.json',
   ],
   extends: [
     'plugin:jsonc/recommended-with-jsonc',

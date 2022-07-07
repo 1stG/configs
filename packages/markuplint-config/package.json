@@ -47,7 +47,7 @@
   "dependencies": {
     "@markuplint/vue-parser": "^2.3.2",
     "@markuplint/vue-spec": "^2.1.1",
-    "markuplint-angular-parser": "^1.1.2"
+    "markuplint-angular-parser": "^1.1.3"
   },
   "publishConfig": {
     "access": "public"

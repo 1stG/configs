@@ -15,7 +15,7 @@ module.exports = {
   overrides: [
     {
       files: ['.*rc', '*.json'],
-      excludeFiles: ['.nvmrc'],
+      excludeFiles: ['*.code-workspace', '.nvmrc', '.vscode/*.json'],
       options: {
         parser: 'json-stringify',
       },
@@ -28,11 +28,12 @@ module.exports = {
     },
     {
       files: [
+        '*.code-workspace',
         'angular.json',
         'jsconfig.json',
-        'settings.json',
         'tsconfig.json',
         'tsconfig.*.json',
+        '.vscode/*.json',
       ],
       options: {
         parser: 'json',
