@@ -24,6 +24,16 @@
     "typecov": "type-coverage"
   },
   "devDependencies": {
+    "@1stg/babel-preset": "workspace:*",
+    "@1stg/browserslist-config": "workspace:*",
+    "@1stg/commitlint-config": "workspace:*",
+    "@1stg/eslint-config": "workspace:*",
+    "@1stg/lint-staged": "workspace:*",
+    "@1stg/markuplint-config": "workspace:*",
+    "@1stg/prettier-config": "workspace:*",
+    "@1stg/remark-config": "workspace:*",
+    "@1stg/simple-git-hooks": "workspace:*",
+    "@1stg/stylelint-config": "workspace:*",
     "@angular/compiler": "^14.0.5",
     "@angular/compiler-cli": "^14.0.5",
     "@angular/core": "^14.0.5",
