@@ -1,5 +1,16 @@
 # Change Log
 
+## 7.2.7
+
+### Patch Changes
+
+- [#121](https://github.com/1stG/configs/pull/121) [`e23439a`](https://github.com/1stG/configs/commit/e23439a4691c6a49f6413ccfcda281c5f77dc85c) Thanks [@JounQin](https://github.com/JounQin)! - fix(prettier): .vscode/\*.json should be considered as jsonc
+
+- [#123](https://github.com/1stG/configs/pull/123) [`4f70fd3`](https://github.com/1stG/configs/commit/4f70fd3aeff6b1b66ccb607fcb61f59977d773c1) Thanks [@JounQin](https://github.com/JounQin)! - docs: add README files
+
+- Updated dependencies [[`4f70fd3`](https://github.com/1stG/configs/commit/4f70fd3aeff6b1b66ccb607fcb61f59977d773c1)]:
+  - @1stg/common-config@5.2.7
+
 ## 7.2.6
 
 ### Patch Changes

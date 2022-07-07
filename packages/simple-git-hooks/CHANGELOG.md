@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.2.1
+
+### Patch Changes
+
+- [#123](https://github.com/1stG/configs/pull/123) [`4f70fd3`](https://github.com/1stG/configs/commit/4f70fd3aeff6b1b66ccb607fcb61f59977d773c1) Thanks [@JounQin](https://github.com/JounQin)! - docs: add README files
+
 ## 0.2.0
 
 ### Minor Changes

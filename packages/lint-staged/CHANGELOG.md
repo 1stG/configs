@@ -1,5 +1,20 @@
 # Change Log
 
+## 3.2.0
+
+### Minor Changes
+
+- [#124](https://github.com/1stG/configs/pull/124) [`8aa8066`](https://github.com/1stG/configs/commit/8aa8066a926a3fd972a051bbbce11fab4cd35896) Thanks [@JounQin](https://github.com/JounQin)! - feat(prettier): add `prettier-plugin-ini` support
+
+### Patch Changes
+
+- [#123](https://github.com/1stG/configs/pull/123) [`4f70fd3`](https://github.com/1stG/configs/commit/4f70fd3aeff6b1b66ccb607fcb61f59977d773c1) Thanks [@JounQin](https://github.com/JounQin)! - docs: add README files
+
+- Updated dependencies [[`8aa8066`](https://github.com/1stG/configs/commit/8aa8066a926a3fd972a051bbbce11fab4cd35896), [`e23439a`](https://github.com/1stG/configs/commit/e23439a4691c6a49f6413ccfcda281c5f77dc85c), [`4f70fd3`](https://github.com/1stG/configs/commit/4f70fd3aeff6b1b66ccb607fcb61f59977d773c1), [`e23439a`](https://github.com/1stG/configs/commit/e23439a4691c6a49f6413ccfcda281c5f77dc85c)]:
+  - @1stg/config@0.1.0
+  - @1stg/prettier-config@3.6.0
+  - @1stg/tsconfig@2.2.3
+
 ## 3.1.4
 
 ### Patch Changes
