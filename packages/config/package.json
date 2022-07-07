@@ -1,7 +1,7 @@
 {
-  "name": "@1stg/renovate-config",
-  "version": "1.1.2",
-  "description": "Personal but Shareable Renovate Configuration for all 1stG.me projects",
+  "name": "@1stg/config",
+  "version": "0.0.0",
+  "description": "Personal but Shareable Configuration for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
   "donate": {
@@ -39,22 +39,5 @@
   "license": "MIT",
   "publishConfig": {
     "access": "public"
-  },
-  "renovate-config": {
-    "default": {
-      "extends": [
-        "config:base",
-        "schedule:monthly"
-      ],
-      "automerge": true,
-      "major": {
-        "automerge": false
-      },
-      "postUpdateOptions": [
-        "npmDedupe",
-        "yarnDedupeFewer"
-      ],
-      "rangeStrategy": "bump"
-    }
   }
 }

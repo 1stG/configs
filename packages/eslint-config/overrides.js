@@ -1,5 +1,6 @@
 const path = require('node:path')
 
+const { jsoncFiles, nonJsonRcFiles } = require('@1stg/config')
 const {
   isAngularAvailable,
   isReactAvailable,
@@ -68,7 +69,6 @@ exports.js = {
 const project =
   tryFile(path.resolve('tsconfig.eslint.json')) ||
   tryFile(path.resolve('tsconfig.base.json')) ||
-  // eslint-disable-next-line sonarjs/no-duplicate-string
   tryFile(path.resolve('tsconfig.json')) ||
   tryPkg('@1stg/tsconfig')
 
@@ -493,18 +493,7 @@ exports.config = exports.configs = {
 
 exports.json = {
   files: ['.*rc', '*.json'],
-  excludedFiles: [
-    '.browserslistrc',
-    '.npmrc',
-    '.nvmrc',
-    '.yarnrc',
-    '.*shrc',
-    '.vscode/*.json',
-    'angular.json',
-    'jsconfig.json',
-    'tsconfig.json',
-    'tsconfig.*.json',
-  ],
+  excludedFiles: [...nonJsonRcFiles, ...jsoncFiles],
   extends: [
     'plugin:jsonc/recommended-with-json',
     // eslint-disable-next-line sonarjs/no-duplicate-string
@@ -515,15 +504,7 @@ exports.json = {
 }
 
 exports.jsonc = {
-  files: [
-    '*.code-workspace',
-    '*.jsonc',
-    'angular.json',
-    'jsconfig.json',
-    'tsconfig.json',
-    'tsconfig.*.json',
-    '.vscode/*.json',
-  ],
+  files: jsoncFiles,
   extends: [
     'plugin:jsonc/recommended-with-jsonc',
     'plugin:json-schema-validator/recommended',

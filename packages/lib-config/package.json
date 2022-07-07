@@ -1,7 +1,7 @@
 {
   "name": "@1stg/lib-config",
   "version": "7.2.6",
-  "description": "Personal but Shareable Library Configuration for all 1stG.me projects.",
+  "description": "Personal but Shareable Library Configuration for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/lib-config",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",

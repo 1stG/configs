@@ -1,7 +1,7 @@
 {
   "name": "@1stg/eslint-config",
   "version": "5.2.6",
-  "description": "Personal but Shareable ESLint Configuration for all 1stG.me projects.",
+  "description": "Personal but Shareable ESLint Configuration for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/eslint-config",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
@@ -45,6 +45,7 @@
     "eslint": ">=6.0.0"
   },
   "dependencies": {
+    "@1stg/config": "^0.0.0",
     "@angular-eslint/eslint-plugin": "^14.0.0",
     "@angular-eslint/eslint-plugin-template": "^14.0.0",
     "@angular-eslint/template-parser": "^14.0.0",
