@@ -8,7 +8,7 @@ const TS_FILES = 'cts,mts,ts,tsx'
 const STYLELINT_FILES = 'css,less,sass,scss,styl,stylus,svelte,vue'
 
 const config = [
-  `*.{*sh,env,env.*,gql,html,json,properties,pug,rb,toml,yaml,yml${
+  `*.{*sh,env,env.*,gql,html,ini,json,properties,pug,rb,toml,yaml,yml${
     isEslintAvailable ? '' : ',' + ESLINT_FILES + ',' + TS_FILES
   }${isStylelintAvailable ? '' : ',' + STYLELINT_FILES}}`,
   '.!(nvm)rc',
