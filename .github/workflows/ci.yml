@@ -44,7 +44,7 @@ jobs:
 
       - name: Check Postcss
         run: |
-          pnpm global add postcss postcss-cli
+          pnpm add -g postcss postcss-cli
           NODE_ENV=production postcss tests/test.css --verbose
 
       - name: Codecov
