@@ -14,7 +14,7 @@
     "check": "run-p check:*",
     "check:eslint": "eslint-config-prettier .eslintrc.js",
     "check:stylelint": "stylelint-config-prettier-check",
-    "codesanbox:install": "npx pnpm@7.5.0 i --frozen-lockfile",
+    "codesanbox:install": "npx pnpm@7.5.0 i",
     "lint": "run-p lint:*",
     "lint:es": "eslint . --cache -f friendly",
     "lint:style": "stylelint . --cache",
