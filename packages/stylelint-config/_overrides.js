@@ -1,3 +1,11 @@
+const { isPkgAvailable } = require('@pkgr/utils')
+
+const withEslintOptions = isPkgAvailable('eslint') && {
+  rules: {
+    'prettier/prettier': null,
+  },
+}
+
 module.exports = loose => ({
   ...require('./base'),
   overrides: [
@@ -13,14 +21,17 @@ module.exports = loose => ({
         '**/*.tsx',
       ],
       customSyntax: '@stylelint/postcss-css-in-js',
+      ...withEslintOptions,
     },
     {
       files: ['**/*.md', '**/*.mdx'],
       customSyntax: 'postcss-markdown',
+      ...withEslintOptions,
     },
     {
       files: ['**/*.html', '**/*.svelte', '**/*.vue'],
       customSyntax: 'postcss-html',
+      ...withEslintOptions,
     },
     {
       files: ['**/*.less'],

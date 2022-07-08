@@ -3,12 +3,13 @@ const { isPkgAvailable } = require('@pkgr/utils')
 const isEslintAvailable = isPkgAvailable('eslint')
 const isStylelintAvailable = isPkgAvailable('stylelint')
 
-const ESLINT_FILES = 'cjs,js,jsx,md,mdx,mjs,svelte,vue'
+const ESLINT_FILES =
+  'cjs,js,json,jsonc,json5,jsx,html,md,mdx,mjs,pug,svelte,toml,vue,yaml,yml'
 const TS_FILES = 'cts,mts,ts,tsx'
 const STYLELINT_FILES = 'css,less,sass,scss,styl,stylus,svelte,vue'
 
 const config = [
-  `*.{*sh,env,env.*,gql,html,ini,json,properties,pug,rb,toml,yaml,yml${
+  `*.{*sh,env,env.*,gql,ini,properties,rb${
     isEslintAvailable ? '' : ',' + ESLINT_FILES + ',' + TS_FILES
   }${isStylelintAvailable ? '' : ',' + STYLELINT_FILES}}`,
   '.!(nvm)rc',

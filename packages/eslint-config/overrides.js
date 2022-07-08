@@ -92,7 +92,8 @@ const tsBase = {
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:import/typescript',
-    'prettier',
+    // eslint-disable-next-line sonarjs/no-duplicate-string
+    'plugin:prettier/recommended',
   ],
   settings: resolveSettings,
   rules: {
@@ -270,7 +271,11 @@ exports.dTs = {
 }
 
 const reactJsx = {
-  extends: ['standard-react', 'plugin:react/recommended', 'prettier'],
+  extends: [
+    'standard-react',
+    'plugin:react/recommended',
+    'plugin:prettier/recommended',
+  ],
   settings: {
     react: {
       version: 'detect',
@@ -321,7 +326,7 @@ exports.reactTs = {
   },
 }
 
-const vueExtends = ['plugin:vue/recommended', 'prettier']
+const vueExtends = ['plugin:vue/recommended', 'plugin:prettier/recommended']
 
 exports.vue = [
   {
@@ -346,6 +351,11 @@ exports.vue = [
   },
   {
     files: '*.vue',
+    extends: [
+      // eslint-disable-next-line sonarjs/no-duplicate-string
+      'plugin:markup/recommended',
+      ...vueExtends,
+    ],
     rules: {
       'no-unused-vars': 0,
       '@typescript-eslint/no-unused-vars': 0,
@@ -356,6 +366,7 @@ exports.vue = [
 const svelteBase = {
   files: '*.svelte',
   extends: [
+    'plugin:markup/recommended',
     'plugin:svelte/recommended',
     'plugin:svelte/prettier',
     'plugin:prettier/recommended',
@@ -389,7 +400,7 @@ exports.angular = [
     extends: [
       'plugin:@angular-eslint/recommended',
       'plugin:@angular-eslint/template/process-inline-templates',
-      'prettier',
+      'plugin:prettier/recommended',
     ],
     rules: {
       '@angular-eslint/prefer-on-push-component-change-detection': 1,
@@ -400,6 +411,7 @@ exports.angular = [
     extends: [
       'plugin:@angular-eslint/template/recommended',
       'plugin:markup/recommended',
+      'plugin:prettier/recommended',
     ],
     parser: 'angular-eslint-template-parser',
     rules: {
@@ -409,21 +421,7 @@ exports.angular = [
           allowNullOrUndefined: true,
         },
       ],
-      'prettier/prettier': 0,
       'spaced-comment': 0,
-    },
-  },
-  {
-    files: '*.html',
-    excludedFiles: '*inline-template-*.component.html',
-    extends: ['prettier'],
-    rules: {
-      'prettier/prettier': [
-        2,
-        {
-          parser: 'angular',
-        },
-      ],
     },
   },
   {
@@ -434,18 +432,24 @@ exports.angular = [
   },
 ]
 
-exports.html = {
-  files: '*.html',
-  extends: 'plugin:markup/recommended',
-  rules: {
-    'prettier/prettier': [
-      2,
-      {
-        parser: 'html',
-      },
-    ],
+exports.markup = [
+  {
+    files: '*.html',
+    extends: 'plugin:markup/recommended',
+    rules: {
+      'prettier/prettier': [
+        2,
+        {
+          parser: 'html',
+        },
+      ],
+    },
   },
-}
+  {
+    files: '*.pug',
+    extends: ['plugin:markup/recommended', 'plugin:prettier/recommended'],
+  },
+]
 
 exports.md = {
   files: '*.md',
@@ -546,9 +550,11 @@ exports.overrides = []
     isReactAvailable && exports.react,
     isReactAvailable && exports.reactHooks,
     isReactAvailable && exports.reactTs,
+    // The order matters, the later should to be preferred
+    exports.markup,
+    isAngularAvailable && exports.angular,
     isVueAvailable && exports.vue,
     isSvelteAvailable && exports.svelte,
-    isAngularAvailable ? exports.angular : exports.html,
     exports.md,
     exports.mdx,
     isPkgAvailable('jest') && exports.jest,
