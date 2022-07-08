@@ -44,8 +44,10 @@ jobs:
 
       - name: Check Postcss
         run: |
-          pnpm add -g postcss postcss-cli
-          NODE_ENV=production postcss tests/test.css --verbose
+          pnpm add -D postcss-cli
+          pnpm postcss tests/test.css --verbose
+        env:
+          NODE_ENV: production
 
       - name: Codecov
         uses: codecov/codecov-action@v3
