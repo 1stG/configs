@@ -45,6 +45,7 @@
     "markuplint": "^2.0.0"
   },
   "dependencies": {
+    "@markuplint/svelte-parser": "^2.2.3",
     "@markuplint/vue-parser": "^2.3.2",
     "@markuplint/vue-spec": "^2.1.1",
     "markuplint-angular-parser": "^1.1.3"

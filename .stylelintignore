@@ -6,6 +6,8 @@ LICENSE
 *.json5
 *.lock
 *.log
+# TODE: make it work
+*.pug
 *.sh
 *.svg
 *.tsbuildinfo

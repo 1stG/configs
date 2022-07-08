@@ -44,7 +44,7 @@ jobs:
 
       - name: Check Postcss
         run: |
-          pnpm add -D postcss-cli
+          pnpm add -Dw postcss-cli
           pnpm postcss tests/test.css --verbose
         env:
           NODE_ENV: production
