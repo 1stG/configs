@@ -43,9 +43,7 @@ jobs:
           PARSER_NO_WATCH: true
 
       - name: Check Postcss
-        run: |
-          pnpm add -Dw postcss-cli
-          pnpm postcss tests/test.css --verbose
+        run: pnpx postcss-cli tests/test.css --verbose
         env:
           NODE_ENV: production
 

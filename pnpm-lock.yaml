@@ -13,6 +13,7 @@ importers:
       '@1stg/eslint-config': workspace:*
       '@1stg/lint-staged': workspace:*
       '@1stg/markuplint-config': workspace:*
+      '@1stg/postcss-config': workspace:*
       '@1stg/prettier-config': workspace:*
       '@1stg/remark-config': workspace:*
       '@1stg/simple-git-hooks': workspace:*
@@ -21,15 +22,16 @@ importers:
       '@angular/compiler-cli': ^14.0.5
       '@angular/core': ^14.0.5
       '@changesets/changelog-github': ^0.4.5
-      '@changesets/cli': ^2.23.0
+      '@changesets/cli': ^2.23.1
       '@types/jest': ^28.1.4
       '@types/node': ^18.0.3
       '@types/react': ^18.0.15
       '@types/unist': ^2.0.6
       markuplint: ^2.9.0
+      postcss: ^8.4.14
       react: ^18.2.0
       rxjs: ^7.5.5
-      svelte: ^3.48.0
+      svelte: ^3.49.0
       ts-jest: ^28.0.5
       type-coverage: ^2.21.2
       typescript: ^4.7.4
@@ -42,6 +44,7 @@ importers:
       '@1stg/eslint-config': link:packages/eslint-config
       '@1stg/lint-staged': link:packages/lint-staged
       '@1stg/markuplint-config': link:packages/markuplint-config
+      '@1stg/postcss-config': link:packages/postcss-config
       '@1stg/prettier-config': link:packages/prettier-config
       '@1stg/remark-config': link:packages/remark-config
       '@1stg/simple-git-hooks': link:packages/simple-git-hooks
@@ -50,16 +53,17 @@ importers:
       '@angular/compiler-cli': 14.0.5_zpefgt72khwrbcajczg5cki5ui
       '@angular/core': 14.0.5_rxjs@7.5.5+zone.js@0.11.6
       '@changesets/changelog-github': 0.4.5
-      '@changesets/cli': 2.23.0
+      '@changesets/cli': 2.23.1
       '@types/jest': 28.1.4
       '@types/node': 18.0.3
       '@types/react': 18.0.15
       '@types/unist': 2.0.6
       markuplint: 2.9.0
+      postcss: 8.4.14
       react: 18.2.0
       rxjs: 7.5.5
       svelte: 3.49.0
-      ts-jest: 28.0.5_lt5llx2ti6zt4eclhanfli5ynu
+      ts-jest: 28.0.5_d7p7jfykgzko2wul3x4xic5voa
       type-coverage: 2.21.2_typescript@4.7.4
       typescript: 4.7.4
       vue: 3.2.37
@@ -220,7 +224,7 @@ importers:
       eslint-plugin-sonarjs: ^0.13.0
       eslint-plugin-svelte: ^2.2.0
       eslint-plugin-toml: ^0.3.1
-      eslint-plugin-unicorn: ^43.0.0
+      eslint-plugin-unicorn: ^43.0.1
       eslint-plugin-vue: ^9.2.0
       eslint-plugin-yml: ^1.0.0
     dependencies:
@@ -261,7 +265,7 @@ importers:
       eslint-plugin-sonarjs: 0.13.0
       eslint-plugin-svelte: 2.2.0_svelte@3.49.0
       eslint-plugin-toml: 0.3.1
-      eslint-plugin-unicorn: 43.0.0
+      eslint-plugin-unicorn: 43.0.1
       eslint-plugin-vue: 9.2.0
       eslint-plugin-yml: 1.0.0
 
@@ -1997,11 +2001,11 @@ packages:
     resolution: {integrity: sha512-sBnCqW0nqofE47mxFnw+lvx6kzsQstwaQMVkh66qm/A6IlsnH7WsyGuVXTou8RF2wL4W7ybOoHPvP2WgIo6rhQ==}
     dev: false
 
-  /@changesets/apply-release-plan/6.0.0:
-    resolution: {integrity: sha512-gp6nIdVdfYdwKww2+f8whckKmvfE4JEm4jJgBhTmooi0uzHWhnxvk6JIzQi89qEAMINN0SeVNnXiAtbFY0Mj3w==}
+  /@changesets/apply-release-plan/6.0.1:
+    resolution: {integrity: sha512-KGtai19+Uo7k8uco9m+hIPGoet9E6eZq15RIeHoivvgwwI66AC6ievbUO5h0NqGlZjBWnYJQNkuT66kvBYzxsA==}
     dependencies:
       '@babel/runtime': 7.18.6
-      '@changesets/config': 2.0.0
+      '@changesets/config': 2.0.1
       '@changesets/get-version-range-type': 0.3.2
       '@changesets/git': 1.3.2
       '@changesets/types': 5.0.0
@@ -2042,18 +2046,18 @@ packages:
       - encoding
     dev: true
 
-  /@changesets/cli/2.23.0:
-    resolution: {integrity: sha512-Gi3tMi0Vr6eNd8GX6q73tbOm9XOzGfuLEm4PYVeWG2neg5DlRGNOjYwrFULJ/An3N9MHtHn4r5h1Qvnju9Ijug==}
+  /@changesets/cli/2.23.1:
+    resolution: {integrity: sha512-yXQ29Iw/26yq1oJpOCa7BJDeUvuurZmREmCX9p9m5RxlKNDnROJBylQDCVfqQdZbeV2jfvd3XRKvci80SvGssg==}
     hasBin: true
     dependencies:
       '@babel/runtime': 7.18.6
-      '@changesets/apply-release-plan': 6.0.0
+      '@changesets/apply-release-plan': 6.0.1
       '@changesets/assemble-release-plan': 5.1.3
       '@changesets/changelog-git': 0.1.11
-      '@changesets/config': 2.0.0
+      '@changesets/config': 2.0.1
       '@changesets/errors': 0.1.4
       '@changesets/get-dependents-graph': 1.3.2
-      '@changesets/get-release-plan': 3.0.9
+      '@changesets/get-release-plan': 3.0.10
       '@changesets/git': 1.3.2
       '@changesets/logger': 0.0.5
       '@changesets/pre': 1.0.11
@@ -2081,8 +2085,8 @@ packages:
       tty-table: 4.1.6
     dev: true
 
-  /@changesets/config/2.0.0:
-    resolution: {integrity: sha512-r5bIFY6CN3K6SQ+HZbjyE3HXrBIopONR47mmX7zUbORlybQXtympq9rVAOzc0Oflbap8QeIexc+hikfZoREXDg==}
+  /@changesets/config/2.0.1:
+    resolution: {integrity: sha512-rJaQWqsjM54T7bDiCoMDcgOuY2HzyovvRs68C//C+tYgbHyjs00JcNVcScjlV47hATrNG1AI8qTD7V9bcO/1cg==}
     dependencies:
       '@changesets/errors': 0.1.4
       '@changesets/get-dependents-graph': 1.3.2
@@ -2118,12 +2122,12 @@ packages:
       - encoding
     dev: true
 
-  /@changesets/get-release-plan/3.0.9:
-    resolution: {integrity: sha512-5C1r4DcOjVxcCvPmXpymeyT6mdSTLCNiB2L+5uf19BRkDKndJdIQorH5Fe2XBR2nHUcZQFT+2TXDzCepat969w==}
+  /@changesets/get-release-plan/3.0.10:
+    resolution: {integrity: sha512-QeKHeo+mX1baRy3OIHQePMPebPFymq/ZxS6Bk3Y3FXiU+pXVnjrfqARj1E4xQT5c+48u6ISqJ8tW5f3EZ1/hng==}
     dependencies:
       '@babel/runtime': 7.18.6
       '@changesets/assemble-release-plan': 5.1.3
-      '@changesets/config': 2.0.0
+      '@changesets/config': 2.0.1
       '@changesets/pre': 1.0.11
       '@changesets/read': 0.5.5
       '@changesets/types': 5.0.0
@@ -6478,8 +6482,8 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-unicorn/43.0.0:
-    resolution: {integrity: sha512-Z/6HX8yry+zAjo4jHHTAbe1rfniox7qgmCReGBfTc/CVgotfScaMCc4dtSSTHlJ+7Yix5o6LPXzwwpuGGFricg==}
+  /eslint-plugin-unicorn/43.0.1:
+    resolution: {integrity: sha512-wYvF6q0RRTKw6gzbKy5bbazWUrBEPIto2S9U6eSF+tsHgtgE+CwQ6Bww1W2Ie9TRED01QkZRN79c5aVMFgrFYw==}
     engines: {node: '>=14.18'}
     peerDependencies:
       eslint: '>=8.18.0'
@@ -14064,7 +14068,7 @@ packages:
     resolution: {integrity: sha512-AqTiAOLcj85xS7vQ8QkAV41hPDIJ71XJB4RCUrzo/1GM2CQwhkJGaf9Hgr7BOugMRpgGUrqRg/DrBDl4H40+8g==}
     dev: false
 
-  /ts-jest/28.0.5_lt5llx2ti6zt4eclhanfli5ynu:
+  /ts-jest/28.0.5_d7p7jfykgzko2wul3x4xic5voa:
     resolution: {integrity: sha512-Sx9FyP9pCY7pUzQpy4FgRZf2bhHY3za576HMKJFs+OnQ9jS96Du5vNsDKkyedQkik+sEabbKAnCliv9BEsHZgQ==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
@@ -14082,6 +14086,7 @@ packages:
       esbuild:
         optional: true
     dependencies:
+      '@babel/core': 7.18.6
       bs-logger: 0.2.6
       fast-json-stable-stringify: 2.1.0
       jest: 28.1.2_@types+node@18.0.3
