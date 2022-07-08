@@ -63,7 +63,7 @@ importers:
       react: 18.2.0
       rxjs: 7.5.5
       svelte: 3.49.0
-      ts-jest: 28.0.5_d7p7jfykgzko2wul3x4xic5voa
+      ts-jest: 28.0.5_lt5llx2ti6zt4eclhanfli5ynu
       type-coverage: 2.21.2_typescript@4.7.4
       typescript: 4.7.4
       vue: 3.2.37
@@ -72,9 +72,9 @@ importers:
   packages/app-config:
     specifiers:
       '@1stg/browserslist-config': ^1.2.3
-      '@1stg/common-config': ^5.2.7
+      '@1stg/common-config': ^6.0.0
       '@1stg/postcss-config': ^3.2.4
-      '@1stg/stylelint-config': ^4.4.5
+      '@1stg/stylelint-config': ^4.5.0
       '@pkgr/es-modules': ^0.6.2
       '@pkgr/imagemin': ^3.1.1
       browserslist: ^4.21.1
@@ -148,9 +148,9 @@ importers:
     specifiers:
       '@1stg/babel-preset': ^3.1.4
       '@1stg/commitlint-config': ^3.1.4
-      '@1stg/eslint-config': ^5.3.0
-      '@1stg/lint-staged': ^3.2.0
-      '@1stg/markuplint-config': ^2.1.4
+      '@1stg/eslint-config': ^5.3.1
+      '@1stg/lint-staged': ^3.2.1
+      '@1stg/markuplint-config': ^2.2.0
       '@1stg/prettier-config': ^3.6.0
       '@1stg/remark-config': ^4.0.3
       '@1stg/simple-git-hooks': ^0.2.1
@@ -274,7 +274,7 @@ importers:
 
   packages/lib-config:
     specifiers:
-      '@1stg/common-config': ^5.2.7
+      '@1stg/common-config': ^6.0.0
       '@pkgr/rollup': ^3.1.4
       jest: ^28.1.2
     dependencies:
@@ -14068,7 +14068,7 @@ packages:
     resolution: {integrity: sha512-AqTiAOLcj85xS7vQ8QkAV41hPDIJ71XJB4RCUrzo/1GM2CQwhkJGaf9Hgr7BOugMRpgGUrqRg/DrBDl4H40+8g==}
     dev: false
 
-  /ts-jest/28.0.5_d7p7jfykgzko2wul3x4xic5voa:
+  /ts-jest/28.0.5_lt5llx2ti6zt4eclhanfli5ynu:
     resolution: {integrity: sha512-Sx9FyP9pCY7pUzQpy4FgRZf2bhHY3za576HMKJFs+OnQ9jS96Du5vNsDKkyedQkik+sEabbKAnCliv9BEsHZgQ==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
@@ -14086,7 +14086,6 @@ packages:
       esbuild:
         optional: true
     dependencies:
-      '@babel/core': 7.18.6
       bs-logger: 0.2.6
       fast-json-stable-stringify: 2.1.0
       jest: 28.1.2_@types+node@18.0.3

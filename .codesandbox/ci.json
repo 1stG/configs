@@ -1,5 +1,6 @@
 {
   "node": "16",
+  "installCommand": "codesanbox:install",
   "buildCommand": false,
   "sandboxes": []
 }

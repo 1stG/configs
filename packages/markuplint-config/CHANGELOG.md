@@ -1,5 +1,15 @@
 # @1stg/markuplint-config
 
+## 2.2.0
+
+### Minor Changes
+
+- [#126](https://github.com/1stG/configs/pull/126) [`48d7542`](https://github.com/1stG/configs/commit/48d754293d6d68094792df71d56e8d7e8fc088a8) Thanks [@JounQin](https://github.com/JounQin)! - feat: support `svelte`
+
+### Patch Changes
+
+- [#126](https://github.com/1stG/configs/pull/126) [`48d7542`](https://github.com/1stG/configs/commit/48d754293d6d68094792df71d56e8d7e8fc088a8) Thanks [@JounQin](https://github.com/JounQin)! - fix: support more `markup` files
+
 ## 2.1.4
 
 ### Patch Changes
