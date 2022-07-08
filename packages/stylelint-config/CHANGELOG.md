@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.5.0
+
+### Minor Changes
+
+- [#126](https://github.com/1stG/configs/pull/126) [`48d7542`](https://github.com/1stG/configs/commit/48d754293d6d68094792df71d56e8d7e8fc088a8) Thanks [@JounQin](https://github.com/JounQin)! - feat: disable `prettier/prettier` for files handled by `eslint` already
+
 ## 4.4.5
 
 ### Patch Changes

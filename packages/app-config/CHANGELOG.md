@@ -1,5 +1,19 @@
 # Change Log
 
+## 6.0.0
+
+### Major Changes
+
+- [#126](https://github.com/1stG/configs/pull/126) [`48d7542`](https://github.com/1stG/configs/commit/48d754293d6d68094792df71d56e8d7e8fc088a8) Thanks [@JounQin](https://github.com/JounQin)! - build!: migrate to `pnpm`, `yarn-deduplicate` has been removed, you'll need to install it manually if you're still using `yarn@v1`
+
+### Patch Changes
+
+- [#126](https://github.com/1stG/configs/pull/126) [`48d7542`](https://github.com/1stG/configs/commit/48d754293d6d68094792df71d56e8d7e8fc088a8) Thanks [@JounQin](https://github.com/JounQin)! - fix: support more `markup` files
+
+- Updated dependencies [[`48d7542`](https://github.com/1stG/configs/commit/48d754293d6d68094792df71d56e8d7e8fc088a8), [`48d7542`](https://github.com/1stG/configs/commit/48d754293d6d68094792df71d56e8d7e8fc088a8), [`48d7542`](https://github.com/1stG/configs/commit/48d754293d6d68094792df71d56e8d7e8fc088a8)]:
+  - @1stg/common-config@6.0.0
+  - @1stg/stylelint-config@4.5.0
+
 ## 5.2.7
 
 ### Patch Changes
