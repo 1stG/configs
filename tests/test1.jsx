@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import { useState, PureComponent } from 'react'
 
-export default class Test extends React.PureComponent {
+export default class Test extends PureComponent {
   render() {
     return <div>Hello</div>
   }

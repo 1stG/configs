@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import { PureComponent, useState } from 'react'
 
-export default class Test extends React.PureComponent {
+export default class Test extends PureComponent {
   static a = 1
 
   b?: string

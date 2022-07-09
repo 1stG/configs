@@ -1,6 +1,3 @@
 {
-  "extends": "./packages/tsconfig/angular",
-  "compilerOptions": {
-    "baseUrl": "."
-  }
+  "extends": "@1stg/tsconfig/ng-lib"
 }

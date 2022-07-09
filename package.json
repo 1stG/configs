@@ -19,7 +19,7 @@
     "lint:es": "eslint . --cache -f friendly",
     "lint:style": "stylelint . --cache",
     "lint:tsc": "tsc --noEmit",
-    "prepare": "simple-git-hooks || exit 0",
+    "prepare": "simple-git-hooks",
     "release": "changeset publish",
     "test": "jest",
     "typecov": "type-coverage"
@@ -36,6 +36,7 @@
     "@1stg/remark-config": "workspace:*",
     "@1stg/simple-git-hooks": "workspace:*",
     "@1stg/stylelint-config": "workspace:*",
+    "@1stg/tsconfig": "workspace:*",
     "@angular/compiler": "^14.0.5",
     "@angular/compiler-cli": "^14.0.5",
     "@angular/core": "^14.0.5",
