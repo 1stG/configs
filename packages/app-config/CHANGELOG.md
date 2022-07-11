@@ -1,5 +1,17 @@
 # Change Log
 
+## 6.1.0
+
+### Minor Changes
+
+- [#128](https://github.com/1stG/configs/pull/128) [`7228ebb`](https://github.com/1stG/configs/commit/7228ebb1d2a31b5a305258dff24b0d0ca357ad4f) Thanks [@JounQin](https://github.com/JounQin)! - feat: bump deps, `cross-env` has been removed from `@1stg/lint-staged`
+
+### Patch Changes
+
+- Updated dependencies [[`7228ebb`](https://github.com/1stG/configs/commit/7228ebb1d2a31b5a305258dff24b0d0ca357ad4f), [`7228ebb`](https://github.com/1stG/configs/commit/7228ebb1d2a31b5a305258dff24b0d0ca357ad4f)]:
+  - @1stg/common-config@6.1.0
+  - @1stg/stylelint-config@4.6.0
+
 ## 6.0.0
 
 ### Major Changes

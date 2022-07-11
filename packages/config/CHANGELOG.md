@@ -1,5 +1,11 @@
 # @1stg/config
 
+## 0.2.0
+
+### Minor Changes
+
+- [#128](https://github.com/1stG/configs/pull/128) [`7228ebb`](https://github.com/1stG/configs/commit/7228ebb1d2a31b5a305258dff24b0d0ca357ad4f) Thanks [@JounQin](https://github.com/JounQin)! - feat: support `CONFIG_PREFER_PRETTIER` env
+
 ## 0.1.0
 
 ### Minor Changes
