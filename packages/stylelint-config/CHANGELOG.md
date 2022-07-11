@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.6.1
+
+### Patch Changes
+
+- [`3aad99a`](https://github.com/1stG/configs/commit/3aad99a66beb131813291f4b0c2f76c001495240) Thanks [@JounQin](https://github.com/JounQin)! - fix(stylelint): no need to disable prettier/prettier when it is unavailable
+
 ## 4.6.0
 
 ### Minor Changes
