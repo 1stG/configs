@@ -1,7 +1,13 @@
+const { preferPrettier } = require('@1stg/config')
 const { isAngularAvailable, isVueAvailable } = require('@pkgr/utils')
 
 module.exports = {
-  extends: ['stylelint-config-standard', 'stylelint-prettier/recommended'],
+  extends: [
+    'stylelint-config-standard',
+    preferPrettier
+      ? 'stylelint-config-prettier'
+      : 'stylelint-prettier/recommended',
+  ],
   plugins: [
     'stylelint-high-performance-animation',
     'stylelint-no-unsupported-browser-features',

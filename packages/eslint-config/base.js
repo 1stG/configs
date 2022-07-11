@@ -1,7 +1,12 @@
 const { isTsAvailable } = require('@pkgr/utils')
 const { getGlobals } = require('eslint-plugin-mdx')
 
-const { isWebpackAvailable, magicNumbers, webpackSpecVars } = require('./_util')
+const {
+  isWebpackAvailable,
+  magicNumbers,
+  webpackSpecVars,
+  prettierExtends,
+} = require('./_util')
 
 module.exports = {
   extends: [
@@ -16,7 +21,7 @@ module.exports = {
     isTsAvailable && 'plugin:sonar/recommended',
     'plugin:unicorn/recommended',
     'standard',
-    'plugin:prettier/recommended',
+    ...prettierExtends,
   ].filter(Boolean),
   plugins: ['es-x', 'simple-import-sort'],
   globals: isWebpackAvailable ? getGlobals(webpackSpecVars) : undefined,

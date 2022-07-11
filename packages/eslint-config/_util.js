@@ -1,5 +1,6 @@
 const path = require('node:path')
 
+const { preferPrettier } = require('@1stg/config')
 const {
   isMonorepo,
   isPkgAvailable,
@@ -43,3 +44,7 @@ exports.magicNumbers = [
   -1, 0, 1, 2, 3, 5, 7, 10, 12, 15, 20, 24, 30, 31, 50, 60, 100, 365, 366, 500,
   768, 1000, 1024, 3600, 4200, 8080,
 ]
+
+exports.prettierExtends = preferPrettier
+  ? ['prettier']
+  : ['plugin:prettier/recommended']

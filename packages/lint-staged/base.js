@@ -1,18 +1,21 @@
+const { preferPrettier } = require('@1stg/config')
 const { isPkgAvailable } = require('@pkgr/utils')
 
 const isEslintAvailable = isPkgAvailable('eslint')
 const isStylelintAvailable = isPkgAvailable('stylelint')
 
-const ESLINT_FILES =
-  'cjs,js,json,jsonc,json5,jsx,html,md,mdx,mjs,pug,svelte,toml,vue,yaml,yml'
-const TS_FILES = 'cts,mts,ts,tsx'
-const STYLELINT_FILES = 'css,less,sass,scss,styl,stylus,svelte,vue'
+const useEslintPrettier = isEslintAvailable && !preferPrettier
+const useStylelintPrettier = isStylelintAvailable && !preferPrettier
+
+const ESLINT_PRETTIER_FILES =
+  'cjs,cts,js,json,jsonc,json5,jsx,html,md,mdx,mjs,mts,pug,svelte,toml,ts,tsx,vue,yaml,yml'
+const STYLELINT_PRETTIER_FILES = 'css,less,sass,scss,styl,stylus,svelte,vue'
 
 const config = [
   `*.{*sh,env,env.*,gql,ini,properties,rb${
-    isEslintAvailable ? '' : ',' + ESLINT_FILES + ',' + TS_FILES
-  }${isStylelintAvailable ? '' : ',' + STYLELINT_FILES}}`,
-  '.!(nvm)rc',
+    useEslintPrettier ? '' : ',' + ESLINT_PRETTIER_FILES
+  }${useStylelintPrettier ? '' : ',' + STYLELINT_PRETTIER_FILES}}`,
+  '.!(browserslistrc|nvm)rc',
   'Dockerfile',
 ].reduce(
   (acc, files) =>
@@ -24,15 +27,12 @@ const config = [
 
 if (isEslintAvailable) {
   Object.assign(config, {
-    [`*.{${ESLINT_FILES}}`]: 'eslint --cache -f friendly --fix',
-    [`*.{${TS_FILES}}`]: [
-      'cross-env PARSER_NO_WATCH=true eslint --cache -f friendly --fix',
-    ],
+    [`*.{${ESLINT_PRETTIER_FILES}}`]: 'eslint --cache -f friendly --fix',
   })
 }
 
 if (isStylelintAvailable) {
-  config[`*.{${STYLELINT_FILES}}`] = 'stylelint --cache --fix'
+  config[`*.{${STYLELINT_PRETTIER_FILES}}`] = 'stylelint --cache --fix'
 }
 
 if (isPkgAvailable('@pkgr/imagemin')) {

@@ -48,7 +48,6 @@
     "@1stg/prettier-config": "^3.6.0",
     "@1stg/tsconfig": "^2.2.3",
     "@pkgr/utils": "^2.3.0",
-    "cross-env": "^7.0.3",
     "prettier": "^2.7.1"
   },
   "publishConfig": {

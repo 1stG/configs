@@ -28,6 +28,7 @@
     "@1stg/babel-preset": "workspace:*",
     "@1stg/browserslist-config": "workspace:*",
     "@1stg/commitlint-config": "workspace:*",
+    "@1stg/config": "workspace:*",
     "@1stg/eslint-config": "workspace:*",
     "@1stg/lint-staged": "workspace:*",
     "@1stg/markuplint-config": "workspace:*",
@@ -49,13 +50,14 @@
     "markuplint": "^2.9.0",
     "postcss": "^8.4.14",
     "react": "^18.2.0",
-    "rxjs": "^7.5.5",
+    "rxjs": "^7.5.6",
+    "simple-git-hooks": "^2.8.0",
     "svelte": "^3.49.0",
     "ts-jest": "^28.0.5",
-    "type-coverage": "^2.21.2",
+    "type-coverage": "^2.22.0",
     "typescript": "^4.7.4",
     "vue": "^3.2.37",
-    "vue-tsc": "^0.38.3"
+    "vue-tsc": "^0.38.5"
   },
   "resolutions": {
     "prettier": "^2.7.1"

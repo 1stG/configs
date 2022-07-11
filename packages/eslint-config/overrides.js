@@ -1,6 +1,6 @@
 const path = require('node:path')
 
-const { jsoncFiles, nonJsonRcFiles } = require('@1stg/config')
+const { jsoncFiles, nonJsonRcFiles, preferPrettier } = require('@1stg/config')
 const {
   isAngularAvailable,
   isReactAvailable,
@@ -12,7 +12,7 @@ const {
   tryPkg,
 } = require('@pkgr/utils')
 
-const { magicNumbers } = require('./_util')
+const { magicNumbers, prettierExtends } = require('./_util')
 
 const configFile =
   tryFile(path.resolve('babel.config.js')) ||
@@ -92,8 +92,7 @@ const tsBase = {
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:import/typescript',
-    // eslint-disable-next-line sonarjs/no-duplicate-string
-    'plugin:prettier/recommended',
+    ...prettierExtends,
   ],
   settings: resolveSettings,
   rules: {
@@ -271,11 +270,7 @@ exports.dTs = {
 }
 
 const reactJsx = {
-  extends: [
-    'standard-react',
-    'plugin:react/recommended',
-    'plugin:prettier/recommended',
-  ],
+  extends: ['standard-react', 'plugin:react/recommended', ...prettierExtends],
   settings: {
     react: {
       version: 'detect',
@@ -326,7 +321,7 @@ exports.reactTs = {
   },
 }
 
-const vueExtends = ['plugin:vue/recommended', 'plugin:prettier/recommended']
+const vueExtends = ['plugin:vue/recommended', ...prettierExtends]
 
 exports.vue = [
   {
@@ -369,7 +364,7 @@ const svelteBase = {
     'plugin:markup/recommended',
     'plugin:svelte/recommended',
     'plugin:svelte/prettier',
-    'plugin:prettier/recommended',
+    ...prettierExtends,
   ],
   rules: {
     'sonar/label-position': 0,
@@ -400,7 +395,7 @@ exports.angular = [
     extends: [
       'plugin:@angular-eslint/recommended',
       'plugin:@angular-eslint/template/process-inline-templates',
-      'plugin:prettier/recommended',
+      ...prettierExtends,
     ],
     rules: {
       '@angular-eslint/prefer-on-push-component-change-detection': 1,
@@ -411,7 +406,7 @@ exports.angular = [
     extends: [
       'plugin:@angular-eslint/template/recommended',
       'plugin:markup/recommended',
-      'plugin:prettier/recommended',
+      ...prettierExtends,
     ],
     parser: 'angular-eslint-template-parser',
     rules: {
@@ -438,7 +433,7 @@ exports.markup = [
     extends: 'plugin:markup/recommended',
     rules: {
       'prettier/prettier': [
-        2,
+        preferPrettier ? 0 : 2,
         {
           parser: 'html',
         },
@@ -447,7 +442,7 @@ exports.markup = [
   },
   {
     files: '*.pug',
-    extends: ['plugin:markup/recommended', 'plugin:prettier/recommended'],
+    extends: ['plugin:markup/recommended', ...prettierExtends],
   },
 ]
 
