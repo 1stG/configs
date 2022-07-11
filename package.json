@@ -19,11 +19,12 @@
     "lint:es": "eslint . --cache -f friendly",
     "lint:style": "stylelint . --cache",
     "lint:tsc": "tsc --noEmit",
+    "postversion": "pnpm i --no-frozen-lockfile",
     "prepare": "simple-git-hooks",
-    "prerelease": "pnpm i --no-frozen-lockfile",
     "release": "changeset publish",
     "test": "jest",
-    "typecov": "type-coverage"
+    "typecov": "type-coverage",
+    "version": "changeset version"
   },
   "devDependencies": {
     "@1stg/babel-preset": "workspace:*",
