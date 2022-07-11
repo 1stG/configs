@@ -1,10 +1,16 @@
+const { preferPrettier } = require('@1stg/config')
 const { isPkgAvailable } = require('@pkgr/utils')
 
-const withEslintOptions = isPkgAvailable('eslint') && {
+const disablePrettierOptions = {
   rules: {
     'prettier/prettier': null,
   },
 }
+
+const eslintPrettierOptions =
+  (preferPrettier || isPkgAvailable('eslint')) && disablePrettierOptions
+
+const prettierOptions = preferPrettier && disablePrettierOptions
 
 module.exports = loose => ({
   ...require('./base'),
@@ -21,30 +27,33 @@ module.exports = loose => ({
         '**/*.tsx',
       ],
       customSyntax: '@stylelint/postcss-css-in-js',
-      ...withEslintOptions,
+      ...eslintPrettierOptions,
     },
     {
       files: ['**/*.md', '**/*.mdx'],
       customSyntax: 'postcss-markdown',
-      ...withEslintOptions,
+      ...eslintPrettierOptions,
     },
     {
       files: ['**/*.html', '**/*.svelte', '**/*.vue'],
       customSyntax: 'postcss-html',
-      ...withEslintOptions,
+      ...eslintPrettierOptions,
     },
     {
       files: ['**/*.less'],
       customSyntax: 'postcss-less',
+      ...prettierOptions,
     },
     {
       files: ['**/*.sass', '**/*.scss'],
       ...(loose ? require('./scss/loose') : require('./scss')),
+      ...prettierOptions,
     },
     {
       files: ['**/*.styl', '**/*.stylus'],
       customSyntax: 'postcss-styl',
       extends: ['stylelint-stylus/standard', 'stylelint-prettier/recommended'],
+      ...prettierOptions,
     },
   ],
 })

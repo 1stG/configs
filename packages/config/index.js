@@ -17,8 +17,11 @@ exports.jsoncFiles = [
   'ng-package.*.json',
   'nx.json',
   'project.json',
-  'setting.json',
   'tsconfig.json',
   'tsconfig.*.json',
   '.vscode/*.json',
 ]
+
+exports.preferPrettier = !['0', 'false', undefined].includes(
+  process.env.CONFIG_PREFER_PRETTIER,
+)

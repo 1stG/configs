@@ -44,6 +44,7 @@
     "stylelint": ">=13.0.0"
   },
   "dependencies": {
+    "@1stg/config": "^0.1.0",
     "@pkgr/utils": "^2.3.0",
     "@stylelint/postcss-css-in-js": "^0.38.0",
     "postcss-html": "^1.5.0",
@@ -56,7 +57,7 @@
     "stylelint-high-performance-animation": "^1.6.0",
     "stylelint-no-unsupported-browser-features": "^5.0.3",
     "stylelint-prettier": "^2.0.0",
-    "stylelint-scss": "^4.2.0",
+    "stylelint-scss": "^4.3.0",
     "stylelint-stylus": "^0.16.1"
   },
   "publishConfig": {
