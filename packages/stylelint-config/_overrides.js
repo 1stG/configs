@@ -8,9 +8,7 @@ const disablePrettierOptions = {
 }
 
 const eslintPrettierOptions =
-  (preferPrettier || isPkgAvailable('eslint')) && disablePrettierOptions
-
-const prettierOptions = preferPrettier && disablePrettierOptions
+  !preferPrettier && isPkgAvailable('eslint') && disablePrettierOptions
 
 module.exports = loose => ({
   ...require('./base'),
@@ -42,18 +40,15 @@ module.exports = loose => ({
     {
       files: ['**/*.less'],
       customSyntax: 'postcss-less',
-      ...prettierOptions,
     },
     {
       files: ['**/*.sass', '**/*.scss'],
       ...(loose ? require('./scss/loose') : require('./scss')),
-      ...prettierOptions,
     },
     {
       files: ['**/*.styl', '**/*.stylus'],
       customSyntax: 'postcss-styl',
       extends: ['stylelint-stylus/standard', 'stylelint-prettier/recommended'],
-      ...prettierOptions,
     },
   ],
 })
