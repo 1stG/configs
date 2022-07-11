@@ -20,6 +20,7 @@
     "lint:style": "stylelint . --cache",
     "lint:tsc": "tsc --noEmit",
     "prepare": "simple-git-hooks",
+    "prerelease": "pnpm i --no-frozen-lockfile",
     "release": "changeset publish",
     "test": "jest",
     "typecov": "type-coverage"
