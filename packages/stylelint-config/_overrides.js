@@ -1,14 +1,12 @@
 const { preferPrettier } = require('@1stg/config')
 const { isPkgAvailable } = require('@pkgr/utils')
 
-const disablePrettierOptions = {
-  rules: {
-    'prettier/prettier': null,
-  },
-}
-
-const eslintPrettierOptions =
-  !preferPrettier && isPkgAvailable('eslint') && disablePrettierOptions
+const disablePrettierOptions = !preferPrettier &&
+  isPkgAvailable('eslint') && {
+    rules: {
+      'prettier/prettier': null,
+    },
+  }
 
 module.exports = loose => ({
   ...require('./base'),
@@ -25,17 +23,17 @@ module.exports = loose => ({
         '**/*.tsx',
       ],
       customSyntax: '@stylelint/postcss-css-in-js',
-      ...eslintPrettierOptions,
+      ...disablePrettierOptions,
     },
     {
       files: ['**/*.md', '**/*.mdx'],
       customSyntax: 'postcss-markdown',
-      ...eslintPrettierOptions,
+      ...disablePrettierOptions,
     },
     {
       files: ['**/*.html', '**/*.svelte', '**/*.vue'],
       customSyntax: 'postcss-html',
-      ...eslintPrettierOptions,
+      ...disablePrettierOptions,
     },
     {
       files: ['**/*.less'],
