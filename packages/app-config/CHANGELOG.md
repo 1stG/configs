@@ -1,5 +1,14 @@
 # Change Log
 
+## 6.1.2
+
+### Patch Changes
+
+- [#131](https://github.com/1stG/configs/pull/131) [`1e06825`](https://github.com/1stG/configs/commit/1e068259c54b12751960dbdc8acaa07949134f0f) Thanks [@JounQin](https://github.com/JounQin)! - fix(eslint): disable prettier/prettier rule for md/mdx automatically
+
+- Updated dependencies [[`1e06825`](https://github.com/1stG/configs/commit/1e068259c54b12751960dbdc8acaa07949134f0f)]:
+  - @1stg/common-config@6.1.1
+
 ## 6.1.1
 
 ### Patch Changes
