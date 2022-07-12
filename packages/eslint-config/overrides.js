@@ -449,6 +449,9 @@ exports.markup = [
 exports.md = {
   files: '*.md',
   extends: ['plugin:mdx/recommended'],
+  rules: {
+    'prettier/prettier': preferPrettier ? 0 : 2,
+  },
 }
 
 exports.mdx = {
@@ -456,6 +459,9 @@ exports.mdx = {
   extends: [...reactJsx.extends, 'plugin:mdx/recommended'],
   parserOptions: jsBase.parserOptions,
   settings: { ...reactJsx.settings, ...resolveSettings },
+  rules: {
+    'prettier/prettier': preferPrettier ? 0 : 2,
+  },
 }
 
 const nonSourceRules = {
