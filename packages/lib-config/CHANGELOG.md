@@ -1,5 +1,11 @@
 # Change Log
 
+## 9.0.0
+
+### Major Changes
+
+- [#135](https://github.com/1stG/configs/pull/135) [`7d72c6a`](https://github.com/1stG/configs/commit/7d72c6ac45228d70f23435b6a43bb931b7849c0f) Thanks [@JounQin](https://github.com/JounQin)! - chore!: remove `jest` in favor of `vitest`
+
 ## 8.1.2
 
 ### Patch Changes

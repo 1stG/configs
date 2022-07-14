@@ -1,6 +1,6 @@
 {
   "name": "@1stg/lib-config",
-  "version": "8.1.2",
+  "version": "9.0.0",
   "description": "Personal but Shareable Library Configuration for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/lib-config",
