@@ -1,5 +1,11 @@
 # Change Log
 
+## 5.4.2
+
+### Patch Changes
+
+- [#133](https://github.com/1stG/configs/pull/133) [`9db70a5`](https://github.com/1stG/configs/commit/9db70a5dd136fbd6536b099863b5f617e4ffc29a) Thanks [@JounQin](https://github.com/JounQin)! - fix(eslint): incorrect prettier parser inferred for angular html files
+
 ## 5.4.1
 
 ### Patch Changes
