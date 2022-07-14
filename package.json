@@ -22,7 +22,7 @@
     "postversion": "pnpm i --no-frozen-lockfile",
     "prepare": "simple-git-hooks",
     "release": "changeset publish",
-    "test": "jest",
+    "test": "vitest run --coverage",
     "typecov": "type-coverage",
     "version": "changeset version"
   },
@@ -45,31 +45,26 @@
     "@angular/core": "^14.0.6",
     "@changesets/changelog-github": "^0.4.5",
     "@changesets/cli": "^2.23.2",
+    "@types/babel__core": "^7.1.19",
     "@types/jest": "^28.1.5",
     "@types/node": "^18.0.4",
     "@types/react": "^18.0.15",
     "@types/unist": "^2.0.6",
+    "c8": "^7.11.3",
     "markuplint": "^2.9.0",
     "postcss": "^8.4.14",
     "react": "^18.2.0",
     "rxjs": "^7.5.6",
     "simple-git-hooks": "^2.8.0",
     "svelte": "^3.49.0",
-    "ts-jest": "^28.0.6",
     "type-coverage": "^2.22.0",
     "typescript": "^4.7.4",
+    "vitest": "^0.18.0",
     "vue": "^3.2.37",
     "vue-tsc": "^0.38.5"
   },
   "resolutions": {
     "prettier": "^2.7.1"
-  },
-  "jest": {
-    "preset": "ts-jest/presets/js-with-babel",
-    "testRegex": [
-      ".*\\.(spec|test)\\.[jt]sx?$"
-    ],
-    "collectCoverage": true
   },
   "typeCoverage": {
     "atLeast": 100,
