@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.2.5
+
+### Patch Changes
+
+- [#139](https://github.com/1stG/configs/pull/139) [`ce51578`](https://github.com/1stG/configs/commit/ce51578987bc9b34c53c264de3291e0d073586a0) Thanks [@JounQin](https://github.com/JounQin)! - Revert "fix(tsconfig): resolveJsonModule should not be enabled for Node16 and NodeNext resolution"
+
 ## 2.2.4
 
 ### Patch Changes
