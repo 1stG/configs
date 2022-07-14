@@ -1,6 +1,6 @@
 {
   "name": "@1stg/eslint-config",
-  "version": "5.4.1",
+  "version": "5.4.2",
   "description": "Personal but Shareable ESLint Configuration for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/eslint-config",
