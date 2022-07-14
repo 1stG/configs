@@ -416,6 +416,12 @@ exports.angular = [
           allowNullOrUndefined: true,
         },
       ],
+      'prettier/prettier': [
+        preferPrettier ? 0 : 2,
+        {
+          parser: 'angular',
+        },
+      ],
       'spaced-comment': 0,
     },
   },
