@@ -3,7 +3,6 @@
   "extends": "./lib.json",
   "compilerOptions": {
     "moduleResolution": "Node16",
-    "resolveJsonModule": false,
     "target": "ES2021"
   }
 }

@@ -3,7 +3,6 @@
   "extends": "./lib.json",
   "compilerOptions": {
     "moduleResolution": "NodeNext",
-    "resolveJsonModule": false,
     "target": "ESNext"
   }
 }
