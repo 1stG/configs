@@ -1,5 +1,14 @@
 # Change Log
 
+## 9.0.1
+
+### Patch Changes
+
+- [#141](https://github.com/1stG/configs/pull/141) [`701f349`](https://github.com/1stG/configs/commit/701f349f076622ea62ed8751e33774ea51b134a1) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump eslint and plugins
+
+- Updated dependencies [[`701f349`](https://github.com/1stG/configs/commit/701f349f076622ea62ed8751e33774ea51b134a1)]:
+  - @1stg/common-config@6.1.3
+
 ## 9.0.0
 
 ### Major Changes
