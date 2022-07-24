@@ -30,7 +30,7 @@ jobs:
           cache: pnpm
 
       - name: Install Dependencies
-        run: pnpm i
+        run: pnpm i --no-frozen-lockfile
 
       - name: Check, Lint and test
         run: |
