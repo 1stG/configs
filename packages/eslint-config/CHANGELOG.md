@@ -1,5 +1,13 @@
 # Change Log
 
+## 5.4.4
+
+### Patch Changes
+
+- [#144](https://github.com/1stG/configs/pull/144) [`8d9171d`](https://github.com/1stG/configs/commit/8d9171dc9f21e84cf9cc2ffd8efd5d3ca99da63c) Thanks [@JounQin](https://github.com/JounQin)! - perf(eslint): bump `eslint-import-resolver-typescript`, `eslint-plugin-json-schema-validator` and `eslint-plugin-mdx`
+
+- [#144](https://github.com/1stG/configs/pull/144) [`8d9171d`](https://github.com/1stG/configs/commit/8d9171dc9f21e84cf9cc2ffd8efd5d3ca99da63c) Thanks [@JounQin](https://github.com/JounQin)! - chore(eslint): replace `eslint-plugin-import` with `eslint-plugin-i`
+
 ## 5.4.3
 
 ### Patch Changes
