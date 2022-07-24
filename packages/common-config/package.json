@@ -51,7 +51,7 @@
     "@1stg/remark-config": "^4.0.3",
     "@1stg/simple-git-hooks": "^0.2.1",
     "@1stg/tsconfig": "^2.2.5",
-    "@babel/core": "^7.18.6",
+    "@babel/core": "^7.18.9",
     "@commitlint/cli": "^17.0.3",
     "eslint": "^8.20.0",
     "lint-staged": "^13.0.3",
