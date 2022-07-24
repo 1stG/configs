@@ -43,7 +43,7 @@
   "dependencies": {
     "@1stg/config": "^0.2.0",
     "@prettier/plugin-pug": "^2.1.1",
-    "@prettier/plugin-ruby": "^3.1.2",
+    "@prettier/plugin-ruby": "^3.2.0",
     "@prettier/plugin-xml": "^2.2.0",
     "prettier-plugin-ini": "^1.0.0",
     "prettier-plugin-pkg": "^0.16.0",
