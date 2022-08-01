@@ -345,7 +345,7 @@ importers:
       autoprefixer: ^10.4.7
       cssnano: ^5.1.12
       cssnano-preset-advanced: ^5.3.8
-      postcss: '>=7.0.0'
+      postcss: '>=7.0.39'
       postcss-import: ^14.1.0
       postcss-modules: ^4.3.1
       postcss-normalize: ^10.0.1
