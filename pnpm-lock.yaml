@@ -43,7 +43,7 @@ importers:
       typescript: ^4.7.4
       vitest: ^0.19.0
       vue: ^3.2.37
-      vue-tsc: ^0.39.0
+      vue-tsc: ^0.39.4
     devDependencies:
       '@1stg/babel-preset': link:packages/babel-preset
       '@1stg/browserslist-config': link:packages/browserslist-config
@@ -81,7 +81,7 @@ importers:
       typescript: 4.7.4
       vitest: 0.19.0_c8@7.12.0
       vue: 3.2.37
-      vue-tsc: 0.39.0_typescript@4.7.4
+      vue-tsc: 0.39.4_typescript@4.7.4
 
   packages/app-config:
     specifiers:
@@ -3537,48 +3537,48 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: false
 
-  /@volar/code-gen/0.39.0:
-    resolution: {integrity: sha512-56ycx16FoeDrjVuQ2RKIRmk3paFuIG4eIZLMpxypGKOlhFxS9/nB2eumln2e1jVlnAWeTcFw5V1/eYpDTazHLA==}
+  /@volar/code-gen/0.39.4:
+    resolution: {integrity: sha512-2RoDdktnN5ovhJoL1NgxKwKhfgP2TzcKVWp8+1Lb67sZ+hvWRL5GjHGkvlPkS91cElpwuURUHnbNNDT+uEqXuA==}
     dependencies:
-      '@volar/source-map': 0.39.0
+      '@volar/source-map': 0.39.4
     dev: true
 
-  /@volar/source-map/0.39.0:
-    resolution: {integrity: sha512-sV/eDeOjBwDJxrxwP/ifABvlOUzjpUpCbtbAhoc9hD9SrHlaDGrKtnmXdqgH5DNHIfm5aUpY0xojRvFFOubpuw==}
+  /@volar/source-map/0.39.4:
+    resolution: {integrity: sha512-0zp7v0Ta1rZ2nKC4RcsU94Q/wJVVDWD0AJIqRGFU8rlEs2QO+RpBgotTL6wnKyJjyTzXxhcz/7AHUcwFs2oRnw==}
     dev: true
 
-  /@volar/typescript-faster/0.39.0:
-    resolution: {integrity: sha512-+NNY456ABrvXD2VsJGsH4BGQTWkSyWcUfdbcREqXD+g2GotW7UtkFMtNgu1ASXBhKl7oRdPuRk5wK9Edw2tW9A==}
+  /@volar/typescript-faster/0.39.4:
+    resolution: {integrity: sha512-nVwTr1MSeUOjm+piJge3WW8PE+JyYbkfpEsf54P0e4P+8PUPHbGRIgr2TSpAh3802JSqg2SHCoDionECT5aXYw==}
     dependencies:
       semver: 7.3.7
     dev: true
 
-  /@volar/vue-code-gen/0.39.0:
-    resolution: {integrity: sha512-0KqocSt5o4TtmUngq+8tmWRfifgyE9eDzb4/1Ih7bl52T1RDdOOKkZ9GzP3zBic3N7lJHiOaLdGMXTK+IzAe7g==}
+  /@volar/vue-code-gen/0.39.4:
+    resolution: {integrity: sha512-jQwweKAgtKhX7kDvsVcBRieyNtEywoxZFN+XTyPRvtY57Z2B7Ei9zQb/01n1l2lI+FPuskxaXdZKCn4txSKojQ==}
     dependencies:
-      '@volar/code-gen': 0.39.0
-      '@volar/source-map': 0.39.0
+      '@volar/code-gen': 0.39.4
+      '@volar/source-map': 0.39.4
       '@vue/compiler-core': 3.2.37
       '@vue/compiler-dom': 3.2.37
       '@vue/shared': 3.2.37
     dev: true
 
-  /@volar/vue-language-core/0.39.0:
-    resolution: {integrity: sha512-MnXnrIB7PtggLfKcLtg9I5X1i5FMCoTC+jYtR/j5RZU97boPbFi0lYLysCGPUXdP3w5taIXGPgfT8VnbLEkndQ==}
+  /@volar/vue-language-core/0.39.4:
+    resolution: {integrity: sha512-ua4HAT8VYSf3EgY4Fl/mfpOQcUWz3gokJ8qsGIGfgKq3MxORnpp+RzKOEpMo1q+Ic550i+x0fh6Ylde76zOLww==}
     dependencies:
-      '@volar/code-gen': 0.39.0
-      '@volar/source-map': 0.39.0
-      '@volar/vue-code-gen': 0.39.0
+      '@volar/code-gen': 0.39.4
+      '@volar/source-map': 0.39.4
+      '@volar/vue-code-gen': 0.39.4
       '@vue/compiler-sfc': 3.2.37
       '@vue/reactivity': 3.2.37
     dev: true
 
-  /@volar/vue-typescript/0.39.0:
-    resolution: {integrity: sha512-RV+oHtkuta/kwskg02Ykp9qvDXpgDNF1EVgeGx42v1b65qMyAd5FgxOZxYYCzVV4DzVa6gH+C5YhuQXo4oEdog==}
+  /@volar/vue-typescript/0.39.4:
+    resolution: {integrity: sha512-ZIWg8EvTq53+P4DQVlrW5y+bo5v9VTOASBTrojBo0yK2frNbv/Gs7Ml4V+NmlsvIggtrPtDC/hIQChFiS5B3SA==}
     dependencies:
-      '@volar/code-gen': 0.39.0
-      '@volar/typescript-faster': 0.39.0
-      '@volar/vue-language-core': 0.39.0
+      '@volar/code-gen': 0.39.4
+      '@volar/typescript-faster': 0.39.4
+      '@volar/vue-language-core': 0.39.4
     dev: true
 
   /@vue/babel-helper-vue-jsx-merge-props/1.2.1:
@@ -14089,14 +14089,14 @@ packages:
       - supports-color
     dev: false
 
-  /vue-tsc/0.39.0_typescript@4.7.4:
-    resolution: {integrity: sha512-Hjm1C8T4ooNb5UBUqe0h7uCvV7Ff5UlWG4YgATVYREodafA4WxZIjE8v8wUG8mtyBDSaXXmg0J592i4jo3olug==}
+  /vue-tsc/0.39.4_typescript@4.7.4:
+    resolution: {integrity: sha512-oGFuAdSt8Q1NatnyyJheW0P/8Sk9RDMWPNzeMHXl1OOnoXrbjz2miMcccujySCpA48+AhzdtyFY1PL0XTPsOSg==}
     hasBin: true
     peerDependencies:
       typescript: '*'
     dependencies:
-      '@volar/vue-language-core': 0.39.0
-      '@volar/vue-typescript': 0.39.0
+      '@volar/vue-language-core': 0.39.4
+      '@volar/vue-typescript': 0.39.4
       typescript: 4.7.4
     dev: true
 
