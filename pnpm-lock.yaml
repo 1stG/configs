@@ -86,7 +86,7 @@ importers:
   packages/app-config:
     specifiers:
       '@1stg/browserslist-config': ^1.2.3
-      '@1stg/common-config': ^6.2.0
+      '@1stg/common-config': ^7.0.0
       '@1stg/postcss-config': ^3.2.4
       '@1stg/stylelint-config': ^4.7.0
       '@pkgr/es-modules': ^0.6.2
@@ -168,10 +168,10 @@ importers:
       '@1stg/babel-preset': ^3.1.4
       '@1stg/commitlint-config': ^3.1.4
       '@1stg/eslint-config': ^5.5.0
-      '@1stg/lint-staged': ^3.3.1
+      '@1stg/lint-staged': ^3.3.2
       '@1stg/markuplint-config': ^2.2.0
       '@1stg/prettier-config': ^3.8.0
-      '@1stg/remark-preset': ^0.0.0
+      '@1stg/remark-preset': ^1.0.0
       '@1stg/simple-git-hooks': ^0.2.1
       '@1stg/tsconfig': ^2.3.0
       '@babel/core': ^7.18.10
@@ -302,7 +302,7 @@ importers:
 
   packages/lib-config:
     specifiers:
-      '@1stg/common-config': ^6.2.0
+      '@1stg/common-config': ^7.0.0
       '@pkgr/rollup': ^3.1.4
     dependencies:
       '@1stg/common-config': link:../common-config

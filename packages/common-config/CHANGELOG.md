@@ -1,5 +1,17 @@
 # Change Log
 
+## 7.0.0
+
+### Major Changes
+
+- [#155](https://github.com/1stG/configs/pull/155) [`88168c6`](https://github.com/1stG/configs/commit/88168c6ef7765efc343701770738705bbdfc2867) Thanks [@JounQin](https://github.com/JounQin)! - feat: migrate `@1stg/remark-config` to `@1stg/remark-preset`
+
+### Patch Changes
+
+- Updated dependencies [[`6f6022a`](https://github.com/1stG/configs/commit/6f6022a33c0e5a31b2af308c3575dcaf2fd11618), [`88168c6`](https://github.com/1stG/configs/commit/88168c6ef7765efc343701770738705bbdfc2867)]:
+  - @1stg/lint-staged@3.3.2
+  - @1stg/remark-preset@1.0.0
+
 ## 6.2.0
 
 ### Minor Changes
