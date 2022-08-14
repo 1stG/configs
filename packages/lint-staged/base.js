@@ -13,13 +13,14 @@ const STYLELINT_PRETTIER_FILES = 'css,less,sass,scss,styl,stylus,svelte,vue'
 
 const config = [
   `*.{*sh,env,env.*,gql,ini,properties,rb${
-    useEslintPrettier ? '' : ',' + ESLINT_PRETTIER_FILES
-  }${useStylelintPrettier ? '' : ',' + STYLELINT_PRETTIER_FILES}}`,
+    isEslintAvailable ? '' : ',' + ESLINT_PRETTIER_FILES
+  }${isStylelintAvailable ? '' : ',' + STYLELINT_PRETTIER_FILES}}`,
   '.!(browserslistrc|nvm)rc',
   'Dockerfile',
 ].reduce(
   (acc, files) =>
     Object.assign(acc, {
+      // eslint-disable-next-line sonarjs/no-duplicate-string
       [files]: 'prettier --write',
     }),
   {},
@@ -27,12 +28,18 @@ const config = [
 
 if (isEslintAvailable) {
   Object.assign(config, {
-    [`*.{${ESLINT_PRETTIER_FILES}}`]: 'eslint --cache -f friendly --fix',
+    [`*.{${ESLINT_PRETTIER_FILES}}`]: [
+      'eslint --cache -f friendly --fix',
+      ...(useEslintPrettier ? [] : ['prettier --write']),
+    ],
   })
 }
 
 if (isStylelintAvailable) {
-  config[`*.{${STYLELINT_PRETTIER_FILES}}`] = 'stylelint --cache --fix'
+  config[`*.{${STYLELINT_PRETTIER_FILES}}`] = [
+    'stylelint --cache --fix',
+    ...(useStylelintPrettier ? [] : ['prettier --write']),
+  ]
 }
 
 if (isPkgAvailable('@pkgr/imagemin')) {
