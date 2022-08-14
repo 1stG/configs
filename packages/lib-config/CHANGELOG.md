@@ -1,5 +1,16 @@
 # Change Log
 
+## 10.0.0
+
+### Major Changes
+
+- [#155](https://github.com/1stG/configs/pull/155) [`88168c6`](https://github.com/1stG/configs/commit/88168c6ef7765efc343701770738705bbdfc2867) Thanks [@JounQin](https://github.com/JounQin)! - feat: migrate `@1stg/remark-config` to `@1stg/remark-preset`
+
+### Patch Changes
+
+- Updated dependencies [[`88168c6`](https://github.com/1stG/configs/commit/88168c6ef7765efc343701770738705bbdfc2867)]:
+  - @1stg/common-config@7.0.0
+
 ## 9.0.3
 
 ### Patch Changes

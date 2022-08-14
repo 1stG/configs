@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.3.2
+
+### Patch Changes
+
+- [#156](https://github.com/1stG/configs/pull/156) [`6f6022a`](https://github.com/1stG/configs/commit/6f6022a33c0e5a31b2af308c3575dcaf2fd11618) Thanks [@JounQin](https://github.com/JounQin)! - fix: enable `--allow-empty-input` for `stylelint`
+
 ## 3.3.1
 
 ### Patch Changes
