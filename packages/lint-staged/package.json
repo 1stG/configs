@@ -1,6 +1,6 @@
 {
   "name": "@1stg/lint-staged",
-  "version": "3.3.0",
+  "version": "3.3.1",
   "description": "Personal but Shareable lint-staged Configuration for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
@@ -45,8 +45,8 @@
   },
   "dependencies": {
     "@1stg/config": "^0.2.0",
-    "@1stg/prettier-config": "^3.7.0",
-    "@1stg/tsconfig": "^2.2.5",
+    "@1stg/prettier-config": "^3.8.0",
+    "@1stg/tsconfig": "^2.3.0",
     "@pkgr/utils": "^2.3.0",
     "prettier": "^2.7.1"
   },
