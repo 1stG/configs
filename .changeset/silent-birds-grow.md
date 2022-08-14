@@ -1,8 +1,8 @@
 ---
-"@1stg/app-config": minor
-"@1stg/common-config": minor
-"@1stg/lib-config": minor
-"@1stg/remark-preset": minor
+"@1stg/app-config": major
+"@1stg/common-config": major
+"@1stg/lib-config": major
+"@1stg/remark-preset": major
 ---
 
 feat: migrate `@1stg/remark-config` to `@1stg/remark-preset`
