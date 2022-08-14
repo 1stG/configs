@@ -53,7 +53,7 @@
     "postcss-scss": "^4.0.4",
     "postcss-syntax": "^0.36.2",
     "stylelint-config-prettier": "^9.0.3",
-    "stylelint-config-standard": "^26.0.0",
+    "stylelint-config-standard": "^27.0.0",
     "stylelint-high-performance-animation": "^1.6.0",
     "stylelint-no-unsupported-browser-features": "^5.0.3",
     "stylelint-prettier": "^2.0.0",
