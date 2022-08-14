@@ -37,7 +37,7 @@ if (isEslintAvailable) {
 
 if (isStylelintAvailable) {
   config[`*.{${STYLELINT_PRETTIER_FILES}}`] = [
-    'stylelint --cache --fix',
+    'stylelint --allow-empty-input --cache --fix',
     ...(useStylelintPrettier ? [] : ['prettier --write']),
   ]
 }
