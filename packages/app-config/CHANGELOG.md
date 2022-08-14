@@ -1,5 +1,19 @@
 # Change Log
 
+## 6.2.0
+
+### Minor Changes
+
+- [#153](https://github.com/1stG/configs/pull/153) [`ac25180`](https://github.com/1stG/configs/commit/ac25180a53911722d587cc752d70fc05d26b06d4) Thanks [@JounQin](https://github.com/JounQin)! - chore(deps): bump all (dev)Dependencies, fix related usage
+
+### Patch Changes
+
+- [#153](https://github.com/1stG/configs/pull/153) [`ac25180`](https://github.com/1stG/configs/commit/ac25180a53911722d587cc752d70fc05d26b06d4) Thanks [@JounQin](https://github.com/JounQin)! - fix(lint-staged): run `prettier` after `eslint` if `CONFIG_PREFER_PRETTIER` enabled
+
+- Updated dependencies [[`ac25180`](https://github.com/1stG/configs/commit/ac25180a53911722d587cc752d70fc05d26b06d4), [`ac25180`](https://github.com/1stG/configs/commit/ac25180a53911722d587cc752d70fc05d26b06d4), [`ac25180`](https://github.com/1stG/configs/commit/ac25180a53911722d587cc752d70fc05d26b06d4)]:
+  - @1stg/common-config@6.2.0
+  - @1stg/stylelint-config@4.7.0
+
 ## 6.1.5
 
 ### Patch Changes

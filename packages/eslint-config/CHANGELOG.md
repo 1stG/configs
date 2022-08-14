@@ -1,5 +1,15 @@
 # Change Log
 
+## 5.5.0
+
+### Minor Changes
+
+- [#153](https://github.com/1stG/configs/pull/153) [`ac25180`](https://github.com/1stG/configs/commit/ac25180a53911722d587cc752d70fc05d26b06d4) Thanks [@JounQin](https://github.com/JounQin)! - chore(deps): bump all (dev)Dependencies, fix related usage
+
+### Patch Changes
+
+- [#153](https://github.com/1stG/configs/pull/153) [`ac25180`](https://github.com/1stG/configs/commit/ac25180a53911722d587cc752d70fc05d26b06d4) Thanks [@JounQin](https://github.com/JounQin)! - fix: ignore UPPER_CASE yaml files as markdown for files like `.github/FUNDING.yml`
+
 ## 5.4.4
 
 ### Patch Changes
