@@ -45,8 +45,8 @@
   },
   "dependencies": {
     "@pkgr/utils": "^2.3.0",
-    "autoprefixer": "^10.4.7",
-    "cssnano": "^5.1.12",
+    "autoprefixer": "^10.4.8",
+    "cssnano": "^5.1.13",
     "cssnano-preset-advanced": "^5.3.8",
     "postcss-import": "^14.1.0",
     "postcss-modules": "^4.3.1",

@@ -107,8 +107,8 @@ module.exports = {
           kebabCase: true,
           pascalCase: true,
         },
-        // ignore UPPER_CASE markdown filenames
-        ignore: [/^[A-Z](([\dA-Z]+_)*[\dA-Z]+)?\.mdx?$/],
+        // ignore UPPER_CASE markdown or yaml filenames
+        ignore: [/^[A-Z](([\dA-Z]+_)*[\dA-Z]+)?\.(mdx?|ya?ml)$/],
       },
     ],
     'unicorn/no-array-reduce': 0,

@@ -2,6 +2,12 @@ module.exports = {
   customSyntax: 'postcss-scss',
   plugins: ['stylelint-scss'],
   rules: {
+    'annotation-no-unknown': [
+      true,
+      {
+        ignoreAnnotations: ['default'],
+      },
+    ],
     'at-rule-no-unknown': null,
     'function-no-unknown': null,
     'scss/at-each-key-value-single-line': true,
