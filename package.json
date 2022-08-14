@@ -38,7 +38,7 @@
     "@1stg/markuplint-config": "workspace:*",
     "@1stg/postcss-config": "workspace:*",
     "@1stg/prettier-config": "workspace:*",
-    "@1stg/remark-config": "workspace:*",
+    "@1stg/remark-preset": "workspace:*",
     "@1stg/simple-git-hooks": "workspace:*",
     "@1stg/stylelint-config": "workspace:*",
     "@1stg/tsconfig": "workspace:*",

@@ -18,7 +18,7 @@ importers:
       '@1stg/markuplint-config': workspace:*
       '@1stg/postcss-config': workspace:*
       '@1stg/prettier-config': workspace:*
-      '@1stg/remark-config': workspace:*
+      '@1stg/remark-preset': workspace:*
       '@1stg/simple-git-hooks': workspace:*
       '@1stg/stylelint-config': workspace:*
       '@1stg/tsconfig': workspace:*
@@ -56,7 +56,7 @@ importers:
       '@1stg/markuplint-config': link:packages/markuplint-config
       '@1stg/postcss-config': link:packages/postcss-config
       '@1stg/prettier-config': link:packages/prettier-config
-      '@1stg/remark-config': link:packages/remark-config
+      '@1stg/remark-preset': link:packages/remark-preset
       '@1stg/simple-git-hooks': link:packages/simple-git-hooks
       '@1stg/stylelint-config': link:packages/stylelint-config
       '@1stg/tsconfig': link:packages/tsconfig
@@ -171,7 +171,7 @@ importers:
       '@1stg/lint-staged': ^3.3.1
       '@1stg/markuplint-config': ^2.2.0
       '@1stg/prettier-config': ^3.8.0
-      '@1stg/remark-config': ^4.0.3
+      '@1stg/remark-preset': ^0.0.0
       '@1stg/simple-git-hooks': ^0.2.1
       '@1stg/tsconfig': ^2.3.0
       '@babel/core': ^7.18.10
@@ -189,7 +189,7 @@ importers:
       '@1stg/lint-staged': link:../lint-staged
       '@1stg/markuplint-config': link:../markuplint-config
       '@1stg/prettier-config': link:../prettier-config
-      '@1stg/remark-config': link:../remark-config
+      '@1stg/remark-preset': link:../remark-preset
       '@1stg/simple-git-hooks': link:../simple-git-hooks
       '@1stg/tsconfig': link:../tsconfig
       '@babel/core': 7.18.10
@@ -390,7 +390,7 @@ importers:
       prettier-plugin-svelte: 2.7.0_o3ioganyptcsrh6x4hnxvjkpqi
       prettier-plugin-toml: 0.3.1
 
-  packages/remark-config:
+  packages/remark-preset:
     specifiers:
       remark-frontmatter: ^4.0.1
       remark-gfm: ^3.0.1
@@ -3469,7 +3469,7 @@ packages:
   /@types/concat-stream/2.0.0:
     resolution: {integrity: sha512-t3YCerNM7NTVjLuICZo5gYAXYoDvpuuTceCcFQWcDQz26kxUR5uIWolxbIR5jRNIXpMqhOpW/b8imCR1LEmuJw==}
     dependencies:
-      '@types/node': 18.0.6
+      '@types/node': 18.7.3
     dev: false
 
   /@types/debug/4.1.7:
@@ -3569,7 +3569,6 @@ packages:
 
   /@types/node/18.7.3:
     resolution: {integrity: sha512-LJgzOEwWuMTBxHzgBR/fhhBOWrvBjvO+zPteUgbbuQi80rYIZHrk1mNbRUqPZqSLP2H7Rwt1EFLL/tNLD1Xx/w==}
-    dev: true
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
@@ -14472,7 +14471,7 @@ packages:
       '@types/concat-stream': 2.0.0
       '@types/debug': 4.1.7
       '@types/is-empty': 1.2.1
-      '@types/node': 18.0.6
+      '@types/node': 18.7.3
       '@types/unist': 2.0.6
       concat-stream: 2.0.0
       debug: 4.3.4
