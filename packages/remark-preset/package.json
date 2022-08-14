@@ -1,8 +1,8 @@
 {
-  "name": "@1stg/remark-config",
-  "version": "4.0.3",
+  "name": "@1stg/remark-preset",
+  "version": "0.0.0",
   "type": "module",
-  "description": "Personal but Shareable Remark Configuration for all 1stG.me projects",
+  "description": "Personal but Shareable Remark Preset for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
   "donate": {
@@ -42,7 +42,6 @@
     "node": "^12.20.0 || ^14.18.0 || >=16.0.0"
   },
   "main": "index.js",
-  "module": "index.js",
   "dependencies": {
     "remark-frontmatter": "^4.0.1",
     "remark-gfm": "^3.0.1",

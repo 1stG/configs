@@ -1,6 +1,6 @@
-# @1stg/remark-config
+# @1stg/remark-preset
 
-Personal but Shareable Remark Configuration for all 1stG.me projects
+Personal but Shareable Remark Preset for all 1stG.me projects
 
 ## Sponsors
 
