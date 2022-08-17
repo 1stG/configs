@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.3.0
+
+### Minor Changes
+
+- [#158](https://github.com/1stG/configs/pull/158) [`09d4cf0`](https://github.com/1stG/configs/commit/09d4cf005c8da5f446c72b702799e5bfee129262) Thanks [@JounQin](https://github.com/JounQin)! - feat: bump `postcss-modules` package version
+
 ## 3.2.4
 
 ### Patch Changes
