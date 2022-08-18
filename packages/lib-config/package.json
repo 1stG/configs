@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "@1stg/common-config": "^7.0.0",
-    "@pkgr/rollup": "^3.1.4"
+    "@pkgr/rollup": "^3.2.0"
   },
   "publishConfig": {
     "access": "public"
