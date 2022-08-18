@@ -1,5 +1,11 @@
 # Change Log
 
+## 10.1.0
+
+### Minor Changes
+
+- [#160](https://github.com/1stG/configs/pull/160) [`41b4e33`](https://github.com/1stG/configs/commit/41b4e3377d117e9b0e47e29ee217a614e9ed8fca) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump `@pkgr/rollup^3.2.0` for `unassert@v2`
+
 ## 10.0.0
 
 ### Major Changes
