@@ -1,5 +1,14 @@
 # Change Log
 
+## 10.1.1
+
+### Patch Changes
+
+- [#162](https://github.com/1stG/configs/pull/162) [`434e27e`](https://github.com/1stG/configs/commit/434e27e251534630728801bc7efd386d48d58ad1) Thanks [@JounQin](https://github.com/JounQin)! - fix(eslint): move prefer-optional-chain to type awared section
+
+- Updated dependencies [[`434e27e`](https://github.com/1stG/configs/commit/434e27e251534630728801bc7efd386d48d58ad1)]:
+  - @1stg/common-config@7.0.1
+
 ## 10.1.0
 
 ### Minor Changes

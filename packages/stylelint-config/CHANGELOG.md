@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.8.0
+
+### Minor Changes
+
+- [#162](https://github.com/1stG/configs/pull/162) [`434e27e`](https://github.com/1stG/configs/commit/434e27e251534630728801bc7efd386d48d58ad1) Thanks [@JounQin](https://github.com/JounQin)! - chore(deps): bump `stylelint-stylus@0.17`
+
 ## 4.7.0
 
 ### Minor Changes
