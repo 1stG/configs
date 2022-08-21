@@ -88,6 +88,9 @@ const resolveSettings = {
 
 const tsBase = {
   files: ['*.cts', '*.mts', '*.ts', '*.tsx'],
+  parserOptions: {
+    project,
+  },
   extends: [
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
@@ -160,7 +163,6 @@ const tsBase = {
     ],
     '@typescript-eslint/prefer-for-of': 2,
     '@typescript-eslint/prefer-function-type': 2,
-    '@typescript-eslint/prefer-optional-chain': 2,
     '@typescript-eslint/prefer-ts-expect-error': 2,
     '@typescript-eslint/sort-type-union-intersection-members': 2,
     '@typescript-eslint/triple-slash-reference': [
@@ -214,11 +216,8 @@ exports.ts = [
     },
   },
   {
-    files: '*.{ts,tsx}',
-    excludedFiles: '*.d.ts',
-    parserOptions: {
-      project,
-    },
+    files: ['*.cts', '*.mts', '*.ts', '*.tsx'],
+    excludedFiles: ['*.d.cts', '*.d.mts', '*.d.ts'],
     extends: ['plugin:@typescript-eslint/recommended-requiring-type-checking'],
     rules: {
       '@typescript-eslint/no-floating-promises': [
@@ -241,6 +240,7 @@ exports.ts = [
       '@typescript-eslint/no-unnecessary-condition': 2,
       '@typescript-eslint/no-unnecessary-qualifier': 2,
       '@typescript-eslint/no-unnecessary-type-arguments': 2,
+      '@typescript-eslint/prefer-optional-chain': 2,
       '@typescript-eslint/prefer-readonly': 2,
       '@typescript-eslint/prefer-reduce-type-parameter': 2,
       '@typescript-eslint/prefer-string-starts-ends-with': 2,
