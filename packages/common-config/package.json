@@ -5,37 +5,6 @@
   "repository": "git+https://github.com/1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/common-config",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
-  "donate": {
-    "recipients": [
-      {
-        "name": "unts",
-        "platform": "opencollective",
-        "address": "https://opencollective.com/unts",
-        "weight": 60
-      },
-      {
-        "name": "rxts",
-        "platform": "opencollective",
-        "address": "https://opencollective.com/rxts",
-        "weight": 20
-      },
-      {
-        "name": "1stG",
-        "email": "i@1stg.me",
-        "weight": 20,
-        "platforms": [
-          {
-            "platform": "opencollective",
-            "address": "https://opencollective.com/1stG"
-          },
-          {
-            "platform": "patreon",
-            "address": "https://www.patreon.com/1stG"
-          }
-        ]
-      }
-    ]
-  },
   "funding": "https://www.patreon.com/1stG",
   "license": "MIT",
   "engines": {
@@ -51,7 +20,7 @@
     "@1stg/remark-preset": "^1.0.0",
     "@1stg/simple-git-hooks": "^0.2.1",
     "@1stg/tsconfig": "^2.3.0",
-    "@babel/core": "^7.18.10",
+    "@babel/core": "^7.18.13",
     "@commitlint/cli": "^17.0.3",
     "eslint": "^8.22.0",
     "lint-staged": "^13.0.3",

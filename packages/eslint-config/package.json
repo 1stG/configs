@@ -5,37 +5,6 @@
   "repository": "git+https://github.com/1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/eslint-config",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
-  "donate": {
-    "recipients": [
-      {
-        "name": "unts",
-        "platform": "opencollective",
-        "address": "https://opencollective.com/unts",
-        "weight": 60
-      },
-      {
-        "name": "rxts",
-        "platform": "opencollective",
-        "address": "https://opencollective.com/rxts",
-        "weight": 20
-      },
-      {
-        "name": "1stG",
-        "email": "i@1stg.me",
-        "weight": 20,
-        "platforms": [
-          {
-            "platform": "opencollective",
-            "address": "https://opencollective.com/1stG"
-          },
-          {
-            "platform": "patreon",
-            "address": "https://www.patreon.com/1stG"
-          }
-        ]
-      }
-    ]
-  },
   "funding": "https://www.patreon.com/1stG",
   "license": "MIT",
   "engines": {
@@ -46,44 +15,44 @@
   },
   "dependencies": {
     "@1stg/config": "^0.2.0",
-    "@angular-eslint/eslint-plugin": "^14.0.2",
-    "@angular-eslint/eslint-plugin-template": "^14.0.2",
-    "@angular-eslint/template-parser": "^14.0.2",
+    "@angular-eslint/eslint-plugin": "^14.0.3",
+    "@angular-eslint/eslint-plugin-template": "^14.0.3",
+    "@angular-eslint/template-parser": "^14.0.3",
     "@babel/eslint-parser": "^7.18.9",
     "@babel/eslint-plugin": "^7.18.10",
     "@pkgr/utils": "^2.3.0",
-    "@typescript-eslint/eslint-plugin": "^5.33.1",
-    "@typescript-eslint/parser": "^5.33.1",
+    "@typescript-eslint/eslint-plugin": "^5.35.1",
+    "@typescript-eslint/parser": "^5.35.1",
     "angular-eslint-template-parser": "^0.1.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-config-standard-jsx": "^11.0.0",
     "eslint-config-standard-react": "^11.0.1",
     "eslint-formatter-friendly": "^7.0.0",
-    "eslint-import-resolver-typescript": "^3.4.2",
+    "eslint-import-resolver-typescript": "^3.5.0",
     "eslint-plugin-css": "^0.6.0",
     "eslint-plugin-es-x": "^5.2.1",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-import": "npm:eslint-plugin-i@^2.26.0",
-    "eslint-plugin-jest": "^26.8.5",
+    "eslint-plugin-jest": "^26.8.7",
     "eslint-plugin-jsdoc": "^39.3.6",
     "eslint-plugin-json-schema-validator": "^4.0.1",
     "eslint-plugin-jsonc": "^2.4.0",
     "eslint-plugin-markup": "^0.10.1",
     "eslint-plugin-mdx": "^2.0.2",
-    "eslint-plugin-n": "^15.2.4",
+    "eslint-plugin-n": "^15.2.5",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-promise": "^6.0.1",
+    "eslint-plugin-react": "^7.31.0",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-regexp": "^1.8.0",
+    "eslint-plugin-regexp": "^1.9.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-sonar": "^0.9.1",
     "eslint-plugin-sonarjs": "^0.15.0",
-    "eslint-plugin-svelte": "^2.6.0",
+    "eslint-plugin-svelte": "^2.7.0",
     "eslint-plugin-toml": "^0.3.1",
     "eslint-plugin-unicorn": "^43.0.2",
-    "eslint-plugin-vue": "^9.3.0",
+    "eslint-plugin-vue": "^9.4.0",
     "eslint-plugin-yml": "^1.1.0"
   },
   "publishConfig": {
