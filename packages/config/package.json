@@ -1,6 +1,6 @@
 {
   "name": "@1stg/config",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Personal but Shareable Configuration for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
