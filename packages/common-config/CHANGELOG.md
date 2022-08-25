@@ -1,5 +1,30 @@
 # Change Log
 
+## 7.1.0
+
+### Minor Changes
+
+- [#164](https://github.com/1stG/configs/pull/164) [`990677b`](https://github.com/1stG/configs/commit/990677ba11d36dcbd1725b395f27384b1746c9f4) Thanks [@JounQin](https://github.com/JounQin)! - feat(eslint): enable `curly` with `all` option
+
+- [#164](https://github.com/1stG/configs/pull/164) [`990677b`](https://github.com/1stG/configs/commit/990677ba11d36dcbd1725b395f27384b1746c9f4) Thanks [@JounQin](https://github.com/JounQin)! - feat(babel): bump `babel-preset-proposal-typescript@v3`
+
+### Patch Changes
+
+- [#164](https://github.com/1stG/configs/pull/164) [`990677b`](https://github.com/1stG/configs/commit/990677ba11d36dcbd1725b395f27384b1746c9f4) Thanks [@JounQin](https://github.com/JounQin)! - fix(eslint): move `prefer-optional-chain` to type awared section
+
+- [#164](https://github.com/1stG/configs/pull/164) [`990677b`](https://github.com/1stG/configs/commit/990677ba11d36dcbd1725b395f27384b1746c9f4) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump all (dev)Dependencies
+
+- Updated dependencies [[`990677b`](https://github.com/1stG/configs/commit/990677ba11d36dcbd1725b395f27384b1746c9f4), [`990677b`](https://github.com/1stG/configs/commit/990677ba11d36dcbd1725b395f27384b1746c9f4), [`990677b`](https://github.com/1stG/configs/commit/990677ba11d36dcbd1725b395f27384b1746c9f4), [`990677b`](https://github.com/1stG/configs/commit/990677ba11d36dcbd1725b395f27384b1746c9f4)]:
+  - @1stg/eslint-config@5.6.0
+  - @1stg/lint-staged@3.4.0
+  - @1stg/babel-preset@3.2.0
+  - @1stg/commitlint-config@3.1.5
+  - @1stg/markuplint-config@2.2.1
+  - @1stg/prettier-config@3.9.1
+  - @1stg/remark-preset@1.0.1
+  - @1stg/simple-git-hooks@0.2.2
+  - @1stg/tsconfig@2.3.1
+
 ## 7.0.1
 
 ### Patch Changes

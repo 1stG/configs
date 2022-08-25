@@ -83,10 +83,10 @@ importers:
 
   packages/app-config:
     specifiers:
-      '@1stg/browserslist-config': ^1.2.3
-      '@1stg/common-config': ^7.0.1
-      '@1stg/postcss-config': ^3.3.0
-      '@1stg/stylelint-config': ^4.8.0
+      '@1stg/browserslist-config': ^1.2.4
+      '@1stg/common-config': ^7.1.0
+      '@1stg/postcss-config': ^3.3.1
+      '@1stg/stylelint-config': ^4.8.1
       '@pkgr/es-modules': ^0.6.2
       '@pkgr/imagemin': ^3.1.1
       browserslist: ^4.21.3
@@ -163,15 +163,15 @@ importers:
 
   packages/common-config:
     specifiers:
-      '@1stg/babel-preset': ^3.1.4
-      '@1stg/commitlint-config': ^3.1.4
-      '@1stg/eslint-config': ^5.5.1
-      '@1stg/lint-staged': ^3.3.3
-      '@1stg/markuplint-config': ^2.2.0
-      '@1stg/prettier-config': ^3.9.0
-      '@1stg/remark-preset': ^1.0.0
-      '@1stg/simple-git-hooks': ^0.2.1
-      '@1stg/tsconfig': ^2.3.0
+      '@1stg/babel-preset': ^3.2.0
+      '@1stg/commitlint-config': ^3.1.5
+      '@1stg/eslint-config': ^5.6.0
+      '@1stg/lint-staged': ^3.4.0
+      '@1stg/markuplint-config': ^2.2.1
+      '@1stg/prettier-config': ^3.9.1
+      '@1stg/remark-preset': ^1.0.1
+      '@1stg/simple-git-hooks': ^0.2.2
+      '@1stg/tsconfig': ^2.3.1
       '@babel/core': ^7.18.13
       '@commitlint/cli': ^17.0.3
       eslint: ^8.22.0
@@ -204,7 +204,7 @@ importers:
 
   packages/eslint-config:
     specifiers:
-      '@1stg/config': ^0.2.0
+      '@1stg/config': ^0.2.1
       '@angular-eslint/eslint-plugin': ^14.0.3
       '@angular-eslint/eslint-plugin-template': ^14.0.3
       '@angular-eslint/template-parser': ^14.0.3
@@ -290,7 +290,7 @@ importers:
 
   packages/lib-config:
     specifiers:
-      '@1stg/common-config': ^7.0.1
+      '@1stg/common-config': ^7.1.0
       '@pkgr/rollup': ^3.2.0
     dependencies:
       '@1stg/common-config': link:../common-config
@@ -298,9 +298,9 @@ importers:
 
   packages/lint-staged:
     specifiers:
-      '@1stg/config': ^0.2.0
-      '@1stg/prettier-config': ^3.9.0
-      '@1stg/tsconfig': ^2.3.0
+      '@1stg/config': ^0.2.1
+      '@1stg/prettier-config': ^3.9.1
+      '@1stg/tsconfig': ^2.3.1
       '@pkgr/utils': ^2.3.0
       lint-staged: '>=10.0.0'
       prettier: ^2.7.1
@@ -352,7 +352,7 @@ importers:
 
   packages/prettier-config:
     specifiers:
-      '@1stg/config': ^0.2.0
+      '@1stg/config': ^0.2.1
       '@prettier/plugin-pug': ^2.2.0
       '@prettier/plugin-ruby': ^3.2.0
       '@prettier/plugin-xml': ^2.2.0
@@ -420,7 +420,7 @@ importers:
 
   packages/stylelint-config:
     specifiers:
-      '@1stg/config': ^0.2.0
+      '@1stg/config': ^0.2.1
       '@pkgr/utils': ^2.3.0
       '@stylelint/postcss-css-in-js': ^0.38.0
       postcss-html: ^1.5.0
@@ -6038,7 +6038,7 @@ packages:
     dev: false
 
   /concat-map/0.0.1:
-    resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
+    resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
 
   /concat-stream/2.0.0:
     resolution: {integrity: sha512-MWufYdFw53ccGjCA+Ol7XJYpAlW6/prSMzuPOTRnJGcGzuhLn4Scrz7qf6o8bROZ514ltazcIFJZevcfbo0x7A==}
@@ -9961,7 +9961,7 @@ packages:
     engines: {node: '>=4.0'}
     dependencies:
       array-includes: 3.1.5
-      object.assign: 4.1.3
+      object.assign: 4.1.4
     dev: false
 
   /junk/3.1.0:
@@ -11361,16 +11361,6 @@ packages:
 
   /object.assign/4.1.2:
     resolution: {integrity: sha512-ixT2L5THXsApyiUPYKmW+2EHpXXe5Ii3M+f4e+aJFAHao5amFRW6J0OO6c/LU8Be47utCx2GL89hxGB6XSmKuQ==}
-    engines: {node: '>= 0.4'}
-    dependencies:
-      call-bind: 1.0.2
-      define-properties: 1.1.4
-      has-symbols: 1.0.3
-      object-keys: 1.1.1
-    dev: false
-
-  /object.assign/4.1.3:
-    resolution: {integrity: sha512-ZFJnX3zltyjcYJL0RoCJuzb+11zWGyaDbjgxZbdV7rFEcHQuYxrZqhow67aA7xpes6LhojyFDaBKAFfogQrikA==}
     engines: {node: '>= 0.4'}
     dependencies:
       call-bind: 1.0.2

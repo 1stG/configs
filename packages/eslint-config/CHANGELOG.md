@@ -1,5 +1,20 @@
 # Change Log
 
+## 5.6.0
+
+### Minor Changes
+
+- [#164](https://github.com/1stG/configs/pull/164) [`990677b`](https://github.com/1stG/configs/commit/990677ba11d36dcbd1725b395f27384b1746c9f4) Thanks [@JounQin](https://github.com/JounQin)! - feat(eslint): enable `curly` with `all` option
+
+### Patch Changes
+
+- [#164](https://github.com/1stG/configs/pull/164) [`990677b`](https://github.com/1stG/configs/commit/990677ba11d36dcbd1725b395f27384b1746c9f4) Thanks [@JounQin](https://github.com/JounQin)! - fix(eslint): move `prefer-optional-chain` to type awared section
+
+- [#164](https://github.com/1stG/configs/pull/164) [`990677b`](https://github.com/1stG/configs/commit/990677ba11d36dcbd1725b395f27384b1746c9f4) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump all (dev)Dependencies
+
+- Updated dependencies [[`990677b`](https://github.com/1stG/configs/commit/990677ba11d36dcbd1725b395f27384b1746c9f4)]:
+  - @1stg/config@0.2.1
+
 ## 5.5.1
 
 ### Patch Changes
