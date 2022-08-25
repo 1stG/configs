@@ -35,6 +35,7 @@ module.exports = {
         allow: isWebpackAvailable ? webpackSpecVars : undefined,
       },
     ],
+    curly: [2, 'all'],
     'eslint-comments/disable-enable-pair': [
       2,
       {
