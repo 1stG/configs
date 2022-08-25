@@ -82,6 +82,7 @@ module.exports = declare(
         {
           isTSX,
           allExtensions: isTSX,
+          allowDeclareFields: true,
         },
       ])
     }
