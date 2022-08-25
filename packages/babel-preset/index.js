@@ -24,6 +24,7 @@ module.exports = declare(
       decoratorsLegacy = true,
       classLoose,
       decoratorsBeforeExport = decoratorsLegacy === true ? undefined : true,
+      allowDeclareFields = true,
     },
   ) => {
     api.assertVersion(7)
@@ -82,12 +83,18 @@ module.exports = declare(
         {
           isTSX,
           allExtensions: isTSX,
-          allowDeclareFields: true,
+          allowDeclareFields,
         },
       ])
     }
 
     const plugins = [
+      [
+        require('@babel/plugin-transform-typescript'),
+        {
+          allowDeclareFields,
+        },
+      ],
       [
         require('@babel/plugin-proposal-decorators'),
         {
