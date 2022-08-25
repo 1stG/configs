@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.2.2
+
+### Patch Changes
+
+- [#168](https://github.com/1stG/configs/pull/168) [`3b1246d`](https://github.com/1stG/configs/commit/3b1246dfea2f7fe2a6df264585294c11e0bd4a95) Thanks [@JounQin](https://github.com/JounQin)! - fix(babel-preset): enable `allowDeclareFields` with `@babel/plugin-tr…
+
 ## 3.2.1
 
 ### Patch Changes
