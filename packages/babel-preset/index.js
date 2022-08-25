@@ -61,7 +61,7 @@ module.exports = declare(
                 ],
           bugfixes: true,
           corejs: {
-            version: '3.13',
+            version: '3.25',
             proposals: true,
           },
           shippedProposals: true,

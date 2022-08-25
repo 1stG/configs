@@ -4,37 +4,6 @@
   "description": "Personal but Shareable Stylelint Configuration for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
-  "donate": {
-    "recipients": [
-      {
-        "name": "unts",
-        "platform": "opencollective",
-        "address": "https://opencollective.com/unts",
-        "weight": 60
-      },
-      {
-        "name": "rxts",
-        "platform": "opencollective",
-        "address": "https://opencollective.com/rxts",
-        "weight": 20
-      },
-      {
-        "name": "1stG",
-        "email": "i@1stg.me",
-        "weight": 20,
-        "platforms": [
-          {
-            "platform": "opencollective",
-            "address": "https://opencollective.com/1stG"
-          },
-          {
-            "platform": "patreon",
-            "address": "https://www.patreon.com/1stG"
-          }
-        ]
-      }
-    ]
-  },
   "funding": "https://www.patreon.com/1stG",
   "license": "MIT",
   "engines": {
@@ -53,7 +22,7 @@
     "postcss-scss": "^4.0.4",
     "postcss-syntax": "^0.36.2",
     "stylelint-config-prettier": "^9.0.3",
-    "stylelint-config-standard": "^27.0.0",
+    "stylelint-config-standard": "^28.0.0",
     "stylelint-high-performance-animation": "^1.6.0",
     "stylelint-no-unsupported-browser-features": "^5.0.3",
     "stylelint-prettier": "^2.0.0",
