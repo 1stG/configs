@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.2.1
+
+### Patch Changes
+
+- [#166](https://github.com/1stG/configs/pull/166) [`3f6b32c`](https://github.com/1stG/configs/commit/3f6b32cd6161b4f8431b23cd8ce0c37e5c1e3282) Thanks [@JounQin](https://github.com/JounQin)! - fix(babel-preset): enable `allowDeclareFields` by default
+
 ## 3.2.0
 
 ### Minor Changes
