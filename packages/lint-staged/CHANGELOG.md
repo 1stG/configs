@@ -1,5 +1,15 @@
 # Change Log
 
+## 3.4.1
+
+### Patch Changes
+
+- [#172](https://github.com/1stG/configs/pull/172) [`02236f3`](https://github.com/1stG/configs/commit/02236f35c72d92ec1c4165b32ad71cba7e3b96d3) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump all (dev)Dependencies, update node engine
+
+- Updated dependencies [[`02236f3`](https://github.com/1stG/configs/commit/02236f35c72d92ec1c4165b32ad71cba7e3b96d3)]:
+  - @1stg/prettier-config@3.9.2
+  - @1stg/tsconfig@2.3.2
+
 ## 3.4.0
 
 ### Minor Changes
