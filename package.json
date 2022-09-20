@@ -27,6 +27,7 @@
     "version": "changeset version"
   },
   "devDependencies": {
+    "@1stg/app-config": "workspace:*",
     "@1stg/babel-preset": "workspace:*",
     "@1stg/browserslist-config": "workspace:*",
     "@1stg/commitlint-config": "workspace:*",
