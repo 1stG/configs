@@ -12,7 +12,7 @@
     "simple-git-hooks": ">=2.2.0"
   },
   "dependencies": {
-    "@pkgr/utils": "^2.3.0"
+    "@pkgr/utils": "^2.3.1"
   },
   "publishConfig": {
     "access": "public"

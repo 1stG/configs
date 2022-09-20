@@ -2,7 +2,7 @@ const path = require('node:path')
 
 const { isPkgAvailable, tryFile, tryPkg } = require('@pkgr/utils')
 
-exports.tsConfig = path.relative(
+exports.tsconfig = path.relative(
   process.cwd(),
   tryFile(path.resolve('tsconfig.staged.json')) ||
     tryFile(path.resolve('tsconfig.base.json')) ||

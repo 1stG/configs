@@ -8,7 +8,7 @@
   "funding": "https://www.patreon.com/1stG",
   "license": "MIT",
   "engines": {
-    "node": "^12.20.0 || ^14.18.0 || >=16.0.0"
+    "node": "^14.18.0 || >=16.0.0"
   },
   "dependencies": {
     "@1stg/babel-preset": "^3.2.2",
@@ -20,9 +20,9 @@
     "@1stg/remark-preset": "^1.0.1",
     "@1stg/simple-git-hooks": "^0.2.2",
     "@1stg/tsconfig": "^2.3.1",
-    "@babel/core": "^7.18.13",
-    "@commitlint/cli": "^17.0.3",
-    "eslint": "^8.22.0",
+    "@babel/core": "^7.19.1",
+    "@commitlint/cli": "^17.1.2",
+    "eslint": "^8.23.1",
     "lint-staged": "^13.0.3",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.7.1",

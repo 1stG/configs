@@ -7,12 +7,12 @@
   "funding": "https://www.patreon.com/1stG",
   "license": "MIT",
   "engines": {
-    "node": "^12.20.0 || ^14.18.0 || >=16.0.0"
+    "node": "^14.18.0 || >=16.0.0"
   },
   "dependencies": {
-    "@commitlint/config-conventional": "^17.0.3",
+    "@commitlint/config-conventional": "^17.1.0",
     "@commitlint/config-lerna-scopes": "^17.0.2",
-    "@pkgr/utils": "^2.3.0"
+    "@pkgr/utils": "^2.3.1"
   },
   "publishConfig": {
     "access": "public"

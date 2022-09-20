@@ -10,6 +10,7 @@
     "lib": ["ESNext"],
     "module": "ESNext",
     "moduleResolution": "Node",
+    "newLine": "lf",
     "noImplicitOverride": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
