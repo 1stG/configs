@@ -1,5 +1,23 @@
 # Change Log
 
+## 7.2.0
+
+### Minor Changes
+
+- [#172](https://github.com/1stG/configs/pull/172) [`02236f3`](https://github.com/1stG/configs/commit/02236f35c72d92ec1c4165b32ad71cba7e3b96d3) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump all (dev)Dependencies, update node engine
+
+### Patch Changes
+
+- Updated dependencies [[`02236f3`](https://github.com/1stG/configs/commit/02236f35c72d92ec1c4165b32ad71cba7e3b96d3)]:
+  - @1stg/babel-preset@3.2.3
+  - @1stg/commitlint-config@3.2.0
+  - @1stg/eslint-config@5.7.0
+  - @1stg/lint-staged@3.4.1
+  - @1stg/prettier-config@3.9.2
+  - @1stg/remark-preset@2.0.0
+  - @1stg/simple-git-hooks@0.2.3
+  - @1stg/tsconfig@2.3.2
+
 ## 7.1.1
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # Change Log
 
+## 7.3.0
+
+### Minor Changes
+
+- [#172](https://github.com/1stG/configs/pull/172) [`02236f3`](https://github.com/1stG/configs/commit/02236f35c72d92ec1c4165b32ad71cba7e3b96d3) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump all (dev)Dependencies, update node engine
+
+### Patch Changes
+
+- Updated dependencies [[`02236f3`](https://github.com/1stG/configs/commit/02236f35c72d92ec1c4165b32ad71cba7e3b96d3)]:
+  - @1stg/common-config@7.2.0
+  - @1stg/postcss-config@4.0.0
+  - @1stg/stylelint-config@4.8.2
+
 ## 7.2.1
 
 ### Patch Changes

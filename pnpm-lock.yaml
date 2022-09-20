@@ -86,9 +86,9 @@ importers:
   packages/app-config:
     specifiers:
       '@1stg/browserslist-config': ^1.2.4
-      '@1stg/common-config': ^7.1.1
-      '@1stg/postcss-config': ^3.3.1
-      '@1stg/stylelint-config': ^4.8.1
+      '@1stg/common-config': ^7.2.0
+      '@1stg/postcss-config': ^4.0.0
+      '@1stg/stylelint-config': ^4.8.2
       '@pkgr/es-modules': ^0.6.3
       '@pkgr/imagemin': ^3.1.2
       browserslist: ^4.21.4
@@ -165,15 +165,15 @@ importers:
 
   packages/common-config:
     specifiers:
-      '@1stg/babel-preset': ^3.2.2
-      '@1stg/commitlint-config': ^3.1.5
-      '@1stg/eslint-config': ^5.6.0
-      '@1stg/lint-staged': ^3.4.0
+      '@1stg/babel-preset': ^3.2.3
+      '@1stg/commitlint-config': ^3.2.0
+      '@1stg/eslint-config': ^5.7.0
+      '@1stg/lint-staged': ^3.4.1
       '@1stg/markuplint-config': ^2.2.1
-      '@1stg/prettier-config': ^3.9.1
-      '@1stg/remark-preset': ^1.0.1
-      '@1stg/simple-git-hooks': ^0.2.2
-      '@1stg/tsconfig': ^2.3.1
+      '@1stg/prettier-config': ^3.9.2
+      '@1stg/remark-preset': ^2.0.0
+      '@1stg/simple-git-hooks': ^0.2.3
+      '@1stg/tsconfig': ^2.3.2
       '@babel/core': ^7.19.1
       '@commitlint/cli': ^17.1.2
       eslint: ^8.23.1
@@ -292,7 +292,7 @@ importers:
 
   packages/lib-config:
     specifiers:
-      '@1stg/common-config': ^7.1.1
+      '@1stg/common-config': ^7.2.0
       '@pkgr/rollup': ^3.2.1
     dependencies:
       '@1stg/common-config': link:../common-config
@@ -301,8 +301,8 @@ importers:
   packages/lint-staged:
     specifiers:
       '@1stg/config': ^0.2.1
-      '@1stg/prettier-config': ^3.9.1
-      '@1stg/tsconfig': ^2.3.1
+      '@1stg/prettier-config': ^3.9.2
+      '@1stg/tsconfig': ^2.3.2
       '@pkgr/utils': ^2.3.1
       lint-staged: '>=10.0.0'
       prettier: ^2.7.1
@@ -5470,7 +5470,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.1
+      es-abstract: 1.20.2
       es-shim-unscopables: 1.0.0
     dev: false
 
@@ -6197,7 +6197,7 @@ packages:
     dev: false
 
   /concat-map/0.0.1:
-    resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
+    resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
 
   /concat-stream/2.0.0:
     resolution: {integrity: sha512-MWufYdFw53ccGjCA+Ol7XJYpAlW6/prSMzuPOTRnJGcGzuhLn4Scrz7qf6o8bROZ514ltazcIFJZevcfbo0x7A==}
@@ -7066,35 +7066,6 @@ packages:
     resolution: {integrity: sha512-7dFHNmqeFSEt2ZBsCriorKnn3Z2pj+fd9kmI6QoWw4//DL+icEBfc0U7qJCisqrTsKTjw4fNFy2pW9OqStD84g==}
     dependencies:
       is-arrayish: 0.2.1
-
-  /es-abstract/1.20.1:
-    resolution: {integrity: sha512-WEm2oBhfoI2sImeM4OF2zE2V3BYdSF+KnSi9Sidz51fQHd7+JuF8Xgcj9/0o+OWeIeIS/MiuNnlruQrJf16GQA==}
-    engines: {node: '>= 0.4'}
-    dependencies:
-      call-bind: 1.0.2
-      es-to-primitive: 1.2.1
-      function-bind: 1.1.1
-      function.prototype.name: 1.1.5
-      get-intrinsic: 1.1.2
-      get-symbol-description: 1.0.0
-      has: 1.0.3
-      has-property-descriptors: 1.0.0
-      has-symbols: 1.0.3
-      internal-slot: 1.0.3
-      is-callable: 1.2.4
-      is-negative-zero: 2.0.2
-      is-regex: 1.1.4
-      is-shared-array-buffer: 1.0.2
-      is-string: 1.0.7
-      is-weakref: 1.0.2
-      object-inspect: 1.12.2
-      object-keys: 1.1.1
-      object.assign: 4.1.4
-      regexp.prototype.flags: 1.4.3
-      string.prototype.trimend: 1.0.5
-      string.prototype.trimstart: 1.0.5
-      unbox-primitive: 1.0.2
-    dev: false
 
   /es-abstract/1.20.2:
     resolution: {integrity: sha512-XxXQuVNrySBNlEkTYJoDNFe5+s2yIOpzq80sUHEdPdQr0S5nTLz4ZPPPswNIpKseDDUS5yghX1gfLIHQZ1iNuQ==}
@@ -8867,14 +8838,6 @@ packages:
       global-modules: 1.0.0
     dev: false
 
-  /get-intrinsic/1.1.2:
-    resolution: {integrity: sha512-Jfm3OyCxHh9DJyc28qGk+JmfkpO41A4XkneDSujN9MDXrm4oDKdHvndhZ2dN94+ERNfkYJWDclW6k2L/ZGHjXA==}
-    dependencies:
-      function-bind: 1.1.1
-      has: 1.0.3
-      has-symbols: 1.0.3
-    dev: false
-
   /get-intrinsic/1.1.3:
     resolution: {integrity: sha512-QJVz1Tj7MS099PevUG5jvnt9tSkXN8K14dxQlikJuPt4uD9hHAHjLyLBiLR5zELelBdD9QNRAXZzsJx0WaDL9A==}
     dependencies:
@@ -9586,11 +9549,6 @@ packages:
     engines: {node: '>=6'}
     dependencies:
       builtin-modules: 3.3.0
-    dev: false
-
-  /is-callable/1.2.4:
-    resolution: {integrity: sha512-nsuwtxZfMX67Oryl9LCQ+upnC0Z0BgpwntpS89m1H/TLF0zNfzfLMV/9Wa/6MZsj0acpEjAO0KF1xT6ZdLl95w==}
-    engines: {node: '>= 0.4'}
     dev: false
 
   /is-callable/1.2.6:
@@ -11536,7 +11494,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.1
+      es-abstract: 1.20.2
     dev: false
 
   /object.fromentries/2.0.5:
@@ -11545,7 +11503,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.1
+      es-abstract: 1.20.2
     dev: false
 
   /object.getownpropertydescriptors/2.1.4:
@@ -11562,7 +11520,7 @@ packages:
     resolution: {integrity: sha512-LYLe4tivNQzq4JdaWW6WO3HMZZJWzkkH8fnI6EebWl0VZth2wL2Lovm74ep2/gZzlaTdV62JZHEqHQ2yVn8Q/A==}
     dependencies:
       define-properties: 1.1.4
-      es-abstract: 1.20.1
+      es-abstract: 1.20.2
     dev: false
 
   /object.values/1.1.5:
@@ -15056,8 +15014,8 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.1
-      get-intrinsic: 1.1.2
+      es-abstract: 1.20.2
+      get-intrinsic: 1.1.3
       has-symbols: 1.0.3
       internal-slot: 1.0.3
       regexp.prototype.flags: 1.4.3
@@ -15070,7 +15028,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.1
+      es-abstract: 1.20.2
     dev: false
 
   /string.prototype.trimend/1.0.5:
