@@ -16,7 +16,7 @@
     "@1stg/config": "^0.2.1",
     "@1stg/prettier-config": "^3.9.1",
     "@1stg/tsconfig": "^2.3.1",
-    "@pkgr/utils": "^2.3.0",
+    "@pkgr/utils": "^2.3.1",
     "prettier": "^2.7.1"
   },
   "publishConfig": {

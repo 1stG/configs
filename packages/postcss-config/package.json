@@ -7,20 +7,20 @@
   "funding": "https://www.patreon.com/1stG",
   "license": "MIT",
   "engines": {
-    "node": "^12.20.0 || ^14.18.0 || >=16.0.0"
+    "node": "^14.18.0 || >=16.0.0"
   },
   "peerDependencies": {
     "postcss": ">=7.0.0"
   },
   "dependencies": {
-    "@pkgr/utils": "^2.3.0",
-    "autoprefixer": "^10.4.8",
+    "@pkgr/utils": "^2.3.1",
+    "autoprefixer": "^10.4.11",
     "cssnano": "^5.1.13",
     "cssnano-preset-advanced": "^5.3.8",
-    "postcss-import": "^14.1.0",
+    "postcss-import": "^15.0.0",
     "postcss-modules": "^5.0.0",
     "postcss-normalize": "^10.0.1",
-    "postcss-preset-env": "^7.8.0",
+    "postcss-preset-env": "^7.8.2",
     "postcss-url": "^10.1.3"
   },
   "publishConfig": {

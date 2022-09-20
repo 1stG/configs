@@ -8,18 +8,18 @@
   "funding": "https://www.patreon.com/1stG",
   "license": "MIT",
   "engines": {
-    "node": "^12.20.0 || ^14.18.0 || >=16.0.0"
+    "node": "^14.18.0 || >=16.0.0"
   },
   "dependencies": {
     "@1stg/browserslist-config": "^1.2.4",
     "@1stg/common-config": "^7.1.1",
     "@1stg/postcss-config": "^3.3.1",
     "@1stg/stylelint-config": "^4.8.1",
-    "@pkgr/es-modules": "^0.6.2",
-    "@pkgr/imagemin": "^3.1.1",
-    "browserslist": "^4.21.3",
+    "@pkgr/es-modules": "^0.6.3",
+    "@pkgr/imagemin": "^3.1.2",
+    "browserslist": "^4.21.4",
     "postcss": "^8.4.16",
-    "stylelint": "^14.11.0"
+    "stylelint": "^14.12.0"
   },
   "publishConfig": {
     "access": "public"
