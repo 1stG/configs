@@ -51,7 +51,7 @@
     "@types/babel__core": "^7.1.19",
     "@types/jest": "^29.0.3",
     "@types/node": "^18.7.18",
-    "@types/react": "^18.0.20",
+    "@types/react": "^18.0.21",
     "@types/unist": "^2.0.6",
     "@vitest/coverage-istanbul": "^0.23.4",
     "postcss": "^8.4.16",
