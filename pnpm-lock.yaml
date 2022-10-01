@@ -31,7 +31,7 @@ importers:
       '@types/babel__core': ^7.1.19
       '@types/jest': ^29.0.3
       '@types/node': ^18.7.18
-      '@types/react': ^18.0.20
+      '@types/react': ^18.0.21
       '@types/unist': ^2.0.6
       '@vitest/coverage-istanbul': ^0.23.4
       postcss: ^8.4.16
@@ -69,7 +69,7 @@ importers:
       '@types/babel__core': 7.1.19
       '@types/jest': 29.0.3
       '@types/node': 18.7.18
-      '@types/react': 18.0.20
+      '@types/react': 18.0.21
       '@types/unist': 2.0.6
       '@vitest/coverage-istanbul': 0.23.4
       postcss: 8.4.16
@@ -4716,8 +4716,8 @@ packages:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
     dev: true
 
-  /@types/react/18.0.20:
-    resolution: {integrity: sha512-MWul1teSPxujEHVwZl4a5HxQ9vVNsjTchVA+xRqv/VYGCuKGAU6UhfrTdF5aBefwD1BHUD8i/zq+O/vyCm/FrA==}
+  /@types/react/18.0.21:
+    resolution: {integrity: sha512-7QUCOxvFgnD5Jk8ZKlUAhVcRj7GuJRjnjjiY/IUBWKgOlnvDvTMLD4RTF7NPyVmbRhNrbomZiOepg7M/2Kj1mA==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
