@@ -23,9 +23,9 @@ importers:
       '@1stg/simple-git-hooks': workspace:*
       '@1stg/stylelint-config': workspace:*
       '@1stg/tsconfig': workspace:*
-      '@angular/compiler': ^14.2.4
-      '@angular/compiler-cli': ^14.2.4
-      '@angular/core': ^14.2.4
+      '@angular/compiler': ^14.2.8
+      '@angular/compiler-cli': ^14.2.8
+      '@angular/core': ^14.2.8
       '@changesets/changelog-github': ^0.4.6
       '@changesets/cli': ^2.24.4
       '@types/babel__core': ^7.1.19
@@ -61,9 +61,9 @@ importers:
       '@1stg/simple-git-hooks': link:packages/simple-git-hooks
       '@1stg/stylelint-config': link:packages/stylelint-config
       '@1stg/tsconfig': link:packages/tsconfig
-      '@angular/compiler': 14.2.4_@angular+core@14.2.4
-      '@angular/compiler-cli': 14.2.4_xtj67vdyqennhv4mftdkqaw34m
-      '@angular/core': 14.2.4_rxjs@7.5.6+zone.js@0.11.8
+      '@angular/compiler': 14.2.8_@angular+core@14.2.8
+      '@angular/compiler-cli': 14.2.8_taopseu7h37qbq7ws7e3lmsmua
+      '@angular/core': 14.2.8_rxjs@7.5.6+zone.js@0.11.8
       '@changesets/changelog-github': 0.4.6
       '@changesets/cli': 2.24.4
       '@types/babel__core': 7.1.19
@@ -531,15 +531,15 @@ packages:
       - supports-color
     dev: false
 
-  /@angular/compiler-cli/14.2.4_xtj67vdyqennhv4mftdkqaw34m:
-    resolution: {integrity: sha512-8kHA/Ujzr5aXic7T3iEJiu0JMfXRs/uDoi8W8dYWFe+0naGhxwWmHBHc/hhS1tpv9/wW2WOcT51RDa4OYHKDKw==}
+  /@angular/compiler-cli/14.2.8_taopseu7h37qbq7ws7e3lmsmua:
+    resolution: {integrity: sha512-QTftNrAyXOWzKFGY6/i9jh0LB2cOxmykepG4c53wH9LblGvWFztlVOhcoU8tpQSSH8t3EYvGs2r8oUuxcYm5Cw==}
     engines: {node: ^14.15.0 || >=16.10.0}
     hasBin: true
     peerDependencies:
-      '@angular/compiler': 14.2.4
+      '@angular/compiler': 14.2.8
       typescript: '>=4.6.2 <4.9'
     dependencies:
-      '@angular/compiler': 14.2.4_@angular+core@14.2.4
+      '@angular/compiler': 14.2.8_@angular+core@14.2.8
       '@babel/core': 7.19.1
       chokidar: 3.5.3
       convert-source-map: 1.8.0
@@ -555,21 +555,21 @@ packages:
       - supports-color
     dev: true
 
-  /@angular/compiler/14.2.4_@angular+core@14.2.4:
-    resolution: {integrity: sha512-fBvTPPWBYA65bAmrqKcnzUHAhZ/tfs+nG+IeDukn4TeyQplVjDYOlqjf84jYQubSIx8WTicZzRFn0dIGsPaSNw==}
+  /@angular/compiler/14.2.8_@angular+core@14.2.8:
+    resolution: {integrity: sha512-lKwp3B4ZKNLgk/25Iyur8bjAwRL20auRoB4EuHrBf+928ftsjYUXTgi+0++DUjPENbpi59k6GcvMCNa6qccvIw==}
     engines: {node: ^14.15.0 || >=16.10.0}
     peerDependencies:
-      '@angular/core': 14.2.4
+      '@angular/core': 14.2.8
     peerDependenciesMeta:
       '@angular/core':
         optional: true
     dependencies:
-      '@angular/core': 14.2.4_rxjs@7.5.6+zone.js@0.11.8
+      '@angular/core': 14.2.8_rxjs@7.5.6+zone.js@0.11.8
       tslib: 2.4.0
     dev: true
 
-  /@angular/core/14.2.4_rxjs@7.5.6+zone.js@0.11.8:
-    resolution: {integrity: sha512-wB19wKmZE+X07mLbxYyqeg3v1JXy8m0+ShZD2oY3dmgk1mXOf5XVQxRZohGTrbPw83EdSWwx3vz+jjylGunVZQ==}
+  /@angular/core/14.2.8_rxjs@7.5.6+zone.js@0.11.8:
+    resolution: {integrity: sha512-cgnII9vJGJDLsfr7KsBfU2l+QQUmQIRIP3ImKhBxicw2IHKCSb2mYwoeLV46jaLyHyUMTLRHKUYUR4XtSPnb8A==}
     engines: {node: ^14.15.0 || >=16.10.0}
     peerDependencies:
       rxjs: ^6.5.3 || ^7.4.0
