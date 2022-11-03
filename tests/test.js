@@ -12,7 +12,7 @@ function* generator() {
 }
 
 async function bar() {
-  await 1
+  return 1
 }
 
 function foo(cb1) {

@@ -10,7 +10,10 @@ function handleClick() {
 }
 </script>
 
-<button class="test" on:click={handleClick}>Count: {count}</button>
+<button
+  class="test"
+  on:click={handleClick}>Count: {count}</button
+>
 
 <p>{count} * 2 = {doubled}</p>
 <p>{doubled} * 2 = {quadrupled}</p>
