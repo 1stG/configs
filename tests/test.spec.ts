@@ -13,14 +13,11 @@ describe('babel-plugin: fast-async', () => {
         if (direct) {
           return then ? then(value) : value;
         }
-
         if (!value || !value.then) {
           value = Promise.resolve(value);
         }
-
         return then ? value.then(then) : value;
       }
-
       const main = function () {
         return _await();
       };"

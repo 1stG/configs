@@ -159,6 +159,7 @@ const tsBase = {
       2,
       {
         argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
       },
     ],
     '@typescript-eslint/prefer-for-of': 2,
@@ -508,45 +509,28 @@ exports.json = {
   extends: [
     'plugin:jsonc/recommended-with-json',
     // eslint-disable-next-line sonarjs/no-duplicate-string
-    'plugin:json-schema-validator/recommended',
-    // eslint-disable-next-line sonarjs/no-duplicate-string
     'plugin:jsonc/prettier',
   ],
 }
 
 exports.jsonc = {
   files: jsoncFiles,
-  extends: [
-    'plugin:jsonc/recommended-with-jsonc',
-    'plugin:json-schema-validator/recommended',
-    'plugin:jsonc/prettier',
-  ],
+  extends: ['plugin:jsonc/recommended-with-jsonc', 'plugin:jsonc/prettier'],
 }
 
 exports.json5 = {
   files: '*.json5',
-  extends: [
-    'plugin:jsonc/recommended-with-json5',
-    'plugin:json-schema-validator/recommended',
-    'plugin:jsonc/prettier',
-  ],
+  extends: ['plugin:jsonc/recommended-with-json5', 'plugin:jsonc/prettier'],
 }
 
 exports.toml = {
   files: '*.toml',
-  extends: [
-    'plugin:toml/recommended',
-    'plugin:json-schema-validator/recommended',
-  ],
+  extends: ['plugin:toml/recommended'],
 }
 
 exports.yml = exports.yaml = {
   files: ['*.yml', '*.yaml'],
-  extends: [
-    'plugin:yml/recommended',
-    'plugin:json-schema-validator/recommended',
-    'plugin:yml/prettier',
-  ],
+  extends: ['plugin:yml/recommended', 'plugin:yml/prettier'],
 }
 
 exports.overrides = []
