@@ -18,12 +18,10 @@
     "lint:es": "eslint . --cache -f friendly",
     "lint:style": "stylelint . --cache",
     "lint:tsc": "tsc --noEmit",
-    "postversion": "pnpm i --no-frozen-lockfile",
     "prepare": "simple-git-hooks",
     "release": "changeset publish",
     "test": "vitest run --coverage",
-    "typecov": "type-coverage",
-    "version": "changeset version"
+    "typecov": "type-coverage"
   },
   "devDependencies": {
     "@angular/compiler": "^14.2.8",
