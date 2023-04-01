@@ -11,7 +11,7 @@ const {
 module.exports = {
   extends: [
     'eslint:recommended',
-    'plugin:eslint-comments/recommended',
+    'plugin:@eslint-community/eslint-comments/recommended',
     'plugin:css/recommended',
     'plugin:import/recommended',
     'plugin:n/recommended',
@@ -26,6 +26,13 @@ module.exports = {
   plugins: ['es-x', 'simple-import-sort'],
   globals: isWebpackAvailable ? getGlobals(webpackSpecVars) : undefined,
   rules: {
+    '@eslint-community/eslint-comments/disable-enable-pair': [
+      2,
+      {
+        allowWholeFile: true,
+      },
+    ],
+    '@eslint-community/eslint-comments/no-unused-disable': 2,
     'arrow-body-style': 2,
     camelcase: [
       2,
@@ -36,13 +43,6 @@ module.exports = {
       },
     ],
     curly: [2, 'all'],
-    'eslint-comments/disable-enable-pair': [
-      2,
-      {
-        allowWholeFile: true,
-      },
-    ],
-    'eslint-comments/no-unused-disable': 2,
     'import/first': 2,
     'import/newline-after-import': 2,
     'import/no-duplicates': 2,

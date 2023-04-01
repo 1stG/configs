@@ -47,6 +47,9 @@ module.exports = loose => ({
       files: ['**/*.styl', '**/*.stylus'],
       customSyntax: 'postcss-styl',
       extends: ['stylelint-stylus/standard', 'stylelint-prettier/recommended'],
+      rules: {
+        'function-no-unknown': null,
+      },
     },
   ],
 })

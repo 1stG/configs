@@ -11,15 +11,15 @@
   },
   "dependencies": {
     "@1stg/config": "^0.2.1",
-    "@prettier/plugin-pug": "^2.2.0",
-    "@prettier/plugin-ruby": "^3.2.1",
+    "@prettier/plugin-pug": "^2.4.2",
+    "@prettier/plugin-ruby": "^3.2.2",
     "@prettier/plugin-xml": "^2.2.0",
     "prettier-plugin-ini": "^1.1.0",
     "prettier-plugin-pkg": "^0.17.1",
     "prettier-plugin-properties": "^0.2.0",
     "prettier-plugin-sh": "^0.12.8",
     "prettier-plugin-stylus": "^0.0.1-beta.8",
-    "prettier-plugin-svelte": "^2.7.0",
+    "prettier-plugin-svelte": "^2.10.0",
     "prettier-plugin-toml": "^0.3.1"
   },
   "publishConfig": {
