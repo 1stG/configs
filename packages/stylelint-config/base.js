@@ -13,6 +13,7 @@ module.exports = {
     'stylelint-no-unsupported-browser-features',
   ],
   rules: {
+    'at-rule-empty-line-before': null,
     'plugin/no-low-performance-animation-properties': true,
     'plugin/no-unsupported-browser-features': [
       true,
@@ -21,6 +22,7 @@ module.exports = {
         severity: 'warning',
       },
     ],
+    'selector-attribute-quotes': null,
     'selector-class-pattern': [
       '^[a-z]([\\da-z-]+)?(__([\\da-z]+-?)+)?(--([\\da-z]+-?)+){0,2}$',
       {

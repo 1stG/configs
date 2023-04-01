@@ -1,0 +1,13 @@
+diff --git a/node_modules/stylelint-config-prettier/src/checker.js b/node_modules/stylelint-config-prettier/src/checker.js
+index 83714bd..3619e19 100644
+--- a/node_modules/stylelint-config-prettier/src/checker.js
++++ b/node_modules/stylelint-config-prettier/src/checker.js
+@@ -30,7 +30,7 @@ async function getConfig(linter, resolvedPath) {
+ 
+ async function check(path) {
+ 	const resolvedPath = resolve(process.cwd(), path || '');
+-	const linter = stylelint.createLinter();
++	const linter = (stylelint.createLinter || stylelint._createLinter)();
+ 	const config = await getConfig(linter, resolvedPath);
+ 
+ 	const prettierRules = stylelintConfigPrettier.rules;

@@ -6,6 +6,7 @@ LICENSE
 *.json5
 *.lock
 *.log
+*.patch
 # TODE: make it work
 *.pug
 *.sh

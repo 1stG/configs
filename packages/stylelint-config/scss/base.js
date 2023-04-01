@@ -8,12 +8,6 @@ module.exports = {
         ignoreAnnotations: ['default'],
       },
     ],
-    'at-rule-empty-line-before': [
-      'always',
-      {
-        ignoreAtRules: ['else'],
-      },
-    ],
     'at-rule-no-unknown': null,
     'function-no-unknown': null,
     'scss/at-each-key-value-single-line': true,
