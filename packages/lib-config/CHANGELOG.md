@@ -1,5 +1,16 @@
 # Change Log
 
+## 11.0.0
+
+### Major Changes
+
+- [`d03df9f`](https://github.com/1stG/configs/commit/d03df9fd9c0e6441909a4aaa85e40730a0c99581) Thanks [@JounQin](https://github.com/JounQin)! - feat!: migrate to eslint-community packages, bump stylelint
+
+### Patch Changes
+
+- Updated dependencies [[`d03df9f`](https://github.com/1stG/configs/commit/d03df9fd9c0e6441909a4aaa85e40730a0c99581), [`16bf6b4`](https://github.com/1stG/configs/commit/16bf6b4567843a27c52467c9fb18c08f15ac7638)]:
+  - @1stg/common-config@8.0.0
+
 ## 10.3.0
 
 ### Minor Changes

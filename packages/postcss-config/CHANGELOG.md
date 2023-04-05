@@ -1,5 +1,11 @@
 # Change Log
 
+## 5.0.0
+
+### Major Changes
+
+- [`d03df9f`](https://github.com/1stG/configs/commit/d03df9fd9c0e6441909a4aaa85e40730a0c99581) Thanks [@JounQin](https://github.com/JounQin)! - feat!: migrate to eslint-community packages, bump stylelint
+
 ## 4.0.0
 
 ### Major Changes
