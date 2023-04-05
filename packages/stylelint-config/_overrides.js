@@ -12,20 +12,6 @@ module.exports = loose => ({
   ...require('./base'),
   overrides: [
     {
-      files: [
-        '**/*.cjs',
-        '**/*.cts',
-        '**/*.js',
-        '**/*.jsx',
-        '**/*.mjs',
-        '**/*.mts',
-        '**/*.ts',
-        '**/*.tsx',
-      ],
-      customSyntax: '@stylelint/postcss-css-in-js',
-      ...disablePrettierOptions,
-    },
-    {
       files: ['**/*.md', '**/*.mdx'],
       customSyntax: 'postcss-markdown',
       ...disablePrettierOptions,

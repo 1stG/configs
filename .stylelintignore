@@ -1,9 +1,12 @@
 coverage
 LICENSE
+*.cjs
 *.iml
+*.js
 *.json
 *.jsonc
 *.json5
+*.jsx
 *.lock
 *.log
 *.patch
@@ -11,7 +14,9 @@ LICENSE
 *.pug
 *.sh
 *.svg
+*.ts
 *.tsbuildinfo
+*.tsx
 *.toml
 *.yaml
 *.yml
