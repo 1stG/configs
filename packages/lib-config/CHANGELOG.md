@@ -1,5 +1,11 @@
 # Change Log
 
+## 11.0.1
+
+### Patch Changes
+
+- [`55d6ede`](https://github.com/1stG/configs/commit/55d6ede6c7286e20061d844486ce7f36864abe88) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump pkgr packages
+
 ## 11.0.0
 
 ### Major Changes
