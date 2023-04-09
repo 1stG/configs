@@ -1,6 +1,6 @@
 {
   "name": "@1stg/markuplint-config",
-  "version": "2.2.1",
+  "version": "3.0.0",
   "description": "Personal but Shareable markuplint Configuration for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/markuplint-config",

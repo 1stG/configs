@@ -1,5 +1,11 @@
 # Change Log
 
+## 6.1.0
+
+### Minor Changes
+
+- [`c558151`](https://github.com/1stG/configs/commit/c5581515504dcf7335f9df2fa77fa3ff31720b09) Thanks [@JounQin](https://github.com/JounQin)! - feat!: migrate to markuplint v3
+
 ## 6.0.0
 
 ### Major Changes

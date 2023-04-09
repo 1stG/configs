@@ -1,5 +1,13 @@
 # Change Log
 
+## 8.0.1
+
+### Patch Changes
+
+- Updated dependencies [[`c558151`](https://github.com/1stG/configs/commit/c5581515504dcf7335f9df2fa77fa3ff31720b09), [`c558151`](https://github.com/1stG/configs/commit/c5581515504dcf7335f9df2fa77fa3ff31720b09)]:
+  - @1stg/markuplint-config@3.0.0
+  - @1stg/eslint-config@6.1.0
+
 ## 8.0.0
 
 ### Major Changes
