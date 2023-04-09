@@ -1,4 +1,5 @@
 module.exports = {
+  extends: ['markuplint:recommended'],
   rules: {
     'attr-duplication': true,
     'case-sensitive-tag-name': true,
