@@ -8,7 +8,7 @@
   "funding": "https://www.patreon.com/1stG",
   "license": "MIT",
   "engines": {
-    "node": "^12.20.0 || ^14.18.0 || >=16.0.0"
+    "node": "^14.18.0 || >=16.0.0"
   },
   "peerDependencies": {
     "markuplint": "^3.0.0"
