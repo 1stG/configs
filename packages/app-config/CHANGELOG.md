@@ -1,5 +1,19 @@
 # Change Log
 
+## 8.1.0
+
+### Minor Changes
+
+- [#191](https://github.com/1stG/configs/pull/191) [`59681fb`](https://github.com/1stG/configs/commit/59681fbc997ea5f0a6f7e9a853f8eca4a5d650d9) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump eslint-plugin-jsdoc
+
+- [#191](https://github.com/1stG/configs/pull/191) [`59681fb`](https://github.com/1stG/configs/commit/59681fbc997ea5f0a6f7e9a853f8eca4a5d650d9) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump stylelint-config-standard and stylelint-scss
+
+### Patch Changes
+
+- Updated dependencies [[`59681fb`](https://github.com/1stG/configs/commit/59681fbc997ea5f0a6f7e9a853f8eca4a5d650d9), [`59681fb`](https://github.com/1stG/configs/commit/59681fbc997ea5f0a6f7e9a853f8eca4a5d650d9)]:
+  - @1stg/common-config@8.1.0
+  - @1stg/stylelint-config@5.1.0
+
 ## 8.0.1
 
 ### Patch Changes
