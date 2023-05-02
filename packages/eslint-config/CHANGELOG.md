@@ -1,5 +1,11 @@
 # Change Log
 
+## 6.2.0
+
+### Minor Changes
+
+- [#191](https://github.com/1stG/configs/pull/191) [`59681fb`](https://github.com/1stG/configs/commit/59681fbc997ea5f0a6f7e9a853f8eca4a5d650d9) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump eslint-plugin-jsdoc
+
 ## 6.1.0
 
 ### Minor Changes
