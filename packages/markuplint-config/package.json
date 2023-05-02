@@ -14,9 +14,9 @@
     "markuplint": "^3.0.0"
   },
   "dependencies": {
-    "@markuplint/svelte-parser": "^3.6.1",
-    "@markuplint/vue-parser": "^3.6.1",
-    "@markuplint/vue-spec": "^3.6.1",
+    "@markuplint/svelte-parser": "^3.6.2",
+    "@markuplint/vue-parser": "^3.6.2",
+    "@markuplint/vue-spec": "^3.7.1",
     "markuplint-angular-parser": "^2.0.0"
   },
   "publishConfig": {

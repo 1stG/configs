@@ -56,6 +56,13 @@ exports.js = {
     ...jsBase.rules,
     'jsdoc/require-jsdoc': 0,
     'jsdoc/require-param-description': 0,
+    'jsdoc/tag-lines': [
+      1,
+      'never',
+      {
+        startLines: 1,
+      },
+    ],
   },
   settings: isTsAvailable
     ? {

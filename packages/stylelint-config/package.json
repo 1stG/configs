@@ -21,11 +21,11 @@
     "postcss-scss": "^4.0.6",
     "postcss-syntax": "^0.36.2",
     "stylelint-config-prettier": "^9.0.5",
-    "stylelint-config-standard": "^32.0.0",
+    "stylelint-config-standard": "^33.0.0",
     "stylelint-high-performance-animation": "^1.8.0",
     "stylelint-no-unsupported-browser-features": "^6.1.0",
     "stylelint-prettier": "^3.0.0",
-    "stylelint-scss": "^4.6.0",
+    "stylelint-scss": "^5.0.0",
     "stylelint-stylus": "^0.18.0"
   },
   "publishConfig": {

@@ -17,7 +17,7 @@
     "@1stg/prettier-config": "^3.9.2",
     "@1stg/tsconfig": "^2.3.2",
     "@pkgr/utils": "^2.3.1",
-    "prettier": "^2.8.7"
+    "prettier": "^2.8.8"
   },
   "publishConfig": {
     "access": "public"
