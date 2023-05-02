@@ -12,6 +12,7 @@ jobs:
         node:
           - 16
           - 18
+          - 20
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
