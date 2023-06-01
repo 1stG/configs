@@ -24,9 +24,9 @@
     "typecov": "type-coverage"
   },
   "devDependencies": {
-    "@angular/compiler": "^15.2.8",
-    "@angular/compiler-cli": "^15.2.8",
-    "@angular/core": "^15.2.8",
+    "@angular/compiler": "^15.2.9",
+    "@angular/compiler-cli": "^15.2.9",
+    "@angular/core": "^15.2.9",
     "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.26.1",
     "@types/babel__core": "^7.20.0",
