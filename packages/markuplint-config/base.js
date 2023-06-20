@@ -6,6 +6,7 @@ module.exports = {
     'deprecated-element': true,
     'id-duplication': true,
     'required-attr': true,
+    'use-list': false,
   },
   excludeFiles: ['**/node_modules/**'],
 }
