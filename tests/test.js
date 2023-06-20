@@ -2,7 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { promisify } from 'node:util'
 
-promisify(fs.readFile())
+promisify(fs.readFile)
 
 class Basic {}
 
