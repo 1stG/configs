@@ -1,5 +1,11 @@
 # @1stg/markuplint-config
 
+## 3.0.1
+
+### Patch Changes
+
+- [`93a4ce0`](https://github.com/1stG/configs/commit/93a4ce0a2d93b0d3a390ca6cac716f35598b3c45) Thanks [@JounQin](https://github.com/JounQin)! - chore: disable `use-list` rule
+
 ## 3.0.0
 
 ### Major Changes
