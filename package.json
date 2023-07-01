@@ -31,7 +31,7 @@
     "@changesets/cli": "^2.26.2",
     "@types/babel__core": "^7.20.1",
     "@types/jest": "^29.5.2",
-    "@types/node": "^20.3.1",
+    "@types/node": "^20.3.3",
     "@types/react": "^18.2.13",
     "@types/unist": "^2.0.6",
     "@vitest/coverage-istanbul": "^0.32.2",
