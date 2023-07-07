@@ -19,7 +19,7 @@
     "@pkgr/imagemin": "^4.1.0",
     "browserslist": "^4.21.9",
     "postcss": "^8.4.24",
-    "stylelint": "^15.8.0"
+    "stylelint": "^15.10.1"
   },
   "publishConfig": {
     "access": "public"
