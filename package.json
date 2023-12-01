@@ -33,7 +33,7 @@
     "@types/jest": "^29.5.10",
     "@types/node": "^20.3.3",
     "@types/react": "^18.2.39",
-    "@types/unist": "^2.0.6",
+    "@types/unist": "^2.0.10",
     "@vitest/coverage-istanbul": "^0.32.2",
     "patch-package": "^7.0.0",
     "postcss": "^8.4.24",
