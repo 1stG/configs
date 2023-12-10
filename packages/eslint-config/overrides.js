@@ -224,8 +224,14 @@ exports.ts = [
     },
   },
   {
-    files: ['*.cts', '*.mts', '*.ts', '*.tsx'],
-    excludedFiles: ['*.d.cts', '*.d.mts', '*.d.ts'],
+    files: '**/*.{md,mdx}/**/*.{cts,mts,ts,tsx}',
+    parserOptions: {
+      project: null,
+    },
+  },
+  {
+    files: '*.{cts,mts,ts,tsx}',
+    excludedFiles: ['**/*.{md,mdx}/**/*.{cts,mts,ts,tsx}', '*.d.{cts,mts,ts}'],
     extends: ['plugin:@typescript-eslint/recommended-requiring-type-checking'],
     rules: {
       '@typescript-eslint/no-floating-promises': [
