@@ -1,5 +1,11 @@
 # Change Log
 
+## 7.0.1
+
+### Patch Changes
+
+- [#220](https://github.com/1stG/configs/pull/220) [`9268bd0`](https://github.com/1stG/configs/commit/9268bd0a5f8a23bcc865403d32651d81a892c674) Thanks [@JounQin](https://github.com/JounQin)! - fix(eslint): incorrect project setting for ts in md/mdx
+
 ## 7.0.0
 
 ### Major Changes
