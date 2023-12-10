@@ -1,5 +1,16 @@
 # Change Log
 
+## 9.0.1
+
+### Patch Changes
+
+- [#220](https://github.com/1stG/configs/pull/220) [`9268bd0`](https://github.com/1stG/configs/commit/9268bd0a5f8a23bcc865403d32651d81a892c674) Thanks [@JounQin](https://github.com/JounQin)! - fix(tsconfig): incompatible module option for Node16 and NodeNext
+
+- [#220](https://github.com/1stG/configs/pull/220) [`9268bd0`](https://github.com/1stG/configs/commit/9268bd0a5f8a23bcc865403d32651d81a892c674) Thanks [@JounQin](https://github.com/JounQin)! - fix(eslint): incorrect project setting for ts in md/mdx
+
+- Updated dependencies [[`9268bd0`](https://github.com/1stG/configs/commit/9268bd0a5f8a23bcc865403d32651d81a892c674), [`9268bd0`](https://github.com/1stG/configs/commit/9268bd0a5f8a23bcc865403d32651d81a892c674)]:
+  - @1stg/common-config@9.0.1
+
 ## 9.0.0
 
 ### Major Changes

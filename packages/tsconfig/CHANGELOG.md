@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.3.3
+
+### Patch Changes
+
+- [#220](https://github.com/1stG/configs/pull/220) [`9268bd0`](https://github.com/1stG/configs/commit/9268bd0a5f8a23bcc865403d32651d81a892c674) Thanks [@JounQin](https://github.com/JounQin)! - fix(tsconfig): incompatible module option for Node16 and NodeNext
+
 ## 2.3.2
 
 ### Patch Changes
