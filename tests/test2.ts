@@ -5,6 +5,7 @@ import { promisify } from 'node:util'
 import { interval } from 'rxjs'
 import { Position } from 'unist'
 
+// eslint-disable-next-line sonar/deprecation
 import { content, TestCase } from './_test'
 
 promisify(fs.readFile)
@@ -13,6 +14,7 @@ promisify(fs.readFile)
  * @deprecated
  */
 class Basic {
+  // eslint-disable-next-line sonar/deprecation
   prop: string = content
 }
 
@@ -90,6 +92,7 @@ export type A = number
 export type B = A
 export type C = Readonly<number[]>
 export type D = readonly number[]
+// eslint-disable-next-line @typescript-eslint/no-duplicate-type-constituents
 export type E = A | B
 export type F = number[]
 export type G = NodeJS.Immediate

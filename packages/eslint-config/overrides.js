@@ -1,18 +1,9 @@
 const path = require('node:path')
 
 const { jsoncFiles, nonJsonRcFiles, preferPrettier } = require('@1stg/config')
-const {
-  isAngularAvailable,
-  isReactAvailable,
-  isPkgAvailable,
-  isSvelteAvailable,
-  isTsAvailable,
-  isVueAvailable,
-  tryFile,
-  tryPkg,
-} = require('@pkgr/utils')
+const { isPkgAvailable, tryFile, tryPkg } = require('@pkgr/utils')
 
-const { magicNumbers, prettierExtends } = require('./_util')
+const { isTsAvailable, magicNumbers, prettierExtends } = require('./_util')
 
 const configFile =
   tryFile(path.resolve('babel.config.js')) ||
@@ -172,7 +163,7 @@ const tsBase = {
     '@typescript-eslint/prefer-for-of': 2,
     '@typescript-eslint/prefer-function-type': 2,
     '@typescript-eslint/prefer-ts-expect-error': 2,
-    '@typescript-eslint/sort-type-union-intersection-members': 2,
+    '@typescript-eslint/sort-type-constituents': 2,
     '@typescript-eslint/triple-slash-reference': [
       2,
       {
@@ -546,6 +537,8 @@ exports.yml = exports.yaml = {
   extends: ['plugin:yml/recommended', 'plugin:yml/prettier'],
 }
 
+const isReactAvailable = isPkgAvailable('react')
+
 exports.overrides = []
   // eslint-disable-next-line unicorn/prefer-spread
   .concat(
@@ -553,12 +546,12 @@ exports.overrides = []
     isTsAvailable && exports.ts,
     isReactAvailable && exports.react,
     isReactAvailable && exports.reactHooks,
-    isReactAvailable && exports.reactTs,
+    isReactAvailable && isTsAvailable && exports.reactTs,
     // The order matters, the later should to be preferred
     exports.markup,
-    isAngularAvailable && exports.angular,
-    isVueAvailable && exports.vue,
-    isSvelteAvailable && exports.svelte,
+    isPkgAvailable('@angular/core') && exports.angular,
+    isPkgAvailable('vue') && exports.vue,
+    isPkgAvailable('svelte') && exports.svelte,
     exports.md,
     exports.mdx,
     isPkgAvailable('jest') && exports.jest,

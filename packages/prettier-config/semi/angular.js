@@ -1,1 +1,6 @@
-module.exports = { ...require('../angular'), semi: true }
+import baseConfig from '../angular.js'
+
+export default {
+  ...baseConfig,
+  semi: true,
+}

@@ -13,11 +13,11 @@
     "lint-staged": ">=10.0.0"
   },
   "dependencies": {
-    "@1stg/config": "^0.2.1",
+    "@1stg/config": "^0.2.2",
     "@1stg/prettier-config": "^3.9.2",
-    "@1stg/tsconfig": "^2.3.2",
-    "@pkgr/utils": "^2.4.1",
-    "prettier": "^2.8.8"
+    "@1stg/tsconfig": "^2.3.3",
+    "@pkgr/utils": "^3.0.0",
+    "prettier": "^3.1.1"
   },
   "publishConfig": {
     "access": "public"
