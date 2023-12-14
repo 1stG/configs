@@ -1,5 +1,11 @@
 # @1stg/config
 
+## 0.2.2
+
+### Patch Changes
+
+- [#223](https://github.com/1stG/configs/pull/223) [`83fc35c`](https://github.com/1stG/configs/commit/83fc35cace2fa1d8ecd7737de5660694df0b381f) Thanks [@JounQin](https://github.com/JounQin)! - fix: `.yarnrc` is actually not ini
+
 ## 0.2.1
 
 ### Patch Changes
