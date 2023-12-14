@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.4.2
+
+### Patch Changes
+
+- [#225](https://github.com/1stG/configs/pull/225) [`a9f6a8d`](https://github.com/1stG/configs/commit/a9f6a8d912ae8747e738d4c24f09f5510990a575) Thanks [@JounQin](https://github.com/JounQin)! - fix: bypass .yarnrc file which is not ini actually
+
 ## 3.4.1
 
 ### Patch Changes
