@@ -1,4 +1,4 @@
-exports.iniRcFiles = ['.npmrc', '.yarnrc']
+exports.iniRcFiles = ['.npmrc']
 
 exports.shRcFiles = ['.*shrc']
 
