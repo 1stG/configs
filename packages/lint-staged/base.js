@@ -15,7 +15,7 @@ const config = [
   `*.{*sh,env,env.*,gql,ini,properties,rb${
     isEslintAvailable ? '' : ',' + ESLINT_PRETTIER_FILES
   }${isStylelintAvailable ? '' : ',' + STYLELINT_PRETTIER_FILES}}`,
-  '.!(browserslist|nvm)rc',
+  '.!(browserslist|nvm|yarn)rc',
   'Dockerfile',
 ].reduce(
   (acc, files) =>
