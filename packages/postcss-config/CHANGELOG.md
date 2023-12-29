@@ -1,5 +1,11 @@
 # Change Log
 
+## 6.0.0
+
+### Major Changes
+
+- [#229](https://github.com/1stG/configs/pull/229) [`6561a5e`](https://github.com/1stG/configs/commit/6561a5e7f0274753e5e447a17439a7ed54b7b7c4) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump all upgradable (dev)Dependencies
+
 ## 5.0.0
 
 ### Major Changes

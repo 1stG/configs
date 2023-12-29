@@ -1,5 +1,20 @@
 # Change Log
 
+## 10.0.0
+
+### Major Changes
+
+- [#229](https://github.com/1stG/configs/pull/229) [`6561a5e`](https://github.com/1stG/configs/commit/6561a5e7f0274753e5e447a17439a7ed54b7b7c4) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump all upgradable (dev)Dependencies
+
+### Patch Changes
+
+- Updated dependencies [[`6561a5e`](https://github.com/1stG/configs/commit/6561a5e7f0274753e5e447a17439a7ed54b7b7c4)]:
+  - @1stg/babel-preset@4.0.0
+  - @1stg/commitlint-config@4.0.0
+  - @1stg/eslint-config@8.0.0
+  - @1stg/lint-staged@4.0.0
+  - @1stg/prettier-config@4.0.0
+
 ## 9.0.1
 
 ### Patch Changes
