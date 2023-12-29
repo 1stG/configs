@@ -1,5 +1,12 @@
 # Change Log
 
+## 10.0.1
+
+### Patch Changes
+
+- Updated dependencies [[`17fe967`](https://github.com/1stG/configs/commit/17fe9671d7e6315c180a21ec3f6bd46bf6131663)]:
+  - @1stg/stylelint-config@6.0.0
+
 ## 10.0.0
 
 ### Major Changes
