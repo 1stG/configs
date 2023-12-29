@@ -1,11 +1,15 @@
-const {
-  iniRcFiles,
-  jsoncFiles,
-  nonJsonRcFiles,
-  shRcFiles,
-} = require('@1stg/config')
+import { createRequire } from 'node:module'
 
-module.exports = {
+import config from '@1stg/config'
+
+const { iniRcFiles, jsoncFiles, nonJsonRcFiles, shRcFiles } = config
+
+const require = createRequire(import.meta.url)
+
+/**
+ * @type {import('prettier').Config}
+ */
+export default {
   arrowParens: 'avoid',
   semi: false,
   singleAttributePerLine: true,
@@ -13,11 +17,8 @@ module.exports = {
   trailingComma: 'all',
   xmlWhitespaceSensitivity: 'ignore',
   svelteIndentScriptAndStyle: false, // align with default option of `vueIndentScriptAndStyle`
-  /**
-   * Workaround for pnpm, see also @see https://github.com/prettier/prettier/issues/8474
-   */
-  plugins: Object.keys(require('./package.json').dependencies).map(pkg =>
-    require(pkg),
+  plugins: await Promise.all(
+    Object.keys(require('./package.json').dependencies).map(pkg => import(pkg)),
   ),
   overrides: [
     {

@@ -4,12 +4,12 @@ const { preferPrettier } = require('@1stg/config')
 const {
   isMonorepo,
   isPkgAvailable,
-  monorepoPkgs,
+  getMonorepoPkgs,
   tryRequirePkg,
 } = require('@pkgr/utils')
 
-if (isMonorepo) {
-  exports.allowModules = monorepoPkgs.reduce((acc, pkg) => {
+if (isMonorepo()) {
+  exports.allowModules = getMonorepoPkgs().reduce((acc, pkg) => {
     const pkgJson = tryRequirePkg(path.resolve(pkg, 'package.json'))
     if (!pkgJson) {
       return acc
@@ -23,6 +23,8 @@ if (isMonorepo) {
     )
   }, [])
 }
+
+exports.isTsAvailable = isPkgAvailable('typescript')
 
 exports.isWebpackAvailable = isPkgAvailable('webpack')
 

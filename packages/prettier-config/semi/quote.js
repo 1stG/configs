@@ -1,1 +1,6 @@
-module.exports = { ...require('../quote'), semi: true }
+import baseConfig from '../quote.js'
+
+export default {
+  ...baseConfig,
+  semi: true,
+}

@@ -11,7 +11,6 @@ module.exports = {
     'at-rule-no-unknown': null,
     'function-no-unknown': null,
     'scss/at-each-key-value-single-line': true,
-    'scss/at-import-no-partial-leading-underscore': true,
     'scss/at-import-partial-extension-blacklist': ['sass', 'scss'],
     'scss/at-mixin-argumentless-call-parentheses': 'never',
     'scss/at-rule-no-unknown': true,
@@ -31,6 +30,7 @@ module.exports = {
     ],
     'scss/declaration-nested-properties-no-divided-groups': true,
     'scss/function-no-unknown': true,
+    'scss/load-no-partial-leading-underscore': true,
     'scss/media-feature-value-dollar-variable': [
       'always',
       {

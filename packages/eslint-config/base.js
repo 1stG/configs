@@ -1,7 +1,8 @@
-const { isTsAvailable } = require('@pkgr/utils')
+const { isPkgAvailable } = require('@pkgr/utils')
 const { getGlobals } = require('eslint-plugin-mdx')
 
 const {
+  isTsAvailable,
   isWebpackAvailable,
   magicNumbers,
   webpackSpecVars,
@@ -18,7 +19,7 @@ module.exports = {
     'plugin:promise/recommended',
     'plugin:regexp/recommended',
     'plugin:sonarjs/recommended',
-    isTsAvailable && 'plugin:sonar/recommended',
+    isPkgAvailable('typescript') && 'plugin:sonar/recommended',
     'plugin:unicorn/recommended',
     'standard',
     ...prettierExtends,

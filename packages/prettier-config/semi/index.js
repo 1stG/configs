@@ -1,1 +1,6 @@
-module.exports = { ...require('../base'), semi: true }
+import baseConfig from '../base.js'
+
+export default {
+  ...baseConfig,
+  semi: true,
+}

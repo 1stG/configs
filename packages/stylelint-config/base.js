@@ -1,5 +1,8 @@
 const { preferPrettier } = require('@1stg/config')
-const { isAngularAvailable, isVueAvailable } = require('@pkgr/utils')
+const { isPkgAvailable } = require('@pkgr/core')
+
+const isAngularAvailable = isPkgAvailable('@angular/core')
+const isVueAvailable = isPkgAvailable('vue')
 
 module.exports = {
   extends: [

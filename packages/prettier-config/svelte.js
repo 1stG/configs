@@ -1,6 +1,6 @@
-const baseConfig = require('./base')
+import baseConfig from './base.js'
 
-module.exports = {
+export default {
   ...baseConfig,
   overrides: [
     ...baseConfig.overrides,
