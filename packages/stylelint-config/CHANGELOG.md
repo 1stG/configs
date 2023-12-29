@@ -1,5 +1,11 @@
 # Change Log
 
+## 6.0.0
+
+### Major Changes
+
+- [`17fe967`](https://github.com/1stG/configs/commit/17fe9671d7e6315c180a21ec3f6bd46bf6131663) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump all upgradable (dev)Dependencies
+
 ## 5.1.0
 
 ### Minor Changes
