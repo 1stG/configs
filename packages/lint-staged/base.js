@@ -1,5 +1,5 @@
 const { preferPrettier } = require('@1stg/config')
-const { isPkgAvailable } = require('@pkgr/utils')
+const { isPkgAvailable } = require('@pkgr/core')
 
 const isEslintAvailable = isPkgAvailable('eslint')
 const isStylelintAvailable = isPkgAvailable('stylelint')
