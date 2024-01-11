@@ -18,7 +18,13 @@ export default {
   xmlWhitespaceSensitivity: 'ignore',
   svelteIndentScriptAndStyle: false, // align with default option of `vueIndentScriptAndStyle`
   plugins: await Promise.all(
-    Object.keys(require('./package.json').dependencies).map(pkg => import(pkg)),
+    Object.keys(require('./package.json').dependencies).map(async pkgName => {
+      /**
+       * @type {import('prettier').Plugin}
+       */
+      const pkg = await import(pkgName)
+      return pkg.default || pkg
+    }),
   ),
   overrides: [
     {
