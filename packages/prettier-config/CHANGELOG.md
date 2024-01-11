@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.0.1
+
+### Patch Changes
+
+- [#236](https://github.com/1stG/configs/pull/236) [`ab4d554`](https://github.com/1stG/configs/commit/ab4d55408edbfdc6d7a4587e28152c915f0ec00d) Thanks [@JounQin](https://github.com/JounQin)! - fix: load prettier plugin correctly
+
 ## 4.0.0
 
 ### Major Changes
