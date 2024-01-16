@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.2.4
+
+### Patch Changes
+
+- [`f6b9912`](https://github.com/1stG/configs/commit/f6b991273ac67e555474b2ad2de098afb0109584) Thanks [@JounQin](https://github.com/JounQin)! - feat: upgrade to more lightweight @pkgr/utils v3
+
 ## 0.2.3
 
 ### Patch Changes
