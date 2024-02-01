@@ -32,7 +32,7 @@
     "@types/babel__core": "^7.20.5",
     "@types/jest": "^29.5.11",
     "@types/node": "^20.10.6",
-    "@types/react": "^18.2.46",
+    "@types/react": "^18.2.48",
     "@types/unist": "^3.0.2",
     "@vitest/coverage-istanbul": "^1.1.1",
     "patch-package": "^8.0.0",
