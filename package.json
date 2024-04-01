@@ -9,7 +9,7 @@
   "workspaces": [
     "packages/*"
   ],
-  "packageManager": "yarn@1.22.21",
+  "packageManager": "yarn@1.22.22",
   "scripts": {
     "check": "eslint-config-prettier .eslintrc.js",
     "codesandbox:install": "yarn --ignore-engines",
