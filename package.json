@@ -45,7 +45,7 @@
     "type-coverage": "^2.27.2",
     "typescript": "^5.3.3",
     "vitest": "^1.1.1",
-    "vue": "^3.4.21",
+    "vue": "^3.4.26",
     "vue-tsc": "^1.8.27",
     "yarn-deduplicate": "^6.0.2"
   },
