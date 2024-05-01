@@ -5843,10 +5843,10 @@ eslint-import-resolver-typescript@^3.6.1:
     is-core-module "^2.11.0"
     is-glob "^4.0.3"
 
-eslint-mdx@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/eslint-mdx/-/eslint-mdx-2.3.0.tgz#568603b72b1dab81b620bbc84ec9a89b34cba9a1"
-  integrity sha512-ji+iKVSjpzsCzMrHNm6xRDMar1iH4OpxROAE2RtCeEFdg4pRv6/anwFD76HIOaaQY+3wD1dfk8/VQ5faPB+VHw==
+eslint-mdx@^2.3.4:
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/eslint-mdx/-/eslint-mdx-2.3.4.tgz#87a5d95d6fcb27bafd2b15092f16f5aa559e336b"
+  integrity sha512-u4NszEUyoGtR7Q0A4qs0OymsEQdCO6yqWlTzDa9vGWsK7aMotdnW0hqifHTkf6lEtA2vHk2xlkWHTCrhYLyRbw==
   dependencies:
     acorn "^8.10.0"
     acorn-jsx "^5.3.2"
@@ -5855,7 +5855,7 @@ eslint-mdx@^2.3.0:
     remark-mdx "^2.3.0"
     remark-parse "^10.0.2"
     remark-stringify "^10.0.3"
-    synckit "^0.8.5"
+    synckit "^0.9.0"
     tslib "^2.6.1"
     unified "^10.1.2"
     unified-engine "^10.1.0"
@@ -5977,12 +5977,12 @@ eslint-plugin-markup@^0.11.0:
     synckit "^0.8.5"
     tslib "^2.5.0"
 
-eslint-plugin-mdx@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-mdx/-/eslint-plugin-mdx-2.3.0.tgz#45cd3114000e36abda65ac3f307d122579ca9340"
-  integrity sha512-S48QlfeV/yfaeX6L/vemh1oGBx+CMG66cceoUtxGmdFTf4hbr9bRKZ25FKKrhzpDX0QLY474mWo86NAogp+rFw==
+eslint-plugin-mdx@^2.3.4:
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-mdx/-/eslint-plugin-mdx-2.3.4.tgz#5c136251d681721415b8f0fb27121615613449f4"
+  integrity sha512-kr6tgaifKL+AVGYMtdYc2VCsIjfYQXuUCKz4rK58d2DpnPFHrmgXIOC7NcMvaEld+VOEpxBSCCnjnsf4IVCQGg==
   dependencies:
-    eslint-mdx "^2.3.0"
+    eslint-mdx "^2.3.4"
     eslint-plugin-markdown "^3.0.1"
     remark-mdx "^2.3.0"
     remark-parse "^10.0.2"
@@ -13565,6 +13565,14 @@ synckit@^0.8.5, synckit@^0.8.6:
   version "0.8.8"
   resolved "https://registry.yarnpkg.com/synckit/-/synckit-0.8.8.tgz#fe7fe446518e3d3d49f5e429f443cf08b6edfcd7"
   integrity sha512-HwOKAP7Wc5aRGYdKH+dw0PRRpbO841v2DENBtjnR5HFWoiNByAl7vrx3p0G/rCyYXQsrxqtX48TImFtPcIHSpQ==
+  dependencies:
+    "@pkgr/core" "^0.1.0"
+    tslib "^2.6.2"
+
+synckit@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/synckit/-/synckit-0.9.0.tgz#5b33b458b3775e4466a5b377fba69c63572ae449"
+  integrity sha512-7RnqIMq572L8PeEzKeBINYEJDDxpcH8JEgLwUqBd3TkofhFRbkq4QLR0u+36avGAhCRbk2nnmjcW9SE531hPDg==
   dependencies:
     "@pkgr/core" "^0.1.0"
     tslib "^2.6.2"

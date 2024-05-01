@@ -38,7 +38,7 @@
     "eslint-plugin-jsdoc": "^46.9.1",
     "eslint-plugin-jsonc": "^2.11.2",
     "eslint-plugin-markup": "^0.11.0",
-    "eslint-plugin-mdx": "^2.3.0",
+    "eslint-plugin-mdx": "^2.3.4",
     "eslint-plugin-n": "^16.6.0",
     "eslint-plugin-prettier": "^5.1.2",
     "eslint-plugin-promise": "^6.1.1",
