@@ -9910,7 +9910,7 @@ npm-package-arg@8.1.1:
     semver "^7.0.0"
     validate-npm-package-name "^3.0.0"
 
-npm-run-all2@^5.0.0:
+npm-run-all2@^5.0.2:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/npm-run-all2/-/npm-run-all2-5.0.2.tgz#7dae8e11ba90be9edd05379414a01407416b336c"
   integrity sha512-S2G6FWZ3pNWAAKm2PFSOtEAG/N+XO/kz3+9l6V91IY+Y3XFSt7Lp7DV92KCgEboEW0hRTu0vFaMe4zXDZYaOyA==
