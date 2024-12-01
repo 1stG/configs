@@ -18,7 +18,7 @@
     "cssnano": "^6.0.2",
     "cssnano-preset-advanced": "^6.0.2",
     "postcss-import": "^15.1.0",
-    "postcss-modules": "^6.0.0",
+    "postcss-modules": "^6.0.1",
     "postcss-normalize": "^10.0.1",
     "postcss-preset-env": "^9.3.0",
     "postcss-url": "^10.1.3"
