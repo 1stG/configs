@@ -3047,6 +3047,11 @@
   dependencies:
     "@types/unist" "*"
 
+"@types/hosted-git-info@^3.0.0":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@types/hosted-git-info/-/hosted-git-info-3.0.5.tgz#658e80083026a0574fbfd256abb5cbfb6ecd2218"
+  integrity sha512-Dmngh7U003cOHPhKGyA7LWqrnvcTyILNgNPmNCxlx7j8MIi54iBliiT8XqVLIQ3GchoOjVAyBzNJVyuaJjqokg==
+
 "@types/is-empty@^1.0.0":
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/@types/is-empty/-/is-empty-1.2.3.tgz#a2d55ea8a5ec57bf61e411ba2a9e5132fe4f0899"
@@ -12359,11 +12364,12 @@ remark-stringify@^10.0.3:
     mdast-util-to-markdown "^1.0.0"
     unified "^10.0.0"
 
-remark-validate-links@^13.0.0:
-  version "13.0.0"
-  resolved "https://registry.yarnpkg.com/remark-validate-links/-/remark-validate-links-13.0.0.tgz#25174801f67a11b8cb82263b90596d59c16c3f22"
-  integrity sha512-21/LrPvAhUxJnAXLbMvgBrjTvsKki4txEnwe58V/iKP5ptKLvYzWLnMueT7VZI7yVhsH8l8ZaoQ5WmKkm8ws/w==
+remark-validate-links@^13.0.2:
+  version "13.0.2"
+  resolved "https://registry.yarnpkg.com/remark-validate-links/-/remark-validate-links-13.0.2.tgz#78d49610093c4abaf21d73166836e27cd50d73a5"
+  integrity sha512-YZPiB6eWT6sjVYD+TXisCGzNZwbWmtnqeA6rr7zlYz7LrtKENaT+fPIRjG16tW4dv85su2VsWdw7e3cqS+2Tog==
   dependencies:
+    "@types/hosted-git-info" "^3.0.0"
     "@types/mdast" "^4.0.0"
     github-slugger "^2.0.0"
     hosted-git-info "^7.0.0"
