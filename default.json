@@ -1,0 +1,18 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Personal but Shareable Renovate Configuration for all 1stG.me projects",
+  "extends": [
+    "config:recommended",
+    "config:semverAllMonthly"
+  ],
+  "automerge": true,
+  "major": {
+    "automerge": false
+  },
+  "postUpdateOptions": [
+    "npmDedupe",
+    "pnpmDedupe",
+    "yarnDedupeFewer"
+  ],
+  "rangeStrategy": "bump"
+}

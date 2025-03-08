@@ -252,12 +252,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/renovate-config@workspace:packages/renovate-config":
-  version: 0.0.0-use.local
-  resolution: "@1stg/renovate-config@workspace:packages/renovate-config"
-  languageName: unknown
-  linkType: soft
-
 "@1stg/simple-git-hooks@npm:^0.2.4, @1stg/simple-git-hooks@workspace:packages/simple-git-hooks":
   version: 0.0.0-use.local
   resolution: "@1stg/simple-git-hooks@workspace:packages/simple-git-hooks"
