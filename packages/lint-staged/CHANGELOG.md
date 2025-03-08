@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.0.1
+
+### Patch Changes
+
+- Updated dependencies [[`db3b78b`](https://github.com/1stG/configs/commit/db3b78b29159200362727141931016fcd6a85846)]:
+  - @1stg/config@1.0.0
+  - @1stg/prettier-config@4.0.2
+
 ## 4.0.0
 
 ### Major Changes
