@@ -14,6 +14,7 @@
     "./next": "./next.js",
     "./quote": "./quote.js",
     "./vue": "./vue.js",
+    "./angular": "./angular.js",
     "./semi": "./semi/index.js",
     "./semi/next": "./semi/next.js",
     "./semi/quote": "./semi/quote.js",
