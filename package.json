@@ -33,7 +33,7 @@
     "@types/babel__core": "^7.20.5",
     "@types/bun": "latest",
     "@types/jest": "^29.5.14",
-    "@types/node": "^20.17.24",
+    "@types/node": "^22.0.0",
     "@types/react": "^19.0.10",
     "@types/unist": "^3.0.3",
     "@unts/patch-package": "^8.1.1",
