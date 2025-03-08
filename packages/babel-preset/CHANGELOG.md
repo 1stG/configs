@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.0.2
+
+### Patch Changes
+
+- [#289](https://github.com/1stG/configs/pull/289) [`26f3f34`](https://github.com/1stG/configs/commit/26f3f345734936580db88880dec33cba848d2ba0) Thanks [@JounQin](https://github.com/JounQin)! - chore(babel-preset): migrate `proposal-class-properties` to `transform-*`
+
 ## 4.0.1
 
 ### Patch Changes
