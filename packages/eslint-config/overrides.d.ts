@@ -5,6 +5,7 @@ export const ts: TSESLint.FlatConfig.ConfigArray
 export const dTs: TSESLint.FlatConfig.Config
 export const react: TSESLint.FlatConfig.ConfigArray
 export const vue: TSESLint.FlatConfig.ConfigArray
+export const angular: TSESLint.FlatConfig.ConfigArray
 export const md: TSESLint.FlatConfig.ConfigArray
 export const mdx: TSESLint.FlatConfig.ConfigArray
 export const test: TSESLint.FlatConfig.Config

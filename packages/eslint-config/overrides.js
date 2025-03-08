@@ -418,6 +418,7 @@ export const vue = tseslint.config(
 
 export const angular = tseslint.config(
   {
+    name: '@1stg/angular-ts',
     files: ['**/*.ts'],
     ignores: ['**/*.d.ts'],
     languageOptions: {
@@ -432,6 +433,7 @@ export const angular = tseslint.config(
     },
   },
   {
+    name: '@1stg/angular-template',
     files: ['**/*.html'],
     extends: [
       angular_.configs.templateRecommended,
