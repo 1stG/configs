@@ -108,7 +108,7 @@ module.exports = declare(
         },
       ],
       [
-        require('@babel/plugin-proposal-class-properties'),
+        require('@babel/plugin-transform-class-properties'),
         {
           loose: classLoose,
         },
