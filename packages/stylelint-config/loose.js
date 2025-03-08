@@ -1,1 +1,3 @@
-module.exports = require('./_overrides')(true)
+import { overrides } from './_overrides.js'
+
+export default overrides(true)

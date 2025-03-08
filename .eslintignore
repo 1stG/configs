@@ -1,7 +1,0 @@
-coverage
-dist
-lib
-node_modules
-CHANGELOG.md
-!/.github
-!/.*.js

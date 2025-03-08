@@ -1,16 +1,18 @@
-const { preferPrettier } = require('@1stg/config')
-const { isPkgAvailable } = require('@pkgr/core')
+import { preferPrettier } from '@1stg/config'
+import { isPkgAvailable } from '@pkgr/core'
 
 const isAngularAvailable = isPkgAvailable('@angular/core')
 const isVueAvailable = isPkgAvailable('vue')
 
-module.exports = {
+/**
+ * @import {Config} from 'stylelint'
+ * @type {Config}
+ */
+const base = {
   extends: [
     'stylelint-config-standard',
-    preferPrettier
-      ? 'stylelint-config-prettier'
-      : 'stylelint-prettier/recommended',
-  ],
+    !preferPrettier && 'stylelint-prettier/recommended',
+  ].filter(Boolean),
   plugins: [
     'stylelint-high-performance-animation',
     'stylelint-no-unsupported-browser-features',
@@ -27,7 +29,7 @@ module.exports = {
     ],
     'selector-attribute-quotes': null,
     'selector-class-pattern': [
-      '^[a-z]([\\da-z-]+)?(__([\\da-z]+-?)+)?(--([\\da-z]+-?)+){0,2}$',
+      String.raw`^[a-z]([\da-z-]+)?(__([\da-z]+-?)+)?(--([\da-z]+-?)+){0,2}$`,
       {
         message: 'Expected class selector to be kebab-case or BEM',
         resolveNestedSelectors: true,
@@ -49,3 +51,5 @@ module.exports = {
     }),
   },
 }
+
+export default base

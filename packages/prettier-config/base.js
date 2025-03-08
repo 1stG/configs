@@ -1,8 +1,6 @@
 import { createRequire } from 'node:module'
 
-import config from '@1stg/config'
-
-const { iniRcFiles, jsoncFiles, nonJsonRcFiles, shRcFiles } = config
+import { iniRcFiles, jsoncFiles, nonJsonRcFiles, shRcFiles } from '@1stg/config'
 
 const require = createRequire(import.meta.url)
 

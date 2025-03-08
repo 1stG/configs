@@ -5,7 +5,7 @@ import { promisify } from 'node:util'
 import { interval } from 'rxjs'
 import { Position } from 'unist'
 
-// eslint-disable-next-line sonar/deprecation
+// eslint-disable-next-line sonarjs/deprecation -- testing
 import { content, TestCase } from './_test'
 
 promisify(fs.readFile)
@@ -14,7 +14,7 @@ promisify(fs.readFile)
  * @deprecated
  */
 class Basic {
-  // eslint-disable-next-line sonar/deprecation
+  // eslint-disable-next-line sonarjs/deprecation -- testing
   prop: string = content
 }
 
@@ -48,6 +48,7 @@ foo(() => {
   foo(() => {
     foo(() => {
       foo(() => {
+        // eslint-disable-next-line sonarjs/no-nested-functions -- testing
         foo(() => {
           // Do something
         })
@@ -58,7 +59,7 @@ foo(() => {
 
 const obj: Record<string, string | undefined> = {}
 
-// eslint-disable-next-line sonar/deprecation -- this is expected
+// eslint-disable-next-line sonarjs/deprecation -- testing
 export default class Test extends Basic implements X {
   path: typeof path
 
@@ -86,11 +87,11 @@ interval(1000).subscribe()
 
 new TestCase<number>().subscribe()
 
-// eslint-disable-next-line no-restricted-syntax
+// eslint-disable-next-line no-restricted-syntax, sonarjs/redundant-type-aliases
 export type A = number
-// eslint-disable-next-line no-restricted-syntax
+// eslint-disable-next-line no-restricted-syntax, sonarjs/redundant-type-aliases
 export type B = A
-export type C = Readonly<number[]>
+export type C = readonly number[]
 export type D = readonly number[]
 // eslint-disable-next-line @typescript-eslint/no-duplicate-type-constituents
 export type E = A | B

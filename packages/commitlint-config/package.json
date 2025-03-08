@@ -1,17 +1,19 @@
 {
   "name": "@1stg/commitlint-config",
   "version": "4.0.0",
+  "type": "module",
   "description": "Personal but Shareable Commitlint Configuration for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
   "funding": "https://www.patreon.com/1stG",
   "license": "MIT",
   "engines": {
-    "node": "^14.18.0 || >=16.0.0"
+    "node": ">=v18"
   },
+  "main": "index.js",
   "dependencies": {
-    "@commitlint/config-conventional": "^18.4.3",
-    "@commitlint/config-lerna-scopes": "^18.4.3",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@commitlint/config-workspace-scopes": "^19.8.0",
     "@pkgr/utils": "^3.0.0"
   },
   "publishConfig": {

@@ -1,32 +1,40 @@
 {
   "name": "@1stg/stylelint-config",
   "version": "6.0.0",
+  "type": "module",
   "description": "Personal but Shareable Stylelint Configuration for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
   "funding": "https://www.patreon.com/1stG",
   "license": "MIT",
   "engines": {
-    "node": "^12.20.0 || ^14.18.0 || >=16.0.0"
+    "node": ">=18.12.0"
+  },
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json",
+    "./loose": "./loose.js",
+    "./modules": "./modules.js",
+    "./scss": "./scss/index.js",
+    "./scss/loose": "./scss/loose.js"
   },
   "peerDependencies": {
-    "stylelint": ">=13.0.0"
+    "stylelint": "^16.13.0"
   },
   "dependencies": {
     "@1stg/config": "^0.2.2",
-    "@pkgr/core": "^0.1.0",
-    "postcss-html": "^1.5.0",
+    "@pkgr/core": "^0.1.1",
+    "postcss-html": "^1.8.0",
     "postcss-less": "^6.0.0",
-    "postcss-markdown": "^1.2.0",
+    "postcss-markdown": "^1.3.0",
     "postcss-scss": "^4.0.9",
     "postcss-syntax": "^0.36.2",
-    "stylelint-config-prettier": "^9.0.5",
-    "stylelint-config-standard": "^36.0.0",
-    "stylelint-high-performance-animation": "^1.10.0",
-    "stylelint-no-unsupported-browser-features": "^7.0.0",
-    "stylelint-prettier": "^5.0.0",
-    "stylelint-scss": "^6.0.0",
-    "stylelint-stylus": "^1.0.0"
+    "stylelint-config-standard": "^37.0.0",
+    "stylelint-high-performance-animation": "^1.11.0",
+    "stylelint-no-unsupported-browser-features": "^8.0.4",
+    "stylelint-prettier": "^5.0.3",
+    "stylelint-scss": "^6.11.1"
   },
   "publishConfig": {
     "access": "public"

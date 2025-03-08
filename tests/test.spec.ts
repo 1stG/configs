@@ -3,12 +3,11 @@ import { describe, expect, it } from 'vitest'
 
 describe('babel-plugin: fast-async', () => {
   it('transform plain async/await to Promise', () => {
-    expect(
-      transform('async function main() {}', {
-        filename: 'fast-async.test.js',
-        presets: ['@1stg'],
-      })!.code,
-    ).toMatchInlineSnapshot(`
+    const result = transform('async function main() {}', {
+      filename: 'fast-async.test.js',
+      presets: ['@1stg'],
+    })
+    expect(result!.code).toMatchInlineSnapshot(`
       "function _await(value, then, direct) {
         if (direct) {
           return then ? then(value) : value;

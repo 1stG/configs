@@ -1,4 +1,8 @@
-module.exports = {
+/**
+ * @import {Config} from 'stylelint'
+ * @type {Config}
+ */
+const modules = {
   rules: {
     'selector-pseudo-class-no-unknown': [
       true,
@@ -8,3 +12,5 @@ module.exports = {
     ],
   },
 }
+
+export default modules

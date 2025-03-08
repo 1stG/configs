@@ -1,6 +1,7 @@
 {
   "name": "@1stg/babel-preset",
   "version": "4.0.0",
+  "type": "commonjs",
   "description": "Personal but Shareable Babel Preset for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
@@ -9,19 +10,24 @@
   "engines": {
     "node": "^12.20.0 || ^14.18.0 || >=16.0.0"
   },
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json",
+    "./config": "./config.js"
+  },
   "peerDependencies": {
     "@babel/core": ">=7.14.1"
   },
   "dependencies": {
-    "@babel/helper-plugin-utils": "^7.22.5",
+    "@babel/helper-plugin-utils": "^7.26.5",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
-    "@babel/plugin-proposal-decorators": "^7.23.6",
-    "@babel/preset-env": "^7.23.6",
-    "@babel/preset-react": "^7.23.3",
-    "@babel/preset-typescript": "^7.23.3",
-    "@pkgr/utils": "^3.0.0",
+    "@babel/plugin-proposal-decorators": "^7.25.9",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
+    "@babel/preset-typescript": "^7.26.0",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.4.0",
-    "@vue/babel-plugin-jsx": "^1.1.5",
+    "@vue/babel-plugin-jsx": "^1.3.0",
     "@vue/babel-preset-jsx": "^1.4.0",
     "babel-plugin-import": "^1.13.8",
     "babel-plugin-transform-async-to-promises": "^0.8.18",
@@ -29,7 +35,7 @@
     "babel-plugin-transform-remove-console": "^6.9.4",
     "babel-plugin-transform-typescript-metadata": "^0.3.2",
     "babel-preset-proposal-typescript": "^4.0.0",
-    "core-js": "^3.35.0",
+    "core-js": "^3.41.0",
     "fast-async": "^7.0.6"
   },
   "publishConfig": {

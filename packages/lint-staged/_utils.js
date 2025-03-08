@@ -1,8 +1,8 @@
-const path = require('node:path')
+import path from 'node:path'
 
-const { isPkgAvailable, tryFile, tryPkg } = require('@pkgr/utils')
+import { isPkgAvailable, tryFile, tryPkg } from '@pkgr/utils'
 
-exports.tsconfig = path.relative(
+export const tsconfig = path.relative(
   process.cwd(),
   tryFile(path.resolve('tsconfig.staged.json')) ||
     tryFile(path.resolve('tsconfig.base.json')) ||
@@ -10,5 +10,5 @@ exports.tsconfig = path.relative(
     tryPkg('@1stg/tsconfig'),
 )
 
-exports.typeCoverage =
+export const typeCoverage =
   isPkgAvailable('type-coverage/bin/type-coverage') && 'type-coverage'

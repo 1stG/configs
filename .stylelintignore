@@ -2,6 +2,7 @@ coverage
 LICENSE
 *.cjs
 *.iml
+*.cjs
 *.js
 *.json
 *.jsonc
@@ -9,8 +10,10 @@ LICENSE
 *.jsx
 *.lock
 *.log
+*.mjs
+*.mts
 *.patch
-# TODE: make it work
+# TODO: make it work
 *.pug
 *.sh
 *.svg
