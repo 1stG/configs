@@ -1,5 +1,18 @@
 # Change Log
 
+## 11.0.0
+
+### Major Changes
+
+- [#284](https://github.com/1stG/configs/pull/284) [`db3b78b`](https://github.com/1stG/configs/commit/db3b78b29159200362727141931016fcd6a85846) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump all (dev) deps
+
+### Patch Changes
+
+- Updated dependencies [[`db3b78b`](https://github.com/1stG/configs/commit/db3b78b29159200362727141931016fcd6a85846)]:
+  - @1stg/browserslist-config@2.0.1
+  - @1stg/common-config@11.0.0
+  - @1stg/stylelint-config@6.0.1
+
 ## 10.0.1
 
 ### Patch Changes

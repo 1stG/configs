@@ -1,6 +1,6 @@
 {
   "name": "@1stg/stylelint-config",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "type": "module",
   "description": "Personal but Shareable Stylelint Configuration for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
@@ -23,7 +23,7 @@
     "stylelint": "^16.13.0"
   },
   "dependencies": {
-    "@1stg/config": "^0.2.2",
+    "@1stg/config": "^1.0.0",
     "@pkgr/core": "^0.1.1",
     "postcss-html": "^1.8.0",
     "postcss-less": "^6.0.0",
