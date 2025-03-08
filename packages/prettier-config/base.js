@@ -50,5 +50,12 @@ export default {
         parser: 'sh',
       },
     },
+    {
+      files: ['.changeset/*.md'],
+      excludeFiles: ['README.md'],
+      options: {
+        singleQuote: false,
+      },
+    },
   ],
 }
