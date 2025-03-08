@@ -1,5 +1,7 @@
 coverage
 LICENSE
+.type-coverage
+.*ignore
 *.cjs
 *.iml
 *.cjs
