@@ -1,4 +1,8 @@
-module.exports = {
+/**
+ * @import {Config} from 'stylelint'
+ * @type {Config}
+ */
+const base = {
   customSyntax: 'postcss-scss',
   plugins: ['stylelint-scss'],
   rules: {
@@ -11,7 +15,7 @@ module.exports = {
     'at-rule-no-unknown': null,
     'function-no-unknown': null,
     'scss/at-each-key-value-single-line': true,
-    'scss/at-import-partial-extension-blacklist': ['sass', 'scss'],
+    'scss/at-import-partial-extension-disallowed-list': ['sass', 'scss'],
     'scss/at-mixin-argumentless-call-parentheses': 'never',
     'scss/at-rule-no-unknown': true,
     'scss/comment-no-empty': true,
@@ -48,3 +52,5 @@ module.exports = {
     'scss/selector-no-redundant-nesting-selector': true,
   },
 }
+
+export default base

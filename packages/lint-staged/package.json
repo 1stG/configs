@@ -1,6 +1,7 @@
 {
   "name": "@1stg/lint-staged",
   "version": "4.0.0",
+  "type": "module",
   "description": "Personal but Shareable lint-staged Configuration for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
@@ -9,15 +10,23 @@
   "engines": {
     "node": "^12.20.0 || ^14.18.0 || >=16.0.0"
   },
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json",
+    "./ngc": "./ngc.js",
+    "./tsc": "./tsc.js",
+    "./vue-tsc": "./vue-tsc.js"
+  },
   "peerDependencies": {
-    "lint-staged": ">=10.0.0"
+    "lint-staged": ">=12.1.0"
   },
   "dependencies": {
     "@1stg/config": "^0.2.2",
-    "@1stg/prettier-config": "^4.0.0",
+    "@1stg/prettier-config": "^4.0.1",
     "@1stg/tsconfig": "^2.3.3",
-    "@pkgr/core": "^0.1.0",
-    "prettier": "^3.1.1"
+    "@pkgr/core": "^0.1.1",
+    "prettier": "^3.5.3"
   },
   "publishConfig": {
     "access": "public"

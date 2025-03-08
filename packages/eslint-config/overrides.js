@@ -1,28 +1,58 @@
-const path = require('node:path')
+// @ts-check
 
-const { jsoncFiles, nonJsonRcFiles, preferPrettier } = require('@1stg/config')
-const { isPkgAvailable, tryFile, tryPkg } = require('@pkgr/utils')
+/**
+ * @import {Linter} from 'eslint'
+ */
 
-const { isTsAvailable, magicNumbers, prettierExtends } = require('./_util')
+import path from 'node:path'
+
+import { jsoncFiles, nonJsonRcFiles, preferPrettier } from '@1stg/config'
+import babelParser from '@babel/eslint-parser'
+import babel from '@babel/eslint-plugin'
+import react_ from '@eslint-react/eslint-plugin'
+import { isPkgAvailable, tryFile, tryPkg } from '@pkgr/utils'
+import angular_ from 'angular-eslint'
+import angularTemplateParser from 'angular-eslint-template-parser'
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript'
+import eslintMdx from 'eslint-mdx'
+import importX from 'eslint-plugin-import-x'
+import jest_ from 'eslint-plugin-jest'
+import jsdoc from 'eslint-plugin-jsdoc'
+import jsonc_ from 'eslint-plugin-jsonc'
+import * as mdx_ from 'eslint-plugin-mdx'
+import * as reactHooks_ from 'eslint-plugin-react-hooks'
+import toml_ from 'eslint-plugin-toml'
+import vue_ from 'eslint-plugin-vue'
+import yml_ from 'eslint-plugin-yml'
+import tseslint from 'typescript-eslint'
+import vueParser from 'vue-eslint-parser'
+
+import { isTsAvailable, magicNumbers, prettierExtends } from './_util.js'
 
 const configFile =
   tryFile(path.resolve('babel.config.js')) ||
   tryFile(path.resolve('.babelrc.js')) ||
   tryPkg('@1stg/babel-preset/config')
 
+/**
+ * @satisfies {Linter.Config}
+ */
 const jsBase = {
-  files: ['*.cjs', '*.mjs', '*.js', '*.jsx'],
-  parser: '@babel/eslint-parser',
-  parserOptions: configFile
-    ? {
-        babelOptions: {
-          configFile,
-        },
-      }
-    : {
-        requireConfigFile: false,
-      },
-  plugins: ['@babel'],
+  name: '@1stg/js-base',
+  files: ['**/*.cjs', '**/*.mjs', '**/*.js', '**/*.jsx'],
+  languageOptions: {
+    parser: babelParser,
+    parserOptions: configFile
+      ? {
+          babelOptions: {
+            configFile,
+          },
+        }
+      : { requireConfigFile: false },
+  },
+  plugins: {
+    '@babel': babel,
+  },
   rules: {
     camelcase: [
       2,
@@ -40,9 +70,12 @@ const jsBase = {
   },
 }
 
-exports.js = {
+const jsdocConfig = jsdoc.configs['flat/recommended']
+
+export const js = tseslint.config({
   ...jsBase,
-  extends: ['plugin:jsdoc/recommended'],
+  name: '@1stg/js',
+  extends: [jsdocConfig],
   rules: {
     ...jsBase.rules,
     'jsdoc/require-jsdoc': 0,
@@ -62,7 +95,7 @@ exports.js = {
         },
       }
     : undefined,
-}
+})
 
 const project =
   tryFile(path.resolve('tsconfig.eslint.json')) ||
@@ -71,29 +104,32 @@ const project =
   tryPkg('@1stg/tsconfig')
 
 const resolveSettings = {
-  'import/external-module-folders': [
+  'import-x/external-module-folders': [
     'node_modules',
     'node_modules/@d-ts',
     'node_modules/@types',
   ],
-  'import/resolver': {
-    typescript: {
+  'import-x/resolver-next': [
+    createTypeScriptImportResolver({
       alwaysTryTypes: true,
+      project,
+    }),
+  ],
+}
+
+const tsBase = tseslint.config({
+  name: '@1stg/ts-base',
+  files: ['**/*.cts', '**/*.mts', '**/*.ts', '**/*.tsx'],
+  languageOptions: {
+    parserOptions: {
       project,
     },
   },
-}
-
-const tsBase = {
-  files: ['*.cts', '*.mts', '*.ts', '*.tsx'],
-  parserOptions: {
-    project,
-  },
   extends: [
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:import/typescript',
-    ...prettierExtends,
+    tseslint.configs.eslintRecommended,
+    tseslint.configs.recommended,
+    importX.flatConfigs.typescript,
+    prettierExtends,
   ],
   settings: resolveSettings,
   rules: {
@@ -105,14 +141,6 @@ const tsBase = {
       },
     ],
     '@typescript-eslint/ban-ts-comment': 0,
-    '@typescript-eslint/ban-types': [
-      2,
-      {
-        types: {
-          object: false,
-        },
-      },
-    ],
     '@typescript-eslint/consistent-type-definitions': [2, 'interface'],
     '@typescript-eslint/explicit-function-return-type': 0,
     '@typescript-eslint/explicit-member-accessibility': [
@@ -126,7 +154,8 @@ const tsBase = {
     ],
     '@typescript-eslint/explicit-module-boundary-types': 0,
     '@typescript-eslint/member-ordering': 2,
-    '@typescript-eslint/naming-convention': 0, // TODO: find better config
+    // eslint-disable-line sonarjs/todo-tag -- TODO: find better config
+    '@typescript-eslint/naming-convention': 0,
     '@typescript-eslint/no-empty-function': 2,
     '@typescript-eslint/no-extraneous-class': [
       2,
@@ -174,12 +203,12 @@ const tsBase = {
     ],
     '@typescript-eslint/unified-signatures': 2,
     camelcase: 0,
-    'import/default': 0,
-    'import/named': 0,
-    'import/namespace': 0,
-    'import/no-duplicates': 2,
-    'import/no-named-as-default': 0,
-    'import/no-named-as-default-member': 0,
+    'import-x/default': 0,
+    'import-x/named': 0,
+    'import-x/namespace': 0,
+    'import-x/no-duplicates': 2,
+    'import-x/no-named-as-default': 0,
+    'import-x/no-named-as-default-member': 0,
     'no-empty-function': 0,
     'no-restricted-syntax': [
       2,
@@ -204,26 +233,31 @@ const tsBase = {
     // covered by @typescript-eslint/no-this-alias
     'unicorn/no-this-assignment': 0,
   },
-}
+})
 
-exports.ts = [
+export const ts = tseslint.config(
   tsBase,
   {
-    files: '{bin,cli}.ts',
+    name: '@1stg/cli',
+    files: ['**/{bin,cli}.ts'],
     rules: {
       'n/shebang': 0,
     },
   },
   {
-    files: '**/*.{md,mdx}/**/*.{cts,mts,ts,tsx}',
-    parserOptions: {
-      project: null,
+    name: '@1stg/code-block',
+    files: ['**/*.{md,mdx}/**/*.{cts,mts,ts,tsx}'],
+    languageOptions: {
+      parserOptions: {
+        project: null,
+      },
     },
   },
   {
-    files: '*.{cts,mts,ts,tsx}',
-    excludedFiles: ['**/*.{md,mdx}/**/*.{cts,mts,ts,tsx}', '*.d.{cts,mts,ts}'],
-    extends: ['plugin:@typescript-eslint/recommended-requiring-type-checking'],
+    name: '@1stg/ts',
+    files: ['**/*.{cts,mts,ts,tsx}'],
+    ignores: ['**/*.{md,mdx}/**/*.{cts,mts,ts,tsx}', '*.d.{cts,mts,ts}'],
+    extends: [tseslint.configs.recommendedTypeChecked],
     rules: {
       '@typescript-eslint/no-floating-promises': [
         2,
@@ -260,100 +294,119 @@ exports.ts = [
       'no-magic-numbers': 0,
     },
   },
-]
+)
 
-exports.dTs = {
-  files: ['*.d.cts', '*.d.mts', '*.d.ts'],
+/**
+ * @type {Linter.Config}
+ */
+export const dTs = {
+  name: '@1stg/d-ts',
+  files: ['**/*.d.cts', '**/*.d.mts', '**/*.d.ts'],
   rules: {
     '@typescript-eslint/no-explicit-any': 0,
     '@typescript-eslint/no-extraneous-class': 0,
     '@typescript-eslint/no-namespace': 0,
     '@typescript-eslint/no-unused-vars': 0,
-    'import/no-duplicates': 0,
-    'import/order': 0,
+    'import-x/no-duplicates': 0,
+    'import-x/order': 0,
   },
 }
 
-const reactJsx = {
-  extends: ['standard-react', 'plugin:react/recommended', ...prettierExtends],
+const reactJsx = tseslint.config({
+  name: '@1stg/react-jsx',
+  extends: [react_.configs.recommended, prettierExtends],
   settings: {
     react: {
       version: 'detect',
     },
   },
-}
+})
 
-exports.react = [
+export const react = tseslint.config(
   {
-    files: '*.{js,jsx,tsx}',
+    name: '@1stg/react',
+    files: ['**/*.{js,jsx,tsx}'],
+    extends: [reactJsx],
     rules: {
-      'react/jsx-boolean-value': [2, 'always'],
-      'react/jsx-handler-names': [
-        2,
-        {
-          eventHandlerPrefix: false,
-          eventHandlerPropPrefix: 'on',
-        },
-      ],
-      'sonar/function-name': isTsAvailable
-        ? [2, { format: '^_?[a-zA-Z][a-zA-Z0-9]*\\$?$' }]
+      '@eslint-react/avoid-shorthand-boolean': 2,
+      // '@eslint-react/naming-convention/handler-prop': [
+      //   2,
+      //   {
+      //     eventHandlerPrefix: false,
+      //     eventHandlerPropPrefix: 'on',
+      //   },
+      // ],
+      'sonarjs/function-name': isTsAvailable
+        ? [2, { format: String.raw`^_?[a-zA-Z][a-zA-Z0-9]*\$?$` }]
         : 0,
     },
-    ...reactJsx,
   },
   {
-    files: '*.tsx',
+    name: '@1stg/react-tsx',
+    files: ['**/*.tsx'],
     rules: {
-      'react/display-name': 0,
+      '@eslint-react/display-name': 0,
     },
   },
-]
-
-exports.reactHooks = {
-  files: '*.{js,jsx,ts,tsx}',
-  plugins: ['react-hooks'],
-  rules: {
-    'react-hooks/rules-of-hooks': 2,
-    'react-hooks/exhaustive-deps': 2,
+  {
+    name: '@1stg/react-hooks',
+    files: ['**/*.{js,jsx,ts,tsx}'],
+    plugins: { 'react-hooks': reactHooks_ },
+    rules: {
+      'react-hooks/rules-of-hooks': 2,
+      'react-hooks/exhaustive-deps': 2,
+    },
   },
-}
-
-exports.reactTs = {
-  files: '*.{ts,tsx}',
-  rules: {
-    'no-restricted-imports': [2, 'prop-types'],
-    'react/prop-types': 0,
+  {
+    name: '@1stg/react-ts',
+    files: ['**/*.{ts,tsx}'],
+    rules: {
+      'no-restricted-imports': [2, 'prop-types'],
+      '@eslint-react/prop-types': 0,
+    },
   },
-}
+)
 
-const vueExtends = ['plugin:vue/recommended', ...prettierExtends]
+const vueExtends = tseslint.config(
+  vue_.configs['flat/recommended'],
+  prettierExtends,
+)
 
-exports.vue = [
+export const vue = tseslint.config(
   {
     ...jsBase,
-    files: [...jsBase.files, !isTsAvailable && '*.vue'].filter(Boolean),
-    parser: 'vue-eslint-parser',
-    parserOptions: {
-      ...jsBase.parserOptions,
-      parser: jsBase.parser,
+    name: '@1stg/js-vue',
+    files: /** @type {string[]} */ (
+      [...jsBase.files, !isTsAvailable && '**/*.vue'].filter(Boolean)
+    ),
+    languageOptions: {
+      parser: vueParser,
+      parserOptions: {
+        parser: babelParser,
+        ...jsBase.languageOptions.parserOptions,
+      },
     },
     extends: vueExtends,
   },
-  isTsAvailable && {
-    ...tsBase,
-    files: [...tsBase.files, '*.vue'],
-    parser: 'vue-eslint-parser',
-    parserOptions: {
-      parser: '@typescript-eslint/parser',
-      extraFileExtensions: ['.vue'],
-    },
-    extends: [...tsBase.extends, ...vueExtends],
-  },
+  isTsAvailable
+    ? {
+        name: '@1stg/ts-vue',
+        extends: [...tsBase, ...vueExtends],
+        files: [.../** @type {string[]} */ (tsBase[0].files), '**/*.vue'],
+        languageOptions: {
+          parser: vueParser,
+          parserOptions: {
+            parser: tseslint.parser,
+            extraFileExtensions: ['.vue'],
+          },
+        },
+      }
+    : [],
   {
-    files: '*.vue',
+    name: '@1stg/vue',
+    files: ['**/*.vue'],
     extends: [
-      // eslint-disable-next-line sonarjs/no-duplicate-string
-      'plugin:markup/recommended',
+      // 'plugin:markup/recommended',
       ...vueExtends,
     ],
     rules: {
@@ -361,59 +414,33 @@ exports.vue = [
       '@typescript-eslint/no-unused-vars': 0,
     },
   },
-].filter(Boolean)
+)
 
-const svelteBase = {
-  files: '*.svelte',
-  extends: [
-    'plugin:markup/recommended',
-    'plugin:svelte/recommended',
-    'plugin:svelte/prettier',
-    ...prettierExtends,
-  ],
-  rules: {
-    'sonar/label-position': 0,
-    'sonar/no-labels': 0,
-  },
-}
-
-exports.svelte = isTsAvailable
-  ? {
-      ...tsBase,
-      ...svelteBase,
-      parserOptions: {
-        extraFileExtensions: ['.svelte'],
-      },
-    }
-  : {
-      ...jsBase,
-      ...svelteBase,
-    }
-
-exports.angular = [
+export const angular = tseslint.config(
   {
-    files: '*.ts',
-    excludedFiles: '*.d.ts',
-    parserOptions: {
-      project,
+    files: ['**/*.ts'],
+    ignores: ['**/*.d.ts'],
+    languageOptions: {
+      parserOptions: {
+        project,
+      },
     },
-    extends: [
-      'plugin:@angular-eslint/recommended',
-      'plugin:@angular-eslint/template/process-inline-templates',
-      ...prettierExtends,
-    ],
+    extends: [angular_.configs.tsRecommended, prettierExtends],
+    processor: angular_.processInlineTemplates,
     rules: {
       '@angular-eslint/prefer-on-push-component-change-detection': 1,
     },
   },
   {
-    files: '*.html',
+    files: ['**/*.html'],
     extends: [
-      'plugin:@angular-eslint/template/recommended',
-      'plugin:markup/recommended',
-      ...prettierExtends,
+      angular_.configs.templateRecommended,
+      // 'plugin:markup/recommended',
+      prettierExtends,
     ],
-    parser: 'angular-eslint-template-parser',
+    languageOptions: {
+      parser: angularTemplateParser,
+    },
     rules: {
       '@angular-eslint/template/eqeqeq': [
         2,
@@ -421,149 +448,187 @@ exports.angular = [
           allowNullOrUndefined: true,
         },
       ],
-      'prettier/prettier': [
-        preferPrettier ? 0 : 2,
-        {
-          parser: 'angular',
-        },
-      ],
+      'prettier/prettier': preferPrettier ? 0 : [2, { parser: 'angular' }],
       'spaced-comment': 0,
     },
   },
   {
-    files: '*inline-template-*.component.html',
+    files: ['**/*inline-template-*.component.html'],
     rules: {
       'unicorn/no-empty-file': 0,
     },
   },
-]
+)
 
-exports.markup = [
+/* eslint-disable sonarjs/no-commented-code */
+// export const markup = [
+//   {
+//     files: '**/*.html',
+//     extends: 'plugin:markup/recommended',
+//     rules: {
+//       'prettier/prettier': [
+//         preferPrettier ? 0 : 2,
+//         {
+//           parser: 'html',
+//         },
+//       ],
+//     },
+//   },
+//   {
+//     files: '**/*.pug',
+//     extends: ['plugin:markup/recommended', ...prettierExtends],
+//   },
+// ]
+/* eslint-enable sonarjs/no-commented-code */
+
+export const md = tseslint.config(
   {
-    files: '*.html',
-    extends: 'plugin:markup/recommended',
+    name: '@1stg/md',
+    files: ['**/*.md'],
+    extends: [mdx_.configs.flat],
     rules: {
-      'prettier/prettier': [
-        preferPrettier ? 0 : 2,
-        {
-          parser: 'html',
-        },
-      ],
+      'prettier/prettier': preferPrettier ? 0 : 2,
     },
   },
+  mdx_.configs.flatCodeBlocks,
+)
+
+export const mdx = tseslint.config(
   {
-    files: '*.pug',
-    extends: ['plugin:markup/recommended', ...prettierExtends],
+    name: '@1stg/mdx',
+    files: ['**/*.mdx'],
+    extends: [reactJsx, mdx_.configs.flat],
+    languageOptions: {
+      ...jsBase.languageOptions,
+      parser: eslintMdx,
+    },
+    settings: { ...reactJsx[0].settings, ...resolveSettings },
+    rules: {
+      'prettier/prettier': preferPrettier ? 0 : 2,
+    },
   },
-]
+  mdx_.configs.flatCodeBlocks,
+)
 
-exports.md = {
-  files: '*.md',
-  extends: ['plugin:mdx/recommended'],
-  rules: {
-    'prettier/prettier': preferPrettier ? 0 : 2,
-  },
-}
-
-exports.mdx = {
-  files: '*.mdx',
-  extends: [...reactJsx.extends, 'plugin:mdx/recommended'],
-  parserOptions: jsBase.parserOptions,
-  settings: { ...reactJsx.settings, ...resolveSettings },
-  rules: {
-    'prettier/prettier': preferPrettier ? 0 : 2,
-  },
-}
-
-const nonSourceRules = {
+const nonSourceRules = /** @type {const} */ ({
   'n/no-extraneous-import': 0,
   'n/no-extraneous-require': 0,
   'n/no-unsupported-features/es-builtins': 0,
-}
+})
 
-exports.test = {
-  files: '**/{__test__,test,tests}/**/*',
+/**
+ * @type {Linter.Config}
+ */
+export const test = {
+  name: '@1stg/test',
+  files: ['**/{__test__,test,tests}/**/*'],
   rules: nonSourceRules,
 }
 
-exports.jest = {
-  files: '*.{spec,test}.{js,jsx,ts,tsx}',
-  extends: ['plugin:jest/recommended'],
-  rules: exports.test.rules,
-}
+export const tests = test
 
-exports.script = exports.scripts = {
-  files: '**/scripts/**/*',
+export const jest = tseslint.config({
+  name: '@1stg/jest',
+  files: ['**/*.{spec,test}.{js,jsx,ts,tsx}'],
+  extends: [jest_.configs['flat/recommended']],
+  rules: test.rules,
+})
+
+/**
+ * @type {Linter.Config}
+ */
+export const script = {
+  name: '@1stg/script',
+  files: ['**/scripts/**/*'],
   rules: nonSourceRules,
 }
 
-exports.story = exports.stories = {
+export const scripts = script
+
+/**
+ * @type {Linter.Config}
+ */
+export const story = {
+  name: '@1stg/story',
   files: ['**/.storybook/**/*', '**/stories/**/*'],
   rules: nonSourceRules,
 }
 
-exports.config = exports.configs = {
-  files: ['.*.js', '*.config.{js,ts}'],
+export const stories = story
+
+/**
+ * @type {Linter.Config}
+ */
+export const config = {
+  name: '@1stg/config',
+  files: ['**/.*.js', '**/*.config.{js,ts}'],
   rules: nonSourceRules,
 }
 
-exports.json = {
-  files: ['.*rc', '*.json'],
-  excludedFiles: [...nonJsonRcFiles, ...jsoncFiles],
+export const configs = config
+
+export const json = tseslint.config({
+  name: '@1stg/json',
+  files: ['**/.*rc', '**/*.json'],
+  ignores: [...nonJsonRcFiles, ...jsoncFiles],
   extends: [
-    'plugin:jsonc/recommended-with-json',
-    // eslint-disable-next-line sonarjs/no-duplicate-string
-    'plugin:jsonc/prettier',
+    jsonc_.configs['flat/recommended-with-json'],
+    jsonc_.configs['flat/prettier'],
   ],
-}
+})
 
-exports.jsonc = {
+export const jsonc = tseslint.config({
+  name: '@1stg/jsonc',
   files: jsoncFiles,
-  extends: ['plugin:jsonc/recommended-with-jsonc', 'plugin:jsonc/prettier'],
-}
+  extends: [
+    jsonc_.configs['flat/recommended-with-jsonc'],
+    jsonc_.configs['flat/prettier'],
+  ],
+})
 
-exports.json5 = {
-  files: '*.json5',
-  extends: ['plugin:jsonc/recommended-with-json5', 'plugin:jsonc/prettier'],
-}
+export const json5 = tseslint.config({
+  name: '@1stg/json5',
+  files: ['**/*.json5'],
+  extends: [
+    jsonc_.configs['flat/recommended-with-json5'],
+    jsonc_.configs['flat/prettier'],
+  ],
+})
 
-exports.toml = {
-  files: '*.toml',
-  extends: ['plugin:toml/recommended'],
-}
+export const toml = tseslint.config({
+  name: '@1stg/toml',
+  files: ['**/*.toml'],
+  extends: [toml_.configs['flat/recommended']],
+})
 
-exports.yml = exports.yaml = {
-  files: ['*.yml', '*.yaml'],
-  extends: ['plugin:yml/recommended', 'plugin:yml/prettier'],
-}
+export const yaml = tseslint.config({
+  files: ['**/*.yml', '**/*.yaml'],
+  extends: [yml_.configs['flat/recommended'], yml_.configs['flat/prettier']],
+})
+
+export const yml = yaml
 
 const isReactAvailable = isPkgAvailable('react')
 
-exports.overrides = []
-  // eslint-disable-next-line unicorn/prefer-spread
-  .concat(
-    isPkgAvailable('@babel/core') && exports.js,
-    isTsAvailable && exports.ts,
-    isReactAvailable && exports.react,
-    isReactAvailable && exports.reactHooks,
-    isReactAvailable && isTsAvailable && exports.reactTs,
-    // The order matters, the later should to be preferred
-    exports.markup,
-    isPkgAvailable('@angular/core') && exports.angular,
-    isPkgAvailable('vue') && exports.vue,
-    isPkgAvailable('svelte') && exports.svelte,
-    exports.md,
-    exports.mdx,
-    isPkgAvailable('jest') && exports.jest,
-    exports.test,
-    exports.scripts,
-    exports.stories,
-    exports.configs,
-    exports.dTs,
-    exports.json,
-    exports.jsonc,
-    exports.json5,
-    exports.toml,
-    exports.yaml,
-  )
-  .filter(Boolean)
+export const overrides = tseslint.config(
+  isPkgAvailable('@babel/core') ? js : [],
+  isTsAvailable ? ts : [],
+  isReactAvailable ? react : [],
+  // The order matters, the later should to be preferred
+  // markup,
+  isPkgAvailable('vue') ? vue : [],
+  isPkgAvailable('@angular/core') ? angular : [],
+  md,
+  mdx,
+  isPkgAvailable('jest') ? jest : [],
+  test,
+  scripts,
+  stories,
+  configs,
+  dTs,
+  json,
+  jsonc,
+  json5,
+  toml,
+  yaml,
+)

@@ -13,7 +13,9 @@ $a: 1 !default;
 
 @if (true) {
   $a: 2 !default;
-} @else {
+}
+// stylelint-disable-next-line plugin/no-unsupported-browser-features -- testing
+@else {
   $a: 3 !default;
 }
 

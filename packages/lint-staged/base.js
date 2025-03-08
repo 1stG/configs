@@ -1,5 +1,5 @@
-const { preferPrettier } = require('@1stg/config')
-const { isPkgAvailable } = require('@pkgr/core')
+import { preferPrettier } from '@1stg/config'
+import { isPkgAvailable } from '@pkgr/core'
 
 const isEslintAvailable = isPkgAvailable('eslint')
 const isStylelintAvailable = isPkgAvailable('stylelint')
@@ -8,8 +8,8 @@ const useEslintPrettier = isEslintAvailable && !preferPrettier
 const useStylelintPrettier = isStylelintAvailable && !preferPrettier
 
 const ESLINT_PRETTIER_FILES =
-  'cjs,cts,js,json,jsonc,json5,jsx,html,md,mdx,mjs,mts,pug,svelte,toml,ts,tsx,vue,yaml,yml'
-const STYLELINT_PRETTIER_FILES = 'css,less,sass,scss,styl,stylus,svelte,vue'
+  'cjs,cts,js,json,jsonc,json5,jsx,html,md,mdx,mjs,mts,pug,toml,ts,tsx,vue,yaml,yml'
+const STYLELINT_PRETTIER_FILES = 'css,less,sass,scss,styl,stylus,vue'
 
 const config = [
   `*.{*sh,env,env.*,gql,ini,properties,rb${
@@ -20,7 +20,6 @@ const config = [
 ].reduce(
   (acc, files) =>
     Object.assign(acc, {
-      // eslint-disable-next-line sonarjs/no-duplicate-string
       [files]: 'prettier --write',
     }),
   {},
@@ -46,4 +45,4 @@ if (isPkgAvailable('@pkgr/imagemin')) {
   config['*.{gif,jpeg,jpg,png,svg,webp}'] = 'i'
 }
 
-module.exports = config
+export default config

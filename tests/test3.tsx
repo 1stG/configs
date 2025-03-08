@@ -1,8 +1,9 @@
 import { PureComponent, useState } from 'react'
 
 export default class Test extends PureComponent {
-  static a = 1
+  static readonly a = 1
 
+  // eslint-disable-next-line @eslint-react/no-unused-class-component-members -- testing
   b?: string
 
   override render() {

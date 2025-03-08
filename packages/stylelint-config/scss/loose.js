@@ -1,6 +1,10 @@
-const base = require('./base')
+import base from './base.js'
 
-module.exports = {
+/**
+ * @import {Config} from 'stylelint'
+ * @type {Config}
+ */
+const loose = {
   ...base,
   rules: {
     ...base.rules,
@@ -10,3 +14,5 @@ module.exports = {
     'scss/selector-nest-combinators': null,
   },
 }
+
+export default loose

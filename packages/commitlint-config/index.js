@@ -1,16 +1,16 @@
-const conventionalConfig = require('@commitlint/config-conventional')
-const lernaScopesConfig = require('@commitlint/config-lerna-scopes')
-const { isPkgAvailable } = require('@pkgr/utils')
+import conventionalConfig from '@commitlint/config-conventional'
+import workspaceScopesConfig from '@commitlint/config-workspace-scopes'
+import { isMonorepo } from '@pkgr/utils'
 
 const MERGE_PROPERTIES = ['rules', 'utils']
 
-module.exports = isPkgAvailable('lerna')
+export default isMonorepo()
   ? {
       ...conventionalConfig,
       ...MERGE_PROPERTIES.reduce((config, property) => {
         config[property] = {
           ...conventionalConfig[property],
-          ...lernaScopesConfig[property],
+          ...workspaceScopesConfig[property],
         }
         return config
       }, {}),

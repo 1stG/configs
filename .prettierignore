@@ -1,1 +1,4 @@
+.yarn
 coverage
+# We minify SVGs
+**/*.svg

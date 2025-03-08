@@ -8,11 +8,11 @@
   "funding": "https://www.patreon.com/1stG",
   "license": "MIT",
   "engines": {
-    "node": "^14.18.0 || >=16.0.0"
+    "node": ">=18.18"
   },
   "dependencies": {
     "@1stg/common-config": "^10.0.0",
-    "@pkgr/rollup": "^5.0.0"
+    "@pkgr/rollup": "^6.0.0"
   },
   "publishConfig": {
     "access": "public"

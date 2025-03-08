@@ -1,15 +1,25 @@
-const path = require('node:path')
+// @ts-check
 
-const { preferPrettier } = require('@1stg/config')
-const {
+import path from 'node:path'
+
+import { preferPrettier } from '@1stg/config'
+import {
   isMonorepo,
   isPkgAvailable,
   getMonorepoPkgs,
   tryRequirePkg,
-} = require('@pkgr/utils')
+} from '@pkgr/utils'
+import configPrettier from 'eslint-config-prettier'
+import prettierRecommended from 'eslint-plugin-prettier/recommended'
+import tseslint from 'typescript-eslint'
+
+/**
+ * @type {string[]}
+ */
+let allowModules = []
 
 if (isMonorepo()) {
-  exports.allowModules = getMonorepoPkgs().reduce((acc, pkg) => {
+  allowModules = getMonorepoPkgs().reduce((acc, pkg) => {
     const pkgJson = tryRequirePkg(path.resolve(pkg, 'package.json'))
     if (!pkgJson) {
       return acc
@@ -21,15 +31,16 @@ if (isMonorepo()) {
       Object.keys(peerDependencies),
       Object.keys(dependencies),
     )
-  }, [])
+  }, /** @type {string[]} */ ([]))
 }
 
-exports.isTsAvailable = isPkgAvailable('typescript')
+export { allowModules }
 
-exports.isWebpackAvailable = isPkgAvailable('webpack')
+export const isTsAvailable = isPkgAvailable('typescript')
 
-// https://webpack.js.org/api/module-variables/#__resourcequery-webpack-specific
-exports.webpackSpecVars = [
+export const isWebpackAvailable = isPkgAvailable('webpack')
+
+export const webpackSpecVars = [
   '__non_webpack_require__',
   '__resourceQuery',
   '__webpack_chunk_load__',
@@ -42,11 +53,11 @@ exports.webpackSpecVars = [
   'DEBUG',
 ]
 
-exports.magicNumbers = [
+export const magicNumbers = [
   -1, 0, 1, 2, 3, 5, 7, 10, 12, 15, 20, 24, 30, 31, 50, 60, 100, 365, 366, 500,
   768, 1000, 1024, 3600, 4200, 8080,
 ]
 
-exports.prettierExtends = preferPrettier
-  ? ['prettier']
-  : ['plugin:prettier/recommended']
+export const prettierExtends = tseslint.config(
+  preferPrettier ? configPrettier : prettierRecommended,
+)

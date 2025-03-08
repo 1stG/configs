@@ -4,16 +4,23 @@ on:
   - push
   - pull_request
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   ci:
     name: Lint and Test with Node.js ${{ matrix.node }}
     strategy:
       matrix:
         node:
-          - 16
           - 18
           - 20
+          - 22
+      fail-fast: false
     runs-on: ubuntu-latest
+    env:
+      YARN_IGNORE_NODE: 1
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
@@ -25,12 +32,12 @@ jobs:
           cache: yarn
 
       - name: Install Dependencies
-        run: yarn --frozen-lockfile --ignore-engines
+        run: yarn --immutable
 
       - name: Check, Lint and test
         run: |
-          yarn run check
-          yarn browserslist
+          yarn check
+          yarn dlx browserslist
           yarn lint
           yarn test
         env:
@@ -38,7 +45,7 @@ jobs:
           PARSER_NO_WATCH: true
 
       - name: Check Postcss
-        run: npx postcss-cli tests/test.css --verbose
+        run: yarn dlx -p postcss -p postcss-cli postcss tests/test.css --verbose
         env:
           NODE_ENV: production
 

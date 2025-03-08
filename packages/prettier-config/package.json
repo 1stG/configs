@@ -8,21 +8,31 @@
   "funding": "https://www.patreon.com/1stG",
   "license": "MIT",
   "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json",
+    "./next": "./next.js",
+    "./quote": "./quote.js",
+    "./vue": "./vue.js",
+    "./semi": "./semi/index.js",
+    "./semi/next": "./semi/next.js",
+    "./semi/quote": "./semi/quote.js",
+    "./semi/vue": "./semi/vue.js"
+  },
   "peerDependencies": {
-    "prettier": ">=1.18.0"
+    "prettier": "^3.0.0"
   },
   "dependencies": {
     "@1stg/config": "^0.2.2",
-    "@prettier/plugin-pug": "^3.0.0",
+    "@prettier/plugin-pug": "^3.2.1",
     "@prettier/plugin-ruby": "^4.0.4",
-    "@prettier/plugin-xml": "^3.2.2",
-    "prettier-plugin-ini": "^1.1.0",
-    "prettier-plugin-pkg": "^0.18.0",
+    "@prettier/plugin-xml": "^3.4.1",
+    "prettier-plugin-ini": "^1.3.0",
+    "prettier-plugin-pkg": "^0.18.1",
     "prettier-plugin-properties": "^0.3.0",
-    "prettier-plugin-sh": "^0.13.1",
+    "prettier-plugin-sh": "^0.15.0",
     "prettier-plugin-stylus": "^0.1.0",
-    "prettier-plugin-svelte": "^3.1.2",
-    "prettier-plugin-toml": "^2.0.1"
+    "prettier-plugin-toml": "^2.0.2"
   },
   "publishConfig": {
     "access": "public"

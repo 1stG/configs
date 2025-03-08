@@ -1,7 +1,8 @@
-const { tsconfig, typeCoverage } = require('./_utils')
+import { tsconfig, typeCoverage } from './_utils'
+import base from './base.js'
 
-module.exports = {
-  ...require('./base'),
+export default {
+  ...base,
   '*.{html,ts}': () => `ngc -p ${tsconfig} --noEmit`,
   '*.ts?(x)': () => [typeCoverage].filter(Boolean),
 }

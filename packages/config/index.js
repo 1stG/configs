@@ -1,27 +1,27 @@
-exports.iniRcFiles = ['.npmrc']
+export const iniRcFiles = ['**/.npmrc']
 
-exports.shRcFiles = ['.*shrc']
+export const shRcFiles = ['**/.*shrc', '**/.env.*']
 
-exports.nonJsonRcFiles = [
-  ...exports.iniRcFiles,
-  ...exports.shRcFiles,
-  '.browserslistrc',
-  '.nvmrc',
+export const nonJsonRcFiles = [
+  ...iniRcFiles,
+  ...shRcFiles,
+  '**/.browserslistrc',
+  '**/.nvmrc',
 ]
 
-exports.jsoncFiles = [
-  '*.code-workspace',
-  'angular.json',
-  'jsconfig.json',
-  'ng-package.json',
-  'ng-package.*.json',
-  'nx.json',
-  'project.json',
-  'tsconfig.json',
-  'tsconfig.*.json',
-  '.vscode/*.json',
+export const jsoncFiles = [
+  '**/*.code-workspace',
+  '**/angular.json',
+  '**/jsconfig.json',
+  '**/ng-package.json',
+  '**/ng-package.*.json',
+  '**/nx.json',
+  '**/project.json',
+  '**/tsconfig.json',
+  '**/tsconfig.*.json',
+  '**/.vscode/*.json',
 ]
 
-exports.preferPrettier = !['0', 'false', undefined].includes(
+export const preferPrettier = !['0', 'false', undefined].includes(
   process.env.CONFIG_PREFER_PRETTIER,
 )
