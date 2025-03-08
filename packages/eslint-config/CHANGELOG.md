@@ -1,5 +1,11 @@
 # Change Log
 
+## 8.0.2
+
+### Patch Changes
+
+- [#287](https://github.com/1stG/configs/pull/287) [`2e8cd60`](https://github.com/1stG/configs/commit/2e8cd6022280ae171c6811809eb52ede18056270) Thanks [@JounQin](https://github.com/JounQin)! - chore: add back angular related configs
+
 ## 8.0.1
 
 ### Patch Changes
