@@ -1,5 +1,9 @@
 const { NODE_ENV, __DEV__, __PROD__ } = require('@pkgr/utils')
 
+/**
+ * @import {ConfigFn, ConfigPlugin} from 'postcss-load-config'
+ * @type {ConfigFn}
+ */
 const config = ({
   advanced,
   env = NODE_ENV,
@@ -10,6 +14,9 @@ const config = ({
   url,
   ...options
 } = {}) => {
+  /**
+   * @type {ConfigPlugin[]}
+   */
   const plugins = [
     require('postcss-preset-env')(presetEnv),
     require('postcss-import')(importOptions),
