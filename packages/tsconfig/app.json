@@ -2,6 +2,7 @@
   "$schema": "http://json.schemastore.org/tsconfig",
   "extends": "./tsconfig.json",
   "compilerOptions": {
+    "allowArbitraryExtensions": true,
     "lib": [
       "DOM",
       "ESNext"

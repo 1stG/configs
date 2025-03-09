@@ -3,7 +3,7 @@ import path from 'node:path'
 import { promisify } from 'node:util'
 
 import { interval } from 'rxjs'
-import { Position } from 'unist'
+import type { Position } from 'unist'
 
 // eslint-disable-next-line sonarjs/deprecation -- testing
 import { content, TestCase } from './_test'
