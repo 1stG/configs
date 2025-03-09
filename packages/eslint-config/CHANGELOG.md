@@ -1,5 +1,11 @@
 # Change Log
 
+## 8.0.6
+
+### Patch Changes
+
+- [`573339c`](https://github.com/1stG/configs/commit/573339ca20ad377341dbe70d7ab0e66d1714d81f) Thanks [@JounQin](https://github.com/JounQin)! - fix(eslint-config): add cjs/cts globals
+
 ## 8.0.5
 
 ### Patch Changes
