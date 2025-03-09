@@ -71,7 +71,7 @@ __metadata:
     "@1stg/commitlint-config": "npm:^5.0.0"
     "@1stg/eslint-config": "npm:^8.0.1"
     "@1stg/lint-staged": "npm:^4.0.2"
-    "@1stg/markuplint-config": "npm:^3.0.1"
+    "@1stg/markuplint-config": "npm:^4.0.0"
     "@1stg/prettier-config": "npm:^4.0.2"
     "@1stg/remark-preset": "npm:^2.0.0"
     "@1stg/simple-git-hooks": "npm:^0.2.4"
@@ -183,7 +183,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/markuplint-config@npm:^3.0.1, @1stg/markuplint-config@workspace:packages/markuplint-config":
+"@1stg/markuplint-config@npm:^4.0.0, @1stg/markuplint-config@workspace:packages/markuplint-config":
   version: 0.0.0-use.local
   resolution: "@1stg/markuplint-config@workspace:packages/markuplint-config"
   dependencies:

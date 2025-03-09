@@ -1,5 +1,12 @@
 # Change Log
 
+## 11.0.2
+
+### Patch Changes
+
+- Updated dependencies [[`d8762fa`](https://github.com/1stG/configs/commit/d8762fa1bb8cae4bbe04b850496deade59b2f3a9)]:
+  - @1stg/markuplint-config@4.0.0
+
 ## 11.0.1
 
 ### Patch Changes
