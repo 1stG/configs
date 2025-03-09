@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.0.3
+
+### Patch Changes
+
+- [#296](https://github.com/1stG/configs/pull/296) [`2cc92e1`](https://github.com/1stG/configs/commit/2cc92e1d26157ea1468a387cdee7fadd4aa0efc5) Thanks [@JounQin](https://github.com/JounQin)! - chore(remark-preset): bump major version
+
 ## 4.0.2
 
 ### Patch Changes
