@@ -1,5 +1,11 @@
 # Change Log
 
+## 8.0.4
+
+### Patch Changes
+
+- [#298](https://github.com/1stG/configs/pull/298) [`1412b26`](https://github.com/1stG/configs/commit/1412b266f8e007fa2530396a09ada57094f22c80) Thanks [@JounQin](https://github.com/JounQin)! - fix(eslint-config): ignore `auto-imports.d.ts`
+
 ## 8.0.3
 
 ### Patch Changes
