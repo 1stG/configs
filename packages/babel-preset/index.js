@@ -1,11 +1,6 @@
 /* eslint-disable sonarjs/cognitive-complexity */
 const { declare } = require('@babel/helper-plugin-utils')
-
-const tryRequirePkg = pkg => {
-  try {
-    return require(pkg)
-  } catch {}
-}
+const { tryRequirePkg } = require('@pkgr/utils')
 
 const DEFAULT_ANTD_OPTIONS = {
   libraryName: 'antd',

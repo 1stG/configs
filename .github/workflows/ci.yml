@@ -37,7 +37,7 @@ jobs:
       - name: Check, Lint and test
         run: |
           yarn check
-          yarn dlx browserslist
+          npx browserslist
           yarn lint
           yarn test
         env:
@@ -45,7 +45,7 @@ jobs:
           PARSER_NO_WATCH: true
 
       - name: Check Postcss
-        run: yarn dlx -p postcss -p postcss-cli postcss tests/test.css --verbose
+        run: npx postcss-cli postcss tests/test.css --verbose
         env:
           NODE_ENV: production
 

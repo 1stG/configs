@@ -85,6 +85,7 @@ export const base = tseslint.config([
           'newlines-between': 'always',
         },
       ],
+      'no-control-regex': 0, // replaced by sonarjs/no-control-regex
       'no-else-return': [
         2,
         {
