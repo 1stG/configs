@@ -1,5 +1,11 @@
 # Change Log
 
+## 8.0.5
+
+### Patch Changes
+
+- [#300](https://github.com/1stG/configs/pull/300) [`d513242`](https://github.com/1stG/configs/commit/d51324275b7769d3a525d0a56cb32d0b7b08f52c) Thanks [@JounQin](https://github.com/JounQin)! - chore: disable `no-control-regex` in favor of `sonarjs/no-control-regex`
+
 ## 8.0.4
 
 ### Patch Changes
