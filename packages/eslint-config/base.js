@@ -156,6 +156,7 @@ export const base = tseslint.config([
       'unicorn/prefer-module': 0,
       'unicorn/prefer-object-from-entries': 0,
       'unicorn/prevent-abbreviations': 0,
+      'unicorn/prefer-export-from': [2, { ignoreUsedVariables: true }],
     },
   },
   {

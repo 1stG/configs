@@ -29,13 +29,17 @@ import vueParser from 'vue-eslint-parser'
 
 import { isTsAvailable, magicNumbers, prettierExtends } from './_util.js'
 
+/**
+ * @import {TSESLint} from '@typescript-eslint/utils'
+ */
+
 const configFile =
   tryFile(path.resolve('babel.config.js')) ||
   tryFile(path.resolve('.babelrc.js')) ||
   tryPkg('@1stg/babel-preset/config')
 
 /**
- * @satisfies {Linter.Config}
+ * @satisfies {TSESLint.FlatConfig.Config}
  */
 const jsBase = {
   name: '@1stg/js-base',
@@ -296,7 +300,7 @@ export const ts = tseslint.config(
 )
 
 /**
- * @type {Linter.Config}
+ * @satisfies {TSESLint.FlatConfig.Config}
  */
 export const dTs = {
   name: '@1stg/d-ts',
@@ -518,7 +522,7 @@ const nonSourceRules = /** @type {const} */ ({
 })
 
 /**
- * @type {Linter.Config}
+ * @satisfies {TSESLint.FlatConfig.Config}
  */
 export const test = {
   name: '@1stg/test',
@@ -536,7 +540,7 @@ export const jest = tseslint.config({
 })
 
 /**
- * @type {Linter.Config}
+ * @satisfies {TSESLint.FlatConfig.Config}
  */
 export const script = {
   name: '@1stg/script',
@@ -547,7 +551,7 @@ export const script = {
 export const scripts = script
 
 /**
- * @type {Linter.Config}
+ * @satisfies {TSESLint.FlatConfig.Config}
  */
 export const story = {
   name: '@1stg/story',
@@ -558,7 +562,7 @@ export const story = {
 export const stories = story
 
 /**
- * @type {Linter.Config}
+ * @satisfies {TSESLint.FlatConfig.Config}
  */
 export const config = {
   name: '@1stg/config',
