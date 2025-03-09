@@ -35,6 +35,13 @@ export const base = tseslint.config([
   unicorn.configs.recommended,
   prettierExtends,
   {
+    name: '@1stg/node',
+    files: ['**/*.{cjs,cts}'],
+    languageOptions: {
+      globals: globals.node,
+    },
+  },
+  {
     name: '@1stg/base',
     plugins: {
       'simple-import-sort': simpleImportSort,
