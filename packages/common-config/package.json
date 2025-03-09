@@ -11,12 +11,12 @@
     "node": ">=18.18"
   },
   "dependencies": {
-    "@1stg/babel-preset": "^4.0.1",
+    "@1stg/babel-preset": "^4.0.2",
     "@1stg/commitlint-config": "^5.0.0",
-    "@1stg/eslint-config": "^8.0.1",
+    "@1stg/eslint-config": "^8.0.2",
     "@1stg/lint-staged": "^4.0.2",
     "@1stg/markuplint-config": "^4.0.0",
-    "@1stg/prettier-config": "^4.0.2",
+    "@1stg/prettier-config": "^4.0.3",
     "@1stg/remark-preset": "^2.0.0",
     "@1stg/simple-git-hooks": "^0.2.4",
     "@1stg/tsconfig": "^3.0.0",
