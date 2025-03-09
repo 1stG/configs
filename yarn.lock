@@ -289,7 +289,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@1stg/tsconfig@workspace:packages/tsconfig"
   peerDependencies:
-    typescript: ">=3.0.0"
+    typescript: ">=5.7.0"
   languageName: unknown
   linkType: soft
 
