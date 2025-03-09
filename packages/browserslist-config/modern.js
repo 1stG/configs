@@ -1,3 +1,7 @@
+const not = require('./_not')
+
 module.exports = [
-  'defaults and > 1% and last 3 versions and supports es6-module',
+  'defaults and > 0.5% and last 3 versions and fully supports es6-module',
+  'maintained node versions',
+  ...not,
 ]
