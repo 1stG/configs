@@ -33,7 +33,7 @@
     "@pkgr/utils": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^8.26.0",
     "@typescript-eslint/parser": "^8.26.0",
-    "angular-eslint": "^19.2.0",
+    "angular-eslint": "^19.2.1",
     "angular-eslint-template-parser": "^0.1.3",
     "eslint-config-prettier": "^10.1.1",
     "eslint-formatter-friendly": "^7.0.0",
