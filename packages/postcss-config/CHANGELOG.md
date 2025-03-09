@@ -1,5 +1,11 @@
 # Change Log
 
+## 6.0.1
+
+### Patch Changes
+
+- [#300](https://github.com/1stG/configs/pull/300) [`d513242`](https://github.com/1stG/configs/commit/d51324275b7769d3a525d0a56cb32d0b7b08f52c) Thanks [@JounQin](https://github.com/JounQin)! - chore: revert some configs to commonjs
+
 ## 6.0.0
 
 ### Major Changes
