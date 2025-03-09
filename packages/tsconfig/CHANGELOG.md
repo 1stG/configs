@@ -1,5 +1,15 @@
 # Change Log
 
+## 3.0.0
+
+### Major Changes
+
+- [#292](https://github.com/1stG/configs/pull/292) [`3317aab`](https://github.com/1stG/configs/commit/3317aabd90464a0b9ff4ed49903fc5d4459fe82b) Thanks [@JounQin](https://github.com/JounQin)! - feat(tsconfig): enable more useful options
+
+  - enable `erasableSyntaxOnly` for `erasable` entry
+  - enable `allowArbitraryExtensions` for `app` entry
+  - enable `rewriteRelativeImportExtensions` and `verbatimModuleSyntax` for base entry
+
 ## 2.3.3
 
 ### Patch Changes

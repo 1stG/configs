@@ -70,12 +70,12 @@ __metadata:
     "@1stg/babel-preset": "npm:^4.0.1"
     "@1stg/commitlint-config": "npm:^5.0.0"
     "@1stg/eslint-config": "npm:^8.0.1"
-    "@1stg/lint-staged": "npm:^4.0.1"
+    "@1stg/lint-staged": "npm:^4.0.2"
     "@1stg/markuplint-config": "npm:^3.0.1"
     "@1stg/prettier-config": "npm:^4.0.2"
     "@1stg/remark-preset": "npm:^2.0.0"
     "@1stg/simple-git-hooks": "npm:^0.2.4"
-    "@1stg/tsconfig": "npm:^2.3.3"
+    "@1stg/tsconfig": "npm:^3.0.0"
     "@babel/core": "npm:^7.26.9"
     tslib: "npm:^2.8.1"
   languageName: unknown
@@ -168,13 +168,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/lint-staged@npm:^4.0.1, @1stg/lint-staged@workspace:packages/lint-staged":
+"@1stg/lint-staged@npm:^4.0.2, @1stg/lint-staged@workspace:packages/lint-staged":
   version: 0.0.0-use.local
   resolution: "@1stg/lint-staged@workspace:packages/lint-staged"
   dependencies:
     "@1stg/config": "npm:^1.0.0"
     "@1stg/prettier-config": "npm:^4.0.2"
-    "@1stg/tsconfig": "npm:^2.3.3"
+    "@1stg/tsconfig": "npm:^3.0.0"
     "@pkgr/core": "npm:^0.1.1"
     prettier: "npm:^3.5.3"
   peerDependencies:
@@ -285,7 +285,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/tsconfig@npm:^2.3.3, @1stg/tsconfig@workspace:packages/tsconfig":
+"@1stg/tsconfig@npm:^3.0.0, @1stg/tsconfig@workspace:packages/tsconfig":
   version: 0.0.0-use.local
   resolution: "@1stg/tsconfig@workspace:packages/tsconfig"
   peerDependencies:

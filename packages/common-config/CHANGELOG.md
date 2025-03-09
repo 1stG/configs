@@ -1,5 +1,13 @@
 # Change Log
 
+## 11.0.1
+
+### Patch Changes
+
+- Updated dependencies [[`3317aab`](https://github.com/1stG/configs/commit/3317aabd90464a0b9ff4ed49903fc5d4459fe82b)]:
+  - @1stg/tsconfig@3.0.0
+  - @1stg/lint-staged@4.0.2
+
 ## 11.0.0
 
 ### Major Changes
