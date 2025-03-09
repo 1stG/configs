@@ -1,5 +1,11 @@
 # @1stg/markuplint-config
 
+## 4.0.0
+
+### Major Changes
+
+- [#294](https://github.com/1stG/configs/pull/294) [`d8762fa`](https://github.com/1stG/configs/commit/d8762fa1bb8cae4bbe04b850496deade59b2f3a9) Thanks [@JounQin](https://github.com/JounQin)! - feat(markuplint-config): bump `markuplint` to v4, migrate to pure ESM, add types support
+
 ## 3.0.1
 
 ### Patch Changes
