@@ -166,6 +166,7 @@ export const base = tseslint.config([
       '**/yarn.lock',
       '**/package-lock.json',
       '**/pnpm-lock.yaml',
+      '**/auto-imports.d.ts',
       '**/.yarn',
       '!.github',
       '!.*.{cjs,js,mjs,cts,ts,mts}',

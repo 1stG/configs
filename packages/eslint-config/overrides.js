@@ -39,15 +39,11 @@ const configFile =
  */
 const jsBase = {
   name: '@1stg/js-base',
-  files: ['**/*.cjs', '**/*.mjs', '**/*.js', '**/*.jsx'],
+  files: ['**/*.{cjs,mjs,js,jsx}'],
   languageOptions: {
     parser: babelParser,
     parserOptions: configFile
-      ? {
-          babelOptions: {
-            configFile,
-          },
-        }
+      ? { babelOptions: { configFile } }
       : { requireConfigFile: false },
   },
   plugins: {
@@ -119,7 +115,7 @@ const resolveSettings = {
 
 const tsBase = tseslint.config({
   name: '@1stg/ts-base',
-  files: ['**/*.cts', '**/*.mts', '**/*.ts', '**/*.tsx'],
+  files: ['**/*.{cts,mts,ts,tsx}'],
   languageOptions: {
     parserOptions: {
       project,
@@ -222,7 +218,6 @@ const tsBase = tseslint.config({
     'no-unused-vars': 0,
     'no-use-before-define': 0,
     'no-useless-constructor': 0,
-    'n/shebang': 0,
     // covered by @typescript-eslint/no-floating-promises
     'promise/always-return': 0,
     'promise/catch-or-return': 0,
@@ -241,7 +236,7 @@ export const ts = tseslint.config(
     name: '@1stg/cli',
     files: ['**/{bin,cli}.ts'],
     rules: {
-      'n/shebang': 0,
+      'n/hashbang': 0,
     },
   },
   {
@@ -256,7 +251,11 @@ export const ts = tseslint.config(
   {
     name: '@1stg/ts',
     files: ['**/*.{cts,mts,ts,tsx}'],
-    ignores: ['**/*.{md,mdx}/**/*.{cts,mts,ts,tsx}', '*.d.{cts,mts,ts}'],
+    ignores: [
+      '**/*.{md,mdx}/**/*.{cts,mts,ts,tsx}',
+      '*.d.{cts,mts,ts}',
+      '*.d.*.{cts,mts,ts}',
+    ],
     extends: [tseslint.configs.recommendedTypeChecked],
     rules: {
       '@typescript-eslint/no-floating-promises': [
@@ -301,7 +300,7 @@ export const ts = tseslint.config(
  */
 export const dTs = {
   name: '@1stg/d-ts',
-  files: ['**/*.d.cts', '**/*.d.mts', '**/*.d.ts'],
+  files: ['**/*.d.{cts,mts,ts}', '**/*.d.*.{cts,mts,ts}'],
   rules: {
     '@typescript-eslint/no-explicit-any': 0,
     '@typescript-eslint/no-extraneous-class': 0,
@@ -382,8 +381,8 @@ export const vue = tseslint.config(
     languageOptions: {
       parser: vueParser,
       parserOptions: {
-        parser: babelParser,
         ...jsBase.languageOptions.parserOptions,
+        parser: babelParser,
       },
     },
     extends: vueExtends,
