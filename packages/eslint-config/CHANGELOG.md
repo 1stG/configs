@@ -1,5 +1,11 @@
 # Change Log
 
+## 8.0.7
+
+### Patch Changes
+
+- [`709e779`](https://github.com/1stG/configs/commit/709e779d29bf8c604826aca16eb498a93b793b17) Thanks [@JounQin](https://github.com/JounQin)! - chore: enable `ignoreUsedVariables` for `prefer-export-from` rule
+
 ## 8.0.6
 
 ### Patch Changes
