@@ -1,4 +1,8 @@
-module.exports = {
+/**
+ * @import {Config} from '@markuplint/ml-config'
+ * @type {Config}
+ */
+const base = {
   extends: ['markuplint:recommended'],
   rules: {
     'attr-duplication': true,
@@ -10,3 +14,5 @@ module.exports = {
   },
   excludeFiles: ['**/node_modules/**'],
 }
+
+export default base
