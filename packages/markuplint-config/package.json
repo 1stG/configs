@@ -1,7 +1,7 @@
 {
   "name": "@1stg/markuplint-config",
   "version": "4.0.0",
-  "type": "module",
+  "type": "commonjs",
   "description": "Personal but Shareable markuplint Configuration for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/markuplint-config",
@@ -22,8 +22,8 @@
     "markuplint": "^4.0.0"
   },
   "dependencies": {
-    "@markuplint/vue-parser": "^4.6.17",
-    "@markuplint/vue-spec": "^4.5.17",
+    "@markuplint/vue-parser": "^4.6.18",
+    "@markuplint/vue-spec": "^4.5.18",
     "markuplint-angular-parser": "^3.0.1"
   },
   "publishConfig": {

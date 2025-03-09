@@ -1,1 +1,1 @@
-export { default } from './base.js'
+module.exports = require('./base.js')

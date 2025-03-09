@@ -1,9 +1,5 @@
 // @ts-check
 
-/**
- * @import {Linter} from 'eslint'
- */
-
 import path from 'node:path'
 
 import { jsoncFiles, nonJsonRcFiles, preferPrettier } from '@1stg/config'
@@ -19,6 +15,7 @@ import importX from 'eslint-plugin-import-x'
 import jest_ from 'eslint-plugin-jest'
 import jsdoc from 'eslint-plugin-jsdoc'
 import jsonc_ from 'eslint-plugin-jsonc'
+import * as markup_ from 'eslint-plugin-markup'
 import * as mdx_ from 'eslint-plugin-mdx'
 import * as reactHooks_ from 'eslint-plugin-react-hooks'
 import toml_ from 'eslint-plugin-toml'
@@ -465,26 +462,24 @@ export const angular = tseslint.config(
   },
 )
 
-/* eslint-disable sonarjs/no-commented-code */
-// export const markup = [
-//   {
-//     files: '**/*.html',
-//     extends: 'plugin:markup/recommended',
-//     rules: {
-//       'prettier/prettier': [
-//         preferPrettier ? 0 : 2,
-//         {
-//           parser: 'html',
-//         },
-//       ],
-//     },
-//   },
-//   {
-//     files: '**/*.pug',
-//     extends: ['plugin:markup/recommended', ...prettierExtends],
-//   },
-// ]
-/* eslint-enable sonarjs/no-commented-code */
+export const markup = tseslint.config(
+  {
+    files: ['**/*.html'],
+    extends: [markup_.configs.flatRecommended],
+    rules: {
+      'prettier/prettier': [
+        preferPrettier ? 0 : 2,
+        {
+          parser: 'html',
+        },
+      ],
+    },
+  },
+  {
+    files: ['**/*.pug'],
+    extends: [markup_.configs.flatRecommended, prettierExtends],
+  },
+)
 
 export const md = tseslint.config(
   {
@@ -620,7 +615,7 @@ export const overrides = tseslint.config(
   isTsAvailable ? ts : [],
   isReactAvailable ? react : [],
   // The order matters, the later should to be preferred
-  // markup,
+  markup,
   isPkgAvailable('vue') ? vue : [],
   isPkgAvailable('@angular/core') ? angular : [],
   md,
