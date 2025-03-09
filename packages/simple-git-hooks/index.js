@@ -1,8 +1,8 @@
-import { getScriptRunner } from '@pkgr/utils'
+const { getScriptRunner } = require('@pkgr/utils')
 
 const runner = getScriptRunner() || 'npx'
 
-export default {
+module.exports = {
   'pre-commit': `${runner} lint-staged`,
   'commit-msg': `${runner} commitlint -e`,
 }

@@ -13,7 +13,7 @@
   "dependencies": {
     "@1stg/babel-preset": "^4.0.2",
     "@1stg/commitlint-config": "^5.0.0",
-    "@1stg/eslint-config": "^8.0.3",
+    "@1stg/eslint-config": "^8.0.4",
     "@1stg/lint-staged": "^4.0.3",
     "@1stg/markuplint-config": "^4.0.0",
     "@1stg/prettier-config": "^4.0.3",

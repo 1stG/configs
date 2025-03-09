@@ -1,24 +1,8 @@
-/**
- * @import {ConfigFn, ConfigPlugin} from 'postcss-load-config
- */
+const { NODE_ENV, __DEV__, __PROD__ } = require('@pkgr/utils')
 
-import { NODE_ENV, __DEV__, __PROD__ } from '@pkgr/utils'
-import autoprefixer from 'autoprefixer'
-import cssnano from 'cssnano'
-import import_ from 'postcss-import'
-import modules_ from 'postcss-modules'
-import normalize_ from 'postcss-normalize'
-import presetEnv_ from 'postcss-preset-env'
-import url_ from 'postcss-url'
-
-/**
- *
- * @type {ConfigFn}
- */
 const config = ({
   advanced,
   env = NODE_ENV,
-  map,
   import: importOptions,
   modules,
   normalize,
@@ -26,20 +10,17 @@ const config = ({
   url,
   ...options
 } = {}) => {
-  /**
-   * @type {ConfigPlugin[]}
-   */
   const plugins = [
-    presetEnv_(presetEnv),
-    import_(importOptions),
-    normalize_(normalize),
-    url_(url),
-    autoprefixer,
+    require('postcss-preset-env')(presetEnv),
+    require('postcss-import')(importOptions),
+    require('postcss-normalize')(normalize),
+    require('postcss-url')(url),
+    require('autoprefixer'),
   ]
 
   if (modules) {
     plugins.push(
-      modules_({
+      require('postcss-modules')({
         globalModulePaths: [
           /[/\\]node_modules[/\\]/,
           /(\bglobals?[/\\][\w-]+|\.globals?)\.(p?css|less|s[ac]ss|styl(us)?)$/,
@@ -54,7 +35,7 @@ const config = ({
 
   if (__PROD__) {
     plugins.push(
-      cssnano({
+      require('cssnano')({
         preset: [
           advanced ? 'advanced' : 'default',
           {
@@ -70,9 +51,9 @@ const config = ({
   return {
     ...options,
     env,
-    map: __DEV__ && map,
+    map: __DEV__,
     plugins,
   }
 }
 
-export default config
+module.exports = config

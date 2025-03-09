@@ -29,6 +29,7 @@ __metadata:
     "@babel/preset-env": "npm:^7.26.9"
     "@babel/preset-react": "npm:^7.26.3"
     "@babel/preset-typescript": "npm:^7.26.0"
+    "@pkgr/utils": "npm:^3.0.0"
     "@vue/babel-helper-vue-jsx-merge-props": "npm:^1.4.0"
     "@vue/babel-plugin-jsx": "npm:^1.3.0"
     "@vue/babel-preset-jsx": "npm:^1.4.0"
@@ -69,7 +70,7 @@ __metadata:
   dependencies:
     "@1stg/babel-preset": "npm:^4.0.2"
     "@1stg/commitlint-config": "npm:^5.0.0"
-    "@1stg/eslint-config": "npm:^8.0.3"
+    "@1stg/eslint-config": "npm:^8.0.4"
     "@1stg/lint-staged": "npm:^4.0.3"
     "@1stg/markuplint-config": "npm:^4.0.0"
     "@1stg/prettier-config": "npm:^4.0.3"
@@ -98,7 +99,7 @@ __metadata:
     "@changesets/cli": "npm:^2.28.1"
     "@commitlint/cli": "npm:^19.8.0"
     "@types/babel__core": "npm:^7.20.5"
-    "@types/bun": "npm:latest"
+    "@types/bun": "npm:^1.2.4"
     "@types/jest": "npm:^29.5.14"
     "@types/node": "npm:^22.13.10"
     "@types/react": "npm:^19.0.10"
@@ -115,7 +116,7 @@ __metadata:
     prettier: "npm:^3.5.3"
     react: "npm:^19.0.0"
     rxjs: "npm:^7.8.2"
-    simple-git-hooks: "JounQin/simple-git-hooks#feat/esm_config"
+    simple-git-hooks: "npm:^2.11.1"
     stylelint: "npm:^16.15.0"
     svelte: "npm:^5.22.6"
     type-coverage: "npm:^2.29.7"
@@ -126,7 +127,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/eslint-config@npm:^8.0.3, @1stg/eslint-config@workspace:packages/eslint-config":
+"@1stg/eslint-config@npm:^8.0.4, @1stg/eslint-config@workspace:packages/eslint-config":
   version: 0.0.0-use.local
   resolution: "@1stg/eslint-config@workspace:packages/eslint-config"
   dependencies:
@@ -189,7 +190,7 @@ __metadata:
   dependencies:
     "@markuplint/vue-parser": "npm:^4.6.17"
     "@markuplint/vue-spec": "npm:^4.5.17"
-    markuplint-angular-parser: "npm:^2.0.0"
+    markuplint-angular-parser: "npm:^3.0.1"
   peerDependencies:
     markuplint: ^4.0.0
   languageName: unknown
@@ -3756,7 +3757,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@markuplint/html-parser@npm:3.13.0, @markuplint/html-parser@npm:^3.6.1":
+"@markuplint/html-parser@npm:3.13.0":
   version: 3.13.0
   resolution: "@markuplint/html-parser@npm:3.13.0"
   dependencies:
@@ -3813,14 +3814,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@markuplint/ml-ast@npm:3.2.0, @markuplint/ml-ast@npm:^3.1.0":
+"@markuplint/ml-ast@npm:3.2.0":
   version: 3.2.0
   resolution: "@markuplint/ml-ast@npm:3.2.0"
   checksum: 10c0/af4ea2bdf424230e263f5d178034c99a4bed7bb9e0f27adacaaaaa402d9e98986f7bfa9c04f62ac6b3b476c2f634115208afff6015709f71be104768d1f348a6
   languageName: node
   linkType: hard
 
-"@markuplint/ml-ast@npm:4.4.9":
+"@markuplint/ml-ast@npm:4.4.9, @markuplint/ml-ast@npm:^4.4.9":
   version: 4.4.9
   resolution: "@markuplint/ml-ast@npm:4.4.9"
   checksum: 10c0/83635f3df4fd156d05f3eebe2b55589d395140e91c1788c5f35470bdb02fc97ba461e63c30a1bf89ed83e952286ee0aba5043330e208aa46cb1cf6de95fff059
@@ -3930,7 +3931,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@markuplint/parser-utils@npm:3.13.0, @markuplint/parser-utils@npm:^3.6.1":
+"@markuplint/parser-utils@npm:3.13.0":
   version: 3.13.0
   resolution: "@markuplint/parser-utils@npm:3.13.0"
   dependencies:
@@ -3944,7 +3945,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@markuplint/parser-utils@npm:4.8.5":
+"@markuplint/parser-utils@npm:4.8.5, @markuplint/parser-utils@npm:^4.8.5":
   version: 4.8.5
   resolution: "@markuplint/parser-utils@npm:4.8.5"
   dependencies:
@@ -4530,7 +4531,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/bun@npm:latest":
+"@types/bun@npm:^1.2.4":
   version: 1.2.4
   resolution: "@types/bun@npm:1.2.4"
   dependencies:
@@ -5560,12 +5561,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"angular-html-parser@npm:^4.0.1":
-  version: 4.0.1
-  resolution: "angular-html-parser@npm:4.0.1"
+"angular-html-parser@npm:^8.0.1":
+  version: 8.0.1
+  resolution: "angular-html-parser@npm:8.0.1"
   dependencies:
-    tslib: "npm:^2.5.0"
-  checksum: 10c0/6c4a82210af15c0e8655b07cc4621d3a506bb1e6c0ba05b705414cefa2e26f94f68010c92a3edaf423b2acfe8158c6341d32bc35c855f178ffb8e70a43516ef6
+    tslib: "npm:^2.8.1"
+  checksum: 10c0/2d142ab92b9317a7a32faf12565ab6c56255bc8f56714b60a532d1c30b9dddc0b44c7f3754e19dab115cc6d8433e58e285035d6dead8fedfdf8ff0a75aa23470
   languageName: node
   linkType: hard
 
@@ -11183,17 +11184,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markuplint-angular-parser@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "markuplint-angular-parser@npm:2.0.0"
+"markuplint-angular-parser@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "markuplint-angular-parser@npm:3.0.1"
   dependencies:
-    "@markuplint/html-parser": "npm:^3.6.1"
-    "@markuplint/ml-ast": "npm:^3.1.0"
-    "@markuplint/parser-utils": "npm:^3.6.1"
-    angular-html-parser: "npm:^4.0.1"
-    synckit: "npm:^0.8.5"
-    tslib: "npm:^2.5.0"
-  checksum: 10c0/cdb651a49fd31943e6515dfc52b7e24ff39d77cb4582841613075b4c82310ffdca158207238f5ca564870e8bca39ad094353bebbb8e5fdc0fc49b7be2ebb883c
+    "@markuplint/ml-ast": "npm:^4.4.9"
+    "@markuplint/parser-utils": "npm:^4.8.5"
+    angular-html-parser: "npm:^8.0.1"
+    uuid: "npm:^11.1.0"
+  checksum: 10c0/70f2094c8ea4e3acadfa05cdae3821dcddba613da50867e53e6a8b303bc95873a3f93975e0bd03fcb413cbdbf3f32a72f7251f0408915e77e59a947c6f9123c6
   languageName: node
   linkType: hard
 
@@ -16000,12 +15999,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"simple-git-hooks@JounQin/simple-git-hooks#feat/esm_config":
+"simple-git-hooks@npm:^2.11.1":
   version: 2.11.1
-  resolution: "simple-git-hooks@https://github.com/JounQin/simple-git-hooks.git#commit=fa5482ea9faa089cd2579f3afc54b439fbd4a4fb"
+  resolution: "simple-git-hooks@npm:2.11.1"
   bin:
-    simple-git-hooks: ./cli.js
-  checksum: 10c0/612be1e58c88f97e31ac199469bc480c216358c337231f2fbe40d5f2abc685b9569ea2160945f84e72b5a57c144b586e822dc5969489f2d1bca8f1b4e32e6506
+    simple-git-hooks: cli.js
+  checksum: 10c0/ba48c38bcfebc80f8050f36bf313dd6ec3c6d4ccee55b05c1e2c3b2983b13acf7baaca705de8b9b9a6d81a5934a7b22aca3d6116d5550000c97dc76b0219fa54
   languageName: node
   linkType: hard
 
@@ -17445,7 +17444,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uuid@npm:11.1.0":
+"uuid@npm:11.1.0, uuid@npm:^11.1.0":
   version: 11.1.0
   resolution: "uuid@npm:11.1.0"
   bin:

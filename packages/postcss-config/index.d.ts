@@ -1,1 +1,5 @@
-export { ConfigFn as default } from 'postcss-load-config'
+import { ConfigFn } from 'postcss-load-config'
+
+const config: ConfigFn
+
+export = config
