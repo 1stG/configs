@@ -1,4 +1,4 @@
-import base from './base.js'
+const base = require('./base.js')
 
 /**
  * @import {Config} from '@markuplint/core'
@@ -12,4 +12,4 @@ const vue = {
   specs: ['@markuplint/vue-spec'],
 }
 
-export default vue
+module.exports = vue

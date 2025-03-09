@@ -15,4 +15,4 @@ const base = {
   excludeFiles: ['**/node_modules/**'],
 }
 
-export default base
+module.exports = base

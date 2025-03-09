@@ -1,6 +1,6 @@
-import base from './base.js'
+const base = require('./base.js')
 
-export default {
+module.exports = {
   ...base,
   parser: {
     '\\.html$': 'markuplint-angular-parser',
