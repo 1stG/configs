@@ -28,7 +28,7 @@ const config = [
 if (isEslintAvailable) {
   Object.assign(config, {
     [`*.{${ESLINT_PRETTIER_FILES}}`]: [
-      'eslint --cache -f friendly --fix',
+      'eslint --cache --fix',
       ...(useEslintPrettier ? [] : ['prettier --write']),
     ],
   })
