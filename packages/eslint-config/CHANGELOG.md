@@ -1,5 +1,11 @@
 # Change Log
 
+## 8.0.8
+
+### Patch Changes
+
+- [`3227ee5`](https://github.com/1stG/configs/commit/3227ee51ded4655604730c2609f6c0b8f3b6417c) Thanks [@JounQin](https://github.com/JounQin)! - chore(eslint-config): drop outdated eslint-formatter-friendly
+
 ## 8.0.7
 
 ### Patch Changes
