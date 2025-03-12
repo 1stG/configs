@@ -1,5 +1,14 @@
 # Change Log
 
+## 11.0.2
+
+### Patch Changes
+
+- [`3227ee5`](https://github.com/1stG/configs/commit/3227ee51ded4655604730c2609f6c0b8f3b6417c) Thanks [@JounQin](https://github.com/JounQin)! - chore(eslint-config): drop outdated eslint-formatter-friendly
+
+- Updated dependencies [[`3227ee5`](https://github.com/1stG/configs/commit/3227ee51ded4655604730c2609f6c0b8f3b6417c)]:
+  - @1stg/common-config@11.0.4
+
 ## 11.0.1
 
 ### Patch Changes
