@@ -14,7 +14,6 @@ export default {
   singleQuote: true,
   trailingComma: 'all',
   xmlWhitespaceSensitivity: 'ignore',
-  svelteIndentScriptAndStyle: false, // align with default option of `vueIndentScriptAndStyle`
   plugins: await Promise.all(
     Object.keys(require('./package.json').dependencies).map(async pkgName => {
       /**
@@ -38,7 +37,7 @@ export default {
       },
     },
     {
-      files: ['.*rc', '*.json'],
+      files: ['**/.*rc', '**/*.json'],
       excludeFiles: [...nonJsonRcFiles, ...jsoncFiles],
       options: {
         parser: 'json-stringify',
@@ -51,7 +50,7 @@ export default {
       },
     },
     {
-      files: ['.changeset/*.md'],
+      files: ['**/.changeset/*.md'],
       excludeFiles: ['README.md'],
       options: {
         singleQuote: false,
