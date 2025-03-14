@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.0.4
+
+### Patch Changes
+
+- [`c44bd19`](https://github.com/1stG/configs/commit/c44bd197af3f932f43639fddb506f68d52f0f7c7) Thanks [@JounQin](https://github.com/JounQin)! - fix(prettier-config): remove unused svelte option
+
 ## 4.0.3
 
 ### Patch Changes
