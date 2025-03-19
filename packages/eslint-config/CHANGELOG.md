@@ -1,5 +1,11 @@
 # Change Log
 
+## 8.1.0
+
+### Minor Changes
+
+- [#307](https://github.com/1stG/configs/pull/307) [`ba1f622`](https://github.com/1stG/configs/commit/ba1f62218e96dd221b3329966b926e2738663e40) Thanks [@JounQin](https://github.com/JounQin)! - feat(eslint-config): bump `eslint-import-resolver-typescript`
+
 ## 8.0.8
 
 ### Patch Changes
