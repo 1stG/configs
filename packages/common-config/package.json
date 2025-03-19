@@ -11,16 +11,16 @@
     "node": ">=18.18"
   },
   "dependencies": {
-    "@1stg/babel-preset": "^4.0.2",
+    "@1stg/babel-preset": "^4.0.3",
     "@1stg/commitlint-config": "^5.0.0",
     "@1stg/eslint-config": "^8.0.8",
     "@1stg/lint-staged": "^4.0.4",
     "@1stg/markuplint-config": "^4.0.0",
-    "@1stg/prettier-config": "^4.0.3",
+    "@1stg/prettier-config": "^4.0.4",
     "@1stg/remark-preset": "^3.0.0",
     "@1stg/simple-git-hooks": "^0.2.4",
     "@1stg/tsconfig": "^3.0.0",
-    "@babel/core": "^7.26.9",
+    "@babel/core": "^7.26.10",
     "tslib": "^2.8.1"
   },
   "publishConfig": {
