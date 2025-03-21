@@ -128,7 +128,7 @@ export const base = tseslint.config([
       'n/no-unsupported-features/node-builtins': 0,
       'n/no-unpublished-import': 0,
       'n/no-unpublished-require': 0,
-      'prefer-const': 2,
+      'prefer-const': [2, { destructuring: 'all' }],
       'prefer-object-spread': 2,
       'simple-import-sort/exports': 2,
       'unicorn/catch-error-name': [
