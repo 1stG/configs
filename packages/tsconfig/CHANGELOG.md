@@ -1,5 +1,13 @@
 # Change Log
 
+## 3.0.1
+
+### Patch Changes
+
+- [#309](https://github.com/1stG/configs/pull/309) [`5dbb419`](https://github.com/1stG/configs/commit/5dbb41960ecca8d1000b006914d37424797e4946) Thanks [@JounQin](https://github.com/JounQin)! - chore(eslint-config): enable `destructuring: all` for `prefer-const`
+
+  chore: bump all deps
+
 ## 3.0.0
 
 ### Major Changes

@@ -1,5 +1,17 @@
 # Change Log
 
+## 1.0.0
+
+### Major Changes
+
+- [#311](https://github.com/1stG/configs/pull/311) [`0ea8225`](https://github.com/1stG/configs/commit/0ea82253d8fa81379d838b1c2ac469d393ac598b) Thanks [@JounQin](https://github.com/JounQin)! - feat(simple-git-hooks): migrate to ESM
+
+### Patch Changes
+
+- [#309](https://github.com/1stG/configs/pull/309) [`5dbb419`](https://github.com/1stG/configs/commit/5dbb41960ecca8d1000b006914d37424797e4946) Thanks [@JounQin](https://github.com/JounQin)! - chore(eslint-config): enable `destructuring: all` for `prefer-const`
+
+  chore: bump all deps
+
 ## 0.2.4
 
 ### Patch Changes

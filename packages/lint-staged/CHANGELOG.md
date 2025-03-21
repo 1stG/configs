@@ -1,5 +1,18 @@
 # Change Log
 
+## 4.0.5
+
+### Patch Changes
+
+- [#309](https://github.com/1stG/configs/pull/309) [`5dbb419`](https://github.com/1stG/configs/commit/5dbb41960ecca8d1000b006914d37424797e4946) Thanks [@JounQin](https://github.com/JounQin)! - chore(eslint-config): enable `destructuring: all` for `prefer-const`
+
+  chore: bump all deps
+
+- Updated dependencies [[`5dbb419`](https://github.com/1stG/configs/commit/5dbb41960ecca8d1000b006914d37424797e4946)]:
+  - @1stg/config@1.0.1
+  - @1stg/prettier-config@4.0.5
+  - @1stg/tsconfig@3.0.1
+
 ## 4.0.4
 
 ### Patch Changes
