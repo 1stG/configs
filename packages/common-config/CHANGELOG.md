@@ -1,5 +1,24 @@
 # Change Log
 
+## 11.0.5
+
+### Patch Changes
+
+- [#309](https://github.com/1stG/configs/pull/309) [`5dbb419`](https://github.com/1stG/configs/commit/5dbb41960ecca8d1000b006914d37424797e4946) Thanks [@JounQin](https://github.com/JounQin)! - chore(eslint-config): enable `destructuring: all` for `prefer-const`
+
+  chore: bump all deps
+
+- Updated dependencies [[`0ea8225`](https://github.com/1stG/configs/commit/0ea82253d8fa81379d838b1c2ac469d393ac598b), [`5dbb419`](https://github.com/1stG/configs/commit/5dbb41960ecca8d1000b006914d37424797e4946)]:
+  - @1stg/simple-git-hooks@1.0.0
+  - @1stg/babel-preset@4.0.4
+  - @1stg/commitlint-config@5.0.1
+  - @1stg/eslint-config@8.1.1
+  - @1stg/lint-staged@4.0.5
+  - @1stg/markuplint-config@4.0.1
+  - @1stg/prettier-config@4.0.5
+  - @1stg/remark-preset@3.0.1
+  - @1stg/tsconfig@3.0.1
+
 ## 11.0.4
 
 ### Patch Changes

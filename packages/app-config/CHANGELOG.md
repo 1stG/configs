@@ -1,5 +1,19 @@
 # Change Log
 
+## 11.0.3
+
+### Patch Changes
+
+- [#309](https://github.com/1stG/configs/pull/309) [`5dbb419`](https://github.com/1stG/configs/commit/5dbb41960ecca8d1000b006914d37424797e4946) Thanks [@JounQin](https://github.com/JounQin)! - chore(eslint-config): enable `destructuring: all` for `prefer-const`
+
+  chore: bump all deps
+
+- Updated dependencies [[`5dbb419`](https://github.com/1stG/configs/commit/5dbb41960ecca8d1000b006914d37424797e4946)]:
+  - @1stg/browserslist-config@2.1.1
+  - @1stg/common-config@11.0.5
+  - @1stg/postcss-config@6.0.2
+  - @1stg/stylelint-config@6.0.2
+
 ## 11.0.2
 
 ### Patch Changes
