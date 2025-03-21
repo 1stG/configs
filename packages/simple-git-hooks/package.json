@@ -1,7 +1,7 @@
 {
   "name": "@1stg/simple-git-hooks",
   "version": "0.2.4",
-  "type": "commonjs",
+  "type": "module",
   "description": "Personal but Shareable simple-git-hooks Configuration for all 1stG.me projects",
   "repository": "https://github.com/1stG/configs.git",
   "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
@@ -11,7 +11,7 @@
   "peerDependencies": {
     "@commitlint/cli": ">=11.0.0",
     "lint-staged": ">=9.0.0",
-    "simple-git-hooks": ">=2.2.0"
+    "simple-git-hooks": ">=2.12.1"
   },
   "dependencies": {
     "@pkgr/utils": "^3.0.0"
