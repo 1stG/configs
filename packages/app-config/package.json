@@ -2,9 +2,9 @@
   "name": "@1stg/app-config",
   "version": "11.0.2",
   "description": "Personal but Shareable App Configuration for all 1stG.me projects",
-  "repository": "git+https://github.com/1stG/configs.git",
+  "repository": "https://github.com/1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/app-config",
-  "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
+  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
   "funding": "https://www.patreon.com/1stG",
   "license": "MIT",
   "engines": {
@@ -15,7 +15,7 @@
     "@1stg/common-config": "^11.0.4",
     "@1stg/postcss-config": "^6.0.1",
     "@1stg/stylelint-config": "^6.0.1",
-    "@pkgr/es-modules": "^0.6.3",
+    "@pkgr/es-modules": "^0.6.4",
     "browserslist": "^4.24.4",
     "postcss": "^8.5.3"
   },

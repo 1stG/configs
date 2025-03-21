@@ -3,8 +3,8 @@
   "version": "4.0.3",
   "type": "commonjs",
   "description": "Personal but Shareable Babel Preset for all 1stG.me projects",
-  "repository": "git+https://github.com/1stG/configs.git",
-  "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
+  "repository": "https://github.com/1stG/configs.git",
+  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
   "funding": "https://www.patreon.com/1stG",
   "license": "MIT",
   "engines": {
