@@ -1,5 +1,11 @@
 # Change Log
 
+## 8.2.1
+
+### Patch Changes
+
+- [#314](https://github.com/1stG/configs/pull/314) [`1bba857`](https://github.com/1stG/configs/commit/1bba8576d40659072ae11bdba41f31ddcb8d0043) Thanks [@JounQin](https://github.com/JounQin)! - fix(eslint-config): disable `no-require-imports` for `.cts` files
+
 ## 8.2.0
 
 ### Minor Changes
