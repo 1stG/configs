@@ -298,6 +298,12 @@ export const ts = tseslint.config(
       'no-magic-numbers': 0,
     },
   },
+  {
+    files: ['**/*.cts'],
+    rules: {
+      '@typescript-eslint/no-require-imports': 0,
+    },
+  },
 )
 
 /**
