@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@1stg/config": "^1.0.1",
-    "@pkgr/core": "^0.1.2",
+    "@pkgr/core": "^0.2.0",
     "postcss-html": "^1.8.0",
     "postcss-less": "^6.0.0",
     "postcss-markdown": "^1.3.0",
