@@ -11,6 +11,7 @@ import babelParser from '@babel/eslint-parser'
 import babel from '@babel/eslint-plugin'
 import react_ from '@eslint-react/eslint-plugin'
 import { isPkgAvailable, tryFile, tryPkg } from '@pkgr/utils'
+import vitest_ from '@vitest/eslint-plugin'
 import angular_ from 'angular-eslint'
 import angularTemplateParser from 'angular-eslint-template-parser'
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript'
@@ -539,6 +540,13 @@ export const jest = tseslint.config({
   rules: test.rules,
 })
 
+export const vitest = tseslint.config({
+  name: '@1stg/vitest',
+  files: ['**/*.{spec,test}.{js,jsx,ts,tsx}'],
+  extends: [vitest_.configs.recommended],
+  rules: test.rules,
+})
+
 /**
  * @satisfies {TSESLint.FlatConfig.Config}
  */
@@ -626,6 +634,7 @@ export const overrides = tseslint.config(
   md,
   mdx,
   isPkgAvailable('jest') ? jest : [],
+  isPkgAvailable('vitest') ? vitest : [],
   test,
   scripts,
   stories,
