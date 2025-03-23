@@ -1,6 +1,6 @@
 {
   "name": "@1stg/lint-staged",
-  "version": "4.0.5",
+  "version": "4.0.6",
   "type": "module",
   "description": "Personal but Shareable lint-staged Configuration for all 1stG.me projects",
   "repository": "https://github.com/1stG/configs.git",

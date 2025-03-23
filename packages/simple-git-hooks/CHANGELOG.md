@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.0.1
+
+### Patch Changes
+
+- [#312](https://github.com/1stG/configs/pull/312) [`9e288a5`](https://github.com/1stG/configs/commit/9e288a5c03738bbcfe9afd6801304e226c4838e5) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump `@pkgr/core` and `@pkgr/utils`
+
 ## 1.0.0
 
 ### Major Changes
