@@ -8,4 +8,4 @@
 "@1stg/stylelint-config": patch
 ---
 
-chore: bump `@pkgr/core`
+chore: bump `@pkgr/core` and `@pkgr/utils`
