@@ -1,5 +1,11 @@
 # Change Log
 
+## 8.3.0
+
+### Minor Changes
+
+- [`692226d`](https://github.com/1stG/configs/commit/692226d94dfe9a8a5043b87c6eb35d17f7382c53) Thanks [@JounQin](https://github.com/JounQin)! - chore(eslint-config): bump mdx/prettier/unicorn plugins
+
 ## 8.2.1
 
 ### Patch Changes
