@@ -1,5 +1,16 @@
 # Change Log
 
+## 11.1.0
+
+### Minor Changes
+
+- [`692226d`](https://github.com/1stG/configs/commit/692226d94dfe9a8a5043b87c6eb35d17f7382c53) Thanks [@JounQin](https://github.com/JounQin)! - chore(eslint-config): bump mdx/prettier/unicorn plugins
+
+### Patch Changes
+
+- Updated dependencies [[`692226d`](https://github.com/1stG/configs/commit/692226d94dfe9a8a5043b87c6eb35d17f7382c53)]:
+  - @1stg/eslint-config@8.3.0
+
 ## 11.0.5
 
 ### Patch Changes
