@@ -3,7 +3,10 @@
   "description": "Personal but Shareable Renovate Configuration for all 1stG.me projects",
   "extends": [
     "config:recommended",
-    "config:semverAllMonthly"
+    "config:semverAllMonthly",
+    "docker:pinDigests",
+    "helpers:pinGitHubActionDigests",
+    ":configMigration"
   ],
   "automerge": true,
   "major": {
