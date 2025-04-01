@@ -1,5 +1,14 @@
 # Change Log
 
+## 11.1.1
+
+### Patch Changes
+
+- [#322](https://github.com/1stG/configs/pull/322) [`8fc446d`](https://github.com/1stG/configs/commit/8fc446db24900ec3333794fc4e9cd2179b8793f5) Thanks [@JounQin](https://github.com/JounQin)! - chore(prettier-config): bump `sh` plugin
+
+- Updated dependencies [[`8fc446d`](https://github.com/1stG/configs/commit/8fc446db24900ec3333794fc4e9cd2179b8793f5)]:
+  - @1stg/common-config@11.1.1
+
 ## 11.1.0
 
 ### Minor Changes
