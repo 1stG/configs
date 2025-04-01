@@ -12,6 +12,7 @@
   "packageManager": "yarn@4.8.1",
   "scripts": {
     "check": "eslint-config-prettier .eslintrc.js",
+    "format": "prettier --write .",
     "lint": "run-p 'lint:*'",
     "lint:es": "eslint . --cache",
     "lint:style": "stylelint . --cache",
