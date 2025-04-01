@@ -9,7 +9,7 @@
   "workspaces": [
     "packages/*"
   ],
-  "packageManager": "yarn@4.7.0",
+  "packageManager": "yarn@4.8.1",
   "scripts": {
     "check": "eslint-config-prettier .eslintrc.js",
     "lint": "run-p 'lint:*'",
