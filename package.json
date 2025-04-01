@@ -9,9 +9,10 @@
   "workspaces": [
     "packages/*"
   ],
-  "packageManager": "yarn@4.7.0",
+  "packageManager": "yarn@4.8.1",
   "scripts": {
     "check": "eslint-config-prettier .eslintrc.js",
+    "format": "prettier --write .",
     "lint": "run-p 'lint:*'",
     "lint:es": "eslint . --cache",
     "lint:style": "stylelint . --cache",
@@ -23,20 +24,20 @@
     "version": "changeset version && yarn --no-immutable"
   },
   "devDependencies": {
-    "@angular/compiler": "^19.2.3",
-    "@angular/compiler-cli": "^19.2.3",
-    "@angular/core": "^19.2.3",
+    "@angular/compiler": "^19.2.4",
+    "@angular/compiler-cli": "^19.2.4",
+    "@angular/core": "^19.2.4",
     "@changesets/changelog-github": "^0.5.1",
     "@changesets/cli": "^2.28.1",
     "@commitlint/cli": "^19.8.0",
     "@types/babel__core": "^7.20.5",
-    "@types/bun": "^1.2.5",
+    "@types/bun": "^1.2.8",
     "@types/jest": "^29.5.14",
-    "@types/node": "^22.13.13",
+    "@types/node": "^22.13.14",
     "@types/react": "^19.0.12",
     "@types/unist": "^3.0.3",
     "@unts/patch-package": "^8.1.1",
-    "@vitest/coverage-istanbul": "^3.0.9",
+    "@vitest/coverage-istanbul": "^3.1.1",
     "eslint": "^9.23.0",
     "eslint-config-prettier": "^10.1.1",
     "lint-staged": "^15.5.0",
@@ -45,20 +46,20 @@
     "postcss": "^8.5.3",
     "postcss-load-config": "^6.0.1",
     "prettier": "^3.5.3",
-    "react": "^19.0.0",
+    "react": "^19.1.0",
     "rxjs": "^7.8.2",
     "simple-git-hooks": "^2.12.1",
-    "stylelint": "^16.16.0",
+    "stylelint": "^16.17.0",
     "type-coverage": "^2.29.7",
     "typescript": "^5.8.2",
-    "vitest": "^3.0.9",
+    "vitest": "^3.1.1",
     "vue": "^3.5.13",
     "vue-tsc": "^2.2.8",
     "yarn-berry-deduplicate": "^6.1.1"
   },
   "resolutions": {
     "@babel/core": "^7.26.10",
-    "@typescript-eslint/type-utils": "^8.27.0"
+    "@typescript-eslint/type-utils": "^8.29.0"
   },
   "typeCoverage": {
     "atLeast": 100,
