@@ -8,7 +8,7 @@
   "funding": "https://opencollective.com/configs",
   "license": "MIT",
   "engines": {
-    "node": ">=v18"
+    "node": ">=18"
   },
   "main": "index.js",
   "dependencies": {
