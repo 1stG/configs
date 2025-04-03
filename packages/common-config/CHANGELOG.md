@@ -1,5 +1,22 @@
 # Change Log
 
+## 11.1.2
+
+### Patch Changes
+
+- [#325](https://github.com/1stG/configs/pull/325) [`cf9c358`](https://github.com/1stG/configs/commit/cf9c358e875667944a35be9dcb9a99d70df8de32) Thanks [@JounQin](https://github.com/JounQin)! - fix(eslint-config): enable `curly` correctly due to `config-prettier`
+
+- Updated dependencies [[`cf9c358`](https://github.com/1stG/configs/commit/cf9c358e875667944a35be9dcb9a99d70df8de32), [`cf9c358`](https://github.com/1stG/configs/commit/cf9c358e875667944a35be9dcb9a99d70df8de32)]:
+  - @1stg/tsconfig@3.0.2
+  - @1stg/babel-preset@4.0.7
+  - @1stg/commitlint-config@5.0.3
+  - @1stg/eslint-config@8.3.2
+  - @1stg/lint-staged@4.0.7
+  - @1stg/markuplint-config@4.0.2
+  - @1stg/prettier-config@4.0.7
+  - @1stg/remark-preset@3.0.2
+  - @1stg/simple-git-hooks@1.0.2
+
 ## 11.1.1
 
 ### Patch Changes

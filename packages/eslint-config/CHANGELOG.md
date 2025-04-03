@@ -1,5 +1,14 @@
 # Change Log
 
+## 8.3.2
+
+### Patch Changes
+
+- [#325](https://github.com/1stG/configs/pull/325) [`cf9c358`](https://github.com/1stG/configs/commit/cf9c358e875667944a35be9dcb9a99d70df8de32) Thanks [@JounQin](https://github.com/JounQin)! - fix(eslint-config): enable `curly` correctly due to `config-prettier`
+
+- Updated dependencies [[`cf9c358`](https://github.com/1stG/configs/commit/cf9c358e875667944a35be9dcb9a99d70df8de32)]:
+  - @1stg/config@1.0.2
+
 ## 8.3.1
 
 ### Patch Changes
