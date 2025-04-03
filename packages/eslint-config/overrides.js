@@ -651,4 +651,11 @@ export const overrides = tseslint.config(
   json5,
   toml,
   yaml,
+  // https://github.com/prettier/eslint-config-prettier#curly
+  {
+    name: '@1stg/prettier',
+    rules: {
+      curly: [2, 'all'],
+    },
+  },
 )
