@@ -1,5 +1,11 @@
 # Change Log
 
+## 5.0.4
+
+### Patch Changes
+
+- [`a3a390a`](https://github.com/1stG/configs/commit/a3a390ad9a4d3b6b72c96a378249ae57c1d90e21) Thanks [@JounQin](https://github.com/JounQin)! - chore(commitlint-config): use `>=18` instead of `>=v18`
+
 ## 5.0.3
 
 ### Patch Changes
