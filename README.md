@@ -1,7 +1,7 @@
 # @1stG/configs
 
-[![GitHub Actions](https://github.com/1stg/configs/workflows/CI/badge.svg)](https://github.com/1stG/configs/actions/workflows/ci.yml)
-[![GitHub release](https://img.shields.io/github/release/1stg/configs)](https://github.com/1stg/configs/releases)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/1stG/configs/ci.yml?branch=master)](https://github.com/1stG/configs/actions/workflows/ci.yml?query=branch%3Amaster)
+[![GitHub release](https://img.shields.io/github/release/1stG/configs)](https://github.com/1stG/configs/releases)
 [![type-coverage](https://img.shields.io/badge/dynamic/json.svg?label=type-coverage&prefix=%E2%89%A5&suffix=%&query=$.typeCoverage.atLeast&uri=https%3A%2F%2Fraw.githubusercontent.com%2F1stG%2Fconfigs%2Fmaster%2Fpackage.json)](https://github.com/plantain-00/type-coverage)
 [![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/1stG/configs)](https://coderabbit.ai)
 
@@ -35,6 +35,6 @@ Detailed changes for each release are documented in [CHANGELOG.md](./CHANGELOG.m
 
 [MIT][] © [JounQin][]@[1stG.me][]
 
-[1stg.me]: https://www.1stg.me
-[jounqin]: https://GitHub.com/JounQin
-[mit]: http://opensource.org/licenses/MIT
+[1stG.me]: https://www.1stG.me
+[JounQin]: https://GitHub.com/JounQin
+[MIT]: http://opensource.org/licenses/MIT
