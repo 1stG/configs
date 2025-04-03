@@ -59,7 +59,8 @@
   },
   "resolutions": {
     "@babel/core": "^7.26.10",
-    "@typescript-eslint/type-utils": "^8.29.0"
+    "@typescript-eslint/type-utils": "^8.29.0",
+    "prettier": "^3.5.3"
   },
   "typeCoverage": {
     "atLeast": 100,
