@@ -5,7 +5,7 @@
   "repository": "https://github.com/1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/common-config",
   "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
-  "funding": "https://opencollective.com/1stG",
+  "funding": "https://opencollective.com/configs",
   "license": "MIT",
   "engines": {
     "node": ">=18.18"

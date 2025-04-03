@@ -1,4 +1,4 @@
-# @1stg/app-config
+# @1stg/tsconfig
 
 Personal but Shareable TypeScript Configuration for all 1stG.me projects
 
