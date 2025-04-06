@@ -1,5 +1,5 @@
 {
-  "node": "18",
+  "node": "20",
   "buildCommand": false,
   "sandboxes": []
 }

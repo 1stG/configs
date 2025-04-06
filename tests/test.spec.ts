@@ -1,5 +1,4 @@
 import { transform } from '@babel/core'
-import { describe, expect, it } from 'vitest'
 
 describe('babel-plugin: fast-async', () => {
   it('transform plain async/await to Promise', () => {
