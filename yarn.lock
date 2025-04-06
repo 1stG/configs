@@ -10,9 +10,9 @@ __metadata:
   resolution: "@1stg/app-config@workspace:packages/app-config"
   dependencies:
     "@1stg/browserslist-config": "npm:^2.1.2"
-    "@1stg/common-config": "npm:^11.1.2"
+    "@1stg/common-config": "npm:^12.0.0"
     "@1stg/postcss-config": "npm:^6.0.4"
-    "@1stg/stylelint-config": "npm:^6.0.3"
+    "@1stg/stylelint-config": "npm:^6.0.4"
     "@pkgr/es-modules": "npm:^0.6.4"
     browserslist: "npm:^4.24.4"
     postcss: "npm:^8.5.3"
@@ -64,17 +64,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/common-config@npm:^11.1.2, @1stg/common-config@workspace:packages/common-config":
+"@1stg/common-config@npm:^12.0.0, @1stg/common-config@workspace:packages/common-config":
   version: 0.0.0-use.local
   resolution: "@1stg/common-config@workspace:packages/common-config"
   dependencies:
     "@1stg/babel-preset": "npm:^4.0.7"
     "@1stg/commitlint-config": "npm:^5.0.4"
-    "@1stg/eslint-config": "npm:^8.3.2"
-    "@1stg/lint-staged": "npm:^4.0.7"
+    "@1stg/eslint-config": "npm:^8.4.0"
+    "@1stg/lint-staged": "npm:^4.0.8"
     "@1stg/markuplint-config": "npm:^4.0.2"
-    "@1stg/prettier-config": "npm:^4.0.7"
-    "@1stg/remark-preset": "npm:^3.0.2"
+    "@1stg/prettier-config": "npm:^5.0.0"
+    "@1stg/remark-preset": "npm:^3.0.3"
     "@1stg/simple-git-hooks": "npm:^1.0.2"
     "@1stg/tsconfig": "npm:^3.0.2"
     "@babel/core": "npm:^7.26.10"
@@ -82,7 +82,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/config@npm:^1.0.2, @1stg/config@workspace:packages/config":
+"@1stg/config@npm:^1.0.3, @1stg/config@workspace:packages/config":
   version: 0.0.0-use.local
   resolution: "@1stg/config@workspace:packages/config"
   languageName: unknown
@@ -126,11 +126,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/eslint-config@npm:^8.3.2, @1stg/eslint-config@workspace:packages/eslint-config":
+"@1stg/eslint-config@npm:^8.4.0, @1stg/eslint-config@workspace:packages/eslint-config":
   version: 0.0.0-use.local
   resolution: "@1stg/eslint-config@workspace:packages/eslint-config"
   dependencies:
-    "@1stg/config": "npm:^1.0.2"
+    "@1stg/config": "npm:^1.0.3"
     "@babel/eslint-parser": "npm:^7.27.0"
     "@babel/eslint-plugin": "npm:^7.27.0"
     "@eslint-community/eslint-plugin-eslint-comments": "npm:^4.4.1"
@@ -169,12 +169,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/lint-staged@npm:^4.0.7, @1stg/lint-staged@workspace:packages/lint-staged":
+"@1stg/lint-staged@npm:^4.0.8, @1stg/lint-staged@workspace:packages/lint-staged":
   version: 0.0.0-use.local
   resolution: "@1stg/lint-staged@workspace:packages/lint-staged"
   dependencies:
-    "@1stg/config": "npm:^1.0.2"
-    "@1stg/prettier-config": "npm:^4.0.7"
+    "@1stg/config": "npm:^1.0.3"
+    "@1stg/prettier-config": "npm:^5.0.0"
     "@1stg/tsconfig": "npm:^3.0.2"
     "@pkgr/core": "npm:^0.2.0"
     prettier: "npm:^3.5.3"
@@ -217,11 +217,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/prettier-config@npm:^4.0.7, @1stg/prettier-config@workspace:packages/prettier-config":
+"@1stg/prettier-config@npm:^5.0.0, @1stg/prettier-config@workspace:packages/prettier-config":
   version: 0.0.0-use.local
   resolution: "@1stg/prettier-config@workspace:packages/prettier-config"
   dependencies:
-    "@1stg/config": "npm:^1.0.2"
+    "@1stg/config": "npm:^1.0.3"
     "@prettier/plugin-pug": "npm:^3.3.0"
     "@prettier/plugin-ruby": "npm:^4.0.4"
     "@prettier/plugin-xml": "npm:^3.4.1"
@@ -236,7 +236,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/remark-preset@npm:^3.0.2, @1stg/remark-preset@workspace:packages/remark-preset":
+"@1stg/remark-preset@npm:^3.0.3, @1stg/remark-preset@workspace:packages/remark-preset":
   version: 0.0.0-use.local
   resolution: "@1stg/remark-preset@workspace:packages/remark-preset"
   dependencies:
@@ -265,11 +265,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/stylelint-config@npm:^6.0.3, @1stg/stylelint-config@workspace:packages/stylelint-config":
+"@1stg/stylelint-config@npm:^6.0.4, @1stg/stylelint-config@workspace:packages/stylelint-config":
   version: 0.0.0-use.local
   resolution: "@1stg/stylelint-config@workspace:packages/stylelint-config"
   dependencies:
-    "@1stg/config": "npm:^1.0.2"
+    "@1stg/config": "npm:^1.0.3"
     "@pkgr/core": "npm:^0.2.0"
     postcss-html: "npm:^1.8.0"
     postcss-less: "npm:^6.0.0"

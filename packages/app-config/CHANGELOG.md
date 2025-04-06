@@ -1,5 +1,17 @@
 # Change Log
 
+## 12.0.0
+
+### Major Changes
+
+- [#329](https://github.com/1stG/configs/pull/329) [`c08b298`](https://github.com/1stG/configs/commit/c08b2989d7e3765dd3853fe5461d9662e5b3a05e) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump `prettier-plugin-pkg` with different orders for `types` related entries
+
+### Patch Changes
+
+- Updated dependencies [[`c08b298`](https://github.com/1stG/configs/commit/c08b2989d7e3765dd3853fe5461d9662e5b3a05e), [`c08b298`](https://github.com/1stG/configs/commit/c08b2989d7e3765dd3853fe5461d9662e5b3a05e)]:
+  - @1stg/common-config@12.0.0
+  - @1stg/stylelint-config@6.0.4
+
 ## 11.1.2
 
 ### Patch Changes

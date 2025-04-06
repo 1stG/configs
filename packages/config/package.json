@@ -1,6 +1,6 @@
 {
   "name": "@1stg/config",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "description": "Personal but Shareable Configuration for all 1stG.me projects",
   "repository": "https://github.com/1stG/configs.git",
