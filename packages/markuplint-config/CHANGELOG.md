@@ -1,5 +1,11 @@
 # @1stg/markuplint-config
 
+## 4.0.3
+
+### Patch Changes
+
+- [#331](https://github.com/1stG/configs/pull/331) [`1e85d72`](https://github.com/1stG/configs/commit/1e85d72ee140634fbc6da9b33dc23814815a0c3a) Thanks [@JounQin](https://github.com/JounQin)! - chore(markuplint-config): disable `required-h1` rule
+
 ## 4.0.2
 
 ### Patch Changes
