@@ -8,7 +8,7 @@
   "funding": "https://opencollective.com/configs",
   "license": "MIT",
   "main": "index.js",
-  "types": "index.d.js",
+  "types": "index.d.ts",
   "exports": {
     ".": "./index.js",
     "./package.json": "./package.json"
