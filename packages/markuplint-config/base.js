@@ -10,6 +10,7 @@ const base = {
     'deprecated-element': true,
     'id-duplication': true,
     'required-attr': true,
+    'required-h1': false,
     'use-list': false,
   },
   excludeFiles: ['**/node_modules/**'],
