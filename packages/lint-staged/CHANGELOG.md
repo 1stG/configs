@@ -1,5 +1,13 @@
 # Change Log
 
+## 4.0.8
+
+### Patch Changes
+
+- Updated dependencies [[`c08b298`](https://github.com/1stG/configs/commit/c08b2989d7e3765dd3853fe5461d9662e5b3a05e), [`c08b298`](https://github.com/1stG/configs/commit/c08b2989d7e3765dd3853fe5461d9662e5b3a05e)]:
+  - @1stg/config@1.0.3
+  - @1stg/prettier-config@5.0.0
+
 ## 4.0.7
 
 ### Patch Changes

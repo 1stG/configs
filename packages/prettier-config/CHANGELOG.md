@@ -1,5 +1,18 @@
 # Change Log
 
+## 5.0.0
+
+### Major Changes
+
+- [#329](https://github.com/1stG/configs/pull/329) [`c08b298`](https://github.com/1stG/configs/commit/c08b2989d7e3765dd3853fe5461d9662e5b3a05e) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump `prettier-plugin-pkg` with different orders for `types` related entries
+
+### Patch Changes
+
+- [#329](https://github.com/1stG/configs/pull/329) [`c08b298`](https://github.com/1stG/configs/commit/c08b2989d7e3765dd3853fe5461d9662e5b3a05e) Thanks [@JounQin](https://github.com/JounQin)! - chore: housekeeping, bump all (dev) deps
+
+- Updated dependencies [[`c08b298`](https://github.com/1stG/configs/commit/c08b2989d7e3765dd3853fe5461d9662e5b3a05e)]:
+  - @1stg/config@1.0.3
+
 ## 4.0.7
 
 ### Patch Changes

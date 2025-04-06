@@ -1,5 +1,21 @@
 # Change Log
 
+## 12.0.0
+
+### Major Changes
+
+- [#329](https://github.com/1stG/configs/pull/329) [`c08b298`](https://github.com/1stG/configs/commit/c08b2989d7e3765dd3853fe5461d9662e5b3a05e) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump `prettier-plugin-pkg` with different orders for `types` related entries
+
+### Patch Changes
+
+- [#329](https://github.com/1stG/configs/pull/329) [`c08b298`](https://github.com/1stG/configs/commit/c08b2989d7e3765dd3853fe5461d9662e5b3a05e) Thanks [@JounQin](https://github.com/JounQin)! - chore: housekeeping, bump all (dev) deps
+
+- Updated dependencies [[`c08b298`](https://github.com/1stG/configs/commit/c08b2989d7e3765dd3853fe5461d9662e5b3a05e), [`c08b298`](https://github.com/1stG/configs/commit/c08b2989d7e3765dd3853fe5461d9662e5b3a05e), [`c08b298`](https://github.com/1stG/configs/commit/c08b2989d7e3765dd3853fe5461d9662e5b3a05e)]:
+  - @1stg/eslint-config@8.4.0
+  - @1stg/prettier-config@5.0.0
+  - @1stg/remark-preset@3.0.3
+  - @1stg/lint-staged@4.0.8
+
 ## 11.1.2
 
 ### Patch Changes

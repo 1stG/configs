@@ -1,5 +1,18 @@
 # Change Log
 
+## 8.4.0
+
+### Minor Changes
+
+- [#329](https://github.com/1stG/configs/pull/329) [`c08b298`](https://github.com/1stG/configs/commit/c08b2989d7e3765dd3853fe5461d9662e5b3a05e) Thanks [@JounQin](https://github.com/JounQin)! - feat: enable `globals` for `jest` and `vitest`, ignore `.type-coverage` and `.vercel`
+
+### Patch Changes
+
+- [#329](https://github.com/1stG/configs/pull/329) [`c08b298`](https://github.com/1stG/configs/commit/c08b2989d7e3765dd3853fe5461d9662e5b3a05e) Thanks [@JounQin](https://github.com/JounQin)! - chore: housekeeping, bump all (dev) deps
+
+- Updated dependencies [[`c08b298`](https://github.com/1stG/configs/commit/c08b2989d7e3765dd3853fe5461d9662e5b3a05e)]:
+  - @1stg/config@1.0.3
+
 ## 8.3.2
 
 ### Patch Changes
