@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@1stg/babel-preset": "^4.0.7",
-    "@1stg/commitlint-config": "^5.0.3",
+    "@1stg/commitlint-config": "^5.0.4",
     "@1stg/eslint-config": "^8.3.2",
     "@1stg/lint-staged": "^4.0.7",
     "@1stg/markuplint-config": "^4.0.2",

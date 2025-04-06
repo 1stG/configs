@@ -25,6 +25,7 @@ import * as reactHooks_ from 'eslint-plugin-react-hooks'
 import toml_ from 'eslint-plugin-toml'
 import vue_ from 'eslint-plugin-vue'
 import yml_ from 'eslint-plugin-yml'
+import globals from 'globals'
 import tseslint from 'typescript-eslint'
 import vueParser from 'vue-eslint-parser'
 
@@ -543,6 +544,9 @@ export const jest = tseslint.config({
   name: '@1stg/jest',
   files: ['**/*.{spec,test}.{js,jsx,ts,tsx}'],
   extends: [jest_.configs['flat/recommended']],
+  languageOptions: {
+    globals: globals.jest,
+  },
   rules: test.rules,
 })
 
@@ -550,6 +554,9 @@ export const vitest = tseslint.config({
   name: '@1stg/vitest',
   files: ['**/*.{spec,test}.{js,jsx,ts,tsx}'],
   extends: [vitest_.configs.recommended],
+  languageOptions: {
+    globals: globals.vitest,
+  },
   rules: test.rules,
 })
 
