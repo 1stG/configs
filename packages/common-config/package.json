@@ -15,7 +15,7 @@
     "@1stg/commitlint-config": "^5.0.4",
     "@1stg/eslint-config": "^8.4.0",
     "@1stg/lint-staged": "^4.0.8",
-    "@1stg/markuplint-config": "^4.0.2",
+    "@1stg/markuplint-config": "^4.0.3",
     "@1stg/prettier-config": "^5.0.0",
     "@1stg/remark-preset": "^3.0.3",
     "@1stg/simple-git-hooks": "^1.0.2",
