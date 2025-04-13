@@ -1,5 +1,21 @@
 # Change Log
 
+## 12.0.1
+
+### Patch Changes
+
+- [#336](https://github.com/1stG/configs/pull/336) [`fa39ecf`](https://github.com/1stG/configs/commit/fa39ecf3bc7982e7e4172952721f8745991f4739) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump all (dev) deps
+
+- Updated dependencies [[`fa39ecf`](https://github.com/1stG/configs/commit/fa39ecf3bc7982e7e4172952721f8745991f4739), [`fa39ecf`](https://github.com/1stG/configs/commit/fa39ecf3bc7982e7e4172952721f8745991f4739)]:
+  - @1stg/babel-preset@4.0.8
+  - @1stg/commitlint-config@5.0.5
+  - @1stg/eslint-config@8.5.0
+  - @1stg/lint-staged@4.0.9
+  - @1stg/markuplint-config@4.0.4
+  - @1stg/prettier-config@5.0.1
+  - @1stg/remark-preset@3.0.4
+  - @1stg/simple-git-hooks@1.0.3
+
 ## 12.0.0
 
 ### Major Changes

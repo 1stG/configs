@@ -1,5 +1,15 @@
 # Change Log
 
+## 4.0.9
+
+### Patch Changes
+
+- [#336](https://github.com/1stG/configs/pull/336) [`fa39ecf`](https://github.com/1stG/configs/commit/fa39ecf3bc7982e7e4172952721f8745991f4739) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump all (dev) deps
+
+- Updated dependencies [[`fa39ecf`](https://github.com/1stG/configs/commit/fa39ecf3bc7982e7e4172952721f8745991f4739)]:
+  - @1stg/config@1.0.4
+  - @1stg/prettier-config@5.0.1
+
 ## 4.0.8
 
 ### Patch Changes
