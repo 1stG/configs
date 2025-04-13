@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.0.8
+
+### Patch Changes
+
+- [#336](https://github.com/1stG/configs/pull/336) [`fa39ecf`](https://github.com/1stG/configs/commit/fa39ecf3bc7982e7e4172952721f8745991f4739) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump all (dev) deps
+
 ## 4.0.7
 
 ### Patch Changes

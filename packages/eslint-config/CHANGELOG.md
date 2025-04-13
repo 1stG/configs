@@ -1,5 +1,18 @@
 # Change Log
 
+## 8.5.0
+
+### Minor Changes
+
+- [#336](https://github.com/1stG/configs/pull/336) [`fa39ecf`](https://github.com/1stG/configs/commit/fa39ecf3bc7982e7e4172952721f8745991f4739) Thanks [@JounQin](https://github.com/JounQin)! - feat: enable `eslint-plugin-markup` again
+
+### Patch Changes
+
+- [#336](https://github.com/1stG/configs/pull/336) [`fa39ecf`](https://github.com/1stG/configs/commit/fa39ecf3bc7982e7e4172952721f8745991f4739) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump all (dev) deps
+
+- Updated dependencies [[`fa39ecf`](https://github.com/1stG/configs/commit/fa39ecf3bc7982e7e4172952721f8745991f4739)]:
+  - @1stg/config@1.0.4
+
 ## 8.4.0
 
 ### Minor Changes

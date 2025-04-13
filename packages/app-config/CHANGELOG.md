@@ -1,5 +1,16 @@
 # Change Log
 
+## 12.0.1
+
+### Patch Changes
+
+- [#336](https://github.com/1stG/configs/pull/336) [`fa39ecf`](https://github.com/1stG/configs/commit/fa39ecf3bc7982e7e4172952721f8745991f4739) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump all (dev) deps
+
+- Updated dependencies [[`fa39ecf`](https://github.com/1stG/configs/commit/fa39ecf3bc7982e7e4172952721f8745991f4739)]:
+  - @1stg/browserslist-config@2.1.3
+  - @1stg/common-config@12.0.1
+  - @1stg/postcss-config@6.0.5
+
 ## 12.0.0
 
 ### Major Changes
