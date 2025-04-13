@@ -13,9 +13,7 @@ import configPrettier from 'eslint-config-prettier'
 import prettierRecommended from 'eslint-plugin-prettier/recommended'
 import tseslint from 'typescript-eslint'
 
-/**
- * @type {string[]}
- */
+/** @type {string[]} */
 let allowModules = []
 
 if (isMonorepo()) {

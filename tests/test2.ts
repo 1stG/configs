@@ -10,9 +10,7 @@ import { content, TestCase } from './_test'
 
 promisify(fs.readFile)
 
-/**
- * @deprecated
- */
+/** @deprecated */
 class Basic {
   // eslint-disable-next-line sonarjs/deprecation -- testing
   prop: string = content

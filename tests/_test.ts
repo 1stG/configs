@@ -1,6 +1,4 @@
-/**
- * @deprecated This has been deprecated, no not use it
- */
+/** @deprecated This has been deprecated, no not use it */
 export const content = 'Hello World'
 
 export interface PartialObserver<T> {

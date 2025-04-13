@@ -1,5 +1,5 @@
 ---
-"@1stg/remark-preset": patch
+"@1stg/remark-preset": minor
 ---
 
-feat(remark-preset): add `remark-cjk-friendly` support
+feat(remark-preset): add `remark-cjk-friendly` and `cjk-friendly-gfm-strikethrough` plugins
