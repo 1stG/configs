@@ -1,8 +1,6 @@
 // @ts-check
 
-/**
- * @import {Linter} from 'eslint'
- */
+/** @import {Linter} from 'eslint' */
 
 import path from 'node:path'
 
@@ -32,18 +30,14 @@ import vueParser from 'vue-eslint-parser'
 
 import { isTsAvailable, magicNumbers, prettierExtends } from './_util.js'
 
-/**
- * @import {TSESLint} from '@typescript-eslint/utils'
- */
+/** @import {TSESLint} from '@typescript-eslint/utils' */
 
 const configFile =
   tryFile(path.resolve('babel.config.js')) ||
   tryFile(path.resolve('.babelrc.js')) ||
   tryPkg('@1stg/babel-preset/config')
 
-/**
- * @satisfies {TSESLint.FlatConfig.Config}
- */
+/** @satisfies {TSESLint.FlatConfig.Config} */
 const jsBase = {
   name: '@1stg/js-base',
   files: ['**/*.{cjs,mjs,js,jsx}'],
@@ -308,9 +302,7 @@ export const ts = tseslint.config(
   },
 )
 
-/**
- * @satisfies {TSESLint.FlatConfig.Config}
- */
+/** @satisfies {TSESLint.FlatConfig.Config} */
 export const dTs = {
   name: '@1stg/d-ts',
   files: ['**/*.d.{cts,mts,ts}', '**/*.d.*.{cts,mts,ts}'],
@@ -530,9 +522,7 @@ const nonSourceRules = /** @type {const} */ ({
   'n/no-unsupported-features/es-builtins': 0,
 })
 
-/**
- * @satisfies {TSESLint.FlatConfig.Config}
- */
+/** @satisfies {TSESLint.FlatConfig.Config} */
 export const test = {
   name: '@1stg/test',
   files: ['**/{__test__,test,tests}/**/*'],
@@ -561,9 +551,7 @@ export const vitest = tseslint.config({
   rules: test.rules,
 })
 
-/**
- * @satisfies {TSESLint.FlatConfig.Config}
- */
+/** @satisfies {TSESLint.FlatConfig.Config} */
 export const script = {
   name: '@1stg/script',
   files: ['**/scripts/**/*'],
@@ -572,9 +560,7 @@ export const script = {
 
 export const scripts = script
 
-/**
- * @satisfies {TSESLint.FlatConfig.Config}
- */
+/** @satisfies {TSESLint.FlatConfig.Config} */
 export const story = {
   name: '@1stg/story',
   files: ['**/.storybook/**/*', '**/stories/**/*'],
@@ -583,9 +569,7 @@ export const story = {
 
 export const stories = story
 
-/**
- * @satisfies {TSESLint.FlatConfig.Config}
- */
+/** @satisfies {TSESLint.FlatConfig.Config} */
 export const config = {
   name: '@1stg/config',
   files: ['**/.*.js', '**/*.config.{js,ts}'],

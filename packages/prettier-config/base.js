@@ -4,9 +4,7 @@ import { iniRcFiles, jsoncFiles, nonJsonRcFiles, shRcFiles } from '@1stg/config'
 
 const require = createRequire(import.meta.url)
 
-/**
- * @type {import('prettier').Config}
- */
+/** @type {import('prettier').Config} */
 export default {
   arrowParens: 'avoid',
   semi: false,
@@ -16,9 +14,7 @@ export default {
   xmlWhitespaceSensitivity: 'ignore',
   plugins: await Promise.all(
     Object.keys(require('./package.json').dependencies).map(async pkgName => {
-      /**
-       * @type {import('prettier').Plugin}
-       */
+      /** @type {import('prettier').Plugin} */
       const pkg = await import(pkgName)
       return pkg.default || pkg
     }),

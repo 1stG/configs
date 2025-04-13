@@ -44,7 +44,7 @@ module.exports = declare(
     }
 
     /**
-     * presets are processed in last-to-first order
+     * Presets are processed in last-to-first order
      *
      * @see https://babeljs.io/docs/en/presets#preset-ordering
      */

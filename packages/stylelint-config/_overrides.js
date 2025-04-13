@@ -13,9 +13,9 @@ const disablePrettierOptions = !preferPrettier &&
   }
 
 /**
- * @import {Config} from 'stylelint'
  * @param {boolean} loose
  * @returns {Config} Stylelint configuration
+ * @import {Config} from 'stylelint'
  */
 export const overrides = loose => ({
   ...base,

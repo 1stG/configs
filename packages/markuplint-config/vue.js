@@ -1,8 +1,8 @@
 import base from './base.js'
 
 /**
- * @import {Config} from '@markuplint/core'
  * @type {Config}
+ * @import {Config} from '@markuplint/core'
  */
 const vue = {
   ...base,
