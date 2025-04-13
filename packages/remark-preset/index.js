@@ -1,3 +1,5 @@
+import remarkCjkFriendly from 'remark-cjk-friendly'
+import remarkCjkFriendlyGfmStrikethrough from 'remark-cjk-friendly-gfm-strikethrough'
 import remarkFrontmatter from 'remark-frontmatter'
 import remarkGfm from 'remark-gfm'
 import remarkLint from 'remark-lint'
@@ -27,6 +29,8 @@ export default {
     remarkPresetPrettier,
     remarkFrontmatter,
     remarkGfm,
+    remarkCjkFriendly,
+    remarkCjkFriendlyGfmStrikethrough,
     remarkValidateLinks,
     [remarkLintNoDuplicateHeadings, false],
     remarkLintNoDuplicateHeadingsInSection,
