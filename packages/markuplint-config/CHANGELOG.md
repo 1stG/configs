@@ -4,7 +4,7 @@
 
 ### Patch Changes
 
-- [#343](https://github.com/1stG/configs/pull/343) [`ad28a13`](https://github.com/1stG/configs/commit/ad28a1398b427b4e5253ab65b1136a3b5d997f7e) Thanks [@JounQin](https://github.com/JounQin)! - fix: add missing `repository` field
+- [#343](https://github.com/1stG/configs/pull/343) [`ad28a13`](https://github.com/1stG/configs/commit/ad28a1398b427b4e5253ab65b1136a3b5d997f7e) Thanks [@JounQin](https://github.com/JounQin)! - fix: add missing `homepage` field
 
 ## 4.0.4
 
