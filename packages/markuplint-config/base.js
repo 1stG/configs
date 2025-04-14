@@ -1,6 +1,6 @@
 /**
  * @type {Config}
- * @import {Config} from '@markuplint/ml-config'
+ * @import { Config } from '@markuplint/ml-config'
  */
 const base = {
   extends: ['markuplint:recommended'],

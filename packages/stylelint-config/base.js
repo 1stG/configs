@@ -6,7 +6,7 @@ const isVueAvailable = isPkgAvailable('vue')
 
 /**
  * @type {Config}
- * @import {Config} from 'stylelint'
+ * @import { Config } from 'stylelint'
  */
 const base = {
   extends: [

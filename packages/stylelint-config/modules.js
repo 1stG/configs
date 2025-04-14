@@ -1,6 +1,6 @@
 /**
  * @type {Config}
- * @import {Config} from 'stylelint'
+ * @import { Config } from 'stylelint'
  */
 const modules = {
   rules: {

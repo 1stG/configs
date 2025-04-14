@@ -1,6 +1,6 @@
 // @ts-check
 
-/** @import {TSESLint} from '@typescript-eslint/utils' */
+/** @import { TSESLint } from '@typescript-eslint/utils' */
 
 import { tryFile, tryPkg, tryRequirePkg } from '@pkgr/utils'
 

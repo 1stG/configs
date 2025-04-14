@@ -2,7 +2,7 @@ const { NODE_ENV, __DEV__, __PROD__ } = require('@pkgr/utils')
 
 /**
  * @type {ConfigFn}
- * @import {ConfigFn, ConfigPlugin} from 'postcss-load-config'
+ * @import { ConfigFn, ConfigPlugin } from 'postcss-load-config'
  */
 const config = ({
   advanced,
