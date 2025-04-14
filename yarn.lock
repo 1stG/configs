@@ -256,6 +256,7 @@ __metadata:
     prettier-plugin-go-template: "npm:^0.0.15"
     prettier-plugin-ini: "npm:^1.3.0"
     prettier-plugin-jsdoc: "npm:^1.3.2"
+    prettier-plugin-jsdoc-type: "npm:^0.1.5"
     prettier-plugin-pkg: "npm:^0.19.0"
     prettier-plugin-properties: "npm:^0.3.0"
     prettier-plugin-sh: "npm:^0.17.2"
@@ -7037,7 +7038,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"comment-parser@npm:1.4.1, comment-parser@npm:^1.4.0":
+"comment-parser@npm:1.4.1, comment-parser@npm:^1.4.0, comment-parser@npm:^1.4.1":
   version: 1.4.1
   resolution: "comment-parser@npm:1.4.1"
   checksum: 10c0/d6c4be3f5be058f98b24f2d557f745d8fe1cc9eb75bebbdccabd404a0e1ed41563171b16285f593011f8b6a5ec81f564fb1f2121418ac5cbf0f49255bf0840dd
@@ -14881,6 +14882,18 @@ __metadata:
   dependencies:
     prettier: "npm:>=3.0.0-alpha.3"
   checksum: 10c0/db5580a903cf5dadd89f33a7317aa2cc13da6b81c623a5a8786b2610521be834516ca393c1a1535603f55435f95ab372b9199bca1e8091600dad523cd3ebe4b3
+  languageName: node
+  linkType: hard
+
+"prettier-plugin-jsdoc-type@npm:^0.1.5":
+  version: 0.1.5
+  resolution: "prettier-plugin-jsdoc-type@npm:0.1.5"
+  dependencies:
+    comment-parser: "npm:^1.4.1"
+  peerDependencies:
+    prettier: ">=3.5.3"
+    typescript: ">=5.8.2"
+  checksum: 10c0/b14f5cf12d76dab8c35d5b9edba25b382ed41291fb5814b39472251c86b8a2285e2161036dc6f7cd6fdbc17959ae6cef929c6920658ce0b5c38682f52f79c3ad
   languageName: node
   linkType: hard
 
