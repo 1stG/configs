@@ -10,7 +10,7 @@
   "main": "index.js",
   "peerDependencies": {
     "@commitlint/cli": ">=11.0.0",
-    "lint-staged": ">=9.0.0",
+    "nano-staged": ">=0.8.0",
     "simple-git-hooks": ">=2.12.1"
   },
   "dependencies": {
