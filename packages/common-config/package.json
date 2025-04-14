@@ -2,7 +2,7 @@
   "name": "@1stg/common-config",
   "version": "13.0.0",
   "description": "Personal but Shareable Common Configuration for all 1stG.me projects",
-  "repository": "https://github.com/1stG/configs.git",
+  "repository": "git+https://github.com/1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/common-config",
   "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
   "funding": "https://opencollective.com/configs",
