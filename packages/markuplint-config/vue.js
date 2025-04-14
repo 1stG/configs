@@ -2,7 +2,7 @@ import base from './base.js'
 
 /**
  * @type {Config}
- * @import {Config} from '@markuplint/core'
+ * @import { Config } from '@markuplint/core'
  */
 const vue = {
   ...base,

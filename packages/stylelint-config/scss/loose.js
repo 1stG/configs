@@ -2,7 +2,7 @@ import base from './base.js'
 
 /**
  * @type {Config}
- * @import {Config} from 'stylelint'
+ * @import { Config } from 'stylelint'
  */
 const loose = {
   ...base,
