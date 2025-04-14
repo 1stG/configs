@@ -1,5 +1,11 @@
 # Change Log
 
+## 9.0.3
+
+### Patch Changes
+
+- [`8851c03`](https://github.com/1stG/configs/commit/8851c037975d2b2152c9f8875a1380f49cfc57a5) Thanks [@JounQin](https://github.com/JounQin)! - fix(eslint-config): `plugins` could not be `undefined`
+
 ## 9.0.2
 
 ### Patch Changes
