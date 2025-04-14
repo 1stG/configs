@@ -1,8 +1,8 @@
 {
-  "name": "@1stg/lint-staged",
-  "version": "4.0.9",
+  "name": "@1stg/nano-staged",
+  "version": "0.0.0",
   "type": "module",
-  "description": "Personal but Shareable lint-staged Configuration for all 1stG.me projects",
+  "description": "Personal but Shareable nano-staged Configuration for all 1stG.me projects",
   "repository": "https://github.com/1stG/configs.git",
   "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
   "funding": "https://opencollective.com/configs",
@@ -19,7 +19,7 @@
     "./vue-tsc": "./vue-tsc.js"
   },
   "peerDependencies": {
-    "lint-staged": ">=12.1.0"
+    "nano-staged": ">=0.8.0"
   },
   "dependencies": {
     "@1stg/config": "^1.0.4",
