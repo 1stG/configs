@@ -8,6 +8,8 @@ import {
   isPkgAvailable,
   getMonorepoPkgs,
   tryRequirePkg,
+  tryFile,
+  tryPkg,
 } from '@pkgr/utils'
 import configPrettier from 'eslint-config-prettier'
 import prettierRecommended from 'eslint-plugin-prettier/recommended'
@@ -36,7 +38,8 @@ export { allowModules }
 
 export const isTsAvailable = isPkgAvailable('typescript')
 
-export const isWebpackAvailable = isPkgAvailable('webpack')
+export const isWebpackAvailable =
+  isPkgAvailable('webpack') || isPkgAvailable('@rspack/core')
 
 export const webpackSpecVars = [
   '__non_webpack_require__',
@@ -59,3 +62,15 @@ export const magicNumbers = [
 export const prettierExtends = tseslint.config(
   preferPrettier ? configPrettier : prettierRecommended,
 )
+
+export const project =
+  tryFile('tsconfig.eslint.json') ||
+  tryFile('tsconfig.base.json') ||
+  tryFile('tsconfig.json') ||
+  tryPkg('@1stg/tsconfig')
+
+export const nonSourceRules = /** @type {const} */ ({
+  'n/no-extraneous-import': 0,
+  'n/no-extraneous-require': 0,
+  'n/no-unsupported-features/es-builtins': 0,
+})
