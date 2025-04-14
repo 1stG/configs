@@ -41,6 +41,10 @@ export const isTsAvailable = isPkgAvailable('typescript')
 export const isWebpackAvailable =
   isPkgAvailable('webpack') || isPkgAvailable('@rspack/core')
 
+export const isReactPluginAvailable = isPkgAvailable(
+  '@eslint-react/eslint-plugin',
+)
+
 export const webpackSpecVars = [
   '__non_webpack_require__',
   '__resourceQuery',

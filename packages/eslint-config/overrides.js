@@ -13,6 +13,7 @@ import yml_ from 'eslint-plugin-yml'
 import tseslint from 'typescript-eslint'
 
 import {
+  isReactPluginAvailable,
   isTsAvailable,
   magicNumbers,
   nonSourceRules,
@@ -20,7 +21,6 @@ import {
 } from './_util.js'
 import { jsBase } from './js-base.js'
 import { js } from './js.js'
-import { reactJsx } from './react.js'
 import { test } from './test.js'
 import { resolveSettings, tsBase } from './ts-base.js'
 
@@ -128,16 +128,20 @@ export const md = tseslint.config(
   mdx_.configs.flatCodeBlocks,
 )
 
+const react = isReactPluginAvailable ? await import('./react.js') : undefined
+
 export const mdx = tseslint.config(
   {
     name: '@1stg/mdx',
     files: ['**/*.mdx'],
-    extends: [reactJsx, mdx_.configs.flat],
+    extends: [react?.reactJsx, mdx_.configs.flat].filter(Boolean),
     languageOptions: {
       ...jsBase.languageOptions,
       parser: eslintMdx,
     },
-    settings: { ...reactJsx[0].settings, ...resolveSettings },
+    settings: react?.reactJsx
+      ? { ...react.reactJsx[0].settings, ...resolveSettings }
+      : resolveSettings,
     rules: {
       'prettier/prettier': preferPrettier ? 0 : 2,
     },
@@ -216,9 +220,7 @@ export const yml = yaml
 export const overrides = tseslint.config(
   js,
   isTsAvailable ? ts : [],
-  isPkgAvailable('@eslint-react/eslint-plugin')
-    ? await import('./react.js').then(({ react }) => react)
-    : [],
+  react?.react || [],
   // The order matters, the later should to be preferred
   markup,
   isPkgAvailable('eslint-plugin-vue')
