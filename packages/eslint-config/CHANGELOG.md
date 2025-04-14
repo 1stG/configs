@@ -1,5 +1,11 @@
 # Change Log
 
+## 9.0.2
+
+### Patch Changes
+
+- [#347](https://github.com/1stG/configs/pull/347) [`fac96c2`](https://github.com/1stG/configs/commit/fac96c21f6335f369c86f1ac74b59881dd35c5cb) Thanks [@JounQin](https://github.com/JounQin)! - fix: `reactJsx` should be optional for `mdx`
+
 ## 9.0.1
 
 ### Patch Changes

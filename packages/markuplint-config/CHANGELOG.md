@@ -1,5 +1,11 @@
 # @1stg/markuplint-config
 
+## 4.0.6
+
+### Patch Changes
+
+- [#347](https://github.com/1stG/configs/pull/347) [`fac96c2`](https://github.com/1stG/configs/commit/fac96c21f6335f369c86f1ac74b59881dd35c5cb) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump `markuplint` packages
+
 ## 4.0.5
 
 ### Patch Changes
