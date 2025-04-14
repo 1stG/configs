@@ -1,5 +1,11 @@
 # Change Log
 
+## 5.1.0
+
+### Minor Changes
+
+- [#340](https://github.com/1stG/configs/pull/340) [`4a1925b`](https://github.com/1stG/configs/commit/4a1925be85ab232216d5f83a0f85a8227e2f6b80) Thanks [@JounQin](https://github.com/JounQin)! - feat(prettier-config): add `go-template` and `jsdoc` plugins
+
 ## 5.0.1
 
 ### Patch Changes

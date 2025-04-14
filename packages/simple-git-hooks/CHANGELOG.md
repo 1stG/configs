@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.0.0
+
+### Major Changes
+
+- [#342](https://github.com/1stG/configs/pull/342) [`3945e4f`](https://github.com/1stG/configs/commit/3945e4f50d66b753c902f975ae2f2313fd59f759) Thanks [@JounQin](https://github.com/JounQin)! - feat!: migrate from `lint-staged` to `nano-staged`
+
 ## 1.0.3
 
 ### Patch Changes

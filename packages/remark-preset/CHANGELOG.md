@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.1.0
+
+### Minor Changes
+
+- [#338](https://github.com/1stG/configs/pull/338) [`fb92907`](https://github.com/1stG/configs/commit/fb92907f639dbe59868f960fa6e3c656280e4916) Thanks [@JounQin](https://github.com/JounQin)! - feat(remark-preset): add `remark-cjk-friendly` and `cjk-friendly-gfm-strikethrough` plugins
+
 ## 3.0.4
 
 ### Patch Changes
