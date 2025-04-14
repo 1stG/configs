@@ -1,6 +1,6 @@
 {
   "name": "@1stg/eslint-config",
-  "version": "9.0.0",
+  "version": "9.0.1",
   "type": "module",
   "description": "Personal but Shareable ESLint Configuration for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
@@ -62,7 +62,7 @@
     }
   },
   "dependencies": {
-    "@1stg/config": "^1.0.4",
+    "@1stg/config": "^1.0.5",
     "@eslint-community/eslint-plugin-eslint-comments": "^4.5.0",
     "@eslint/js": "^9.24.0",
     "@pkgr/utils": "^3.1.1",

@@ -1,5 +1,17 @@
 # Change Log
 
+## 13.0.1
+
+### Patch Changes
+
+- [#343](https://github.com/1stG/configs/pull/343) [`ad28a13`](https://github.com/1stG/configs/commit/ad28a1398b427b4e5253ab65b1136a3b5d997f7e) Thanks [@JounQin](https://github.com/JounQin)! - fix: add missing `repository` field
+
+- Updated dependencies [[`ad28a13`](https://github.com/1stG/configs/commit/ad28a1398b427b4e5253ab65b1136a3b5d997f7e)]:
+  - @1stg/browserslist-config@2.1.4
+  - @1stg/stylelint-config@6.0.5
+  - @1stg/postcss-config@6.0.6
+  - @1stg/common-config@13.0.1
+
 ## 13.0.0
 
 ### Major Changes

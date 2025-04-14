@@ -1,6 +1,6 @@
 {
   "name": "@1stg/tsconfig",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "type": "commonjs",
   "description": "Personal but Shareable TypeScript Configuration for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",

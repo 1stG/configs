@@ -1,6 +1,6 @@
 {
   "name": "@1stg/simple-git-hooks",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "type": "module",
   "description": "Personal but Shareable simple-git-hooks Configuration for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
