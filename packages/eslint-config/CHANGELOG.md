@@ -1,5 +1,11 @@
 # Change Log
 
+## 9.0.4
+
+### Patch Changes
+
+- [#350](https://github.com/1stG/configs/pull/350) [`fe89f4a`](https://github.com/1stG/configs/commit/fe89f4a31b0ea1689a8b6bc8a8485b730e403c76) Thanks [@JounQin](https://github.com/JounQin)! - fix: disable `jsdoc/tag-lines` which conflicts with `prettier-plugin-jsdoc`
+
 ## 9.0.3
 
 ### Patch Changes
