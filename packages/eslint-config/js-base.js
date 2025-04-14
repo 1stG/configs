@@ -26,13 +26,15 @@ export const jsBase = {
           : { requireConfigFile: false },
       }
     : {},
-  plugins: isBabelAvailable
-    ? {
-        '@babel': /** @type {Omit<TSESLint.FlatConfig.Plugin, 'configs'>} */ (
-          tryRequirePkg('@babel/eslint-plugin')
-        ),
-      }
-    : undefined,
+  plugins: /** @type {TSESLint.FlatConfig.Plugins} */ (
+    isBabelAvailable
+      ? {
+          '@babel': /** @type {Omit<TSESLint.FlatConfig.Plugin, 'configs'>} */ (
+            tryRequirePkg('@babel/eslint-plugin')
+          ),
+        }
+      : {}
+  ),
   rules: {
     camelcase: [2, { properties: 'never', ignoreDestructuring: true }],
     ...(isBabelAvailable && {
