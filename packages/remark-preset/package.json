@@ -1,6 +1,6 @@
 {
   "name": "@1stg/remark-preset",
-  "version": "3.0.4",
+  "version": "3.1.0",
   "type": "module",
   "description": "Personal but Shareable Remark Preset for all 1stG.me projects",
   "repository": "https://github.com/1stG/configs.git",

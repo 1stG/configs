@@ -1,5 +1,11 @@
 # Change Log
 
+## 9.0.0
+
+### Major Changes
+
+- [#341](https://github.com/1stG/configs/pull/341) [`8527c5f`](https://github.com/1stG/configs/commit/8527c5f5fd264216a7244dcb6b8aa8f7ff0dd23f) Thanks [@JounQin](https://github.com/JounQin)! - feat(eslint-config)!: mark all framework plugins as optional peer
+
 ## 8.5.0
 
 ### Minor Changes

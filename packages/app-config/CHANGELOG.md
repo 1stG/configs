@@ -1,5 +1,18 @@
 # Change Log
 
+## 13.0.0
+
+### Major Changes
+
+- [#341](https://github.com/1stG/configs/pull/341) [`8527c5f`](https://github.com/1stG/configs/commit/8527c5f5fd264216a7244dcb6b8aa8f7ff0dd23f) Thanks [@JounQin](https://github.com/JounQin)! - feat(eslint-config)!: mark all framework plugins as optional peer
+
+- [#342](https://github.com/1stG/configs/pull/342) [`3945e4f`](https://github.com/1stG/configs/commit/3945e4f50d66b753c902f975ae2f2313fd59f759) Thanks [@JounQin](https://github.com/JounQin)! - feat!: migrate from `lint-staged` to `nano-staged`
+
+### Patch Changes
+
+- Updated dependencies [[`8527c5f`](https://github.com/1stG/configs/commit/8527c5f5fd264216a7244dcb6b8aa8f7ff0dd23f), [`3945e4f`](https://github.com/1stG/configs/commit/3945e4f50d66b753c902f975ae2f2313fd59f759)]:
+  - @1stg/common-config@13.0.0
+
 ## 12.0.1
 
 ### Patch Changes

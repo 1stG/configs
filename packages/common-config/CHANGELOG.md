@@ -1,5 +1,22 @@
 # Change Log
 
+## 13.0.0
+
+### Major Changes
+
+- [#341](https://github.com/1stG/configs/pull/341) [`8527c5f`](https://github.com/1stG/configs/commit/8527c5f5fd264216a7244dcb6b8aa8f7ff0dd23f) Thanks [@JounQin](https://github.com/JounQin)! - feat(eslint-config)!: mark all framework plugins as optional peer
+
+- [#342](https://github.com/1stG/configs/pull/342) [`3945e4f`](https://github.com/1stG/configs/commit/3945e4f50d66b753c902f975ae2f2313fd59f759) Thanks [@JounQin](https://github.com/JounQin)! - feat!: migrate from `lint-staged` to `nano-staged`
+
+### Patch Changes
+
+- Updated dependencies [[`8527c5f`](https://github.com/1stG/configs/commit/8527c5f5fd264216a7244dcb6b8aa8f7ff0dd23f), [`fb92907`](https://github.com/1stG/configs/commit/fb92907f639dbe59868f960fa6e3c656280e4916), [`4a1925b`](https://github.com/1stG/configs/commit/4a1925be85ab232216d5f83a0f85a8227e2f6b80), [`3945e4f`](https://github.com/1stG/configs/commit/3945e4f50d66b753c902f975ae2f2313fd59f759)]:
+  - @1stg/eslint-config@9.0.0
+  - @1stg/remark-preset@3.1.0
+  - @1stg/prettier-config@5.1.0
+  - @1stg/simple-git-hooks@2.0.0
+  - @1stg/nano-staged@0.1.0
+
 ## 12.0.1
 
 ### Patch Changes
