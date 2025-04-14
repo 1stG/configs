@@ -1,5 +1,11 @@
 # Change Log
 
+## 5.1.2
+
+### Patch Changes
+
+- [#345](https://github.com/1stG/configs/pull/345) [`191c9ef`](https://github.com/1stG/configs/commit/191c9ef302f9a4f21cd8010b1d138c6976b9fbc1) Thanks [@JounQin](https://github.com/JounQin)! - feat(prettier-config): add `prettier-plugin-jsdoc-type`
+
 ## 5.1.1
 
 ### Patch Changes
