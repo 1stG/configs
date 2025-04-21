@@ -1,5 +1,11 @@
 # Change Log
 
+## 5.1.4
+
+### Patch Changes
+
+- [#353](https://github.com/1stG/configs/pull/353) [`b8bc5fa`](https://github.com/1stG/configs/commit/b8bc5fac446202ac0f7f9b85b3bf4fa12c97d08d) Thanks [@JounQin](https://github.com/JounQin)! - fix: should use `declare` in `.d.ts`
+
 ## 5.1.3
 
 ### Patch Changes
