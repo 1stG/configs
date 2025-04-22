@@ -1,5 +1,11 @@
 # Change Log
 
+## 9.0.5
+
+### Patch Changes
+
+- [`6152635`](https://github.com/1stG/configs/commit/6152635035d8d934b345ad8fad06230c82df952a) Thanks [@JounQin](https://github.com/JounQin)! - fix: add `.history` into global ignores
+
 ## 9.0.4
 
 ### Patch Changes
