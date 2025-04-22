@@ -4,7 +4,7 @@
 
 ### Patch Changes
 
-- [`6152635`](https://github.com/1stG/configs/commit/6152635035d8d934b345ad8fad06230c82df952a) Thanks [@JounQin](https://github.com/JounQin)! - fix: add `.history` into global ignores
+- [#355](https://github.com/1stG/configs/pull/355) [`eaf7a92`](https://github.com/1stG/configs/commit/eaf7a9272c2a2b94dac2d4dce31a3c426261320d) Thanks [@JounQin](https://github.com/JounQin)! - fix: add `.history` into global ignores
 
 ## 9.0.4
 
