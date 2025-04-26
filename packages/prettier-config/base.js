@@ -1,10 +1,17 @@
+// @ts-check
+
+/**
+ * @typedef {Plugin_ & { default?: Plugin_ }} Plugin
+ * @import { Config, Plugin as Plugin_ } from 'prettier'
+ */
+
 import { createRequire } from 'node:module'
 
 import { iniRcFiles, jsoncFiles, nonJsonRcFiles, shRcFiles } from '@1stg/config'
 
 const require = createRequire(import.meta.url)
 
-/** @type {import('prettier').Config} */
+/** @type {Config} */
 export default {
   arrowParens: 'avoid',
   semi: false,
@@ -13,11 +20,13 @@ export default {
   trailingComma: 'all',
   xmlWhitespaceSensitivity: 'ignore',
   plugins: await Promise.all(
-    Object.keys(require('./package.json').dependencies).map(async pkgName => {
-      /** @type {import('prettier').Plugin} */
-      const pkg = await import(pkgName)
-      return pkg.default || pkg
-    }),
+    Object.keys(require('./package.json').dependencies)
+      .filter(pkgName => /\bprettier\b/.test(pkgName))
+      .map(async pkgName => {
+        /** @type {Plugin} */
+        const pkg = await import(pkgName)
+        return pkg.default || pkg
+      }),
   ),
   overrides: [
     {
