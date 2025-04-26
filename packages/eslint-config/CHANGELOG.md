@@ -1,5 +1,11 @@
 # Change Log
 
+## 9.0.6
+
+### Patch Changes
+
+- [#358](https://github.com/1stG/configs/pull/358) [`a8d3b2d`](https://github.com/1stG/configs/commit/a8d3b2d84132ab13ab29785f9f13d262f9c94958) Thanks [@JounQin](https://github.com/JounQin)! - fix: `.pnp.*` files should be ignored by default
+
 ## 9.0.5
 
 ### Patch Changes
