@@ -165,6 +165,7 @@ export const base = tseslint.config([
       '**/.type-coverage',
       '**/.vercel',
       '**/.yarn',
+      '**/.pnp.*',
       '**/coverage',
       '**/dist',
       '**/lib',
