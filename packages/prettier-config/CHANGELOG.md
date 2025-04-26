@@ -1,5 +1,11 @@
 # Change Log
 
+## 5.1.5
+
+### Patch Changes
+
+- [#360](https://github.com/1stG/configs/pull/360) [`7a31315`](https://github.com/1stG/configs/commit/7a313150807ad96fc73495a01b96762ddfe3c68d) Thanks [@JounQin](https://github.com/JounQin)! - fix: filter out non `prettier` related packages
+
 ## 5.1.4
 
 ### Patch Changes
