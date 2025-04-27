@@ -2,6 +2,8 @@
 !.yarn/releases
 !.yarn/plugins
 !.yarn/sdks
+.idea
+*.iml
 *.log
 *.tsbuildinfo
 .*cache
