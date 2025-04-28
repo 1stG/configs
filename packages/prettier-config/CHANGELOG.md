@@ -1,5 +1,11 @@
 # Change Log
 
+## 5.2.0
+
+### Minor Changes
+
+- [#362](https://github.com/1stG/configs/pull/362) [`508fe3e`](https://github.com/1stG/configs/commit/508fe3e6054050b157b3280d99d3c1cfc3ec6309) Thanks [@JounQin](https://github.com/JounQin)! - feat: use `require(ESM)` first and fallback to top level `await`
+
 ## 5.1.5
 
 ### Patch Changes
