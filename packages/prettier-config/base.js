@@ -11,6 +11,29 @@ import { iniRcFiles, jsoncFiles, nonJsonRcFiles, shRcFiles } from '@1stg/config'
 
 const require = createRequire(import.meta.url)
 
+const dependencies = Object.keys(require('./package.json').dependencies).filter(
+  pkgName => /\bprettier\b/.test(pkgName),
+)
+
+/** @type {Plugin[]} */
+let plugins
+
+try {
+  plugins = dependencies.map(pkgName => {
+    /** @type {Plugin} */
+    const pkg = require(pkgName)
+    return pkg.default || pkg
+  })
+} catch {
+  plugins = await Promise.all(
+    dependencies.map(async pkgName => {
+      /** @type {Plugin} */
+      const pkg = await import(pkgName)
+      return pkg.default || pkg
+    }),
+  )
+}
+
 /** @type {Config} */
 export default {
   arrowParens: 'avoid',
@@ -19,15 +42,7 @@ export default {
   singleQuote: true,
   trailingComma: 'all',
   xmlWhitespaceSensitivity: 'ignore',
-  plugins: await Promise.all(
-    Object.keys(require('./package.json').dependencies)
-      .filter(pkgName => /\bprettier\b/.test(pkgName))
-      .map(async pkgName => {
-        /** @type {Plugin} */
-        const pkg = await import(pkgName)
-        return pkg.default || pkg
-      }),
-  ),
+  plugins,
   overrides: [
     {
       files: iniRcFiles,
