@@ -1,5 +1,13 @@
 # Change Log
 
+## 10.0.0
+
+### Major Changes
+
+- [#371](https://github.com/1stG/configs/pull/371) [`3cbd4b7`](https://github.com/1stG/configs/commit/3cbd4b734f2297e58f4f917165924a903100d655) Thanks [@JounQin](https://github.com/JounQin)! - feat!: migrate `eslint-plugin-unicorn` to `eslint-plugin-unicorn-x`
+
+- [#372](https://github.com/1stG/configs/pull/372) [`f6e2755`](https://github.com/1stG/configs/commit/f6e27555b4ece8266418cfb371b0165b8749b42d) Thanks [@JounQin](https://github.com/JounQin)! - feat!: use `n.convertPath` setting for hashbang rule
+
 ## 9.1.0
 
 ### Minor Changes
