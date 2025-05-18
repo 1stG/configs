@@ -115,6 +115,7 @@ __metadata:
     eslint-config-prettier: "npm:^10.1.5"
     eslint-plugin-jest: "npm:^28.11.0"
     eslint-plugin-react-hooks: "npm:^5.2.0"
+    eslint-plugin-react-refresh: "npm:^0.4.20"
     eslint-plugin-vue: "npm:^10.1.0"
     jest: "npm:^29.7.0"
     markuplint: "npm:^4.12.0"
@@ -170,11 +171,12 @@ __metadata:
     "@babel/eslint-plugin": ^7.0.0
     "@eslint-react/eslint-plugin": ^1.0.0
     "@vitest/eslint-plugin": ^1.0.0
-    angular-eslint: ^19.0.0
+    angular-eslint: ^18.0.0 || ^19.0.0
     angular-eslint-template-parser: ^0.1.0
     eslint: ">=8.0.0"
     eslint-plugin-jest: ^28.0.0
     eslint-plugin-react-hooks: ^5.0.0
+    eslint-plugin-react-refresh: ^0.4.0
     eslint-plugin-vue: ^10.0.0
   peerDependenciesMeta:
     "@babel/eslint-parser":
@@ -192,6 +194,8 @@ __metadata:
     eslint-plugin-jest:
       optional: true
     eslint-plugin-react-hooks:
+      optional: true
+    eslint-plugin-react-refresh:
       optional: true
     eslint-plugin-vue:
       optional: true
@@ -8574,6 +8578,15 @@ __metadata:
     typescript:
       optional: true
   checksum: 10c0/c0d49c92da2ac0328625bb3b88ef00160bdc9ce4e41465673317707f5a0c46439af005b213b7e354889a77e941c9ac570f1d222ec6ec3f3705de199c4f545edd
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-react-refresh@npm:^0.4.20":
+  version: 0.4.20
+  resolution: "eslint-plugin-react-refresh@npm:0.4.20"
+  peerDependencies:
+    eslint: ">=8.40"
+  checksum: 10c0/2ccf4ba28f1dcbcb9e773e46eae1e61e568bba69281a700eb26fd762152e4e90a78c991f9c8173342a7cd2a82f3f52fedb40a1e81360cef9c40ea5b814fa3613
   languageName: node
   linkType: hard
 
