@@ -52,7 +52,13 @@ export const base = tseslint.config([
         'node_modules/@d-ts',
         'node_modules/@types',
       ],
-      'import-x/resolver-next': [createTypeScriptImportResolver()],
+      'import-x/resolver-next': createTypeScriptImportResolver(),
+      n: {
+        convertPath: {
+          '**/bin.ts': [String.raw`^(src/)?bin\.ts$`, 'lib/bin.js'],
+          '**/cli.ts': [String.raw`^(src/)?cli\.ts$`, 'lib/cli.js'],
+        },
+      },
     },
     languageOptions: {
       sourceType: 'module',

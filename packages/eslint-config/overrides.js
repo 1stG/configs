@@ -27,11 +27,6 @@ import { resolveSettings, tsBase } from './ts-base.js'
 export const ts = tseslint.config(
   tsBase,
   {
-    name: '@1stg/cli',
-    files: ['**/{bin,cli}.ts'],
-    rules: { 'n/hashbang': 0 },
-  },
-  {
     name: '@1stg/code-block',
     files: ['**/*.{md,mdx}/**/*.{cts,mts,ts,tsx}'],
     languageOptions: {
