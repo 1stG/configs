@@ -17,12 +17,13 @@ export const reactJsx = tseslint.config({
 })
 
 const reactHooks_ = tryRequirePkg('eslint-plugin-react-hooks')
+const reactRefresh = tryRequirePkg('eslint-plugin-react-refresh')
 
 export const react = tseslint.config(
   {
     name: '@1stg/react',
     files: ['**/*.{js,jsx,tsx}'],
-    extends: [reactJsx],
+    extends: [reactRefresh?.configs.recommended, reactJsx].filter(Boolean),
     rules: {
       '@eslint-react/avoid-shorthand-boolean': 2,
       // '@eslint-react/naming-convention/handler-prop': [
