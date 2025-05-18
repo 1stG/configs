@@ -1,5 +1,16 @@
 # Change Log
 
+## 13.1.0
+
+### Minor Changes
+
+- [#367](https://github.com/1stG/configs/pull/367) [`94685f7`](https://github.com/1stG/configs/commit/94685f7c7b276238d6fa176c838222ca6eafd01c) Thanks [@JounQin](https://github.com/JounQin)! - chore(eslint): bump `eslint-plugin-unicorn` to v59.0.1
+
+### Patch Changes
+
+- Updated dependencies [[`94685f7`](https://github.com/1stG/configs/commit/94685f7c7b276238d6fa176c838222ca6eafd01c)]:
+  - @1stg/common-config@13.1.0
+
 ## 13.0.1
 
 ### Patch Changes
