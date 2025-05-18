@@ -25,7 +25,7 @@ if (isMonorepo()) {
       return acc
     }
     const { name, peerDependencies = {}, dependencies = {} } = pkgJson
-    // eslint-disable-next-line unicorn/prefer-spread
+    // eslint-disable-next-line unicorn-x/prefer-spread
     return acc.concat(
       name,
       Object.keys(peerDependencies),

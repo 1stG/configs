@@ -43,6 +43,6 @@ export const angular = tseslint.config(
   },
   {
     files: ['**/*inline-template-*.component.html'],
-    rules: { 'unicorn/no-empty-file': 0 },
+    rules: { 'unicorn-x/no-empty-file': 0 },
   },
 )
