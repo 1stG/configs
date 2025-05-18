@@ -25,7 +25,7 @@ export const tsBase = tseslint.config({
   files: ['**/*.{cts,mts,ts,tsx}'],
   languageOptions: {
     parserOptions: {
-      project,
+      projectService: true,
     },
   },
   extends: [

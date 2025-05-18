@@ -39,6 +39,7 @@ export const vue = tseslint.config(
         languageOptions: {
           parser: vueParser,
           parserOptions: {
+            ...tsBase[0].languageOptions?.parserOptions,
             parser: tseslint.parser,
             extraFileExtensions: ['.vue'],
           },
