@@ -1,5 +1,15 @@
 # Change Log
 
+## 9.1.0
+
+### Minor Changes
+
+- [#370](https://github.com/1stG/configs/pull/370) [`85d8686`](https://github.com/1stG/configs/commit/85d86864da883b8ea445e238d3c2ecb0c164a31d) Thanks [@JounQin](https://github.com/JounQin)! - feat: add `eslint-plugin-react-refresh` support
+
+- [#367](https://github.com/1stG/configs/pull/367) [`94685f7`](https://github.com/1stG/configs/commit/94685f7c7b276238d6fa176c838222ca6eafd01c) Thanks [@JounQin](https://github.com/JounQin)! - chore(eslint): bump `eslint-plugin-unicorn` to v59.0.1
+
+- [#369](https://github.com/1stG/configs/pull/369) [`5e8ada3`](https://github.com/1stG/configs/commit/5e8ada3c85dd8e8697f1215484798ece33f01804) Thanks [@JounQin](https://github.com/JounQin)! - feat: migrate `project` to `projectService` for TypeScript
+
 ## 9.0.6
 
 ### Patch Changes
