@@ -12,8 +12,8 @@
   },
   "main": "index.js",
   "dependencies": {
-    "@commitlint/config-conventional": "^19.8.0",
-    "@commitlint/config-workspace-scopes": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@commitlint/config-workspace-scopes": "^19.8.1",
     "@pkgr/utils": "^3.1.2"
   },
   "publishConfig": {
