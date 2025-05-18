@@ -11,7 +11,7 @@ import promise from 'eslint-plugin-promise'
 import regexp from 'eslint-plugin-regexp'
 import simpleImportSort from 'eslint-plugin-simple-import-sort'
 import sonarjs from 'eslint-plugin-sonarjs'
-import unicorn from 'eslint-plugin-unicorn'
+import unicornX from 'eslint-plugin-unicorn-x'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
 
@@ -32,7 +32,7 @@ export const base = tseslint.config([
   promise.configs['flat/recommended'],
   regexp.configs['flat/recommended'],
   sonarjs.configs.recommended,
-  unicorn.configs.recommended,
+  unicornX.configs.recommended,
   prettierExtends,
   {
     name: '@1stg/node',
@@ -122,9 +122,9 @@ export const base = tseslint.config([
         },
       ],
       'no-negated-condition': 2,
-      'no-process-exit': 0, // suspended by unicorn/no-process-exit
+      'no-process-exit': 0, // suspended by unicorn-x/no-process-exit
 
-      // The following rules are duplicate with `eslint-plugin-import`
+      // The following rules are duplicate with `eslint-plugin-import-x`
       'n/no-extraneous-import': 0,
       'n/no-extraneous-require': 0,
       'n/no-missing-import': 0,
@@ -137,15 +137,15 @@ export const base = tseslint.config([
       'prefer-const': [2, { destructuring: 'all' }],
       'prefer-object-spread': 2,
       'simple-import-sort/exports': 2,
-      'unicorn/catch-error-name': [
+      'unicorn-x/catch-error-name': [
         2,
         {
           name: 'error',
           ignore: ['^e(rr)?$'],
         },
       ],
-      'unicorn/consistent-function-scoping': 0,
-      'unicorn/filename-case': [
+      'unicorn-x/consistent-function-scoping': 0,
+      'unicorn-x/filename-case': [
         2,
         {
           cases: {
@@ -156,13 +156,13 @@ export const base = tseslint.config([
           ignore: [/^[A-Z](([\dA-Z]+_)*[\dA-Z]+)?\.(mdx?|ya?ml)$/],
         },
       ],
-      'unicorn/no-array-reduce': 0,
-      'unicorn/no-null': 0,
-      'unicorn/no-unreadable-array-destructuring': 0, // conflict with `no-unused-vars`
-      'unicorn/prefer-module': 0,
-      'unicorn/prefer-object-from-entries': 0,
-      'unicorn/prevent-abbreviations': 0,
-      'unicorn/prefer-export-from': [2, { ignoreUsedVariables: true }],
+      'unicorn-x/no-array-reduce': 0,
+      'unicorn-x/no-null': 0,
+      'unicorn-x/no-unreadable-array-destructuring': 0, // conflict with `no-unused-vars`
+      'unicorn-x/prefer-module': 0,
+      'unicorn-x/prefer-object-from-entries': 0,
+      'unicorn-x/prevent-abbreviations': 0,
+      'unicorn-x/prefer-export-from': [2, { ignoreUsedVariables: true }],
     },
   },
   {

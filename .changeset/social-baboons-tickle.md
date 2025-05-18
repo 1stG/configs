@@ -4,4 +4,4 @@
 "@1stg/eslint-config": major
 ---
 
-feat!: use `n.convertPath` setting for hashbang rule
+feat!: migrate `eslint-plugin-unicorn` to `eslint-plugin-unicorn-x`

@@ -28,12 +28,12 @@ export const loose = tseslint.config([
       'no-negated-condition': 0, // not auto-fixable
       'promise/always-return': 0,
       'promise/catch-or-return': 0,
-      'unicorn/explicit-length-check': 0,
-      'unicorn/no-array-for-each': 0,
-      'unicorn/no-fn-reference-in-iterator': 0,
-      'unicorn/prefer-number-properties': 0,
-      'unicorn/prefer-prototype-methods': 0,
-      'unicorn/prefer-spread': 0,
+      'unicorn-x/explicit-length-check': 0,
+      'unicorn-x/no-array-for-each': 0,
+      'unicorn-x/no-fn-reference-in-iterator': 0,
+      'unicorn-x/prefer-number-properties': 0,
+      'unicorn-x/prefer-prototype-methods': 0,
+      'unicorn-x/prefer-spread': 0,
     },
   },
 ])

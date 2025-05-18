@@ -129,10 +129,10 @@ export const tsBase = tseslint.config({
     'promise/always-return': 0,
     'promise/catch-or-return': 0,
     // ts itself has guaranteed it
-    'unicorn/no-array-callback-reference': 0,
+    'unicorn-x/no-array-callback-reference': 0,
     // covered by @typescript-eslint/no-extraneous-class
-    'unicorn/no-static-only-class': 0,
+    'unicorn-x/no-static-only-class': 0,
     // covered by @typescript-eslint/no-this-alias
-    'unicorn/no-this-assignment': 0,
+    'unicorn-x/no-this-assignment': 0,
   },
 })
