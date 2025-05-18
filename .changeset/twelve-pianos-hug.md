@@ -1,7 +1,0 @@
----
-"@1stg/app-config": major
-"@1stg/common-config": major
-"@1stg/eslint-config": major
----
-
-feat!: use `n.convertPath` setting for hashbang rule
