@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@1stg/config": "^1.0.5",
-    "@1stg/prettier-config": "^5.1.1",
+    "@1stg/prettier-config": "^5.2.0",
     "@1stg/tsconfig": "^3.0.3",
     "@pkgr/core": "^0.2.4",
     "prettier": "^3.5.3"
