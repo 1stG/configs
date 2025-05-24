@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.2
+
+### Patch Changes
+
+- [#374](https://github.com/1stG/configs/pull/374) [`3db17fe`](https://github.com/1stG/configs/commit/3db17fe093c269b81f499f6268a3374b9f95599b) Thanks [@JounQin](https://github.com/JounQin)! - fix: consider `project` for `type-coverage` cli
+
 ## 0.1.1
 
 ### Patch Changes
