@@ -1,5 +1,23 @@
 # Change Log
 
+## 14.1.0
+
+### Minor Changes
+
+- [#377](https://github.com/1stG/configs/pull/377) [`ed8b7e5`](https://github.com/1stG/configs/commit/ed8b7e56fedf3c99b99b64631d675f67a7265825) Thanks [@JounQin](https://github.com/JounQin)! - feat: enable `eslint-plugin-node-dependencies` conditionally
+
+### Patch Changes
+
+- Updated dependencies [[`ed8b7e5`](https://github.com/1stG/configs/commit/ed8b7e56fedf3c99b99b64631d675f67a7265825), [`ed8b7e5`](https://github.com/1stG/configs/commit/ed8b7e56fedf3c99b99b64631d675f67a7265825), [`ed8b7e5`](https://github.com/1stG/configs/commit/ed8b7e56fedf3c99b99b64631d675f67a7265825)]:
+  - @1stg/babel-preset@4.1.0
+  - @1stg/commitlint-config@5.1.0
+  - @1stg/nano-staged@0.2.0
+  - @1stg/simple-git-hooks@2.1.0
+  - @1stg/eslint-config@10.1.0
+  - @1stg/markuplint-config@4.0.7
+  - @1stg/prettier-config@5.2.1
+  - @1stg/remark-preset@3.1.2
+
 ## 14.0.0
 
 ### Major Changes
