@@ -25,9 +25,9 @@
     "version": "changeset version && yarn --no-immutable"
   },
   "devDependencies": {
-    "@angular/compiler": "^19.2.11",
-    "@angular/compiler-cli": "^19.2.11",
-    "@angular/core": "^19.2.11",
+    "@angular/compiler": "^20.0.0",
+    "@angular/compiler-cli": "^20.0.0",
+    "@angular/core": "^20.0.0",
     "@babel/eslint-parser": "^7.27.1",
     "@babel/eslint-plugin": "^7.27.1",
     "@changesets/changelog-github": "^0.5.1",
