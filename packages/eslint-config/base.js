@@ -1,7 +1,9 @@
 // @ts-check
 
+import { isCI, isEnvEnabled } from '@1stg/config'
 import eslint from '@eslint/js'
 import eslintCommentsConfigs from '@eslint-community/eslint-plugin-eslint-comments/configs'
+import { isPkgAvailable, tryRequirePkg } from '@pkgr/utils'
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript'
 import css from 'eslint-plugin-css'
 import importX from 'eslint-plugin-import-x'
@@ -34,6 +36,14 @@ export const base = tseslint.config([
   sonarjs.configs.recommended,
   unicornX.configs.recommended,
   prettierExtends,
+  (isCI || isEnvEnabled('ESLINT_NODE_DEPS')) &&
+  isPkgAvailable('eslint-plugin-node-dependencies')
+    ? [
+        /** @type {typeof import('eslint-plugin-node-dependencies')} */ (
+          tryRequirePkg('eslint-plugin-node-dependencies')
+        ).configs['flat/recommended'],
+      ]
+    : [],
   {
     name: '@1stg/node',
     files: ['**/*.{cjs,cts}'],
@@ -55,8 +65,8 @@ export const base = tseslint.config([
       'import-x/resolver-next': createTypeScriptImportResolver(),
       n: {
         convertPath: {
-          '**/bin.ts': [String.raw`^(src/)?bin\.ts$`, 'lib/bin.js'],
-          '**/cli.ts': [String.raw`^(src/)?cli\.ts$`, 'lib/cli.js'],
+          '**/bin.*ts': [String.raw`^(src/)?bin\.([cm]?)ts$`, 'lib/bin.$2js'],
+          '**/cli.*ts': [String.raw`^(src/)?cli\.([cm]?)ts$`, 'lib/cli.$2js'],
         },
       },
     },
