@@ -2,7 +2,7 @@
 
 import path from 'node:path'
 
-import { preferPrettier } from '@1stg/config'
+import { isCI, isEnvDisabled, isEnvEnabled, preferPrettier } from '@1stg/config'
 import {
   isMonorepo,
   isPkgAvailable,
@@ -78,3 +78,9 @@ export const nonSourceRules = /** @type {const} */ ({
   'n/no-extraneous-require': 0,
   'n/no-unsupported-features/es-builtins': 0,
 })
+
+const ESLINT_NODE_DEPS_ENV = 'ESLINT_NODE_DEPS'
+
+export const isEslintNodeDepsEnabled = isCI
+  ? !isEnvDisabled(ESLINT_NODE_DEPS_ENV)
+  : isEnvEnabled(ESLINT_NODE_DEPS_ENV)

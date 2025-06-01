@@ -9,12 +9,12 @@
   "funding": "https://opencollective.com/configs",
   "license": "MIT",
   "engines": {
-    "node": ">=16.0.0"
+    "node": "^16.14.0 || >=18.0.0"
   },
   "main": "index.js",
   "dependencies": {
-    "remark-cjk-friendly": "^1.1.0",
-    "remark-cjk-friendly-gfm-strikethrough": "^1.1.0",
+    "remark-cjk-friendly": "^1.2.0",
+    "remark-cjk-friendly-gfm-strikethrough": "^1.2.0",
     "remark-frontmatter": "^5.0.0",
     "remark-gfm": "^4.0.1",
     "remark-lint": "^10.0.1",

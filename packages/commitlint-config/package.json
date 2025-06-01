@@ -14,7 +14,7 @@
   "dependencies": {
     "@commitlint/config-conventional": "^19.8.1",
     "@commitlint/config-workspace-scopes": "^19.8.1",
-    "@pkgr/utils": "^3.1.2"
+    "@pkgr/utils": "^4.0.0"
   },
   "publishConfig": {
     "access": "public"
