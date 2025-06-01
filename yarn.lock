@@ -114,7 +114,6 @@ __metadata:
     eslint: "npm:^9.28.0"
     eslint-config-prettier: "npm:^10.1.5"
     eslint-plugin-jest: "npm:^28.12.0"
-    eslint-plugin-node-dependencies: "npm:^1.1.0"
     eslint-plugin-react-hooks: "npm:^5.2.0"
     eslint-plugin-react-refresh: "npm:^0.4.20"
     eslint-plugin-vue: "npm:^10.1.0"
@@ -157,6 +156,7 @@ __metadata:
     eslint-plugin-markup: "npm:^1.0.1"
     eslint-plugin-mdx: "npm:^3.4.2"
     eslint-plugin-n: "npm:^17.18.0"
+    eslint-plugin-node-dependencies: "npm:^1.1.0"
     eslint-plugin-prettier: "npm:^5.4.1"
     eslint-plugin-promise: "npm:^7.2.1"
     eslint-plugin-regexp: "npm:^2.7.0"
@@ -176,7 +176,6 @@ __metadata:
     angular-eslint-template-parser: ^0.1.0
     eslint: ">=8.0.0"
     eslint-plugin-jest: ^28.0.0
-    eslint-plugin-node-dependencies: ^1.0.0
     eslint-plugin-react-hooks: ^5.0.0
     eslint-plugin-react-refresh: ^0.4.0
     eslint-plugin-vue: ^10.0.0
@@ -194,8 +193,6 @@ __metadata:
     angular-eslint-template-parser:
       optional: true
     eslint-plugin-jest:
-      optional: true
-    eslint-plugin-node-dependencies:
       optional: true
     eslint-plugin-react-hooks:
       optional: true
@@ -3225,7 +3222,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@es-joy/jsdoccomment@npm:~0.50.1":
+"@es-joy/jsdoccomment@npm:~0.50.2":
   version: 0.50.2
   resolution: "@es-joy/jsdoccomment@npm:0.50.2"
   dependencies:
@@ -6096,10 +6093,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"are-docs-informative@npm:^0.0.2":
-  version: 0.0.2
-  resolution: "are-docs-informative@npm:0.0.2"
-  checksum: 10c0/f0326981bd699c372d268b526b170a28f2e1aec2cf99d7de0686083528427ecdf6ae41fef5d9988e224a5616298af747ad8a76e7306b0a7c97cc085a99636d60
+"are-docs-informative@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "are-docs-informative@npm:0.1.0"
+  checksum: 10c0/e41c7142280f55354f9f9d458b4ddfeeb8df31b9c2aa38444bb2b87798948a310077362c5570b83401ca0478e97911a15caa6898ccebf2dc3a475fa0e6d07688
   languageName: node
   linkType: hard
 
@@ -7562,7 +7559,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:4, debug@npm:^4.0.0, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.1, debug@npm:^4.3.2, debug@npm:^4.3.4, debug@npm:^4.3.6, debug@npm:^4.4.0, debug@npm:^4.4.1":
+"debug@npm:4, debug@npm:^4.0.0, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.1, debug@npm:^4.3.2, debug@npm:^4.3.4, debug@npm:^4.4.0, debug@npm:^4.4.1":
   version: 4.4.1
   resolution: "debug@npm:4.4.1"
   dependencies:
@@ -8424,22 +8421,22 @@ __metadata:
   linkType: hard
 
 "eslint-plugin-jsdoc@npm:^50.6.17":
-  version: 50.6.17
-  resolution: "eslint-plugin-jsdoc@npm:50.6.17"
+  version: 50.7.0
+  resolution: "eslint-plugin-jsdoc@npm:50.7.0"
   dependencies:
-    "@es-joy/jsdoccomment": "npm:~0.50.1"
-    are-docs-informative: "npm:^0.0.2"
+    "@es-joy/jsdoccomment": "npm:~0.50.2"
+    are-docs-informative: "npm:^0.1.0"
     comment-parser: "npm:1.4.1"
-    debug: "npm:^4.3.6"
+    debug: "npm:^4.4.1"
     escape-string-regexp: "npm:^4.0.0"
-    espree: "npm:^10.1.0"
+    espree: "npm:^10.3.0"
     esquery: "npm:^1.6.0"
     parse-imports-exports: "npm:^0.2.4"
-    semver: "npm:^7.6.3"
+    semver: "npm:^7.7.2"
     spdx-expression-parse: "npm:^4.0.0"
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
-  checksum: 10c0/b39cdb46f5727e9ce006d41245ab4de95b0a99ceb8aea4477a9fc247b15b7e728be54d765cd28620d9cf62d720f999d4db60699a803925e476f67746bbb62d2d
+  checksum: 10c0/9bab85b98f5f1dc6ebd6862ee37629424959abbf6e2f903a1f46f1b2d9b5d06ceb3f8766ea3e151698d3a6f4d21673cfbb0d2908ea42ed5bb54be2cff50521d7
   languageName: node
   linkType: hard
 
@@ -8985,7 +8982,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"espree@npm:10.3.0, espree@npm:^10.0.1, espree@npm:^10.1.0, espree@npm:^10.3.0, espree@npm:^9.6.1 || ^10.3.0":
+"espree@npm:10.3.0, espree@npm:^10.0.1, espree@npm:^10.3.0, espree@npm:^9.6.1 || ^10.3.0":
   version: 10.3.0
   resolution: "espree@npm:10.3.0"
   dependencies:

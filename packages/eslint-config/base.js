@@ -3,12 +3,12 @@
 import { isCI, isEnvEnabled } from '@1stg/config'
 import eslint from '@eslint/js'
 import eslintCommentsConfigs from '@eslint-community/eslint-plugin-eslint-comments/configs'
-import { isPkgAvailable, tryRequirePkg } from '@pkgr/utils'
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript'
 import css from 'eslint-plugin-css'
 import importX from 'eslint-plugin-import-x'
 import { getGlobals } from 'eslint-plugin-mdx'
 import n from 'eslint-plugin-n'
+import nodeDependencies from 'eslint-plugin-node-dependencies'
 import promise from 'eslint-plugin-promise'
 import regexp from 'eslint-plugin-regexp'
 import simpleImportSort from 'eslint-plugin-simple-import-sort'
@@ -36,13 +36,8 @@ export const base = tseslint.config([
   sonarjs.configs.recommended,
   unicornX.configs.recommended,
   prettierExtends,
-  (isCI || isEnvEnabled('ESLINT_NODE_DEPS')) &&
-  isPkgAvailable('eslint-plugin-node-dependencies')
-    ? [
-        /** @type {typeof import('eslint-plugin-node-dependencies')} */ (
-          tryRequirePkg('eslint-plugin-node-dependencies')
-        ).configs['flat/recommended'],
-      ]
+  isCI || isEnvEnabled('ESLINT_NODE_DEPS')
+    ? [nodeDependencies.configs['flat/recommended']]
     : [],
   {
     name: '@1stg/node',
