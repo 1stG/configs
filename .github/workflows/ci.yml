@@ -40,7 +40,8 @@ jobs:
           yarn lint
           yarn test
         env:
-          EFF_NO_LINK_RULES: true
+          # https://github.com/ota-meshi/eslint-plugin-node-dependencies/issues/191
+          ESLINT_NODE_DEPS: false
           PARSER_NO_WATCH: true
 
       - name: Check Postcss

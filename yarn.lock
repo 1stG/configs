@@ -114,6 +114,7 @@ __metadata:
     eslint: "npm:^9.28.0"
     eslint-config-prettier: "npm:^10.1.5"
     eslint-plugin-jest: "npm:^28.12.0"
+    eslint-plugin-node-dependencies: "npm:^1.1.0"
     eslint-plugin-react-hooks: "npm:^5.2.0"
     eslint-plugin-react-refresh: "npm:^0.4.20"
     eslint-plugin-vue: "npm:^10.1.0"
@@ -151,12 +152,11 @@ __metadata:
     eslint-import-resolver-typescript: "npm:^4.4.2"
     eslint-plugin-css: "npm:^0.11.0"
     eslint-plugin-import-x: "npm:^4.15.0"
-    eslint-plugin-jsdoc: "npm:^50.6.17"
+    eslint-plugin-jsdoc: "npm:^50.7.0"
     eslint-plugin-jsonc: "npm:^2.20.1"
     eslint-plugin-markup: "npm:^1.0.1"
     eslint-plugin-mdx: "npm:^3.4.2"
     eslint-plugin-n: "npm:^17.18.0"
-    eslint-plugin-node-dependencies: "npm:^1.1.0"
     eslint-plugin-prettier: "npm:^5.4.1"
     eslint-plugin-promise: "npm:^7.2.1"
     eslint-plugin-regexp: "npm:^2.7.0"
@@ -176,6 +176,7 @@ __metadata:
     angular-eslint-template-parser: ^0.1.0
     eslint: ">=8.0.0"
     eslint-plugin-jest: ^28.0.0
+    eslint-plugin-node-dependencies: ^1.0.0
     eslint-plugin-react-hooks: ^5.0.0
     eslint-plugin-react-refresh: ^0.4.0
     eslint-plugin-vue: ^10.0.0
@@ -193,6 +194,8 @@ __metadata:
     angular-eslint-template-parser:
       optional: true
     eslint-plugin-jest:
+      optional: true
+    eslint-plugin-node-dependencies:
       optional: true
     eslint-plugin-react-hooks:
       optional: true
@@ -8420,7 +8423,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jsdoc@npm:^50.6.17":
+"eslint-plugin-jsdoc@npm:^50.7.0":
   version: 50.7.0
   resolution: "eslint-plugin-jsdoc@npm:50.7.0"
   dependencies:

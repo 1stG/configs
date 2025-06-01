@@ -29,6 +29,7 @@
     "angular-eslint-template-parser": "^0.1.0",
     "eslint": ">=8.0.0",
     "eslint-plugin-jest": "^28.0.0",
+    "eslint-plugin-node-dependencies": "^1.0.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.0",
     "eslint-plugin-vue": "^10.0.0"
@@ -55,6 +56,9 @@
     "eslint-plugin-jest": {
       "optional": true
     },
+    "eslint-plugin-node-dependencies": {
+      "optional": true
+    },
     "eslint-plugin-react-hooks": {
       "optional": true
     },
@@ -76,12 +80,11 @@
     "eslint-import-resolver-typescript": "^4.4.2",
     "eslint-plugin-css": "^0.11.0",
     "eslint-plugin-import-x": "^4.15.0",
-    "eslint-plugin-jsdoc": "^50.6.17",
+    "eslint-plugin-jsdoc": "^50.7.0",
     "eslint-plugin-jsonc": "^2.20.1",
     "eslint-plugin-markup": "^1.0.1",
     "eslint-plugin-mdx": "^3.4.2",
     "eslint-plugin-n": "^17.18.0",
-    "eslint-plugin-node-dependencies": "^1.1.0",
     "eslint-plugin-prettier": "^5.4.1",
     "eslint-plugin-promise": "^7.2.1",
     "eslint-plugin-regexp": "^2.7.0",
