@@ -1,5 +1,11 @@
 # @1stg/markuplint-config
 
+## 4.0.7
+
+### Patch Changes
+
+- [#377](https://github.com/1stG/configs/pull/377) [`ed8b7e5`](https://github.com/1stG/configs/commit/ed8b7e56fedf3c99b99b64631d675f67a7265825) Thanks [@JounQin](https://github.com/JounQin)! - fix: declare node engines range correctly
+
 ## 4.0.6
 
 ### Patch Changes

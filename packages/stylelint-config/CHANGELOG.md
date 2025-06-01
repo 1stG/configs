@@ -1,5 +1,16 @@
 # Change Log
 
+## 6.1.0
+
+### Minor Changes
+
+- [#377](https://github.com/1stG/configs/pull/377) [`ed8b7e5`](https://github.com/1stG/configs/commit/ed8b7e56fedf3c99b99b64631d675f67a7265825) Thanks [@JounQin](https://github.com/JounQin)! - chore(deps): bump `@pkgr/core` and `@pkgr/utils`
+
+### Patch Changes
+
+- Updated dependencies [[`ed8b7e5`](https://github.com/1stG/configs/commit/ed8b7e56fedf3c99b99b64631d675f67a7265825)]:
+  - @1stg/config@1.1.0
+
 ## 6.0.5
 
 ### Patch Changes
