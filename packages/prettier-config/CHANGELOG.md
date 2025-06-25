@@ -1,5 +1,11 @@
 # Change Log
 
+## 5.2.2
+
+### Patch Changes
+
+- [#379](https://github.com/1stG/configs/pull/379) [`8b20282`](https://github.com/1stG/configs/commit/8b20282649441e5c79d028bfbb846b754905ea88) Thanks [@JounQin](https://github.com/JounQin)! - fix: workaround for xml plugin issue
+
 ## 5.2.1
 
 ### Patch Changes
