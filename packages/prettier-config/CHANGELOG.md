@@ -1,5 +1,11 @@
 # Change Log
 
+## 5.2.3
+
+### Patch Changes
+
+- [#382](https://github.com/1stG/configs/pull/382) [`34f8575`](https://github.com/1stG/configs/commit/34f8575e5531fcdd3266f8043ed335bb8eef4f43) Thanks [@JounQin](https://github.com/JounQin)! - fix: disable jsdoc plugin for prettier 3.6+
+
 ## 5.2.2
 
 ### Patch Changes
