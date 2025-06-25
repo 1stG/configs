@@ -1,5 +1,18 @@
 # Change Log
 
+## 14.2.0
+
+### Minor Changes
+
+- [#385](https://github.com/1stG/configs/pull/385) [`a7ee3ee`](https://github.com/1stG/configs/commit/a7ee3ee619abbd070a2c9f5e29346af6fab1b3a8) Thanks [@JounQin](https://github.com/JounQin)! - chore(deps): bump related config packages
+
+### Patch Changes
+
+- Updated dependencies [[`4c2cbd7`](https://github.com/1stG/configs/commit/4c2cbd7ee4b5ef548d6ad9a265a1c42c68300e09), [`4c2cbd7`](https://github.com/1stG/configs/commit/4c2cbd7ee4b5ef548d6ad9a265a1c42c68300e09), [`a7ee3ee`](https://github.com/1stG/configs/commit/a7ee3ee619abbd070a2c9f5e29346af6fab1b3a8)]:
+  - @1stg/eslint-config@10.2.0
+  - @1stg/prettier-config@5.3.0
+  - @1stg/nano-staged@0.2.1
+
 ## 14.1.0
 
 ### Minor Changes
