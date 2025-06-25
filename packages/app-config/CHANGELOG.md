@@ -1,5 +1,16 @@
 # Change Log
 
+## 14.2.0
+
+### Minor Changes
+
+- [#385](https://github.com/1stG/configs/pull/385) [`a7ee3ee`](https://github.com/1stG/configs/commit/a7ee3ee619abbd070a2c9f5e29346af6fab1b3a8) Thanks [@JounQin](https://github.com/JounQin)! - chore(deps): bump related config packages
+
+### Patch Changes
+
+- Updated dependencies [[`a7ee3ee`](https://github.com/1stG/configs/commit/a7ee3ee619abbd070a2c9f5e29346af6fab1b3a8)]:
+  - @1stg/common-config@14.2.0
+
 ## 14.1.0
 
 ### Minor Changes

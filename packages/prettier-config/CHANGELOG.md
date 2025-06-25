@@ -1,5 +1,16 @@
 # Change Log
 
+## 5.3.0
+
+### Minor Changes
+
+- [#381](https://github.com/1stG/configs/pull/381) [`4c2cbd7`](https://github.com/1stG/configs/commit/4c2cbd7ee4b5ef548d6ad9a265a1c42c68300e09) Thanks [@renovate](https://github.com/apps/renovate)! - chore(deps): bump prettier-plugin-pkg
+
+### Patch Changes
+
+- Updated dependencies [[`a7ee3ee`](https://github.com/1stG/configs/commit/a7ee3ee619abbd070a2c9f5e29346af6fab1b3a8)]:
+  - @1stg/config@1.2.0
+
 ## 5.2.3
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@1stg/prettier-config",
-  "version": "5.2.3",
+  "version": "5.3.0",
   "type": "module",
   "description": "Personal but Shareable Prettier Configuration for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
@@ -28,7 +28,7 @@
     "prettier": "^3.0.0"
   },
   "dependencies": {
-    "@1stg/config": "^1.1.0",
+    "@1stg/config": "^1.2.0",
     "@prettier/plugin-pug": "^3.4.0",
     "@prettier/plugin-ruby": "^4.0.4",
     "@prettier/plugin-xml": "^3.4.1",
