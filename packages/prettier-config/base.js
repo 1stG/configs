@@ -8,11 +8,20 @@
 import { createRequire } from 'node:module'
 
 import { iniRcFiles, jsoncFiles, nonJsonRcFiles, shRcFiles } from '@1stg/config'
+import prettier from 'prettier'
 
 const require = createRequire(import.meta.url)
 
+const [major, minor] = prettier.version.split('.')
+
+const majorVersion = Number.parseInt(major, 10)
+const minorVersion = Number.parseInt(minor, 10)
+
 const dependencies = Object.keys(require('./package.json').dependencies).filter(
-  pkgName => /\bprettier\b/.test(pkgName),
+  pkgName =>
+    /\bprettier\b/.test(pkgName) &&
+    (pkgName !== 'prettier-plugin-jsdoc' ||
+      (majorVersion == 3 && minorVersion < 2 * 3)),
 )
 
 /** @type {Plugin[]} */
