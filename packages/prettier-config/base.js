@@ -76,5 +76,11 @@ export default {
         singleQuote: false,
       },
     },
+    {
+      files: ['**/*.{ts,tsx}'],
+      options: {
+        parser: 'typescript',
+      },
+    },
   ],
 }
