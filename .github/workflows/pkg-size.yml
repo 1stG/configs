@@ -24,6 +24,6 @@ jobs:
           node-version: lts/*
 
       - name: Package Size Report
-        uses: pkg-size/action@a637fb0897b6f14f18e776d8c3dbccb34a1ad27b # v1
+        uses: pkg-size/action@a637fb0897b6f14f18e776d8c3dbccb34a1ad27b # v1.1.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
