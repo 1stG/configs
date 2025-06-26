@@ -10,7 +10,7 @@ __metadata:
   resolution: "@1stg/app-config@workspace:packages/app-config"
   dependencies:
     "@1stg/browserslist-config": "npm:^2.1.4"
-    "@1stg/common-config": "npm:^14.2.0"
+    "@1stg/common-config": "npm:^14.3.0"
     "@1stg/postcss-config": "npm:^6.1.0"
     "@1stg/stylelint-config": "npm:^6.1.0"
     browserslist: "npm:^4.25.1"
@@ -63,7 +63,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/common-config@npm:^14.2.0, @1stg/common-config@workspace:packages/common-config":
+"@1stg/common-config@npm:^14.3.0, @1stg/common-config@workspace:packages/common-config":
   version: 0.0.0-use.local
   resolution: "@1stg/common-config@workspace:packages/common-config"
   dependencies:
@@ -71,8 +71,8 @@ __metadata:
     "@1stg/commitlint-config": "npm:^5.1.0"
     "@1stg/eslint-config": "npm:^10.2.0"
     "@1stg/markuplint-config": "npm:^4.0.7"
-    "@1stg/nano-staged": "npm:^0.2.1"
-    "@1stg/prettier-config": "npm:^5.3.0"
+    "@1stg/nano-staged": "npm:^0.3.0"
+    "@1stg/prettier-config": "npm:^5.3.1"
     "@1stg/remark-preset": "npm:^3.1.2"
     "@1stg/simple-git-hooks": "npm:^2.1.0"
     "@1stg/tsconfig": "npm:^3.0.3"
@@ -81,7 +81,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/config@npm:^1.1.0, @1stg/config@npm:^1.2.0, @1stg/config@workspace:packages/config":
+"@1stg/config@npm:^1.1.0, @1stg/config@npm:^1.2.0, @1stg/config@npm:^1.2.1, @1stg/config@workspace:packages/config":
   version: 0.0.0-use.local
   resolution: "@1stg/config@workspace:packages/config"
   languageName: unknown
@@ -218,12 +218,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/nano-staged@npm:^0.2.1, @1stg/nano-staged@workspace:packages/nano-staged":
+"@1stg/nano-staged@npm:^0.3.0, @1stg/nano-staged@workspace:packages/nano-staged":
   version: 0.0.0-use.local
   resolution: "@1stg/nano-staged@workspace:packages/nano-staged"
   dependencies:
-    "@1stg/config": "npm:^1.2.0"
-    "@1stg/prettier-config": "npm:^5.3.0"
+    "@1stg/config": "npm:^1.2.1"
+    "@1stg/prettier-config": "npm:^5.3.1"
     "@1stg/tsconfig": "npm:^3.0.3"
     "@pkgr/core": "npm:^0.3.3"
     prettier: "npm:^3.6.1"
@@ -254,11 +254,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/prettier-config@npm:^5.3.0, @1stg/prettier-config@workspace:packages/prettier-config":
+"@1stg/prettier-config@npm:^5.3.1, @1stg/prettier-config@workspace:packages/prettier-config":
   version: 0.0.0-use.local
   resolution: "@1stg/prettier-config@workspace:packages/prettier-config"
   dependencies:
-    "@1stg/config": "npm:^1.2.0"
+    "@1stg/config": "npm:^1.2.1"
     "@prettier/plugin-pug": "npm:^3.4.0"
     "@prettier/plugin-ruby": "npm:^4.0.4"
     "@prettier/plugin-xml": "npm:^3.4.1"

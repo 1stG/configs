@@ -1,5 +1,11 @@
 # @1stg/config
 
+## 1.2.1
+
+### Patch Changes
+
+- [#386](https://github.com/1stG/configs/pull/386) [`97cedcc`](https://github.com/1stG/configs/commit/97cedcc8d57f2d4bf69fd3c4ebc8896c834cd960) Thanks [@JounQin](https://github.com/JounQin)! - fix: `PRETTIER_EXPERIMENTAL_CLI` env is already supported by prettier itself
+
 ## 1.2.0
 
 ### Minor Changes
