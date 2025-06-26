@@ -3,4 +3,4 @@
 "@1stg/config": patch
 ---
 
-fix: `PRETTIER_EXPERIMENTAL_CLI` env is already supported in prettier itself
+fix: `PRETTIER_EXPERIMENTAL_CLI` env is already supported by prettier itself
