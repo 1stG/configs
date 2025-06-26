@@ -44,8 +44,4 @@ export const isEnvDisabled = env =>
 
 export const preferPrettier = isEnvEnabled('CONFIG_PREFER_PRETTIER')
 
-export const prettierCli = isEnvEnabled('PRETTIER_EXPERIMENTAL_CLI')
-  ? 'prettier --experimental-cli'
-  : 'prettier'
-
 export const isCI = isEnvEnabled('CI')

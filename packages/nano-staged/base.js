@@ -1,4 +1,4 @@
-import { preferPrettier, prettierCli } from '@1stg/config'
+import { preferPrettier } from '@1stg/config'
 import { isPkgAvailable } from '@pkgr/core'
 
 const isEslintAvailable = isPkgAvailable('eslint')
@@ -29,7 +29,7 @@ if (isEslintAvailable) {
   Object.assign(config, {
     [`*.{${ESLINT_PRETTIER_FILES}}`]: [
       'eslint --cache --fix',
-      ...(useEslintPrettier ? [] : [`${prettierCli} --write`]),
+      ...(useEslintPrettier ? [] : ['prettier --write']),
     ],
   })
 }
@@ -37,7 +37,7 @@ if (isEslintAvailable) {
 if (isStylelintAvailable) {
   config[`*.{${STYLELINT_PRETTIER_FILES}}`] = [
     'stylelint --allow-empty-input --cache --fix',
-    ...(useStylelintPrettier ? [] : [`${prettierCli} --write`]),
+    ...(useStylelintPrettier ? [] : ['prettier --write']),
   ]
 }
 

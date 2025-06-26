@@ -38,7 +38,7 @@
     "prettier-plugin-jsdoc-type": "^0.1.12",
     "prettier-plugin-pkg": "^0.21.1",
     "prettier-plugin-properties": "^0.3.0",
-    "prettier-plugin-sh": "^0.17.4",
+    "prettier-plugin-sh": "^0.18.0",
     "prettier-plugin-stylus": "^0.1.0",
     "prettier-plugin-toml": "^2.0.5"
   },
