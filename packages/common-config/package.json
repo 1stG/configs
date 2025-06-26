@@ -8,7 +8,7 @@
   "funding": "https://opencollective.com/configs",
   "license": "MIT",
   "engines": {
-    "node": ">=18.18"
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
   },
   "dependencies": {
     "@1stg/babel-preset": "^4.1.0",
