@@ -1,5 +1,14 @@
 # Change Log
 
+## 5.3.1
+
+### Patch Changes
+
+- [#386](https://github.com/1stG/configs/pull/386) [`97cedcc`](https://github.com/1stG/configs/commit/97cedcc8d57f2d4bf69fd3c4ebc8896c834cd960) Thanks [@JounQin](https://github.com/JounQin)! - chore(deps): bump `prettier-plugin-sh` v0.18
+
+- Updated dependencies [[`97cedcc`](https://github.com/1stG/configs/commit/97cedcc8d57f2d4bf69fd3c4ebc8896c834cd960)]:
+  - @1stg/config@1.2.1
+
 ## 5.3.0
 
 ### Minor Changes

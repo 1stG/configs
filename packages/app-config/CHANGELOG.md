@@ -1,5 +1,16 @@
 # Change Log
 
+## 14.3.0
+
+### Minor Changes
+
+- [#388](https://github.com/1stG/configs/pull/388) [`5343736`](https://github.com/1stG/configs/commit/5343736c57e355ca26002562d61f1646691a65eb) Thanks [@JounQin](https://github.com/JounQin)! - fix: clarify correct engines field due to `1stg/prettier-config`
+
+### Patch Changes
+
+- Updated dependencies [[`5343736`](https://github.com/1stG/configs/commit/5343736c57e355ca26002562d61f1646691a65eb)]:
+  - @1stg/common-config@14.3.0
+
 ## 14.2.0
 
 ### Minor Changes
