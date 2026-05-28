@@ -1,5 +1,7 @@
 // @ts-check
 
+/** @import { TSESLint } from '@typescript-eslint/utils' */
+
 import eslint from '@eslint/js'
 import eslintCommentsConfigs from '@eslint-community/eslint-plugin-eslint-comments/configs'
 import { isPkgAvailable, tryRequirePkg } from '@pkgr/utils'
@@ -33,7 +35,8 @@ export const base = tseslint.config([
   n.configs['flat/recommended'],
   promise.configs['flat/recommended'],
   regexp.configs['flat/recommended'],
-  sonarjs.configs.recommended,
+  /** @type {TSESLint.FlatConfig.SharedConfigs} */ (sonarjs.configs)
+    .recommended,
   unicornX.configs.recommended,
   prettierExtends,
   isEslintNodeDepsEnabled && isPkgAvailable('eslint-plugin-node-dependencies')

@@ -16,7 +16,7 @@ export const jsBase = {
   files: ['**/*.{cjs,mjs,js,jsx}'],
   languageOptions: isBabelAvailable
     ? {
-        parser: tryRequirePkg('@babel/eslint-parser'),
+        parser: tryRequirePkg('@babel/eslint-parser', true),
         // eslint-disable-next-line no-cond-assign, sonarjs/no-nested-assignment
         parserOptions: (configFile =
           tryFile('babel.config.js') ||
@@ -30,7 +30,7 @@ export const jsBase = {
     isBabelAvailable
       ? {
           '@babel': /** @type {Omit<TSESLint.FlatConfig.Plugin, 'configs'>} */ (
-            tryRequirePkg('@babel/eslint-plugin')
+            tryRequirePkg('@babel/eslint-plugin', true)
           ),
         }
       : {}
@@ -39,10 +39,8 @@ export const jsBase = {
     camelcase: [2, { properties: 'never', ignoreDestructuring: true }],
     ...(isBabelAvailable && {
       'new-cap': 0,
-      'no-invalid-this': 0,
       'no-unused-expressions': 0,
       '@babel/new-cap': 2,
-      '@babel/no-invalid-this': 2,
       '@babel/no-unused-expressions': 2,
     }),
   },

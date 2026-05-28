@@ -6,18 +6,13 @@ import angularTemplateParser from 'angular-eslint-template-parser'
 import * as markup_ from 'eslint-plugin-markup'
 import tseslint from 'typescript-eslint'
 
-import { prettierExtends, project } from './_util.js'
+import { prettierExtends } from './_util.js'
 
 export const angular = tseslint.config(
   {
     name: '@1stg/angular-ts',
     files: ['**/*.ts'],
     ignores: ['**/*.d.ts'],
-    languageOptions: {
-      parserOptions: {
-        project,
-      },
-    },
     extends: [angular_.configs.tsRecommended, prettierExtends],
     processor: angular_.processInlineTemplates,
     rules: {

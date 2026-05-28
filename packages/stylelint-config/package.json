@@ -21,21 +21,21 @@
     "./scss/loose": "./scss/loose.js"
   },
   "peerDependencies": {
-    "stylelint": "^16.13.0"
+    "stylelint": ">=16.0.0"
   },
   "dependencies": {
     "@1stg/config": "^1.1.0",
-    "@pkgr/core": "^0.3.3",
-    "postcss-html": "^1.8.0",
+    "@pkgr/core": "^0.3.6",
+    "postcss-html": "^1.8.1",
     "postcss-less": "^6.0.0",
-    "postcss-markdown": "^1.3.0",
+    "postcss-markdown": "^1.3.1",
     "postcss-scss": "^4.0.9",
     "postcss-syntax": "^0.36.2",
-    "stylelint-config-standard": "^38.0.0",
-    "stylelint-high-performance-animation": "^1.11.0",
-    "stylelint-no-unsupported-browser-features": "^8.0.4",
+    "stylelint-config-standard": ">=38.0.0",
+    "stylelint-high-performance-animation": "^1.1.0 || ^2.0.0",
+    "stylelint-no-unsupported-browser-features": "^8.1.1",
     "stylelint-prettier": "^5.0.3",
-    "stylelint-scss": "^6.12.1"
+    "stylelint-scss": "^6.14.0 || ^7.1.1"
   },
   "publishConfig": {
     "access": "public"

@@ -1,0 +1,15 @@
+diff --git a/node_modules/vue-eslint-parser/dist/index.cjs b/node_modules/vue-eslint-parser/dist/index.cjs
+index 0cd7b1c..5cf7c0f 100644
+--- a/node_modules/vue-eslint-parser/dist/index.cjs
++++ b/node_modules/vue-eslint-parser/dist/index.cjs
+@@ -1480,8 +1480,8 @@ function loadParser(parser) {
+ * @param parserOptions The parser options.
+ * @returns The result of parsing.
+ */
+-function parseScript$1(code, parserOptions) {
+-	const parser = typeof parserOptions.parser === "string" ? loadParser(parserOptions.parser) : isParserObject(parserOptions.parser) ? parserOptions.parser : getEspree();
++function parseScript$1(code, {parser: parser_, ...parserOptions}) {
++	const parser = typeof parser_ === "string" ? loadParser(parser_) : isParserObject(parser_) ? parser_ : getEspree();
+ 	const result = isEnhancedParserObject(parser) ? parser.parseForESLint(code, parserOptions) : parser.parse(code, parserOptions);
+ 	if (result.ast != null) return result;
+ 	return { ast: result };
