@@ -1,5 +1,11 @@
 # Change Log
 
+## 10.3.1
+
+### Patch Changes
+
+- [#389](https://github.com/1stG/configs/pull/389) [`9545a06`](https://github.com/1stG/configs/commit/9545a0630f2922d92598c4770ebac00380e45945) Thanks [@renovate](https://github.com/apps/renovate)! - fix(eslint-config): peer dependencies versions
+
 ## 10.3.0
 
 ### Minor Changes
