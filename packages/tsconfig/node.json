@@ -2,7 +2,9 @@
   "$schema": "http://json.schemastore.org/tsconfig",
   "extends": "./lib.json",
   "compilerOptions": {
+    "ignoreDeprecations": "6.0",
     "module": "CommonJS",
+    "moduleResolution": "Node",
     "verbatimModuleSyntax": false
   }
 }

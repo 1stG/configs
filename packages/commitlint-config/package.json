@@ -8,13 +8,13 @@
   "funding": "https://opencollective.com/configs",
   "license": "MIT",
   "engines": {
-    "node": ">=18"
+    "node": ">=22.12.0"
   },
   "main": "index.js",
   "dependencies": {
-    "@commitlint/config-conventional": "^19.8.1",
-    "@commitlint/config-workspace-scopes": "^19.8.1",
-    "@pkgr/utils": "^4.0.0"
+    "@commitlint/config-conventional": "^21.0.2",
+    "@commitlint/config-workspace-scopes": "^21.0.2",
+    "@pkgr/utils": "^4.1.0"
   },
   "publishConfig": {
     "access": "public"

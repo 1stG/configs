@@ -14,7 +14,7 @@ const reverse = async () => {
   await new Promise(resolve => {
     setTimeout(resolve, 500)
   })
-  msg = [...msg].reverse().join('')
+  msg = [...msg].toReversed().join('')
 }
 </script>
 <script>

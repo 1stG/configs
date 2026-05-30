@@ -57,7 +57,8 @@ export const tsBase = tseslint.config({
     ],
     '@typescript-eslint/explicit-module-boundary-types': 0,
     '@typescript-eslint/member-ordering': 2,
-    // eslint-disable-line sonarjs/todo-tag -- TODO: find better config
+    // eslint-disable-next-line sonarjs/todo-tag
+    // TODO: find better config
     '@typescript-eslint/naming-convention': 0,
     '@typescript-eslint/no-empty-function': 2,
     '@typescript-eslint/no-extraneous-class': [
