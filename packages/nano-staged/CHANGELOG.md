@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.3.1
+
+### Patch Changes
+
+- Updated dependencies [[`3f70b26`](https://github.com/1stG/configs/commit/3f70b26ff7ee5a4373f430e589de713977cd93d3), [`3f70b26`](https://github.com/1stG/configs/commit/3f70b26ff7ee5a4373f430e589de713977cd93d3)]:
+  - @1stg/prettier-config@5.4.0
+  - @1stg/tsconfig@4.0.0
+
 ## 0.3.0
 
 ### Minor Changes

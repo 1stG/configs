@@ -1,5 +1,20 @@
 # Change Log
 
+## 15.0.0
+
+### Major Changes
+
+- [#393](https://github.com/1stG/configs/pull/393) [`3f70b26`](https://github.com/1stG/configs/commit/3f70b26ff7ee5a4373f430e589de713977cd93d3) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump commitlint
+
+- [#393](https://github.com/1stG/configs/pull/393) [`3f70b26`](https://github.com/1stG/configs/commit/3f70b26ff7ee5a4373f430e589de713977cd93d3) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump typescript v6
+
+### Patch Changes
+
+- Updated dependencies [[`3f70b26`](https://github.com/1stG/configs/commit/3f70b26ff7ee5a4373f430e589de713977cd93d3), [`3f70b26`](https://github.com/1stG/configs/commit/3f70b26ff7ee5a4373f430e589de713977cd93d3), [`3f70b26`](https://github.com/1stG/configs/commit/3f70b26ff7ee5a4373f430e589de713977cd93d3)]:
+  - @1stg/stylelint-config@6.2.0
+  - @1stg/postcss-config@6.2.0
+  - @1stg/common-config@15.0.0
+
 ## 14.3.0
 
 ### Minor Changes

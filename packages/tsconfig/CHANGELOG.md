@@ -1,5 +1,11 @@
 # Change Log
 
+## 4.0.0
+
+### Major Changes
+
+- [#393](https://github.com/1stG/configs/pull/393) [`3f70b26`](https://github.com/1stG/configs/commit/3f70b26ff7ee5a4373f430e589de713977cd93d3) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump typescript v6
+
 ## 3.0.3
 
 ### Patch Changes
