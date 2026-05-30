@@ -10,15 +10,15 @@ __metadata:
   resolution: "@1stg/app-config@workspace:packages/app-config"
   dependencies:
     "@1stg/browserslist-config": "npm:^2.1.4"
-    "@1stg/common-config": "npm:^14.3.0"
-    "@1stg/postcss-config": "npm:^6.1.0"
-    "@1stg/stylelint-config": "npm:^6.1.0"
+    "@1stg/common-config": "npm:^15.0.0"
+    "@1stg/postcss-config": "npm:^6.2.0"
+    "@1stg/stylelint-config": "npm:^6.2.0"
     browserslist: "npm:^4.28.2"
     postcss: "npm:^8.5.15"
   languageName: unknown
   linkType: soft
 
-"@1stg/babel-preset@npm:^4.1.0, @1stg/babel-preset@workspace:packages/babel-preset":
+"@1stg/babel-preset@npm:^4.2.0, @1stg/babel-preset@workspace:packages/babel-preset":
   version: 0.0.0-use.local
   resolution: "@1stg/babel-preset@workspace:packages/babel-preset"
   dependencies:
@@ -53,7 +53,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/commitlint-config@npm:^5.1.0, @1stg/commitlint-config@workspace:packages/commitlint-config":
+"@1stg/commitlint-config@npm:^6.0.0, @1stg/commitlint-config@workspace:packages/commitlint-config":
   version: 0.0.0-use.local
   resolution: "@1stg/commitlint-config@workspace:packages/commitlint-config"
   dependencies:
@@ -63,19 +63,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/common-config@npm:^14.3.0, @1stg/common-config@workspace:packages/common-config":
+"@1stg/common-config@npm:^15.0.0, @1stg/common-config@workspace:packages/common-config":
   version: 0.0.0-use.local
   resolution: "@1stg/common-config@workspace:packages/common-config"
   dependencies:
-    "@1stg/babel-preset": "npm:^4.1.0"
-    "@1stg/commitlint-config": "npm:^5.1.0"
-    "@1stg/eslint-config": "npm:^10.2.0"
+    "@1stg/babel-preset": "npm:^4.2.0"
+    "@1stg/commitlint-config": "npm:^6.0.0"
+    "@1stg/eslint-config": "npm:^10.3.0"
     "@1stg/markuplint-config": "npm:^4.0.7"
-    "@1stg/nano-staged": "npm:^0.3.0"
-    "@1stg/prettier-config": "npm:^5.3.1"
-    "@1stg/remark-preset": "npm:^3.1.2"
+    "@1stg/nano-staged": "npm:^0.3.1"
+    "@1stg/prettier-config": "npm:^5.4.0"
+    "@1stg/remark-preset": "npm:^3.2.0"
     "@1stg/simple-git-hooks": "npm:^2.1.0"
-    "@1stg/tsconfig": "npm:^3.0.3"
+    "@1stg/tsconfig": "npm:^4.0.0"
     "@babel/core": "npm:^7.29.7"
     tslib: "npm:^2.8.1"
   languageName: unknown
@@ -139,7 +139,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/eslint-config@npm:^10.2.0, @1stg/eslint-config@workspace:packages/eslint-config":
+"@1stg/eslint-config@npm:^10.3.0, @1stg/eslint-config@workspace:packages/eslint-config":
   version: 0.0.0-use.local
   resolution: "@1stg/eslint-config@workspace:packages/eslint-config"
   dependencies:
@@ -219,13 +219,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/nano-staged@npm:^0.3.0, @1stg/nano-staged@workspace:packages/nano-staged":
+"@1stg/nano-staged@npm:^0.3.1, @1stg/nano-staged@workspace:packages/nano-staged":
   version: 0.0.0-use.local
   resolution: "@1stg/nano-staged@workspace:packages/nano-staged"
   dependencies:
     "@1stg/config": "npm:^1.2.1"
-    "@1stg/prettier-config": "npm:^5.3.1"
-    "@1stg/tsconfig": "npm:^3.0.3"
+    "@1stg/prettier-config": "npm:^5.4.0"
+    "@1stg/tsconfig": "npm:^4.0.0"
     "@pkgr/core": "npm:^0.3.6"
     prettier: "npm:^3.8.3"
   peerDependencies:
@@ -233,7 +233,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/postcss-config@npm:^6.1.0, @1stg/postcss-config@workspace:packages/postcss-config":
+"@1stg/postcss-config@npm:^6.2.0, @1stg/postcss-config@workspace:packages/postcss-config":
   version: 0.0.0-use.local
   resolution: "@1stg/postcss-config@workspace:packages/postcss-config"
   dependencies:
@@ -255,7 +255,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/prettier-config@npm:^5.3.1, @1stg/prettier-config@workspace:packages/prettier-config":
+"@1stg/prettier-config@npm:^5.4.0, @1stg/prettier-config@workspace:packages/prettier-config":
   version: 0.0.0-use.local
   resolution: "@1stg/prettier-config@workspace:packages/prettier-config"
   dependencies:
@@ -277,7 +277,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/remark-preset@npm:^3.1.2, @1stg/remark-preset@workspace:packages/remark-preset":
+"@1stg/remark-preset@npm:^3.2.0, @1stg/remark-preset@workspace:packages/remark-preset":
   version: 0.0.0-use.local
   resolution: "@1stg/remark-preset@workspace:packages/remark-preset"
   dependencies:
@@ -308,7 +308,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/stylelint-config@npm:^6.1.0, @1stg/stylelint-config@workspace:packages/stylelint-config":
+"@1stg/stylelint-config@npm:^6.2.0, @1stg/stylelint-config@workspace:packages/stylelint-config":
   version: 0.0.0-use.local
   resolution: "@1stg/stylelint-config@workspace:packages/stylelint-config"
   dependencies:
@@ -329,7 +329,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/tsconfig@npm:^3.0.3, @1stg/tsconfig@workspace:packages/tsconfig":
+"@1stg/tsconfig@npm:^4.0.0, @1stg/tsconfig@workspace:packages/tsconfig":
   version: 0.0.0-use.local
   resolution: "@1stg/tsconfig@workspace:packages/tsconfig"
   peerDependencies:

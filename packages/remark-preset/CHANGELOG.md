@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.2.0
+
+### Minor Changes
+
+- [#393](https://github.com/1stG/configs/pull/393) [`3f70b26`](https://github.com/1stG/configs/commit/3f70b26ff7ee5a4373f430e589de713977cd93d3) Thanks [@JounQin](https://github.com/JounQin)! - chore: bump dependencies
+
 ## 3.1.2
 
 ### Patch Changes
