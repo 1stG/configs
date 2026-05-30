@@ -43,4 +43,6 @@ jobs:
           publish: yarn release
           version: yarn run version
         env:
+          # https://github.com/ota-meshi/eslint-plugin-node-dependencies/issues/191
+          ESLINT_NODE_DEPS: false
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

@@ -163,9 +163,9 @@ __metadata:
     eslint-plugin-regexp: "npm:^2.10.0 || ^3.1.0"
     eslint-plugin-simple-import-sort: "npm:^13.0.0"
     eslint-plugin-sonarjs: "npm:^4.0.3"
-    eslint-plugin-toml: "npm:^1.4.0"
+    eslint-plugin-toml: "npm:^0.13.1 || ^1.4.0"
     eslint-plugin-unicorn-x: "npm:^2.0.0 || ^3.2.1"
-    eslint-plugin-yml: "npm:^3.4.0"
+    eslint-plugin-yml: "npm:^1.19.1 || ^2.0.2 || ^3.4.0"
     globals: "npm:^17.6.0"
     typescript-eslint: "npm:^8.60.0"
   peerDependencies:
@@ -8487,7 +8487,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-toml@npm:^1.4.0":
+"eslint-plugin-toml@npm:^0.13.1 || ^1.4.0":
   version: 1.4.0
   resolution: "eslint-plugin-toml@npm:1.4.0"
   dependencies:
@@ -8567,7 +8567,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-yml@npm:^3.4.0":
+"eslint-plugin-yml@npm:^1.19.1 || ^2.0.2 || ^3.4.0":
   version: 3.4.0
   resolution: "eslint-plugin-yml@npm:3.4.0"
   dependencies:
