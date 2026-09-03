@@ -504,11 +504,11 @@ __metadata:
   linkType: hard
 
 "@angular/compiler@npm:^21.2.15":
-  version: 21.2.15
-  resolution: "@angular/compiler@npm:21.2.15"
+  version: 21.2.22
+  resolution: "@angular/compiler@npm:21.2.22"
   dependencies:
     tslib: "npm:^2.3.0"
-  checksum: 10c0/e68213e24205befdf1da2133e6c04826a00fdafa881907c148218dc8c6ffc68f4fb38c6224697eefb602cebc400066fb028424bd9d0f62f9173ee8c752c79626
+  checksum: 10c0/c7362c612693539dd18d1447a79d0ba37e92ebabfc421d0b58ee718dd120af07a7f48c1a3501566060a316e3642b4625ff9a105bcd583e659b0b52dc1aa82292
   languageName: node
   linkType: hard
 
