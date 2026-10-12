@@ -1,5 +1,36 @@
 # Change Log
 
+## 16.0.0
+
+### Major Changes
+
+- [#399](https://github.com/1stG/configs/pull/399) [`15ea175`](https://github.com/1stG/configs/commit/15ea175c9ee05cf42db4c6c296c31f13207151c9) Thanks [@renovate](https://github.com/apps/renovate)! - chore(deps): bump all dependencies, require Node.js `^22.18.0 || >=24.11.0`
+
+  - Every configuration package now requires Node.js `^22.18.0 || >=24.11.0`,
+    following Babel 8's own engines.
+  - `@1stg/babel-preset` now requires `@babel/core@^8` and is ESM only, the
+    removed `preset-env` `bugfixes`/`useBuiltIns`/`corejs` options are replaced by
+    `babel-plugin-polyfill-corejs3`, and the decorators `legacy` /
+    `decoratorsBeforeExport` options are replaced by Babel 8's `version`.
+  - `babel-preset-proposal-typescript` v5 brings native Babel 8 support, so
+    `@1stg/babel-preset` no longer needs the local `patch-package` patch nor the
+    `resolutions` that forced its Babel 7 plugins onto Babel 8.
+  - The `async` option was removed together with
+    `babel-plugin-transform-async-to-promises` and `fast-async`, which are no
+    longer maintained and do not work with Babel 8. async/await is now left to
+    `@babel/preset-env`, so the configured targets keep native async/await
+    instead of being rewritten to promise chains.
+  - `typescript@7` (the native compiler) is installed as `@typescript/native`,
+    while `typescript` aliases `@typescript/typescript6` for the JS API that the
+    lint tool chain still requires.
+
+### Patch Changes
+
+- Updated dependencies [[`15ea175`](https://github.com/1stG/configs/commit/15ea175c9ee05cf42db4c6c296c31f13207151c9), [`ad663dd`](https://github.com/1stG/configs/commit/ad663dd8c6044e61a2a501e159deef08b15fffda), [`d9daae9`](https://github.com/1stG/configs/commit/d9daae958d2f4f5851447ecbad8803fdd609f7e0)]:
+  - @1stg/common-config@16.0.0
+  - @1stg/postcss-config@7.0.0
+  - @1stg/stylelint-config@7.0.0
+
 ## 15.0.0
 
 ### Major Changes
