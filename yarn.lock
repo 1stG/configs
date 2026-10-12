@@ -125,7 +125,7 @@ __metadata:
     npm-run-all2: "npm:^9.0.1"
     postcss: "npm:^8.5.15"
     postcss-load-config: "npm:^6.0.1"
-    prettier: "npm:^3.8.3"
+    prettier: "npm:^3.9.10"
     react: "npm:^19.2.6"
     rxjs: "npm:^7.8.2"
     simple-git-hooks: "npm:^2.13.1"
@@ -227,7 +227,7 @@ __metadata:
     "@1stg/prettier-config": "npm:^5.4.0"
     "@1stg/tsconfig": "npm:^4.0.0"
     "@pkgr/core": "npm:^0.3.6"
-    prettier: "npm:^3.8.3"
+    prettier: "npm:^3.9.10"
   peerDependencies:
     nano-staged: ">=0.8.0"
   languageName: unknown
@@ -14632,7 +14632,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.8.3":
+"prettier@npm:>=3.0.0-alpha.3, prettier@npm:^3.9.10":
   version: 3.9.10
   resolution: "prettier@npm:3.9.10"
   bin:

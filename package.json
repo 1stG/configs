@@ -60,7 +60,7 @@
     "npm-run-all2": "^9.0.1",
     "postcss": "^8.5.15",
     "postcss-load-config": "^6.0.1",
-    "prettier": "^3.8.3",
+    "prettier": "^3.9.10",
     "react": "^19.2.6",
     "rxjs": "^7.8.2",
     "simple-git-hooks": "^2.13.1",
@@ -73,7 +73,6 @@
     "yarn-berry-deduplicate": "^7.0.0"
   },
   "resolutions": {
-    "prettier": "^3.8.3",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
     "vue-eslint-parser": "^10.4.1"
   },
