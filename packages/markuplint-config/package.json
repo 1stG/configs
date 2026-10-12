@@ -19,11 +19,11 @@
     "./vue": "./vue.js"
   },
   "peerDependencies": {
-    "markuplint": "^4.0.0"
+    "markuplint": "^5.0.0"
   },
   "dependencies": {
-    "@markuplint/vue-parser": "^4.18.3",
-    "@markuplint/vue-spec": "^4.18.0",
+    "@markuplint/vue-parser": "^5.0.0",
+    "@markuplint/vue-spec": "^5.0.0",
     "markuplint-angular-parser": "^3.0.2"
   },
   "publishConfig": {
