@@ -19,7 +19,7 @@ export default tseslint.config([
     },
   },
   {
-    files: ['*.mdx'],
+    files: ['**/*.mdx', '**/*.mdx/**'],
     languageOptions: {
       globals: {
         Button: false,
