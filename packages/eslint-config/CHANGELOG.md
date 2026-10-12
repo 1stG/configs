@@ -1,5 +1,11 @@
 # Change Log
 
+## 10.3.2
+
+### Patch Changes
+
+- [#404](https://github.com/1stG/configs/pull/404) [`97e0dc9`](https://github.com/1stG/configs/commit/97e0dc9af5859f853c9dcfb0c65a6273d5acc22c) Thanks [@JounQin](https://github.com/JounQin)! - Add ignore pattern for .dsh files in ESLint config
+
 ## 10.3.1
 
 ### Patch Changes
