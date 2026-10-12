@@ -1,17 +1,30 @@
 /* eslint-disable sonarjs/cognitive-complexity */
-const { declare } = require('@babel/helper-plugin-utils')
-const { tryRequirePkg } = require('@pkgr/utils')
+import { declare } from '@babel/helper-plugin-utils'
+import pluginProposalDecorators from '@babel/plugin-proposal-decorators'
+import pluginTransformClassProperties from '@babel/plugin-transform-class-properties'
+import pluginTransformTypeScript from '@babel/plugin-transform-typescript'
+import presetEnv from '@babel/preset-env'
+import presetReact from '@babel/preset-react'
+import presetTypeScript from '@babel/preset-typescript'
+import { tryRequirePkg } from '@pkgr/utils'
+import vueJsx from '@vue/babel-plugin-jsx'
+import vuePresetJsx from '@vue/babel-preset-jsx'
+import importPlugin from 'babel-plugin-import'
+import polyfillCorejs3 from 'babel-plugin-polyfill-corejs3'
+import transformReactRemovePropTypes from 'babel-plugin-transform-react-remove-prop-types'
+import transformRemoveConsole from 'babel-plugin-transform-remove-console'
+import transformTypeScriptMetadata from 'babel-plugin-transform-typescript-metadata'
+import proposalTypeScriptPreset from 'babel-preset-proposal-typescript'
 
 const DEFAULT_ANTD_OPTIONS = {
   libraryName: 'antd',
   style: true,
 }
 
-module.exports = declare(
+export default declare(
   (
     api,
     {
-      async = 'promises',
       import: importOptions,
       modules = false,
       esmodules,
@@ -23,18 +36,15 @@ module.exports = declare(
       useBuiltIns = 'usage',
       decoratorsLegacy = true,
       classLoose,
-      decoratorsBeforeExport = decoratorsLegacy === true ? undefined : true,
       allowDeclareFields = true,
     },
   ) => {
-    api.assertVersion(7)
+    api.assertVersion('^8.0.0-0')
 
     const isDev = api.env('development')
     const isProd = api.env('production')
 
-    const proposalTypeScriptPreset = require('babel-preset-proposal-typescript')
-
-    const proposalTsOptions = { classLoose, decoratorsLegacy, isTSX }
+    const proposalTsOptions = { decoratorsLegacy, isTSX }
 
     if (esmodules !== undefined) {
       console.warn(
@@ -50,28 +60,15 @@ module.exports = declare(
      */
     const presets = [
       [
-        require('@babel/preset-env'),
+        presetEnv,
         {
           modules,
-          exclude:
-            async === 'generator'
-              ? undefined
-              : [
-                  '@babel/transform-async-to-generator',
-                  '@babel/transform-regenerator',
-                ],
-          bugfixes: true,
-          corejs: {
-            version: '3.25',
-            proposals: true,
-          },
           shippedProposals: true,
           targets: esmodules
             ? {
                 esmodules,
               }
             : undefined,
-          useBuiltIns,
         },
       ],
       [proposalTypeScriptPreset, proposalTsOptions],
@@ -79,7 +76,7 @@ module.exports = declare(
 
     if (typescript) {
       presets.splice(-1, 0, [
-        require('@babel/preset-typescript'),
+        presetTypeScript,
         {
           isTSX,
           allExtensions: isTSX,
@@ -89,21 +86,33 @@ module.exports = declare(
     }
 
     const plugins = [
+      ...(useBuiltIns
+        ? [
+            [
+              polyfillCorejs3,
+              {
+                method:
+                  useBuiltIns === 'entry' ? 'entry-global' : 'usage-global',
+                proposals: true,
+                version: '3.25',
+              },
+            ],
+          ]
+        : []),
       [
-        require('@babel/plugin-transform-typescript'),
+        pluginTransformTypeScript,
         {
           allowDeclareFields,
         },
       ],
       [
-        require('@babel/plugin-proposal-decorators'),
+        pluginProposalDecorators,
         {
-          decoratorsBeforeExport,
-          legacy: decoratorsLegacy,
+          version: decoratorsLegacy ? 'legacy' : '2023-11',
         },
       ],
       [
-        require('@babel/plugin-transform-class-properties'),
+        pluginTransformClassProperties,
         {
           loose: classLoose,
         },
@@ -111,31 +120,19 @@ module.exports = declare(
     ]
 
     if (metadata) {
-      plugins.unshift(require('babel-plugin-transform-typescript-metadata'))
+      plugins.unshift(transformTypeScriptMetadata)
     }
 
     if (isProd) {
       plugins.push([
-        require('babel-plugin-transform-remove-console'),
+        transformRemoveConsole,
         {
           exclude: ['error', 'warn'],
         },
       ])
     }
 
-    if (async === 'fast') {
-      plugins.push([
-        require('fast-async'),
-        {
-          useRuntimeModule: true,
-        },
-      ])
-    } else if (async === 'promise' || async === 'promises') {
-      plugins.push(require('babel-plugin-transform-async-to-promises'))
-    }
-
     if (importOptions) {
-      const importPlugin = require('babel-plugin-import')
       if (importOptions === true) {
         plugins.push([importPlugin, DEFAULT_ANTD_OPTIONS])
       } else if (Array.isArray(importOptions)) {
@@ -155,7 +152,7 @@ module.exports = declare(
     }
 
     const reactPreset = [
-      require('@babel/preset-react'),
+      presetReact,
       {
         development: isDev,
         runtime:
@@ -167,7 +164,7 @@ module.exports = declare(
 
     if (isProd) {
       reactPlugin = [
-        require('babel-plugin-transform-react-remove-prop-types'),
+        transformReactRemovePropTypes,
         {
           removeImport: true,
         },
@@ -197,7 +194,7 @@ module.exports = declare(
       ).split('.')[0]
       if (majorVersion === 3) {
         plugins.push([
-          require('@vue/babel-plugin-jsx'),
+          vueJsx,
           {
             transformOn: true,
             optimize: true,
@@ -205,7 +202,7 @@ module.exports = declare(
           },
         ])
       } else {
-        presets.push([require('@vue/babel-preset-jsx'), vue.options])
+        presets.push([vuePresetJsx, vue.options])
       }
     }
 
