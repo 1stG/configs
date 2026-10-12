@@ -24,6 +24,13 @@
     while `typescript` aliases `@typescript/typescript6` for the JS API that the
     lint tool chain still requires.
 
+- feat!: align the declared Node.js engines with the dependencies
+
+  - `@1stg/common-config` now requires Node.js `>=24.11.0`, following
+    `@1stg/markuplint-config` and its `markuplint@5` requirement.
+  - `@1stg/app-config` now requires Node.js `^24.15.0 || >=26.0.0`, following
+    `@1stg/common-config` and `@1stg/postcss-config`'s `cssnano@9` requirement.
+
 ### Patch Changes
 
 - Updated dependencies [[`15ea175`](https://github.com/1stG/configs/commit/15ea175c9ee05cf42db4c6c296c31f13207151c9), [`ad663dd`](https://github.com/1stG/configs/commit/ad663dd8c6044e61a2a501e159deef08b15fffda), [`d9daae9`](https://github.com/1stG/configs/commit/d9daae958d2f4f5851447ecbad8803fdd609f7e0)]:
