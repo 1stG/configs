@@ -1,5 +1,48 @@
 # Change Log
 
+## 11.0.0
+
+### Major Changes
+
+- [#399](https://github.com/1stG/configs/pull/399) [`15ea175`](https://github.com/1stG/configs/commit/15ea175c9ee05cf42db4c6c296c31f13207151c9) Thanks [@renovate](https://github.com/apps/renovate)! - chore(deps): bump all dependencies, require Node.js `^22.18.0 || >=24.11.0`
+
+  - Every configuration package now requires Node.js `^22.18.0 || >=24.11.0`,
+    following Babel 8's own engines.
+  - `@1stg/babel-preset` now requires `@babel/core@^8` and is ESM only, the
+    removed `preset-env` `bugfixes`/`useBuiltIns`/`corejs` options are replaced by
+    `babel-plugin-polyfill-corejs3`, and the decorators `legacy` /
+    `decoratorsBeforeExport` options are replaced by Babel 8's `version`.
+  - `babel-preset-proposal-typescript` v5 brings native Babel 8 support, so
+    `@1stg/babel-preset` no longer needs the local `patch-package` patch nor the
+    `resolutions` that forced its Babel 7 plugins onto Babel 8.
+  - The `async` option was removed together with
+    `babel-plugin-transform-async-to-promises` and `fast-async`, which are no
+    longer maintained and do not work with Babel 8. async/await is now left to
+    `@babel/preset-env`, so the configured targets keep native async/await
+    instead of being rewritten to promise chains.
+  - `typescript@7` (the native compiler) is installed as `@typescript/native`,
+    while `typescript` aliases `@typescript/typescript6` for the JS API that the
+    lint tool chain still requires.
+
+### Minor Changes
+
+- [#407](https://github.com/1stG/configs/pull/407) [`ad663dd`](https://github.com/1stG/configs/commit/ad663dd8c6044e61a2a501e159deef08b15fffda) Thanks [@renovate](https://github.com/apps/renovate)! - chore(deps): bump all dependencies
+
+  - `@1stg/markuplint-config` now requires `markuplint@^5` and ships
+    `@markuplint/vue-parser`/`@markuplint/vue-spec` v5.
+  - `@1stg/eslint-config`, `@1stg/postcss-config`, `@1stg/prettier-config` and
+    `@1stg/stylelint-config` bump their parser/plugin majors:
+    `eslint-plugin-simple-import-sort@14`, `cssnano@9` with `postcss-import@17`,
+    `prettier-plugin-toml@3` with `prettier-plugin-sh@0.20`, and `postcss-html@2`
+    with `postcss-markdown@2`.
+  - `@1stg/nano-staged` now requires `prettier@^3.9.10`, which the workspace
+    resolves through a single `resolutions`-free `prettier` entry.
+  - Releases are published with [npm provenance][]: `changeset publish` shells out
+    to `yarn npm publish`, which now runs with `npmPublishProvenance: true` and
+    the `id-token: write` permission the release workflow already grants.
+
+  [npm provenance]: https://docs.npmjs.com/generating-provenance-statements
+
 ## 10.3.2
 
 ### Patch Changes

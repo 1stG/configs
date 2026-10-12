@@ -1,6 +1,6 @@
 {
   "name": "@1stg/common-config",
-  "version": "15.0.0",
+  "version": "16.0.0",
   "description": "Personal but Shareable Common Configuration for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/common-config",
@@ -8,16 +8,16 @@
   "funding": "https://opencollective.com/configs",
   "license": "MIT",
   "engines": {
-    "node": "^22.18.0 || >=24.11.0"
+    "node": ">=24.11.0"
   },
   "dependencies": {
-    "@1stg/babel-preset": "^4.2.0",
-    "@1stg/commitlint-config": "^6.0.0",
-    "@1stg/eslint-config": "^10.3.0",
-    "@1stg/markuplint-config": "^4.0.7",
-    "@1stg/nano-staged": "^0.3.1",
-    "@1stg/prettier-config": "^5.4.0",
-    "@1stg/remark-preset": "^3.2.0",
+    "@1stg/babel-preset": "^5.0.0",
+    "@1stg/commitlint-config": "^7.0.0",
+    "@1stg/eslint-config": "^11.0.0",
+    "@1stg/markuplint-config": "^5.0.0",
+    "@1stg/nano-staged": "^1.0.0",
+    "@1stg/prettier-config": "^6.0.0",
+    "@1stg/remark-preset": "^4.0.0",
     "@1stg/simple-git-hooks": "^2.1.0",
     "@1stg/tsconfig": "^4.0.0",
     "@babel/core": "^8.0.0",

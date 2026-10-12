@@ -1,6 +1,6 @@
 {
   "name": "@1stg/nano-staged",
-  "version": "0.3.1",
+  "version": "1.0.0",
   "type": "module",
   "description": "Personal but Shareable nano-staged Configuration for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@1stg/config": "^1.2.1",
-    "@1stg/prettier-config": "^5.4.0",
+    "@1stg/prettier-config": "^6.0.0",
     "@1stg/tsconfig": "^4.0.0",
     "@pkgr/core": "^0.3.6",
     "prettier": "^3.9.10"
