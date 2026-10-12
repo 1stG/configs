@@ -179,6 +179,7 @@ export const base = tseslint.config([
   },
   {
     ignores: [
+      '**/.dsh',
       '**/.history',
       '**/.type-coverage',
       '**/.vercel',
