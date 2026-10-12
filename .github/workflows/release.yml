@@ -43,6 +43,3 @@ jobs:
           pr-title: 'chore: release package(s)'
           publish-script: yarn release
           version-script: yarn run version
-        env:
-          # https://github.com/ota-meshi/eslint-plugin-node-dependencies/issues/191
-          ESLINT_NODE_DEPS: false
