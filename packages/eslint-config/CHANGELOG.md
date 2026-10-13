@@ -1,5 +1,16 @@
 # Change Log
 
+## 11.1.0
+
+### Minor Changes
+
+- [#408](https://github.com/1stG/configs/pull/408) [`f84e555`](https://github.com/1stG/configs/commit/f84e555582d1f176bb2ac955f1b4982b6e1da0ec) Thanks [@renovate](https://github.com/apps/renovate)! - chore(deps): bump `eslint-plugin-markup` to v2 and require Node.js `>=24.11.0`
+
+  `eslint-plugin-markup@2` needs Node.js `>=24`, so `@1stg/eslint-config` now
+  declares the intersection of its dependencies' engines. The plugin also moves to
+  `markuplint@^5`, which removes the duplicate markuplint 4 tree that the previous
+  release carried alongside markuplint 5.
+
 ## 11.0.0
 
 ### Major Changes
