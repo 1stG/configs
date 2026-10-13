@@ -136,7 +136,7 @@ __metadata:
     vitest: "npm:^5.0.0"
     vue: "npm:^3.5.35"
     vue-tsc: "npm:^3.3.3"
-    yarn-berry-deduplicate: "npm:^7.0.0"
+    yarn-berry-deduplicate: "npm:^7.1.0"
   languageName: unknown
   linkType: soft
 
@@ -13094,14 +13094,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pm-dedup-core@npm:2.2.2":
-  version: 2.2.2
-  resolution: "pm-dedup-core@npm:2.2.2"
+"pm-dedup-core@npm:2.3.0":
+  version: 2.3.0
+  resolution: "pm-dedup-core@npm:2.3.0"
   dependencies:
     picomatch: "npm:4.0.7"
     semver: "npm:7.8.5"
     tslib: "npm:^2.8.1"
-  checksum: 10c0/6445bdabbb9111ea2db7ee5388b3c8078bb516d3b1e0bacc4cbd319731359c62799d61ffb1102b336673df190b819e0df730fbc439207e2ccb9fd4a5889da9fe
+  checksum: 10c0/9a8034a741bbe5f1ac6b584c36ee369a48334075e3b1274cc4d63e9f8651fedf37e135bfd286c2dfeba44c7ccfec1e5b1ac5b1ae5fe09a0f2c42d8938ae6d77e
   languageName: node
   linkType: hard
 
@@ -17505,18 +17505,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yarn-berry-deduplicate@npm:^7.0.0":
-  version: 7.0.2
-  resolution: "yarn-berry-deduplicate@npm:7.0.2"
+"yarn-berry-deduplicate@npm:^7.1.0":
+  version: 7.1.0
+  resolution: "yarn-berry-deduplicate@npm:7.1.0"
   dependencies:
     "@yarnpkg/parsers": "npm:3.1.0"
-    pm-dedup-core: "npm:2.2.1"
+    pm-dedup-core: "npm:2.3.0"
     semver: "npm:7.8.5"
     tslib: "npm:^2.8.1"
   bin:
     yarn-berry-deduplicate: dist/bin/yarn-berry-deduplicate.js
     yarn-berry-why-duplicate: dist/bin/yarn-berry-why-duplicate.js
-  checksum: 10c0/76ace8257b788126dab72618f83b35883b878bec24d807becb40c5f72fa5d6d05074e756274d9a013beb325c582fd413ccca44a8718d3d4137712ef6a883af50
+  checksum: 10c0/d8f3fefca2491e9c5b19152fe67acc43aec1c90913d8c822c4e9263beee76b6267251c8ae06180fda77f35ab72e266d62e96f8b17cdb2cb6924a448743dd03f4
   languageName: node
   linkType: hard
 
