@@ -67,7 +67,7 @@
     "stylelint": "^17.12.0",
     "type-coverage": "^2.29.7",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
-    "vitest": "^4.1.7",
+    "vitest": "^5.0.0",
     "vue": "^3.5.35",
     "vue-tsc": "^3.3.3",
     "yarn-berry-deduplicate": "^7.0.0"
