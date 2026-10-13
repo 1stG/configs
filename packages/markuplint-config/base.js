@@ -5,13 +5,14 @@
 const base = {
   extends: ['markuplint:recommended'],
   rules: {
-    'attr-duplication': true,
     'case-sensitive-tag-name': true,
-    'deprecated-element': true,
-    'id-duplication': true,
-    'required-attr': true,
-    'required-h1': false,
-    'use-list': false,
+    'no-deprecated-element': true,
+    'no-duplicate-attr': true,
+    'no-duplicate-id': true,
+    'no-obsolete-element': true,
+    'no-pseudo-list': false,
+    'require-attr': true,
+    'require-h1': false,
   },
   excludeFiles: ['**/node_modules/**'],
 }
