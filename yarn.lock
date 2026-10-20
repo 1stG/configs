@@ -241,7 +241,7 @@ __metadata:
     "@pkgr/utils": "npm:^4.1.0"
     autoprefixer: "npm:^10.5.0"
     cssnano: "npm:^9.0.0"
-    cssnano-preset-advanced: "npm:^9.0.0"
+    cssnano-preset-advanced: "npm:^10.0.0"
     postcss-import: "npm:^17.0.0"
     postcss-modules: "npm:^9.0.0"
     postcss-normalize: "npm:^13.0.1"
@@ -272,7 +272,7 @@ __metadata:
     prettier-plugin-properties: "npm:^0.3.1"
     prettier-plugin-sh: "npm:^0.20.0"
     prettier-plugin-stylus: "npm:^0.1.0"
-    prettier-plugin-toml: "npm:^3.0.0"
+    prettier-plugin-toml: "npm:^4.0.0"
   peerDependencies:
     prettier: ^3.0.0
   languageName: unknown
@@ -5207,10 +5207,164 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tombi-toml/wasm-lib@npm:^1.5.5":
-  version: 1.8.1
-  resolution: "@tombi-toml/wasm-lib@npm:1.8.1"
-  checksum: 10c0/d2501b89f2f7cda7390abf850bb2559c6891368ad09b4bdd6ff8b0e66abde84a5bd19a24506ba1ab16b44b65ad5ae9a4d089be220a57f9444ae59b45a432e94b
+"@tombit/binding-android-arm-eabi@npm:0.1.3":
+  version: 0.1.3
+  resolution: "@tombit/binding-android-arm-eabi@npm:0.1.3"
+  conditions: os=android & cpu=arm
+  languageName: node
+  linkType: hard
+
+"@tombit/binding-android-arm64@npm:0.1.3":
+  version: 0.1.3
+  resolution: "@tombit/binding-android-arm64@npm:0.1.3"
+  conditions: os=android & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@tombit/binding-darwin-arm64@npm:0.1.3":
+  version: 0.1.3
+  resolution: "@tombit/binding-darwin-arm64@npm:0.1.3"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@tombit/binding-darwin-x64@npm:0.1.3":
+  version: 0.1.3
+  resolution: "@tombit/binding-darwin-x64@npm:0.1.3"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@tombit/binding-freebsd-x64@npm:0.1.3":
+  version: 0.1.3
+  resolution: "@tombit/binding-freebsd-x64@npm:0.1.3"
+  conditions: os=freebsd & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@tombit/binding-linux-arm-gnueabihf@npm:0.1.3":
+  version: 0.1.3
+  resolution: "@tombit/binding-linux-arm-gnueabihf@npm:0.1.3"
+  conditions: os=linux & cpu=arm
+  languageName: node
+  linkType: hard
+
+"@tombit/binding-linux-arm-musleabihf@npm:0.1.3":
+  version: 0.1.3
+  resolution: "@tombit/binding-linux-arm-musleabihf@npm:0.1.3"
+  conditions: os=linux & cpu=arm
+  languageName: node
+  linkType: hard
+
+"@tombit/binding-linux-arm64-gnu@npm:0.1.3":
+  version: 0.1.3
+  resolution: "@tombit/binding-linux-arm64-gnu@npm:0.1.3"
+  conditions: os=linux & cpu=arm64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@tombit/binding-linux-arm64-musl@npm:0.1.3":
+  version: 0.1.3
+  resolution: "@tombit/binding-linux-arm64-musl@npm:0.1.3"
+  conditions: os=linux & cpu=arm64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@tombit/binding-linux-loong64-gnu@npm:0.1.3":
+  version: 0.1.3
+  resolution: "@tombit/binding-linux-loong64-gnu@npm:0.1.3"
+  conditions: os=linux & cpu=loong64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@tombit/binding-linux-loong64-musl@npm:0.1.3":
+  version: 0.1.3
+  resolution: "@tombit/binding-linux-loong64-musl@npm:0.1.3"
+  conditions: os=linux & cpu=loong64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@tombit/binding-linux-ppc64-gnu@npm:0.1.3":
+  version: 0.1.3
+  resolution: "@tombit/binding-linux-ppc64-gnu@npm:0.1.3"
+  conditions: os=linux & cpu=ppc64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@tombit/binding-linux-ppc64-musl@npm:0.1.3":
+  version: 0.1.3
+  resolution: "@tombit/binding-linux-ppc64-musl@npm:0.1.3"
+  conditions: os=linux & cpu=ppc64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@tombit/binding-linux-riscv64-gnu@npm:0.1.3":
+  version: 0.1.3
+  resolution: "@tombit/binding-linux-riscv64-gnu@npm:0.1.3"
+  conditions: os=linux & cpu=riscv64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@tombit/binding-linux-riscv64-musl@npm:0.1.3":
+  version: 0.1.3
+  resolution: "@tombit/binding-linux-riscv64-musl@npm:0.1.3"
+  conditions: os=linux & cpu=riscv64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@tombit/binding-linux-s390x-gnu@npm:0.1.3":
+  version: 0.1.3
+  resolution: "@tombit/binding-linux-s390x-gnu@npm:0.1.3"
+  conditions: os=linux & cpu=s390x & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@tombit/binding-linux-x64-gnu@npm:0.1.3":
+  version: 0.1.3
+  resolution: "@tombit/binding-linux-x64-gnu@npm:0.1.3"
+  conditions: os=linux & cpu=x64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@tombit/binding-linux-x64-musl@npm:0.1.3":
+  version: 0.1.3
+  resolution: "@tombit/binding-linux-x64-musl@npm:0.1.3"
+  conditions: os=linux & cpu=x64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@tombit/binding-openharmony-arm64@npm:0.1.3":
+  version: 0.1.3
+  resolution: "@tombit/binding-openharmony-arm64@npm:0.1.3"
+  conditions: os=openharmony & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@tombit/binding-openharmony-x64@npm:0.1.3":
+  version: 0.1.3
+  resolution: "@tombit/binding-openharmony-x64@npm:0.1.3"
+  conditions: os=openharmony & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@tombit/binding-win32-arm64-msvc@npm:0.1.3":
+  version: 0.1.3
+  resolution: "@tombit/binding-win32-arm64-msvc@npm:0.1.3"
+  conditions: os=win32 & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@tombit/binding-win32-ia32-msvc@npm:0.1.3":
+  version: 0.1.3
+  resolution: "@tombit/binding-win32-ia32-msvc@npm:0.1.3"
+  conditions: os=win32 & cpu=ia32
+  languageName: node
+  linkType: hard
+
+"@tombit/binding-win32-x64-msvc@npm:0.1.3":
+  version: 0.1.3
+  resolution: "@tombit/binding-win32-x64-msvc@npm:0.1.3"
+  conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
@@ -7673,15 +7827,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-declaration-sorter@npm:^7.4.0":
-  version: 7.4.0
-  resolution: "css-declaration-sorter@npm:7.4.0"
-  peerDependencies:
-    postcss: ^8.0.9
-  checksum: 10c0/a4a7b8dd7802ad7ebdc4c6ee02a8a337d1c28eacaee719d6b12e21a97ded4f8ba4b95d3960c71654cb14f239a990fd9b5312d79486aabd75ca4ffd356c2feb3e
-  languageName: node
-  linkType: hard
-
 "css-functions-list@npm:^3.3.3":
   version: 3.3.3
   resolution: "css-functions-list@npm:3.3.3"
@@ -7788,20 +7933,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cssnano-preset-advanced@npm:^9.0.0":
-  version: 9.5.0
-  resolution: "cssnano-preset-advanced@npm:9.5.0"
+"cssnano-preset-advanced@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "cssnano-preset-advanced@npm:10.0.0"
   dependencies:
-    autoprefixer: "npm:^10.6.1"
-    css-declaration-sorter: "npm:^7.4.0"
-    cssnano-preset-default: "npm:^9.6.0"
+    cssnano-preset-default: "npm:^9.8.0"
     postcss-discard-unused: "npm:^9.0.7"
     postcss-merge-idents: "npm:^9.0.8"
     postcss-reduce-idents: "npm:^9.0.7"
     postcss-zindex: "npm:^9.0.6"
   peerDependencies:
     postcss: ^8.5.29
-  checksum: 10c0/303c3d4227bf31a4843e792b7c95868235d07393ed3da988ccd41cfff708821ba8f9559bcaad01a0fa5ce28a4e656ea6a4a61eed43367eb8877621c1726a4fe7
+  checksum: 10c0/eb24e459cb3e35eb4f65de52537dd2fb9fa17c0a98f0b066f5d8655c01f7305800383f41edb7bf1d86cff334d63d32491d2bc7279e5e448d7688a30f98ea7784
   languageName: node
   linkType: hard
 
@@ -7841,6 +7984,44 @@ __metadata:
   peerDependencies:
     postcss: ^8.5.29
   checksum: 10c0/16ad5bbe5f08aa38bf549e366283e43605baed8a466ed9cfe905782989868591e73f359e5ce21edd6578dc4982237c8f964b24b9c2d6d8e3b0e1b5bf315ea47a
+  languageName: node
+  linkType: hard
+
+"cssnano-preset-default@npm:^9.8.0":
+  version: 9.8.0
+  resolution: "cssnano-preset-default@npm:9.8.0"
+  dependencies:
+    browserslist: "npm:^4.29.3"
+    cssnano-utils: "npm:^9.0.0"
+    postcss-calc: "npm:^11.2.2"
+    postcss-colormin: "npm:^9.0.8"
+    postcss-convert-values: "npm:^9.1.0"
+    postcss-discard-comments: "npm:^9.0.8"
+    postcss-discard-duplicates: "npm:^9.0.7"
+    postcss-discard-empty: "npm:^9.0.8"
+    postcss-discard-overridden: "npm:^9.0.6"
+    postcss-merge-longhand: "npm:^9.4.0"
+    postcss-merge-rules: "npm:^9.1.5"
+    postcss-minify-font-values: "npm:^9.0.9"
+    postcss-minify-gradients: "npm:^9.0.8"
+    postcss-minify-params: "npm:^9.1.0"
+    postcss-minify-selectors: "npm:^9.0.8"
+    postcss-normalize-charset: "npm:^9.0.6"
+    postcss-normalize-display-values: "npm:^9.0.7"
+    postcss-normalize-positions: "npm:^9.0.8"
+    postcss-normalize-repeat-style: "npm:^9.0.7"
+    postcss-normalize-string: "npm:^9.0.7"
+    postcss-normalize-timing-functions: "npm:^9.0.7"
+    postcss-normalize-unicode: "npm:^9.1.1"
+    postcss-normalize-url: "npm:^10.0.0"
+    postcss-normalize-whitespace: "npm:^9.0.8"
+    postcss-ordered-values: "npm:^9.0.9"
+    postcss-reduce-initial: "npm:^9.0.7"
+    postcss-reduce-transforms: "npm:^9.0.6"
+    postcss-unique-selectors: "npm:^9.0.6"
+  peerDependencies:
+    postcss: ^8.5.29
+  checksum: 10c0/e8d5c0cbe7cde5e5f1a2737a314fbe2b97b421694082a76ea74a828bb4494db391ce58a9529361d16653421a4619c0b22f010e7902aa7aeddedde61e26d22635
   languageName: node
   linkType: hard
 
@@ -13214,6 +13395,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-convert-values@npm:^9.1.0":
+  version: 9.1.0
+  resolution: "postcss-convert-values@npm:9.1.0"
+  dependencies:
+    browserslist: "npm:^4.29.3"
+    cssnano-utils: "npm:^9.0.0"
+  peerDependencies:
+    postcss: ^8.5.29
+  checksum: 10c0/6eeeec4ddd5baab3316ee2235e7a468ded7639e9a7ece958e9c2a451c552d378699b78d99e60fb517b47b981bafe0726b6451186f222d033fc0c67b31815b313
+  languageName: node
+  linkType: hard
+
 "postcss-custom-media@npm:^12.0.3":
   version: 12.0.3
   resolution: "postcss-custom-media@npm:12.0.3"
@@ -13534,6 +13727,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-merge-rules@npm:^9.1.5":
+  version: 9.1.5
+  resolution: "postcss-merge-rules@npm:9.1.5"
+  dependencies:
+    "@csstools/css-tokenizer": "npm:^4.0.2"
+    browserslist: "npm:^4.29.3"
+    caniuse-api: "npm:^4.0.0"
+    cssnano-utils: "npm:^9.0.0"
+    postcss-minify-selectors: "npm:^9.0.8"
+  peerDependencies:
+    postcss: ^8.5.29
+  checksum: 10c0/a4cd911cc56b917ea571c3add78916f3e24767b4166449eca0502a3b198a782da889ab212564b862af27121d5012af7989d148ca2ad9d437358ca33cecf701af
+  languageName: node
+  linkType: hard
+
 "postcss-minify-font-values@npm:^9.0.9":
   version: 9.0.9
   resolution: "postcss-minify-font-values@npm:9.0.9"
@@ -13568,6 +13776,18 @@ __metadata:
   peerDependencies:
     postcss: ^8.5.29
   checksum: 10c0/5655e95455bff034df9402cd98276b5d3437e9506dba13e4b28cf6e5fdee86475a90b8d27f3c481b3080f6a2cf55d05688536c91f3985884ac7797caa54f5a69
+  languageName: node
+  linkType: hard
+
+"postcss-minify-params@npm:^9.1.0":
+  version: 9.1.0
+  resolution: "postcss-minify-params@npm:9.1.0"
+  dependencies:
+    browserslist: "npm:^4.29.3"
+    cssnano-utils: "npm:^9.0.0"
+  peerDependencies:
+    postcss: ^8.5.29
+  checksum: 10c0/742100feb1c1ce76cbacbf113e32b70683d55c0df804a6f930264fe73c11e6e2831d1a263a85eeb53a07a901b8adbf6f526e5215188e85308c2155208e8d114e
   languageName: node
   linkType: hard
 
@@ -13736,6 +13956,18 @@ __metadata:
   peerDependencies:
     postcss: ^8.5.29
   checksum: 10c0/11bb1938cbcdb1fdcf7cd431f21d23171bb0c4e831451bfee0a30e56132b41c252feaa3dee77a69462c05f2e0914cfc2e0fceeb74cc9ece57b32ebb3f919cd22
+  languageName: node
+  linkType: hard
+
+"postcss-normalize-url@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "postcss-normalize-url@npm:10.0.0"
+  dependencies:
+    "@csstools/css-tokenizer": "npm:^4.0.2"
+    cssnano-utils: "npm:^9.0.0"
+  peerDependencies:
+    postcss: ^8.5.29
+  checksum: 10c0/8509156247077fdcde67c4a9e1286fc84951e54a373860b0abb38b6c6dbbba804ad2f3e05e131c7eb264235b1e160466f0794fcb56ac3efc5c8e721753405774
   languageName: node
   linkType: hard
 
@@ -14194,16 +14426,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-toml@npm:^3.0.0":
-  version: 3.0.2
-  resolution: "prettier-plugin-toml@npm:3.0.2"
+"prettier-plugin-toml@npm:^4.0.0":
+  version: 4.1.0
+  resolution: "prettier-plugin-toml@npm:4.1.0"
   dependencies:
-    "@dual-bundle/import-meta-resolve": "npm:^4.2.1"
-    "@tombi-toml/wasm-lib": "npm:^1.5.5"
-    smol-toml: "npm:^1.8.0"
+    tombit: "npm:^0.1.3"
   peerDependencies:
     prettier: ^3.0.3
-  checksum: 10c0/ce122d2bb05dfd5256e2d62ae4b06525b71c07bf9c553db99fe6764b172fac43ccfde858f33116be8ee251fb49995630586d4ef596bc3ac001c98fc87282498e
+  checksum: 10c0/36322b753075a1861fe52992a638532f18d2a46e0bd3ddced560009b7d807a06e78a6308c22001838a80bff689090915450a5a925adf4f3782504cb92c6e3734
   languageName: node
   linkType: hard
 
@@ -15797,13 +16027,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"smol-toml@npm:^1.8.0":
-  version: 1.9.1
-  resolution: "smol-toml@npm:1.9.1"
-  checksum: 10c0/8acccf7bbc063f29405f58f5014ab39bf4eb9d7f0e000e5e3f140f7d4d6ead5696681a7c15260d1f2910213012c0af43b31a05bf94f704b0bdf39989fba08c02
-  languageName: node
-  linkType: hard
-
 "source-map-js@npm:^1.0.1, source-map-js@npm:^1.2.1, source-map-js@npm:^1.2.2":
   version: 1.2.2
   resolution: "source-map-js@npm:1.2.2"
@@ -16465,6 +16688,84 @@ __metadata:
     "@sindresorhus/base62": "npm:^1.0.0"
     reserved-identifiers: "npm:^1.0.0"
   checksum: 10c0/569b49f43b5aaaa20677e67f0f1cdcff344855149934cfb80c793c7ac7c30e191b224bc81cab40fb57641af9ca73795c78053c164a2addc617671e2d22c13a4a
+  languageName: node
+  linkType: hard
+
+"tombit@npm:^0.1.3":
+  version: 0.1.3
+  resolution: "tombit@npm:0.1.3"
+  dependencies:
+    "@tombit/binding-android-arm-eabi": "npm:0.1.3"
+    "@tombit/binding-android-arm64": "npm:0.1.3"
+    "@tombit/binding-darwin-arm64": "npm:0.1.3"
+    "@tombit/binding-darwin-x64": "npm:0.1.3"
+    "@tombit/binding-freebsd-x64": "npm:0.1.3"
+    "@tombit/binding-linux-arm-gnueabihf": "npm:0.1.3"
+    "@tombit/binding-linux-arm-musleabihf": "npm:0.1.3"
+    "@tombit/binding-linux-arm64-gnu": "npm:0.1.3"
+    "@tombit/binding-linux-arm64-musl": "npm:0.1.3"
+    "@tombit/binding-linux-loong64-gnu": "npm:0.1.3"
+    "@tombit/binding-linux-loong64-musl": "npm:0.1.3"
+    "@tombit/binding-linux-ppc64-gnu": "npm:0.1.3"
+    "@tombit/binding-linux-ppc64-musl": "npm:0.1.3"
+    "@tombit/binding-linux-riscv64-gnu": "npm:0.1.3"
+    "@tombit/binding-linux-riscv64-musl": "npm:0.1.3"
+    "@tombit/binding-linux-s390x-gnu": "npm:0.1.3"
+    "@tombit/binding-linux-x64-gnu": "npm:0.1.3"
+    "@tombit/binding-linux-x64-musl": "npm:0.1.3"
+    "@tombit/binding-openharmony-arm64": "npm:0.1.3"
+    "@tombit/binding-openharmony-x64": "npm:0.1.3"
+    "@tombit/binding-win32-arm64-msvc": "npm:0.1.3"
+    "@tombit/binding-win32-ia32-msvc": "npm:0.1.3"
+    "@tombit/binding-win32-x64-msvc": "npm:0.1.3"
+  dependenciesMeta:
+    "@tombit/binding-android-arm-eabi":
+      optional: true
+    "@tombit/binding-android-arm64":
+      optional: true
+    "@tombit/binding-darwin-arm64":
+      optional: true
+    "@tombit/binding-darwin-x64":
+      optional: true
+    "@tombit/binding-freebsd-x64":
+      optional: true
+    "@tombit/binding-linux-arm-gnueabihf":
+      optional: true
+    "@tombit/binding-linux-arm-musleabihf":
+      optional: true
+    "@tombit/binding-linux-arm64-gnu":
+      optional: true
+    "@tombit/binding-linux-arm64-musl":
+      optional: true
+    "@tombit/binding-linux-loong64-gnu":
+      optional: true
+    "@tombit/binding-linux-loong64-musl":
+      optional: true
+    "@tombit/binding-linux-ppc64-gnu":
+      optional: true
+    "@tombit/binding-linux-ppc64-musl":
+      optional: true
+    "@tombit/binding-linux-riscv64-gnu":
+      optional: true
+    "@tombit/binding-linux-riscv64-musl":
+      optional: true
+    "@tombit/binding-linux-s390x-gnu":
+      optional: true
+    "@tombit/binding-linux-x64-gnu":
+      optional: true
+    "@tombit/binding-linux-x64-musl":
+      optional: true
+    "@tombit/binding-openharmony-arm64":
+      optional: true
+    "@tombit/binding-openharmony-x64":
+      optional: true
+    "@tombit/binding-win32-arm64-msvc":
+      optional: true
+    "@tombit/binding-win32-ia32-msvc":
+      optional: true
+    "@tombit/binding-win32-x64-msvc":
+      optional: true
+  checksum: 10c0/ae4a4e77a318c16a7718d9b2919a0236c16b305297d6adc058c787ba8a4fdea9472cbceebeaad20a4f2efcc063fc495604254213bf409874aac6a937113a85c9
   languageName: node
   linkType: hard
 
