@@ -1,5 +1,22 @@
 # Change Log
 
+## 7.1.0
+
+### Minor Changes
+
+- [#412](https://github.com/1stG/configs/pull/412) [`a16fe7a`](https://github.com/1stG/configs/commit/a16fe7aa85d979ab85d728da328044c66f7238b8) Thanks [@renovate](https://github.com/apps/renovate)! - chore(deps): bump `cssnano-preset-advanced` to v10
+
+  The `advanced` preset no longer removes vendor prefixes or sorts declarations:
+  upstream dropped its bundled `autoprefixer` and `css-declaration-sorter`
+  dependencies, and the `autoprefixer` / `cssDeclarationSorter` preset options are
+  gone, so passing them has no effect.
+
+  Prefixes are still handled by the `autoprefixer` plugin this config already runs
+  before `cssnano` (with its default `remove: true`), so no CSS loses its prefixes;
+  only declaration order changes. To keep sorting declarations, add
+  `css-declaration-sorter` with `keepOverrides: true` to your own PostCSS plugin
+  list.
+
 ## 7.0.0
 
 ### Major Changes
