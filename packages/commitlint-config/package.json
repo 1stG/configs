@@ -1,22 +1,34 @@
 {
   "name": "@1stg/commitlint-config",
   "version": "7.0.0",
-  "type": "module",
   "description": "Personal but Shareable Commitlint Configuration for all 1stG.me projects",
-  "repository": "git+https://github.com/1stG/configs.git",
-  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
-  "funding": "https://opencollective.com/configs",
   "license": "MIT",
-  "engines": {
-    "node": "^22.18.0 || >=24.11.0"
-  },
+  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
+  "repository": "git+https://github.com/1stG/configs.git",
+  "funding": "https://opencollective.com/configs",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "type": "module",
   "main": "index.js",
-  "dependencies": {
-    "@commitlint/config-conventional": "^21.0.2",
-    "@commitlint/config-workspace-scopes": "^21.0.2",
-    "@pkgr/utils": "^4.1.0"
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./package.json": "./package.json"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@commitlint/config-conventional": "^21.0.2",
+    "@commitlint/config-workspace-scopes": "^21.0.2"
+  },
+  "engines": {
+    "node": "^22.18.0 || >=24.11.0"
   }
 }

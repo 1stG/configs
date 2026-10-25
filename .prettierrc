@@ -1,1 +1,28 @@
-"@1stg/prettier-config"
+{
+  "arrowParens": "avoid",
+  "overrides": [
+    {
+      "files": ["**/.npmrc"],
+      "options": {
+        "parser": "ini"
+      }
+    },
+    {
+      "files": ["**/.*shrc", "**/.env.*"],
+      "options": {
+        "parser": "sh"
+      }
+    }
+  ],
+  "plugins": [
+    "@prettier/plugin-pug",
+    "@prettier/plugin-ruby",
+    "prettier-plugin-ini",
+    "prettier-plugin-properties",
+    "prettier-plugin-sh",
+    "prettier-plugin-stylus"
+  ],
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "all"
+}

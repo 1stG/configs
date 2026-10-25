@@ -1,17 +1,17 @@
 {
   "name": "@1stg/remark-preset",
   "version": "4.0.0",
-  "type": "module",
   "description": "Personal but Shareable Remark Preset for all 1stG.me projects",
-  "repository": "git+https://github.com/1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/remark-preset",
-  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
-  "funding": "https://opencollective.com/configs",
   "license": "MIT",
-  "engines": {
-    "node": "^22.18.0 || >=24.11.0"
-  },
+  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
+  "repository": "git+https://github.com/1stG/configs.git",
+  "funding": "https://opencollective.com/configs",
+  "type": "module",
   "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "remark-cjk-friendly": "^2.0.1",
     "remark-cjk-friendly-gfm-strikethrough": "^2.0.1",
@@ -26,7 +26,7 @@
     "remark-preset-prettier": "^2.0.2",
     "remark-validate-links": "^13.1.0"
   },
-  "publishConfig": {
-    "access": "public"
+  "engines": {
+    "node": "^22.18.0 || >=24.11.0"
   }
 }

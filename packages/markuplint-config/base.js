@@ -2,8 +2,7 @@
  * @type {Config}
  * @import { Config } from '@markuplint/ml-config'
  */
-const base = {
-  extends: ['markuplint:recommended'],
+export const base = {
   rules: {
     'case-sensitive-tag-name': true,
     'no-deprecated-element': true,
@@ -16,5 +15,3 @@ const base = {
   },
   excludeFiles: ['**/node_modules/**'],
 }
-
-export default base

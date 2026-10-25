@@ -1,0 +1,34 @@
+{
+  "name": "@1stg/oxfmt-config",
+  "version": "1.0.0",
+  "description": "Personal but Shareable Oxfmt Configuration for all 1stG.me projects",
+  "homepage": "https://github.com/1stG/configs/tree/master/packages/oxfmt-config",
+  "license": "MIT",
+  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
+  "repository": "git+https://github.com/1stG/configs.git",
+  "funding": "https://opencollective.com/configs",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "oxfmt": ">=0.74.0"
+  },
+  "engines": {
+    "node": "^22.18.0 || >=24.11.0"
+  }
+}

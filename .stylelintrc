@@ -1,6 +1,0 @@
-{
-  "extends": [
-    "@1stg/stylelint-config",
-    "@1stg/stylelint-config/modules"
-  ]
-}

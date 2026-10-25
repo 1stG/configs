@@ -1,17 +1,17 @@
 {
   "name": "@1stg/browserslist-config",
   "version": "2.1.4",
-  "type": "commonjs",
   "description": "Personal but Shareable Browserslist Configuration for all 1stG.me projects",
-  "repository": "git+https://github.com/1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/browserslist-config",
-  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
-  "funding": "https://opencollective.com/configs",
   "license": "MIT",
-  "peerDependencies": {
-    "browserslist": ">=4.0.0"
-  },
+  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
+  "repository": "git+https://github.com/1stG/configs.git",
+  "funding": "https://opencollective.com/configs",
+  "type": "commonjs",
   "publishConfig": {
     "access": "public"
+  },
+  "peerDependencies": {
+    "browserslist": ">=4.0.0"
   }
 }

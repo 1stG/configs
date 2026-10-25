@@ -1,35 +1,39 @@
 {
   "name": "@1stg/nano-staged",
   "version": "1.0.0",
-  "type": "module",
   "description": "Personal but Shareable nano-staged Configuration for all 1stG.me projects",
-  "repository": "git+https://github.com/1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/nano-staged",
-  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
-  "funding": "https://opencollective.com/configs",
   "license": "MIT",
-  "engines": {
-    "node": "^22.18.0 || >=24.11.0"
-  },
+  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
+  "repository": "git+https://github.com/1stG/configs.git",
+  "funding": "https://opencollective.com/configs",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "type": "module",
   "main": "index.js",
   "exports": {
-    ".": "./index.js",
-    "./package.json": "./package.json",
-    "./ngc": "./ngc.js",
-    "./tsc": "./tsc.js",
-    "./vue-tsc": "./vue-tsc.js"
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@1stg/tsconfig": "^4.0.0",
+    "@pkgr/utils": "^4.1.0",
+    "prettier": "^3.9.10"
   },
   "peerDependencies": {
     "nano-staged": ">=0.8.0"
   },
-  "dependencies": {
-    "@1stg/config": "^1.2.1",
-    "@1stg/prettier-config": "^6.0.0",
-    "@1stg/tsconfig": "^4.0.0",
-    "@pkgr/core": "^0.3.6",
-    "prettier": "^3.9.10"
-  },
-  "publishConfig": {
-    "access": "public"
+  "engines": {
+    "node": "^22.18.0 || >=24.11.0"
   }
 }

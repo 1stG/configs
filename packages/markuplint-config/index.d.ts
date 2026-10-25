@@ -1,1 +1,12 @@
-export { default } from './base.js'
+import type { Config } from '@markuplint/ml-config'
+
+export interface MarkuplintConfigOptions {
+  /** Add the Vue parser and spec. @default false */
+  vue?: boolean
+}
+
+export declare const createConfig: (options?: MarkuplintConfigOptions) => Config
+
+declare const config: Config
+
+export default config

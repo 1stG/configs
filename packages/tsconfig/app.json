@@ -3,14 +3,9 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "allowArbitraryExtensions": true,
-    "lib": [
-      "DOM",
-      "ESNext"
-    ],
+    "lib": ["DOM", "ESNext"],
     "paths": {
-      "*": [
-        "src/*"
-      ]
+      "*": ["src/*"]
     },
     "outDir": "dist"
   }

@@ -1,31 +1,37 @@
-# @1stg/lint-staged
+# @1stg/nano-staged
 
-Personal but Shareable lint-staged Configuration for all 1stG.me projects
+Personal but Shareable [nano-staged](https://npmjs.com/package/nano-staged)
+Configuration for all 1stG.me projects.
 
-## Sponsors and Backers
+## Usage
 
-[![Sponsors and Backers](https://raw.githubusercontent.com/1stG/static/master/sponsors.svg)](https://github.com/sponsors/JounQin)
+`.nano-staged.js`:
 
-### Sponsors
+```js
+import { createStaged } from '@1stg/nano-staged'
 
-| 1stG                                                                                                                   | RxTS                                                                                                                   | UnTS                                                                                                                   |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| [![1stG Open Collective sponsors](https://opencollective.com/1stG/organizations.svg)](https://opencollective.com/1stG) | [![RxTS Open Collective sponsors](https://opencollective.com/rxts/organizations.svg)](https://opencollective.com/rxts) | [![UnTS Open Collective sponsors](https://opencollective.com/unts/organizations.svg)](https://opencollective.com/unts) |
+export default createStaged({
+  formatter: 'both',
+  linter: 'oxlint',
+  stylelint: true,
+  typecheck: 'tsc',
+})
+```
 
-### Backers
+## Options
 
-| 1stG                                                                                                                | RxTS                                                                                                                | UnTS                                                                                                                |
-| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| [![1stG Open Collective backers](https://opencollective.com/1stG/individuals.svg)](https://opencollective.com/1stG) | [![RxTS Open Collective backers](https://opencollective.com/rxts/individuals.svg)](https://opencollective.com/rxts) | [![UnTS Open Collective backers](https://opencollective.com/unts/individuals.svg)](https://opencollective.com/unts) |
+| Option         | Default         | Description                                                                  |
+| -------------- | --------------- | ---------------------------------------------------------------------------- |
+| `formatter`    | `'prettier'`    | `'oxfmt'`, `'prettier'`, `'both'` (Oxfmt plus Prettier fallback) or `false`. |
+| `linter`       | `false`         | `'oxlint'`, `'eslint'` or `false`.                                           |
+| `stylelint`    | `false`         | Run `stylelint --fix` on style files.                                        |
+| `typecheck`    | `false`         | `'tsc'`, `'ngc'`, `'vue-tsc'` or `false`.                                    |
+| `tsconfig`     | discovered      | Explicit `tsconfig` path, resolved once when the config loads.               |
+| `typeCoverage` | `false`         | Run `type-coverage` with the type-check.                                     |
+| `imagemagick`  | `false`         | Optimize images with the `i` command.                                        |
+| `commands`     | `{}`            | Override a command, e.g. `{ oxfmt: 'oxfmt -c oxfmt.config.mjs' }`.           |
+| `cwd`          | `process.cwd()` | Base directory for `tsconfig` discovery.                                     |
 
-## Changelog
-
-Detailed changes for each release are documented in [CHANGELOG.md](./CHANGELOG.md).
-
-## License
-
-[MIT][] © [JounQin][]@[1stG.me][]
-
-[1stG.me]: https://www.1stG.me
-[JounQin]: https://github.com/JounQin
-[MIT]: http://opensource.org/licenses/MIT
+`'both'` formats everything [Oxfmt](../oxfmt-config) supports and leaves the
+languages that need Prettier plugins (Pug, Ruby, shell, INI, properties,
+Stylus, Sass) to `prettier --write`.

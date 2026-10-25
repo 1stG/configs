@@ -1,1 +1,3 @@
-export { default } from '@1stg/simple-git-hooks'
+import { createHooks } from '@1stg/simple-git-hooks'
+
+export default createHooks()
