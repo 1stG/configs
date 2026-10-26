@@ -29,7 +29,7 @@ export default defineConfig({
 | `tsconfig`     | discovered      | Explicit `tsconfig` path, resolved once when the config loads.               |
 | `typeCoverage` | `false`         | Run `type-coverage` with the type-check.                                     |
 | `imagemagick`  | `false`         | Optimize images with the `i` command.                                        |
-| `commands`     | `{}`            | Override a command, e.g. `{ oxfmt: 'oxfmt -c oxfmt.config.mjs' }`.           |
+| `commands`     | `{}`            | Override a command, e.g. `{ oxfmt: 'oxfmt -c oxfmt.config.js' }`.            |
 | `cwd`          | `process.cwd()` | Base directory for `tsconfig` discovery.                                     |
 
 `'both'` formats everything [Oxfmt](../oxfmt-config) supports and leaves the

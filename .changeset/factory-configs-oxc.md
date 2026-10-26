@@ -33,7 +33,7 @@ module load time, so the same config produces the same result locally and on CI.
   subpaths. Angular support is dropped.
 - `@1stg/commitlint-config` takes `monorepo` instead of detecting the workspace
   at import time; `@1stg/simple-git-hooks` takes `runner`.
-- `@1stg/postcss-config` is ESM only (use `postcss.config.mjs`), minifies based
+- `@1stg/postcss-config` is ESM only (use `postcss.config.js`), minifies based
   on its `env` option rather than a module-level `NODE_ENV` snapshot, and accepts
   `minify`, `map`, `cssnano`, `presetOptions` and extra `plugins`.
 - All packages publish explicit `exports.types`, a `files` allow-list, and

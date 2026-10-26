@@ -5,7 +5,7 @@ Personal but Shareable [Oxlint](https://oxc.rs/docs/guide/usage/linter) Configur
 ## Usage
 
 ```js
-// oxlint.config.mjs
+// oxlint.config.js
 import { defineConfig } from '@1stg/oxlint-config'
 
 export default defineConfig({
@@ -15,7 +15,7 @@ export default defineConfig({
 ```
 
 ```sh
-oxlint -c oxlint.config.mjs .
+oxlint -c oxlint.config.js .
 ```
 
 The default export is the zero-config version, for tools that can import a

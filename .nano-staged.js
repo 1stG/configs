@@ -2,8 +2,8 @@ import { defineConfig } from '@1stg/nano-staged'
 
 export default defineConfig({
   commands: {
-    oxfmt: 'oxfmt -c oxfmt.config.mjs',
-    oxlint: 'oxlint -c oxlint.config.mjs --fix',
+    oxfmt: 'oxfmt -c oxfmt.config.js',
+    oxlint: 'oxlint -c oxlint.config.js --fix',
   },
   formatter: 'both',
   linter: 'oxlint',

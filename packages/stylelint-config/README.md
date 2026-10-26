@@ -4,7 +4,7 @@ Personal but Shareable Stylelint Configuration for all 1stG.me projects.
 
 ## Usage
 
-`stylelint.config.mjs`:
+`stylelint.config.js`:
 
 ```js
 import { defineConfig } from '@1stg/stylelint-config'

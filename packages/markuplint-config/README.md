@@ -4,7 +4,7 @@ Personal but Shareable markuplint Configuration for all 1stG.me projects.
 
 ## Usage
 
-`markuplint.config.mjs`:
+`markuplint.config.js`:
 
 ```js
 import { defineConfig } from '@1stg/markuplint-config'

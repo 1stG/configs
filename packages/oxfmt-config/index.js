@@ -12,7 +12,7 @@
  */
 
 /**
- * Build an Oxfmt configuration. `oxfmt --config oxfmt.config.mjs` picks it up.
+ * Build an Oxfmt configuration. `oxfmt --config oxfmt.config.js` picks it up.
  *
  * @param {OxfmtConfigOptions} [options]
  * @returns {Record<string, unknown>}

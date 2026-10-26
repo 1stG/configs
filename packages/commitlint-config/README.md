@@ -4,7 +4,7 @@ Personal but Shareable Commitlint Configuration for all 1stG.me projects.
 
 ## Usage
 
-`commitlint.config.mjs`:
+`commitlint.config.js`:
 
 ```js
 import { defineConfig } from '@1stg/commitlint-config'

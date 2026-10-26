@@ -4,7 +4,7 @@ Personal but Shareable PostCSS Configuration for all 1stG.me projects.
 
 ## Usage
 
-`postcss.config.mjs`:
+`postcss.config.js`:
 
 ```js
 import { defineConfig } from '@1stg/postcss-config'
@@ -13,7 +13,7 @@ export default defineConfig({ advanced: true })
 ```
 
 The package is ESM only, matching `postcss-load-config` v6: PostCSS loads
-`postcss.config.mjs` (or `postcss.config.js` in an ESM package) natively. The
+`postcss.config.js` (or `postcss.config.js` in an ESM package) natively. The
 default export is the config function itself, so `export { default } from
 '@1stg/postcss-config'` works too and defers `NODE_ENV` until PostCSS calls it.
 
