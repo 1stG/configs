@@ -1,4 +1,5 @@
 ---
+'@1stg/browserslist-config': major
 '@1stg/commitlint-config': major
 '@1stg/markuplint-config': major
 '@1stg/nano-staged': major
@@ -41,3 +42,4 @@ module load time, so the same config produces the same result locally and on CI.
   `yarn build` runs on install and release.
 - All packages publish explicit `exports.types`, a `files` allow-list, and
   consistent Node.js engines.
+- `@1stg/browserslist-config` drops the `alauda` and `alauda-legacy` presets.

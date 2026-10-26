@@ -21,16 +21,6 @@
       "require": "./lib/index.js",
       "default": "./lib/index.js"
     },
-    "./alauda": {
-      "types": "./lib/alauda.d.ts",
-      "require": "./lib/alauda.js",
-      "default": "./lib/alauda.js"
-    },
-    "./alauda-legacy": {
-      "types": "./lib/alauda-legacy.d.ts",
-      "require": "./lib/alauda-legacy.js",
-      "default": "./lib/alauda-legacy.js"
-    },
     "./latest": {
       "types": "./lib/latest.d.ts",
       "require": "./lib/latest.js",
