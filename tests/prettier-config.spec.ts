@@ -15,6 +15,12 @@ describe('@1stg/prettier-config', () => {
   it('resolves only the installed optional plugins', () => {
     expect(prettierConfig.plugins?.length).toBeGreaterThan(0)
     expect(
+      prettierConfig.plugins?.some(
+        plugin =>
+          typeof plugin === 'string' && plugin.includes('prettier-plugin-pkg'),
+      ),
+    ).toBe(true)
+    expect(
       prettierConfig.plugins?.every(
         plugin => typeof plugin === 'string' && plugin.startsWith('/'),
       ),

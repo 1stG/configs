@@ -25,9 +25,11 @@ The plugins for the languages Oxfmt cannot format (Pug, Ruby, XML, Go
 templates, INI, JSDoc, properties, shell, Stylus, TOML, package.json) are
 **optional peer dependencies**: install only the ones you need.
 
-`defineConfig` resolves the installed entry points with `import.meta.resolve`
-and skips missing packages; Prettier imports the plugin code when it formats.
-Pass `plugins` to override the detected list.
+`prettier-plugin-pkg` is installed by default; the other plugins are optional
+peers. `defineConfig` derives the candidate list from this package's
+`dependencies` and `peerDependencies`, resolves the installed entry points
+with `import.meta.resolve` and skips missing packages. Pass `plugins` to
+override the detected list.
 
 ## Options
 

@@ -1,26 +1,31 @@
+import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 
 import { iniRcFiles, jsoncFiles, nonJsonRcFiles, shRcFiles } from '@1stg/config'
 import type { Config } from 'prettier'
 
-/**
- * Optional peer plugins. Only the ones installed by the consumer are resolved;
- * Prettier imports the plugin code itself when it formats a matching file.
- */
+interface PackageManifest {
+  dependencies?: Record<string, string>
+  peerDependencies?: Record<string, string>
+}
+
+const manifest = JSON.parse(
+  readFileSync(new URL('../package.json', import.meta.url), 'utf8'),
+) as PackageManifest
+
 const PLUGIN_NAMES = [
-  '@prettier/plugin-pug',
-  '@prettier/plugin-ruby',
-  '@prettier/plugin-xml',
-  'prettier-plugin-go-template',
-  'prettier-plugin-ini',
-  'prettier-plugin-jsdoc',
-  'prettier-plugin-jsdoc-type',
-  'prettier-plugin-pkg',
-  'prettier-plugin-properties',
-  'prettier-plugin-sh',
-  'prettier-plugin-stylus',
-  'prettier-plugin-toml',
+  ...new Set([
+    ...Object.keys(manifest.dependencies ?? {}),
+    ...Object.keys(manifest.peerDependencies ?? {}),
+  ]),
 ]
+  .filter(
+    name =>
+      name === 'prettier-plugin-pkg' ||
+      name.startsWith('prettier-plugin-') ||
+      name.startsWith('@prettier/plugin-'),
+  )
+  .sort()
 
 const resolvePlugins = (): string[] => {
   const plugins: string[] = []

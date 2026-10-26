@@ -22,7 +22,8 @@ tool-specific fields pass through without being re-declared.
 
 - `@1stg/eslint-config` now only covers the file types Oxlint cannot parse
   (Markdown/JSON/YAML/TOML) and uses `eslint-plugin-oxlint` to avoid duplicate
-  reports; its plugins are optional peers, enabled only when installed.
+  reports; Markdown/JSON(C) plugins are installed by default, while YAML/TOML
+  and `eslint-plugin-oxlint` are optional peers enabled when installed.
   `@1stg/babel-preset` is removed and JS/TS/Vue parsing moves to
   [`@1stg/oxlint-config`](../packages/oxlint-config).
 - New [`@1stg/oxlint-config`](../packages/oxlint-config) (Oxlint) and
@@ -30,7 +31,8 @@ tool-specific fields pass through without being re-declared.
   ESLint rule by default; `prettier: 'eslint'` remains available as an option.
 - `@1stg/prettier-config` is kept for the languages Oxfmt cannot format (Pug,
   Ruby, shell, INI, properties, Stylus, Sass). Its plugins are optional peer
-  dependencies, resolved with `import.meta.resolve` only when installed; the
+  dependencies (discovered from this package's `dependencies` + optional
+  `peerDependencies`), with `prettier-plugin-pkg` installed by default; the
   `/next` (`babel-ts`) variant is gone with Babel.
 - `@1stg/nano-staged` takes `formatter` (`'oxfmt' | 'prettier' | 'both'`),
   `linter` (`'oxlint' | 'eslint'`) and `typecheck` options instead of

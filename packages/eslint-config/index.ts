@@ -61,8 +61,8 @@ const load = async <T>(name: string): Promise<T> => {
  * promise before linting.
  */
 export const defineConfig = async ({
-  markdown = isInstalled('eslint-plugin-mdx'),
-  jsonc: jsoncEnabled = isInstalled('eslint-plugin-jsonc'),
+  markdown = true,
+  jsonc: jsoncEnabled = true,
   yaml = isInstalled('eslint-plugin-yml'),
   toml: tomlEnabled = isInstalled('eslint-plugin-toml'),
   oxlint: oxlintEnabled = isInstalled('eslint-plugin-oxlint'),
