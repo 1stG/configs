@@ -21,7 +21,8 @@ import { defineConfig } from '@1stg/eslint-config'
 export default defineConfig()
 ```
 
-Run ESLint on the remaining extensions only:
+`defineConfig()` is async because the plugins are imported dynamically; ESLint
+awaits it automatically. Run ESLint on the remaining extensions only:
 
 ```sh
 eslint "**/*.{md,mdx,json,jsonc,json5,yaml,yml,toml}"

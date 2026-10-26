@@ -1,8 +1,4 @@
-import { createRequire } from 'node:module'
-
 import type { Linter } from 'eslint'
-
-const require = createRequire(import.meta.url)
 
 export interface EslintConfigOptions {
   /** Lint Markdown/MDX. @default true */
@@ -19,6 +15,17 @@ export interface EslintConfigOptions {
   ignores?: string[]
 }
 
+interface PluginConfigs {
+  configs: Record<string, Linter.Config[]>
+}
+
+interface MarkdownPlugin {
+  flat: Linter.Config
+  createRemarkProcessor: (options: {
+    lintCodeBlocks: boolean
+  }) => Linter.Processor
+}
+
 const DEFAULT_IGNORES = [
   '**/.dsh/**',
   '**/.yarn/**',
@@ -28,37 +35,39 @@ const DEFAULT_IGNORES = [
 ]
 
 /**
+ * Dynamic import that also unwraps a CommonJS default export.
+ */
+const load = async <T>(name: string): Promise<T> => {
+  const mod = (await import(name)) as T & { default?: T }
+  return (mod.default ?? mod) as T
+}
+
+/**
  * Build the flat ESLint config for the file types Oxlint does not parse.
  *
- * Every plugin is required only when its option is enabled; Oxlint keeps
- * ownership of JS/TS/JSX/Vue.
+ * Every plugin is imported dynamically (and only when its option is enabled),
+ * so the config works with ESM-only plugins. ESLint awaits the returned
+ * promise before linting.
  */
-export const defineConfig = ({
+export const defineConfig = async ({
   markdown = true,
   jsonc: jsoncEnabled = true,
   yaml = true,
   toml: tomlEnabled = true,
   oxlint: oxlintEnabled = true,
   ignores = [],
-}: EslintConfigOptions = {}): Linter.Config[] => {
+}: EslintConfigOptions = {}): Promise<Linter.Config[]> => {
   const configs: Linter.Config[] = [
     { ignores: [...DEFAULT_IGNORES, ...ignores] },
   ]
 
   if (oxlintEnabled) {
-    const oxlint = require('eslint-plugin-oxlint') as {
-      configs: Record<string, Linter.Config[]>
-    }
+    const oxlint = await load<PluginConfigs>('eslint-plugin-oxlint')
     configs.push(...oxlint.configs['flat/all'])
   }
 
   if (markdown) {
-    const mdx = require('eslint-plugin-mdx') as {
-      flat: Linter.Config
-      createRemarkProcessor: (options: {
-        lintCodeBlocks: boolean
-      }) => Linter.Processor
-    }
+    const mdx = await load<MarkdownPlugin>('eslint-plugin-mdx')
     configs.push({
       ...mdx.flat,
       processor: mdx.createRemarkProcessor({ lintCodeBlocks: false }),
@@ -66,9 +75,7 @@ export const defineConfig = ({
   }
 
   if (jsoncEnabled) {
-    const jsonc = require('eslint-plugin-jsonc') as {
-      configs: Record<string, Linter.Config[]>
-    }
+    const jsonc = await load<PluginConfigs>('eslint-plugin-jsonc')
     configs.push(
       ...jsonc.configs['flat/recommended-with-jsonc'],
       ...jsonc.configs['flat/prettier'],
@@ -76,9 +83,7 @@ export const defineConfig = ({
   }
 
   if (yaml) {
-    const yml = require('eslint-plugin-yml') as {
-      configs: Record<string, Linter.Config[]>
-    }
+    const yml = await load<PluginConfigs>('eslint-plugin-yml')
     configs.push(
       ...yml.configs['flat/recommended'],
       ...yml.configs['flat/prettier'],
@@ -86,9 +91,7 @@ export const defineConfig = ({
   }
 
   if (tomlEnabled) {
-    const toml = require('eslint-plugin-toml') as {
-      configs: Record<string, Linter.Config[]>
-    }
+    const toml = await load<PluginConfigs>('eslint-plugin-toml')
     configs.push(...toml.configs['flat/recommended'])
   }
 

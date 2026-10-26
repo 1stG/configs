@@ -19,6 +19,10 @@ import { defineConfig } from '@1stg/eslint-config'
 export default defineConfig()
 ```
 
+`defineConfig()` is async: plugins are loaded with dynamic `import()` only when
+enabled, and ESLint awaits the returned promise. Use
+`export default await defineConfig()` if your tool does not await it.
+
 Run ESLint only on those extensions:
 
 ```sh
