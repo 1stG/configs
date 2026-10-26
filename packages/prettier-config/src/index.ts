@@ -1,8 +1,9 @@
 import { fileURLToPath } from 'node:url'
 
 import { iniRcFiles, jsoncFiles, nonJsonRcFiles, shRcFiles } from '@1stg/config'
-import pkg from '@1stg/prettier-config/package.json' with { type: 'json' }
 import type { Config } from 'prettier'
+
+import pkg from '../package.json' with { type: 'json' }
 
 const PLUGIN_NAMES = [
   ...new Set([

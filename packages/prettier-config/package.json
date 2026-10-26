@@ -22,8 +22,7 @@
   },
   "files": [
     "lib",
-    "!lib/*.tsbuildinfo",
-    "!lib/package.json"
+    "!lib/*.tsbuildinfo"
   ],
   "peerDependencies": {
     "@prettier/plugin-pug": "^3.4.2",
