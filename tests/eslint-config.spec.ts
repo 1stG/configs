@@ -5,6 +5,9 @@ describe('@1stg/eslint-config', () => {
     const config = await defineEslint()
     expect(Array.isArray(config)).toBe(true)
     expect(config.some(item => item.name === 'oxlint/all')).toBe(true)
+    expect(config.find(item => item.ignores)?.ignores).toContain(
+      '**/*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}',
+    )
   })
 
   it('can disable the file-type presets', async () => {

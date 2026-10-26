@@ -28,10 +28,27 @@ interface MarkdownPlugin {
 
 const DEFAULT_IGNORES = [
   '**/.dsh/**',
+  '**/.history/**',
+  '**/.type-coverage/**',
+  '**/.vercel/**',
   '**/.yarn/**',
-  '**/CHANGELOG.md',
+  '**/.pnp.*',
   '**/coverage/**',
+  '**/dist/**',
   '**/lib/**',
+  '**/node_modules/**',
+  '**/CHANGELOG.md',
+  '**/yarn.lock',
+  '**/package-lock.json',
+  '**/pnpm-lock.yaml',
+  '**/auto-imports.d.ts',
+  '**/*.log',
+  '**/*.patch',
+  '**/*.min.*',
+  // Oxlint owns code; stylelint owns styles; markuplint owns HTML.
+  '**/*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}',
+  '**/*.{css,less,sass,scss,styl,stylus}',
+  '**/*.html',
 ]
 
 /**

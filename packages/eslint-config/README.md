@@ -25,7 +25,9 @@ list are on. `eslint-plugin-yml` and `eslint-plugin-toml` are optional peers,
 enabled only when installed (`import.meta.resolve`). ESLint awaits the returned promise. Use
 `export default await defineConfig()` if your tool does not await it.
 
-Run ESLint only on those extensions:
+The default ignores skip code owned by Oxlint (`.js/.ts/.jsx/.tsx/.vue`), styles
+owned by Stylelint, HTML owned by markuplint, lockfiles and build output. Run
+ESLint only on those extensions:
 
 ```sh
 eslint "**/*.{md,mdx,json,jsonc,json5,yaml,yml,toml}"
