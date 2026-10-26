@@ -16,6 +16,7 @@
     "@1stg/nano-staged": "^1.0.0",
     "@1stg/oxfmt-config": "^1.0.0",
     "@1stg/oxlint-config": "^1.0.0",
+    "@1stg/prettier-config": "^6.0.0",
     "@1stg/remark-preset": "^4.0.0",
     "@1stg/simple-git-hooks": "^2.1.0",
     "@1stg/tsconfig": "^4.0.0"

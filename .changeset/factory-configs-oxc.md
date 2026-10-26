@@ -1,5 +1,6 @@
 ---
 '@1stg/browserslist-config': major
+'@1stg/prettier-config': major
 '@1stg/commitlint-config': major
 '@1stg/markuplint-config': major
 '@1stg/nano-staged': major
@@ -21,9 +22,9 @@ module load time, so the same config produces the same result locally and on CI.
 - New [`@1stg/oxlint-config`](../oxlint-config) (Oxlint) and
   [`@1stg/oxfmt-config`](../oxfmt-config) (Oxfmt). Formatting is no longer an
   ESLint rule by default; `prettier: 'eslint'` remains available as an option.
-- `@1stg/prettier-config` is removed. This repository keeps a local Prettier
-  config with plugins for the languages Oxfmt cannot format (Pug, Ruby, shell,
-  INI, properties, Stylus, Sass); consumers configure Prettier themselves.
+- `@1stg/prettier-config` is kept for the languages Oxfmt cannot format (Pug,
+  Ruby, shell, INI, properties, Stylus, Sass); plugin entry points are resolved
+  with `import.meta.resolve` and imported lazily by Prettier.
 - `@1stg/nano-staged` takes `formatter` (`'oxfmt' | 'prettier' | 'both'`),
   `linter` (`'oxlint' | 'eslint'`) and `typecheck` options instead of
   per-framework entry points (`/tsc`, `/ngc`, `/vue-tsc`).

@@ -26,6 +26,9 @@
       "path": "./packages/postcss-config"
     },
     {
+      "path": "./packages/prettier-config"
+    },
+    {
       "path": "./packages/remark-preset"
     },
     {

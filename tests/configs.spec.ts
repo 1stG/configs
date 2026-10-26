@@ -4,6 +4,9 @@ import { defineConfig as defineStaged } from '@1stg/nano-staged'
 import { defineConfig as defineOxfmt } from '@1stg/oxfmt-config'
 import { defineConfig as defineOxlint } from '@1stg/oxlint-config'
 import { defineConfig as definePostcss } from '@1stg/postcss-config'
+import prettierConfig, {
+  defineConfig as definePrettier,
+} from '@1stg/prettier-config'
 import { defineConfig as defineHooks } from '@1stg/simple-git-hooks'
 import { defineConfig as defineStylelint } from '@1stg/stylelint-config'
 import postcss from 'postcss'
@@ -135,5 +138,32 @@ describe('@1stg/oxfmt-config', () => {
 
   it('accepts overrides', () => {
     expect(defineOxfmt({ printWidth: 120 }).printWidth).toBe(120)
+  })
+})
+
+describe('@1stg/prettier-config', () => {
+  it('uses the shared defaults', () => {
+    expect(prettierConfig).toMatchObject({
+      arrowParens: 'avoid',
+      semi: false,
+      singleQuote: true,
+      trailingComma: 'all',
+    })
+  })
+
+  it('resolves plugin entry points without importing them', () => {
+    expect(prettierConfig.plugins).toHaveLength(12)
+    expect(
+      prettierConfig.plugins?.every(
+        plugin => typeof plugin === 'string' && plugin.startsWith('/'),
+      ),
+    ).toBe(true)
+  })
+
+  it('adds the Vue HTML parser', () => {
+    expect(definePrettier({ framework: 'vue' }).overrides).toContainEqual({
+      files: '*.html',
+      options: { parser: 'vue' },
+    })
   })
 })
