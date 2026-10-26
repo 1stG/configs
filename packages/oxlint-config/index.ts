@@ -16,8 +16,6 @@ export interface OxlintConfigOptions extends OxlintConfig {
   vitest?: boolean
   /** Enable Jest globals and rules. @default false */
   jest?: boolean
-  /** Extra ignore patterns, merged into `ignorePatterns`. */
-  ignores?: string[]
 }
 
 /**
@@ -33,7 +31,6 @@ export const defineConfig = ({
   react = isPkgAvailable('react'),
   vitest = isPkgAvailable('vitest'),
   vue = isPkgAvailable('vue'),
-  ignores = [],
   plugins: extraPlugins = [],
   env: extraEnv,
   rules: extraRules,
@@ -128,7 +125,6 @@ export const defineConfig = ({
       '**/CHANGELOG.md',
       '**/*.log',
       '**/*.patch',
-      ...ignores,
       ...(extraIgnorePatterns ?? []),
     ],
   }

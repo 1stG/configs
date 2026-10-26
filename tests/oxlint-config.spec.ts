@@ -6,6 +6,9 @@ describe('@1stg/oxlint-config', () => {
     expect(defineOxlint({ react: true }).plugins).toContain('react')
     expect(defineOxlint().categories).toEqual({ correctness: 'error' })
     expect(
+      defineOxlint({ ignorePatterns: ['**/generated/**'] }).ignorePatterns,
+    ).toContain('**/generated/**')
+    expect(
       defineOxlint({
         jsPlugins: ['eslint-plugin-sonarjs'],
         rules: { 'sonarjs/no-identical-functions': 'warn' },

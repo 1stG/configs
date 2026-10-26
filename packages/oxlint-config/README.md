@@ -31,19 +31,21 @@ Use `defineConfig` only when you need options.
 
 ## Options
 
-| Option       | Default                    | Description                        |
-| ------------ | -------------------------- | ---------------------------------- |
-| `categories` | `{ correctness: 'error' }` | Oxlint categories.                 |
-| `jsdoc`      | `true`                     | Enable the JSDoc plugin.           |
-| `jsPlugins`  | `[]`                       | ESLint plugins to load (alpha).    |
-| `rules`      | `{}`                       | Extra rule overrides.              |
-| `node`       | `true`                     | Node.js globals and rules.         |
-| `promise`    | `true`                     | Enable the Promise plugin.         |
-| `react`      | installed `react`          | React and JSX accessibility rules. |
-| `vue`        | installed `vue`            | Vue rules.                         |
-| `vitest`     | installed `vitest`         | Vitest globals and rules.          |
-| `jest`       | installed `jest`           | Jest globals and rules.            |
-| `ignores`    | `[]`                       | Extra ignore patterns.             |
+| Option       | Default                    | Description                     |
+| ------------ | -------------------------- | ------------------------------- |
+| `categories` | `{ correctness: 'error' }` | Oxlint categories.              |
+| `jsdoc`      | `true`                     | Enable the JSDoc plugin.        |
+| `jsPlugins`  | `[]`                       | ESLint plugins to load (alpha). |
+| `rules`      | `{}`                       | Extra rule overrides.           |
+
+`ignorePatterns` is the native Oxlint field and can be passed directly; there
+is no separate `ignores` alias.
+| `node` | `true` | Node.js globals and rules. |
+| `promise` | `true` | Enable the Promise plugin. |
+| `react` | installed `react` | React and JSX accessibility rules. |
+| `vue` | installed `vue` | Vue rules. |
+| `vitest` | installed `vitest` | Vitest globals and rules. |
+| `jest` | installed `jest` | Jest globals and rules. |
 
 Import sorting is **not** a lint rule here: Oxfmt's built-in `sortImports` does
 it at format time, so `oxlint` and `oxfmt` stay independent.
