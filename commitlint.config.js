@@ -1,5 +1,3 @@
 import { defineConfig } from '@1stg/commitlint-config'
 
-export default defineConfig({
-  monorepo: true,
-})
+export default defineConfig()

@@ -27,7 +27,8 @@
   "dependencies": {
     "@commitlint/config-conventional": "^21.0.2",
     "@commitlint/config-workspace-scopes": "^21.0.2",
-    "@commitlint/types": "^21.2.3"
+    "@commitlint/types": "^21.2.3",
+    "@pkgr/utils": "^4.1.0"
   },
   "engines": {
     "node": "^22.18.0 || >=24.11.0"

@@ -1,16 +1,17 @@
 import conventionalConfig from '@commitlint/config-conventional'
 import workspaceScopesConfig from '@commitlint/config-workspace-scopes'
 import type { UserConfig } from '@commitlint/types'
+import { isMonorepo } from '@pkgr/utils'
 
 const MERGE_PROPERTIES = ['rules', 'utils'] as const
 
 export interface CommitlintConfigOptions {
-  /** Also validate scopes against the workspace package names. @default false */
+  /** Also validate scopes against the workspace package names. @default isMonorepo() */
   monorepo?: boolean
 }
 
 export const defineConfig = ({
-  monorepo = false,
+  monorepo = isMonorepo(),
 }: CommitlintConfigOptions = {}): UserConfig => {
   if (!monorepo) {
     return conventionalConfig as UserConfig

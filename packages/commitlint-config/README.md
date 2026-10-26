@@ -24,5 +24,5 @@ The default export is the conventional config alone:
 | ---------- | ------- | --------------------------------------------------------- |
 | `monorepo` | `false` | Also validate scopes against the workspace package names. |
 
-Monorepo detection is no longer implicit; pass `monorepo: true` in the config
-file so the result does not depend on where commitlint is run from.
+`monorepo` defaults to `isMonorepo()` (the presence of workspaces in the nearest
+`package.json`) and can be overridden explicitly.

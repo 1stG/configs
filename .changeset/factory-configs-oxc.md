@@ -32,8 +32,7 @@ module load time, so the same config produces the same result locally and on CI.
   config no longer flips rules based on whether `eslint` is installed.
 - `@1stg/markuplint-config` takes `vue` instead of the `/angular` and `/vue`
   subpaths. Angular support is dropped.
-- `@1stg/commitlint-config` takes `monorepo` instead of detecting the workspace
-  at import time; `@1stg/simple-git-hooks` takes `runner`.
+- `@1stg/commitlint-config` takes `monorepo` (defaulting to `isMonorepo()`); `@1stg/simple-git-hooks` takes `runner`.
 - `@1stg/postcss-config` is ESM only (use `postcss.config.js`), minifies based
   on its `env` option rather than a module-level `NODE_ENV` snapshot, and accepts
   `minify`, `map`, `cssnano`, `presetOptions` and extra `plugins`.
