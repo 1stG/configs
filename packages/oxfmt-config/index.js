@@ -12,7 +12,8 @@
  */
 
 /**
- * Build an Oxfmt configuration. `oxfmt --config oxfmt.config.js` picks it up.
+ * Build an Oxfmt configuration. Oxfmt discovers `oxfmt.config.ts`
+ * automatically; pass `--config` only for a custom file name.
  *
  * @param {OxfmtConfigOptions} [options]
  * @returns {Record<string, unknown>}

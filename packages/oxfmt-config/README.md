@@ -5,7 +5,7 @@ Personal but Shareable [Oxfmt](https://oxc.rs/docs/guide/usage/formatter) Config
 ## Usage
 
 ```js
-// oxfmt.config.js
+// oxfmt.config.ts
 import { defineConfig } from '@1stg/oxfmt-config'
 
 export default defineConfig({
@@ -14,7 +14,7 @@ export default defineConfig({
 ```
 
 ```sh
-oxfmt -c oxfmt.config.js .
+oxfmt .
 ```
 
 The default export is the zero-config version, and can be referenced directly by
