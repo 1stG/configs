@@ -16,7 +16,7 @@ const MERGE_PROPERTIES = ['rules', 'utils']
  * @param {CommitlintConfigOptions} [options]
  * @returns {UserConfig}
  */
-export const createConfig = ({ monorepo = false } = {}) => {
+export const defineConfig = ({ monorepo = false } = {}) => {
   if (!monorepo) {
     return conventionalConfig
   }
@@ -33,4 +33,4 @@ export const createConfig = ({ monorepo = false } = {}) => {
   )
 }
 
-export default createConfig()
+export default defineConfig()

@@ -17,7 +17,7 @@
  * @param {OxfmtConfigOptions} [options]
  * @returns {Record<string, unknown>}
  */
-export const createConfig = ({
+export const defineConfig = ({
   printWidth = 80,
   semi = false,
   singleQuote = true,
@@ -38,4 +38,4 @@ export const createConfig = ({
   ...(overrides.length > 0 && { overrides }),
 })
 
-export default createConfig()
+export default defineConfig()

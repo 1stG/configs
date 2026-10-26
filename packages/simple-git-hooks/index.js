@@ -13,9 +13,9 @@ import { getScriptRunner } from '@pkgr/utils'
  * @param {GitHooksOptions} [options]
  * @returns {GitHooks}
  */
-export const createHooks = ({ runner = getScriptRunner() || 'npx' } = {}) => ({
+export const defineConfig = ({ runner = getScriptRunner() || 'npx' } = {}) => ({
   'pre-commit': `${runner} nano-staged`,
   'commit-msg': `${runner} commitlint -e`,
 })
 
-export default createHooks()
+export default defineConfig()

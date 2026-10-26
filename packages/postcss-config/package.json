@@ -13,7 +13,7 @@
     "README.md",
     "CHANGELOG.md"
   ],
-  "type": "commonjs",
+  "type": "module",
   "main": "index.js",
   "exports": {
     ".": {

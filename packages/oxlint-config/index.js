@@ -5,9 +5,11 @@
  * @property {('correctness' | 'suspicious' | 'pedantic' | 'perf' | 'style' | 'restriction' | 'nursery')[]} [categories] Enabled categories.
  * @property {boolean} [jest=false] Enable Jest globals and rules.
  * @property {boolean} [jsdoc=true] Enable the JSDoc plugin.
+ * @property {string[]} [jsPlugins] ESLint plugins to load through Oxlint's `jsPlugins` (alpha).
  * @property {boolean} [node=true] Enable Node.js globals and rules.
  * @property {boolean} [promise=true] Enable the Promise plugin.
  * @property {boolean} [react=false] Enable React and JSX accessibility rules.
+ * @property {Record<string, unknown>} [rules] Extra rule overrides.
  * @property {boolean} [vitest=false] Enable Vitest globals and rules.
  * @property {boolean} [vue=false] Enable Vue rules.
  * @property {string[]} [ignores] Extra ignore patterns.
@@ -20,13 +22,15 @@
  * @param {OxlintConfigOptions} [options]
  * @returns {Record<string, unknown>}
  */
-export const createConfig = ({
+export const defineConfig = ({
   categories = ['correctness'],
   jest = false,
   jsdoc = true,
+  jsPlugins = [],
   node = true,
   promise = true,
   react = false,
+  rules = {},
   vitest = false,
   vue = false,
   ignores = [],
@@ -44,6 +48,7 @@ export const createConfig = ({
     ...(vitest ? ['vitest'] : []),
     ...(jest ? ['jest'] : []),
   ],
+  ...(jsPlugins.length > 0 && { jsPlugins }),
   categories: Object.fromEntries(
     categories.map(category => [category, 'error']),
   ),
@@ -74,6 +79,7 @@ export const createConfig = ({
     'unicorn/prefer-node-protocol': 'error',
     'unicorn/prefer-number-properties': 'error',
     'unicorn/prefer-string-starts-ends-with': 'error',
+    ...rules,
   },
   overrides: [
     {

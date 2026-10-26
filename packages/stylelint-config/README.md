@@ -7,9 +7,9 @@ Personal but Shareable Stylelint Configuration for all 1stG.me projects.
 `stylelint.config.mjs`:
 
 ```js
-import { createConfig } from '@1stg/stylelint-config'
+import { defineConfig } from '@1stg/stylelint-config'
 
-export default createConfig({
+export default defineConfig({
   modules: true,
   scss: true,
 })

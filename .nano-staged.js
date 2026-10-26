@@ -1,6 +1,6 @@
-import { createStaged } from '@1stg/nano-staged'
+import { defineConfig } from '@1stg/nano-staged'
 
-export default createStaged({
+export default defineConfig({
   commands: {
     oxfmt: 'oxfmt -c oxfmt.config.mjs',
     oxlint: 'oxlint -c oxlint.config.mjs --fix',

@@ -8,9 +8,9 @@ Configuration for all 1stG.me projects.
 `.nano-staged.js`:
 
 ```js
-import { createStaged } from '@1stg/nano-staged'
+import { defineConfig } from '@1stg/nano-staged'
 
-export default createStaged({
+export default defineConfig({
   formatter: 'both',
   linter: 'oxlint',
   stylelint: true,

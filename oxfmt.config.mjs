@@ -1,5 +1,5 @@
 // @ts-check
 
-import { createConfig } from '@1stg/oxfmt-config'
+import { defineConfig } from '@1stg/oxfmt-config'
 
-export default createConfig()
+export default defineConfig()

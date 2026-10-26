@@ -1,16 +1,16 @@
-import { createConfig as createCommitlintConfig } from '@1stg/commitlint-config'
-import { createConfig as createMarkuplintConfig } from '@1stg/markuplint-config'
-import { createStaged } from '@1stg/nano-staged'
-import { createConfig as createOxfmtConfig } from '@1stg/oxfmt-config'
-import { createConfig as createOxlintConfig } from '@1stg/oxlint-config'
-import postcssConfig from '@1stg/postcss-config'
-import { createHooks } from '@1stg/simple-git-hooks'
-import { createConfig as createStylelintConfig } from '@1stg/stylelint-config'
+import { defineConfig as defineCommitlint } from '@1stg/commitlint-config'
+import { defineConfig as defineMarkuplint } from '@1stg/markuplint-config'
+import { defineConfig as defineStaged } from '@1stg/nano-staged'
+import { defineConfig as defineOxfmt } from '@1stg/oxfmt-config'
+import { defineConfig as defineOxlint } from '@1stg/oxlint-config'
+import { defineConfig as definePostcss } from '@1stg/postcss-config'
+import { defineConfig as defineHooks } from '@1stg/simple-git-hooks'
+import { defineConfig as defineStylelint } from '@1stg/stylelint-config'
 import postcss from 'postcss'
 
 describe('@1stg/postcss-config', () => {
   const run = async (options: object) => {
-    const { plugins } = postcssConfig.createConfig(options)
+    const { plugins } = definePostcss(options)
     const result = await postcss(plugins).process('a { color: red; /* x */ }', {
       from: undefined,
     })
@@ -32,20 +32,20 @@ describe('@1stg/postcss-config', () => {
   })
 
   it('maps in development only', () => {
-    expect(postcssConfig.createConfig({ env: 'development' }).map).toBe(true)
-    expect(postcssConfig.createConfig({ env: 'production' }).map).toBe(false)
+    expect(definePostcss({ env: 'development' }).map).toBe(true)
+    expect(definePostcss({ env: 'production' }).map).toBe(false)
   })
 })
 
 describe('@1stg/stylelint-config', () => {
   it('builds the base config', () => {
-    const config = createStylelintConfig()
+    const config = defineStylelint()
     expect(config.extends).toContain('stylelint-config-standard')
     expect(config.extends).not.toContain('stylelint-prettier/recommended')
   })
 
   it('adds scss, modules and prettier on demand', () => {
-    const config = createStylelintConfig({
+    const config = defineStylelint({
       modules: true,
       prettier: true,
       scss: true,
@@ -62,8 +62,8 @@ describe('@1stg/stylelint-config', () => {
 
 describe('@1stg/markuplint-config', () => {
   it('adds the Vue parser on demand', () => {
-    expect(createMarkuplintConfig().parser?.['.vue$']).toBeUndefined()
-    expect(createMarkuplintConfig({ vue: true }).parser?.['.vue$']).toBe(
+    expect(defineMarkuplint().parser?.['.vue$']).toBeUndefined()
+    expect(defineMarkuplint({ vue: true }).parser?.['.vue$']).toBe(
       '@markuplint/vue-parser',
     )
   })
@@ -71,7 +71,7 @@ describe('@1stg/markuplint-config', () => {
 
 describe('@1stg/nano-staged', () => {
   it('builds both formatter tasks', () => {
-    const config = createStaged({
+    const config = defineStaged({
       cwd: process.cwd(),
       formatter: 'both',
       linter: 'oxlint',
@@ -92,16 +92,16 @@ describe('@1stg/nano-staged', () => {
 
 describe('@1stg/commitlint-config', () => {
   it('adds workspace scopes for monorepos', () => {
-    expect(createCommitlintConfig().rules).toBeDefined()
-    expect(createCommitlintConfig({ monorepo: true }).rules).not.toEqual(
-      createCommitlintConfig().rules,
+    expect(defineCommitlint().rules).toBeDefined()
+    expect(defineCommitlint({ monorepo: true }).rules).not.toEqual(
+      defineCommitlint().rules,
     )
   })
 })
 
 describe('@1stg/simple-git-hooks', () => {
   it('uses the configured runner', () => {
-    expect(createHooks({ runner: 'pnpm' })).toEqual({
+    expect(defineHooks({ runner: 'pnpm' })).toEqual({
       'commit-msg': 'pnpm commitlint -e',
       'pre-commit': 'pnpm nano-staged',
     })
@@ -110,21 +110,30 @@ describe('@1stg/simple-git-hooks', () => {
 
 describe('@1stg/oxlint-config', () => {
   it('enables framework plugins on demand', () => {
-    expect(createOxlintConfig().plugins).not.toContain('react')
-    expect(createOxlintConfig({ react: true }).plugins).toContain('react')
-    expect(createOxlintConfig().categories).toEqual({ correctness: 'error' })
+    expect(defineOxlint().plugins).not.toContain('react')
+    expect(defineOxlint({ react: true }).plugins).toContain('react')
+    expect(defineOxlint().categories).toEqual({ correctness: 'error' })
+    expect(
+      defineOxlint({
+        jsPlugins: ['eslint-plugin-sonarjs'],
+        rules: { 'sonarjs/no-identical-functions': 'warn' },
+      }),
+    ).toMatchObject({
+      jsPlugins: ['eslint-plugin-sonarjs'],
+      rules: { 'sonarjs/no-identical-functions': 'warn' },
+    })
   })
 })
 
 describe('@1stg/oxfmt-config', () => {
   it('keeps Prettier-compatible defaults', () => {
-    const config = createOxfmtConfig()
+    const config = defineOxfmt()
     expect(config.printWidth).toBe(80)
     expect(config.semi).toBe(false)
     expect(config.sortImports).toBe(true)
   })
 
   it('accepts overrides', () => {
-    expect(createOxfmtConfig({ printWidth: 120 }).printWidth).toBe(120)
+    expect(defineOxfmt({ printWidth: 120 }).printWidth).toBe(120)
   })
 })

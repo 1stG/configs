@@ -18,7 +18,7 @@ import { scss, scssLoose } from './scss.js'
  * @param {StylelintConfigOptions} [options]
  * @returns {Config}
  */
-export const createConfig = ({
+export const defineConfig = ({
   angular = false,
   modules = false,
   prettier = false,
@@ -98,4 +98,4 @@ export const createConfig = ({
   return config
 }
 
-export default createConfig()
+export default defineConfig()

@@ -5,7 +5,7 @@ export interface MarkuplintConfigOptions {
   vue?: boolean
 }
 
-export declare const createConfig: (options?: MarkuplintConfigOptions) => Config
+export declare const defineConfig: (options?: MarkuplintConfigOptions) => Config
 
 declare const config: Config
 

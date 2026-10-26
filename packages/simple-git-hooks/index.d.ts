@@ -5,7 +5,7 @@ export interface GitHooksOptions {
 
 export type GitHooks = Record<string, string>
 
-export declare const createHooks: (options?: GitHooksOptions) => GitHooks
+export declare const defineConfig: (options?: GitHooksOptions) => GitHooks
 
 declare const hooks: GitHooks
 

@@ -5,7 +5,7 @@ export interface CommitlintConfigOptions {
   monorepo?: boolean
 }
 
-export declare const createConfig: (
+export declare const defineConfig: (
   options?: CommitlintConfigOptions,
 ) => UserConfig
 

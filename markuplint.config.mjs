@@ -1,5 +1,5 @@
-import { createConfig } from '@1stg/markuplint-config'
+import { defineConfig } from '@1stg/markuplint-config'
 
-export default createConfig({
+export default defineConfig({
   vue: true,
 })

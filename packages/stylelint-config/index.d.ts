@@ -15,7 +15,7 @@ export interface StylelintConfigOptions {
   vue?: boolean
 }
 
-export declare const createConfig: (options?: StylelintConfigOptions) => Config
+export declare const defineConfig: (options?: StylelintConfigOptions) => Config
 
 declare const config: Config
 

@@ -7,9 +7,9 @@ Personal but Shareable Commitlint Configuration for all 1stG.me projects.
 `commitlint.config.mjs`:
 
 ```js
-import { createConfig } from '@1stg/commitlint-config'
+import { defineConfig } from '@1stg/commitlint-config'
 
-export default createConfig({ monorepo: true })
+export default defineConfig({ monorepo: true })
 ```
 
 The default export is the conventional config alone:

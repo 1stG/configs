@@ -1,6 +1,6 @@
-import { createConfig } from '@1stg/stylelint-config'
+import { defineConfig } from '@1stg/stylelint-config'
 
-export default createConfig({
+export default defineConfig({
   modules: true,
   scss: true,
 })

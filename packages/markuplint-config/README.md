@@ -7,9 +7,9 @@ Personal but Shareable markuplint Configuration for all 1stG.me projects.
 `markuplint.config.mjs`:
 
 ```js
-import { createConfig } from '@1stg/markuplint-config'
+import { defineConfig } from '@1stg/markuplint-config'
 
-export default createConfig({ vue: true })
+export default defineConfig({ vue: true })
 ```
 
 The default export is the zero-config version and can be used from

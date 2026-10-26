@@ -13,10 +13,14 @@ export interface OxlintConfigOptions {
   jest?: boolean
   /** Enable the JSDoc plugin. @default true */
   jsdoc?: boolean
+  /** ESLint plugins to load through Oxlint's `jsPlugins` (alpha). */
+  jsPlugins?: string[]
   /** Enable Node.js globals and rules. @default true */
   node?: boolean
   /** Enable React and JSX accessibility rules. @default false */
   react?: boolean
+  /** Extra rule overrides. */
+  rules?: Record<string, unknown>
   /** Enable Vitest globals and rules. @default false */
   vitest?: boolean
   /** Enable Vue rules. @default false */
@@ -25,7 +29,7 @@ export interface OxlintConfigOptions {
   ignores?: string[]
 }
 
-export declare const createConfig: (
+export declare const defineConfig: (
   options?: OxlintConfigOptions,
 ) => Record<string, unknown>
 

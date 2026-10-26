@@ -28,7 +28,7 @@ export interface NanoStagedOptions {
 export type Task = string | string[] | (() => string | string[])
 export type StagedConfig = Record<string, Task>
 
-export declare const createStaged: (options?: NanoStagedOptions) => StagedConfig
+export declare const defineConfig: (options?: NanoStagedOptions) => StagedConfig
 
 declare const config: StagedConfig
 

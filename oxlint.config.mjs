@@ -1,8 +1,8 @@
 // @ts-check
 
-import { createConfig } from '@1stg/oxlint-config'
+import { defineConfig } from '@1stg/oxlint-config'
 
-export default createConfig({
+export default defineConfig({
   react: true,
   vitest: true,
   vue: true,

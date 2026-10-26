@@ -9,7 +9,7 @@
 
 feat!: factory-based configs, Oxlint and Oxfmt, drop Babel and ESLint
 
-Every remaining config package now exports a `createConfig(options)` factory
+Every remaining config package now exports a `defineConfig(options)` factory
 alongside the zero-config default. Options are explicit: the configs no longer
 inspect the consumer's `node_modules`, `CI`, `NODE_ENV`, `cwd` or git state at
 module load time, so the same config produces the same result locally and on CI.
@@ -33,8 +33,8 @@ module load time, so the same config produces the same result locally and on CI.
   subpaths. Angular support is dropped.
 - `@1stg/commitlint-config` takes `monorepo` instead of detecting the workspace
   at import time; `@1stg/simple-git-hooks` takes `runner`.
-- `@1stg/postcss-config` minifies based on its `env` option rather than a
-  module-level `NODE_ENV` snapshot, and accepts `minify`, `cssmap`, `cssnano`,
-  `presetOptions` and extra `plugins`.
+- `@1stg/postcss-config` is ESM only (use `postcss.config.mjs`), minifies based
+  on its `env` option rather than a module-level `NODE_ENV` snapshot, and accepts
+  `minify`, `map`, `cssnano`, `presetOptions` and extra `plugins`.
 - All packages publish explicit `exports.types`, a `files` allow-list, and
   consistent Node.js engines.

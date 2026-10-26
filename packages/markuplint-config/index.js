@@ -19,7 +19,7 @@ const vueConfig = {
  * @param {MarkuplintConfigOptions} [options]
  * @returns {Config}
  */
-export const createConfig = ({ vue = false } = {}) =>
+export const defineConfig = ({ vue = false } = {}) =>
   vue
     ? {
         ...base,
@@ -28,4 +28,4 @@ export const createConfig = ({ vue = false } = {}) =>
       }
     : { ...base }
 
-export default createConfig()
+export default defineConfig()

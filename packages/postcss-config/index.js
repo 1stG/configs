@@ -1,9 +1,16 @@
 // @ts-check
 
-const { NODE_ENV } = require('@pkgr/utils')
+import { NODE_ENV } from '@pkgr/utils'
+import autoprefixer from 'autoprefixer'
+import cssnanoPlugin from 'cssnano'
+import postcssImport from 'postcss-import'
+import postcssModules from 'postcss-modules'
+import postcssNormalize from 'postcss-normalize'
+import postcssPresetEnv from 'postcss-preset-env'
+import postcssUrl from 'postcss-url'
 
 /**
- * @typedef {object} PostcssConfigOptions
+ * @typedef {object} ConfigOptions
  * @property {boolean} [advanced=false] Use `cssnano-preset-advanced` when minifying.
  * @property {false | Record<string, unknown>} [cssnano] Extra cssnano options; `false` disables minification.
  * @property {string} [env=NODE_ENV] Value of `config.env`.
@@ -18,16 +25,15 @@ const { NODE_ENV } = require('@pkgr/utils')
  * @property {object} [url] Options for `postcss-url`.
  */
 
-/** @import { ConfigFn, ConfigPlugin } from 'postcss-load-config' */
+/** @import { ConfigPlugin } from 'postcss-load-config' */
 
 /**
- * Build a PostCSS config. The returned function is what `postcss-load-config`
- * expects, so `.postcssrc.cjs` can `module.exports = require('@1stg/postcss-config')`.
+ * Build a PostCSS config function, which is what `postcss-load-config` expects.
  *
- * @param {PostcssConfigOptions} [options]
- * @returns {ReturnType<ConfigFn>}
+ * @param {ConfigOptions} [options]
+ * @returns {Record<string, unknown>}
  */
-const createConfig = ({
+export const defineConfig = ({
   advanced = false,
   cssnano,
   env = NODE_ENV,
@@ -48,16 +54,16 @@ const createConfig = ({
 
   /** @type {ConfigPlugin[]} */
   const plugins = [
-    require('postcss-preset-env')(presetEnv),
-    require('postcss-import')(importOptions),
-    require('postcss-normalize')(normalize),
-    require('postcss-url')(url),
-    require('autoprefixer'),
+    postcssPresetEnv(presetEnv),
+    postcssImport(importOptions),
+    postcssNormalize(normalize),
+    postcssUrl(url),
+    autoprefixer(),
   ]
 
   if (modules) {
     plugins.push(
-      require('postcss-modules')({
+      postcssModules({
         globalModulePaths: [
           /[/\\]node_modules[/\\]/,
           /(\bglobals?[/\\][\w-]+|\.globals?)\.(p?css|less|s[ac]ss|styl(us)?)$/,
@@ -65,14 +71,14 @@ const createConfig = ({
         generateScopedName: isProduction
           ? '[hash:base64:10]'
           : '[path][name]__[local]---[hash:base64:5]',
-        ...modules,
+        ...(typeof modules === 'object' ? modules : {}),
       }),
     )
   }
 
   if (shouldMinify) {
     plugins.push(
-      require('cssnano')({
+      cssnanoPlugin({
         ...cssnano,
         preset: cssnano?.preset ?? [
           advanced ? 'advanced' : 'default',
@@ -97,6 +103,4 @@ const createConfig = ({
   }
 }
 
-module.exports = createConfig
-module.exports.createConfig = createConfig
-module.exports.default = createConfig
+export default defineConfig

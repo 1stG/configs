@@ -15,7 +15,7 @@ export interface OxfmtConfigOptions {
   overrides?: object[]
 }
 
-export declare const createConfig: (
+export declare const defineConfig: (
   options?: OxfmtConfigOptions,
 ) => Record<string, unknown>
 

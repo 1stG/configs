@@ -6,9 +6,9 @@ Personal but Shareable [Oxfmt](https://oxc.rs/docs/guide/usage/formatter) Config
 
 ```js
 // oxfmt.config.mjs
-import { createConfig } from '@1stg/oxfmt-config'
+import { defineConfig } from '@1stg/oxfmt-config'
 
-export default createConfig({
+export default defineConfig({
   vue: true,
 })
 ```

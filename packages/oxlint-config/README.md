@@ -6,9 +6,9 @@ Personal but Shareable [Oxlint](https://oxc.rs/docs/guide/usage/linter) Configur
 
 ```js
 // oxlint.config.mjs
-import { createConfig } from '@1stg/oxlint-config'
+import { defineConfig } from '@1stg/oxlint-config'
 
-export default createConfig({
+export default defineConfig({
   react: true,
   vitest: true,
 })
@@ -27,6 +27,8 @@ config object directly.
 | ------------ | ----------------- | ---------------------------------- |
 | `categories` | `['correctness']` | Enabled Oxlint categories.         |
 | `jsdoc`      | `true`            | Enable the JSDoc plugin.           |
+| `jsPlugins`  | `[]`              | ESLint plugins to load (alpha).    |
+| `rules`      | `{}`              | Extra rule overrides.              |
 | `node`       | `true`            | Node.js globals and rules.         |
 | `promise`    | `true`            | Enable the Promise plugin.         |
 | `react`      | `false`           | React and JSX accessibility rules. |
@@ -37,6 +39,27 @@ config object directly.
 
 Import sorting is **not** a lint rule here: Oxfmt's built-in `sortImports` does
 it at format time, so `oxlint` and `oxfmt` stay independent.
+
+## Third-party ESLint plugins
+
+Oxlint can load ESLint plugins through `jsPlugins` (alpha, not semver-stable):
+
+```js
+import { defineConfig } from '@1stg/oxlint-config'
+
+export default defineConfig({
+  jsPlugins: ['eslint-plugin-sonarjs'],
+  rules: {
+    'sonarjs/no-identical-functions': 'warn',
+    'sonarjs/cognitive-complexity': 'warn',
+  },
+})
+```
+
+Plugins resolve relative to the Oxlint config file, so install them in the
+project that enables them. Processors and plugins relying on the full ESLint
+`SourceCode` API may not work; Oxlint's built-in plugins (TypeScript, unicorn,
+import, jsdoc, react, vue, node, promise, Vitest, Jest) cover the rest.
 
 ## Notes
 

@@ -1,5 +1,5 @@
-import { createConfig } from '@1stg/commitlint-config'
+import { defineConfig } from '@1stg/commitlint-config'
 
-export default createConfig({
+export default defineConfig({
   monorepo: true,
 })

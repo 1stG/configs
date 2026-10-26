@@ -51,7 +51,7 @@ const resolveTsconfig = cwd => {
  * @param {NanoStagedOptions} [options]
  * @returns {StagedConfig}
  */
-export const createStaged = ({
+export const defineConfig = ({
   commands = {},
   cwd = process.cwd(),
   formatter = 'prettier',
@@ -132,4 +132,4 @@ export const createStaged = ({
   return config
 }
 
-export default createStaged()
+export default defineConfig()

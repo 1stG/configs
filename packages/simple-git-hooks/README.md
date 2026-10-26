@@ -7,9 +7,9 @@ Personal but Shareable simple-git-hooks Configuration for all 1stG.me projects.
 `.simple-git-hooks.js`:
 
 ```js
-import { createHooks } from '@1stg/simple-git-hooks'
+import { defineConfig } from '@1stg/simple-git-hooks'
 
-export default createHooks()
+export default defineConfig()
 ```
 
 ## Options
