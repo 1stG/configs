@@ -8,6 +8,9 @@
   "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
   "funding": "https://opencollective.com/configs",
   "license": "MIT",
+  "engines": {
+    "node": "^22.18.0 || >=24.11.0"
+  },
   "main": "tsconfig.json",
   "peerDependencies": {
     "typescript": ">=6.0.0"

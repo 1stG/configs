@@ -1,6 +1,7 @@
 import type { Config } from '@markuplint/ml-config'
 
 export const base: Config = {
+  extends: ['markuplint:recommended'],
   rules: {
     'case-sensitive-tag-name': true,
     'no-deprecated-element': true,

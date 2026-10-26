@@ -1,5 +1,7 @@
 ---
 '@1stg/browserslist-config': major
+'@1stg/config': patch
+'@1stg/remark-preset': patch
 '@1stg/tsconfig': major
 '@1stg/eslint-config': major
 '@1stg/prettier-config': major
@@ -15,8 +17,8 @@ feat!: defineConfig-based configs, Oxlint/Oxfmt and a thin ESLint
 
 Every remaining config package now exports a `defineConfig(options)` factory
 alongside the zero-config default. Options are explicit: the configs no longer
-inspect the consumer's `node_modules`, `CI`, `NODE_ENV`, `cwd` or git state at
-module load time, so the same config produces the same result locally and on CI.
+rely on ambient `CI`, `NODE_ENV`, `cwd` or git state; defaults may detect the
+project structure or installed optional peers when `defineConfig()` is called.
 Options extend the native config types (`OxfmtConfig`, `OxlintConfig`,
 `prettier.Config`, `stylelint.Config`, `postcss.ProcessOptions`, ...), so
 tool-specific fields pass through without being re-declared.

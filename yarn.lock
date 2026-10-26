@@ -181,7 +181,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@1stg/postcss-config@workspace:packages/postcss-config"
   dependencies:
-    "@pkgr/utils": "npm:^4.1.0"
     autoprefixer: "npm:^10.5.0"
     cssnano: "npm:^9.0.0"
     cssnano-preset-advanced: "npm:^10.0.0"

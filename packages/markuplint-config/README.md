@@ -29,9 +29,8 @@ Use `defineConfig` only when you need options.
 | ------ | --------- | ------------------------------------------------ |
 | `vue`  | installed | Add the Vue parser/spec when `vue` is installed. |
 
-The base rules are declared inline rather than through
-`markuplint:recommended`: extending that preset drops the framework `parser`
-mapping, which made `.vue` files fall back to the HTML parser.
+The base extends `markuplint:recommended`; the Vue `parser`/`specs` mapping is
+kept on top of it, so `.vue` files do not fall back to the HTML parser.
 
 ## Sponsors and Backers
 

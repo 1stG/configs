@@ -86,35 +86,54 @@ export const defineConfig = ({
 
   const lintTask = linter ? [command[linter]] : []
   const stylelintTask = stylelint ? [command.stylelint] : []
+  const dataLinterTask = linter === 'eslint' ? [command.eslint] : []
+  const formatterCommand =
+    formatter === false
+      ? null
+      : formatter === 'prettier'
+        ? command.prettier
+        : command.oxfmt
+
+  const codeTask = [
+    ...lintTask,
+    ...(formatterCommand ? [formatterCommand] : []),
+  ]
+  const styleTask = [
+    ...stylelintTask,
+    ...(formatterCommand ? [formatterCommand] : []),
+  ]
+  const dataTask = [
+    ...dataLinterTask,
+    ...(formatterCommand ? [formatterCommand] : []),
+  ]
+
+  if (codeTask.length > 0) {
+    config[`*.{${CODE_FILES}}`] = codeTask
+  }
+
+  if (styleTask.length > 0) {
+    config[`*.{${STYLE_FILES}}`] = styleTask
+  }
+
+  if (dataTask.length > 0) {
+    config[`*.{${DATA_FILES}}`] = dataTask
+  }
 
   if (formatter === 'prettier') {
-    config[`*.{${CODE_FILES}}`] = [...lintTask, command.prettier]
-    config[`*.{${STYLE_FILES}}`] = [...stylelintTask, command.prettier]
-    config[`*.{${DATA_FILES}}`] = command.prettier
-    config['**/*.json'] = command.prettier
+    config['**/*.json'] = [...dataLinterTask, command.prettier]
     config[`*.{${PRETTIER_FILES}}`] = command.prettier
     config['.!(browserslist|nvm|yarn)rc'] = command.prettier
     config['Dockerfile'] = command.prettier
   } else if (formatter === 'oxfmt') {
-    config[`*.{${CODE_FILES}}`] = [...lintTask, command.oxfmt]
-    config[`*.{${STYLE_FILES}}`] = [...stylelintTask, command.oxfmt]
-    config[`*.{${DATA_FILES}}`] = command.oxfmt
-    config['**/*.json'] = command.oxfmt
+    config['**/*.json'] = [...dataLinterTask, command.oxfmt]
   } else if (formatter === 'both') {
-    config[`*.{${CODE_FILES}}`] = [...lintTask, command.oxfmt]
-    config[`*.{${STYLE_FILES}}`] = [...stylelintTask, command.oxfmt]
-    config[`*.{${DATA_FILES}}`] = command.oxfmt
     // `prettier-plugin-pkg` only handles package.json; other JSON stays on Oxfmt.
-    config['**/!(*package).json'] = command.oxfmt
-    config['**/package.json'] = command.prettier
+    config['**/!(*package).json'] = [...dataLinterTask, command.oxfmt]
+    config['**/package.json'] = [...dataLinterTask, command.prettier]
     config[`*.{${PRETTIER_FILES}}`] = command.prettier
     config['.!(browserslist|nvm|yarn)rc'] = command.prettier
-  }
-
-  for (const [files, task] of Object.entries(config)) {
-    if (Array.isArray(task) && task.length === 0) {
-      delete config[files]
-    }
+  } else if (dataLinterTask.length > 0) {
+    config['**/*.json'] = dataLinterTask
   }
 
   if (imagemin) {

@@ -1,8 +1,17 @@
+import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 
 import { iniRcFiles, jsoncFiles, nonJsonRcFiles, shRcFiles } from '@1stg/config'
-import pkg from '@1stg/prettier-config/package.json' with { type: 'json' }
 import type { Config } from 'prettier'
+
+interface PackageManifest {
+  dependencies?: Record<string, string>
+  peerDependencies?: Record<string, string>
+}
+
+const pkg = JSON.parse(
+  readFileSync(new URL('../package.json', import.meta.url), 'utf8'),
+) as PackageManifest
 
 const PLUGIN_NAMES = [
   ...new Set([
@@ -64,13 +73,18 @@ export const defineConfig = ({
     defaultOverrides.push({ files: '*.html', options: { parser: 'vue' } })
   }
 
+  const hasXmlPlugin = plugins.some(
+    plugin =>
+      typeof plugin === 'string' && plugin.includes('@prettier/plugin-xml'),
+  )
+
   return {
     arrowParens: 'avoid',
     semi: false,
     singleAttributePerLine: true,
     singleQuote: true,
     trailingComma: 'all',
-    xmlWhitespaceSensitivity: 'ignore',
+    ...(hasXmlPlugin && { xmlWhitespaceSensitivity: 'ignore' }),
     ...options,
     plugins,
     overrides: [...defaultOverrides, ...overrides],

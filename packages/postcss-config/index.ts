@@ -1,6 +1,5 @@
 import { createRequire } from 'node:module'
 
-import { NODE_ENV } from '@pkgr/utils'
 import type { AcceptedPlugin, ProcessOptions } from 'postcss'
 
 const require = createRequire(import.meta.url)
@@ -38,7 +37,7 @@ export interface ConfigOptions extends ProcessOptions {
 export const defineConfig = ({
   advanced = false,
   cssnano,
-  env = NODE_ENV,
+  env = process.env.NODE_ENV ?? 'development',
   import: importOptions,
   map,
   minify,

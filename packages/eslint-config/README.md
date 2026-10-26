@@ -45,13 +45,15 @@ Use `defineConfig` only when you need options.
 
 ## Options
 
-| Option     | Default | Description            |
-| ---------- | ------- | ---------------------- |
-| `markdown` | `true`  | Lint Markdown/MDX.     |
-| `jsonc`    | `true`  | Lint JSON/JSONC/JSON5. |
-| `yaml`     | `true`  | Lint YAML.             |
-| `toml`     | `true`  | Lint TOML.             |
-| `ignores`  | `[]`    | Extra ignore patterns. |
+| Option     | Default   | Description                                                         |
+| ---------- | --------- | ------------------------------------------------------------------- |
+| `markdown` | `true`    | Lint Markdown/MDX.                                                  |
+| `jsonc`    | `true`    | Lint JSON/JSONC/JSON5.                                              |
+| `yaml`     | installed | Lint YAML when installed.                                           |
+| `toml`     | installed | Lint TOML when installed.                                           |
+| `oxlint`   | `true`    | Disable rules Oxlint already owns.                                  |
+| `markup`   | auto      | Lint HTML with `eslint-plugin-markup` on Node >= 24 when installed. |
+| `ignores`  | `[]`      | Extra ignore patterns.                                              |
 
 ## Sponsors and Backers
 

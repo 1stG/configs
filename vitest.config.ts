@@ -7,7 +7,7 @@ export default defineConfig({
       enabled: true,
       provider: 'istanbul',
       reporter: ['lcov', 'json', 'text'],
-      include: ['packages/*/*.js'],
+      include: ['packages/*/lib/**/*.js'],
     },
   },
 })

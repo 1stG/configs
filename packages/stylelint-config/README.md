@@ -39,8 +39,8 @@ Use `defineConfig` only when you need options.
 | `scssLoose` | `false`   | Add the SCSS syntax with the strict rules off.       |
 | `vue`       | installed | Ignore Vue pseudo elements when `vue` is installed.  |
 
-`stylelint-prettier` is opt-in now; the config no longer decides based on
-whether `eslint` happens to be installed.
+`stylelint-prettier` is enabled when it is installed (it is an optional peer);
+the config no longer decides based on whether `eslint` is installed.
 
 ## Sponsors and Backers
 
