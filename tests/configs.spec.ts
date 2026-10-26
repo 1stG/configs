@@ -139,6 +139,9 @@ describe('@1stg/oxfmt-config', () => {
 
   it('accepts overrides', () => {
     expect(defineOxfmt({ printWidth: 120 }).printWidth).toBe(120)
+    expect(
+      defineOxfmt({ ignorePatterns: ['package.json'] }).ignorePatterns,
+    ).toEqual(['package.json'])
   })
 })
 

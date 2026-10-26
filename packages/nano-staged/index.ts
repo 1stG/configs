@@ -98,6 +98,7 @@ export const defineConfig = ({
     config[`*.{${CODE_FILES}}`] = [...lintTask, command.oxfmt]
     config[`*.{${STYLE_FILES}}`] = [...stylelintTask, command.oxfmt]
     config[`*.{${DATA_FILES}}`] = command.oxfmt
+    config['**/package.json'] = [command.oxfmt, command.prettier]
     config[`*.{${PRETTIER_FILES}}`] = command.prettier
     config['.!(browserslist|nvm|yarn)rc'] = command.prettier
   }

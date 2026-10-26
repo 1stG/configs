@@ -11,6 +11,8 @@ export interface OxfmtConfigOptions {
   sortPackageJson?: boolean
   /** Format JSDoc comments. @default false */
   jsdoc?: boolean | object
+  /** Ignore these gitignore-style patterns. */
+  ignorePatterns?: string[]
   /** File-specific overrides. */
   overrides?: object[]
 }
@@ -26,6 +28,7 @@ export const defineConfig = ({
   sortImports = true,
   sortPackageJson = false,
   jsdoc = false,
+  ignorePatterns = [],
   overrides = [],
 }: OxfmtConfigOptions = {}): Record<string, unknown> => ({
   arrowParens: 'avoid',
@@ -37,6 +40,7 @@ export const defineConfig = ({
   sortPackageJson,
   trailingComma: 'all',
   ...(jsdoc && { jsdoc }),
+  ...(ignorePatterns.length > 0 && { ignorePatterns }),
   ...(overrides.length > 0 && { overrides }),
 })
 

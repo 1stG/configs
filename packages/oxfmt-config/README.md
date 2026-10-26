@@ -29,6 +29,7 @@ a `.oxfmtrc.json`-based setup or imported by a JS config.
 | `singleQuote`     | `true`  | Use single quotes.                                              |
 | `sortImports`     | `true`  | Sort imports and exports.                                       |
 | `sortPackageJson` | `false` | Sort `package.json` keys; use `@1stg/prettier-config` for that. |
+| `ignorePatterns`  | `[]`    | Gitignore-style patterns to skip.                               |
 | `jsdoc`           | `false` | Format JSDoc comments.                                          |
 | `overrides`       | `[]`    | File-specific overrides.                                        |
 
