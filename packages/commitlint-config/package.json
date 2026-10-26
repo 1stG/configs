@@ -21,6 +21,7 @@
   },
   "files": [
     "lib",
+    "shim.d.ts",
     "!lib/*.tsbuildinfo"
   ],
   "peerDependencies": {

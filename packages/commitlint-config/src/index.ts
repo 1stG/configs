@@ -1,18 +1,15 @@
+// oxlint-disable-next-line typescript/triple-slash-reference
+/// <reference path="../shim.d.ts" />
+
 import conventionalConfig from '@commitlint/config-conventional'
 import workspaceScopesConfig from '@commitlint/config-workspace-scopes'
 import type { UserConfig } from '@commitlint/types'
 import { isMonorepo } from '@pkgr/utils'
 
-/// <reference path="./types.d.ts" />
-
 declare module '@commitlint/types' {
   interface UserConfig {
     utils?: Record<string, unknown>
   }
-}
-
-export interface CommitlintConfig extends UserConfig {
-  utils?: Record<string, unknown>
 }
 
 export interface CommitlintConfigOptions extends UserConfig {
@@ -23,8 +20,8 @@ export interface CommitlintConfigOptions extends UserConfig {
 export const defineConfig = ({
   monorepo = isMonorepo(),
   ...options
-}: CommitlintConfigOptions = {}): CommitlintConfig => {
-  const conventional: CommitlintConfig = {
+}: CommitlintConfigOptions = {}): UserConfig => {
+  const conventional: UserConfig = {
     ...conventionalConfig,
     ...options,
     rules: {
