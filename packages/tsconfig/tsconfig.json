@@ -21,6 +21,7 @@
     "strict": true,
     "stripInternal": true,
     "target": "ES2015",
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": true,
+    "tsBuildInfoFile": "../../.tsbuildinfo/tsconfig.tsbuildinfo"
   }
 }

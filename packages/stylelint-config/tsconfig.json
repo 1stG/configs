@@ -3,6 +3,7 @@
   "include": ["*.ts"],
   "compilerOptions": {
     "outDir": "lib",
-    "rootDir": "."
+    "rootDir": ".",
+    "tsBuildInfoFile": "../../.tsbuildinfo/stylelint-config.tsbuildinfo"
   }
 }

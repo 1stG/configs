@@ -20,6 +20,8 @@
     "./package.json": "./package.json"
   },
   "files": [
+    "CHANGELOG.md",
+    "MIGRATION.md",
     "lib"
   ],
   "peerDependencies": {

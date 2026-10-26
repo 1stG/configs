@@ -2,7 +2,8 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "lib",
-    "rootDir": "."
+    "rootDir": ".",
+    "tsBuildInfoFile": "../../.tsbuildinfo/eslint-config.tsbuildinfo"
   },
   "include": ["*.ts"]
 }

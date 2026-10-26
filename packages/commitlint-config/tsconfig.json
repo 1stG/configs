@@ -3,6 +3,7 @@
   "include": ["*.ts", "*.d.ts"],
   "compilerOptions": {
     "outDir": "lib",
-    "rootDir": "."
+    "rootDir": ".",
+    "tsBuildInfoFile": "../../.tsbuildinfo/commitlint-config.tsbuildinfo"
   }
 }
