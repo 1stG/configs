@@ -34,7 +34,7 @@ export type StagedConfig = Record<string, Task>
 
 const CODE_FILES = 'cjs,cts,js,jsx,mjs,mts,ts,tsx,vue'
 const STYLE_FILES = 'css,less,scss'
-const DATA_FILES = 'gql,graphql,html,json,jsonc,json5,md,mdx,toml,yaml,yml'
+const DATA_FILES = 'gql,graphql,html,jsonc,json5,md,mdx,toml,yaml,yml'
 const PRETTIER_FILES = 'ini,properties,pug,rb,sass,sh,styl,stylus'
 
 /**
@@ -87,6 +87,7 @@ export const defineConfig = ({
     config[`*.{${CODE_FILES}}`] = [...lintTask, command.prettier]
     config[`*.{${STYLE_FILES}}`] = [...stylelintTask, command.prettier]
     config[`*.{${DATA_FILES}}`] = command.prettier
+    config['**/*.json'] = command.prettier
     config[`*.{${PRETTIER_FILES}}`] = command.prettier
     config['.!(browserslist|nvm|yarn)rc'] = command.prettier
     config['Dockerfile'] = command.prettier
@@ -94,11 +95,13 @@ export const defineConfig = ({
     config[`*.{${CODE_FILES}}`] = [...lintTask, command.oxfmt]
     config[`*.{${STYLE_FILES}}`] = [...stylelintTask, command.oxfmt]
     config[`*.{${DATA_FILES}}`] = command.oxfmt
+    config['**/*.json'] = command.oxfmt
   } else if (formatter === 'both') {
     config[`*.{${CODE_FILES}}`] = [...lintTask, command.oxfmt]
     config[`*.{${STYLE_FILES}}`] = [...stylelintTask, command.oxfmt]
     config[`*.{${DATA_FILES}}`] = command.oxfmt
-    config['**/package.json'] = [command.oxfmt, command.prettier]
+    // Prettier owns JSON here so `prettier-plugin-pkg` can sort package.json.
+    config['**/*.json'] = command.prettier
     config[`*.{${PRETTIER_FILES}}`] = command.prettier
     config['.!(browserslist|nvm|yarn)rc'] = command.prettier
   }
