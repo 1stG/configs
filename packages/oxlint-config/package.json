@@ -21,8 +21,7 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "lib",
-    "!lib/*.tsbuildinfo"
+    "lib"
   ],
   "peerDependencies": {
     "oxlint": ">=1.80.0"

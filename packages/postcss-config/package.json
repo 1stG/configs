@@ -21,8 +21,7 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "lib",
-    "!lib/*.tsbuildinfo"
+    "lib"
   ],
   "peerDependencies": {
     "postcss": "^8.0.0",

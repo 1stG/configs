@@ -20,9 +20,7 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "lib",
-    "shim.d.ts",
-    "!lib/*.tsbuildinfo"
+    "lib"
   ],
   "peerDependencies": {
     "@commitlint/types": "^21.2.3"

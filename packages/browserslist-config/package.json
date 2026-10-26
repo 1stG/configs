@@ -29,8 +29,7 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "lib",
-    "!lib/*.tsbuildinfo"
+    "lib"
   ],
   "peerDependencies": {
     "browserslist": ">=4.24.5"
