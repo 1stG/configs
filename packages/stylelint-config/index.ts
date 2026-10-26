@@ -1,23 +1,22 @@
-// @ts-check
-
-/**
- * @typedef {object} StylelintConfigOptions
- * @property {boolean} [angular=false] Ignore Angular-specific pseudo elements.
- * @property {boolean} [modules=false] Ignore the CSS Modules pseudo classes.
- * @property {boolean} [prettier=false] Run Prettier as a Stylelint rule.
- * @property {boolean} [scss=false] Add the SCSS syntax and rules.
- * @property {boolean} [scssLoose=false] Add the SCSS syntax with the strict rules off.
- * @property {boolean} [vue=false] Ignore Vue-specific pseudo elements.
- */
-
-/** @import { Config } from 'stylelint' */
+import type { Config } from 'stylelint'
 
 import { scss, scssLoose } from './scss.js'
 
-/**
- * @param {StylelintConfigOptions} [options]
- * @returns {Config}
- */
+export interface StylelintConfigOptions {
+  /** Ignore Angular-specific pseudo elements. @default false */
+  angular?: boolean
+  /** Ignore the CSS Modules pseudo classes. @default false */
+  modules?: boolean
+  /** Run Prettier as a Stylelint rule. @default false */
+  prettier?: boolean
+  /** Add the SCSS syntax and rules. @default false */
+  scss?: boolean
+  /** Add the SCSS syntax with the strict rules off. @default false */
+  scssLoose?: boolean
+  /** Ignore Vue-specific pseudo elements. @default false */
+  vue?: boolean
+}
+
 export const defineConfig = ({
   angular = false,
   modules = false,
@@ -25,15 +24,13 @@ export const defineConfig = ({
   scss: scssEnabled = false,
   scssLoose: scssLooseEnabled = false,
   vue = false,
-} = {}) => {
-  /** @type {string[]} */
+}: StylelintConfigOptions = {}): Config => {
   const ignorePseudoElements = [
     ...(angular ? ['ng-deep'] : []),
     ...(vue ? ['v-deep', 'v-global', 'v-slotted'] : []),
   ]
 
-  /** @type {Config} */
-  const config = {
+  const config: Config = {
     extends: [
       'stylelint-config-standard',
       ...(prettier ? ['stylelint-prettier/recommended'] : []),

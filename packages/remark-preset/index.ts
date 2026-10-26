@@ -11,7 +11,12 @@ import remarkPresetLintRecommended from 'remark-preset-lint-recommended'
 import remarkPresetPrettier from 'remark-preset-prettier'
 import remarkValidateLinks from 'remark-validate-links'
 
-export default {
+export interface RemarkPreset {
+  settings: Record<string, unknown>
+  plugins: unknown[]
+}
+
+const config: RemarkPreset = {
   settings: {
     bullet: '-',
     emphasis: '_',
@@ -36,3 +41,5 @@ export default {
     remarkLintNoDuplicateHeadingsInSection,
   ],
 }
+
+export default config

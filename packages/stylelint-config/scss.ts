@@ -1,8 +1,6 @@
-/**
- * @type {import('stylelint').Config}
- * @import { Config } from 'stylelint'
- */
-export const scss = {
+import type { Config } from 'stylelint'
+
+export const scss: Config = {
   customSyntax: 'postcss-scss',
   plugins: ['stylelint-scss'],
   rules: {
@@ -37,8 +35,7 @@ export const scss = {
   },
 }
 
-/** @type {Config} */
-export const scssLoose = {
+export const scssLoose: Config = {
   ...scss,
   rules: {
     ...scss.rules,

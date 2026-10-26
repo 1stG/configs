@@ -1,0 +1,38 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./packages/browserslist-config"
+    },
+    {
+      "path": "./packages/commitlint-config"
+    },
+    {
+      "path": "./packages/config"
+    },
+    {
+      "path": "./packages/markuplint-config"
+    },
+    {
+      "path": "./packages/nano-staged"
+    },
+    {
+      "path": "./packages/oxfmt-config"
+    },
+    {
+      "path": "./packages/oxlint-config"
+    },
+    {
+      "path": "./packages/postcss-config"
+    },
+    {
+      "path": "./packages/remark-preset"
+    },
+    {
+      "path": "./packages/simple-git-hooks"
+    },
+    {
+      "path": "./packages/stylelint-config"
+    }
+  ]
+}

@@ -1,38 +1,47 @@
-// @ts-check
-
 import { NODE_ENV } from '@pkgr/utils'
 import autoprefixer from 'autoprefixer'
 import cssnanoPlugin from 'cssnano'
+import type { AcceptedPlugin } from 'postcss'
 import postcssImport from 'postcss-import'
 import postcssModules from 'postcss-modules'
 import postcssNormalize from 'postcss-normalize'
 import postcssPresetEnv from 'postcss-preset-env'
 import postcssUrl from 'postcss-url'
 
-/**
- * @typedef {object} ConfigOptions
- * @property {boolean} [advanced=false] Use `cssnano-preset-advanced` when minifying.
- * @property {false | Record<string, unknown>} [cssnano] Extra cssnano options; `false` disables minification.
- * @property {string} [env=NODE_ENV] Value of `config.env`.
- * @property {object} [import] Options for `postcss-import`.
- * @property {boolean} [map] Inline source map; defaults to `env === 'development'`.
- * @property {boolean} [minify] Minify with cssnano; defaults to `env === 'production'`.
- * @property {boolean | object} [modules] Options for `postcss-modules`.
- * @property {object} [normalize] Options for `postcss-normalize`.
- * @property {object} [presetEnv] Options for `postcss-preset-env`.
- * @property {object} [presetOptions] Extra options for the cssnano preset.
- * @property {unknown[]} [plugins] Extra PostCSS plugins, appended last.
- * @property {object} [url] Options for `postcss-url`.
- */
+export interface Config {
+  env?: string
+  map?: boolean | object
+  plugins: AcceptedPlugin[]
+  [key: string]: unknown
+}
 
-/** @import { ConfigPlugin } from 'postcss-load-config' */
+export interface ConfigOptions {
+  /** Use `cssnano-preset-advanced` when minifying. @default false */
+  advanced?: boolean
+  /** Extra cssnano options; `false` disables minification. */
+  cssnano?: false | Record<string, unknown>
+  /** Value of `config.env`. @default process.env.NODE_ENV */
+  env?: string
+  /** Options for `postcss-import`. */
+  import?: Record<string, unknown>
+  /** Inline source map. @default env === 'development' */
+  map?: boolean
+  /** Minify with cssnano. @default env === 'production' */
+  minify?: boolean
+  /** Options for `postcss-modules`. */
+  modules?: boolean | object
+  /** Options for `postcss-normalize`. */
+  normalize?: Record<string, unknown>
+  /** Options for `postcss-preset-env`. */
+  presetEnv?: Record<string, unknown>
+  /** Extra options merged into the cssnano preset. */
+  presetOptions?: Record<string, unknown>
+  /** Extra PostCSS plugins, appended last. */
+  plugins?: AcceptedPlugin[]
+  /** Options for `postcss-url`. */
+  url?: Record<string, unknown>
+}
 
-/**
- * Build a PostCSS config function, which is what `postcss-load-config` expects.
- *
- * @param {ConfigOptions} [options]
- * @returns {Record<string, unknown>}
- */
 export const defineConfig = ({
   advanced = false,
   cssnano,
@@ -47,13 +56,16 @@ export const defineConfig = ({
   presetOptions,
   url,
   ...options
-} = {}) => {
+}: ConfigOptions = {}): Config => {
   const isProduction = env === 'production'
   const shouldMinify = cssnano === false ? false : (minify ?? isProduction)
   const shouldMap = map ?? env === 'development'
+  const cssnanoOptions =
+    typeof cssnano === 'object'
+      ? (cssnano as Record<string, unknown>)
+      : undefined
 
-  /** @type {ConfigPlugin[]} */
-  const plugins = [
+  const plugins: AcceptedPlugin[] = [
     postcssPresetEnv(presetEnv),
     postcssImport(importOptions),
     postcssNormalize(normalize),
@@ -79,8 +91,8 @@ export const defineConfig = ({
   if (shouldMinify) {
     plugins.push(
       cssnanoPlugin({
-        ...cssnano,
-        preset: cssnano?.preset ?? [
+        ...cssnanoOptions,
+        preset: (cssnanoOptions?.preset ?? [
           advanced ? 'advanced' : 'default',
           {
             discardComments: {
@@ -88,12 +100,12 @@ export const defineConfig = ({
             },
             ...presetOptions,
           },
-        ],
+        ]) as never,
       }),
     )
   }
 
-  plugins.push(.../** @type {ConfigPlugin[]} */ (extraPlugins))
+  plugins.push(...extraPlugins)
 
   return {
     ...options,

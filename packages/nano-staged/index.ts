@@ -1,24 +1,36 @@
-// @ts-check
-
 import path from 'node:path'
 
 import { tryFile, tryPkg } from '@pkgr/utils'
 
-/**
- * @typedef {object} NanoStagedOptions
- * @property {Partial<Record<'oxfmt' | 'oxlint' | 'prettier' | 'stylelint', string>>} [commands] Command overrides, e.g. to pass a config file.
- * @property {string} [cwd=process.cwd()] Base directory used to resolve `tsconfig`.
- * @property {false | 'oxfmt' | 'prettier' | 'both'} [formatter='prettier'] Formatter(s) to run.
- * @property {false | 'oxlint' | 'eslint'} [linter=false] Linter to run before formatting.
- * @property {boolean} [stylelint=false] Run `stylelint --fix` on style files.
- * @property {false | 'tsc' | 'ngc' | 'vue-tsc'} [typecheck=false] Type-check command to run.
- * @property {string} [tsconfig] Explicit `tsconfig` path; discovered from `cwd` when omitted.
- * @property {boolean} [typeCoverage=false] Run `type-coverage` together with the type-check.
- * @property {boolean} [imagemagick=false] Optimize image files with the `i` command.
- */
+export type Formatter = false | 'oxfmt' | 'prettier' | 'both'
+export type Linter = false | 'oxlint' | 'eslint'
+export type Typecheck = false | 'tsc' | 'ngc' | 'vue-tsc'
 
-/** @typedef {string | string[] | (() => string | string[])} Task */
-/** @typedef {Record<string, Task>} StagedConfig */
+export interface NanoStagedOptions {
+  /** Command overrides, e.g. to pass a config file. */
+  commands?: Partial<
+    Record<'oxfmt' | 'oxlint' | 'prettier' | 'stylelint', string>
+  >
+  /** Base directory used to resolve `tsconfig`. @default process.cwd() */
+  cwd?: string
+  /** Formatter(s) to run. @default 'prettier' */
+  formatter?: Formatter
+  /** Linter to run before formatting. @default false */
+  linter?: Linter
+  /** Run `stylelint --fix` on style files. @default false */
+  stylelint?: boolean
+  /** Type-check command to run. @default false */
+  typecheck?: Typecheck
+  /** Explicit `tsconfig` path; discovered from `cwd` when omitted. */
+  tsconfig?: string
+  /** Run `type-coverage` together with the type-check. @default false */
+  typeCoverage?: boolean
+  /** Optimize image files with the `i` command. @default false */
+  imagemagick?: boolean
+}
+
+export type Task = string | string[] | (() => string | string[])
+export type StagedConfig = Record<string, Task>
 
 const CODE_FILES = 'cjs,cts,js,jsx,mjs,mts,ts,tsx,vue'
 const STYLE_FILES = 'css,less,scss'
@@ -28,10 +40,9 @@ const PRETTIER_FILES = 'ini,properties,pug,rb,sass,sh,styl,stylus'
 /**
  * Resolve the `tsconfig` used by the type-check tasks.
  *
- * @param {string} cwd
- * @returns {string} A path relative to `cwd`.
+ * @returns A path relative to `cwd`.
  */
-const resolveTsconfig = cwd => {
+const resolveTsconfig = (cwd: string): string => {
   const tsconfig =
     tryFile(path.resolve(cwd, 'tsconfig.staged.json')) ||
     tryFile(path.resolve(cwd, 'tsconfig.base.json')) ||
@@ -47,10 +58,6 @@ const resolveTsconfig = cwd => {
   return path.relative(cwd, tsconfig)
 }
 
-/**
- * @param {NanoStagedOptions} [options]
- * @returns {StagedConfig}
- */
 export const defineConfig = ({
   commands = {},
   cwd = process.cwd(),
@@ -61,11 +68,11 @@ export const defineConfig = ({
   tsconfig,
   typeCoverage = false,
   imagemagick = false,
-} = {}) => {
-  /** @type {StagedConfig} */
-  const config = {}
+}: NanoStagedOptions = {}): StagedConfig => {
+  const config: StagedConfig = {}
 
   const command = {
+    eslint: 'eslint --fix',
     oxfmt: 'oxfmt',
     oxlint: 'oxlint --fix',
     prettier: 'prettier --write',

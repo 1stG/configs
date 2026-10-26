@@ -1,26 +1,40 @@
-// @ts-check
+export type OxlintCategory =
+  | 'correctness'
+  | 'suspicious'
+  | 'pedantic'
+  | 'perf'
+  | 'style'
+  | 'restriction'
+  | 'nursery'
+
+export interface OxlintConfigOptions {
+  /** Enabled categories. @default ['correctness'] */
+  categories?: OxlintCategory[]
+  /** Enable Jest globals and rules. @default false */
+  jest?: boolean
+  /** Enable the JSDoc plugin. @default true */
+  jsdoc?: boolean
+  /** ESLint plugins to load through Oxlint's `jsPlugins` (alpha). */
+  jsPlugins?: string[]
+  /** Enable Node.js globals and rules. @default true */
+  node?: boolean
+  /** Enable the Promise plugin. @default true */
+  promise?: boolean
+  /** Enable React and JSX accessibility rules. @default false */
+  react?: boolean
+  /** Extra rule overrides. */
+  rules?: Record<string, unknown>
+  /** Enable Vitest globals and rules. @default false */
+  vitest?: boolean
+  /** Enable Vue rules. @default false */
+  vue?: boolean
+  /** Extra ignore patterns. */
+  ignores?: string[]
+}
 
 /**
- * @typedef {object} OxlintConfigOptions
- * @property {('correctness' | 'suspicious' | 'pedantic' | 'perf' | 'style' | 'restriction' | 'nursery')[]} [categories] Enabled categories.
- * @property {boolean} [jest=false] Enable Jest globals and rules.
- * @property {boolean} [jsdoc=true] Enable the JSDoc plugin.
- * @property {string[]} [jsPlugins] ESLint plugins to load through Oxlint's `jsPlugins` (alpha).
- * @property {boolean} [node=true] Enable Node.js globals and rules.
- * @property {boolean} [promise=true] Enable the Promise plugin.
- * @property {boolean} [react=false] Enable React and JSX accessibility rules.
- * @property {Record<string, unknown>} [rules] Extra rule overrides.
- * @property {boolean} [vitest=false] Enable Vitest globals and rules.
- * @property {boolean} [vue=false] Enable Vue rules.
- * @property {string[]} [ignores] Extra ignore patterns.
- */
-
-/**
- * Build an Oxlint configuration. Oxlint reads it from `.oxlintrc.json` or a
- * JavaScript config passed with `--config`.
- *
- * @param {OxlintConfigOptions} [options]
- * @returns {Record<string, unknown>}
+ * Build an Oxlint configuration. Oxlint discovers `oxlint.config.ts`
+ * automatically; pass `--config` only for a custom file name.
  */
 export const defineConfig = ({
   categories = ['correctness'],
@@ -34,7 +48,7 @@ export const defineConfig = ({
   vitest = false,
   vue = false,
   ignores = [],
-} = {}) => ({
+}: OxlintConfigOptions = {}): Record<string, unknown> => ({
   plugins: [
     'oxc',
     'unicorn',
@@ -106,3 +120,5 @@ export const defineConfig = ({
     ...ignores,
   ],
 })
+
+export default defineConfig()

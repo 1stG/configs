@@ -1,8 +1,6 @@
-/**
- * @type {Config}
- * @import { Config } from '@markuplint/ml-config'
- */
-export const base = {
+import type { Config } from '@markuplint/ml-config'
+
+export const base: Config = {
   rules: {
     'case-sensitive-tag-name': true,
     'no-deprecated-element': true,

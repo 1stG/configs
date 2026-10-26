@@ -8,17 +8,17 @@
   "repository": "git+https://github.com/1stG/configs.git",
   "funding": "https://opencollective.com/configs",
   "files": [
-    "*.js",
-    "*.d.ts",
+    "lib",
     "README.md",
     "CHANGELOG.md"
   ],
   "type": "module",
-  "main": "index.js",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "exports": {
     ".": {
-      "types": "./index.d.ts",
-      "default": "./index.js"
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
     },
     "./package.json": "./package.json"
   },
@@ -26,6 +26,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@markuplint/ml-config": "5.2.0",
     "@markuplint/vue-parser": "^5.0.0",
     "@markuplint/vue-spec": "^5.0.0"
   },

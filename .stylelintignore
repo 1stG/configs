@@ -1,4 +1,6 @@
 coverage
+lib
+*.map
 LICENSE
 .type-coverage
 .*ignore

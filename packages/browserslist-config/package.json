@@ -7,7 +7,42 @@
   "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
   "repository": "git+https://github.com/1stG/configs.git",
   "funding": "https://opencollective.com/configs",
+  "files": [
+    "lib",
+    "README.md",
+    "CHANGELOG.md"
+  ],
   "type": "commonjs",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "require": "./lib/index.js",
+      "default": "./lib/index.js"
+    },
+    "./alauda": {
+      "types": "./lib/alauda.d.ts",
+      "require": "./lib/alauda.js",
+      "default": "./lib/alauda.js"
+    },
+    "./alauda-legacy": {
+      "types": "./lib/alauda-legacy.d.ts",
+      "require": "./lib/alauda-legacy.js",
+      "default": "./lib/alauda-legacy.js"
+    },
+    "./latest": {
+      "types": "./lib/latest.d.ts",
+      "require": "./lib/latest.js",
+      "default": "./lib/latest.js"
+    },
+    "./modern": {
+      "types": "./lib/modern.d.ts",
+      "require": "./lib/modern.js",
+      "default": "./lib/modern.js"
+    },
+    "./package.json": "./package.json"
+  },
   "publishConfig": {
     "access": "public"
   },

@@ -1,4 +1,4 @@
-module.exports = [
+const not: string[] = [
   'not and_qq >= 0',
   'not and_uc >= 0',
   'not kaios >= 0',
@@ -6,3 +6,5 @@ module.exports = [
   'not samsung >= 0',
   'not dead',
 ]
+
+export = not

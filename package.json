@@ -23,11 +23,17 @@
     "lint:ox": "oxlint .",
     "lint:style": "stylelint . --cache",
     "lint:tsc": "tsc --noEmit",
-    "prepare": "patch-package && simple-git-hooks && yarn-berry-deduplicate || exit 0",
-    "release": "changeset publish",
+    "prepare": "patch-package && simple-git-hooks && yarn-berry-deduplicate && yarn build",
+    "release": "yarn build && changeset publish",
     "test": "vitest run",
     "typecov": "type-coverage",
-    "version": "changeset version && yarn --no-immutable"
+    "version": "changeset version && yarn --no-immutable",
+    "build": "tsc -b tsconfig.build.json",
+    "clean": "tsc -b --clean tsconfig.build.json",
+    "precheck": "yarn build",
+    "preformat": "yarn build",
+    "prelint": "yarn build",
+    "pretest": "yarn build"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^1.0.0",
