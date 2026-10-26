@@ -10,7 +10,8 @@
   "files": [
     "lib",
     "README.md",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "MIGRATION.md"
   ],
   "type": "commonjs",
   "main": "./lib/index.js",

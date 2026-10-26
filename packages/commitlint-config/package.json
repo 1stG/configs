@@ -9,7 +9,8 @@
   "files": [
     "lib",
     "README.md",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "MIGRATION.md"
   ],
   "type": "module",
   "main": "./lib/index.js",
