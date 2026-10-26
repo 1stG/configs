@@ -1,6 +1,6 @@
 # Migrating `@1stg/tsconfig`
 
-> No breaking change; stays on the current **v4.x** line.
+> Applies to **v4 → v5**.
 
-No compiler-option change. The preset is still consumed with
-`"extends": "@1stg/tsconfig/..."`.
+The Angular presets (`angular.json`, `ng-lib.json`) are removed. The remaining
+presets are still consumed with `"extends": "@1stg/tsconfig/..."`.

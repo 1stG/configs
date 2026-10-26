@@ -33,11 +33,11 @@ override the detected list.
 
 ## Options
 
-| Option        | Default | Description                          |
-| ------------- | ------- | ------------------------------------ |
-| `framework`   | —       | Use `angular` or `vue` for `*.html`. |
-| `semi`        | `false` | Print semicolons.                    |
-| `singleQuote` | `true`  | Use single quotes.                   |
+| Option        | Default | Description             |
+| ------------- | ------- | ----------------------- |
+| `framework`   | —       | Use `vue` for `*.html`. |
+| `semi`        | `false` | Print semicolons.       |
+| `singleQuote` | `true`  | Use single quotes.      |
 
 ## Sponsors and Backers
 

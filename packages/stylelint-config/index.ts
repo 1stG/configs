@@ -3,8 +3,6 @@ import type { Config } from 'stylelint'
 import { scss, scssLoose } from './scss.js'
 
 export interface StylelintConfigOptions extends Config {
-  /** Ignore Angular-specific pseudo elements. @default false */
-  angular?: boolean
   /** Ignore the CSS Modules pseudo classes. @default false */
   modules?: boolean
   /** Run Prettier as a Stylelint rule. @default false */
@@ -18,7 +16,6 @@ export interface StylelintConfigOptions extends Config {
 }
 
 export const defineConfig = ({
-  angular = false,
   modules = false,
   prettier = false,
   scss: scssEnabled = false,
@@ -26,10 +23,7 @@ export const defineConfig = ({
   vue = false,
   ...options
 }: StylelintConfigOptions = {}): Config => {
-  const ignorePseudoElements = [
-    ...(angular ? ['ng-deep'] : []),
-    ...(vue ? ['v-deep', 'v-global', 'v-slotted'] : []),
-  ]
+  const ignorePseudoElements = vue ? ['v-deep', 'v-global', 'v-slotted'] : []
 
   const userPlugins = options.plugins
   const extraPlugins = Array.isArray(userPlugins)

@@ -1,5 +1,6 @@
 ---
 '@1stg/browserslist-config': major
+'@1stg/tsconfig': major
 '@1stg/eslint-config': major
 '@1stg/prettier-config': major
 '@1stg/commitlint-config': major
@@ -41,7 +42,8 @@ tool-specific fields pass through without being re-declared.
   options; `stylelint-prettier` and the SCSS rules are opt-in now, and the
   config no longer flips rules based on whether `eslint` is installed.
 - `@1stg/markuplint-config` takes `vue` instead of the `/angular` and `/vue`
-  subpaths. Angular support is dropped.
+  subpaths. Angular support is dropped, including the `@1stg/tsconfig/angular`
+  and `ng-lib` presets.
 - `@1stg/commitlint-config` takes `monorepo` (defaulting to `isMonorepo()`); `@1stg/simple-git-hooks` takes `runner`.
 - `@1stg/postcss-config` is ESM only (use `postcss.config.js`), minifies based
   on its `env` option rather than a module-level `NODE_ENV` snapshot, and extends

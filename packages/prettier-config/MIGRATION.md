@@ -5,14 +5,13 @@
 The package is still published, but the subpath entry points are replaced by
 `defineConfig(options)`.
 
-| Before                            | After                                    |
-| --------------------------------- | ---------------------------------------- |
-| `@1stg/prettier-config/vue`       | `defineConfig({ framework: 'vue' })`     |
-| `@1stg/prettier-config/angular`   | `defineConfig({ framework: 'angular' })` |
-| `@1stg/prettier-config/next`      | `defineConfig({ nextjs: true })`         |
-| `@1stg/prettier-config/semi`      | `defineConfig({ semi: true })`           |
-| `@1stg/prettier-config/quote`     | `defineConfig({ singleQuote: false })`   |
-| `@1stg/prettier-config/semi/next` | `defineConfig({ semi: true })`           |
+| Before                            | After                                  |
+| --------------------------------- | -------------------------------------- |
+| `@1stg/prettier-config/vue`       | `defineConfig({ framework: 'vue' })`   |
+| `@1stg/prettier-config/next`      | `defineConfig({ nextjs: true })`       |
+| `@1stg/prettier-config/semi`      | `defineConfig({ semi: true })`         |
+| `@1stg/prettier-config/quote`     | `defineConfig({ singleQuote: false })` |
+| `@1stg/prettier-config/semi/next` | `defineConfig({ semi: true })`         |
 
 ## Before
 

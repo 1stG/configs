@@ -1,22 +1,13 @@
-import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 
 import { iniRcFiles, jsoncFiles, nonJsonRcFiles, shRcFiles } from '@1stg/config'
+import pkg from '@1stg/prettier-config/package.json' with { type: 'json' }
 import type { Config } from 'prettier'
-
-interface PackageManifest {
-  dependencies?: Record<string, string>
-  peerDependencies?: Record<string, string>
-}
-
-const manifest = JSON.parse(
-  readFileSync(new URL('../package.json', import.meta.url), 'utf8'),
-) as PackageManifest
 
 const PLUGIN_NAMES = [
   ...new Set([
-    ...Object.keys(manifest.dependencies ?? {}),
-    ...Object.keys(manifest.peerDependencies ?? {}),
+    ...Object.keys(pkg.dependencies ?? {}),
+    ...Object.keys(pkg.peerDependencies ?? {}),
   ]),
 ]
   .filter(
@@ -42,8 +33,8 @@ const resolvePlugins = (): string[] => {
 }
 
 export interface PrettierConfigOptions extends Config {
-  /** Use the Angular or Vue HTML parser for `*.html`. */
-  framework?: 'angular' | 'vue'
+  /** Use the Vue HTML parser for `*.html`. */
+  framework?: 'vue'
 }
 
 export const defineConfig = ({
@@ -69,12 +60,7 @@ export const defineConfig = ({
     { files: ['**/*.{ts,tsx}'], options: { parser: 'typescript' } },
   ]
 
-  if (framework === 'angular') {
-    defaultOverrides.push({
-      files: '*.html',
-      options: { parser: 'angular' },
-    })
-  } else if (framework === 'vue') {
+  if (framework === 'vue') {
     defaultOverrides.push({ files: '*.html', options: { parser: 'vue' } })
   }
 

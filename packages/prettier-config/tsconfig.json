@@ -5,5 +5,5 @@
     "rootDir": ".",
     "tsBuildInfoFile": "lib/tsconfig.tsbuildinfo"
   },
-  "include": ["*.ts"]
+  "include": ["*.ts", "*.json"]
 }
