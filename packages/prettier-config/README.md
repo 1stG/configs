@@ -19,13 +19,15 @@ import { defineConfig } from '@1stg/prettier-config'
 export default defineConfig({ framework: 'vue', nextjs: true })
 ```
 
-## Lazy plugins
+## Plugins
 
-The config ships the plugins for the languages Oxfmt cannot format (Pug,
-Ruby, XML, Go templates, INI, properties, shell, Stylus, TOML) and resolves
-their entry points with `import.meta.resolve`. Prettier imports the plugin
-code only when it needs those languages, so loading the config itself stays
-cheap.
+The plugins for the languages Oxfmt cannot format (Pug, Ruby, XML, Go
+templates, INI, JSDoc, properties, shell, Stylus, TOML, package.json) are
+**optional peer dependencies**: install only the ones you need.
+
+`defineConfig` resolves the installed entry points with `import.meta.resolve`
+and skips missing packages; Prettier imports the plugin code when it formats.
+Pass `plugins` to override the detected list.
 
 ## Options
 

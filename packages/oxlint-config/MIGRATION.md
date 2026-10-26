@@ -1,5 +1,7 @@
 # Migrating to `@1stg/oxlint-config`
 
+> New in **v1.0.0**; there is no earlier version to migrate from.
+
 This package replaces `@1stg/eslint-config` for JavaScript/TypeScript/JSX and
 Vue linting.
 

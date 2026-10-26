@@ -1,5 +1,7 @@
 # Migrating `@1stg/common-config`
 
+> **v16 → v16.x**; dependency-only update, no API change.
+
 The meta package now depends on `@1stg/oxlint-config`,
 `@1stg/oxfmt-config` and `@1stg/prettier-config`; its dependencies no longer
 include ESLint or Babel.

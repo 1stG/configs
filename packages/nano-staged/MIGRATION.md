@@ -1,5 +1,7 @@
 # Migrating `@1stg/nano-staged`
 
+> Applies to **v1 → v2**.
+
 ## Removed subpaths
 
 `/tsc`, `/ngc` and `/vue-tsc` are replaced by the `typecheck` option.

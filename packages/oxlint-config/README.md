@@ -23,19 +23,19 @@ config object directly.
 
 ## Options
 
-| Option       | Default           | Description                        |
-| ------------ | ----------------- | ---------------------------------- |
-| `categories` | `['correctness']` | Enabled Oxlint categories.         |
-| `jsdoc`      | `true`            | Enable the JSDoc plugin.           |
-| `jsPlugins`  | `[]`              | ESLint plugins to load (alpha).    |
-| `rules`      | `{}`              | Extra rule overrides.              |
-| `node`       | `true`            | Node.js globals and rules.         |
-| `promise`    | `true`            | Enable the Promise plugin.         |
-| `react`      | `false`           | React and JSX accessibility rules. |
-| `vue`        | `false`           | Vue rules.                         |
-| `vitest`     | `false`           | Vitest globals and rules.          |
-| `jest`       | `false`           | Jest globals and rules.            |
-| `ignores`    | `[]`              | Extra ignore patterns.             |
+| Option       | Default                    | Description                        |
+| ------------ | -------------------------- | ---------------------------------- |
+| `categories` | `{ correctness: 'error' }` | Oxlint categories.                 |
+| `jsdoc`      | `true`                     | Enable the JSDoc plugin.           |
+| `jsPlugins`  | `[]`                       | ESLint plugins to load (alpha).    |
+| `rules`      | `{}`                       | Extra rule overrides.              |
+| `node`       | `true`                     | Node.js globals and rules.         |
+| `promise`    | `true`                     | Enable the Promise plugin.         |
+| `react`      | `false`                    | React and JSX accessibility rules. |
+| `vue`        | `false`                    | Vue rules.                         |
+| `vitest`     | `false`                    | Vitest globals and rules.          |
+| `jest`       | `false`                    | Jest globals and rules.            |
+| `ignores`    | `[]`                       | Extra ignore patterns.             |
 
 Import sorting is **not** a lint rule here: Oxfmt's built-in `sortImports` does
 it at format time, so `oxlint` and `oxfmt` stay independent.

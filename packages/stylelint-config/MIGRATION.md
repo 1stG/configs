@@ -1,5 +1,7 @@
 # Migrating `@1stg/stylelint-config`
 
+> Applies to **v7 → v8**.
+
 ## Removed subpaths
 
 | Before                              | After                               |

@@ -1,5 +1,7 @@
 # Migrating `@1stg/postcss-config`
 
+> Applies to **v7 → v8**.
+
 ## Before (CommonJS)
 
 ```js

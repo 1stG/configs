@@ -1,5 +1,7 @@
 # Migrating `@1stg/eslint-config`
 
+> Applies to **v11 → v12**.
+
 This package is now **only** for file types Oxlint cannot parse. JS/TS/JSX and
 Vue move to `@1stg/oxlint-config`.
 

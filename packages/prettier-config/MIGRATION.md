@@ -1,16 +1,18 @@
 # Migrating `@1stg/prettier-config`
 
+> Applies to **v6 → v7**.
+
 The package is still published, but the subpath entry points are replaced by
 `defineConfig(options)`.
 
-| Before                            | After                                        |
-| --------------------------------- | -------------------------------------------- |
-| `@1stg/prettier-config/vue`       | `defineConfig({ framework: 'vue' })`         |
-| `@1stg/prettier-config/angular`   | `defineConfig({ framework: 'angular' })`     |
-| `@1stg/prettier-config/next`      | `defineConfig({ nextjs: true })`             |
-| `@1stg/prettier-config/semi`      | `defineConfig({ semi: true })`               |
-| `@1stg/prettier-config/quote`     | `defineConfig({ singleQuote: false })`       |
-| `@1stg/prettier-config/semi/next` | `defineConfig({ semi: true, nextjs: true })` |
+| Before                            | After                                    |
+| --------------------------------- | ---------------------------------------- |
+| `@1stg/prettier-config/vue`       | `defineConfig({ framework: 'vue' })`     |
+| `@1stg/prettier-config/angular`   | `defineConfig({ framework: 'angular' })` |
+| `@1stg/prettier-config/next`      | `defineConfig({ nextjs: true })`         |
+| `@1stg/prettier-config/semi`      | `defineConfig({ semi: true })`           |
+| `@1stg/prettier-config/quote`     | `defineConfig({ singleQuote: false })`   |
+| `@1stg/prettier-config/semi/next` | `defineConfig({ semi: true })`           |
 
 ## Before
 
@@ -27,14 +29,16 @@ import { defineConfig } from '@1stg/prettier-config'
 export default defineConfig({ framework: 'vue' })
 ```
 
-The default export is still usable directly from `.prettierrc`:
+`/next` used the `babel-ts` parser; Babel is gone, so the default `typescript`
+parser is used and there is no `nextjs` option. The default export is still
+usable directly from `.prettierrc`:
 
 ```json
 "@1stg/prettier-config"
 ```
 
-## Plugins are lazy
+## Plugins are optional peers
 
-Plugin entry points are resolved with `import.meta.resolve` when the config is
-loaded, but Prettier imports the plugin code only when it formats a matching
-language.
+Install only the Prettier plugins for the languages you format. `defineConfig`
+resolves the installed ones with `import.meta.resolve` and skips missing peers;
+Prettier imports the plugin code itself. Pass `plugins` to control the list.

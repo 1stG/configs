@@ -1,5 +1,7 @@
 # Migrating `@1stg/markuplint-config`
 
+> Applies to **v5 → v6**.
+
 ## Removed subpaths
 
 | Before                            | After                                    |

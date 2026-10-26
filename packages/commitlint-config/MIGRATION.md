@@ -1,5 +1,7 @@
 # Migrating `@1stg/commitlint-config`
 
+> Applies to **v7 → v8**.
+
 **`extends` keeps working unchanged.** Commitlint loads the package's default
 export, which still detects a monorepo with `isMonorepo()` and merges
 `@commitlint/config-workspace-scopes`:

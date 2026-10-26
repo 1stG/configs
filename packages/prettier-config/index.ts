@@ -1,12 +1,11 @@
 import { fileURLToPath } from 'node:url'
 
 import { iniRcFiles, jsoncFiles, nonJsonRcFiles, shRcFiles } from '@1stg/config'
-import type { Config, Plugin } from 'prettier'
+import type { Config } from 'prettier'
 
 /**
- * The plugin list is explicit, and only resolves each plugin's entry point:
- * the plugin modules themselves are imported by Prettier when it first needs
- * their languages, instead of at config load time.
+ * Optional peer plugins. Only the ones installed by the consumer are resolved;
+ * Prettier imports the plugin code itself when it formats a matching file.
  */
 const PLUGIN_NAMES = [
   '@prettier/plugin-pug',
@@ -23,28 +22,32 @@ const PLUGIN_NAMES = [
   'prettier-plugin-toml',
 ]
 
-const plugins: string[] = PLUGIN_NAMES.map(name =>
-  fileURLToPath(import.meta.resolve(name)),
-)
+const resolvePlugins = (): string[] => {
+  const plugins: string[] = []
 
-export interface PrettierConfigOptions {
-  /** Print semicolons. @default false */
-  semi?: boolean
-  /** Use single quotes instead of double quotes. @default true */
-  singleQuote?: boolean
-  /** Use that framework's HTML parser for `*.html`. */
+  for (const name of PLUGIN_NAMES) {
+    try {
+      plugins.push(fileURLToPath(import.meta.resolve(name)))
+    } catch {
+      // Optional peer, not installed by this consumer.
+    }
+  }
+
+  return plugins
+}
+
+export interface PrettierConfigOptions extends Config {
+  /** Use the Angular or Vue HTML parser for `*.html`. */
   framework?: 'angular' | 'vue'
-  /** Parse TS/TSX with `babel-ts`, as Next.js does. @default false */
-  nextjs?: boolean
 }
 
 export const defineConfig = ({
   framework,
-  nextjs = false,
-  semi = false,
-  singleQuote = true,
+  plugins = resolvePlugins(),
+  overrides = [],
+  ...options
 }: PrettierConfigOptions = {}): Config => {
-  const overrides: NonNullable<Config['overrides']> = [
+  const defaultOverrides: NonNullable<Config['overrides']> = [
     { files: iniRcFiles, options: { parser: 'ini' } },
     { files: jsoncFiles, options: { parser: 'json' } },
     {
@@ -62,27 +65,24 @@ export const defineConfig = ({
   ]
 
   if (framework === 'angular') {
-    overrides.push({ files: '*.html', options: { parser: 'angular' } })
-  } else if (framework === 'vue') {
-    overrides.push({ files: '*.html', options: { parser: 'vue' } })
-  }
-
-  if (nextjs) {
-    overrides.push({
-      files: ['*.ts', '*.tsx'],
-      options: { parser: 'babel-ts' },
+    defaultOverrides.push({
+      files: '*.html',
+      options: { parser: 'angular' },
     })
+  } else if (framework === 'vue') {
+    defaultOverrides.push({ files: '*.html', options: { parser: 'vue' } })
   }
 
   return {
     arrowParens: 'avoid',
-    plugins: plugins as Array<string | Plugin>,
-    semi,
+    semi: false,
     singleAttributePerLine: true,
-    singleQuote,
+    singleQuote: true,
     trailingComma: 'all',
     xmlWhitespaceSensitivity: 'ignore',
-    overrides,
+    ...options,
+    plugins,
+    overrides: [...defaultOverrides, ...overrides],
   }
 }
 

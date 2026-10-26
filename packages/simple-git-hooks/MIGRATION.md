@@ -1,5 +1,7 @@
 # Migrating `@1stg/simple-git-hooks`
 
+> Applies to **v2 → v3**.
+
 The default export is still an object with the same hooks. The runner is now an
 explicit option instead of a module-load-time detection:
 

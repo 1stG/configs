@@ -1,5 +1,7 @@
 # Migrating `@1stg/browserslist-config`
 
+> Applies to **v2 → v3**.
+
 The `alauda` and `alauda-legacy` entry points are removed:
 
 ```diff

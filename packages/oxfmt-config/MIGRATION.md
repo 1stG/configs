@@ -1,5 +1,7 @@
 # Migrating to `@1stg/oxfmt-config`
 
+> New in **v1.0.0**; there is no earlier version to migrate from.
+
 This package replaces the formatting side of `@1stg/prettier-config` for the
 languages Oxfmt supports.
 

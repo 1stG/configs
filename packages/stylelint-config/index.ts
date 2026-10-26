@@ -2,7 +2,7 @@ import type { Config } from 'stylelint'
 
 import { scss, scssLoose } from './scss.js'
 
-export interface StylelintConfigOptions {
+export interface StylelintConfigOptions extends Config {
   /** Ignore Angular-specific pseudo elements. @default false */
   angular?: boolean
   /** Ignore the CSS Modules pseudo classes. @default false */
@@ -24,20 +24,38 @@ export const defineConfig = ({
   scss: scssEnabled = false,
   scssLoose: scssLooseEnabled = false,
   vue = false,
+  ...options
 }: StylelintConfigOptions = {}): Config => {
   const ignorePseudoElements = [
     ...(angular ? ['ng-deep'] : []),
     ...(vue ? ['v-deep', 'v-global', 'v-slotted'] : []),
   ]
 
-  const config: Config = {
-    extends: [
-      'stylelint-config-standard',
-      ...(prettier ? ['stylelint-prettier/recommended'] : []),
-    ],
+  const userPlugins = options.plugins
+  const extraPlugins = Array.isArray(userPlugins)
+    ? userPlugins
+    : userPlugins
+      ? [userPlugins]
+      : []
+
+  const userExtends = options.extends
+  const extended = [
+    'stylelint-config-standard',
+    ...(prettier ? ['stylelint-prettier/recommended'] : []),
+    ...(Array.isArray(userExtends)
+      ? userExtends
+      : userExtends
+        ? [userExtends]
+        : []),
+  ]
+
+  return {
+    ...options,
+    extends: extended,
     plugins: [
       'stylelint-high-performance-animation',
       'stylelint-no-unsupported-browser-features',
+      ...extraPlugins,
     ],
     rules: {
       'at-rule-empty-line-before': null,
@@ -67,6 +85,7 @@ export const defineConfig = ({
           { ignorePseudoClasses: ['export', 'global', 'local'] },
         ],
       }),
+      ...options.rules,
     },
     overrides: [
       {
@@ -89,10 +108,9 @@ export const defineConfig = ({
             },
           ]
         : []),
+      ...(options.overrides ?? []),
     ],
   }
-
-  return config
 }
 
 export default defineConfig()

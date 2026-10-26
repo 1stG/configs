@@ -1,18 +1,16 @@
 import { createRequire } from 'node:module'
 
 import { NODE_ENV } from '@pkgr/utils'
-import type { AcceptedPlugin } from 'postcss'
+import type { AcceptedPlugin, ProcessOptions } from 'postcss'
 
 const require = createRequire(import.meta.url)
 
-export interface Config {
+export interface Config extends ProcessOptions {
   env?: string
-  map?: boolean | object
   plugins: AcceptedPlugin[]
-  [key: string]: unknown
 }
 
-export interface ConfigOptions {
+export interface ConfigOptions extends ProcessOptions {
   /** Use `cssnano-preset-advanced` when minifying. @default false */
   advanced?: boolean
   /** Extra cssnano options; `false` disables minification. */
@@ -21,20 +19,18 @@ export interface ConfigOptions {
   env?: string
   /** Options for `postcss-import`. */
   import?: Record<string, unknown>
-  /** Inline source map. @default env === 'development' */
-  map?: boolean
   /** Minify with cssnano. @default env === 'production' */
   minify?: boolean
   /** Options for `postcss-modules`. */
   modules?: boolean | object
   /** Options for `postcss-normalize`. */
   normalize?: Record<string, unknown>
+  /** Extra PostCSS plugins, appended last. */
+  plugins?: AcceptedPlugin[]
   /** Options for `postcss-preset-env`. */
   presetEnv?: Record<string, unknown>
   /** Extra options merged into the cssnano preset. */
   presetOptions?: Record<string, unknown>
-  /** Extra PostCSS plugins, appended last. */
-  plugins?: AcceptedPlugin[]
   /** Options for `postcss-url`. */
   url?: Record<string, unknown>
 }
@@ -56,7 +52,6 @@ export const defineConfig = ({
 }: ConfigOptions = {}): Config => {
   const isProduction = env === 'production'
   const shouldMinify = cssnano === false ? false : (minify ?? isProduction)
-  const shouldMap = map ?? env === 'development'
   const cssnanoOptions =
     typeof cssnano === 'object'
       ? (cssnano as Record<string, unknown>)
@@ -107,7 +102,7 @@ export const defineConfig = ({
   return {
     ...options,
     env,
-    map: shouldMap,
+    map: map ?? env === 'development',
     plugins,
   }
 }
