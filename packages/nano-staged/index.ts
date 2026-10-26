@@ -132,6 +132,7 @@ export const defineConfig = ({
     config['**/package.json'] = [...dataLinterTask, command.prettier]
     config[`*.{${PRETTIER_FILES}}`] = command.prettier
     config['.!(browserslist|nvm|yarn)rc'] = command.prettier
+    config['Dockerfile'] = command.prettier
   } else if (dataLinterTask.length > 0) {
     config['**/*.json'] = dataLinterTask
   }

@@ -19,6 +19,7 @@ describe('@1stg/nano-staged', () => {
     )
     expect(config['**/!(*package).json']).toEqual(['oxfmt'])
     expect(config['**/package.json']).toEqual(['prettier --write'])
+    expect(config.Dockerfile).toBe('prettier --write')
     expect(config['*.ts?(x)']).toBeTypeOf('function')
   })
 

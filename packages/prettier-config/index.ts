@@ -75,7 +75,8 @@ export const defineConfig = ({
 
   const hasXmlPlugin = plugins.some(
     plugin =>
-      typeof plugin === 'string' && plugin.includes('@prettier/plugin-xml'),
+      typeof plugin === 'string' &&
+      plugin.replaceAll('\\', '/').includes('@prettier/plugin-xml'),
   )
 
   return {
