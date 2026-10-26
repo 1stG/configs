@@ -36,5 +36,8 @@ module load time, so the same config produces the same result locally and on CI.
 - `@1stg/postcss-config` is ESM only (use `postcss.config.js`), minifies based
   on its `env` option rather than a module-level `NODE_ENV` snapshot, and accepts
   `minify`, `map`, `cssnano`, `presetOptions` and extra `plugins`.
+- All packages are authored in TypeScript and built with `tsc -b` into `lib/`;
+  declarations are generated, the hand-written `.d.ts` files are gone, and
+  `yarn build` runs on install and release.
 - All packages publish explicit `exports.types`, a `files` allow-list, and
   consistent Node.js engines.
