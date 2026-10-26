@@ -3,7 +3,9 @@ import workspaceScopesConfig from '@commitlint/config-workspace-scopes'
 import type { UserConfig } from '@commitlint/types'
 import { isMonorepo } from '@pkgr/utils'
 
-const MERGE_PROPERTIES = ['rules', 'utils'] as const
+export interface CommitlintConfig extends UserConfig {
+  utils?: Record<string, unknown>
+}
 
 export interface CommitlintConfigOptions {
   /** Also validate scopes against the workspace package names. @default isMonorepo() */
@@ -12,24 +14,26 @@ export interface CommitlintConfigOptions {
 
 export const defineConfig = ({
   monorepo = isMonorepo(),
-}: CommitlintConfigOptions = {}): UserConfig => {
+}: CommitlintConfigOptions = {}): CommitlintConfig => {
+  const conventional: CommitlintConfig = conventionalConfig
+
   if (!monorepo) {
-    return conventionalConfig as UserConfig
+    return conventional
   }
 
-  const base = conventionalConfig as unknown as Record<string, unknown>
-  const scopes = workspaceScopesConfig as unknown as Record<string, unknown>
+  const workspaceScopes: CommitlintConfig = workspaceScopesConfig
 
-  return MERGE_PROPERTIES.reduce<UserConfig>(
-    (config, property) => ({
-      ...config,
-      [property]: {
-        ...(base[property] as object),
-        ...(scopes[property] as object),
-      },
-    }),
-    { ...conventionalConfig } as UserConfig,
-  )
+  return {
+    ...conventional,
+    rules: {
+      ...conventional.rules,
+      ...workspaceScopes.rules,
+    },
+    utils: {
+      ...conventional.utils,
+      ...workspaceScopes.utils,
+    },
+  }
 }
 
 export default defineConfig()
