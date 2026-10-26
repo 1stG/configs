@@ -1,19 +1,13 @@
 {
   "name": "@1stg/config",
   "version": "1.2.1",
-  "description": "Personal but Shareable Configuration for all 1stG.me projects",
-  "homepage": "https://github.com/1stG/configs/tree/master/packages/config",
-  "license": "MIT",
-  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
-  "repository": "git+https://github.com/1stG/configs.git",
-  "funding": "https://opencollective.com/configs",
-  "files": [
-    "lib",
-    "README.md",
-    "CHANGELOG.md",
-    "MIGRATION.md"
-  ],
   "type": "module",
+  "description": "Personal but Shareable Configuration for all 1stG.me projects",
+  "repository": "git+https://github.com/1stG/configs.git",
+  "homepage": "https://github.com/1stG/configs/tree/master/packages/config",
+  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
+  "funding": "https://opencollective.com/configs",
+  "license": "MIT",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "exports": {
@@ -23,6 +17,12 @@
     },
     "./package.json": "./package.json"
   },
+  "files": [
+    "CHANGELOG.md",
+    "MIGRATION.md",
+    "lib",
+    "README.md"
+  ],
   "publishConfig": {
     "access": "public"
   }

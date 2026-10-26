@@ -134,6 +134,7 @@ describe('@1stg/oxfmt-config', () => {
     expect(config.printWidth).toBe(80)
     expect(config.semi).toBe(false)
     expect(config.sortImports).toBe(true)
+    expect(config.sortPackageJson).toBe(false)
   })
 
   it('accepts overrides', () => {

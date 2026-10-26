@@ -1,23 +1,29 @@
 {
   "name": "@1stg/configs",
   "version": "0.0.0",
-  "private": true,
+  "type": "module",
   "description": "Personal but Shareable Configurations for all 1stG.me projects",
-  "license": "MIT",
-  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
   "repository": "git+https://github.com/1stG/configs.git",
+  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
+  "license": "MIT",
+  "private": true,
   "workspaces": [
     "packages/*"
   ],
-  "type": "module",
+  "packageManager": "yarn@4.18.1",
   "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "precheck": "yarn build",
     "check": "yarn format:check",
+    "clean": "tsc -b --clean tsconfig.build.json",
+    "preformat": "yarn build",
     "format": "run-p format:ox format:prettier",
     "format:check": "run-p format:ox:check format:prettier:check",
-    "format:ox": "oxfmt .",
-    "format:ox:check": "oxfmt --check .",
-    "format:prettier": "prettier --write \"**/*.{ini,properties,pug,rb,sass,sh,styl,stylus}\"",
-    "format:prettier:check": "prettier --check \"**/*.{ini,properties,pug,rb,sass,sh,styl,stylus}\"",
+    "format:ox": "oxfmt --ignore-path .gitignore --ignore-path .prettierignore --ignore-path .oxfmtignore .",
+    "format:ox:check": "oxfmt --ignore-path .gitignore --ignore-path .prettierignore --ignore-path .oxfmtignore --check .",
+    "format:prettier": "prettier --write \"**/*.{ini,properties,pug,rb,sass,sh,styl,stylus}\" \"**/package.json\"",
+    "format:prettier:check": "prettier --check \"**/*.{ini,properties,pug,rb,sass,sh,styl,stylus}\" \"**/package.json\"",
+    "prelint": "yarn build",
     "lint": "run-p 'lint:*'",
     "lint:markup": "markuplint \"tests/*.html\" \"tests/*.vue\"",
     "lint:ox": "oxlint .",
@@ -25,15 +31,10 @@
     "lint:tsc": "tsc --noEmit",
     "prepare": "patch-package && simple-git-hooks && yarn-berry-deduplicate && yarn build",
     "release": "yarn build && changeset publish",
+    "pretest": "yarn build",
     "test": "vitest run",
     "typecov": "type-coverage",
-    "version": "changeset version && yarn --no-immutable",
-    "build": "tsc -b tsconfig.build.json",
-    "clean": "tsc -b --clean tsconfig.build.json",
-    "precheck": "yarn build",
-    "preformat": "yarn build",
-    "prelint": "yarn build",
-    "pretest": "yarn build"
+    "version": "changeset version && yarn --no-immutable"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^1.0.0",
@@ -78,6 +79,5 @@
     "ignoreFiles": "*.d.ts",
     "ignoreNonNullAssertion": true,
     "strict": true
-  },
-  "packageManager": "yarn@4.18.1"
+  }
 }

@@ -1,19 +1,16 @@
 {
   "name": "@1stg/stylelint-config",
   "version": "7.0.0",
-  "description": "Personal but Shareable Stylelint Configuration for all 1stG.me projects",
-  "homepage": "https://github.com/1stG/configs/tree/master/packages/stylelint-config",
-  "license": "MIT",
-  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
-  "repository": "git+https://github.com/1stG/configs.git",
-  "funding": "https://opencollective.com/configs",
-  "files": [
-    "lib",
-    "README.md",
-    "CHANGELOG.md",
-    "MIGRATION.md"
-  ],
   "type": "module",
+  "description": "Personal but Shareable Stylelint Configuration for all 1stG.me projects",
+  "repository": "git+https://github.com/1stG/configs.git",
+  "homepage": "https://github.com/1stG/configs/tree/master/packages/stylelint-config",
+  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
+  "funding": "https://opencollective.com/configs",
+  "license": "MIT",
+  "engines": {
+    "node": "^22.18.0 || >=24.11.0"
+  },
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "exports": {
@@ -23,8 +20,20 @@
     },
     "./package.json": "./package.json"
   },
-  "publishConfig": {
-    "access": "public"
+  "files": [
+    "CHANGELOG.md",
+    "MIGRATION.md",
+    "lib",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "prettier": ">=3.6.0",
+    "stylelint": ">=16.0.0"
+  },
+  "peerDependenciesMeta": {
+    "prettier": {
+      "optional": true
+    }
   },
   "dependencies": {
     "postcss-html": "^2.0.0",
@@ -38,16 +47,7 @@
     "stylelint-prettier": "^5.0.3",
     "stylelint-scss": "^6.14.0 || ^7.1.1"
   },
-  "peerDependencies": {
-    "prettier": ">=3.6.0",
-    "stylelint": ">=16.0.0"
-  },
-  "peerDependenciesMeta": {
-    "prettier": {
-      "optional": true
-    }
-  },
-  "engines": {
-    "node": "^22.18.0 || >=24.11.0"
+  "publishConfig": {
+    "access": "public"
   }
 }

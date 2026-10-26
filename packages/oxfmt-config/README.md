@@ -22,15 +22,15 @@ a `.oxfmtrc.json`-based setup or imported by a JS config.
 
 ## Options
 
-| Option            | Default | Description                                |
-| ----------------- | ------- | ------------------------------------------ |
-| `printWidth`      | `80`    | Line width (Oxfmt's own default is `100`). |
-| `semi`            | `false` | Print semicolons.                          |
-| `singleQuote`     | `true`  | Use single quotes.                         |
-| `sortImports`     | `true`  | Sort imports and exports.                  |
-| `sortPackageJson` | `true`  | Sort `package.json` keys.                  |
-| `jsdoc`           | `false` | Format JSDoc comments.                     |
-| `overrides`       | `[]`    | File-specific overrides.                   |
+| Option            | Default | Description                                                     |
+| ----------------- | ------- | --------------------------------------------------------------- |
+| `printWidth`      | `80`    | Line width (Oxfmt's own default is `100`).                      |
+| `semi`            | `false` | Print semicolons.                                               |
+| `singleQuote`     | `true`  | Use single quotes.                                              |
+| `sortImports`     | `true`  | Sort imports and exports.                                       |
+| `sortPackageJson` | `false` | Sort `package.json` keys; use `@1stg/prettier-config` for that. |
+| `jsdoc`           | `false` | Format JSDoc comments.                                          |
+| `overrides`       | `[]`    | File-specific overrides.                                        |
 
 ## Coverage
 

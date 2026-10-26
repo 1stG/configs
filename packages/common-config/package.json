@@ -2,13 +2,13 @@
   "name": "@1stg/common-config",
   "version": "16.0.0",
   "description": "Personal but Shareable Common Configuration for all 1stG.me projects",
-  "homepage": "https://github.com/1stG/configs/tree/master/packages/common-config",
-  "license": "MIT",
-  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
   "repository": "git+https://github.com/1stG/configs.git",
+  "homepage": "https://github.com/1stG/configs/tree/master/packages/common-config",
+  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
   "funding": "https://opencollective.com/configs",
-  "publishConfig": {
-    "access": "public"
+  "license": "MIT",
+  "engines": {
+    "node": ">=24.11.0"
   },
   "dependencies": {
     "@1stg/commitlint-config": "^7.0.0",
@@ -21,7 +21,7 @@
     "@1stg/simple-git-hooks": "^2.1.0",
     "@1stg/tsconfig": "^4.0.0"
   },
-  "engines": {
-    "node": ">=24.11.0"
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -2,3 +2,4 @@
 coverage
 # We minify SVGs
 **/*.svg
+.dsh

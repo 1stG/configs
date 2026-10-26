@@ -1,19 +1,13 @@
 {
   "name": "@1stg/browserslist-config",
   "version": "2.1.4",
-  "description": "Personal but Shareable Browserslist Configuration for all 1stG.me projects",
-  "homepage": "https://github.com/1stG/configs/tree/master/packages/browserslist-config",
-  "license": "MIT",
-  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
-  "repository": "git+https://github.com/1stG/configs.git",
-  "funding": "https://opencollective.com/configs",
-  "files": [
-    "lib",
-    "README.md",
-    "CHANGELOG.md",
-    "MIGRATION.md"
-  ],
   "type": "commonjs",
+  "description": "Personal but Shareable Browserslist Configuration for all 1stG.me projects",
+  "repository": "git+https://github.com/1stG/configs.git",
+  "homepage": "https://github.com/1stG/configs/tree/master/packages/browserslist-config",
+  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
+  "funding": "https://opencollective.com/configs",
+  "license": "MIT",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "exports": {
@@ -34,10 +28,16 @@
     },
     "./package.json": "./package.json"
   },
-  "publishConfig": {
-    "access": "public"
-  },
+  "files": [
+    "CHANGELOG.md",
+    "MIGRATION.md",
+    "lib",
+    "README.md"
+  ],
   "peerDependencies": {
     "browserslist": ">=4.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

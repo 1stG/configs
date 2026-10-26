@@ -2,13 +2,13 @@
   "name": "@1stg/app-config",
   "version": "16.0.0",
   "description": "Personal but Shareable App Configuration for all 1stG.me projects",
-  "homepage": "https://github.com/1stG/configs/tree/master/packages/app-config",
-  "license": "MIT",
-  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
   "repository": "git+https://github.com/1stG/configs.git",
+  "homepage": "https://github.com/1stG/configs/tree/master/packages/app-config",
+  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
   "funding": "https://opencollective.com/configs",
-  "publishConfig": {
-    "access": "public"
+  "license": "MIT",
+  "engines": {
+    "node": "^24.15.0 || >=26.0.0"
   },
   "dependencies": {
     "@1stg/browserslist-config": "^2.1.4",
@@ -18,7 +18,7 @@
     "browserslist": "^4.28.2",
     "postcss": "^8.5.15"
   },
-  "engines": {
-    "node": "^24.15.0 || >=26.0.0"
+  "publishConfig": {
+    "access": "public"
   }
 }

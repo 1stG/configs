@@ -24,7 +24,7 @@ export const defineConfig = ({
   semi = false,
   singleQuote = true,
   sortImports = true,
-  sortPackageJson = true,
+  sortPackageJson = false,
   jsdoc = false,
   overrides = [],
 }: OxfmtConfigOptions = {}): Record<string, unknown> => ({

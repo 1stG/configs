@@ -1,19 +1,16 @@
 {
   "name": "@1stg/simple-git-hooks",
   "version": "2.1.0",
-  "description": "Personal but Shareable simple-git-hooks Configuration for all 1stG.me projects",
-  "homepage": "https://github.com/1stG/configs/tree/master/packages/simple-git-hooks",
-  "license": "MIT",
-  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
-  "repository": "git+https://github.com/1stG/configs.git",
-  "funding": "https://opencollective.com/configs",
-  "files": [
-    "lib",
-    "README.md",
-    "CHANGELOG.md",
-    "MIGRATION.md"
-  ],
   "type": "module",
+  "description": "Personal but Shareable simple-git-hooks Configuration for all 1stG.me projects",
+  "repository": "git+https://github.com/1stG/configs.git",
+  "homepage": "https://github.com/1stG/configs/tree/master/packages/simple-git-hooks",
+  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
+  "funding": "https://opencollective.com/configs",
+  "license": "MIT",
+  "engines": {
+    "node": "^22.18.0 || >=24.11.0"
+  },
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "exports": {
@@ -23,18 +20,21 @@
     },
     "./package.json": "./package.json"
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "dependencies": {
-    "@pkgr/utils": "^4.1.0"
-  },
+  "files": [
+    "CHANGELOG.md",
+    "MIGRATION.md",
+    "lib",
+    "README.md"
+  ],
   "peerDependencies": {
     "@commitlint/cli": ">=11.0.0",
     "nano-staged": ">=0.8.0",
     "simple-git-hooks": ">=2.12.1"
   },
-  "engines": {
-    "node": "^22.18.0 || >=24.11.0"
+  "dependencies": {
+    "@pkgr/utils": "^4.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
