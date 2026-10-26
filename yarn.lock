@@ -36,6 +36,9 @@ __metadata:
     "@pkgr/utils": "npm:^4.1.0"
   peerDependencies:
     "@commitlint/types": ^21.2.3
+  peerDependenciesMeta:
+    "@commitlint/types":
+      optional: true
   languageName: unknown
   linkType: soft
 
