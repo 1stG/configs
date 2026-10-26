@@ -24,7 +24,9 @@ export default defineConfig()
 ```
 
 `defineConfig()` is async because the plugins are imported dynamically; ESLint
-awaits it automatically. Run ESLint on the remaining extensions only:
+awaits it automatically. HTML can be linted through `eslint-plugin-markup` (optional peer, Node >= 24);
+the `markup` option is enabled automatically when installed, and `*.html` is
+then no longer ignored. Run ESLint on the remaining extensions only:
 
 ```sh
 eslint "**/*.{md,mdx,json,jsonc,json5,yaml,yml,toml}"

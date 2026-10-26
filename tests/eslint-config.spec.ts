@@ -28,3 +28,24 @@ describe('@1stg/eslint-config', () => {
     expect(ignores?.ignores).toContain('**/fixtures/**')
   })
 })
+
+describe('@1stg/eslint-config markup', () => {
+  it('only ignores HTML when markup is disabled', async () => {
+    const config = await defineEslint({ markup: false })
+    expect(config.find(item => item.ignores)?.ignores).toContain('**/*.html')
+  })
+
+  it('enables eslint-plugin-markup on Node 24', async () => {
+    if (Number(process.versions.node.split('.')[0]) < 24) {
+      return
+    }
+
+    const config = await defineEslint({ markup: true })
+    expect(config.some(item => item.name === 'markup/flat-recommended')).toBe(
+      true,
+    )
+    expect(config.find(item => item.ignores)?.ignores).not.toContain(
+      '**/*.html',
+    )
+  })
+})

@@ -9,6 +9,8 @@ export interface EslintConfigOptions {
   yaml?: boolean
   /** Lint TOML. @default true */
   toml?: boolean
+  /** Lint HTML with `eslint-plugin-markup` on Node >= 24. @default auto */
+  markup?: boolean
   /** Disable the rules Oxlint already implements. @default true */
   oxlint?: boolean
   /** Extra ignore patterns. */
@@ -25,6 +27,8 @@ interface MarkdownPlugin {
     lintCodeBlocks: boolean
   }) => Linter.Processor
 }
+
+const NODE_MAJOR = Number(process.versions.node.split('.')[0])
 
 const DEFAULT_IGNORES = [
   '**/.dsh/**',
@@ -83,11 +87,29 @@ export const defineConfig = async ({
   yaml = isInstalled('eslint-plugin-yml'),
   toml: tomlEnabled = isInstalled('eslint-plugin-toml'),
   oxlint: oxlintEnabled = true,
+  markup = NODE_MAJOR >= 24 && isInstalled('eslint-plugin-markup'),
   ignores = [],
 }: EslintConfigOptions = {}): Promise<Linter.Config[]> => {
+  const defaultIgnores = markup
+    ? DEFAULT_IGNORES.filter(pattern => pattern !== '**/*.html')
+    : DEFAULT_IGNORES
+
   const configs: Linter.Config[] = [
-    { ignores: [...DEFAULT_IGNORES, ...ignores] },
+    { ignores: [...defaultIgnores, ...ignores] },
   ]
+
+  if (markup) {
+    if (NODE_MAJOR < 24) {
+      throw new Error(
+        '@1stg/eslint-config: `markup` requires Node.js >= 24 (eslint-plugin-markup@2)',
+      )
+    }
+
+    const markupPlugin = await load<{
+      configs: { flatRecommended: Linter.Config }
+    }>('eslint-plugin-markup')
+    configs.push(markupPlugin.configs.flatRecommended)
+  }
 
   if (oxlintEnabled) {
     const oxlint = await load<PluginConfigs>('eslint-plugin-oxlint')

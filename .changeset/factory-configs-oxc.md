@@ -23,8 +23,9 @@ tool-specific fields pass through without being re-declared.
 
 - `@1stg/eslint-config` now only covers the file types Oxlint cannot parse
   (Markdown/JSON/YAML/TOML) and uses `eslint-plugin-oxlint` to avoid duplicate
-  reports; Markdown/JSON(C) plugins are installed by default, while YAML/TOML
-  and `eslint-plugin-oxlint` are optional peers enabled when installed.
+  reports; Markdown/JSON(C) and `eslint-plugin-oxlint` are installed by default,
+  YAML/TOML are optional peers, and `eslint-plugin-markup` can lint HTML on
+  Node >= 24 when installed.
   `@1stg/babel-preset` is removed and JS/TS/Vue parsing moves to
   [`@1stg/oxlint-config`](../packages/oxlint-config).
 - New [`@1stg/oxlint-config`](../packages/oxlint-config) (Oxlint) and
