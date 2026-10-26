@@ -7,7 +7,6 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "rootDir": ".",
-    "tsBuildInfoFile": "lib/tsconfig.tsbuildinfo",
     "types": ["node"]
   }
 }

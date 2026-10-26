@@ -3,7 +3,6 @@
   "include": ["*.ts", "*.d.ts"],
   "compilerOptions": {
     "outDir": "lib",
-    "rootDir": ".",
-    "tsBuildInfoFile": "lib/tsconfig.tsbuildinfo"
+    "rootDir": "."
   }
 }
