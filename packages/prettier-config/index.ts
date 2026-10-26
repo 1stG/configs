@@ -12,7 +12,6 @@ const PLUGIN_NAMES = [
 ]
   .filter(
     name =>
-      name === 'prettier-plugin-pkg' ||
       name.startsWith('prettier-plugin-') ||
       name.startsWith('@prettier/plugin-'),
   )
