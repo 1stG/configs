@@ -8,7 +8,6 @@ The package is still published, but the subpath entry points are replaced by
 | Before                            | After                                  |
 | --------------------------------- | -------------------------------------- |
 | `@1stg/prettier-config/vue`       | `defineConfig({ framework: 'vue' })`   |
-| `@1stg/prettier-config/next`      | `defineConfig({ nextjs: true })`       |
 | `@1stg/prettier-config/semi`      | `defineConfig({ semi: true })`         |
 | `@1stg/prettier-config/quote`     | `defineConfig({ singleQuote: false })` |
 | `@1stg/prettier-config/semi/next` | `defineConfig({ semi: true })`         |
@@ -28,9 +27,10 @@ import { defineConfig } from '@1stg/prettier-config'
 export default defineConfig({ framework: 'vue' })
 ```
 
-`/next` used the `babel-ts` parser; Babel is gone, so the default `typescript`
-parser is used and there is no `nextjs` option. The default export is still
-usable directly from `.prettierrc`:
+`/next` (and `/semi/next`) used the `babel-ts` parser. Babel is gone, so there
+is no replacement parser option: use the default `typescript` parser, and
+`defineConfig({ semi: true })` for the semi variant. The default export is
+still usable directly from `.prettierrc`:
 
 ```json
 "@1stg/prettier-config"
