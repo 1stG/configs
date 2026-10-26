@@ -19,8 +19,9 @@ import { defineConfig } from '@1stg/eslint-config'
 export default defineConfig()
 ```
 
-`defineConfig()` is async: plugins are loaded with dynamic `import()` only when
-enabled, and ESLint awaits the returned promise. Use
+Plugins are **optional peer dependencies**. `defineConfig()` enables each one
+only when it is installed (`import.meta.resolve`), and loads it with dynamic
+`import()` when enabled. ESLint awaits the returned promise. Use
 `export default await defineConfig()` if your tool does not await it.
 
 Run ESLint only on those extensions:
@@ -38,3 +39,31 @@ eslint "**/*.{md,mdx,json,jsonc,json5,yaml,yml,toml}"
 | `yaml`     | `true`  | Lint YAML.             |
 | `toml`     | `true`  | Lint TOML.             |
 | `ignores`  | `[]`    | Extra ignore patterns. |
+
+## Sponsors and Backers
+
+[![Sponsors and Backers](https://raw.githubusercontent.com/1stG/static/master/sponsors.svg)](https://github.com/sponsors/JounQin)
+
+### Sponsors
+
+| 1stG                                                                                                                   | RxTS                                                                                                                   | UnTS                                                                                                                   |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| [![1stG Open Collective sponsors](https://opencollective.com/1stG/organizations.svg)](https://opencollective.com/1stG) | [![RxTS Open Collective sponsors](https://opencollective.com/rxts/organizations.svg)](https://opencollective.com/rxts) | [![UnTS Open Collective sponsors](https://opencollective.com/unts/organizations.svg)](https://opencollective.com/unts) |
+
+### Backers
+
+| 1stG                                                                                                                | RxTS                                                                                                                | UnTS                                                                                                                |
+| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| [![1stG Open Collective backers](https://opencollective.com/1stG/individuals.svg)](https://opencollective.com/1stG) | [![RxTS Open Collective backers](https://opencollective.com/rxts/individuals.svg)](https://opencollective.com/rxts) | [![UnTS Open Collective backers](https://opencollective.com/unts/individuals.svg)](https://opencollective.com/unts) |
+
+## Changelog
+
+Detailed changes for each release are documented in [CHANGELOG.md](./CHANGELOG.md).
+
+## License
+
+[MIT][] © [JounQin][]@[1stG.me][]
+
+[1stG.me]: https://www.1stG.me
+[JounQin]: https://github.com/JounQin
+[MIT]: http://opensource.org/licenses/MIT

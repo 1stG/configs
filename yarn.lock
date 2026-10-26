@@ -34,6 +34,8 @@ __metadata:
     "@commitlint/config-workspace-scopes": "npm:^21.0.2"
     "@commitlint/types": "npm:^21.2.3"
     "@pkgr/utils": "npm:^4.1.0"
+  peerDependencies:
+    "@commitlint/types": ^21.2.3
   languageName: unknown
   linkType: soft
 
@@ -78,6 +80,11 @@ __metadata:
     "@unts/patch-package": "npm:^8.1.1"
     "@vitest/coverage-istanbul": "npm:^5.0.0"
     eslint: "npm:^9.39.4 || ^10.0.1"
+    eslint-plugin-jsonc: "npm:^3.4.2"
+    eslint-plugin-mdx: "npm:^3.8.2"
+    eslint-plugin-oxlint: "npm:^1.89.0"
+    eslint-plugin-toml: "npm:^1.5.0"
+    eslint-plugin-yml: "npm:^3.9.0"
     markuplint: "npm:^5.0.0"
     nano-staged: "npm:^1.0.2"
     npm-run-all2: "npm:^9.0.1"
@@ -108,14 +115,24 @@ __metadata:
 "@1stg/eslint-config@npm:^11.0.0, @1stg/eslint-config@workspace:packages/eslint-config":
   version: 0.0.0-use.local
   resolution: "@1stg/eslint-config@workspace:packages/eslint-config"
-  dependencies:
-    eslint-plugin-jsonc: "npm:^3.4.2"
-    eslint-plugin-mdx: "npm:^3.8.2"
-    eslint-plugin-oxlint: "npm:^1.89.0"
-    eslint-plugin-toml: "npm:^1.5.0"
-    eslint-plugin-yml: "npm:^3.9.0"
   peerDependencies:
     eslint: ^9.39.4 || ^10.0.1
+    eslint-plugin-jsonc: ^3.4.2
+    eslint-plugin-mdx: ^3.8.2
+    eslint-plugin-oxlint: ^1.89.0
+    eslint-plugin-toml: ^1.5.0
+    eslint-plugin-yml: ^3.9.0
+  peerDependenciesMeta:
+    eslint-plugin-jsonc:
+      optional: true
+    eslint-plugin-mdx:
+      optional: true
+    eslint-plugin-oxlint:
+      optional: true
+    eslint-plugin-toml:
+      optional: true
+    eslint-plugin-yml:
+      optional: true
   languageName: unknown
   linkType: soft
 

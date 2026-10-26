@@ -25,11 +25,16 @@
     "lib",
     "README.md"
   ],
+  "peerDependencies": {
+    "@commitlint/types": "^21.2.3"
+  },
   "dependencies": {
     "@commitlint/config-conventional": "^21.0.2",
     "@commitlint/config-workspace-scopes": "^21.0.2",
-    "@commitlint/types": "^21.2.3",
     "@pkgr/utils": "^4.1.0"
+  },
+  "devDependencies": {
+    "@commitlint/types": "^21.2.3"
   },
   "publishConfig": {
     "access": "public"

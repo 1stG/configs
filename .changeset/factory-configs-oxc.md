@@ -22,7 +22,8 @@ tool-specific fields pass through without being re-declared.
 
 - `@1stg/eslint-config` now only covers the file types Oxlint cannot parse
   (Markdown/JSON/YAML/TOML) and uses `eslint-plugin-oxlint` to avoid duplicate
-  reports; `@1stg/babel-preset` is removed and JS/TS/Vue parsing moves to
+  reports; its plugins are optional peers, enabled only when installed.
+  `@1stg/babel-preset` is removed and JS/TS/Vue parsing moves to
   [`@1stg/oxlint-config`](../packages/oxlint-config).
 - New [`@1stg/oxlint-config`](../packages/oxlint-config) (Oxlint) and
   [`@1stg/oxfmt-config`](../packages/oxfmt-config) (Oxfmt). Formatting is no longer an

@@ -35,6 +35,17 @@ const DEFAULT_IGNORES = [
 ]
 
 /**
+ * Check whether an optional peer plugin is installed.
+ */
+const isInstalled = (name: string): boolean => {
+  try {
+    return Boolean(import.meta.resolve(name))
+  } catch {
+    return false
+  }
+}
+
+/**
  * Dynamic import that also unwraps a CommonJS default export.
  */
 const load = async <T>(name: string): Promise<T> => {
@@ -50,11 +61,11 @@ const load = async <T>(name: string): Promise<T> => {
  * promise before linting.
  */
 export const defineConfig = async ({
-  markdown = true,
-  jsonc: jsoncEnabled = true,
-  yaml = true,
-  toml: tomlEnabled = true,
-  oxlint: oxlintEnabled = true,
+  markdown = isInstalled('eslint-plugin-mdx'),
+  jsonc: jsoncEnabled = isInstalled('eslint-plugin-jsonc'),
+  yaml = isInstalled('eslint-plugin-yml'),
+  toml: tomlEnabled = isInstalled('eslint-plugin-toml'),
+  oxlint: oxlintEnabled = isInstalled('eslint-plugin-oxlint'),
   ignores = [],
 }: EslintConfigOptions = {}): Promise<Linter.Config[]> => {
   const configs: Linter.Config[] = [
