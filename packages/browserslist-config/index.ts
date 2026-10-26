@@ -4,4 +4,4 @@ const config: string[] = [
   'not dead',
 ]
 
-export = config
+export default config

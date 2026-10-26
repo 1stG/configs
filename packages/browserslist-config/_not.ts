@@ -7,4 +7,4 @@ const not: string[] = [
   'not dead',
 ]
 
-export = not
+export default not

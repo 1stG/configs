@@ -1,4 +1,4 @@
-import not = require('./_not.js')
+import not from './_not.js'
 
 const config: string[] = [
   'defaults and last 1 version and fully supports es6-module',
@@ -6,4 +6,4 @@ const config: string[] = [
   ...not,
 ]
 
-export = config
+export default config

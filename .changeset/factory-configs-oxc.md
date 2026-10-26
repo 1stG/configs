@@ -49,4 +49,5 @@ tool-specific fields pass through without being re-declared.
   `yarn build` runs on install and release.
 - All packages publish explicit `exports.types`, a `files` allow-list, and
   consistent Node.js engines.
-- `@1stg/browserslist-config` drops the `alauda` and `alauda-legacy` presets.
+- `@1stg/browserslist-config` is ESM only (browserslist >= 4.24.5) and drops
+  the `alauda` and `alauda-legacy` presets.

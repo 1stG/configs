@@ -2,7 +2,9 @@
 
 > Applies to **v2 → v3**.
 
-The `alauda` and `alauda-legacy` entry points are removed:
+The package is **ESM only** and requires `browserslist >= 4.24.5`, which loads
+ESM shareable configs natively. The `alauda` and `alauda-legacy` entry points
+are removed:
 
 ```diff
 -{ "browserslist": ["extends @1stg/browserslist-config/alauda"] }

@@ -1,9 +1,6 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "module": "node16",
-    "moduleResolution": "node16",
-    "verbatimModuleSyntax": false,
     "outDir": "lib",
     "rootDir": ".",
     "tsBuildInfoFile": "lib/tsconfig.tsbuildinfo"
