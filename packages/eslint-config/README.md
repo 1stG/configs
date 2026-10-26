@@ -19,10 +19,10 @@ import { defineConfig } from '@1stg/eslint-config'
 export default defineConfig()
 ```
 
-`eslint-plugin-mdx` and `eslint-plugin-jsonc` are installed by default, so
-Markdown and JSON(C) linting is on. `eslint-plugin-yml`, `eslint-plugin-toml`
-and `eslint-plugin-oxlint` are optional peers, enabled only when installed
-(`import.meta.resolve`); every plugin is imported dynamically when enabled. ESLint awaits the returned promise. Use
+`eslint-plugin-mdx`, `eslint-plugin-jsonc` and `eslint-plugin-oxlint` are
+installed by default, so Markdown/JSON(C) linting and the Oxlint rule-disable
+list are on. `eslint-plugin-yml` and `eslint-plugin-toml` are optional peers,
+enabled only when installed (`import.meta.resolve`). ESLint awaits the returned promise. Use
 `export default await defineConfig()` if your tool does not await it.
 
 Run ESLint only on those extensions:

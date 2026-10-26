@@ -1,4 +1,5 @@
 import type { Config } from '@markuplint/ml-config'
+import { isPkgAvailable } from '@pkgr/utils'
 
 import { base } from './base.js'
 
@@ -8,7 +9,7 @@ export interface MarkuplintConfigOptions extends Config {
 }
 
 export const defineConfig = ({
-  vue = false,
+  vue = isPkgAvailable('vue'),
   ...options
 }: MarkuplintConfigOptions = {}): Config => {
   const config: Config = { ...base, ...options }

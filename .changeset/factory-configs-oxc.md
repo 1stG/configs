@@ -28,8 +28,9 @@ tool-specific fields pass through without being re-declared.
   `@1stg/babel-preset` is removed and JS/TS/Vue parsing moves to
   [`@1stg/oxlint-config`](../packages/oxlint-config).
 - New [`@1stg/oxlint-config`](../packages/oxlint-config) (Oxlint) and
-  [`@1stg/oxfmt-config`](../packages/oxfmt-config) (Oxfmt). Formatting is no longer an
-  ESLint rule by default; `prettier: 'eslint'` remains available as an option.
+  [`@1stg/oxfmt-config`](../packages/oxfmt-config) (Oxfmt). Framework plugins are
+  enabled when the framework is installed; formatting is no longer an ESLint
+  rule by default.
 - `@1stg/prettier-config` is kept for the languages Oxfmt cannot format (Pug,
   Ruby, shell, INI, properties, Stylus, Sass). Its plugins are optional peer
   dependencies (discovered from this package's `dependencies` + optional
@@ -37,14 +38,17 @@ tool-specific fields pass through without being re-declared.
   `/next` (`babel-ts`) variant is gone with Babel.
 - `@1stg/nano-staged` takes `formatter` (`'oxfmt' | 'prettier' | 'both'`),
   `linter` (`'oxlint' | 'eslint'`) and `typecheck` options instead of
-  per-framework entry points (`/tsc`, `/ngc`, `/vue-tsc`).
+  per-framework entry points (`/tsc`, `/ngc`, `/vue-tsc`). Linter, stylelint,
+  type-coverage and imagemin are auto-detected from installed packages.
 - `@1stg/stylelint-config` takes `scss`, `scssLoose`, `modules` and `prettier`
-  options; `stylelint-prettier` and the SCSS rules are opt-in now, and the
-  config no longer flips rules based on whether `eslint` is installed.
+  options; `stylelint-prettier` is an optional peer enabled when installed, and
+  `vue` is enabled when `vue` is installed.
 - `@1stg/markuplint-config` takes `vue` instead of the `/angular` and `/vue`
   subpaths. Angular support is dropped, including the `@1stg/tsconfig/angular`
   and `ng-lib` presets.
-- `@1stg/commitlint-config` takes `monorepo` (defaulting to `isMonorepo()`); `@1stg/simple-git-hooks` takes `runner`.
+- `@1stg/commitlint-config` takes `monorepo` (defaulting to `isMonorepo()`);
+  `@1stg/simple-git-hooks` takes `runner` and only emits hooks for installed
+  `nano-staged`/`@commitlint/cli`.
 - `@1stg/postcss-config` is ESM only (use `postcss.config.js`), minifies based
   on its `env` option rather than a module-level `NODE_ENV` snapshot, and extends
   `postcss.ProcessOptions`; accepts `minify`, `map`, `cssnano`, `presetOptions`

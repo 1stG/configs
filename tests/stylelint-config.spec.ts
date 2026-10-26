@@ -2,7 +2,7 @@ import { defineConfig as defineStylelint } from '@1stg/stylelint-config'
 
 describe('@1stg/stylelint-config', () => {
   it('builds the base config', () => {
-    const config = defineStylelint()
+    const config = defineStylelint({ prettier: false, vue: false })
     expect(config.extends).toContain('stylelint-config-standard')
     expect(config.extends).not.toContain('stylelint-prettier/recommended')
   })

@@ -17,9 +17,9 @@ The default export is the zero-config version and can be used from
 
 ## Options
 
-| Option | Default | Description                  |
-| ------ | ------- | ---------------------------- |
-| `vue`  | `false` | Add the Vue parser and spec. |
+| Option | Default   | Description                                      |
+| ------ | --------- | ------------------------------------------------ |
+| `vue`  | installed | Add the Vue parser/spec when `vue` is installed. |
 
 The base rules are declared inline rather than through
 `markuplint:recommended`: extending that preset drops the framework `parser`

@@ -32,7 +32,8 @@
   "dependencies": {
     "@markuplint/ml-config": "5.2.0",
     "@markuplint/vue-parser": "^5.0.0",
-    "@markuplint/vue-spec": "^5.0.0"
+    "@markuplint/vue-spec": "^5.0.0",
+    "@pkgr/utils": "^4.1.0"
   },
   "publishConfig": {
     "access": "public"

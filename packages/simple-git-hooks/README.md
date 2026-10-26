@@ -20,6 +20,8 @@ export default defineConfig()
 
 The runner is detected from the lockfile (`yarn`, `pnpm`, …) by default; pass it
 explicitly when the hooks run in an environment where detection is unreliable.
+`pre-commit` is only generated when `nano-staged` is installed, and `commit-msg`
+only when `@commitlint/cli` is installed.
 
 ## Sponsors and Backers
 

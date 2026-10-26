@@ -24,5 +24,6 @@ import { defineConfig } from '@1stg/markuplint-config'
 export default defineConfig({ vue: true })
 ```
 
-The Vue parser and spec are applied together; the base config no longer uses
-`extends`, because that dropped the framework parser.
+The Vue parser and spec are applied together; `vue` defaults to whether `vue`
+is installed. The base config no longer uses `extends`, because that dropped
+the framework parser.

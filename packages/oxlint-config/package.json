@@ -29,6 +29,9 @@
   "peerDependencies": {
     "oxlint": ">=1.80.0"
   },
+  "dependencies": {
+    "@pkgr/utils": "^4.1.0"
+  },
   "publishConfig": {
     "access": "public"
   }

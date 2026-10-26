@@ -65,7 +65,7 @@ export const defineConfig = async ({
   jsonc: jsoncEnabled = true,
   yaml = isInstalled('eslint-plugin-yml'),
   toml: tomlEnabled = isInstalled('eslint-plugin-toml'),
-  oxlint: oxlintEnabled = isInstalled('eslint-plugin-oxlint'),
+  oxlint: oxlintEnabled = true,
   ignores = [],
 }: EslintConfigOptions = {}): Promise<Linter.Config[]> => {
   const configs: Linter.Config[] = [

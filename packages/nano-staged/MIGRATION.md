@@ -31,15 +31,15 @@ export default defineConfig({
 })
 ```
 
-## No more package sniffing
+## Auto-detected defaults
 
-The old package checked which of ESLint, Stylelint, Prettier and imagemagick
-were installed. Pass the tools explicitly:
+The tool-availability defaults are inferred from installed packages again:
 
-- `formatter: 'oxfmt' | 'prettier' | 'both' | false` (default `'prettier'`)
-- `linter: 'oxlint' | 'eslint' | false` (default `false`)
-- `stylelint: boolean` (default `false`)
-- `typecheck: 'tsc' | 'ngc' | 'vue-tsc' | false` (default `false`)
-- `imagemagick: boolean` (default `false`)
+- `linter`: `'oxlint'` if installed, otherwise `'eslint'`, otherwise `false`
+- `stylelint`: enabled when `stylelint` is installed
+- `typeCoverage`: enabled when `type-coverage` is installed
+- `imagemin`: enabled when `@pkgr/imagemin` is installed (renamed from
+  `imagemagick`)
 
-`commands` still lets you override a single command.
+`formatter` and `typecheck` stay explicit because they are project choices, not
+just tool availability. `commands` still lets you override a single command.

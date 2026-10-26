@@ -31,10 +31,10 @@ config object directly.
 | `rules`      | `{}`                       | Extra rule overrides.              |
 | `node`       | `true`                     | Node.js globals and rules.         |
 | `promise`    | `true`                     | Enable the Promise plugin.         |
-| `react`      | `false`                    | React and JSX accessibility rules. |
-| `vue`        | `false`                    | Vue rules.                         |
-| `vitest`     | `false`                    | Vitest globals and rules.          |
-| `jest`       | `false`                    | Jest globals and rules.            |
+| `react`      | installed `react`          | React and JSX accessibility rules. |
+| `vue`        | installed `vue`            | Vue rules.                         |
+| `vitest`     | installed `vitest`         | Vitest globals and rules.          |
+| `jest`       | installed `jest`           | Jest globals and rules.            |
 | `ignores`    | `[]`                       | Extra ignore patterns.             |
 
 Import sorting is **not** a lint rule here: Oxfmt's built-in `sortImports` does

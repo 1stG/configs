@@ -23,13 +23,13 @@ The default export is the zero-config version, usable from a JSON config:
 
 ## Options
 
-| Option      | Default | Description                                    |
-| ----------- | ------- | ---------------------------------------------- |
-| `modules`   | `false` | Ignore the CSS Modules pseudo classes.         |
-| `prettier`  | `false` | Run Prettier as a Stylelint rule.              |
-| `scss`      | `false` | Add the SCSS syntax and rules.                 |
-| `scssLoose` | `false` | Add the SCSS syntax with the strict rules off. |
-| `vue`       | `false` | Ignore Vue-specific pseudo elements.           |
+| Option      | Default   | Description                                          |
+| ----------- | --------- | ---------------------------------------------------- |
+| `modules`   | `false`   | Ignore the CSS Modules pseudo classes.               |
+| `prettier`  | installed | Run Prettier when `stylelint-prettier` is installed. |
+| `scss`      | `false`   | Add the SCSS syntax and rules.                       |
+| `scssLoose` | `false`   | Add the SCSS syntax with the strict rules off.       |
+| `vue`       | installed | Ignore Vue pseudo elements when `vue` is installed.  |
 
 `stylelint-prettier` is opt-in now; the config no longer decides based on
 whether `eslint` happens to be installed.

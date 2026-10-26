@@ -1,6 +1,6 @@
 import path from 'node:path'
 
-import { tryFile, tryPkg } from '@pkgr/utils'
+import { isPkgAvailable, tryFile, tryPkg } from '@pkgr/utils'
 
 export type Formatter = false | 'oxfmt' | 'prettier' | 'both'
 export type Linter = false | 'oxlint' | 'eslint'
@@ -15,18 +15,18 @@ export interface NanoStagedOptions {
   cwd?: string
   /** Formatter(s) to run. @default 'prettier' */
   formatter?: Formatter
-  /** Linter to run before formatting. @default false */
+  /** Linter to run before formatting. @default installed oxlint/eslint */
   linter?: Linter
-  /** Run `stylelint --fix` on style files. @default false */
+  /** Run `stylelint --fix` on style files. @default installed stylelint */
   stylelint?: boolean
   /** Type-check command to run. @default false */
   typecheck?: Typecheck
   /** Explicit `tsconfig` path; discovered from `cwd` when omitted. */
   tsconfig?: string
-  /** Run `type-coverage` together with the type-check. @default false */
+  /** Run `type-coverage` together with the type-check. @default installed type-coverage */
   typeCoverage?: boolean
-  /** Optimize image files with the `i` command. @default false */
-  imagemagick?: boolean
+  /** Optimize image files with the `i` command. @default installed @pkgr/imagemin */
+  imagemin?: boolean
 }
 
 export type Task = string | string[] | (() => string | string[])
@@ -62,12 +62,16 @@ export const defineConfig = ({
   commands = {},
   cwd = process.cwd(),
   formatter = 'prettier',
-  linter = false,
-  stylelint = false,
+  linter = isPkgAvailable('oxlint')
+    ? 'oxlint'
+    : isPkgAvailable('eslint')
+      ? 'eslint'
+      : false,
+  stylelint = isPkgAvailable('stylelint'),
   typecheck = false,
   tsconfig,
-  typeCoverage = false,
-  imagemagick = false,
+  typeCoverage = isPkgAvailable('type-coverage'),
+  imagemin = isPkgAvailable('@pkgr/imagemin'),
 }: NanoStagedOptions = {}): StagedConfig => {
   const config: StagedConfig = {}
 
@@ -113,7 +117,7 @@ export const defineConfig = ({
     }
   }
 
-  if (imagemagick) {
+  if (imagemin) {
     config['*.{gif,jpeg,jpg,png,svg,webp}'] = 'i'
   }
 

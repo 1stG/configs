@@ -23,12 +23,12 @@ export default defineConfig({
 | Option         | Default         | Description                                                                  |
 | -------------- | --------------- | ---------------------------------------------------------------------------- |
 | `formatter`    | `'prettier'`    | `'oxfmt'`, `'prettier'`, `'both'` (Oxfmt plus Prettier fallback) or `false`. |
-| `linter`       | `false`         | `'oxlint'`, `'eslint'` or `false`.                                           |
-| `stylelint`    | `false`         | Run `stylelint --fix` on style files.                                        |
+| `linter`       | installed       | `'oxlint'` → `'eslint'` → `false` based on installation.                     |
+| `stylelint`    | installed       | Run `stylelint --fix` when stylelint is installed.                           |
 | `typecheck`    | `false`         | `'tsc'`, `'ngc'`, `'vue-tsc'` or `false`.                                    |
 | `tsconfig`     | discovered      | Explicit `tsconfig` path, resolved once when the config loads.               |
-| `typeCoverage` | `false`         | Run `type-coverage` with the type-check.                                     |
-| `imagemagick`  | `false`         | Optimize images with the `i` command.                                        |
+| `typeCoverage` | installed       | Run `type-coverage` when installed.                                          |
+| `imagemin`     | installed       | Optimize images with `i` when `@pkgr/imagemin` is installed.                 |
 | `commands`     | `{}`            | Override a command, e.g. `{ oxlint: 'oxlint --type-aware --fix' }`.          |
 | `cwd`          | `process.cwd()` | Base directory for `tsconfig` discovery.                                     |
 

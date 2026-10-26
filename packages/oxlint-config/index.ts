@@ -1,3 +1,4 @@
+import { isPkgAvailable } from '@pkgr/utils'
 import type { OxlintConfig } from 'oxlint'
 
 export interface OxlintConfigOptions extends OxlintConfig {
@@ -25,13 +26,13 @@ export interface OxlintConfigOptions extends OxlintConfig {
  */
 export const defineConfig = ({
   categories = { correctness: 'error' },
-  jest = false,
+  jest = isPkgAvailable('jest'),
   jsdoc = true,
   node = true,
   promise = true,
-  react = false,
-  vitest = false,
-  vue = false,
+  react = isPkgAvailable('react'),
+  vitest = isPkgAvailable('vitest'),
+  vue = isPkgAvailable('vue'),
   ignores = [],
   plugins: extraPlugins = [],
   env: extraEnv,

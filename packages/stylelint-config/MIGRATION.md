@@ -27,8 +27,8 @@ import { defineConfig } from '@1stg/stylelint-config'
 export default defineConfig({ scssLoose: true })
 ```
 
-## Removed detection
+## Detection
 
-The config no longer adds `stylelint-prettier` when ESLint is installed; pass
-`prettier: true` explicitly. `vue: true` only adjusts the ignored pseudo-elements;
-Angular support is dropped.
+`prettier` is enabled when `stylelint-prettier` is installed (it is an optional
+peer now), and `vue` is enabled when `vue` is installed; both can be overridden
+explicitly. Angular support is dropped.

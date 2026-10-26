@@ -12,5 +12,6 @@ import { defineConfig } from '@1stg/simple-git-hooks'
 export default defineConfig({ runner: 'pnpm' })
 ```
 
-`defineConfig()` keeps the old `getScriptRunner() || 'npx'` behavior. The package
-is ESM only.
+`defineConfig()` keeps the old `getScriptRunner() || 'npx'` behavior. Hooks are
+only generated for installed tools: `pre-commit` for `nano-staged` and
+`commit-msg` for `@commitlint/cli`. The package is ESM only.

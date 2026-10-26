@@ -1,3 +1,4 @@
+import { isPkgAvailable } from '@pkgr/utils'
 import type { Config } from 'stylelint'
 
 import { scss, scssLoose } from './scss.js'
@@ -17,10 +18,10 @@ export interface StylelintConfigOptions extends Config {
 
 export const defineConfig = ({
   modules = false,
-  prettier = false,
+  prettier = isPkgAvailable('stylelint-prettier'),
   scss: scssEnabled = false,
   scssLoose: scssLooseEnabled = false,
-  vue = false,
+  vue = isPkgAvailable('vue'),
   ...options
 }: StylelintConfigOptions = {}): Config => {
   const ignorePseudoElements = vue ? ['v-deep', 'v-global', 'v-slotted'] : []
