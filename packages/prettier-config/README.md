@@ -31,6 +31,14 @@ peers. `defineConfig` derives the candidate list from this package's
 with `import.meta.resolve` and skips missing packages. Pass `plugins` to
 override the detected list.
 
+The default export can be re-exported directly:
+
+```js
+export { default } from '@1stg/prettier-config'
+```
+
+Use `defineConfig` only when you need options.
+
 ## Options
 
 | Option        | Default | Description             |

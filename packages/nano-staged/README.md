@@ -18,6 +18,14 @@ export default defineConfig({
 })
 ```
 
+The default export can be re-exported directly:
+
+```js
+export { default } from '@1stg/nano-staged'
+```
+
+Use `defineConfig` only when you need options.
+
 ## Options
 
 | Option         | Default         | Description                                                                  |

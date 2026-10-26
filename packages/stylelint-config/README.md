@@ -21,6 +21,14 @@ The default export is the zero-config version, usable from a JSON config:
 { "extends": ["@1stg/stylelint-config"] }
 ```
 
+The default export can be re-exported directly:
+
+```js
+export { default } from '@1stg/stylelint-config'
+```
+
+Use `defineConfig` only when you need options.
+
 ## Options
 
 | Option      | Default   | Description                                          |

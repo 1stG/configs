@@ -1,3 +1,1 @@
-import { defineConfig } from '@1stg/commitlint-config'
-
-export default defineConfig()
+export { default } from '@1stg/commitlint-config'

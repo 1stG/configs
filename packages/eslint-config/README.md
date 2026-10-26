@@ -35,6 +35,14 @@ ESLint only on those extensions:
 eslint "**/*.{md,mdx,json,jsonc,json5,yaml,yml,toml}"
 ```
 
+The default export can be re-exported directly:
+
+```js
+export { default } from '@1stg/eslint-config'
+```
+
+Use `defineConfig` only when you need options.
+
 ## Options
 
 | Option     | Default | Description            |

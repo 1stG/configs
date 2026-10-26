@@ -21,6 +21,14 @@ oxlint .
 The default export is the zero-config version, for tools that can import a
 config object directly.
 
+The default export can be re-exported directly:
+
+```js
+export { default } from '@1stg/oxlint-config'
+```
+
+Use `defineConfig` only when you need options.
+
 ## Options
 
 | Option       | Default                    | Description                        |

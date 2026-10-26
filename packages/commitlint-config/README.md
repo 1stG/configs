@@ -18,6 +18,14 @@ The default export is the conventional config alone:
 { "extends": ["@1stg/commitlint-config"] }
 ```
 
+The default export can be re-exported directly:
+
+```js
+export { default } from '@1stg/commitlint-config'
+```
+
+Use `defineConfig` only when you need options.
+
 ## Options
 
 | Option     | Default | Description                                               |

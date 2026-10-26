@@ -15,6 +15,14 @@ export default defineConfig({ vue: true })
 The default export is the zero-config version and can be used from
 `.markuplintrc` with `"extends": ["@1stg/markuplint-config"]`.
 
+The default export can be re-exported directly:
+
+```js
+export { default } from '@1stg/markuplint-config'
+```
+
+Use `defineConfig` only when you need options.
+
 ## Options
 
 | Option | Default   | Description                                      |

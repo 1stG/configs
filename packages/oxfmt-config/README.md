@@ -20,6 +20,14 @@ oxfmt .
 The default export is the zero-config version, and can be referenced directly by
 a `.oxfmtrc.json`-based setup or imported by a JS config.
 
+The default export can be re-exported directly:
+
+```js
+export { default } from '@1stg/oxfmt-config'
+```
+
+Use `defineConfig` only when you need options.
+
 ## Options
 
 | Option            | Default | Description                                                     |

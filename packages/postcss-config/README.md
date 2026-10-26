@@ -17,6 +17,14 @@ The package is ESM only, matching `postcss-load-config` v6: PostCSS loads
 default export is the config function itself, so `export { default } from
 '@1stg/postcss-config'` works too and defers `NODE_ENV` until PostCSS calls it.
 
+The default export can be re-exported directly:
+
+```js
+export { default } from '@1stg/postcss-config'
+```
+
+Use `defineConfig` only when you need options.
+
 ## Options
 
 | Option          | Default                 | Description                                      |
