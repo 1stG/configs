@@ -45,8 +45,8 @@ const PRETTIER_FILES = 'ini,properties,pug,rb,sass,sh,styl,stylus'
 const resolveTsconfig = (cwd: string): string => {
   const tsconfig =
     tryFile(path.resolve(cwd, 'tsconfig.staged.json')) ||
-    tryFile(path.resolve(cwd, 'tsconfig.base.json')) ||
     tryFile(path.resolve(cwd, 'tsconfig.json')) ||
+    tryFile(path.resolve(cwd, 'tsconfig.base.json')) ||
     tryPkg('@1stg/tsconfig')
 
   if (!tsconfig) {
