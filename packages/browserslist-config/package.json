@@ -29,10 +29,7 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "CHANGELOG.md",
-    "MIGRATION.md",
-    "lib",
-    "README.md"
+    "lib"
   ],
   "peerDependencies": {
     "browserslist": ">=4.24.5"

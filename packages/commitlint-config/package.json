@@ -20,10 +20,7 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "CHANGELOG.md",
-    "MIGRATION.md",
-    "lib",
-    "README.md"
+    "lib"
   ],
   "peerDependencies": {
     "@commitlint/types": "^21.2.3"

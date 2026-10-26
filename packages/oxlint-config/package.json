@@ -21,10 +21,7 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "CHANGELOG.md",
-    "MIGRATION.md",
-    "lib",
-    "README.md"
+    "lib"
   ],
   "peerDependencies": {
     "oxlint": ">=1.80.0"

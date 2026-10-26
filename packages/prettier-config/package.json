@@ -21,10 +21,7 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "CHANGELOG.md",
-    "MIGRATION.md",
-    "lib/index.*",
-    "README.md"
+    "lib/index.*"
   ],
   "peerDependencies": {
     "@prettier/plugin-pug": "^3.4.2",
