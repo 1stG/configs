@@ -21,9 +21,8 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "CHANGELOG.md",
-    "MIGRATION.md",
-    "lib"
+    "lib",
+    "!lib/*.tsbuildinfo"
   ],
   "peerDependencies": {
     "prettier": ">=3.6.0",

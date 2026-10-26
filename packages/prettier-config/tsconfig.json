@@ -2,8 +2,7 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "lib",
-    "rootDir": ".",
-    "tsBuildInfoFile": "../../.tsbuildinfo/prettier-config.tsbuildinfo"
+    "rootDir": "."
   },
   "include": ["*.ts", "package.json"]
 }

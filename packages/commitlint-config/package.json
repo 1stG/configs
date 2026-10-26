@@ -20,9 +20,8 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "CHANGELOG.md",
-    "MIGRATION.md",
-    "lib"
+    "lib",
+    "!lib/*.tsbuildinfo"
   ],
   "peerDependencies": {
     "@commitlint/types": "^21.2.3"

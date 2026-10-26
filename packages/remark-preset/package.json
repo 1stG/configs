@@ -21,9 +21,8 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "CHANGELOG.md",
-    "MIGRATION.md",
-    "lib"
+    "lib",
+    "!lib/*.tsbuildinfo"
   ],
   "dependencies": {
     "remark-cjk-friendly": "^2.0.1",

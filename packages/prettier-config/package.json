@@ -21,9 +21,8 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "CHANGELOG.md",
-    "MIGRATION.md",
     "lib",
+    "!lib/*.tsbuildinfo",
     "!lib/package.json"
   ],
   "peerDependencies": {

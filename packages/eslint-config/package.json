@@ -21,9 +21,8 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "CHANGELOG.md",
-    "MIGRATION.md",
-    "lib"
+    "lib",
+    "!lib/*.tsbuildinfo"
   ],
   "peerDependencies": {
     "eslint": "^9.39.4 || ^10.0.1",

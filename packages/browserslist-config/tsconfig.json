@@ -2,8 +2,7 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "lib",
-    "rootDir": ".",
-    "tsBuildInfoFile": "../../.tsbuildinfo/browserslist-config.tsbuildinfo"
+    "rootDir": "."
   },
   "include": ["*.ts"]
 }

@@ -3,7 +3,6 @@
   "include": ["*.ts"],
   "compilerOptions": {
     "outDir": "lib",
-    "rootDir": ".",
-    "tsBuildInfoFile": "../../.tsbuildinfo/simple-git-hooks.tsbuildinfo"
+    "rootDir": "."
   }
 }
