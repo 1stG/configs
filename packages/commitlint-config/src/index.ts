@@ -1,6 +1,3 @@
-// oxlint-disable-next-line typescript/triple-slash-reference
-/// <reference path="../shim.d.ts" />
-
 import conventionalConfig from '@commitlint/config-conventional'
 import workspaceScopesConfig from '@commitlint/config-workspace-scopes'
 import type { UserConfig } from '@commitlint/types'

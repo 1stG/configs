@@ -6,7 +6,6 @@
     "importHelpers": false,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "rootDir": ".",
     "types": ["node"]
   }
 }
