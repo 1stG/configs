@@ -33,6 +33,7 @@ __metadata:
     "@commitlint/config-conventional": "npm:^21.0.2"
     "@commitlint/config-workspace-scopes": "npm:^21.0.2"
     "@commitlint/types": "npm:^21.2.3"
+    "@pkgr/utils": "npm:^4.1.0"
   languageName: unknown
   linkType: soft
 
