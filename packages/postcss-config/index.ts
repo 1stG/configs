@@ -1,12 +1,9 @@
+import { createRequire } from 'node:module'
+
 import { NODE_ENV } from '@pkgr/utils'
-import autoprefixer from 'autoprefixer'
-import cssnanoPlugin from 'cssnano'
 import type { AcceptedPlugin } from 'postcss'
-import postcssImport from 'postcss-import'
-import postcssModules from 'postcss-modules'
-import postcssNormalize from 'postcss-normalize'
-import postcssPresetEnv from 'postcss-preset-env'
-import postcssUrl from 'postcss-url'
+
+const require = createRequire(import.meta.url)
 
 export interface Config {
   env?: string
@@ -66,16 +63,16 @@ export const defineConfig = ({
       : undefined
 
   const plugins: AcceptedPlugin[] = [
-    postcssPresetEnv(presetEnv),
-    postcssImport(importOptions),
-    postcssNormalize(normalize),
-    postcssUrl(url),
-    autoprefixer(),
+    require('postcss-preset-env')(presetEnv),
+    require('postcss-import')(importOptions),
+    require('postcss-normalize')(normalize),
+    require('postcss-url')(url),
+    require('autoprefixer')(),
   ]
 
   if (modules) {
     plugins.push(
-      postcssModules({
+      require('postcss-modules')({
         globalModulePaths: [
           /[/\\]node_modules[/\\]/,
           /(\bglobals?[/\\][\w-]+|\.globals?)\.(p?css|less|s[ac]ss|styl(us)?)$/,
@@ -90,7 +87,7 @@ export const defineConfig = ({
 
   if (shouldMinify) {
     plugins.push(
-      cssnanoPlugin({
+      require('cssnano')({
         ...cssnanoOptions,
         preset: (cssnanoOptions?.preset ?? [
           advanced ? 'advanced' : 'default',

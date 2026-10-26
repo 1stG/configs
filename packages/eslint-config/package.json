@@ -1,0 +1,42 @@
+{
+  "name": "@1stg/eslint-config",
+  "version": "11.1.0",
+  "type": "module",
+  "description": "Personal but Shareable ESLint Configuration for the files Oxlint cannot lint",
+  "repository": "git+https://github.com/1stG/configs.git",
+  "homepage": "https://github.com/1stG/configs/tree/master/packages/eslint-config",
+  "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
+  "funding": "https://opencollective.com/configs",
+  "license": "MIT",
+  "engines": {
+    "node": "^22.18.0 || >=24.11.0"
+  },
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "CHANGELOG.md",
+    "MIGRATION.md",
+    "lib",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "eslint": "^9.39.4 || ^10.0.1"
+  },
+  "dependencies": {
+    "eslint-plugin-jsonc": "^3.4.2",
+    "eslint-plugin-mdx": "^3.8.2",
+    "eslint-plugin-oxlint": "^1.89.0",
+    "eslint-plugin-toml": "^1.5.0",
+    "eslint-plugin-yml": "^3.9.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

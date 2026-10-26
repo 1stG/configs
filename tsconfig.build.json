@@ -11,6 +11,9 @@
       "path": "./packages/config"
     },
     {
+      "path": "./packages/eslint-config"
+    },
+    {
       "path": "./packages/markuplint-config"
     },
     {

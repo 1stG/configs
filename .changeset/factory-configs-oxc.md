@@ -1,5 +1,6 @@
 ---
 '@1stg/browserslist-config': major
+'@1stg/eslint-config': major
 '@1stg/prettier-config': major
 '@1stg/commitlint-config': major
 '@1stg/markuplint-config': major
@@ -16,11 +17,12 @@ alongside the zero-config default. Options are explicit: the configs no longer
 inspect the consumer's `node_modules`, `CI`, `NODE_ENV`, `cwd` or git state at
 module load time, so the same config produces the same result locally and on CI.
 
-- `@1stg/eslint-config` and `@1stg/babel-preset` are removed. Use
-  [`@1stg/oxlint-config`](../oxlint-config) instead; JavaScript/TypeScript
-  parsing no longer goes through `@babel/eslint-parser`.
-- New [`@1stg/oxlint-config`](../oxlint-config) (Oxlint) and
-  [`@1stg/oxfmt-config`](../oxfmt-config) (Oxfmt). Formatting is no longer an
+- `@1stg/eslint-config` now only covers the file types Oxlint cannot parse
+  (Markdown/JSON/YAML/TOML) and uses `eslint-plugin-oxlint` to avoid duplicate
+  reports; `@1stg/babel-preset` is removed and JS/TS/Vue parsing moves to
+  [`@1stg/oxlint-config`](../packages/oxlint-config).
+- New [`@1stg/oxlint-config`](../packages/oxlint-config) (Oxlint) and
+  [`@1stg/oxfmt-config`](../packages/oxfmt-config) (Oxfmt). Formatting is no longer an
   ESLint rule by default; `prettier: 'eslint'` remains available as an option.
 - `@1stg/prettier-config` is kept for the languages Oxfmt cannot format (Pug,
   Ruby, shell, INI, properties, Stylus, Sass); plugin entry points are resolved

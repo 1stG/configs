@@ -6,13 +6,13 @@ Oxfmt, and compiles the packages from TypeScript into `lib/`.
 
 The packages are ESM only and require Node `^22.18.0 || >=24.11.0`.
 
-## Removed packages
+## Package changes
 
-| Package                 | Replacement                                                                                             |
-| ----------------------- | ------------------------------------------------------------------------------------------------------- |
-| `@1stg/eslint-config`   | `@1stg/oxlint-config`; see [its guide](./packages/oxlint-config/MIGRATION.md).                          |
-| `@1stg/babel-preset`    | None. Use your bundler or `tsc` directly.                                                               |
-| `@1stg/prettier-config` | **Not removed.** Plugins are resolved lazily; see [its guide](./packages/prettier-config/MIGRATION.md). |
+| Package                 | Change                                                                      |
+| ----------------------- | --------------------------------------------------------------------------- |
+| `@1stg/babel-preset`    | Removed. Use your bundler or `tsc` directly.                                |
+| `@1stg/eslint-config`   | Kept only for Markdown/JSON/YAML/TOML; JS/TS/Vue use `@1stg/oxlint-config`. |
+| `@1stg/prettier-config` | Kept; plugin entry points are resolved lazily.                              |
 
 ## Per-package guides
 
@@ -24,6 +24,7 @@ The packages are ESM only and require Node `^22.18.0 || >=24.11.0`.
 - [`@1stg/simple-git-hooks`](./packages/simple-git-hooks/MIGRATION.md)
 - [`@1stg/stylelint-config`](./packages/stylelint-config/MIGRATION.md)
 - [`@1stg/browserslist-config`](./packages/browserslist-config/MIGRATION.md)
+- [`@1stg/eslint-config`](./packages/eslint-config/MIGRATION.md)
 - [`@1stg/oxlint-config`](./packages/oxlint-config/MIGRATION.md)
 - [`@1stg/oxfmt-config`](./packages/oxfmt-config/MIGRATION.md)
 - [`@1stg/common-config`](./packages/common-config/MIGRATION.md)

@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@1stg/commitlint-config": "^7.0.0",
+    "@1stg/eslint-config": "^11.0.0",
     "@1stg/markuplint-config": "^5.0.0",
     "@1stg/nano-staged": "^1.0.0",
     "@1stg/oxfmt-config": "^1.0.0",
