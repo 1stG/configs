@@ -17,7 +17,8 @@ describe('@1stg/nano-staged', () => {
     expect(config['*.{ini,properties,pug,rb,sass,sh,styl,stylus}']).toBe(
       'prettier --write',
     )
-    expect(config['**/*.json']).toBe('prettier --write')
+    expect(config['**/!(*package).json']).toBe('oxfmt')
+    expect(config['**/package.json']).toBe('prettier --write')
     expect(config['*.ts?(x)']).toBeTypeOf('function')
   })
 })

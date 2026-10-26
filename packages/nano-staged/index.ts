@@ -100,8 +100,9 @@ export const defineConfig = ({
     config[`*.{${CODE_FILES}}`] = [...lintTask, command.oxfmt]
     config[`*.{${STYLE_FILES}}`] = [...stylelintTask, command.oxfmt]
     config[`*.{${DATA_FILES}}`] = command.oxfmt
-    // Prettier owns JSON here so `prettier-plugin-pkg` can sort package.json.
-    config['**/*.json'] = command.prettier
+    // `prettier-plugin-pkg` only handles package.json; other JSON stays on Oxfmt.
+    config['**/!(*package).json'] = command.oxfmt
+    config['**/package.json'] = command.prettier
     config[`*.{${PRETTIER_FILES}}`] = command.prettier
     config['.!(browserslist|nvm|yarn)rc'] = command.prettier
   }
