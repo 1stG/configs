@@ -2,7 +2,6 @@
 /// <reference path="../shim.d.ts" preserve="true" />
 
 import conventionalConfig from '@commitlint/config-conventional'
-// @ts-expect-error -- package does not ship type declarations
 import workspaceScopesConfig from '@commitlint/config-workspace-scopes'
 import type { UserConfig } from '@commitlint/types'
 import { isMonorepo } from '@pkgr/utils'

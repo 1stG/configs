@@ -1,7 +1,13 @@
-declare module '@commitlint/types' {
-  interface UserConfig {
-    utils?: Record<string, unknown>
-  }
-}
+declare module '@commitlint/config-workspace-scopes' {
+  import type { UserConfig } from '@commitlint/types'
 
-export {}
+  module '@commitlint/types' {
+    interface UserConfig {
+      utils?: Record<string, unknown>
+    }
+  }
+
+  const config: UserConfig
+
+  export default config
+}
