@@ -50,8 +50,8 @@ __metadata:
     "@1stg/eslint-config": "npm:^11.0.0"
     "@1stg/markuplint-config": "npm:^5.0.0"
     "@1stg/nano-staged": "npm:^1.0.0"
-    "@1stg/oxfmt-config": "npm:^1.0.0"
-    "@1stg/oxlint-config": "npm:^1.0.0"
+    "@1stg/oxfmt-config": "npm:^0.0.0"
+    "@1stg/oxlint-config": "npm:^0.0.0"
     "@1stg/prettier-config": "npm:^6.0.0"
     "@1stg/remark-preset": "npm:^4.0.0"
     "@1stg/simple-git-hooks": "npm:^2.1.0"
@@ -160,7 +160,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/oxfmt-config@npm:^1.0.0, @1stg/oxfmt-config@workspace:packages/oxfmt-config":
+"@1stg/oxfmt-config@npm:^0.0.0, @1stg/oxfmt-config@workspace:packages/oxfmt-config":
   version: 0.0.0-use.local
   resolution: "@1stg/oxfmt-config@workspace:packages/oxfmt-config"
   peerDependencies:
@@ -168,7 +168,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/oxlint-config@npm:^1.0.0, @1stg/oxlint-config@workspace:packages/oxlint-config":
+"@1stg/oxlint-config@npm:^0.0.0, @1stg/oxlint-config@workspace:packages/oxlint-config":
   version: 0.0.0-use.local
   resolution: "@1stg/oxlint-config@workspace:packages/oxlint-config"
   dependencies:
