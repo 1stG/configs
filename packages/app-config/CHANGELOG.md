@@ -1,5 +1,15 @@
 # Change Log
 
+## 16.0.1
+
+### Patch Changes
+
+- Updated dependencies [[`a0276d4`](https://github.com/1stG/configs/commit/a0276d4bc5f6cbac18c01ee90945631375e0f851)]:
+  - @1stg/browserslist-config@3.0.0
+  - @1stg/postcss-config@8.0.0
+  - @1stg/stylelint-config@8.0.0
+  - @1stg/common-config@16.0.1
+
 ## 16.0.0
 
 ### Major Changes
