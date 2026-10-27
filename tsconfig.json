@@ -8,6 +8,5 @@
       ],
       "@1stg/*": ["./packages/*/src/index.ts"]
     }
-  },
-  "include": ["**/*"]
+  }
 }
