@@ -16,7 +16,7 @@ export interface OxlintConfigOptions extends OxlintConfig {
   vitest?: boolean
   /** Enable Jest globals and rules. @default false */
   jest?: boolean
-  /** Enable rules that require type information; needs oxlint-tsgolint. @default false */
+  /** Enable rules that require type information. @default installed `oxlint-tsgolint` */
   typeAware?: boolean
 }
 
@@ -27,7 +27,7 @@ export interface OxlintConfigOptions extends OxlintConfig {
 export const defineConfig = ({
   categories = { correctness: 'error' },
   jest = isPkgAvailable('jest'),
-  typeAware = false,
+  typeAware = isPkgAvailable('oxlint-tsgolint/package.json'),
   jsdoc = true,
   node = true,
   promise = true,

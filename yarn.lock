@@ -175,6 +175,10 @@ __metadata:
     "@pkgr/utils": "npm:^4.1.0"
   peerDependencies:
     oxlint: ">=1.80.0"
+    oxlint-tsgolint: ^7.0.2005
+  peerDependenciesMeta:
+    oxlint-tsgolint:
+      optional: true
   languageName: unknown
   linkType: soft
 
