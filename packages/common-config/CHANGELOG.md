@@ -1,5 +1,21 @@
 # Change Log
 
+## 16.0.1
+
+### Patch Changes
+
+- Updated dependencies [[`e3b113d`](https://github.com/1stG/configs/commit/e3b113d17a63c9d8b85a7d955c6128a4c4cf08cd), [`a0276d4`](https://github.com/1stG/configs/commit/a0276d4bc5f6cbac18c01ee90945631375e0f851), [`89733fb`](https://github.com/1stG/configs/commit/89733fbfa47f64ef1fb794d037f3a65a9836ee65), [`c6f7dce`](https://github.com/1stG/configs/commit/c6f7dce7847ae9df25b3e6ee3035c540e38958af), [`eb69306`](https://github.com/1stG/configs/commit/eb693066eb454809eca76aa1c112a7af038f969c), [`dde6235`](https://github.com/1stG/configs/commit/dde6235d72b2e72b8413adeab9069b585af1c849), [`e3b113d`](https://github.com/1stG/configs/commit/e3b113d17a63c9d8b85a7d955c6128a4c4cf08cd), [`c5dd9a7`](https://github.com/1stG/configs/commit/c5dd9a7fd420eebf7961c4a097bd69c9ba69fdda), [`4915585`](https://github.com/1stG/configs/commit/491558590071181e30226c3d8d6d5dddae4a6900), [`eb69306`](https://github.com/1stG/configs/commit/eb693066eb454809eca76aa1c112a7af038f969c)]:
+  - @1stg/eslint-config@12.0.0
+  - @1stg/remark-preset@4.0.1
+  - @1stg/tsconfig@5.0.0
+  - @1stg/prettier-config@7.0.0
+  - @1stg/commitlint-config@8.0.0
+  - @1stg/markuplint-config@6.0.0
+  - @1stg/nano-staged@2.0.0
+  - @1stg/simple-git-hooks@3.0.0
+  - @1stg/oxfmt-config@1.0.0
+  - @1stg/oxlint-config@1.0.0
+
 ## 16.0.0
 
 ### Major Changes

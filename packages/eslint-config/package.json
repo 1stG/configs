@@ -1,6 +1,6 @@
 {
   "name": "@1stg/eslint-config",
-  "version": "11.1.0",
+  "version": "12.0.0",
   "type": "module",
   "description": "Personal but Shareable ESLint Configuration for the files Oxlint cannot lint",
   "repository": "git+https://github.com/1stG/configs.git",

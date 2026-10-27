@@ -1,6 +1,6 @@
 {
   "name": "@1stg/prettier-config",
-  "version": "6.1.0",
+  "version": "7.0.0",
   "type": "module",
   "description": "Personal but Shareable Prettier Configuration for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
@@ -73,7 +73,7 @@
     }
   },
   "dependencies": {
-    "@1stg/config": "^1.2.1",
+    "@1stg/config": "^1.2.2",
     "prettier-plugin-pkg": "^0.22.1"
   },
   "publishConfig": {
