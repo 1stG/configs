@@ -1,13 +1,14 @@
+import { createRequire } from 'node:module'
+
 import conventionalConfig from '@commitlint/config-conventional'
-import workspaceScopesConfig from '@commitlint/config-workspace-scopes'
 import type { UserConfig } from '@commitlint/types'
 import { isMonorepo } from '@pkgr/utils'
 
-declare module '@commitlint/types' {
-  interface UserConfig {
-    utils?: Record<string, unknown>
-  }
-}
+export type * from '../shim.js'
+
+const workspaceScopesModule = createRequire(import.meta.url)(
+  '@commitlint/config-workspace-scopes',
+) as UserConfig & { default?: UserConfig }
 
 export interface CommitlintConfigOptions extends UserConfig {
   /** Also validate scopes against the workspace package names. @default isMonorepo() */
@@ -31,7 +32,8 @@ export const defineConfig = ({
     return conventional
   }
 
-  const workspaceScopes: UserConfig = workspaceScopesConfig
+  const workspaceScopes: UserConfig =
+    workspaceScopesModule.default ?? workspaceScopesModule
 
   return {
     ...conventional,

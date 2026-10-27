@@ -9,6 +9,5 @@
       "@1stg/*": ["./packages/*/src/index.ts"]
     }
   },
-  "files": ["packages/commitlint-config/shim.d.ts"],
   "include": ["**/*"]
 }
