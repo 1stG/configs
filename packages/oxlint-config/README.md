@@ -44,6 +44,7 @@ Use `defineConfig` only when you need options.
 | `vue`            | installed `vue`            | Vue rules.                         |
 | `vitest`         | installed `vitest`         | Vitest globals and rules.          |
 | `jest`           | installed `jest`           | Jest globals and rules.            |
+| `typeAware`      | `false`                    | Enable rules requiring type info.  |
 
 `ignorePatterns` is the native Oxlint field and can be passed directly; there
 is no separate `ignores` alias.
@@ -76,7 +77,8 @@ import, jsdoc, react, vue, node, promise, Vitest, Jest) cover the rest.
 
 - Oxlint parses JavaScript, TypeScript, JSX and Vue. Markdown, JSON, YAML and
   TOML are formatted by `@1stg/oxfmt-config` instead of linted.
-- Type-aware rules require the `oxlint-tsgolint` package and `--type-aware`.
+- Type-aware rules require the `oxlint-tsgolint` package; enable them with
+  `typeAware: true` or `--type-aware`.
 
 ## Sponsors and Backers
 

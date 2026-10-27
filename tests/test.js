@@ -17,7 +17,7 @@ async function bar() {
 
 function foo(cb1) {
   cb1(false)
-  bar()
+  void bar()
 }
 
 foo(function () {
@@ -45,6 +45,7 @@ export default class Test extends Basic {
 }
 
 try {
+  // oxlint-disable-next-line typescript/no-unnecessary-condition -- fixture
   const y = obj?.x ?? 1
   console.log(y)
 } catch {}

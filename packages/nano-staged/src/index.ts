@@ -157,7 +157,7 @@ export const defineConfig = ({
         `ngc -p ${tsconfigPath} --noEmit`,
         ...coverageTask,
       ]
-    } else if (typecheck === 'vue-tsc') {
+    } else {
       config['*.{ts,tsx,vue}'] = () => [
         `vue-tsc -p ${tsconfigPath} --noEmit --incremental false`,
         ...coverageTask,

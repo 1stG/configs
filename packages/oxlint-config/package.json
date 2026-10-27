@@ -24,7 +24,13 @@
     "lib"
   ],
   "peerDependencies": {
-    "oxlint": ">=1.80.0"
+    "oxlint": ">=1.80.0",
+    "oxlint-tsgolint": "^7.0.2005"
+  },
+  "peerDependenciesMeta": {
+    "oxlint-tsgolint": {
+      "optional": true
+    }
   },
   "dependencies": {
     "@pkgr/utils": "^4.1.0"
