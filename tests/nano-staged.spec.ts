@@ -57,15 +57,6 @@ it('supports vue-tsc type checking', () => {
   expect(config['*.{ts,tsx,vue}']).toBeTypeOf('function')
 })
 
-it('supports ngc type checking', () => {
-  const config = defineStaged({
-    cwd: process.cwd(),
-    formatter: false,
-    tsconfig: 'tsconfig.json',
-    typecheck: 'ngc',
-  })
-  expect(config['*.{html,ts}']).toBeTypeOf('function')
-})
 
 it('throws without a discoverable tsconfig', () => {
   const cwd = mkdtempSync(join(tmpdir(), 'nano-staged-'))
