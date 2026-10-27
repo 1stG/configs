@@ -25,7 +25,7 @@ export interface OxlintConfigOptions extends OxlintConfig {
  * automatically; pass `--config` only for a custom file name.
  */
 export const defineConfig = ({
-  categories = { correctness: 'error' },
+  categories = { correctness: 'error', perf: 'warn' },
   jest = isPkgAvailable('jest'),
   typeAware = isPkgAvailable('oxlint-tsgolint/package.json'),
   jsdoc = true,
@@ -53,7 +53,7 @@ export const defineConfig = ({
     plugins.push('node')
   }
   if (react) {
-    plugins.push('react', 'jsx-a11y')
+    plugins.push('react', 'jsx-a11y', 'react-perf')
   }
   if (vue) {
     plugins.push('vue')
