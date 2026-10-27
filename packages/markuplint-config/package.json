@@ -24,12 +24,23 @@
     "lib"
   ],
   "peerDependencies": {
-    "markuplint": "^5.0.0"
-  },
-  "dependencies": {
-    "@markuplint/ml-config": "5.2.0",
+    "@markuplint/ml-config": "^5.0.0",
     "@markuplint/vue-parser": "^5.0.0",
     "@markuplint/vue-spec": "^5.0.0",
+    "markuplint": "^5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@markuplint/ml-config": {
+      "optional": true
+    },
+    "@markuplint/vue-parser": {
+      "optional": true
+    },
+    "@markuplint/vue-spec": {
+      "optional": true
+    }
+  },
+  "dependencies": {
     "@pkgr/utils": "^4.1.0"
   },
   "publishConfig": {

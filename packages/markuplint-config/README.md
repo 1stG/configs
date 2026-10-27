@@ -32,6 +32,14 @@ Use `defineConfig` only when you need options.
 The base extends `markuplint:recommended`; the Vue `parser`/`specs` mapping is
 kept on top of it, so `.vue` files do not fall back to the HTML parser.
 
+`@markuplint/ml-config` is an optional peer used only by the public
+`Config` types; install it when using TypeScript. Runtime JavaScript users do
+not need it.
+
+Vue support can be enabled explicitly with `vue: true` or automatically when
+`vue` is installed. In either case, install both `@markuplint/vue-parser` and
+`@markuplint/vue-spec` before linting `.vue` files.
+
 ## Sponsors and Backers
 
 [![Sponsors and Backers](https://raw.githubusercontent.com/1stG/static/master/sponsors.svg)](https://github.com/sponsors/JounQin)
