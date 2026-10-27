@@ -77,8 +77,11 @@ import, jsdoc, react, vue, node, promise, Vitest, Jest) cover the rest.
 
 - Oxlint parses JavaScript, TypeScript, JSX and Vue. Markdown, JSON, YAML and
   TOML are formatted by `@1stg/oxfmt-config` instead of linted.
-- Type-aware rules require the `oxlint-tsgolint` package; enable them with
-  `typeAware: true` or `--type-aware`.
+- Type-aware rules require the `oxlint-tsgolint` package. `oxlint --type-aware`
+  enables Oxlint's own type-aware defaults, but the extra rules added by this
+  preset (for example `typescript/no-misused-promises`) are guarded by
+  `typeAware` and need `typeAware: true` (or an installed `oxlint-tsgolint`, which
+  is the default).
 
 ## Sponsors and Backers
 
