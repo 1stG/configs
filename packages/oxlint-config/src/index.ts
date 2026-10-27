@@ -117,6 +117,7 @@ export const defineConfig = ({
           ignoreEnums: true,
           ignoreNumericLiteralTypes: true,
           ignoreReadonlyClassProperties: true,
+          ignoreTypeIndexes: true,
         },
       ],
       'no-negated-condition': 'error',
