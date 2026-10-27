@@ -4,7 +4,7 @@ import { isPkgAvailable, tryFile, tryPkg } from '@pkgr/utils'
 
 export type Formatter = false | 'oxfmt' | 'prettier' | 'both'
 export type Linter = false | 'oxlint' | 'eslint'
-export type Typecheck = false | 'tsc' | 'ngc' | 'vue-tsc'
+export type Typecheck = false | 'tsc' | 'vue-tsc'
 
 export interface NanoStagedOptions {
   /** Command overrides, e.g. to pass a config file. */
@@ -126,8 +126,6 @@ export const defineConfig = ({
 
     if (typecheck === 'tsc') {
       config['*.ts?(x)'] = () => [`tsc -p ${tsconfigPath} --noEmit`, ...coverageTask]
-    } else if (typecheck === 'ngc') {
-      config['*.{html,ts}'] = () => [`ngc -p ${tsconfigPath} --noEmit`, ...coverageTask]
     } else {
       config['*.{ts,tsx,vue}'] = () => [
         `vue-tsc -p ${tsconfigPath} --noEmit --incremental false`,
