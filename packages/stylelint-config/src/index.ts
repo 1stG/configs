@@ -27,7 +27,7 @@ export const defineConfig = ({
   const ignorePseudoElements = vue ? ['v-deep', 'v-global', 'v-slotted'] : []
 
   const toArray = <T>(value: T | T[] | undefined): T[] => {
-    if (value === null || value === undefined) {
+    if (value === undefined) {
       return []
     }
     return Array.isArray(value) ? value : [value]

@@ -54,15 +54,9 @@ const resolveTsconfig = (cwd: string): string => {
   return path.relative(cwd, tsconfig)
 }
 
-const resolveLinter = (): NanoStagedOptions['linter'] => {
-  if (isPkgAvailable('oxlint')) {
-    return 'oxlint'
-  }
-  if (isPkgAvailable('eslint')) {
-    return 'eslint'
-  }
-  return false
-}
+const LINTERS = ['oxlint', 'eslint'] as const
+
+const resolveLinter = (): NanoStagedOptions['linter'] => LINTERS.find(isPkgAvailable) ?? false
 
 /* eslint-disable sonarjs/cognitive-complexity -- config builder */
 

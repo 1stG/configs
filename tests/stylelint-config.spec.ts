@@ -18,3 +18,14 @@ describe('@1stg/stylelint-config', () => {
     expect(config.overrides?.some(override => override.customSyntax === 'postcss-scss')).toBe(true)
   })
 })
+
+it('accepts plugins and extends values', () => {
+  const config = defineStylelint({
+    extends: ['stylelint-config-recommended'],
+    plugins: ['stylelint-order'],
+    prettier: false,
+    vue: false,
+  })
+  expect(config.extends).toContain('stylelint-config-recommended')
+  expect(config.plugins).toContain('stylelint-order')
+})

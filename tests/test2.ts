@@ -44,7 +44,6 @@ foo(() => {
   foo(() => {
     foo(() => {
       foo(() => {
-        // eslint-disable-next-line sonarjs/no-nested-functions -- testing
         foo(() => {
           // Do something
         })

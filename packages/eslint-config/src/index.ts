@@ -125,6 +125,7 @@ export const defineConfig = async ({
 
   if (code) {
     if (!isInstalled('typescript-eslint')) {
+      /* istanbul ignore next -- defensive guard for explicit code: true */
       throw new Error('@1stg/eslint-config: `code` requires the `typescript-eslint` package')
     }
 

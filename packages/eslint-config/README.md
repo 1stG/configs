@@ -7,13 +7,12 @@ ESLint is kept for the file types Oxlint cannot parse:
 - YAML (`eslint-plugin-yml`)
 - TOML (`eslint-plugin-toml`)
 
-By default JS/TS/JSX/Vue stay on `@1stg/oxlint-config`. When
-`typescript-eslint` is installed, `code` mode is enabled automatically and
-lints JS/TS/JSX with `typescript-eslint` plus optional
-`eslint-plugin-regexp` / `eslint-plugin-sonarjs`, while
-`eslint-plugin-oxlint` disables every rule Oxlint already covers. Pass
-`code: false` to keep the thin file-type-only behavior. Vue templates remain
-with Oxlint/markuplint.
+JS/TS/JSX/Vue are owned by `@1stg/oxlint-config`. When `typescript-eslint` is
+installed, `code` mode is enabled automatically and additionally lints
+JS/TS/JSX with `typescript-eslint` plus optional `eslint-plugin-regexp` /
+`eslint-plugin-sonarjs`, while `eslint-plugin-oxlint` disables every rule
+Oxlint already covers. Pass `code: false` to keep the thin file-type-only
+behavior. Vue templates remain with Oxlint/markuplint.
 
 ## Usage
 
