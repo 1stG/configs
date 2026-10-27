@@ -30,6 +30,9 @@
     "markuplint": "^5.0.0"
   },
   "peerDependenciesMeta": {
+    "@markuplint/ml-config": {
+      "optional": true
+    },
     "@markuplint/vue-parser": {
       "optional": true
     },
