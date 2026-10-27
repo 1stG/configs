@@ -5,7 +5,7 @@
 ### Major Changes
 
 - [#415](https://github.com/1stG/configs/pull/415) [`a0276d4`](https://github.com/1stG/configs/commit/a0276d4bc5f6cbac18c01ee90945631375e0f851) Thanks [@JounQin](https://github.com/JounQin)! - feat!: defineConfig-based configs, Oxlint/Oxfmt and a thin ESLint
-  
+
   Every remaining config package now exports a `defineConfig(options)` factory
   alongside the zero-config default. Options are explicit: the configs no longer
   rely on ambient `CI`, `NODE_ENV`, `cwd` or git state; defaults may detect the
@@ -13,7 +13,7 @@
   Options extend the native config types (`OxfmtConfig`, `OxlintConfig`,
   `prettier.Config`, `stylelint.Config`, `postcss.ProcessOptions`, ...), so
   tool-specific fields pass through without being re-declared.
-  
+
   - `@1stg/eslint-config` now only covers the file types Oxlint cannot parse
     (Markdown/JSON/YAML/TOML) and uses `eslint-plugin-oxlint` to avoid duplicate
     reports; Markdown/JSON(C) and `eslint-plugin-oxlint` are installed by default,
@@ -57,7 +57,7 @@
 
 - [#427](https://github.com/1stG/configs/pull/427) [`c6f7dce`](https://github.com/1stG/configs/commit/c6f7dce7847ae9df25b3e6ee3035c540e38958af) Thanks [@JounQin](https://github.com/JounQin)! - Move type-only `@markuplint/ml-config` to an optional peer dependency and make
   the Vue parser/spec peers optional instead of hard dependencies.
-  
+
   TypeScript consumers must install `@markuplint/ml-config` for the public
   `Config` types. Vue consumers must install `@markuplint/vue-parser` and
   `@markuplint/vue-spec` in addition to enabling `vue: true`.
