@@ -1,3 +1,12 @@
+vi.mock('@pkgr/utils', async importOriginal => {
+  const actual = await importOriginal<typeof import('@pkgr/utils')>()
+  return { ...actual, tryFile: () => undefined, tryPkg: () => undefined }
+})
+
+import { mkdtempSync, rmSync } from 'node:fs'
+import { tmpdir } from 'node:os'
+import { join } from 'node:path'
+
 import { defineConfig as defineStaged } from '@1stg/nano-staged'
 
 describe('@1stg/nano-staged', () => {
@@ -46,4 +55,25 @@ it('supports vue-tsc type checking', () => {
     typecheck: 'vue-tsc',
   })
   expect(config['*.{ts,tsx,vue}']).toBeTypeOf('function')
+})
+
+it('supports ngc type checking', () => {
+  const config = defineStaged({
+    cwd: process.cwd(),
+    formatter: false,
+    tsconfig: 'tsconfig.json',
+    typecheck: 'ngc',
+  })
+  expect(config['*.{html,ts}']).toBeTypeOf('function')
+})
+
+it('throws without a discoverable tsconfig', () => {
+  const cwd = mkdtempSync(join(tmpdir(), 'nano-staged-'))
+  try {
+    expect(() => defineStaged({ cwd, typecheck: 'tsc' })).toThrow(
+      '@1stg/nano-staged: no tsconfig found',
+    )
+  } finally {
+    rmSync(cwd, { force: true, recursive: true })
+  }
 })
