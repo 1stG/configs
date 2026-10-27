@@ -11,6 +11,7 @@ promisify(fs.readFile)
 
 /** @deprecated */
 class Basic {
+  // oxlint-disable-next-line typescript/no-deprecated -- testing
   prop: string = content
 }
 
@@ -45,7 +46,10 @@ foo(() => {
     foo(() => {
       foo(() => {
         foo(() => {
-          // Do something
+          // eslint-disable-next-line sonarjs/no-nested-functions -- testing
+          foo(() => {
+            // Do something
+          })
         })
       })
     })
@@ -54,6 +58,7 @@ foo(() => {
 
 const obj: Record<string, string | undefined> = {}
 
+// oxlint-disable-next-line typescript/no-deprecated -- testing
 export default class Test extends Basic implements X {
   path: typeof path
 
@@ -65,6 +70,7 @@ export default class Test extends Basic implements X {
   }
 
   constructor() {
+    // oxlint-disable-next-line typescript/no-deprecated -- testing
     super()
     this.path = path
     this.name = { key: 'key', value: obj.value }

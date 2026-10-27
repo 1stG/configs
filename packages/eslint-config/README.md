@@ -33,9 +33,10 @@ enabled only when installed (`import.meta.resolve`). ESLint awaits the returned 
 `markup` is enabled by default and `**/*.html` is no longer ignored. The
 default ignores skip code owned by Oxlint (`.js/.ts/.jsx/.tsx/.vue`), styles
 owned by Stylelint, HTML owned by markuplint, lockfiles and build output.
-`code` defaults to whether `typescript-eslint` is installed; set `code: true`
-to force it or `code: false` to disable it. Run ESLint only on the non-code
-extensions when code mode is off:
+`code` defaults to whether `typescript-eslint` is installed. Setting
+`code: true` requires `typescript-eslint` to be installed and throws otherwise;
+`code: false` disables it. Run ESLint only on the non-code extensions when
+code mode is off:
 
 ```sh
 eslint "**/*.{md,mdx,json,jsonc,json5,yaml,yml,toml}"

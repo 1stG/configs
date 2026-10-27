@@ -87,6 +87,7 @@ export const defineConfig = ({
       ...(typeAware && {
         'typescript/await-thenable': 'error',
         'typescript/no-floating-promises': 'error',
+        'typescript/no-deprecated': 'error',
         'typescript/no-misused-promises': 'error',
         'typescript/no-unnecessary-condition': 'error',
         'typescript/no-unnecessary-qualifier': 'error',
