@@ -44,3 +44,15 @@ describe('@1stg/nano-staged', () => {
     expect(config['*.ts?(x)']).toBeUndefined()
   })
 })
+
+it('supports vue-tsc type checking', () => {
+  const config = defineStaged({
+    cwd: process.cwd(),
+    formatter: false,
+    linter: false,
+    stylelint: false,
+    tsconfig: 'tsconfig.json',
+    typecheck: 'vue-tsc',
+  })
+  expect(config['*.{ts,tsx,vue}']).toBeTypeOf('function')
+})

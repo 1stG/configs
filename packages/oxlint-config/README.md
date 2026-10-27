@@ -31,19 +31,20 @@ Use `defineConfig` only when you need options.
 
 ## Options
 
-| Option           | Default                    | Description                        |
-| ---------------- | -------------------------- | ---------------------------------- |
-| `categories`     | `{ correctness: 'error' }` | Oxlint categories.                 |
-| `jsdoc`          | `true`                     | Enable the JSDoc plugin.           |
-| `jsPlugins`      | `[]`                       | ESLint plugins to load (alpha).    |
-| `rules`          | `{}`                       | Extra rule overrides.              |
-| `ignorePatterns` | `[]`                       | Native Oxlint ignore patterns.     |
-| `node`           | `true`                     | Node.js globals and rules.         |
-| `promise`        | `true`                     | Enable the Promise plugin.         |
-| `react`          | installed `react`          | React and JSX accessibility rules. |
-| `vue`            | installed `vue`            | Vue rules.                         |
-| `vitest`         | installed `vitest`         | Vitest globals and rules.          |
-| `jest`           | installed `jest`           | Jest globals and rules.            |
+| Option           | Default                     | Description                        |
+| ---------------- | --------------------------- | ---------------------------------- |
+| `categories`     | `{ correctness: 'error' }`  | Oxlint categories.                 |
+| `jsdoc`          | `true`                      | Enable the JSDoc plugin.           |
+| `jsPlugins`      | `[]`                        | ESLint plugins to load (alpha).    |
+| `rules`          | `{}`                        | Extra rule overrides.              |
+| `ignorePatterns` | `[]`                        | Native Oxlint ignore patterns.     |
+| `node`           | `true`                      | Node.js globals and rules.         |
+| `promise`        | `true`                      | Enable the Promise plugin.         |
+| `react`          | installed `react`           | React and JSX accessibility rules. |
+| `vue`            | installed `vue`             | Vue rules.                         |
+| `vitest`         | installed `vitest`          | Vitest globals and rules.          |
+| `jest`           | installed `jest`            | Jest globals and rules.            |
+| `typeAware`      | installed `oxlint-tsgolint` | Enable rules requiring type info.  |
 
 `ignorePatterns` is the native Oxlint field and can be passed directly; there
 is no separate `ignores` alias.
@@ -76,7 +77,11 @@ import, jsdoc, react, vue, node, promise, Vitest, Jest) cover the rest.
 
 - Oxlint parses JavaScript, TypeScript, JSX and Vue. Markdown, JSON, YAML and
   TOML are formatted by `@1stg/oxfmt-config` instead of linted.
-- Type-aware rules require the `oxlint-tsgolint` package and `--type-aware`.
+- Type-aware rules require the `oxlint-tsgolint` package. `oxlint --type-aware`
+  enables Oxlint's own type-aware defaults, but the extra rules added by this
+  preset (for example `typescript/no-misused-promises`) are guarded by
+  `typeAware` and need `typeAware: true` (or an installed `oxlint-tsgolint`, which
+  is the default).
 
 ## Sponsors and Backers
 

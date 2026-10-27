@@ -16,6 +16,8 @@ export interface OxlintConfigOptions extends OxlintConfig {
   vitest?: boolean
   /** Enable Jest globals and rules. @default false */
   jest?: boolean
+  /** Enable rules that require type information. @default installed `oxlint-tsgolint` */
+  typeAware?: boolean
 }
 
 /**
@@ -25,6 +27,7 @@ export interface OxlintConfigOptions extends OxlintConfig {
 export const defineConfig = ({
   categories = { correctness: 'error' },
   jest = isPkgAvailable('jest'),
+  typeAware = isPkgAvailable('oxlint-tsgolint/package.json'),
   jsdoc = true,
   node = true,
   promise = true,
@@ -66,10 +69,14 @@ export const defineConfig = ({
   if (jest) {
     plugins.push('jest')
   }
-  plugins.push(...(extraPlugins ?? []))
+  plugins.push(...extraPlugins)
 
   return {
     ...options,
+    options: {
+      ...options.options,
+      ...(typeAware && { typeAware: true }),
+    },
     plugins,
     categories,
     env: {
@@ -82,6 +89,22 @@ export const defineConfig = ({
       ...extraEnv,
     },
     rules: {
+      ...(typeAware && {
+        'typescript/await-thenable': 'error',
+        'typescript/no-floating-promises': 'error',
+        'typescript/no-misused-promises': 'error',
+        'typescript/no-unnecessary-condition': 'error',
+        'typescript/no-unnecessary-qualifier': 'error',
+        'typescript/no-unnecessary-type-arguments': 'error',
+        'typescript/prefer-optional-chain': 'error',
+        'typescript/prefer-readonly': 'error',
+        'typescript/prefer-reduce-type-parameter': 'error',
+        'typescript/require-array-sort-compare': [
+          'error',
+          { ignoreStringArrays: true },
+        ],
+        'typescript/restrict-plus-operands': 'error',
+      }),
       // Formatting-adjacent rules are left to Oxfmt, which also sorts imports.
       curly: ['error', 'all'],
       eqeqeq: ['error', 'always'],

@@ -7,8 +7,8 @@ import pkg from '../package.json' with { type: 'json' }
 
 const PLUGIN_NAMES = [
   ...new Set([
-    ...Object.keys(pkg.dependencies ?? {}),
-    ...Object.keys(pkg.peerDependencies ?? {}),
+    ...Object.keys(pkg.dependencies),
+    ...Object.keys(pkg.peerDependencies),
   ]),
 ]
   .filter(
