@@ -8,7 +8,6 @@ export type OxfmtConfigOptions = OxfmtConfig
  */
 export const defineConfig = (options: OxfmtConfigOptions = {}): OxfmtConfig => ({
   arrowParens: 'avoid',
-  printWidth: 100,
   semi: false,
   singleAttributePerLine: true,
   singleQuote: true,
