@@ -22,12 +22,7 @@ export declare class TestCase<T = unknown> {
   ): Subscription
 
   /** @deprecated Use an observer instead of a complete callback */
-  subscribe(
-    // eslint-disable-next-line @typescript-eslint/unified-signatures
-    next: (value: T) => void,
-    error: null | undefined,
-    complete: () => void,
-  ): Subscription
+  subscribe(next: (value: T) => void, error: null | undefined, complete: () => void): Subscription
 
   subscribe(
     next?: (value: T) => void,

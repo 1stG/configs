@@ -24,9 +24,11 @@ foo(function () {
   foo(function () {
     foo(function () {
       foo(function () {
-        // eslint-disable-next-line sonarjs/no-nested-functions -- testing
         foo(function () {
-          // Do something
+          // eslint-disable-next-line sonarjs/no-nested-functions -- testing
+          foo(function () {
+            // Do something
+          })
         })
       })
     })

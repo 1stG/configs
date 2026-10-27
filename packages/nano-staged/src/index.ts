@@ -54,11 +54,17 @@ const resolveTsconfig = (cwd: string): string => {
   return path.relative(cwd, tsconfig)
 }
 
+const LINTERS = ['oxlint', 'eslint'] as const
+
+const resolveLinter = (): NanoStagedOptions['linter'] => LINTERS.find(isPkgAvailable) ?? false
+
+/* eslint-disable sonarjs/cognitive-complexity -- config builder */
+
 export const defineConfig = ({
   commands = {},
   cwd = process.cwd(),
   formatter = 'prettier',
-  linter = isPkgAvailable('oxlint') ? 'oxlint' : isPkgAvailable('eslint') ? 'eslint' : false,
+  linter = resolveLinter(),
   stylelint = isPkgAvailable('stylelint'),
   typecheck = false,
   tsconfig,
@@ -79,8 +85,12 @@ export const defineConfig = ({
   const lintTask = linter ? [command[linter]] : []
   const stylelintTask = stylelint ? [command.stylelint] : []
   const dataLinterTask = linter === 'eslint' ? [command.eslint] : []
-  const formatterCommand =
-    formatter === false ? null : formatter === 'prettier' ? command.prettier : command.oxfmt
+  let formatterCommand: string | null = null
+  if (formatter === 'prettier') {
+    formatterCommand = command.prettier
+  } else if (formatter !== false) {
+    formatterCommand = command.oxfmt
+  }
 
   const codeTask = [...lintTask, ...(formatterCommand ? [formatterCommand] : [])]
   const styleTask = [...stylelintTask, ...(formatterCommand ? [formatterCommand] : [])]

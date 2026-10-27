@@ -5,14 +5,13 @@ import { promisify } from 'node:util'
 import { interval } from 'rxjs'
 import type { Position } from 'unist'
 
-// eslint-disable-next-line sonarjs/deprecation -- testing
 import { content, TestCase } from './_test'
 
 promisify(fs.readFile)
 
 /** @deprecated */
 class Basic {
-  // eslint-disable-next-line sonarjs/deprecation -- testing
+  // oxlint-disable-next-line typescript/no-deprecated -- testing
   prop: string = content
 }
 
@@ -46,9 +45,11 @@ foo(() => {
   foo(() => {
     foo(() => {
       foo(() => {
-        // eslint-disable-next-line sonarjs/no-nested-functions -- testing
         foo(() => {
-          // Do something
+          // eslint-disable-next-line sonarjs/no-nested-functions -- testing
+          foo(() => {
+            // Do something
+          })
         })
       })
     })
@@ -57,7 +58,7 @@ foo(() => {
 
 const obj: Record<string, string | undefined> = {}
 
-// eslint-disable-next-line sonarjs/deprecation -- testing
+// oxlint-disable-next-line typescript/no-deprecated -- testing
 export default class Test extends Basic implements X {
   path: typeof path
 
@@ -69,6 +70,7 @@ export default class Test extends Basic implements X {
   }
 
   constructor() {
+    // oxlint-disable-next-line typescript/no-deprecated -- testing
     super()
     this.path = path
     this.name = { key: 'key', value: obj.value }
@@ -85,13 +87,13 @@ interval(1000).subscribe()
 
 new TestCase<number>().subscribe()
 
-// eslint-disable-next-line no-restricted-syntax, sonarjs/redundant-type-aliases
+// eslint-disable-next-line sonarjs/redundant-type-aliases
 export type A = number
-// eslint-disable-next-line no-restricted-syntax, sonarjs/redundant-type-aliases
+// eslint-disable-next-line sonarjs/redundant-type-aliases
 export type B = A
 export type C = readonly number[]
 export type D = readonly number[]
-// eslint-disable-next-line @typescript-eslint/no-duplicate-type-constituents
+// oxlint-disable-next-line typescript/no-duplicate-type-constituents
 export type E = A | B
 export type F = number[]
 export type G = NodeJS.Immediate

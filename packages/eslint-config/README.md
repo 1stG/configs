@@ -7,8 +7,12 @@ ESLint is kept for the file types Oxlint cannot parse:
 - YAML (`eslint-plugin-yml`)
 - TOML (`eslint-plugin-toml`)
 
-JS/TS/JSX/Vue stay on `@1stg/oxlint-config`. `eslint-plugin-oxlint` disables
-the rules Oxlint already covers, so nothing is reported twice.
+JS/TS/JSX/Vue are owned by `@1stg/oxlint-config`. When `typescript-eslint` is
+installed, `code` mode is enabled automatically and additionally lints
+JS/TS/JSX with `typescript-eslint` plus optional `eslint-plugin-regexp` /
+`eslint-plugin-sonarjs`, while `eslint-plugin-oxlint` disables every rule
+Oxlint already covers. Pass `code: false` to keep the thin file-type-only
+behavior. Vue templates remain with Oxlint/markuplint.
 
 ## Usage
 
@@ -28,8 +32,11 @@ enabled only when installed (`import.meta.resolve`). ESLint awaits the returned 
 `eslint-plugin-markup` is an optional peer: when installed on Node >= 24,
 `markup` is enabled by default and `**/*.html` is no longer ignored. The
 default ignores skip code owned by Oxlint (`.js/.ts/.jsx/.tsx/.vue`), styles
-owned by Stylelint, HTML owned by markuplint, lockfiles and build output. Run
-ESLint only on those extensions:
+owned by Stylelint, HTML owned by markuplint, lockfiles and build output.
+`code` defaults to whether `typescript-eslint` is installed. Setting
+`code: true` requires `typescript-eslint` to be installed and throws otherwise;
+`code: false` disables it. Run ESLint only on the non-code extensions when
+code mode is off:
 
 ```sh
 eslint "**/*.{md,mdx,json,jsonc,json5,yaml,yml,toml}"
@@ -45,15 +52,16 @@ Use `defineConfig` only when you need options.
 
 ## Options
 
-| Option     | Default   | Description                                                         |
-| ---------- | --------- | ------------------------------------------------------------------- |
-| `markdown` | `true`    | Lint Markdown/MDX.                                                  |
-| `jsonc`    | `true`    | Lint JSON/JSONC/JSON5.                                              |
-| `yaml`     | installed | Lint YAML when installed.                                           |
-| `toml`     | installed | Lint TOML when installed.                                           |
-| `oxlint`   | `true`    | Disable rules Oxlint already owns.                                  |
-| `markup`   | auto      | Lint HTML with `eslint-plugin-markup` on Node >= 24 when installed. |
-| `ignores`  | `[]`      | Extra ignore patterns.                                              |
+| Option     | Default                       | Description                                                         |
+| ---------- | ----------------------------- | ------------------------------------------------------------------- |
+| `markdown` | `true`                        | Lint Markdown/MDX.                                                  |
+| `jsonc`    | `true`                        | Lint JSON/JSONC/JSON5.                                              |
+| `yaml`     | installed                     | Lint YAML when installed.                                           |
+| `toml`     | installed                     | Lint TOML when installed.                                           |
+| `code`     | installed `typescript-eslint` | Lint JS/TS/JSX with rules Oxlint does not cover.                    |
+| `oxlint`   | `true`                        | Disable rules Oxlint already owns.                                  |
+| `markup`   | auto                          | Lint HTML with `eslint-plugin-markup` on Node >= 24 when installed. |
+| `ignores`  | `[]`                          | Extra ignore patterns.                                              |
 
 ## Sponsors and Backers
 
