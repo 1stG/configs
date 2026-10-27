@@ -7,11 +7,13 @@ ESLint is kept for the file types Oxlint cannot parse:
 - YAML (`eslint-plugin-yml`)
 - TOML (`eslint-plugin-toml`)
 
-By default JS/TS/JSX/Vue stay on `@1stg/oxlint-config`. An opt-in `code` mode
-lints JS/TS/JSX with `typescript-eslint` and optional `eslint-plugin-regexp` /
-`eslint-plugin-sonarjs`,
-while `eslint-plugin-oxlint` disables every rule Oxlint already covers, so
-nothing is reported twice. Vue templates remain with Oxlint/markuplint.
+By default JS/TS/JSX/Vue stay on `@1stg/oxlint-config`. When
+`typescript-eslint` is installed, `code` mode is enabled automatically and
+lints JS/TS/JSX with `typescript-eslint` plus optional
+`eslint-plugin-regexp` / `eslint-plugin-sonarjs`, while
+`eslint-plugin-oxlint` disables every rule Oxlint already covers. Pass
+`code: false` to keep the thin file-type-only behavior. Vue templates remain
+with Oxlint/markuplint.
 
 ## Usage
 
@@ -32,10 +34,9 @@ enabled only when installed (`import.meta.resolve`). ESLint awaits the returned 
 `markup` is enabled by default and `**/*.html` is no longer ignored. The
 default ignores skip code owned by Oxlint (`.js/.ts/.jsx/.tsx/.vue`), styles
 owned by Stylelint, HTML owned by markuplint, lockfiles and build output.
-`code` defaults to whether `typescript-eslint` is installed; when enabled,
-JS/TS/JSX are linted with only the Oxlint-uncovered rules (`eslint-plugin-regexp`
-and `eslint-plugin-sonarjs` are used when installed). Run ESLint only on those extensions when code mode is
-off:
+`code` defaults to whether `typescript-eslint` is installed; set `code: true`
+to force it or `code: false` to disable it. Run ESLint only on the non-code
+extensions when code mode is off:
 
 ```sh
 eslint "**/*.{md,mdx,json,jsonc,json5,yaml,yml,toml}"
