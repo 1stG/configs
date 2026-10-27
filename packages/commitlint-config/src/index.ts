@@ -1,14 +1,11 @@
-import { createRequire } from 'node:module'
+// oxlint-disable-next-line typescript/triple-slash-reference
+/// <reference path="../shim.d.ts" preserve="true" />
 
 import conventionalConfig from '@commitlint/config-conventional'
+// @ts-expect-error -- package does not ship type declarations
+import workspaceScopesConfig from '@commitlint/config-workspace-scopes'
 import type { UserConfig } from '@commitlint/types'
 import { isMonorepo } from '@pkgr/utils'
-
-export type * from '../shim.js'
-
-const workspaceScopesModule = createRequire(import.meta.url)(
-  '@commitlint/config-workspace-scopes',
-) as UserConfig & { default?: UserConfig }
 
 export interface CommitlintConfigOptions extends UserConfig {
   /** Also validate scopes against the workspace package names. @default isMonorepo() */
@@ -32,8 +29,7 @@ export const defineConfig = ({
     return conventional
   }
 
-  const workspaceScopes: UserConfig =
-    workspaceScopesModule.default ?? workspaceScopesModule
+  const workspaceScopes: UserConfig = workspaceScopesConfig
 
   return {
     ...conventional,
