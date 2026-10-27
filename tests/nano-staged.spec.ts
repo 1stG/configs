@@ -19,13 +19,8 @@ describe('@1stg/nano-staged', () => {
       tsconfig: 'tsconfig.json',
       typecheck: 'tsc',
     })
-    expect(config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual([
-      'oxlint --fix',
-      'oxfmt',
-    ])
-    expect(config['*.{ini,properties,pug,rb,sass,sh,styl,stylus}']).toBe(
-      'prettier --write',
-    )
+    expect(config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual(['oxlint --fix', 'oxfmt'])
+    expect(config['*.{ini,properties,pug,rb,sass,sh,styl,stylus}']).toBe('prettier --write')
     expect(config['**/!(*package).json']).toEqual(['oxfmt'])
     expect(config['**/package.json']).toEqual(['prettier --write'])
     expect(config.Dockerfile).toBe('prettier --write')
@@ -40,15 +35,11 @@ describe('@1stg/nano-staged', () => {
       stylelint: true,
       tsconfig: 'tsconfig.json',
     })
-    expect(config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual([
+    expect(config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual(['eslint --fix'])
+    expect(config['*.{css,less,scss}']).toEqual(['stylelint --allow-empty-input --cache --fix'])
+    expect(config['*.{gql,graphql,html,jsonc,json5,md,mdx,toml,yaml,yml}']).toEqual([
       'eslint --fix',
     ])
-    expect(config['*.{css,less,scss}']).toEqual([
-      'stylelint --allow-empty-input --cache --fix',
-    ])
-    expect(
-      config['*.{gql,graphql,html,jsonc,json5,md,mdx,toml,yaml,yml}'],
-    ).toEqual(['eslint --fix'])
     expect(config['**/*.json']).toEqual(['eslint --fix'])
     expect(config['*.ts?(x)']).toBeUndefined()
   })

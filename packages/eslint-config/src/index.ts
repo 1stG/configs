@@ -25,9 +25,7 @@ interface PluginConfigs {
 
 interface MarkdownPlugin {
   flat: Linter.Config
-  createRemarkProcessor: (options: {
-    lintCodeBlocks: boolean
-  }) => Linter.Processor
+  createRemarkProcessor: (options: { lintCodeBlocks: boolean }) => Linter.Processor
 }
 
 const NODE_MAJOR = Number(process.versions.node.split('.')[0])
@@ -107,14 +105,10 @@ export const defineConfig = async ({
   ignores = [],
 }: EslintConfigOptions = {}): Promise<Linter.Config[]> => {
   const defaultIgnores = DEFAULT_IGNORES.filter(
-    pattern =>
-      (!markup || pattern !== '**/*.html') &&
-      (!code || pattern !== CODE_IGNORES),
+    pattern => (!markup || pattern !== '**/*.html') && (!code || pattern !== CODE_IGNORES),
   )
 
-  const configs: Linter.Config[] = [
-    { ignores: [...defaultIgnores, ...ignores] },
-  ]
+  const configs: Linter.Config[] = [{ ignores: [...defaultIgnores, ...ignores] }]
 
   if (markup) {
     if (NODE_MAJOR < 24) {
@@ -131,9 +125,7 @@ export const defineConfig = async ({
 
   if (code) {
     if (!isInstalled('typescript-eslint')) {
-      throw new Error(
-        '@1stg/eslint-config: `code` requires the `typescript-eslint` package',
-      )
+      throw new Error('@1stg/eslint-config: `code` requires the `typescript-eslint` package')
     }
 
     const tseslint = await load<{
@@ -148,9 +140,7 @@ export const defineConfig = async ({
 
     if (isInstalled('eslint-plugin-regexp')) {
       const regexp = await load<PluginConfigs>('eslint-plugin-regexp')
-      configs.push(
-        ...toConfigs(regexp.configs['flat/recommended']).map(withCodeFiles),
-      )
+      configs.push(...toConfigs(regexp.configs['flat/recommended']).map(withCodeFiles))
     }
   }
 
