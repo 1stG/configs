@@ -1,6 +1,36 @@
 # @1stg/markuplint-config
 
-Personal but Shareable markuplint Configuration for all 1stG.me projects
+Personal but Shareable markuplint Configuration for all 1stG.me projects.
+
+## Usage
+
+`markuplint.config.js`:
+
+```js
+import { defineConfig } from '@1stg/markuplint-config'
+
+export default defineConfig({ vue: true })
+```
+
+The default export is the zero-config version and can be used from
+`.markuplintrc` with `"extends": ["@1stg/markuplint-config"]`.
+
+The default export can be re-exported directly:
+
+```js
+export { default } from '@1stg/markuplint-config'
+```
+
+Use `defineConfig` only when you need options.
+
+## Options
+
+| Option | Default   | Description                                      |
+| ------ | --------- | ------------------------------------------------ |
+| `vue`  | installed | Add the Vue parser/spec when `vue` is installed. |
+
+The base extends `markuplint:recommended`; the Vue `parser`/`specs` mapping is
+kept on top of it, so `.vue` files do not fall back to the HTML parser.
 
 ## Sponsors and Backers
 

@@ -8,7 +8,21 @@
   "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
   "funding": "https://opencollective.com/configs",
   "license": "MIT",
-  "main": "index.js",
+  "engines": {
+    "node": "^22.18.0 || >=24.11.0"
+  },
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib"
+  ],
   "peerDependencies": {
     "@commitlint/cli": ">=11.0.0",
     "nano-staged": ">=0.8.0",

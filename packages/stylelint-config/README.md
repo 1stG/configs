@@ -1,6 +1,46 @@
 # @1stg/stylelint-config
 
-Personal but Shareable Stylelint Configuration for all 1stG.me projects
+Personal but Shareable Stylelint Configuration for all 1stG.me projects.
+
+## Usage
+
+`stylelint.config.js`:
+
+```js
+import { defineConfig } from '@1stg/stylelint-config'
+
+export default defineConfig({
+  modules: true,
+  scss: true,
+})
+```
+
+The default export is the zero-config version, usable from a JSON config:
+
+```json
+{ "extends": ["@1stg/stylelint-config"] }
+```
+
+The default export can be re-exported directly:
+
+```js
+export { default } from '@1stg/stylelint-config'
+```
+
+Use `defineConfig` only when you need options.
+
+## Options
+
+| Option      | Default   | Description                                          |
+| ----------- | --------- | ---------------------------------------------------- |
+| `modules`   | `false`   | Ignore the CSS Modules pseudo classes.               |
+| `prettier`  | installed | Run Prettier when `stylelint-prettier` is installed. |
+| `scss`      | `false`   | Add the SCSS syntax and rules.                       |
+| `scssLoose` | `false`   | Add the SCSS syntax with the strict rules off.       |
+| `vue`       | installed | Ignore Vue pseudo elements when `vue` is installed.  |
+
+`stylelint-prettier` is enabled when it is installed (it is an optional peer);
+the config no longer decides based on whether `eslint` is installed.
 
 ## Sponsors and Backers
 

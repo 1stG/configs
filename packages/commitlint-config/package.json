@@ -10,11 +10,34 @@
   "engines": {
     "node": "^22.18.0 || >=24.11.0"
   },
-  "main": "index.js",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "shim.d.ts"
+  ],
+  "peerDependencies": {
+    "@commitlint/types": "^21.2.3"
+  },
+  "peerDependenciesMeta": {
+    "@commitlint/types": {
+      "optional": true
+    }
+  },
   "dependencies": {
     "@commitlint/config-conventional": "^21.0.2",
     "@commitlint/config-workspace-scopes": "^21.0.2",
     "@pkgr/utils": "^4.1.0"
+  },
+  "devDependencies": {
+    "@commitlint/types": "^21.2.3"
   },
   "publishConfig": {
     "access": "public"

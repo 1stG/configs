@@ -1,7 +1,7 @@
 {
   "name": "@1stg/postcss-config",
   "version": "7.1.0",
-  "type": "commonjs",
+  "type": "module",
   "description": "Personal but Shareable PostCSS Configuration for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/postcss-config",
@@ -9,15 +9,22 @@
   "funding": "https://opencollective.com/configs",
   "license": "MIT",
   "engines": {
-    "node": "^22.22.3 || ^24.15.0 || >=26.0.0"
+    "node": "^22.18.0 || >=24.11.0"
   },
-  "main": "index.js",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "exports": {
-    ".": "./index.js",
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
     "./package.json": "./package.json"
   },
+  "files": [
+    "lib"
+  ],
   "peerDependencies": {
-    "postcss": ">=7.0.0",
+    "postcss": "^8.0.0",
     "postcss-load-config": ">=4.0.0"
   },
   "peerDependenciesMeta": {
@@ -26,7 +33,6 @@
     }
   },
   "dependencies": {
-    "@pkgr/utils": "^4.1.0",
     "autoprefixer": "^10.5.0",
     "cssnano": "^9.0.0",
     "cssnano-preset-advanced": "^10.0.0",

@@ -1,6 +1,40 @@
 # @1stg/commitlint-config
 
-Personal but Shareable Commitlint Configuration for all 1stG.me projects
+Personal but Shareable Commitlint Configuration for all 1stG.me projects.
+
+## Usage
+
+`commitlint.config.js`:
+
+```js
+import { defineConfig } from '@1stg/commitlint-config'
+
+export default defineConfig({ monorepo: true })
+```
+
+The default export keeps the conventional config and adds workspace scopes
+when the project is a monorepo:
+
+```json
+{ "extends": ["@1stg/commitlint-config"] }
+```
+
+The default export can be re-exported directly:
+
+```js
+export { default } from '@1stg/commitlint-config'
+```
+
+Use `defineConfig` only when you need options.
+
+## Options
+
+| Option     | Default        | Description                                               |
+| ---------- | -------------- | --------------------------------------------------------- |
+| `monorepo` | `isMonorepo()` | Also validate scopes against the workspace package names. |
+
+`monorepo` defaults to `isMonorepo()` (the presence of workspaces in the nearest
+`package.json`) and can be overridden explicitly.
 
 ## Sponsors and Backers
 

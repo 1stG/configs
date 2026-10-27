@@ -8,20 +8,19 @@
   "funding": "https://opencollective.com/configs",
   "license": "MIT",
   "engines": {
-    "node": ">=24.11.0"
+    "node": "^22.18.0 || >=24.11.0"
   },
   "dependencies": {
-    "@1stg/babel-preset": "^5.0.0",
     "@1stg/commitlint-config": "^7.0.0",
     "@1stg/eslint-config": "^11.0.0",
     "@1stg/markuplint-config": "^5.0.0",
     "@1stg/nano-staged": "^1.0.0",
+    "@1stg/oxfmt-config": "^1.0.0",
+    "@1stg/oxlint-config": "^1.0.0",
     "@1stg/prettier-config": "^6.0.0",
     "@1stg/remark-preset": "^4.0.0",
     "@1stg/simple-git-hooks": "^2.1.0",
-    "@1stg/tsconfig": "^4.0.0",
-    "@babel/core": "^8.0.0",
-    "tslib": "^2.8.1"
+    "@1stg/tsconfig": "^4.0.0"
   },
   "publishConfig": {
     "access": "public"

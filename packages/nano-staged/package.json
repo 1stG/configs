@@ -11,22 +11,24 @@
   "engines": {
     "node": "^22.18.0 || >=24.11.0"
   },
-  "main": "index.js",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "exports": {
-    ".": "./index.js",
-    "./package.json": "./package.json",
-    "./ngc": "./ngc.js",
-    "./tsc": "./tsc.js",
-    "./vue-tsc": "./vue-tsc.js"
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
   },
+  "files": [
+    "lib"
+  ],
   "peerDependencies": {
     "nano-staged": ">=0.8.0"
   },
   "dependencies": {
-    "@1stg/config": "^1.2.1",
-    "@1stg/prettier-config": "^6.0.0",
     "@1stg/tsconfig": "^4.0.0",
-    "@pkgr/core": "^0.3.6",
+    "@pkgr/utils": "^4.1.0",
     "prettier": "^3.9.10"
   },
   "publishConfig": {

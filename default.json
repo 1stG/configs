@@ -16,10 +16,6 @@
   "major": {
     "automerge": false
   },
-  "postUpdateOptions": [
-    "npmDedupe",
-    "pnpmDedupe",
-    "yarnDedupeFewer"
-  ],
+  "postUpdateOptions": ["npmDedupe", "pnpmDedupe", "yarnDedupeFewer"],
   "rangeStrategy": "bump"
 }

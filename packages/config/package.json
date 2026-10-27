@@ -8,12 +8,21 @@
   "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
   "funding": "https://opencollective.com/configs",
   "license": "MIT",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "engines": {
+    "node": "^22.18.0 || >=24.11.0"
+  },
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "exports": {
-    ".": "./index.js",
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
     "./package.json": "./package.json"
   },
+  "files": [
+    "lib"
+  ],
   "publishConfig": {
     "access": "public"
   }

@@ -1,0 +1,11 @@
+{
+  "extends": "@1stg/tsconfig/lib",
+  "compilerOptions": {
+    "composite": true,
+    "declarationMap": true,
+    "importHelpers": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "types": ["node"]
+  }
+}

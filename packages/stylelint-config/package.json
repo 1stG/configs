@@ -11,21 +11,30 @@
   "engines": {
     "node": "^22.18.0 || >=24.11.0"
   },
-  "main": "index.js",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "exports": {
-    ".": "./index.js",
-    "./package.json": "./package.json",
-    "./loose": "./loose.js",
-    "./modules": "./modules.js",
-    "./scss": "./scss/index.js",
-    "./scss/loose": "./scss/loose.js"
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
   },
+  "files": [
+    "lib"
+  ],
   "peerDependencies": {
-    "stylelint": ">=16.0.0"
+    "prettier": ">=3.6.0",
+    "stylelint": ">=16.0.0",
+    "stylelint-prettier": "^5.0.3"
+  },
+  "peerDependenciesMeta": {
+    "stylelint-prettier": {
+      "optional": true
+    }
   },
   "dependencies": {
-    "@1stg/config": "^1.1.0",
-    "@pkgr/core": "^0.3.6",
+    "@pkgr/utils": "^4.1.0",
     "postcss-html": "^2.0.0",
     "postcss-less": "^6.0.0",
     "postcss-markdown": "^2.0.0",
@@ -34,7 +43,6 @@
     "stylelint-config-standard": ">=38.0.0",
     "stylelint-high-performance-animation": "^1.1.0 || ^2.0.0",
     "stylelint-no-unsupported-browser-features": "^8.1.1",
-    "stylelint-prettier": "^5.0.3",
     "stylelint-scss": "^6.14.0 || ^7.1.1"
   },
   "publishConfig": {

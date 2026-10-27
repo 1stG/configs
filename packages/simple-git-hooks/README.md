@@ -1,6 +1,35 @@
 # @1stg/simple-git-hooks
 
-Personal but Shareable simple-git-hooks Configuration for all 1stG.me projects
+Personal but Shareable simple-git-hooks Configuration for all 1stG.me projects.
+
+## Usage
+
+`.simple-git-hooks.js`:
+
+```js
+import { defineConfig } from '@1stg/simple-git-hooks'
+
+export default defineConfig()
+```
+
+The default export can be re-exported directly:
+
+```js
+export { default } from '@1stg/simple-git-hooks'
+```
+
+Use `defineConfig` only when you need options.
+
+## Options
+
+| Option   | Default              | Description                              |
+| -------- | -------------------- | ---------------------------------------- |
+| `runner` | detected, else `npx` | Script runner used in the hook commands. |
+
+The runner is detected from the lockfile (`yarn`, `pnpm`, …) by default; pass it
+explicitly when the hooks run in an environment where detection is unreliable.
+`pre-commit` is only generated when `nano-staged` is installed, and `commit-msg`
+only when `@commitlint/cli` is installed.
 
 ## Sponsors and Backers
 

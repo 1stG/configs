@@ -1,15 +1,38 @@
 {
   "name": "@1stg/browserslist-config",
   "version": "2.1.4",
-  "type": "commonjs",
+  "type": "module",
   "description": "Personal but Shareable Browserslist Configuration for all 1stG.me projects",
   "repository": "git+https://github.com/1stG/configs.git",
   "homepage": "https://github.com/1stG/configs/tree/master/packages/browserslist-config",
   "author": "JounQin <admin@1stg.me> (https://www.1stG.me)",
   "funding": "https://opencollective.com/configs",
   "license": "MIT",
+  "engines": {
+    "node": "^22.18.0 || >=24.11.0"
+  },
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./latest": {
+      "types": "./lib/latest.d.ts",
+      "default": "./lib/latest.js"
+    },
+    "./modern": {
+      "types": "./lib/modern.d.ts",
+      "default": "./lib/modern.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib"
+  ],
   "peerDependencies": {
-    "browserslist": ">=4.0.0"
+    "browserslist": ">=4.24.5"
   },
   "publishConfig": {
     "access": "public"

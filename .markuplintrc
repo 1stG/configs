@@ -1,6 +1,0 @@
-{
-  "extends": [
-    "@1stg/markuplint-config/angular",
-    "@1stg/markuplint-config/vue"
-  ]
-}

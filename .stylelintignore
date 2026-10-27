@@ -1,4 +1,6 @@
 coverage
+lib
+*.map
 LICENSE
 .type-coverage
 .*ignore
@@ -12,7 +14,6 @@ LICENSE
 *.jsx
 *.lock
 *.log
-*.mjs
 *.mts
 *.patch
 # TODO: make it work
