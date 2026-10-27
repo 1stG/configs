@@ -1,4 +1,14 @@
 {
   "extends": "@1stg/tsconfig/dom-lib",
-  "exclude": ["packages", "**/lib"]
+  "exclude": ["packages", "**/lib"],
+  "compilerOptions": {
+    "paths": {
+      "@1stg/browserslist-config/*": [
+        "./packages/browserslist-config/src/*.ts"
+      ],
+      "@1stg/*": ["./packages/*/src/index.ts"]
+    }
+  },
+  "files": ["packages/commitlint-config/shim.d.ts"],
+  "include": ["**/*"]
 }
