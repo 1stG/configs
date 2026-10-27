@@ -1,3 +1,4 @@
+/* oxlint-disable react-perf/jsx-no-new-function-as-prop -- testing */
 import { PureComponent, useState } from 'react'
 
 export default class Test extends PureComponent {

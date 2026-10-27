@@ -53,7 +53,7 @@ export const defineConfig = ({
     plugins.push('node')
   }
   if (react) {
-    plugins.push('react', 'jsx-a11y')
+    plugins.push('react', 'jsx-a11y', 'react-perf')
   }
   if (vue) {
     plugins.push('vue')

@@ -4,6 +4,7 @@ describe('@1stg/oxlint-config', () => {
   it('enables framework plugins on demand', () => {
     expect(defineOxlint({ react: false }).plugins).not.toContain('react')
     expect(defineOxlint({ react: true }).plugins).toContain('react')
+    expect(defineOxlint({ react: true }).plugins).toContain('react-perf')
     expect(defineOxlint().categories).toEqual({
       correctness: 'error',
       perf: 'warn',
