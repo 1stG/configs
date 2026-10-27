@@ -35,6 +35,15 @@ still usable directly from `.prettierrc`:
 "@1stg/prettier-config"
 ```
 
+## Default print width
+
+`printWidth` now defaults to **100**, matching Oxfmt's default, instead of
+Prettier's 80. Pass `printWidth: 80` if you need the previous formatting:
+
+```js
+export default defineConfig({ printWidth: 80 })
+```
+
 ## Plugins are optional peers
 
 Install only the Prettier plugins for the languages you format. `defineConfig`
