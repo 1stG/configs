@@ -23,9 +23,7 @@ interface PluginConfigs {
 
 interface MarkdownPlugin {
   flat: Linter.Config
-  createRemarkProcessor: (options: {
-    lintCodeBlocks: boolean
-  }) => Linter.Processor
+  createRemarkProcessor: (options: { lintCodeBlocks: boolean }) => Linter.Processor
 }
 
 const NODE_MAJOR = Number(process.versions.node.split('.')[0])
@@ -94,9 +92,7 @@ export const defineConfig = async ({
     ? DEFAULT_IGNORES.filter(pattern => pattern !== '**/*.html')
     : DEFAULT_IGNORES
 
-  const configs: Linter.Config[] = [
-    { ignores: [...defaultIgnores, ...ignores] },
-  ]
+  const configs: Linter.Config[] = [{ ignores: [...defaultIgnores, ...ignores] }]
 
   if (markup) {
     if (NODE_MAJOR < 24) {
@@ -126,18 +122,12 @@ export const defineConfig = async ({
 
   if (jsoncEnabled) {
     const jsonc = await load<PluginConfigs>('eslint-plugin-jsonc')
-    configs.push(
-      ...jsonc.configs['flat/recommended-with-jsonc'],
-      ...jsonc.configs['flat/prettier'],
-    )
+    configs.push(...jsonc.configs['flat/recommended-with-jsonc'], ...jsonc.configs['flat/prettier'])
   }
 
   if (yaml) {
     const yml = await load<PluginConfigs>('eslint-plugin-yml')
-    configs.push(
-      ...yml.configs['flat/recommended'],
-      ...yml.configs['flat/prettier'],
-    )
+    configs.push(...yml.configs['flat/recommended'], ...yml.configs['flat/prettier'])
   }
 
   if (tomlEnabled) {

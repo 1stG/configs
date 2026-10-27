@@ -10,9 +10,9 @@ describe('@1stg/oxlint-config', () => {
     expect(defineOxlint({ typeAware: true }).rules).toHaveProperty(
       'typescript/no-floating-promises',
     )
-    expect(
-      defineOxlint({ ignorePatterns: ['**/generated/**'] }).ignorePatterns,
-    ).toContain('**/generated/**')
+    expect(defineOxlint({ ignorePatterns: ['**/generated/**'] }).ignorePatterns).toContain(
+      '**/generated/**',
+    )
     expect(
       defineOxlint({
         jsPlugins: ['eslint-plugin-sonarjs'],

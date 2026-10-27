@@ -32,7 +32,7 @@ Use `defineConfig` only when you need options.
 
 | Option            | Default | Description                                                     |
 | ----------------- | ------- | --------------------------------------------------------------- |
-| `printWidth`      | `80`    | Line width (Oxfmt's own default is `100`).                      |
+| `printWidth`      | `100`   | Line width, aligned with Oxfmt's default.                       |
 | `semi`            | `false` | Print semicolons.                                               |
 | `singleQuote`     | `true`  | Use single quotes.                                              |
 | `sortImports`     | `true`  | Sort imports and exports.                                       |
