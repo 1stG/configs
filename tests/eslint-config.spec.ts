@@ -22,9 +22,7 @@ describe('@1stg/eslint-config', () => {
   })
 
   it('accepts extra ignores', async () => {
-    const ignores = (await defineEslint({ ignores: ['**/fixtures/**'] })).find(
-      item => item.ignores,
-    )
+    const ignores = (await defineEslint({ ignores: ['**/fixtures/**'] })).find(item => item.ignores)
     expect(ignores?.ignores).toContain('**/fixtures/**')
   })
 })
@@ -41,11 +39,7 @@ describe('@1stg/eslint-config markup', () => {
     }
 
     const config = await defineEslint({ markup: true })
-    expect(config.some(item => item.name === 'markup/flat-recommended')).toBe(
-      true,
-    )
-    expect(config.find(item => item.ignores)?.ignores).not.toContain(
-      '**/*.html',
-    )
+    expect(config.some(item => item.name === 'markup/flat-recommended')).toBe(true)
+    expect(config.find(item => item.ignores)?.ignores).not.toContain('**/*.html')
   })
 })

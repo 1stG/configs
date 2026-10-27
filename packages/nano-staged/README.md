@@ -33,7 +33,7 @@ Use `defineConfig` only when you need options.
 | `formatter`    | `'prettier'`    | `'oxfmt'`, `'prettier'`, `'both'` (Oxfmt plus Prettier fallback) or `false`. |
 | `linter`       | installed       | `'oxlint'` → `'eslint'` → `false` based on installation.                     |
 | `stylelint`    | installed       | Run `stylelint --fix` when stylelint is installed.                           |
-| `typecheck`    | `false`         | `'tsc'`, `'ngc'`, `'vue-tsc'` or `false`.                                    |
+| `typecheck`    | `false`         | `'tsc'`, `'vue-tsc'` or `false`.                                             |
 | `tsconfig`     | discovered      | Explicit `tsconfig` path, resolved once when the config loads.               |
 | `typeCoverage` | installed       | Run `type-coverage` when installed.                                          |
 | `imagemin`     | installed       | Optimize images with `i` when `@pkgr/imagemin` is installed.                 |

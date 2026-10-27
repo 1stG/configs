@@ -3,9 +3,7 @@
   "exclude": ["packages", "**/lib"],
   "compilerOptions": {
     "paths": {
-      "@1stg/browserslist-config/*": [
-        "./packages/browserslist-config/src/*.ts"
-      ],
+      "@1stg/browserslist-config/*": ["./packages/browserslist-config/src/*.ts"],
       "@1stg/*": ["./packages/*/src/index.ts"]
     }
   }

@@ -4,13 +4,11 @@ import { isPkgAvailable, tryFile, tryPkg } from '@pkgr/utils'
 
 export type Formatter = false | 'oxfmt' | 'prettier' | 'both'
 export type Linter = false | 'oxlint' | 'eslint'
-export type Typecheck = false | 'tsc' | 'ngc' | 'vue-tsc'
+export type Typecheck = false | 'tsc' | 'vue-tsc'
 
 export interface NanoStagedOptions {
   /** Command overrides, e.g. to pass a config file. */
-  commands?: Partial<
-    Record<'oxfmt' | 'oxlint' | 'prettier' | 'stylelint', string>
-  >
+  commands?: Partial<Record<'oxfmt' | 'oxlint' | 'prettier' | 'stylelint', string>>
   /** Base directory used to resolve `tsconfig`. @default process.cwd() */
   cwd?: string
   /** Formatter(s) to run. @default 'prettier' */
@@ -50,9 +48,7 @@ const resolveTsconfig = (cwd: string): string => {
     tryPkg('@1stg/tsconfig')
 
   if (!tsconfig) {
-    throw new Error(
-      '@1stg/nano-staged: no tsconfig found, pass `tsconfig` or disable `typecheck`',
-    )
+    throw new Error('@1stg/nano-staged: no tsconfig found, pass `tsconfig` or disable `typecheck`')
   }
 
   return path.relative(cwd, tsconfig)
@@ -62,11 +58,7 @@ export const defineConfig = ({
   commands = {},
   cwd = process.cwd(),
   formatter = 'prettier',
-  linter = isPkgAvailable('oxlint')
-    ? 'oxlint'
-    : isPkgAvailable('eslint')
-      ? 'eslint'
-      : false,
+  linter = isPkgAvailable('oxlint') ? 'oxlint' : isPkgAvailable('eslint') ? 'eslint' : false,
   stylelint = isPkgAvailable('stylelint'),
   typecheck = false,
   tsconfig,
@@ -88,24 +80,11 @@ export const defineConfig = ({
   const stylelintTask = stylelint ? [command.stylelint] : []
   const dataLinterTask = linter === 'eslint' ? [command.eslint] : []
   const formatterCommand =
-    formatter === false
-      ? null
-      : formatter === 'prettier'
-        ? command.prettier
-        : command.oxfmt
+    formatter === false ? null : formatter === 'prettier' ? command.prettier : command.oxfmt
 
-  const codeTask = [
-    ...lintTask,
-    ...(formatterCommand ? [formatterCommand] : []),
-  ]
-  const styleTask = [
-    ...stylelintTask,
-    ...(formatterCommand ? [formatterCommand] : []),
-  ]
-  const dataTask = [
-    ...dataLinterTask,
-    ...(formatterCommand ? [formatterCommand] : []),
-  ]
+  const codeTask = [...lintTask, ...(formatterCommand ? [formatterCommand] : [])]
+  const styleTask = [...stylelintTask, ...(formatterCommand ? [formatterCommand] : [])]
+  const dataTask = [...dataLinterTask, ...(formatterCommand ? [formatterCommand] : [])]
 
   if (codeTask.length > 0) {
     config[`*.{${CODE_FILES}}`] = codeTask
@@ -143,20 +122,10 @@ export const defineConfig = ({
 
   if (typecheck) {
     const tsconfigPath = tsconfig ?? resolveTsconfig(cwd)
-    const coverageTask = typeCoverage
-      ? [`type-coverage -p ${tsconfigPath}`]
-      : []
+    const coverageTask = typeCoverage ? [`type-coverage -p ${tsconfigPath}`] : []
 
     if (typecheck === 'tsc') {
-      config['*.ts?(x)'] = () => [
-        `tsc -p ${tsconfigPath} --noEmit`,
-        ...coverageTask,
-      ]
-    } else if (typecheck === 'ngc') {
-      config['*.{html,ts}'] = () => [
-        `ngc -p ${tsconfigPath} --noEmit`,
-        ...coverageTask,
-      ]
+      config['*.ts?(x)'] = () => [`tsc -p ${tsconfigPath} --noEmit`, ...coverageTask]
     } else {
       config['*.{ts,tsx,vue}'] = () => [
         `vue-tsc -p ${tsconfigPath} --noEmit --incremental false`,
