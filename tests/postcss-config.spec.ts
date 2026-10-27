@@ -16,8 +16,12 @@ describe('@1stg/postcss-config', () => {
   })
 
   it('lets options override the environment', async () => {
-    expect(await run({ cssnano: false, env: 'production' })).toContain('/* x */')
-    expect(await run({ env: 'development', minify: true })).not.toContain('/* x */')
+    expect(await run({ cssnano: false, env: 'production' })).toContain(
+      '/* x */',
+    )
+    expect(await run({ env: 'development', minify: true })).not.toContain(
+      '/* x */',
+    )
   })
 
   it('maps in development only', () => {

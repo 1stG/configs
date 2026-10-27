@@ -11,6 +11,8 @@ export interface EslintConfigOptions {
   toml?: boolean
   /** Lint HTML with `eslint-plugin-markup` on Node >= 24. @default auto */
   markup?: boolean
+  /** Lint JS/TS/JSX as well, with only rules Oxlint does not cover. @default installed `typescript-eslint` */
+  code?: boolean
   /** Disable the rules Oxlint already implements. @default true */
   oxlint?: boolean
   /** Extra ignore patterns. */
@@ -18,15 +20,19 @@ export interface EslintConfigOptions {
 }
 
 interface PluginConfigs {
-  configs: Record<string, Linter.Config[]>
+  configs: Record<string, Linter.Config | Linter.Config[]>
 }
 
 interface MarkdownPlugin {
   flat: Linter.Config
-  createRemarkProcessor: (options: { lintCodeBlocks: boolean }) => Linter.Processor
+  createRemarkProcessor: (options: {
+    lintCodeBlocks: boolean
+  }) => Linter.Processor
 }
 
 const NODE_MAJOR = Number(process.versions.node.split('.')[0])
+
+const CODE_IGNORES = '**/*.{cjs,cts,js,jsx,mjs,mts,ts,tsx}'
 
 const DEFAULT_IGNORES = [
   '**/.dsh/**',
@@ -48,7 +54,8 @@ const DEFAULT_IGNORES = [
   '**/*.patch',
   '**/*.min.*',
   // Oxlint owns code; stylelint owns styles; markuplint owns HTML.
-  '**/*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}',
+  CODE_IGNORES,
+  '**/*.vue',
   '**/*.{css,less,sass,scss,styl,stylus}',
   '**/*.html',
 ]
@@ -56,6 +63,14 @@ const DEFAULT_IGNORES = [
 /**
  * Check whether an optional peer plugin is installed.
  */
+const toConfigs = (config: Linter.Config | Linter.Config[]): Linter.Config[] =>
+  Array.isArray(config) ? config : [config]
+
+const withCodeFiles = (config: Linter.Config): Linter.Config => ({
+  ...config,
+  files: config.files ?? [CODE_IGNORES],
+})
+
 const isInstalled = (name: string): boolean => {
   try {
     return Boolean(import.meta.resolve(name))
@@ -79,20 +94,27 @@ const load = async <T>(name: string): Promise<T> => {
  * so the config works with ESM-only plugins. ESLint awaits the returned
  * promise before linting.
  */
+/* eslint-disable sonarjs/cognitive-complexity -- config builder */
+
 export const defineConfig = async ({
   markdown = true,
   jsonc: jsoncEnabled = true,
   yaml = isInstalled('eslint-plugin-yml'),
   toml: tomlEnabled = isInstalled('eslint-plugin-toml'),
   oxlint: oxlintEnabled = true,
+  code = isInstalled('typescript-eslint'),
   markup = NODE_MAJOR >= 24 && isInstalled('eslint-plugin-markup'),
   ignores = [],
 }: EslintConfigOptions = {}): Promise<Linter.Config[]> => {
-  const defaultIgnores = markup
-    ? DEFAULT_IGNORES.filter(pattern => pattern !== '**/*.html')
-    : DEFAULT_IGNORES
+  const defaultIgnores = DEFAULT_IGNORES.filter(
+    pattern =>
+      (!markup || pattern !== '**/*.html') &&
+      (!code || pattern !== CODE_IGNORES),
+  )
 
-  const configs: Linter.Config[] = [{ ignores: [...defaultIgnores, ...ignores] }]
+  const configs: Linter.Config[] = [
+    { ignores: [...defaultIgnores, ...ignores] },
+  ]
 
   if (markup) {
     if (NODE_MAJOR < 24) {
@@ -107,9 +129,34 @@ export const defineConfig = async ({
     configs.push(markupPlugin.configs.flatRecommended)
   }
 
+  if (code) {
+    if (!isInstalled('typescript-eslint')) {
+      throw new Error(
+        '@1stg/eslint-config: `code` requires the `typescript-eslint` package',
+      )
+    }
+
+    const tseslint = await load<{
+      configs: { recommended: Linter.Config[] }
+    }>('typescript-eslint')
+    configs.push(...tseslint.configs.recommended.map(withCodeFiles))
+
+    if (isInstalled('eslint-plugin-sonarjs')) {
+      const sonarjs = await load<PluginConfigs>('eslint-plugin-sonarjs')
+      configs.push(...toConfigs(sonarjs.configs.recommended).map(withCodeFiles))
+    }
+
+    if (isInstalled('eslint-plugin-regexp')) {
+      const regexp = await load<PluginConfigs>('eslint-plugin-regexp')
+      configs.push(
+        ...toConfigs(regexp.configs['flat/recommended']).map(withCodeFiles),
+      )
+    }
+  }
+
   if (oxlintEnabled) {
     const oxlint = await load<PluginConfigs>('eslint-plugin-oxlint')
-    configs.push(...oxlint.configs['flat/all'])
+    configs.push(...toConfigs(oxlint.configs['flat/all']))
   }
 
   if (markdown) {
@@ -122,17 +169,23 @@ export const defineConfig = async ({
 
   if (jsoncEnabled) {
     const jsonc = await load<PluginConfigs>('eslint-plugin-jsonc')
-    configs.push(...jsonc.configs['flat/recommended-with-jsonc'], ...jsonc.configs['flat/prettier'])
+    configs.push(
+      ...toConfigs(jsonc.configs['flat/recommended-with-jsonc']),
+      ...toConfigs(jsonc.configs['flat/prettier']),
+    )
   }
 
   if (yaml) {
     const yml = await load<PluginConfigs>('eslint-plugin-yml')
-    configs.push(...yml.configs['flat/recommended'], ...yml.configs['flat/prettier'])
+    configs.push(
+      ...toConfigs(yml.configs['flat/recommended']),
+      ...toConfigs(yml.configs['flat/prettier']),
+    )
   }
 
   if (tomlEnabled) {
     const toml = await load<PluginConfigs>('eslint-plugin-toml')
-    configs.push(...toml.configs['flat/recommended'])
+    configs.push(...toConfigs(toml.configs['flat/recommended']))
   }
 
   return configs

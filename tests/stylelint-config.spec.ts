@@ -15,6 +15,10 @@ describe('@1stg/stylelint-config', () => {
     })
     expect(config.extends).toContain('stylelint-prettier/recommended')
     expect(config.rules?.['selector-pseudo-class-no-unknown']).toBeDefined()
-    expect(config.overrides?.some(override => override.customSyntax === 'postcss-scss')).toBe(true)
+    expect(
+      config.overrides?.some(
+        override => override.customSyntax === 'postcss-scss',
+      ),
+    ).toBe(true)
   })
 })

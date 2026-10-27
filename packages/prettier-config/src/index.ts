@@ -6,9 +6,16 @@ import type { Config } from 'prettier'
 import pkg from '../package.json' with { type: 'json' }
 
 const PLUGIN_NAMES = [
-  ...new Set([...Object.keys(pkg.dependencies), ...Object.keys(pkg.peerDependencies)]),
+  ...new Set([
+    ...Object.keys(pkg.dependencies),
+    ...Object.keys(pkg.peerDependencies),
+  ]),
 ]
-  .filter(name => name.startsWith('prettier-plugin-') || name.startsWith('@prettier/plugin-'))
+  .filter(
+    name =>
+      name.startsWith('prettier-plugin-') ||
+      name.startsWith('@prettier/plugin-'),
+  )
   .sort()
 
 const resolvePlugins = (): string[] => {
@@ -59,7 +66,8 @@ export const defineConfig = ({
 
   const hasXmlPlugin = plugins.some(
     plugin =>
-      typeof plugin === 'string' && plugin.replaceAll('\\', '/').includes('@prettier/plugin-xml'),
+      typeof plugin === 'string' &&
+      plugin.replaceAll('\\', '/').includes('@prettier/plugin-xml'),
   )
 
   return {

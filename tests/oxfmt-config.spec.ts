@@ -11,9 +11,11 @@ describe('@1stg/oxfmt-config', () => {
   })
 
   it('accepts overrides', () => {
-    expect(defineOxfmt({ printWidth: WIDE_PRINT_WIDTH }).printWidth).toBe(WIDE_PRINT_WIDTH)
-    expect(defineOxfmt({ ignorePatterns: ['package.json'] }).ignorePatterns).toEqual([
-      'package.json',
-    ])
+    expect(defineOxfmt({ printWidth: WIDE_PRINT_WIDTH }).printWidth).toBe(
+      WIDE_PRINT_WIDTH,
+    )
+    expect(
+      defineOxfmt({ ignorePatterns: ['package.json'] }).ignorePatterns,
+    ).toEqual(['package.json'])
   })
 })

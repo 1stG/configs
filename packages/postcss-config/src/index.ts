@@ -52,7 +52,9 @@ export const defineConfig = ({
   const isProduction = env === 'production'
   const shouldMinify = cssnano === false ? false : (minify ?? isProduction)
   const cssnanoOptions =
-    typeof cssnano === 'object' ? (cssnano as Record<string, unknown>) : undefined
+    typeof cssnano === 'object'
+      ? (cssnano as Record<string, unknown>)
+      : undefined
 
   const plugins: AcceptedPlugin[] = [
     require('postcss-preset-env')(presetEnv),

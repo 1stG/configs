@@ -41,7 +41,12 @@ export const defineConfig = ({
   ignorePatterns: extraIgnorePatterns,
   ...options
 }: OxlintConfigOptions = {}): OxlintConfig => {
-  const plugins: NonNullable<OxlintConfig['plugins']> = ['oxc', 'unicorn', 'typescript', 'import']
+  const plugins: NonNullable<OxlintConfig['plugins']> = [
+    'oxc',
+    'unicorn',
+    'typescript',
+    'import',
+  ]
 
   if (promise) {
     plugins.push('promise')
@@ -94,7 +99,10 @@ export const defineConfig = ({
         'typescript/prefer-optional-chain': 'error',
         'typescript/prefer-readonly': 'error',
         'typescript/prefer-reduce-type-parameter': 'error',
-        'typescript/require-array-sort-compare': ['error', { ignoreStringArrays: true }],
+        'typescript/require-array-sort-compare': [
+          'error',
+          { ignoreStringArrays: true },
+        ],
         'typescript/restrict-plus-operands': 'error',
       }),
       'arrow-body-style': 'error',
@@ -110,8 +118,8 @@ export const defineConfig = ({
         {
           enforceConst: true,
           ignore: [
-            -1, 0, 1, 2, 3, 5, 7, 10, 12, 15, 20, 24, 30, 31, 50, 60, 100, 365, 366, 500, 768, 1000,
-            1024, 3600, 4200, 8080,
+            -1, 0, 1, 2, 3, 5, 7, 10, 12, 15, 20, 24, 30, 31, 50, 60, 100, 365,
+            366, 500, 768, 1000, 1024, 3600, 4200, 8080,
           ],
           ignoreArrayIndexes: true,
           ignoreEnums: true,
@@ -133,7 +141,10 @@ export const defineConfig = ({
       'import/newline-after-import': 'error',
       'import/no-duplicates': 'error',
       'typescript/consistent-type-definitions': ['error', 'interface'],
-      'typescript/no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+      'typescript/no-unused-vars': [
+        'error',
+        { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+      ],
       'unicorn/prefer-node-protocol': 'error',
       'unicorn/prefer-number-properties': 'error',
       'unicorn/prefer-string-starts-ends-with': 'error',

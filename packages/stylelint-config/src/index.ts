@@ -26,14 +26,18 @@ export const defineConfig = ({
 }: StylelintConfigOptions = {}): Config => {
   const ignorePseudoElements = vue ? ['v-deep', 'v-global', 'v-slotted'] : []
 
-  const userPlugins = options.plugins
-  const extraPlugins = Array.isArray(userPlugins) ? userPlugins : userPlugins ? [userPlugins] : []
+  const toArray = <T>(value: T | T[] | undefined): T[] => {
+    if (value === null || value === undefined) {
+      return []
+    }
+    return Array.isArray(value) ? value : [value]
+  }
 
-  const userExtends = options.extends
+  const extraPlugins = toArray(options.plugins)
   const extended = [
     'stylelint-config-standard',
     ...(prettier ? ['stylelint-prettier/recommended'] : []),
-    ...(Array.isArray(userExtends) ? userExtends : userExtends ? [userExtends] : []),
+    ...toArray(options.extends),
   ]
 
   return {
