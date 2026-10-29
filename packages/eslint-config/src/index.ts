@@ -1,4 +1,5 @@
 import type { Linter } from 'eslint'
+import oxlint from 'eslint-plugin-oxlint'
 
 export interface EslintConfigOptions {
   /** Lint Markdown/MDX. @default true */
@@ -146,7 +147,6 @@ export const defineConfig = async ({
   }
 
   if (oxlintEnabled) {
-    const oxlint = await load<PluginConfigs>('eslint-plugin-oxlint')
     configs.push(...toConfigs(oxlint.configs['flat/all']))
   }
 
