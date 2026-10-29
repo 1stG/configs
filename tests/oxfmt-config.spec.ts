@@ -31,7 +31,7 @@ const x = 1
 `
 
     const { code } = await format('test.ts', source, defineOxfmt())
-    expect(code).toContain(' *     echo hi')
+    expect(code).toContain(' *   ```sh\n *   if true; then\n *     echo hi\n *   fi\n *   ```')
   })
 
   it('accepts overrides', () => {
