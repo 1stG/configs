@@ -52,9 +52,9 @@ is no separate `ignores` alias.
 
 ## `no-magic-numbers`
 
-The shared rule ignores common identity, time/calendar, decimal/binary and
-HTTP values (`-1` through `3600`) by default, while leaving project-specific
-constants to consumers. Structural positions are ignored by default
+The shared rule ignores common identity, time/calendar, timeout and
+decimal/binary values (`-1` through `3600`) by default, while leaving
+project-specific constants to consumers. Structural positions are ignored by default
 (`ignoreArrayIndexes`, `ignoreDefaultValues`, `ignoreNumericLiteralTypes`,
 `ignoreTypeIndexes`), and named declarations count as intentional
 (`enforceConst`, `ignoreEnums`, `ignoreReadonlyClassProperties`,

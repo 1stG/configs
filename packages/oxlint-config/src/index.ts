@@ -6,7 +6,8 @@ type NoMagicNumbersRule = NonNullable<OxlintRules['no-magic-numbers']>
 type NoMagicNumbersOptions = Extract<NoMagicNumbersRule, [unknown, unknown]>[1]
 
 const DEFAULT_MAGIC_NUMBERS = [
-  -1, 0, 1, 2, 3, 5, 7, 10, 12, 15, 20, 24, 30, 31, 50, 60, 100, 365, 366, 500, 1000, 1024, 3600,
+  -1, 0, 1, 2, 3, 5, 7, 10, 12, 15, 20, 24, 28, 29, 30, 31, 50, 60, 100, 365, 366, 500, 1000, 1024,
+  3600,
 ]
 
 const DEFAULT_NO_MAGIC_NUMBERS_OPTIONS = {
