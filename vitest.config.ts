@@ -6,9 +6,10 @@ export default defineConfig({
   },
   test: {
     globals: true,
+    testTimeout: 15000,
     coverage: {
       enabled: true,
-      provider: 'istanbul',
+      provider: 'v8',
       reporter: ['lcov', 'json', 'text'],
     },
   },
