@@ -13,6 +13,7 @@ describe('@1stg/oxlint-config', () => {
     const defaults = getNoMagic(defineOxlint())
     expect(defaults[1]).toMatchObject({
       ignoreArrayIndexes: true,
+      ignoreClassFieldInitialValues: true,
       ignoreDefaultValues: true,
       ignoreEnums: true,
       ignoreNumericLiteralTypes: true,

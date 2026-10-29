@@ -53,7 +53,8 @@ is no separate `ignores` alias.
 ## `no-magic-numbers`
 
 The shared rule enables the TypeScript-friendly options by default:
-`ignoreArrayIndexes`, `ignoreDefaultValues`, `ignoreEnums`,
+`ignoreArrayIndexes`, `ignoreClassFieldInitialValues`, `ignoreDefaultValues`,
+`ignoreEnums`,
 `ignoreNumericLiteralTypes`, `ignoreReadonlyClassProperties` and
 `ignoreTypeIndexes`. Add domain constants with the dedicated option:
 

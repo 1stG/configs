@@ -13,6 +13,7 @@ const DEFAULT_MAGIC_NUMBERS = [
 const DEFAULT_NO_MAGIC_NUMBERS_OPTIONS = {
   enforceConst: true,
   ignoreArrayIndexes: true,
+  ignoreClassFieldInitialValues: true,
   ignoreDefaultValues: true,
   ignoreEnums: true,
   ignoreNumericLiteralTypes: true,
