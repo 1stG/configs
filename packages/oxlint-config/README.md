@@ -52,11 +52,13 @@ is no separate `ignores` alias.
 
 ## `no-magic-numbers`
 
-The shared rule enables the TypeScript-friendly options by default:
-`ignoreArrayIndexes`, `ignoreClassFieldInitialValues`, `ignoreDefaultValues`,
-`ignoreEnums`,
-`ignoreNumericLiteralTypes`, `ignoreReadonlyClassProperties` and
-`ignoreTypeIndexes`. Add domain constants with the dedicated option:
+The shared rule enables the structural TypeScript-friendly options by default:
+`ignoreArrayIndexes`, `ignoreDefaultValues`, `ignoreNumericLiteralTypes`,
+`ignoreTypeIndexes`, plus `enforceConst`. The named-declaration options
+(`ignoreEnums`, `ignoreReadonlyClassProperties`,
+`ignoreClassFieldInitialValues`) are a policy choice and stay opt-in; enable
+them through `rules`, where options are merged with the defaults. Add domain
+constants with the dedicated option:
 
 ```js
 export default defineConfig({

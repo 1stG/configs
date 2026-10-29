@@ -12,12 +12,10 @@ describe('@1stg/oxlint-config', () => {
   it('merges no-magic-numbers options', () => {
     const defaults = getNoMagic(defineOxlint())
     expect(defaults[1]).toMatchObject({
+      enforceConst: true,
       ignoreArrayIndexes: true,
-      ignoreClassFieldInitialValues: true,
       ignoreDefaultValues: true,
-      ignoreEnums: true,
       ignoreNumericLiteralTypes: true,
-      ignoreReadonlyClassProperties: true,
       ignoreTypeIndexes: true,
     })
     expect(defaults[1].ignore).toContain(-1)
@@ -39,6 +37,13 @@ describe('@1stg/oxlint-config', () => {
     expect(merged[0]).toBe('warn')
     expect(merged[1].ignore).toEqual(expect.arrayContaining([-1, CUSTOM_MAGIC_NUMBER]))
     expect(merged[1].ignoreDefaultValues).toBe(true)
+
+    const policy = getNoMagic(
+      defineOxlint({
+        rules: { 'no-magic-numbers': ['warn', { ignoreEnums: true }] },
+      }),
+    ) as [string, Record<string, unknown>]
+    expect(policy[1].ignoreEnums).toBe(true)
   })
 
   it('enables framework plugins on demand', () => {
