@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.1.0
+
+### Minor Changes
+
+- [#438](https://github.com/1stG/configs/pull/438) [`49444e1`](https://github.com/1stG/configs/commit/49444e1283faaef836e59b0d442937755e25bc07) Thanks [@JounQin](https://github.com/JounQin)! - Keep Changesets frontmatter package names double-quoted by default, matching
+  what `changeset` generates.
+
+- [#438](https://github.com/1stG/configs/pull/438) [`49444e1`](https://github.com/1stG/configs/commit/49444e1283faaef836e59b0d442937755e25bc07) Thanks [@JounQin](https://github.com/JounQin)! - Enable Oxfmt JSDoc formatting by default and preserve indentation in
+  unparsable `@example` blocks.
+
 ## 1.0.0
 
 ### Major Changes
