@@ -55,13 +55,15 @@ is no separate `ignores` alias.
 The shared rule ignores common identity, time/calendar, decimal/binary and
 HTTP values (`-1` through `3600`) by default, while leaving project-specific
 constants to consumers. Structural positions are ignored by default
-(`ignoreArrayIndexes`, `ignoreNumericLiteralTypes`, `ignoreTypeIndexes`), and
-named declarations count as intentional (`enforceConst`, `ignoreDefaultValues`,
-`ignoreEnums`, `ignoreReadonlyClassProperties`,
+(`ignoreArrayIndexes`, `ignoreDefaultValues`, `ignoreNumericLiteralTypes`,
+`ignoreTypeIndexes`), and named declarations count as intentional
+(`enforceConst`, `ignoreEnums`, `ignoreReadonlyClassProperties`,
 `ignoreClassFieldInitialValues`). The class-field options overlap: set both
 `ignoreReadonlyClassProperties` and `ignoreClassFieldInitialValues` to `false`
-to report readonly field initializers. `detectObjects` stays opt-in. Add domain
-constants with the dedicated option:
+to report readonly field initializers. Oxlint currently still reports numeric
+literal interface properties despite `ignoreNumericLiteralTypes`; add those
+values through `noMagicNumbers.ignore` when needed. `detectObjects` stays
+opt-in. Add domain constants with the dedicated option:
 
 ```js
 export default defineConfig({
