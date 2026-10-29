@@ -43,8 +43,8 @@ export interface OxlintConfigOptions extends OxlintConfig {
 }
 
 /**
- * Build an Oxlint configuration. Oxlint discovers `oxlint.config.ts`
- * automatically; pass `--config` only for a custom file name.
+ * Build an Oxlint configuration. Oxlint discovers `oxlint.config.ts` automatically; pass `--config`
+ * only for a custom file name.
  */
 export const defineConfig = ({
   categories = { correctness: 'error', perf: 'warn' },

@@ -12,7 +12,10 @@ export interface EslintConfigOptions {
   toml?: boolean
   /** Lint HTML with `eslint-plugin-markup` on Node >= 24. @default auto */
   markup?: boolean
-  /** Lint JS/TS/JSX as well, with only rules Oxlint does not cover. @default installed `typescript-eslint` */
+  /**
+   * Lint JS/TS/JSX as well, with only rules Oxlint does not cover. @default installed
+   * `typescript-eslint`
+   */
   code?: boolean
   /** Extra ignore patterns. */
   ignores?: string[]
@@ -58,9 +61,7 @@ const DEFAULT_IGNORES = [
   '**/*.html',
 ]
 
-/**
- * Check whether an optional peer plugin is installed.
- */
+/** Check whether an optional peer plugin is installed. */
 const toConfigs = (config: Linter.Config | Linter.Config[]): Linter.Config[] =>
   Array.isArray(config) ? config : [config]
 
@@ -77,9 +78,7 @@ const isInstalled = (name: string): boolean => {
   }
 }
 
-/**
- * Dynamic import that also unwraps a CommonJS default export.
- */
+/** Dynamic import that also unwraps a CommonJS default export. */
 const load = async <T>(name: string): Promise<T> => {
   const mod = (await import(name)) as T & { default?: T }
   return (mod.default ?? mod) as T
@@ -88,9 +87,8 @@ const load = async <T>(name: string): Promise<T> => {
 /**
  * Build the flat ESLint config for the file types Oxlint does not parse.
  *
- * Every plugin is imported dynamically (and only when its option is enabled),
- * so the config works with ESM-only plugins. ESLint awaits the returned
- * promise before linting.
+ * Every plugin is imported dynamically (and only when its option is enabled), so the config works
+ * with ESM-only plugins. ESLint awaits the returned promise before linting.
  */
 
 export const defineConfig = async ({
