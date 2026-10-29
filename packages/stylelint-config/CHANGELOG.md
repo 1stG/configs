@@ -1,5 +1,15 @@
 # Change Log
 
+## 8.1.0
+
+### Minor Changes
+
+- [#432](https://github.com/1stG/configs/pull/432) [`60efe32`](https://github.com/1stG/configs/commit/60efe32dfd4e032163462ce2ffa23e7f8b4bc09d) Thanks [@renovate](https://github.com/apps/renovate)! - chore(deps): bump postcess-less
+
+- [#435](https://github.com/1stG/configs/pull/435) [`7e9f602`](https://github.com/1stG/configs/commit/7e9f60229380659d865a235d51941fd4201360d3) Thanks [@JounQin](https://github.com/JounQin)! - Move language-specific syntax packages to optional peers: install `postcss-*`
+  / `stylelint-scss` only for the file types you lint. Remove the unused
+  `postcss-syntax` dependency.
+
 ## 8.0.0
 
 ### Major Changes
