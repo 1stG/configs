@@ -22,7 +22,9 @@ export const defineConfig = ({
   arrowParens: 'avoid',
   semi: false,
   singleAttributePerLine: true,
-  jsdoc: true,
+  jsdoc: {
+    keepUnparsableExampleIndent: true,
+  },
   singleQuote: true,
   sortImports: true,
   sortPackageJson: false,

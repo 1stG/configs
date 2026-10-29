@@ -1,4 +1,5 @@
 import { defineConfig as defineOxfmt } from '@1stg/oxfmt-config'
+import { format } from 'oxfmt'
 
 const WIDE_PRINT_WIDTH = 120
 
@@ -8,13 +9,29 @@ describe('@1stg/oxfmt-config', () => {
     expect(config.semi).toBe(false)
     expect(config.sortImports).toBe(true)
     expect(config.sortPackageJson).toBe(false)
-    expect(config.jsdoc).toBe(true)
+    expect(config.jsdoc).toEqual({ keepUnparsableExampleIndent: true })
     expect(config.overrides).toEqual([
       {
         files: ['.changeset/*.md'],
         options: { singleQuote: false },
       },
     ])
+  })
+
+  it('preserves unparsable example indentation', async () => {
+    const source = `/**
+ * @example
+ * \`\`\`sh
+ * if true; then
+ *   echo hi
+ * fi
+ * \`\`\`
+ */
+const x = 1
+`
+
+    const { code } = await format('test.ts', source, defineOxfmt())
+    expect(code).toContain(' *     echo hi')
   })
 
   it('accepts overrides', () => {

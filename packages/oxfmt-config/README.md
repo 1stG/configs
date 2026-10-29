@@ -30,16 +30,16 @@ Use `defineConfig` only when you need options.
 
 ## Options
 
-| Option            | Default                    | Description                                                                    |
-| ----------------- | -------------------------- | ------------------------------------------------------------------------------ |
-| `printWidth`      | `100`                      | Line width (Oxfmt's default).                                                  |
-| `semi`            | `false`                    | Print semicolons.                                                              |
-| `singleQuote`     | `true`                     | Use single quotes.                                                             |
-| `sortImports`     | `true`                     | Sort imports and exports.                                                      |
-| `sortPackageJson` | `false`                    | Sort `package.json` keys; use `@1stg/prettier-config` for that.                |
-| `ignorePatterns`  | `[]`                       | Gitignore-style patterns to skip.                                              |
-| `jsdoc`           | `true`                     | Format JSDoc comments.                                                         |
-| `overrides`       | `[Changesets frontmatter]` | File-specific overrides; changeset Markdown keeps double-quoted package names. |
+| Option            | Default                                 | Description                                                                    |
+| ----------------- | --------------------------------------- | ------------------------------------------------------------------------------ |
+| `printWidth`      | `100`                                   | Line width (Oxfmt's default).                                                  |
+| `semi`            | `false`                                 | Print semicolons.                                                              |
+| `singleQuote`     | `true`                                  | Use single quotes.                                                             |
+| `sortImports`     | `true`                                  | Sort imports and exports.                                                      |
+| `sortPackageJson` | `false`                                 | Sort `package.json` keys; use `@1stg/prettier-config` for that.                |
+| `ignorePatterns`  | `[]`                                    | Gitignore-style patterns to skip.                                              |
+| `jsdoc`           | `{ keepUnparsableExampleIndent: true }` | Format JSDoc comments and keep unparsable example indentation.                 |
+| `overrides`       | `[Changesets frontmatter]`              | File-specific overrides; changeset Markdown keeps double-quoted package names. |
 
 ## Coverage
 
