@@ -14,8 +14,6 @@ export interface EslintConfigOptions {
   markup?: boolean
   /** Lint JS/TS/JSX as well, with only rules Oxlint does not cover. @default installed `typescript-eslint` */
   code?: boolean
-  /** Disable the rules Oxlint already implements. @default true */
-  oxlint?: boolean
   /** Extra ignore patterns. */
   ignores?: string[]
 }
@@ -93,14 +91,12 @@ const load = async <T>(name: string): Promise<T> => {
  * so the config works with ESM-only plugins. ESLint awaits the returned
  * promise before linting.
  */
-/* eslint-disable sonarjs/cognitive-complexity -- config builder */
 
 export const defineConfig = async ({
   markdown = true,
   jsonc: jsoncEnabled = true,
   yaml = isInstalled('eslint-plugin-yml'),
   toml: tomlEnabled = isInstalled('eslint-plugin-toml'),
-  oxlint: oxlintEnabled = true,
   code = isInstalled('typescript-eslint'),
   markup = NODE_MAJOR >= 24 && isInstalled('eslint-plugin-markup'),
   ignores = [],
@@ -146,9 +142,7 @@ export const defineConfig = async ({
     }
   }
 
-  if (oxlintEnabled) {
-    configs.push(...toConfigs(oxlint.configs['flat/all']))
-  }
+  configs.push(...toConfigs(oxlint.configs['flat/all']))
 
   if (markdown) {
     const mdx = await load<MarkdownPlugin>('eslint-plugin-mdx')

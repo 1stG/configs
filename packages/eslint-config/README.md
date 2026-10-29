@@ -7,9 +7,8 @@ ESLint is kept for the file types Oxlint cannot parse:
 - YAML (`eslint-plugin-yml`)
 - TOML (`eslint-plugin-toml`)
 
-JS/TS/JSX/Vue are owned by `@1stg/oxlint-config`; `oxlint` is a required peer
-of this config. When `typescript-eslint` is installed, `code` mode is enabled
-automatically and additionally lints
+JS/TS/JSX/Vue are owned by `@1stg/oxlint-config`. When `typescript-eslint` is
+installed, `code` mode is enabled automatically and additionally lints
 JS/TS/JSX with `typescript-eslint` plus optional `eslint-plugin-regexp` /
 `eslint-plugin-sonarjs`, while `eslint-plugin-oxlint` disables every rule
 Oxlint already covers. Pass `code: false` to keep the thin file-type-only
@@ -24,9 +23,9 @@ import { defineConfig } from '@1stg/eslint-config'
 export default defineConfig()
 ```
 
-`oxlint` is required, and `eslint-plugin-mdx`, `eslint-plugin-jsonc` and
-`eslint-plugin-oxlint` are installed by default, so Markdown/JSON(C) linting
-and the Oxlint rule-disable list are on. `eslint-plugin-yml` and `eslint-plugin-toml` are optional peers,
+`eslint-plugin-mdx`, `eslint-plugin-jsonc` and `eslint-plugin-oxlint` are
+installed by default, so Markdown/JSON(C) linting and the Oxlint rule-disable
+list are on. `eslint-plugin-oxlint` in turn requires `oxlint`. `eslint-plugin-yml` and `eslint-plugin-toml` are optional peers,
 enabled only when installed (`import.meta.resolve`). ESLint awaits the returned promise. Use
 `export default await defineConfig()` if your tool does not await it.
 
@@ -60,7 +59,6 @@ Use `defineConfig` only when you need options.
 | `yaml`     | installed                     | Lint YAML when installed.                                           |
 | `toml`     | installed                     | Lint TOML when installed.                                           |
 | `code`     | installed `typescript-eslint` | Lint JS/TS/JSX with rules Oxlint does not cover.                    |
-| `oxlint`   | `true`                        | Disable rules Oxlint already owns.                                  |
 | `markup`   | auto                          | Lint HTML with `eslint-plugin-markup` on Node >= 24 when installed. |
 | `ignores`  | `[]`                          | Extra ignore patterns.                                              |
 

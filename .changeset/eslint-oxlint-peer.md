@@ -1,7 +1,7 @@
 ---
-'@1stg/eslint-config': minor
+'@1stg/eslint-config': patch
 ---
 
-Make `oxlint` an explicit required peer. The config already relies on
-`eslint-plugin-oxlint` to disable rules owned by Oxlint, so omitting Oxlint
-would silently skip those checks.
+Import `eslint-plugin-oxlint` statically and always apply its disable list.
+The `oxlint: false` option is removed because omitting Oxlint would silently
+skip those checks; Oxlint itself remains required through the plugin peer.
