@@ -52,6 +52,10 @@ their file type is used:
 - `stylelint-scss` when enabling `scss`/`scssLoose`;
 - `stylelint-prettier` for Prettier integration.
 
+For embedded SCSS/Less in HTML, Vue, or Markdown, install the corresponding
+`postcss-scss`/`postcss-less` parser as well. `postcss-markdown` handles HTML
+blocks by default, so `postcss-html` is not required for HTML in Markdown.
+
 `stylelint` and `prettier` remain required peers; the performance/browser
 plugins remain regular dependencies.
 
