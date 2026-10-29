@@ -42,6 +42,23 @@ Use `defineConfig` only when you need options.
 `stylelint-prettier` is enabled when it is installed (it is an optional peer);
 the config no longer decides based on whether `eslint` is installed.
 
+## Optional peers
+
+The language-specific syntax packages are optional peers, installed only when
+their file type is used:
+
+- `postcss-html`, `postcss-less`, `postcss-markdown`, `postcss-scss` for the
+  corresponding custom syntaxes;
+- `stylelint-scss` when enabling `scss`/`scssLoose`;
+- `stylelint-prettier` for Prettier integration.
+
+For embedded SCSS/Less in HTML, Vue, or Markdown, install the corresponding
+`postcss-scss`/`postcss-less` parser as well. `postcss-markdown` handles HTML
+blocks by default, so `postcss-html` is not required for HTML in Markdown.
+
+`stylelint` and `prettier` remain required peers; the performance/browser
+plugins remain regular dependencies.
+
 ## Sponsors and Backers
 
 [![Sponsors and Backers](https://raw.githubusercontent.com/1stG/static/master/sponsors.svg)](https://github.com/sponsors/JounQin)

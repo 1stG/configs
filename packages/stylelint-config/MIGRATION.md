@@ -1,5 +1,34 @@
 # Migrating `@1stg/stylelint-config`
 
+## v8.0 → v8.1
+
+Language-specific syntax packages are optional peers now, so install only what
+you use:
+
+```sh
+# SCSS
+yarn add -D postcss-scss stylelint-scss
+
+# Less
+yarn add -D postcss-less
+
+# Markdown
+yarn add -D postcss-markdown
+
+# HTML/Vue
+yarn add -D postcss-html
+```
+
+For embedded SCSS or Less in HTML, Vue, or Markdown files, also install the
+corresponding parser: `postcss-scss` or `postcss-less`. `postcss-markdown`
+handles HTML blocks itself, so `postcss-html` is not needed for HTML in
+Markdown.
+
+The unused `postcss-syntax` dependency was removed. The performance/browser
+plugins remain regular dependencies and stay enabled.
+
+## v7 → v8
+
 > Applies to **v7 → v8**.
 
 ## Removed subpaths
