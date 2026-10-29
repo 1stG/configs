@@ -6,7 +6,6 @@ export default defineConfig({
   },
   test: {
     globals: true,
-    testTimeout: 15000,
     coverage: {
       enabled: true,
       provider: 'v8',
