@@ -8,6 +8,12 @@ describe('@1stg/oxfmt-config', () => {
     expect(config.semi).toBe(false)
     expect(config.sortImports).toBe(true)
     expect(config.sortPackageJson).toBe(false)
+    expect(config.overrides).toEqual([
+      {
+        files: ['.changeset/*.md'],
+        options: { singleQuote: false },
+      },
+    ])
   })
 
   it('accepts overrides', () => {
@@ -15,5 +21,10 @@ describe('@1stg/oxfmt-config', () => {
     expect(defineOxfmt({ ignorePatterns: ['package.json'] }).ignorePatterns).toEqual([
       'package.json',
     ])
+    expect(
+      defineOxfmt({
+        overrides: [{ files: ['*.js'], options: { semi: true } }],
+      }).overrides,
+    ).toHaveLength(2)
   })
 })
