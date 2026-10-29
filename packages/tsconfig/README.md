@@ -2,6 +2,12 @@
 
 Personal but Shareable TypeScript Configuration for all 1stG.me projects
 
+## Library output
+
+The `lib.json` preset preserves comments in declaration files so editor hovers
+keep JSDoc. Source maps and declaration maps are not emitted by default; enable
+them explicitly when the package ships sources or uses `inlineSources`.
+
 ## Sponsors and Backers
 
 [![Sponsors and Backers](https://raw.githubusercontent.com/1stG/static/master/sponsors.svg)](https://github.com/sponsors/JounQin)
