@@ -83,7 +83,9 @@ try {
   console.log(y)
 } catch {}
 
-interval(1000).subscribe()
+const INTERVAL_MS = 1000
+
+interval(INTERVAL_MS).subscribe()
 
 new TestCase<number>().subscribe()
 

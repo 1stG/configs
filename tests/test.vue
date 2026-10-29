@@ -12,7 +12,8 @@ let msg = 'Hello Vue!'
 
 const reverse = async () => {
   await new Promise(resolve => {
-    setTimeout(resolve, 500)
+    const DELAY_MS = 500
+    setTimeout(resolve, DELAY_MS)
   })
   msg = [...msg].toReversed().join('')
 }

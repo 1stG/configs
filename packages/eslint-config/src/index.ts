@@ -29,6 +29,7 @@ interface MarkdownPlugin {
 }
 
 const NODE_MAJOR = Number(process.versions.node.split('.')[0])
+const MARKUP_NODE_MAJOR = 24
 
 const CODE_IGNORES = '**/*.{cjs,cts,js,jsx,mjs,mts,ts,tsx}'
 
@@ -101,7 +102,7 @@ export const defineConfig = async ({
   toml: tomlEnabled = isInstalled('eslint-plugin-toml'),
   oxlint: oxlintEnabled = true,
   code = isInstalled('typescript-eslint'),
-  markup = NODE_MAJOR >= 24 && isInstalled('eslint-plugin-markup'),
+  markup = NODE_MAJOR >= MARKUP_NODE_MAJOR && isInstalled('eslint-plugin-markup'),
   ignores = [],
 }: EslintConfigOptions = {}): Promise<Linter.Config[]> => {
   const defaultIgnores = DEFAULT_IGNORES.filter(
@@ -111,7 +112,7 @@ export const defineConfig = async ({
   const configs: Linter.Config[] = [{ ignores: [...defaultIgnores, ...ignores] }]
 
   if (markup) {
-    if (NODE_MAJOR < 24) {
+    if (NODE_MAJOR < MARKUP_NODE_MAJOR) {
       throw new Error(
         '@1stg/eslint-config: `markup` requires Node.js >= 24 (eslint-plugin-markup@2)',
       )

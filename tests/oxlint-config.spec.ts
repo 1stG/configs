@@ -1,6 +1,14 @@
 import { defineConfig as defineOxlint } from '@1stg/oxlint-config'
 
-type NoMagicRule = [string, { ignore: number[]; ignoreDefaultValues: boolean }]
+type NoMagicRule = [
+  string,
+  {
+    enforceConst?: boolean
+    ignore: number[]
+    ignoreDefaultValues?: boolean
+    ignoreEnums?: boolean
+  },
+]
 
 const CUSTOM_MAGIC_NUMBER = 16
 const OTHER_MAGIC_NUMBER = 64
@@ -21,29 +29,27 @@ describe('@1stg/oxlint-config', () => {
     expect(defaults[1].ignore).toEqual([-1, 0, 1])
 
     const custom = getNoMagic(
-      defineOxlint({ noMagicNumbers: { ignore: [CUSTOM_MAGIC_NUMBER, OTHER_MAGIC_NUMBER] } }),
+      defineOxlint({
+        noMagicNumbers: {
+          ignore: [CUSTOM_MAGIC_NUMBER, OTHER_MAGIC_NUMBER],
+          ignoreEnums: true,
+          enforceConst: false,
+        },
+      }),
     )
     expect(custom[1].ignore).toEqual(
       expect.arrayContaining([-1, CUSTOM_MAGIC_NUMBER, OTHER_MAGIC_NUMBER]),
     )
+    expect(custom[1]).toMatchObject({ enforceConst: false, ignoreEnums: true })
 
     expect(defineOxlint({ noMagicNumbers: false }).rules?.['no-magic-numbers']).toBe('off')
 
-    const merged = getNoMagic(
+    const raw = getNoMagic(
       defineOxlint({
         rules: { 'no-magic-numbers': ['warn', { ignore: [CUSTOM_MAGIC_NUMBER] }] },
       }),
     )
-    expect(merged[0]).toBe('warn')
-    expect(merged[1].ignore).toEqual(expect.arrayContaining([-1, CUSTOM_MAGIC_NUMBER]))
-    expect(merged[1].ignoreDefaultValues).toBe(true)
-
-    const policy = getNoMagic(
-      defineOxlint({
-        rules: { 'no-magic-numbers': ['warn', { ignoreEnums: true }] },
-      }),
-    ) as [string, Record<string, unknown>]
-    expect(policy[1].ignoreEnums).toBe(true)
+    expect(raw).toEqual(['warn', { ignore: [CUSTOM_MAGIC_NUMBER] }])
   })
 
   it('enables framework plugins on demand', () => {

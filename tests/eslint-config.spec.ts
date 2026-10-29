@@ -1,5 +1,7 @@
 import { defineConfig as defineEslint } from '@1stg/eslint-config'
 
+const MARKUP_NODE_MAJOR = 24
+
 describe('@1stg/eslint-config', () => {
   it('builds a flat config with the oxlint disable list', async () => {
     const config = await defineEslint({ code: false })
@@ -37,7 +39,7 @@ describe('@1stg/eslint-config markup', () => {
   })
 
   it('enables eslint-plugin-markup on Node 24', async () => {
-    if (Number(process.versions.node.split('.')[0]) < 24) {
+    if (Number(process.versions.node.split('.')[0]) < MARKUP_NODE_MAJOR) {
       // eslint-disable-next-line sonarjs/explicit-test-skip -- Node < 24
       return
     }

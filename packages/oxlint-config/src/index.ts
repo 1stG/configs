@@ -2,8 +2,8 @@ import { isPkgAvailable } from '@pkgr/utils'
 import type { OxlintConfig } from 'oxlint'
 
 type OxlintRules = NonNullable<OxlintConfig['rules']>
-type OxlintRuleConfig = NonNullable<OxlintRules[keyof OxlintRules]>
 type NoMagicNumbersRule = NonNullable<OxlintRules['no-magic-numbers']>
+type NoMagicNumbersOptions = Extract<NoMagicNumbersRule, [unknown, unknown]>[1]
 
 const DEFAULT_MAGIC_NUMBERS = [-1, 0, 1]
 
@@ -14,45 +14,6 @@ const DEFAULT_NO_MAGIC_NUMBERS_OPTIONS = {
   ignoreNumericLiteralTypes: true,
   ignoreTypeIndexes: true,
 } as const
-
-const mergeNoMagicNumbers = (
-  base: OxlintRuleConfig,
-  override: OxlintRuleConfig,
-): OxlintRuleConfig => {
-  if (override === 'off' || override === 0) {
-    return override
-  }
-
-  const baseOptions =
-    Array.isArray(base) && typeof base[1] === 'object' && base[1] !== null
-      ? (base[1] as Record<string, unknown>)
-      : {}
-
-  if (!Array.isArray(override)) {
-    return [override, baseOptions] as OxlintRuleConfig
-  }
-
-  const [severity, options] = override
-
-  if (!options || typeof options !== 'object') {
-    return override
-  }
-
-  const overrideOptions = options as Record<string, unknown>
-  const baseIgnore = Array.isArray(baseOptions.ignore) ? baseOptions.ignore : []
-  const overrideIgnore = Array.isArray(overrideOptions.ignore) ? overrideOptions.ignore : []
-
-  return [
-    severity,
-    {
-      ...baseOptions,
-      ...overrideOptions,
-      ignore: [...new Set([...baseIgnore, ...overrideIgnore])].sort(
-        (a, b) => Number(a) - Number(b),
-      ),
-    },
-  ] as OxlintRuleConfig
-}
 
 export interface OxlintConfigOptions extends OxlintConfig {
   /** Enable the JSDoc plugin. @default true */
@@ -71,15 +32,14 @@ export interface OxlintConfigOptions extends OxlintConfig {
   jest?: boolean
   /** Enable rules that require type information. @default installed `oxlint-tsgolint` */
   typeAware?: boolean
-  /** Extra literals ignored by `no-magic-numbers`; `false` disables the rule. */
-  noMagicNumbers?: false | { ignore?: number[] }
+  /** Options merged into `no-magic-numbers`; `false` disables the rule. */
+  noMagicNumbers?: false | NoMagicNumbersOptions
 }
 
 /**
  * Build an Oxlint configuration. Oxlint discovers `oxlint.config.ts`
  * automatically; pass `--config` only for a custom file name.
  */
-/* eslint-disable sonarjs/cognitive-complexity -- config builder */
 export const defineConfig = ({
   categories = { correctness: 'error', perf: 'warn' },
   jest = isPkgAvailable('jest'),
@@ -130,9 +90,8 @@ export const defineConfig = ({
           'error',
           {
             ...DEFAULT_NO_MAGIC_NUMBERS_OPTIONS,
-            ignore: [
-              ...new Set([...DEFAULT_MAGIC_NUMBERS, ...(noMagicNumbers?.ignore ?? [])]),
-            ].sort((a, b) => a - b),
+            ...noMagicNumbers,
+            ignore: [...new Set([...DEFAULT_MAGIC_NUMBERS, ...(noMagicNumbers?.ignore ?? [])])],
           },
         ] as NoMagicNumbersRule)
 
@@ -195,13 +154,6 @@ export const defineConfig = ({
       'unicorn/prefer-number-properties': 'error',
       'unicorn/prefer-string-starts-ends-with': 'error',
       ...extraRules,
-      ...(extraRules?.['no-magic-numbers'] &&
-        noMagicNumbers !== false && {
-          'no-magic-numbers': mergeNoMagicNumbers(
-            noMagicNumbersRule,
-            extraRules['no-magic-numbers'],
-          ) as NoMagicNumbersRule,
-        }),
     },
     overrides: [
       {
