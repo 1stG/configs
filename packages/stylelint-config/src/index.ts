@@ -33,8 +33,6 @@ export const defineConfig = ({
     return Array.isArray(value) ? value : [value]
   }
 
-  const performancePlugin = isPkgAvailable('stylelint-high-performance-animation')
-  const browserPlugin = isPkgAvailable('stylelint-no-unsupported-browser-features')
   const extraPlugins = toArray(options.plugins)
   const extended = [
     'stylelint-config-standard',
@@ -46,24 +44,20 @@ export const defineConfig = ({
     ...options,
     extends: extended,
     plugins: [
-      ...(performancePlugin ? ['stylelint-high-performance-animation'] : []),
-      ...(browserPlugin ? ['stylelint-no-unsupported-browser-features'] : []),
+      'stylelint-high-performance-animation',
+      'stylelint-no-unsupported-browser-features',
       ...extraPlugins,
     ],
     rules: {
       'at-rule-empty-line-before': null,
-      ...(performancePlugin && {
-        'plugin/no-low-performance-animation-properties': true,
-      }),
-      ...(browserPlugin && {
-        'plugin/no-unsupported-browser-features': [
-          true,
-          {
-            ignore: ['css3-cursors', 'css-media-resolution', 'css-resize', 'rem'],
-            severity: 'warning',
-          },
-        ],
-      }),
+      'plugin/no-low-performance-animation-properties': true,
+      'plugin/no-unsupported-browser-features': [
+        true,
+        {
+          ignore: ['css3-cursors', 'css-media-resolution', 'css-resize', 'rem'],
+          severity: 'warning',
+        },
+      ],
       'selector-attribute-quotes': null,
       'selector-class-pattern': [
         String.raw`^[a-z]([\da-z-]+)?(__([\da-z]+-?)+)?(--([\da-z]+-?)+){0,2}$`,

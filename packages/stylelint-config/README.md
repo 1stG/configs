@@ -44,18 +44,16 @@ the config no longer decides based on whether `eslint` is installed.
 
 ## Optional peers
 
-The syntax and plugin packages are optional peers, installed only when their
-file type/feature is used:
+The language-specific syntax packages are optional peers, installed only when
+their file type is used:
 
 - `postcss-html`, `postcss-less`, `postcss-markdown`, `postcss-scss` for the
   corresponding custom syntaxes;
 - `stylelint-scss` when enabling `scss`/`scssLoose`;
-- `stylelint-high-performance-animation` and
-  `stylelint-no-unsupported-browser-features` for their plugin rules;
 - `stylelint-prettier` for Prettier integration.
 
-When the performance/browser plugins are not installed, their rules are
-skipped. `stylelint` and `prettier` remain required peers.
+`stylelint` and `prettier` remain required peers; the performance/browser
+plugins remain regular dependencies.
 
 ## Sponsors and Backers
 

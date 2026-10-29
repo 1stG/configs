@@ -80,8 +80,6 @@
     "rxjs": "^7.8.2",
     "simple-git-hooks": "^2.13.1",
     "stylelint": "^17.12.0",
-    "stylelint-high-performance-animation": "^1.1.0 || ^2.0.0",
-    "stylelint-no-unsupported-browser-features": "^8.1.1",
     "stylelint-scss": "^6.14.0 || ^7.1.1",
     "type-coverage": "^2.29.7",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
