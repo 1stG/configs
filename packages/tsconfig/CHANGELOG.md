@@ -1,5 +1,14 @@
 # Change Log
 
+## 5.1.0
+
+### Minor Changes
+
+- [#440](https://github.com/1stG/configs/pull/440) [`de896b8`](https://github.com/1stG/configs/commit/de896b861fd02e3a8bd4e3413bc7bc2d1ec13980) Thanks [@JounQin](https://github.com/JounQin)! - Preserve JSDoc comments in emitted declarations for editor hovers.
+
+- [#440](https://github.com/1stG/configs/pull/440) [`de896b8`](https://github.com/1stG/configs/commit/de896b861fd02e3a8bd4e3413bc7bc2d1ec13980) Thanks [@JounQin](https://github.com/JounQin)! - Stop enabling `sourceMap` and `declarationMap` by default. Packages that ship
+  sources or use `inlineSources` can opt in explicitly.
+
 ## 5.0.0
 
 ### Major Changes
