@@ -12,8 +12,8 @@ const defaultOverrides: NonNullable<OxfmtConfig['overrides']> = [
 ]
 
 /**
- * Build an Oxfmt configuration. Oxfmt discovers `oxfmt.config.ts`
- * automatically; pass `--config` only for a custom file name.
+ * Build an Oxfmt configuration. Oxfmt discovers `oxfmt.config.ts` automatically; pass `--config`
+ * only for a custom file name.
  */
 export const defineConfig = ({
   overrides = [],
@@ -22,6 +22,7 @@ export const defineConfig = ({
   arrowParens: 'avoid',
   semi: false,
   singleAttributePerLine: true,
+  jsdoc: true,
   singleQuote: true,
   sortImports: true,
   sortPackageJson: false,

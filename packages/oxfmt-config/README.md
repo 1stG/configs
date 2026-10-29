@@ -38,7 +38,7 @@ Use `defineConfig` only when you need options.
 | `sortImports`     | `true`                     | Sort imports and exports.                                                      |
 | `sortPackageJson` | `false`                    | Sort `package.json` keys; use `@1stg/prettier-config` for that.                |
 | `ignorePatterns`  | `[]`                       | Gitignore-style patterns to skip.                                              |
-| `jsdoc`           | `false`                    | Format JSDoc comments.                                                         |
+| `jsdoc`           | `true`                     | Format JSDoc comments.                                                         |
 | `overrides`       | `[Changesets frontmatter]` | File-specific overrides; changeset Markdown keeps double-quoted package names. |
 
 ## Coverage

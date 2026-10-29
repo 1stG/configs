@@ -8,6 +8,7 @@ describe('@1stg/oxfmt-config', () => {
     expect(config.semi).toBe(false)
     expect(config.sortImports).toBe(true)
     expect(config.sortPackageJson).toBe(false)
+    expect(config.jsdoc).toBe(true)
     expect(config.overrides).toEqual([
       {
         files: ['.changeset/*.md'],
