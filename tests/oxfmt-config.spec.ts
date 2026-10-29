@@ -22,10 +22,13 @@ describe('@1stg/oxfmt-config', () => {
     expect(defineOxfmt({ ignorePatterns: ['package.json'] }).ignorePatterns).toEqual([
       'package.json',
     ])
-    expect(
-      defineOxfmt({
-        overrides: [{ files: ['*.js'], options: { semi: true } }],
-      }).overrides,
-    ).toHaveLength(2)
+    const userOverride = { files: ['*.js'], options: { semi: true } }
+    expect(defineOxfmt({ overrides: [userOverride] }).overrides).toEqual([
+      {
+        files: ['.changeset/*.md'],
+        options: { singleQuote: false },
+      },
+      userOverride,
+    ])
   })
 })
