@@ -31,23 +31,53 @@ Use `defineConfig` only when you need options.
 
 ## Options
 
-| Option           | Default                                  | Description                              |
-| ---------------- | ---------------------------------------- | ---------------------------------------- |
-| `categories`     | `{ correctness: 'error', perf: 'warn' }` | Oxlint categories.                       |
-| `jsdoc`          | `true`                                   | Enable the JSDoc plugin.                 |
-| `jsPlugins`      | `[]`                                     | ESLint plugins to load (alpha).          |
-| `rules`          | `{}`                                     | Extra rule overrides.                    |
-| `ignorePatterns` | `[]`                                     | Native Oxlint ignore patterns.           |
-| `node`           | `true`                                   | Node.js globals and rules.               |
-| `promise`        | `true`                                   | Enable the Promise plugin.               |
-| `react`          | installed `react`                        | React, JSX accessibility and perf rules. |
-| `vue`            | installed `vue`                          | Vue rules.                               |
-| `vitest`         | installed `vitest`                       | Vitest globals and rules.                |
-| `jest`           | installed `jest`                         | Jest globals and rules.                  |
-| `typeAware`      | installed `oxlint-tsgolint`              | Enable rules requiring type info.        |
+| Option           | Default                                  | Description                                                  |
+| ---------------- | ---------------------------------------- | ------------------------------------------------------------ |
+| `categories`     | `{ correctness: 'error', perf: 'warn' }` | Oxlint categories.                                           |
+| `jsdoc`          | `true`                                   | Enable the JSDoc plugin.                                     |
+| `jsPlugins`      | `[]`                                     | ESLint plugins to load (alpha).                              |
+| `rules`          | `{}`                                     | Extra rule overrides.                                        |
+| `ignorePatterns` | `[]`                                     | Native Oxlint ignore patterns.                               |
+| `node`           | `true`                                   | Node.js globals and rules.                                   |
+| `promise`        | `true`                                   | Enable the Promise plugin.                                   |
+| `react`          | installed `react`                        | React, JSX accessibility and perf rules.                     |
+| `vue`            | installed `vue`                          | Vue rules.                                                   |
+| `vitest`         | installed `vitest`                       | Vitest globals and rules.                                    |
+| `jest`           | installed `jest`                         | Jest globals and rules.                                      |
+| `typeAware`      | installed `oxlint-tsgolint`              | Enable rules requiring type info.                            |
+| `noMagicNumbers` | `undefined`                              | Options merged into `no-magic-numbers`; `false` disables it. |
 
 `ignorePatterns` is the native Oxlint field and can be passed directly; there
 is no separate `ignores` alias.
+
+## `no-magic-numbers`
+
+The shared rule ignores common identity, time/calendar, timeout and
+decimal/binary values (`-1` through `3600`) by default, while leaving
+project-specific constants to consumers. Structural positions are ignored by default
+(`ignoreArrayIndexes`, `ignoreDefaultValues`, `ignoreNumericLiteralTypes`,
+`ignoreTypeIndexes`), and named declarations count as intentional
+(`enforceConst`, `ignoreEnums`, `ignoreReadonlyClassProperties`,
+`ignoreClassFieldInitialValues`). The class-field options overlap: set both
+`ignoreReadonlyClassProperties` and `ignoreClassFieldInitialValues` to `false`
+to report readonly field initializers. Oxlint currently still reports numeric
+literal interface properties despite `ignoreNumericLiteralTypes`; add those
+values through `noMagicNumbers.ignore` when needed. `detectObjects` stays
+opt-in. Add domain constants with the dedicated option:
+
+```js
+export default defineConfig({
+  noMagicNumbers: {
+    ignore: [16, 64],
+    ignoreEnums: false,
+  },
+})
+```
+
+All other `no-magic-numbers` options are accepted and override the defaults;
+`ignore` is merged with the shared list. `rules` overrides are passed through
+as-is, so use `noMagicNumbers` when defaults should be merged. Passing `false`
+disables the rule.
 
 Import sorting is **not** a lint rule here: Oxfmt's built-in `sortImports` does
 it at format time, so `oxlint` and `oxfmt` stay independent.
