@@ -42,6 +42,21 @@ Use `defineConfig` only when you need options.
 `stylelint-prettier` is enabled when it is installed (it is an optional peer);
 the config no longer decides based on whether `eslint` is installed.
 
+## Optional peers
+
+The syntax and plugin packages are optional peers, installed only when their
+file type/feature is used:
+
+- `postcss-html`, `postcss-less`, `postcss-markdown`, `postcss-scss` for the
+  corresponding custom syntaxes;
+- `stylelint-scss` when enabling `scss`/`scssLoose`;
+- `stylelint-high-performance-animation` and
+  `stylelint-no-unsupported-browser-features` for their plugin rules;
+- `stylelint-prettier` for Prettier integration.
+
+When the performance/browser plugins are not installed, their rules are
+skipped. `stylelint` and `prettier` remain required peers.
+
 ## Sponsors and Backers
 
 [![Sponsors and Backers](https://raw.githubusercontent.com/1stG/static/master/sponsors.svg)](https://github.com/sponsors/JounQin)
