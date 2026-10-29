@@ -1,4 +1,5 @@
 import type { Linter } from 'eslint'
+import oxlint from 'eslint-plugin-oxlint'
 
 export interface EslintConfigOptions {
   /** Lint Markdown/MDX. @default true */
@@ -13,8 +14,6 @@ export interface EslintConfigOptions {
   markup?: boolean
   /** Lint JS/TS/JSX as well, with only rules Oxlint does not cover. @default installed `typescript-eslint` */
   code?: boolean
-  /** Disable the rules Oxlint already implements. @default true */
-  oxlint?: boolean
   /** Extra ignore patterns. */
   ignores?: string[]
 }
@@ -29,6 +28,7 @@ interface MarkdownPlugin {
 }
 
 const NODE_MAJOR = Number(process.versions.node.split('.')[0])
+const supportsMarkup = NODE_MAJOR >= 24
 
 const CODE_IGNORES = '**/*.{cjs,cts,js,jsx,mjs,mts,ts,tsx}'
 
@@ -92,16 +92,14 @@ const load = async <T>(name: string): Promise<T> => {
  * so the config works with ESM-only plugins. ESLint awaits the returned
  * promise before linting.
  */
-/* eslint-disable sonarjs/cognitive-complexity -- config builder */
 
 export const defineConfig = async ({
   markdown = true,
   jsonc: jsoncEnabled = true,
   yaml = isInstalled('eslint-plugin-yml'),
   toml: tomlEnabled = isInstalled('eslint-plugin-toml'),
-  oxlint: oxlintEnabled = true,
   code = isInstalled('typescript-eslint'),
-  markup = NODE_MAJOR >= 24 && isInstalled('eslint-plugin-markup'),
+  markup = supportsMarkup && isInstalled('eslint-plugin-markup'),
   ignores = [],
 }: EslintConfigOptions = {}): Promise<Linter.Config[]> => {
   const defaultIgnores = DEFAULT_IGNORES.filter(
@@ -111,7 +109,7 @@ export const defineConfig = async ({
   const configs: Linter.Config[] = [{ ignores: [...defaultIgnores, ...ignores] }]
 
   if (markup) {
-    if (NODE_MAJOR < 24) {
+    if (!supportsMarkup) {
       throw new Error(
         '@1stg/eslint-config: `markup` requires Node.js >= 24 (eslint-plugin-markup@2)',
       )
@@ -145,10 +143,7 @@ export const defineConfig = async ({
     }
   }
 
-  if (oxlintEnabled) {
-    const oxlint = await load<PluginConfigs>('eslint-plugin-oxlint')
-    configs.push(...toConfigs(oxlint.configs['flat/all']))
-  }
+  configs.push(...toConfigs(oxlint.configs['flat/all']))
 
   if (markdown) {
     const mdx = await load<MarkdownPlugin>('eslint-plugin-mdx')
