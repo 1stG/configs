@@ -79,7 +79,7 @@ __metadata:
     "@prettier/plugin-ruby": "npm:^4.0.4"
     "@total-typescript/ts-reset": "npm:^0.6.1"
     "@types/bun": "npm:^1.3.14"
-    "@types/node": "npm:^25.9.1"
+    "@types/node": "npm:^26.0.0"
     "@types/react": "npm:^19.2.15"
     "@types/unist": "npm:^3.0.3"
     "@typescript/native": "npm:typescript@^7.0.2"
@@ -307,7 +307,7 @@ __metadata:
   dependencies:
     "@pkgr/utils": "npm:^4.1.0"
     postcss-html: "npm:^2.0.0"
-    postcss-less: "npm:^6.0.0"
+    postcss-less: "npm:^7.0.0"
     postcss-markdown: "npm:^2.0.0"
     postcss-scss: "npm:^4.0.9"
     postcss-syntax: "npm:^0.36.2"
@@ -3315,7 +3315,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
+"@types/node@npm:*, @types/node@npm:^26.0.0":
   version: 26.6.5
   resolution: "@types/node@npm:26.6.5"
   dependencies:
@@ -3330,15 +3330,6 @@ __metadata:
   dependencies:
     undici-types: "npm:~6.21.0"
   checksum: 10c0/0cf61a89c6a69917ab49f976a6bb11a29e3b348a6ae19f5827ceb91d3ade781faab58dcf3b8fa625f975f5d7536b9166ff94e8250c29272c667164f77c28fa88
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^25.9.1":
-  version: 25.9.9
-  resolution: "@types/node@npm:25.9.9"
-  dependencies:
-    undici-types: "npm:>=7.24.0 <7.24.7"
-  checksum: 10c0/2ba08caa7118af2f2761f2f5db9b6304faf5bd027a2dcb72bf6fcae3dd9e470d17045fec27f89023c02e7d4e0661c6e5877174bd39794bef080db8b35ad4a1ea
   languageName: node
   linkType: hard
 
@@ -9070,12 +9061,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-less@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "postcss-less@npm:6.0.0"
+"postcss-less@npm:^7.0.0":
+  version: 7.0.1
+  resolution: "postcss-less@npm:7.0.1"
   peerDependencies:
-    postcss: ^8.3.5
-  checksum: 10c0/09869ba66e1340f03d6ffd34cba2721f48d1c4a71314af5b10d8a3cc4f78c15f22da809442bf5e50d04eff2a96389d6a0fdb9f0c20a191945aacfb1747fd47ca
+    postcss: ^8.5.32
+  checksum: 10c0/70b621c09503d3ea66eb3efb68f07b0b9feb57903fc4a5f753e23be2175a1de178ea03c887edb4b39b39fbefce834e21a3fedd444ceaa5117a3a49824c9531ad
   languageName: node
   linkType: hard
 
@@ -11850,13 +11841,6 @@ __metadata:
   version: 8.12.3
   resolution: "undici-types@npm:8.12.3"
   checksum: 10c0/e50cec68758ffd658286f4bbf75fb9c26b6855bee2b36b7335ac394231ddf42250500ecdafbff682b1e65f5112f8e32be1ee719862f89561724aee1da122df3a
-  languageName: node
-  linkType: hard
-
-"undici-types@npm:>=7.24.0 <7.24.7":
-  version: 7.24.6
-  resolution: "undici-types@npm:7.24.6"
-  checksum: 10c0/d9cd8befb643ac904615c280a095ba4240531f6bb4a5e75a22a7483630ca8d3f1016d2ab6ace6ceda1f63b3a2db2fe037fafe121d6917a0187573aa548ff78ca
   languageName: node
   linkType: hard
 
