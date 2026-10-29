@@ -4,6 +4,6 @@
   "compilerOptions": {
     "declaration": true,
     "outDir": "lib",
-    "removeComments": true
+    "inlineSources": true
   }
 }
