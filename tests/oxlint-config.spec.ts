@@ -18,7 +18,7 @@ describe('@1stg/oxlint-config', () => {
       ignoreNumericLiteralTypes: true,
       ignoreTypeIndexes: true,
     })
-    expect(defaults[1].ignore).toContain(-1)
+    expect(defaults[1].ignore).toEqual([-1, 0, 1])
 
     const custom = getNoMagic(
       defineOxlint({ noMagicNumbers: { ignore: [CUSTOM_MAGIC_NUMBER, OTHER_MAGIC_NUMBER] } }),

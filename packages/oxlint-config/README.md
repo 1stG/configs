@@ -52,7 +52,8 @@ is no separate `ignores` alias.
 
 ## `no-magic-numbers`
 
-The shared rule enables the structural TypeScript-friendly options by default:
+The shared rule ignores only `-1`, `0` and `1` by default; named constants and
+structural positions are handled by the options below:
 `ignoreArrayIndexes`, `ignoreDefaultValues`, `ignoreNumericLiteralTypes`,
 `ignoreTypeIndexes`, plus `enforceConst`. The named-declaration options
 (`ignoreEnums`, `ignoreReadonlyClassProperties`,

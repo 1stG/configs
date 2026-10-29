@@ -5,10 +5,7 @@ type OxlintRules = NonNullable<OxlintConfig['rules']>
 type OxlintRuleConfig = NonNullable<OxlintRules[keyof OxlintRules]>
 type NoMagicNumbersRule = NonNullable<OxlintRules['no-magic-numbers']>
 
-const DEFAULT_MAGIC_NUMBERS = [
-  -1, 0, 1, 2, 3, 5, 7, 10, 12, 15, 20, 24, 30, 31, 50, 60, 100, 365, 366, 500, 768, 1000, 1024,
-  3600, 4200, 8080,
-]
+const DEFAULT_MAGIC_NUMBERS = [-1, 0, 1]
 
 const DEFAULT_NO_MAGIC_NUMBERS_OPTIONS = {
   enforceConst: true,
