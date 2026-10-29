@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.1.0
+
+### Minor Changes
+
+- [#430](https://github.com/1stG/configs/pull/430) [`5643939`](https://github.com/1stG/configs/commit/5643939d348c5b70f4a883eacca8a26a18aef415) Thanks [@JounQin](https://github.com/JounQin)! - Enable the structural TypeScript-friendly `no-magic-numbers` defaults (array
+  indexes, default values, type indexes and numeric literal types) plus
+  `enforceConst`, curate the shared ignore list to common values, and expose all
+  rule options through `noMagicNumbers`, whose `ignore` is merged with the
+  shared list. `rules` overrides remain as-is. Named declarations (enums,
+  readonly/class fields and default parameters) count as naming the number;
+  `detectObjects` stays opt-in.
+
 ## 1.0.0
 
 ### Major Changes
