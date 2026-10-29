@@ -3,8 +3,7 @@
 ## v5.0 → v5.1
 
 The `lib` preset no longer enables `removeComments`, preserving JSDoc in
-emitted declarations for editor hovers. It also enables `inlineSources` for
-JavaScript source maps.
+emitted declarations for editor hovers.
 
 ## v4 → v5
 

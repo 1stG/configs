@@ -3,7 +3,6 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "declaration": true,
-    "outDir": "lib",
-    "inlineSources": true
+    "outDir": "lib"
   }
 }
