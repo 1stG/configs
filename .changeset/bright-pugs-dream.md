@@ -1,5 +1,5 @@
 ---
-"@1stg/stylelint-config": minor
+'@1stg/stylelint-config': minor
 ---
 
 chore(deps): bump postcess-less
