@@ -1,5 +1,13 @@
 # Change Log
 
+## 12.0.1
+
+### Patch Changes
+
+- [#436](https://github.com/1stG/configs/pull/436) [`ac965ca`](https://github.com/1stG/configs/commit/ac965ca37c90f140ed42aa6d93ceb4154886e167) Thanks [@JounQin](https://github.com/JounQin)! - Import `eslint-plugin-oxlint` statically and always apply its disable list.
+  The `oxlint: false` option is removed because omitting Oxlint would silently
+  skip those checks; Oxlint itself remains required through the plugin peer.
+
 ## 12.0.0
 
 ### Major Changes
