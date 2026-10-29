@@ -31,23 +31,41 @@ Use `defineConfig` only when you need options.
 
 ## Options
 
-| Option           | Default                                  | Description                              |
-| ---------------- | ---------------------------------------- | ---------------------------------------- |
-| `categories`     | `{ correctness: 'error', perf: 'warn' }` | Oxlint categories.                       |
-| `jsdoc`          | `true`                                   | Enable the JSDoc plugin.                 |
-| `jsPlugins`      | `[]`                                     | ESLint plugins to load (alpha).          |
-| `rules`          | `{}`                                     | Extra rule overrides.                    |
-| `ignorePatterns` | `[]`                                     | Native Oxlint ignore patterns.           |
-| `node`           | `true`                                   | Node.js globals and rules.               |
-| `promise`        | `true`                                   | Enable the Promise plugin.               |
-| `react`          | installed `react`                        | React, JSX accessibility and perf rules. |
-| `vue`            | installed `vue`                          | Vue rules.                               |
-| `vitest`         | installed `vitest`                       | Vitest globals and rules.                |
-| `jest`           | installed `jest`                         | Jest globals and rules.                  |
-| `typeAware`      | installed `oxlint-tsgolint`              | Enable rules requiring type info.        |
+| Option           | Default                                  | Description                                                   |
+| ---------------- | ---------------------------------------- | ------------------------------------------------------------- |
+| `categories`     | `{ correctness: 'error', perf: 'warn' }` | Oxlint categories.                                            |
+| `jsdoc`          | `true`                                   | Enable the JSDoc plugin.                                      |
+| `jsPlugins`      | `[]`                                     | ESLint plugins to load (alpha).                               |
+| `rules`          | `{}`                                     | Extra rule overrides.                                         |
+| `ignorePatterns` | `[]`                                     | Native Oxlint ignore patterns.                                |
+| `node`           | `true`                                   | Node.js globals and rules.                                    |
+| `promise`        | `true`                                   | Enable the Promise plugin.                                    |
+| `react`          | installed `react`                        | React, JSX accessibility and perf rules.                      |
+| `vue`            | installed `vue`                          | Vue rules.                                                    |
+| `vitest`         | installed `vitest`                       | Vitest globals and rules.                                     |
+| `jest`           | installed `jest`                         | Jest globals and rules.                                       |
+| `typeAware`      | installed `oxlint-tsgolint`              | Enable rules requiring type info.                             |
+| `noMagicNumbers` | `undefined`                              | Extra `no-magic-numbers` literals; `false` disables the rule. |
 
 `ignorePatterns` is the native Oxlint field and can be passed directly; there
 is no separate `ignores` alias.
+
+## `no-magic-numbers`
+
+The shared rule enables the TypeScript-friendly options by default:
+`ignoreArrayIndexes`, `ignoreDefaultValues`, `ignoreEnums`,
+`ignoreNumericLiteralTypes`, `ignoreReadonlyClassProperties` and
+`ignoreTypeIndexes`. Add domain constants with the dedicated option:
+
+```js
+export default defineConfig({
+  noMagicNumbers: { ignore: [16, 64] },
+})
+```
+
+`noMagicNumbers.ignore` is merged with the shared list and with any
+`no-magic-numbers` options passed through `rules`; passing `false` disables the
+rule.
 
 Import sorting is **not** a lint rule here: Oxfmt's built-in `sortImports` does
 it at format time, so `oxlint` and `oxfmt` stay independent.
