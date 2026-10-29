@@ -54,13 +54,11 @@ is no separate `ignores` alias.
 
 The shared rule ignores common identity, time/calendar, decimal/binary and
 HTTP values (`-1` through `3600`) by default, while leaving project-specific
-constants to consumers. Structural positions are handled by the options below:
-`ignoreArrayIndexes`, `ignoreDefaultValues`, `ignoreNumericLiteralTypes`,
-`ignoreTypeIndexes`, plus `enforceConst`. The named-declaration options
-(`ignoreEnums`, `ignoreReadonlyClassProperties`,
-`ignoreClassFieldInitialValues`) are a policy choice and stay opt-in; enable
-them through `noMagicNumbers` (options passed through `rules` are kept as-is).
-Add domain constants with the dedicated option:
+constants to consumers. It also treats named declarations as intentional:
+`enforceConst` plus `ignoreArrayIndexes`, `ignoreDefaultValues`,
+`ignoreEnums`, `ignoreNumericLiteralTypes`, `ignoreReadonlyClassProperties`,
+`ignoreClassFieldInitialValues` and `ignoreTypeIndexes`. `detectObjects` stays
+opt-in. Add domain constants with the dedicated option:
 
 ```js
 export default defineConfig({

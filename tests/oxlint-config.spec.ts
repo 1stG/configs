@@ -22,8 +22,11 @@ describe('@1stg/oxlint-config', () => {
     expect(defaults[1]).toMatchObject({
       enforceConst: true,
       ignoreArrayIndexes: true,
+      ignoreClassFieldInitialValues: true,
       ignoreDefaultValues: true,
+      ignoreEnums: true,
       ignoreNumericLiteralTypes: true,
+      ignoreReadonlyClassProperties: true,
       ignoreTypeIndexes: true,
     })
     expect(defaults[1].ignore).toEqual(expect.arrayContaining([-1, 0, 1]))
