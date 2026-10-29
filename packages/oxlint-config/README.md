@@ -54,17 +54,20 @@ is no separate `ignores` alias.
 
 The shared rule ignores common identity, time/calendar, decimal/binary and
 HTTP values (`-1` through `3600`) by default, while leaving project-specific
-constants to consumers. It also treats named declarations as intentional:
-`enforceConst` plus `ignoreArrayIndexes`, `ignoreDefaultValues`,
-`ignoreEnums`, `ignoreNumericLiteralTypes`, `ignoreReadonlyClassProperties`,
-`ignoreClassFieldInitialValues` and `ignoreTypeIndexes`. `detectObjects` stays
-opt-in. Add domain constants with the dedicated option:
+constants to consumers. Structural positions are ignored by default
+(`ignoreArrayIndexes`, `ignoreNumericLiteralTypes`, `ignoreTypeIndexes`), and
+named declarations count as intentional (`enforceConst`, `ignoreDefaultValues`,
+`ignoreEnums`, `ignoreReadonlyClassProperties`,
+`ignoreClassFieldInitialValues`). The class-field options overlap: set both
+`ignoreReadonlyClassProperties` and `ignoreClassFieldInitialValues` to `false`
+to report readonly field initializers. `detectObjects` stays opt-in. Add domain
+constants with the dedicated option:
 
 ```js
 export default defineConfig({
   noMagicNumbers: {
     ignore: [16, 64],
-    ignoreEnums: true,
+    ignoreEnums: false,
   },
 })
 ```

@@ -35,15 +35,15 @@ describe('@1stg/oxlint-config', () => {
       defineOxlint({
         noMagicNumbers: {
           ignore: [CUSTOM_MAGIC_NUMBER, OTHER_MAGIC_NUMBER],
-          ignoreEnums: true,
+          ignoreEnums: false,
           enforceConst: false,
         },
       }),
     )
     expect(custom[1].ignore).toEqual(
-      expect.arrayContaining([-1, CUSTOM_MAGIC_NUMBER, OTHER_MAGIC_NUMBER]),
+      expect.arrayContaining([...defaults[1].ignore, CUSTOM_MAGIC_NUMBER, OTHER_MAGIC_NUMBER]),
     )
-    expect(custom[1]).toMatchObject({ enforceConst: false, ignoreEnums: true })
+    expect(custom[1]).toMatchObject({ enforceConst: false, ignoreEnums: false })
 
     expect(defineOxlint({ noMagicNumbers: false }).rules?.['no-magic-numbers']).toBe('off')
 
