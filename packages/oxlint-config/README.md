@@ -52,8 +52,9 @@ is no separate `ignores` alias.
 
 ## `no-magic-numbers`
 
-The shared rule ignores only `-1`, `0` and `1` by default; named constants and
-structural positions are handled by the options below:
+The shared rule ignores common identity, time/calendar, decimal/binary and
+HTTP values (`-1` through `3600`) by default, while leaving project-specific
+constants to consumers. Structural positions are handled by the options below:
 `ignoreArrayIndexes`, `ignoreDefaultValues`, `ignoreNumericLiteralTypes`,
 `ignoreTypeIndexes`, plus `enforceConst`. The named-declaration options
 (`ignoreEnums`, `ignoreReadonlyClassProperties`,
