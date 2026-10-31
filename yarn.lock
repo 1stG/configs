@@ -10,7 +10,7 @@ __metadata:
   resolution: "@1stg/app-config@workspace:packages/app-config"
   dependencies:
     "@1stg/browserslist-config": "npm:^3.0.0"
-    "@1stg/common-config": "npm:^16.0.1"
+    "@1stg/common-config": "npm:^17.0.0"
     "@1stg/postcss-config": "npm:^8.0.0"
     "@1stg/stylelint-config": "npm:^8.0.0"
     browserslist: "npm:^4.28.2"
@@ -42,7 +42,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@1stg/common-config@npm:^16.0.1, @1stg/common-config@workspace:packages/common-config":
+"@1stg/common-config@npm:^17.0.0, @1stg/common-config@workspace:packages/common-config":
   version: 0.0.0-use.local
   resolution: "@1stg/common-config@workspace:packages/common-config"
   dependencies:
