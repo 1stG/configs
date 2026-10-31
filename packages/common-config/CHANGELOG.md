@@ -1,5 +1,11 @@
 # Change Log
 
+## 16.0.2
+
+### Patch Changes
+
+- [#443](https://github.com/1stG/configs/pull/443) [`1f92dd0`](https://github.com/1stG/configs/commit/1f92dd001a46fbe714d02950980b53296b7a7bc1) Thanks [@JounQin](https://github.com/JounQin)! - Legacy maintenance release for the original meta-config packages.
+
 ## 16.0.0
 
 ### Major Changes
