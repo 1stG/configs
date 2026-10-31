@@ -1,5 +1,19 @@
 # Change Log
 
+## 17.0.0
+
+### Major Changes
+
+- [#442](https://github.com/1stG/configs/pull/442) [`0f1bad8`](https://github.com/1stG/configs/commit/0f1bad8378d2102cfbdc62dc829e29bbf26d10f8) Thanks [@JounQin](https://github.com/JounQin)! - `@1stg/common-config` and `@1stg/app-config` now depend on the new major
+  versions of their underlying configuration packages. The dependency ranges
+  already target those majors; this changeset corrects the release level from
+  patch to major.
+
+### Patch Changes
+
+- Updated dependencies [[`0f1bad8`](https://github.com/1stG/configs/commit/0f1bad8378d2102cfbdc62dc829e29bbf26d10f8)]:
+  - @1stg/common-config@17.0.0
+
 ## 16.0.1
 
 ### Patch Changes
