@@ -24,7 +24,7 @@ The default export can be re-exported directly:
 export { default } from '@1stg/nano-staged'
 ```
 
-Use `defineConfig` only when you need options.
+Use `defineConfig` only when you need options. nano-staged does not support quoting arguments, so avoid spaces in the `tsconfig` path.
 
 ## Options
 

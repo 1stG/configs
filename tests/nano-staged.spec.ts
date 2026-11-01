@@ -122,8 +122,8 @@ it('uses the package fallback for explicit typecheck', () => {
     typecheck: 'tsc',
   })
   expect(config['*.{cts,mts,ts,tsx}']).toBeTypeOf('function')
-  expect((config['*.{cts,mts,ts,tsx}'] as () => string[])()[0]).toContain(
-    '"/fake/@1stg/tsconfig/tsconfig.json"',
+  expect((config['*.{cts,mts,ts,tsx}'] as () => string[])()[0]).toBe(
+    'tsc -p /fake/@1stg/tsconfig/tsconfig.json --noEmit',
   )
 })
 

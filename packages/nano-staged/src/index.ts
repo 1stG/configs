@@ -35,18 +35,18 @@ const STYLE_FILES = 'css,less,scss'
 const DATA_FILES = 'gql,graphql,html,jsonc,json5,md,mdx,toml,yaml,yml'
 const PRETTIER_FILES = 'ini,properties,pug,rb,sass,sh,styl,stylus'
 
+const TSCONFIG_CANDIDATES = ['tsconfig.staged.json', 'tsconfig.json', 'tsconfig.base.json']
+
 /**
  * Resolve the `tsconfig` used by the type-check tasks.
  *
  * Commands run from the Git root, so an absolute path is safer than one relative to `cwd`.
  */
-const resolveTsconfig = (cwd: string, explicit?: string, usePackageFallback = true): string => {
+const resolveTsconfig = (cwd: string, explicit?: string): string => {
   const tsconfig =
     (explicit && path.resolve(cwd, explicit)) ||
-    tryFile(path.resolve(cwd, 'tsconfig.staged.json')) ||
-    tryFile(path.resolve(cwd, 'tsconfig.json')) ||
-    tryFile(path.resolve(cwd, 'tsconfig.base.json')) ||
-    (usePackageFallback && tryPkg('@1stg/tsconfig'))
+    TSCONFIG_CANDIDATES.map(file => tryFile(path.resolve(cwd, file))).find(Boolean) ||
+    tryPkg('@1stg/tsconfig')
 
   if (!tsconfig) {
     throw new Error('@1stg/nano-staged: no tsconfig found, pass `tsconfig` or disable `typecheck`')
@@ -152,14 +152,13 @@ export const defineConfig = ({
 
   if (typecheck) {
     const tsconfigPath = resolveTsconfig(cwd, tsconfig)
-    const quotedTsconfig = JSON.stringify(tsconfigPath)
-    const coverageTask = typeCoverage ? [`type-coverage -p ${quotedTsconfig}`] : []
+    const coverageTask = typeCoverage ? [`type-coverage -p ${tsconfigPath}`] : []
 
     if (typecheck === 'tsc') {
-      config['*.{cts,mts,ts,tsx}'] = () => [`tsc -p ${quotedTsconfig} --noEmit`, ...coverageTask]
+      config['*.{cts,mts,ts,tsx}'] = () => [`tsc -p ${tsconfigPath} --noEmit`, ...coverageTask]
     } else {
       config['*.{cts,mts,ts,tsx,vue}'] = () => [
-        `vue-tsc -p ${quotedTsconfig} --noEmit --incremental false`,
+        `vue-tsc -p ${tsconfigPath} --noEmit --incremental false`,
         ...coverageTask,
       ]
     }
