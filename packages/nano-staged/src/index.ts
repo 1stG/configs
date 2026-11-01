@@ -52,7 +52,7 @@ const resolveTsconfig = (explicit?: string): string => {
     throw new Error('@1stg/nano-staged: no tsconfig found, pass `tsconfig` or disable `typecheck`')
   }
 
-  return path.relative(cwd, tsconfig) || tsconfig
+  return path.relative(cwd, tsconfig)
 }
 
 const LINTERS = ['oxlint', 'eslint'] as const
