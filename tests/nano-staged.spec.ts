@@ -88,7 +88,6 @@ it('auto-detects the formatter', () => {
   mockState.availablePackages.add('oxfmt')
 
   const withOxfmt = defineStaged({
-    cwd: process.cwd(),
     linter: false,
     stylelint: false,
     tsconfig: 'tsconfig.json',
@@ -98,7 +97,6 @@ it('auto-detects the formatter', () => {
 
   mockState.availablePackages.clear()
   const withPrettier = defineStaged({
-    cwd: process.cwd(),
     linter: false,
     stylelint: false,
     tsconfig: 'tsconfig.json',

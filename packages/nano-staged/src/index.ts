@@ -74,6 +74,17 @@ const hasProjectTsconfig = (explicit?: string): boolean => {
     : TSCONFIG_CANDIDATES.some(file => tryFile(path.resolve(cwd, file)))
 }
 
+const resolveTypecheck = (explicit?: string): Typecheck => {
+  const vueTscAvailable = isPkgAvailable('vue-tsc')
+  if (!vueTscAvailable && !isPkgAvailable('typescript')) {
+    return false
+  }
+  if (!hasProjectTsconfig(explicit)) {
+    return false
+  }
+  return vueTscAvailable ? 'vue-tsc' : 'tsc'
+}
+
 const resolveFormatter = (): Formatter => (isPkgAvailable('oxfmt') ? 'both' : 'prettier')
 
 /* eslint-disable sonarjs/cognitive-complexity -- config builder */
