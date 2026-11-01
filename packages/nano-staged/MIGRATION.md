@@ -35,7 +35,7 @@ export default defineConfig({
 
 The tool-availability defaults are inferred from installed packages again:
 
-- `linter`: `'oxlint'` if installed, otherwise `'eslint'`, otherwise `false`
+- `linter`: `'both'` when both `oxlint` and `eslint` are installed, otherwise the installed one, otherwise `false`
 - `stylelint`: enabled when `stylelint` is installed
 - `typecheck`: `'vue-tsc'` / `'tsc'` when installed and a project tsconfig is discoverable, otherwise disabled
 - `typeCoverage`: enabled when `type-coverage` is installed

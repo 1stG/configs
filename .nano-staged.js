@@ -5,7 +5,7 @@ export default defineConfig({
     oxfmt: 'oxfmt --ignore-path .gitignore --ignore-path .oxfmtignore',
   },
   formatter: 'both',
-  linter: 'oxlint',
+  linter: 'both',
   stylelint: true,
   typecheck: 'tsc',
   typeCoverage: true,

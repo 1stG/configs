@@ -12,7 +12,7 @@ import { defineConfig } from '@1stg/nano-staged'
 
 export default defineConfig({
   formatter: 'both',
-  linter: 'oxlint',
+  linter: 'both',
   stylelint: true,
   typecheck: 'tsc',
 })
@@ -31,7 +31,7 @@ Use `defineConfig` only when you need options. nano-staged does not support quot
 | Option         | Default      | Description                                                                  |
 | -------------- | ------------ | ---------------------------------------------------------------------------- |
 | `formatter`    | `'prettier'` | `'oxfmt'`, `'prettier'`, `'both'` (Oxfmt plus Prettier fallback) or `false`. |
-| `linter`       | installed    | `'oxlint'` → `'eslint'` → `false` based on installation.                     |
+| `linter`       | installed    | `'both'` when both installed, otherwise `'oxlint'` / `'eslint'` / `false`.   |
 | `stylelint`    | installed    | Run `stylelint --fix` when stylelint is installed.                           |
 | `typecheck`    | installed    | `'vue-tsc'` / `'tsc'` when installed and a project tsconfig is discoverable. |
 | `tsconfig`     | discovered   | Explicit `tsconfig` path, resolved relative to the Git root.                 |

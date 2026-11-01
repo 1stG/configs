@@ -59,6 +59,31 @@ describe('@1stg/nano-staged', () => {
   })
 })
 
+it('runs both linters', () => {
+  const config = defineStaged({
+    formatter: false,
+    linter: 'both',
+    stylelint: false,
+    tsconfig: 'tsconfig.json',
+    typecheck: false,
+  })
+  expect(config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual(['oxlint --fix', 'eslint --fix'])
+  expect(config['*.{gql,graphql,html,jsonc,json5,md,mdx,toml,yaml,yml}']).toEqual(['eslint --fix'])
+})
+
+it('auto-detects both linters', () => {
+  mockState.availablePackages.add('oxlint')
+  mockState.availablePackages.add('eslint')
+
+  const config = defineStaged({
+    formatter: false,
+    stylelint: false,
+    tsconfig: 'tsconfig.json',
+    typecheck: false,
+  })
+  expect(config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual(['oxlint --fix', 'eslint --fix'])
+})
+
 it('supports vue-tsc type checking', () => {
   mockState.tsconfig = join(process.cwd(), 'tsconfig.json')
   const config = defineStaged({

@@ -3,7 +3,7 @@ import path from 'node:path'
 import { isPkgAvailable, tryFile, tryPkg } from '@pkgr/utils'
 
 export type Formatter = false | 'oxfmt' | 'prettier' | 'both'
-export type Linter = false | 'oxlint' | 'eslint'
+export type Linter = false | 'oxlint' | 'eslint' | 'both'
 export type Typecheck = false | 'tsc' | 'vue-tsc'
 
 export interface NanoStagedOptions {
@@ -55,9 +55,17 @@ const resolveTsconfig = (explicit?: string): string => {
   return path.relative(cwd, tsconfig)
 }
 
-const LINTERS = ['oxlint', 'eslint'] as const
-
-const resolveLinter = (): NanoStagedOptions['linter'] => LINTERS.find(isPkgAvailable) ?? false
+const resolveLinter = (): NanoStagedOptions['linter'] => {
+  const oxlint = isPkgAvailable('oxlint')
+  const eslint = isPkgAvailable('eslint')
+  if (oxlint && eslint) {
+    return 'both'
+  }
+  if (oxlint) {
+    return 'oxlint'
+  }
+  return eslint ? 'eslint' : false
+}
 
 const hasProjectTsconfig = (explicit?: string): boolean => {
   const cwd = process.cwd()
@@ -100,9 +108,12 @@ export const defineConfig = ({
     ...commands,
   }
 
-  const lintTask = linter ? [command[linter]] : []
+  const lintTask = [
+    ...(linter === 'oxlint' || linter === 'both' ? [command.oxlint] : []),
+    ...(linter === 'eslint' || linter === 'both' ? [command.eslint] : []),
+  ]
   const stylelintTask = stylelint ? [command.stylelint] : []
-  const dataLinterTask = linter === 'eslint' ? [command.eslint] : []
+  const dataLinterTask = linter === 'eslint' || linter === 'both' ? [command.eslint] : []
   let formatterCommand: string | null = null
   if (formatter === 'prettier') {
     formatterCommand = command.prettier
