@@ -34,7 +34,7 @@ Use `defineConfig` only when you need options. nano-staged does not support quot
 | `linter`       | installed    | `'oxlint'` → `'eslint'` → `false` based on installation.                     |
 | `stylelint`    | installed    | Run `stylelint --fix` when stylelint is installed.                           |
 | `typecheck`    | installed    | `'vue-tsc'` / `'tsc'` when installed and a project tsconfig is discoverable. |
-| `tsconfig`     | discovered   | Explicit `tsconfig` path, resolved relative to `process.cwd()`.              |
+| `tsconfig`     | discovered   | Explicit `tsconfig` path, resolved relative to the Git root.                 |
 | `typeCoverage` | installed    | Run `type-coverage` when installed.                                          |
 | `imagemin`     | installed    | Optimize images with `i` when `@pkgr/imagemin` is installed.                 |
 | `commands`     | `{}`         | Override a command, e.g. `{ oxlint: 'oxlint --type-aware --fix' }`.          |

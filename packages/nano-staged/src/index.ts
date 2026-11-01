@@ -38,8 +38,8 @@ const TSCONFIG_CANDIDATES = ['tsconfig.staged.json', 'tsconfig.json', 'tsconfig.
 /**
  * Resolve the `tsconfig` used by the type-check tasks.
  *
- * Commands run from the Git root, so the returned path is relative to `process.cwd()` and remains
- * valid from the task execution directory.
+ * Hooks run from the Git root, which is also `process.cwd()` when the config loads, so a path
+ * relative to it stays readable and valid.
  */
 const resolveTsconfig = (explicit?: string): string => {
   const cwd = process.cwd()
