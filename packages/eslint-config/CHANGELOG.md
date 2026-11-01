@@ -1,5 +1,12 @@
 # Change Log
 
+## 12.0.2
+
+### Patch Changes
+
+- [#451](https://github.com/1stG/configs/pull/451) [`a70ca8c`](https://github.com/1stG/configs/commit/a70ca8c676dc39add61c4d7bd744d09624b342db) Thanks [@JounQin](https://github.com/JounQin)! - Annotate the default config type explicitly so TypeScript 6 can emit a portable
+  declaration, keeping `vue-tsc` happy.
+
 ## 12.0.1
 
 ### Patch Changes
