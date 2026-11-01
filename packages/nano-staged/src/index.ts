@@ -9,8 +9,6 @@ export type Typecheck = false | 'tsc' | 'vue-tsc'
 export interface NanoStagedOptions {
   /** Command overrides, e.g. to pass a config file. */
   commands?: Partial<Record<'oxfmt' | 'oxlint' | 'prettier' | 'stylelint', string>>
-  /** Base directory used to resolve `tsconfig`. @default process.cwd() */
-  cwd?: string
   /** Formatter(s) to run. @default 'prettier' */
   formatter?: Formatter
   /** Linter to run before formatting. @default installed oxlint/eslint */
@@ -19,7 +17,7 @@ export interface NanoStagedOptions {
   stylelint?: boolean
   /** Type-check command to run. @default installed `vue-tsc`/`typescript` */
   typecheck?: Typecheck
-  /** Explicit `tsconfig` path; discovered from `cwd` when omitted. */
+  /** Explicit `tsconfig` path; discovered from `process.cwd()` when omitted. */
   tsconfig?: string
   /** Run `type-coverage` together with the type-check. @default installed type-coverage */
   typeCoverage?: boolean
@@ -40,10 +38,11 @@ const TSCONFIG_CANDIDATES = ['tsconfig.staged.json', 'tsconfig.json', 'tsconfig.
 /**
  * Resolve the `tsconfig` used by the type-check tasks.
  *
- * Commands run from the Git root, so the path is relative to the execution directory rather than
- * the configured `cwd`.
+ * Commands run from the Git root, so the returned path is relative to `process.cwd()` and remains
+ * valid from the task execution directory.
  */
-const resolveTsconfig = (cwd: string, explicit?: string): string => {
+const resolveTsconfig = (explicit?: string): string => {
+  const cwd = process.cwd()
   const tsconfig =
     (explicit && path.resolve(cwd, explicit)) ||
     TSCONFIG_CANDIDATES.map(file => tryFile(path.resolve(cwd, file))).find(Boolean) ||
@@ -53,25 +52,27 @@ const resolveTsconfig = (cwd: string, explicit?: string): string => {
     throw new Error('@1stg/nano-staged: no tsconfig found, pass `tsconfig` or disable `typecheck`')
   }
 
-  return path.relative(process.cwd(), tsconfig) || tsconfig
+  return path.relative(cwd, tsconfig) || tsconfig
 }
 
 const LINTERS = ['oxlint', 'eslint'] as const
 
 const resolveLinter = (): NanoStagedOptions['linter'] => LINTERS.find(isPkgAvailable) ?? false
 
-const hasProjectTsconfig = (cwd: string, explicit?: string): boolean =>
-  Boolean(
+const hasProjectTsconfig = (explicit?: string): boolean => {
+  const cwd = process.cwd()
+  return Boolean(
     (explicit && tryFile(path.resolve(cwd, explicit))) ||
     TSCONFIG_CANDIDATES.some(file => tryFile(path.resolve(cwd, file))),
   )
+}
 
-const resolveTypecheck = (cwd: string, explicit?: string): Typecheck => {
+const resolveTypecheck = (explicit?: string): Typecheck => {
   const vueTscAvailable = isPkgAvailable('vue-tsc')
   if (!vueTscAvailable && !isPkgAvailable('typescript')) {
     return false
   }
-  if (!hasProjectTsconfig(cwd, explicit)) {
+  if (!hasProjectTsconfig(explicit)) {
     return false
   }
   return vueTscAvailable ? 'vue-tsc' : 'tsc'
@@ -81,12 +82,11 @@ const resolveTypecheck = (cwd: string, explicit?: string): Typecheck => {
 
 export const defineConfig = ({
   commands = {},
-  cwd = process.cwd(),
   formatter = 'prettier',
   linter = resolveLinter(),
   stylelint = isPkgAvailable('stylelint'),
   tsconfig,
-  typecheck = resolveTypecheck(cwd, tsconfig),
+  typecheck = resolveTypecheck(tsconfig),
   typeCoverage = isPkgAvailable('type-coverage'),
   imagemin = isPkgAvailable('@pkgr/imagemin'),
 }: NanoStagedOptions = {}): StagedConfig => {
@@ -150,7 +150,7 @@ export const defineConfig = ({
   }
 
   if (typecheck) {
-    const tsconfigPath = resolveTsconfig(cwd, tsconfig)
+    const tsconfigPath = resolveTsconfig(tsconfig)
     const coverageTask = typeCoverage ? [`type-coverage -p ${tsconfigPath}`] : []
 
     if (typecheck === 'tsc') {

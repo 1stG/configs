@@ -14,8 +14,6 @@ vi.mock('@pkgr/utils', async importOriginal => {
   }
 })
 
-import { mkdtempSync, rmSync } from 'node:fs'
-import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 
 import { defineConfig as defineStaged } from '@1stg/nano-staged'
@@ -29,7 +27,6 @@ afterEach(() => {
 describe('@1stg/nano-staged', () => {
   it('builds both formatter tasks', () => {
     const config = defineStaged({
-      cwd: process.cwd(),
       formatter: 'both',
       linter: 'oxlint',
       stylelint: true,
@@ -46,7 +43,6 @@ describe('@1stg/nano-staged', () => {
 
   it('keeps linter/stylelint tasks when formatting is disabled', () => {
     const config = defineStaged({
-      cwd: process.cwd(),
       formatter: false,
       linter: 'eslint',
       stylelint: true,
@@ -64,7 +60,6 @@ describe('@1stg/nano-staged', () => {
 
 it('supports vue-tsc type checking', () => {
   const config = defineStaged({
-    cwd: process.cwd(),
     formatter: false,
     linter: false,
     stylelint: false,
@@ -79,7 +74,6 @@ it('auto-detects typecheck from installed tools', () => {
   mockState.availablePackages.add('typescript')
 
   const tsc = defineStaged({
-    cwd: process.cwd(),
     formatter: false,
     linter: false,
     stylelint: false,
@@ -90,7 +84,6 @@ it('auto-detects typecheck from installed tools', () => {
   mockState.availablePackages.clear()
   mockState.availablePackages.add('vue-tsc')
   const vueTsc = defineStaged({
-    cwd: process.cwd(),
     formatter: false,
     linter: false,
     stylelint: false,
@@ -102,7 +95,6 @@ it('auto-detects typecheck from installed tools', () => {
   mockState.availablePackages.add('typescript')
   mockState.packageTsconfig = join(process.cwd(), 'node_modules/@1stg/tsconfig/tsconfig.json')
   const disabled = defineStaged({
-    cwd: process.cwd(),
     formatter: false,
     linter: false,
     stylelint: false,
@@ -115,7 +107,6 @@ it('uses the package fallback for explicit typecheck', () => {
   mockState.packageTsconfig = join(process.cwd(), 'node_modules/@1stg/tsconfig/tsconfig.json')
 
   const config = defineStaged({
-    cwd: process.cwd(),
     formatter: false,
     linter: false,
     stylelint: false,
@@ -131,7 +122,6 @@ it('disables auto typecheck without a project tsconfig', () => {
   mockState.availablePackages.add('typescript')
 
   const config = defineStaged({
-    cwd: process.cwd(),
     formatter: false,
     linter: false,
     stylelint: false,
@@ -140,12 +130,5 @@ it('disables auto typecheck without a project tsconfig', () => {
 })
 
 it('throws without a discoverable tsconfig', () => {
-  const cwd = mkdtempSync(join(tmpdir(), 'nano-staged-'))
-  try {
-    expect(() => defineStaged({ cwd, typecheck: 'tsc' })).toThrow(
-      '@1stg/nano-staged: no tsconfig found',
-    )
-  } finally {
-    rmSync(cwd, { force: true, recursive: true })
-  }
+  expect(() => defineStaged({ typecheck: 'tsc' })).toThrow('@1stg/nano-staged: no tsconfig found')
 })
