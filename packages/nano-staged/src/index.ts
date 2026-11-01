@@ -11,7 +11,7 @@ export interface NanoStagedOptions {
   commands?: Partial<Record<'oxfmt' | 'oxlint' | 'prettier' | 'stylelint', string>>
   /** Formatter(s) to run. @default installed Oxfmt, otherwise Prettier */
   formatter?: Formatter
-  /** Linter to run before formatting. @default installed oxlint/eslint */
+  /** Linter to run before formatting. @default 'both' when both are installed */
   linter?: Linter
   /** Run `stylelint --fix` on style files. @default installed stylelint */
   stylelint?: boolean

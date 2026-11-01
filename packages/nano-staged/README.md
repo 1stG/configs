@@ -27,16 +27,16 @@ Use `defineConfig` only when you need options. nano-staged does not support quot
 
 ## Options
 
-| Option         | Default      | Description                                                                  |
-| -------------- | ------------ | ---------------------------------------------------------------------------- |
-| `formatter`    | `'prettier'` | `'oxfmt'`, `'prettier'`, `'both'` (Oxfmt plus Prettier fallback) or `false`. |
-| `linter`       | installed    | `'both'` when both installed, otherwise `'oxlint'` / `'eslint'` / `false`.   |
-| `stylelint`    | installed    | Run `stylelint --fix` when stylelint is installed.                           |
-| `typecheck`    | installed    | `'vue-tsc'` / `'tsc'` when installed and a project tsconfig is discoverable. |
-| `tsconfig`     | discovered   | Explicit `tsconfig` path, resolved relative to the Git root.                 |
-| `typeCoverage` | installed    | Run `type-coverage` when installed.                                          |
-| `imagemin`     | installed    | Optimize images with `i` when `@pkgr/imagemin` is installed.                 |
-| `commands`     | `{}`         | Override a command, e.g. `{ oxlint: 'oxlint --type-aware --fix' }`.          |
+| Option         | Default    | Description                                                                           |
+| -------------- | ---------- | ------------------------------------------------------------------------------------- |
+| `formatter`    | installed  | `'both'` when Oxfmt is installed, otherwise `'prettier'`; `'oxfmt'`/`false` override. |
+| `linter`       | installed  | `'both'` when both installed, otherwise `'oxlint'` / `'eslint'` / `false`.            |
+| `stylelint`    | installed  | Run `stylelint --fix` when stylelint is installed.                                    |
+| `typecheck`    | installed  | `'vue-tsc'` / `'tsc'` when installed and a project tsconfig is discoverable.          |
+| `tsconfig`     | discovered | Explicit `tsconfig` path, resolved relative to the Git root.                          |
+| `typeCoverage` | installed  | Run `type-coverage` when installed.                                                   |
+| `imagemin`     | installed  | Optimize images with `i` when `@pkgr/imagemin` is installed.                          |
+| `commands`     | `{}`       | Override a command, e.g. `{ oxlint: 'oxlint --type-aware --fix' }`.                   |
 
 `'both'` formats everything [Oxfmt](../oxfmt-config) supports and leaves the
 languages that need Prettier plugins (Pug, Ruby, shell, INI, properties,

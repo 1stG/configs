@@ -43,5 +43,4 @@ The tool-availability defaults are inferred from installed packages again:
 - `imagemin`: enabled when `@pkgr/imagemin` is installed (renamed from
   `imagemagick`)
 
-`formatter` stays explicit because it is a project choice. `commands` still
-lets you override a single command.
+`commands` still lets you override a single command.
