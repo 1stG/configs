@@ -9,7 +9,7 @@ export type Typecheck = false | 'tsc' | 'vue-tsc'
 export interface NanoStagedOptions {
   /** Command overrides, e.g. to pass a config file. */
   commands?: Partial<Record<'oxfmt' | 'oxlint' | 'prettier' | 'stylelint', string>>
-  /** Formatter(s) to run. @default 'prettier' */
+  /** Formatter(s) to run. @default installed Oxfmt, otherwise Prettier */
   formatter?: Formatter
   /** Linter to run before formatting. @default installed oxlint/eslint */
   linter?: Linter
@@ -74,22 +74,13 @@ const hasProjectTsconfig = (explicit?: string): boolean => {
     : TSCONFIG_CANDIDATES.some(file => tryFile(path.resolve(cwd, file)))
 }
 
-const resolveTypecheck = (explicit?: string): Typecheck => {
-  const vueTscAvailable = isPkgAvailable('vue-tsc')
-  if (!vueTscAvailable && !isPkgAvailable('typescript')) {
-    return false
-  }
-  if (!hasProjectTsconfig(explicit)) {
-    return false
-  }
-  return vueTscAvailable ? 'vue-tsc' : 'tsc'
-}
+const resolveFormatter = (): Formatter => (isPkgAvailable('oxfmt') ? 'both' : 'prettier')
 
 /* eslint-disable sonarjs/cognitive-complexity -- config builder */
 
 export const defineConfig = ({
   commands = {},
-  formatter = 'prettier',
+  formatter = resolveFormatter(),
   linter = resolveLinter(),
   stylelint = isPkgAvailable('stylelint'),
   tsconfig,

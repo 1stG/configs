@@ -84,6 +84,29 @@ it('auto-detects both linters', () => {
   expect(config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual(['oxlint --fix', 'eslint --fix'])
 })
 
+it('auto-detects the formatter', () => {
+  mockState.availablePackages.add('oxfmt')
+
+  const withOxfmt = defineStaged({
+    cwd: process.cwd(),
+    linter: false,
+    stylelint: false,
+    tsconfig: 'tsconfig.json',
+    typecheck: false,
+  })
+  expect(withOxfmt['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual(['oxfmt'])
+
+  mockState.availablePackages.clear()
+  const withPrettier = defineStaged({
+    cwd: process.cwd(),
+    linter: false,
+    stylelint: false,
+    tsconfig: 'tsconfig.json',
+    typecheck: false,
+  })
+  expect(withPrettier['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual(['prettier --write'])
+})
+
 it('supports vue-tsc type checking', () => {
   mockState.tsconfig = join(process.cwd(), 'tsconfig.json')
   const config = defineStaged({

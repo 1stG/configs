@@ -11,7 +11,6 @@ Configuration for all 1stG.me projects.
 import { defineConfig } from '@1stg/nano-staged'
 
 export default defineConfig({
-  formatter: 'both',
   linter: 'both',
   stylelint: true,
   typecheck: 'tsc',
