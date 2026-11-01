@@ -204,8 +204,13 @@ it('formats staged files matched by .gitignore', () => {
     expect(command).not.toContain('--ignore-path .gitignore')
     expect(() =>
       execFileSync(
-        join(process.cwd(), 'node_modules/.bin/oxfmt'),
-        ['--ignore-path', resolve(emptyIgnore), 'dist/a.js'],
+        process.execPath,
+        [
+          join(process.cwd(), 'node_modules/oxfmt/bin/oxfmt'),
+          '--ignore-path',
+          resolve(emptyIgnore),
+          'dist/a.js',
+        ],
         { cwd: dir },
       ),
     ).not.toThrow()
