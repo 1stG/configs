@@ -164,7 +164,7 @@ it('adds .oxfmtignore when present', () => {
     typecheck: false,
   })
   expect(config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual([
-    `oxfmt --ignore-path ${emptyIgnore} --ignore-path .oxfmtignore`,
+    'oxfmt --ignore-path .oxfmtignore',
   ])
 })
 

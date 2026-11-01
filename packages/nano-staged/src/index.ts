@@ -101,9 +101,9 @@ export const defineConfig = ({
     fileURLToPath(new URL('../.oxfmt-empty-ignore', import.meta.url)),
   )
   const oxfmtIgnore = tryFile('.oxfmtignore')
-  const oxfmtCommand = `oxfmt --ignore-path ${emptyIgnore}${
-    oxfmtIgnore ? ' --ignore-path .oxfmtignore' : ''
-  }`
+  const oxfmtCommand = oxfmtIgnore
+    ? 'oxfmt --ignore-path .oxfmtignore'
+    : `oxfmt --ignore-path ${emptyIgnore}`
 
   const command = {
     eslint: 'eslint --fix',
