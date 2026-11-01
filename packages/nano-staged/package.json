@@ -26,10 +26,14 @@
   ],
   "peerDependencies": {
     "nano-staged": ">=0.8.0",
+    "oxfmt": ">=0.75.0",
     "typescript": ">=6.0.0",
     "vue-tsc": "^3.2.0"
   },
   "peerDependenciesMeta": {
+    "oxfmt": {
+      "optional": true
+    },
     "typescript": {
       "optional": true
     },
