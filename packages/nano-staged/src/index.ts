@@ -98,7 +98,7 @@ export const defineConfig = ({
 
   const command = {
     eslint: 'eslint --fix',
-    oxfmt: `oxfmt --ignore-path ${
+    oxfmt: `oxfmt --no-error-on-unmatched-pattern --ignore-path ${
       tryFile('.oxfmtignore')
         ? '.oxfmtignore'
         : path.relative(

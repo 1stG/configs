@@ -52,10 +52,12 @@ describe('@1stg/nano-staged', () => {
     })
     expect(config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual([
       'oxlint --fix',
-      `oxfmt --ignore-path ${emptyIgnore}`,
+      `oxfmt --no-error-on-unmatched-pattern --ignore-path ${emptyIgnore}`,
     ])
     expect(config['*.{ini,properties,pug,rb,sass,sh,styl,stylus}']).toBe('prettier --write')
-    expect(config['**/!(*package.json).json']).toEqual([`oxfmt --ignore-path ${emptyIgnore}`])
+    expect(config['**/!(*package.json).json']).toEqual([
+      `oxfmt --no-error-on-unmatched-pattern --ignore-path ${emptyIgnore}`,
+    ])
     expect(config['**/package.json']).toEqual(['prettier --write'])
     expect(config.Dockerfile).toBe('prettier --write')
     expect(config['*.{cts,mts,ts,tsx}']).toBeTypeOf('function')
@@ -140,7 +142,7 @@ it('auto-detects the formatter', () => {
     typecheck: false,
   })
   expect(withOxfmt['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual([
-    `oxfmt --ignore-path ${emptyIgnore}`,
+    `oxfmt --no-error-on-unmatched-pattern --ignore-path ${emptyIgnore}`,
   ])
 
   mockState.availablePackages.clear()
@@ -164,7 +166,7 @@ it('adds .oxfmtignore when present', () => {
     typecheck: false,
   })
   expect(config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual([
-    'oxfmt --ignore-path .oxfmtignore',
+    'oxfmt --no-error-on-unmatched-pattern --ignore-path .oxfmtignore',
   ])
 })
 
