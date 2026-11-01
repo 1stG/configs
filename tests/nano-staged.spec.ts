@@ -168,9 +168,9 @@ it('adds .oxfmtignore when present', () => {
   ])
 })
 
-it('detects type-coverage from its bin', () => {
+it('detects type-coverage from its package metadata', () => {
   mockState.availablePackages.add('typescript')
-  mockState.availablePackages.add('type-coverage/bin/type-coverage')
+  mockState.availablePackages.add('type-coverage/package.json')
   mockState.tsconfig = join(process.cwd(), 'tsconfig.json')
 
   const config = defineStaged({
@@ -199,18 +199,15 @@ it('formats staged files matched by .gitignore', () => {
       tsconfig: 'tsconfig.json',
       typecheck: false,
     })
-    const command = (config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}'] as string[])[0].replace(
-      emptyIgnore,
-      resolve(emptyIgnore),
-    )
+    const command = (config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}'] as string[])[0]
+    expect(command).toContain(emptyIgnore)
+    expect(command).not.toContain('--ignore-path .gitignore')
     expect(() =>
-      execFileSync('/bin/sh', ['-c', `${command} dist/a.js`], {
-        cwd: dir,
-        env: {
-          ...process.env,
-          PATH: `${process.cwd()}/node_modules/.bin:${process.env.PATH ?? ''}`,
-        },
-      }),
+      execFileSync(
+        join(process.cwd(), 'node_modules/.bin/oxfmt'),
+        ['--ignore-path', resolve(emptyIgnore), 'dist/a.js'],
+        { cwd: dir },
+      ),
     ).not.toThrow()
   } finally {
     rmSync(dir, { force: true, recursive: true })

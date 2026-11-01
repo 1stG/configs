@@ -96,7 +96,7 @@ export const defineConfig = ({
   stylelint = isPkgAvailable('stylelint'),
   tsconfig,
   typecheck = resolveTypecheck(tsconfig),
-  typeCoverage = isPkgAvailable('type-coverage/bin/type-coverage'),
+  typeCoverage = isPkgAvailable('type-coverage/package.json'),
   imagemin = isPkgAvailable('@pkgr/imagemin'),
 }: NanoStagedOptions = {}): StagedConfig => {
   const config: StagedConfig = {}
