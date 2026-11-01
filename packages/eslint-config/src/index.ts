@@ -175,4 +175,6 @@ export const defineConfig = async ({
   return configs
 }
 
-export default defineConfig()
+const config: Promise<Linter.Config[]> = defineConfig()
+
+export default config
