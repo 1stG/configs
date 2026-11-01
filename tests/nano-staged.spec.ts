@@ -23,13 +23,14 @@ vi.mock('@pkgr/utils', async importOriginal => {
 import { execFileSync } from 'node:child_process'
 import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
-import { join, resolve } from 'node:path'
+import { join, relative, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 import { defineConfig as defineStaged } from '@1stg/nano-staged'
 
-const emptyIgnore = fileURLToPath(
-  new URL('../packages/nano-staged/.oxfmt-empty-ignore', import.meta.url),
+const emptyIgnore = relative(
+  process.cwd(),
+  fileURLToPath(new URL('../packages/nano-staged/.oxfmt-empty-ignore', import.meta.url)),
 )
 
 afterEach(() => {
@@ -198,7 +199,10 @@ it('formats staged files matched by .gitignore', () => {
       tsconfig: 'tsconfig.json',
       typecheck: false,
     })
-    const command = (config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}'] as string[])[0]
+    const command = (config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}'] as string[])[0].replace(
+      emptyIgnore,
+      resolve(emptyIgnore),
+    )
     expect(() =>
       execFileSync('/bin/sh', ['-c', `${command} dist/a.js`], {
         cwd: dir,
