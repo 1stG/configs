@@ -66,12 +66,8 @@ const resolveLinter = (): NanoStagedOptions['linter'] => {
   return eslint ? 'eslint' : false
 }
 
-const hasProjectTsconfig = (explicit?: string): boolean => {
-  const cwd = process.cwd()
-  return Boolean(
-    explicit ? tryFile(explicit, 'file', cwd) : tryFile(TSCONFIG_CANDIDATES, 'file', cwd),
-  )
-}
+const hasProjectTsconfig = (explicit?: string): boolean =>
+  Boolean(explicit ? tryFile(explicit) : tryFile(TSCONFIG_CANDIDATES))
 
 const resolveTypecheck = (explicit?: string): Typecheck => {
   const vueTscAvailable = isPkgAvailable('vue-tsc')
