@@ -62,9 +62,7 @@ const resolveLinter = (): NanoStagedOptions['linter'] => LINTERS.find(isPkgAvail
 const hasProjectTsconfig = (cwd: string, explicit?: string): boolean =>
   Boolean(
     (explicit && tryFile(path.resolve(cwd, explicit))) ||
-    tryFile(path.resolve(cwd, 'tsconfig.staged.json')) ||
-    tryFile(path.resolve(cwd, 'tsconfig.json')) ||
-    tryFile(path.resolve(cwd, 'tsconfig.base.json')),
+    TSCONFIG_CANDIDATES.some(file => tryFile(path.resolve(cwd, file))),
   )
 
 const resolveTypecheck = (cwd: string, explicit?: string): Typecheck => {
