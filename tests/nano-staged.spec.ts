@@ -1,6 +1,7 @@
 const mockState = vi.hoisted(() => ({
   availablePackages: new Set<string>(),
   tsconfig: undefined as string | undefined,
+  packageTsconfig: undefined as string | undefined,
 }))
 
 vi.mock('@pkgr/utils', async importOriginal => {
@@ -9,7 +10,7 @@ vi.mock('@pkgr/utils', async importOriginal => {
     ...actual,
     isPkgAvailable: (name: string) => mockState.availablePackages.has(name),
     tryFile: () => mockState.tsconfig,
-    tryPkg: () => undefined,
+    tryPkg: () => mockState.packageTsconfig,
   }
 })
 
@@ -22,6 +23,7 @@ import { defineConfig as defineStaged } from '@1stg/nano-staged'
 afterEach(() => {
   mockState.availablePackages.clear()
   mockState.tsconfig = undefined
+  mockState.packageTsconfig = undefined
 })
 
 describe('@1stg/nano-staged', () => {
@@ -73,6 +75,7 @@ it('supports vue-tsc type checking', () => {
 })
 
 it('auto-detects typecheck from installed tools', () => {
+  mockState.tsconfig = join(process.cwd(), 'tsconfig.json')
   mockState.availablePackages.add('typescript')
 
   const tsc = defineStaged({
@@ -84,7 +87,6 @@ it('auto-detects typecheck from installed tools', () => {
   })
   expect(tsc['*.{cts,mts,ts,tsx}']).toBeTypeOf('function')
 
-  mockState.tsconfig = join(process.cwd(), 'tsconfig.json')
   mockState.availablePackages.clear()
   mockState.availablePackages.add('vue-tsc')
   const vueTsc = defineStaged({
@@ -95,7 +97,10 @@ it('auto-detects typecheck from installed tools', () => {
   })
   expect(vueTsc['*.{cts,mts,ts,tsx,vue}']).toBeTypeOf('function')
 
+  mockState.tsconfig = undefined
   mockState.availablePackages.clear()
+  mockState.availablePackages.add('typescript')
+  mockState.packageTsconfig = '/fake/@1stg/tsconfig/tsconfig.json'
   const disabled = defineStaged({
     cwd: process.cwd(),
     formatter: false,
@@ -103,6 +108,23 @@ it('auto-detects typecheck from installed tools', () => {
     stylelint: false,
   })
   expect(disabled['*.{cts,mts,ts,tsx}']).toBeUndefined()
+})
+
+it('uses the package fallback for explicit typecheck', () => {
+  mockState.availablePackages.add('typescript')
+  mockState.packageTsconfig = '/fake/@1stg/tsconfig/tsconfig.json'
+
+  const config = defineStaged({
+    cwd: process.cwd(),
+    formatter: false,
+    linter: false,
+    stylelint: false,
+    typecheck: 'tsc',
+  })
+  expect(config['*.{cts,mts,ts,tsx}']).toBeTypeOf('function')
+  expect((config['*.{cts,mts,ts,tsx}'] as () => string[])()[0]).toContain(
+    '"/fake/@1stg/tsconfig/tsconfig.json"',
+  )
 })
 
 it('disables auto typecheck without a project tsconfig', () => {

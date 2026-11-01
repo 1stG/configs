@@ -59,14 +59,20 @@ const LINTERS = ['oxlint', 'eslint'] as const
 
 const resolveLinter = (): NanoStagedOptions['linter'] => LINTERS.find(isPkgAvailable) ?? false
 
+const hasProjectTsconfig = (cwd: string, explicit?: string): boolean =>
+  Boolean(
+    (explicit && tryFile(path.resolve(cwd, explicit))) ||
+    tryFile(path.resolve(cwd, 'tsconfig.staged.json')) ||
+    tryFile(path.resolve(cwd, 'tsconfig.json')) ||
+    tryFile(path.resolve(cwd, 'tsconfig.base.json')),
+  )
+
 const resolveTypecheck = (cwd: string, explicit?: string): Typecheck => {
   const vueTscAvailable = isPkgAvailable('vue-tsc')
   if (!vueTscAvailable && !isPkgAvailable('typescript')) {
     return false
   }
-  try {
-    resolveTsconfig(cwd, explicit, false)
-  } catch {
+  if (!hasProjectTsconfig(cwd, explicit)) {
     return false
   }
   return vueTscAvailable ? 'vue-tsc' : 'tsc'
@@ -146,13 +152,14 @@ export const defineConfig = ({
 
   if (typecheck) {
     const tsconfigPath = resolveTsconfig(cwd, tsconfig)
-    const coverageTask = typeCoverage ? [`type-coverage -p ${tsconfigPath}`] : []
+    const quotedTsconfig = JSON.stringify(tsconfigPath)
+    const coverageTask = typeCoverage ? [`type-coverage -p ${quotedTsconfig}`] : []
 
     if (typecheck === 'tsc') {
-      config['*.{cts,mts,ts,tsx}'] = () => [`tsc -p ${tsconfigPath} --noEmit`, ...coverageTask]
+      config['*.{cts,mts,ts,tsx}'] = () => [`tsc -p ${quotedTsconfig} --noEmit`, ...coverageTask]
     } else {
       config['*.{cts,mts,ts,tsx,vue}'] = () => [
-        `vue-tsc -p ${tsconfigPath} --noEmit --incremental false`,
+        `vue-tsc -p ${quotedTsconfig} --noEmit --incremental false`,
         ...coverageTask,
       ]
     }

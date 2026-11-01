@@ -37,7 +37,7 @@ The tool-availability defaults are inferred from installed packages again:
 
 - `linter`: `'oxlint'` if installed, otherwise `'eslint'`, otherwise `false`
 - `stylelint`: enabled when `stylelint` is installed
-- `typecheck`: `'vue-tsc'` / `'tsc'` when installed and a tsconfig is discoverable, otherwise disabled
+- `typecheck`: `'vue-tsc'` / `'tsc'` when installed and a project tsconfig is discoverable, otherwise disabled
 - `typeCoverage`: enabled when `type-coverage` is installed
 - `imagemin`: enabled when `@pkgr/imagemin` is installed (renamed from
   `imagemagick`)
