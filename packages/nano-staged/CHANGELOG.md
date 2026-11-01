@@ -1,5 +1,12 @@
 # Change Log
 
+## 2.2.2
+
+### Patch Changes
+
+- [#453](https://github.com/1stG/configs/pull/453) [`89a175e`](https://github.com/1stG/configs/commit/89a175e3a6a18bb80e1c2e0c5f4828bf9c493908) Thanks [@JounQin](https://github.com/JounQin)! - Use `.gitignore` (plus `.oxfmtignore` when present) for the default Oxfmt
+  command, ignoring explicitly staged files that match those ignore files.
+
 ## 2.2.1
 
 ### Patch Changes
