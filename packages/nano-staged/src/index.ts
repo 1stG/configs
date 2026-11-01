@@ -17,7 +17,7 @@ export interface NanoStagedOptions {
   linter?: Linter
   /** Run `stylelint --fix` on style files. @default installed stylelint */
   stylelint?: boolean
-  /** Type-check command to run. @default false */
+  /** Type-check command to run. @default installed `vue-tsc`/`typescript` */
   typecheck?: Typecheck
   /** Explicit `tsconfig` path; discovered from `cwd` when omitted. */
   tsconfig?: string
@@ -38,36 +38,38 @@ const PRETTIER_FILES = 'ini,properties,pug,rb,sass,sh,styl,stylus'
 /**
  * Resolve the `tsconfig` used by the type-check tasks.
  *
- * @returns A path relative to `cwd`.
+ * Commands run from the Git root, so an absolute path is safer than one relative to `cwd`.
  */
-const resolveTsconfig = (cwd: string): string => {
+const resolveTsconfig = (cwd: string, explicit?: string, usePackageFallback = true): string => {
   const tsconfig =
+    (explicit && path.resolve(cwd, explicit)) ||
     tryFile(path.resolve(cwd, 'tsconfig.staged.json')) ||
     tryFile(path.resolve(cwd, 'tsconfig.json')) ||
     tryFile(path.resolve(cwd, 'tsconfig.base.json')) ||
-    tryPkg('@1stg/tsconfig')
+    (usePackageFallback && tryPkg('@1stg/tsconfig'))
 
   if (!tsconfig) {
     throw new Error('@1stg/nano-staged: no tsconfig found, pass `tsconfig` or disable `typecheck`')
   }
 
-  return path.relative(cwd, tsconfig)
+  return path.resolve(tsconfig)
 }
 
 const LINTERS = ['oxlint', 'eslint'] as const
 
 const resolveLinter = (): NanoStagedOptions['linter'] => LINTERS.find(isPkgAvailable) ?? false
 
-const resolveTypecheck = (cwd: string): Typecheck => {
-  if (!isPkgAvailable('vue-tsc') && !isPkgAvailable('typescript')) {
+const resolveTypecheck = (cwd: string, explicit?: string): Typecheck => {
+  const vueTscAvailable = isPkgAvailable('vue-tsc')
+  if (!vueTscAvailable && !isPkgAvailable('typescript')) {
     return false
   }
   try {
-    resolveTsconfig(cwd)
+    resolveTsconfig(cwd, explicit, false)
   } catch {
     return false
   }
-  return isPkgAvailable('vue-tsc') ? 'vue-tsc' : 'tsc'
+  return vueTscAvailable ? 'vue-tsc' : 'tsc'
 }
 
 /* eslint-disable sonarjs/cognitive-complexity -- config builder */
@@ -78,8 +80,8 @@ export const defineConfig = ({
   formatter = 'prettier',
   linter = resolveLinter(),
   stylelint = isPkgAvailable('stylelint'),
-  typecheck = resolveTypecheck(cwd),
   tsconfig,
+  typecheck = resolveTypecheck(cwd, tsconfig),
   typeCoverage = isPkgAvailable('type-coverage'),
   imagemin = isPkgAvailable('@pkgr/imagemin'),
 }: NanoStagedOptions = {}): StagedConfig => {
@@ -143,13 +145,13 @@ export const defineConfig = ({
   }
 
   if (typecheck) {
-    const tsconfigPath = tsconfig ?? resolveTsconfig(cwd)
+    const tsconfigPath = resolveTsconfig(cwd, tsconfig)
     const coverageTask = typeCoverage ? [`type-coverage -p ${tsconfigPath}`] : []
 
     if (typecheck === 'tsc') {
-      config['*.ts?(x)'] = () => [`tsc -p ${tsconfigPath} --noEmit`, ...coverageTask]
+      config['*.{cts,mts,ts,tsx}'] = () => [`tsc -p ${tsconfigPath} --noEmit`, ...coverageTask]
     } else {
-      config['*.{ts,tsx,vue}'] = () => [
+      config['*.{cts,mts,ts,tsx,vue}'] = () => [
         `vue-tsc -p ${tsconfigPath} --noEmit --incremental false`,
         ...coverageTask,
       ]

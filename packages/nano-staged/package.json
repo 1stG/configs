@@ -24,7 +24,17 @@
     "lib"
   ],
   "peerDependencies": {
-    "nano-staged": ">=0.8.0"
+    "nano-staged": ">=0.8.0",
+    "typescript": ">=6.0.0",
+    "vue-tsc": "^3.3.0"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    },
+    "vue-tsc": {
+      "optional": true
+    }
   },
   "dependencies": {
     "@1stg/tsconfig": "^5.0.0",

@@ -39,7 +39,7 @@ describe('@1stg/nano-staged', () => {
     expect(config['**/!(*package).json']).toEqual(['oxfmt'])
     expect(config['**/package.json']).toEqual(['prettier --write'])
     expect(config.Dockerfile).toBe('prettier --write')
-    expect(config['*.ts?(x)']).toBeTypeOf('function')
+    expect(config['*.{cts,mts,ts,tsx}']).toBeTypeOf('function')
   })
 
   it('keeps linter/stylelint tasks when formatting is disabled', () => {
@@ -56,7 +56,7 @@ describe('@1stg/nano-staged', () => {
       'eslint --fix',
     ])
     expect(config['**/*.json']).toEqual(['eslint --fix'])
-    expect(config['*.ts?(x)']).toBeUndefined()
+    expect(config['*.{cts,mts,ts,tsx}']).toBeUndefined()
   })
 })
 
@@ -69,11 +69,10 @@ it('supports vue-tsc type checking', () => {
     tsconfig: 'tsconfig.json',
     typecheck: 'vue-tsc',
   })
-  expect(config['*.{ts,tsx,vue}']).toBeTypeOf('function')
+  expect(config['*.{cts,mts,ts,tsx,vue}']).toBeTypeOf('function')
 })
 
 it('auto-detects typecheck from installed tools', () => {
-  mockState.tsconfig = join(process.cwd(), 'tsconfig.json')
   mockState.availablePackages.add('typescript')
 
   const tsc = defineStaged({
@@ -81,9 +80,11 @@ it('auto-detects typecheck from installed tools', () => {
     formatter: false,
     linter: false,
     stylelint: false,
+    tsconfig: 'tsconfig.json',
   })
-  expect(tsc['*.ts?(x)']).toBeTypeOf('function')
+  expect(tsc['*.{cts,mts,ts,tsx}']).toBeTypeOf('function')
 
+  mockState.tsconfig = join(process.cwd(), 'tsconfig.json')
   mockState.availablePackages.clear()
   mockState.availablePackages.add('vue-tsc')
   const vueTsc = defineStaged({
@@ -92,7 +93,7 @@ it('auto-detects typecheck from installed tools', () => {
     linter: false,
     stylelint: false,
   })
-  expect(vueTsc['*.{ts,tsx,vue}']).toBeTypeOf('function')
+  expect(vueTsc['*.{cts,mts,ts,tsx,vue}']).toBeTypeOf('function')
 
   mockState.availablePackages.clear()
   const disabled = defineStaged({
@@ -101,7 +102,19 @@ it('auto-detects typecheck from installed tools', () => {
     linter: false,
     stylelint: false,
   })
-  expect(disabled['*.ts?(x)']).toBeUndefined()
+  expect(disabled['*.{cts,mts,ts,tsx}']).toBeUndefined()
+})
+
+it('disables auto typecheck without a project tsconfig', () => {
+  mockState.availablePackages.add('typescript')
+
+  const config = defineStaged({
+    cwd: process.cwd(),
+    formatter: false,
+    linter: false,
+    stylelint: false,
+  })
+  expect(config['*.{cts,mts,ts,tsx}']).toBeUndefined()
 })
 
 it('throws without a discoverable tsconfig', () => {
