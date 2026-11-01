@@ -1,5 +1,15 @@
 # Change Log
 
+## 2.2.0
+
+### Minor Changes
+
+- [#449](https://github.com/1stG/configs/pull/449) [`11be7f0`](https://github.com/1stG/configs/commit/11be7f01cac553d088d9f71abfda3e9724e5f74a) Thanks [@JounQin](https://github.com/JounQin)! - Auto-detect the formatter: use `both` when Oxfmt is installed, otherwise
+  fall back to Prettier.
+
+- [#449](https://github.com/1stG/configs/pull/449) [`11be7f0`](https://github.com/1stG/configs/commit/11be7f01cac553d088d9f71abfda3e9724e5f74a) Thanks [@JounQin](https://github.com/JounQin)! - Add the `both` linter option and use it by default when both Oxlint and
+  ESLint are installed, so files not covered by Oxlint are still linted.
+
 ## 2.1.0
 
 ### Minor Changes
