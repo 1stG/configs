@@ -10,13 +10,17 @@ vi.mock('@pkgr/utils', async importOriginal => {
   return {
     ...actual,
     isPkgAvailable: (name: string) => mockState.availablePackages.has(name),
-    tryFile: (filename: string) =>
-      filename === mockState.tsconfig || filename === mockState.oxfmtIgnore ? filename : undefined,
+    tryFile: (filename: string | string[]) => {
+      const files = Array.isArray(filename) ? filename : [filename]
+      return files
+        .map(file => resolve(process.cwd(), file))
+        .find(file => file === mockState.tsconfig || file === mockState.oxfmtIgnore)
+    },
     tryPkg: () => mockState.packageTsconfig,
   }
 })
 
-import { join } from 'node:path'
+import { join, resolve } from 'node:path'
 
 import { defineConfig as defineStaged } from '@1stg/nano-staged'
 
