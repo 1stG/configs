@@ -1,4 +1,5 @@
 import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 
 import { isPkgAvailable, tryFile, tryPkg } from '@pkgr/utils'
 
@@ -90,15 +91,16 @@ export const defineConfig = ({
   stylelint = isPkgAvailable('stylelint'),
   tsconfig,
   typecheck = resolveTypecheck(tsconfig),
-  typeCoverage = isPkgAvailable('type-coverage'),
+  typeCoverage = isPkgAvailable('type-coverage/bin/type-coverage'),
   imagemin = isPkgAvailable('@pkgr/imagemin'),
 }: NanoStagedOptions = {}): StagedConfig => {
   const config: StagedConfig = {}
 
+  const emptyIgnore = fileURLToPath(new URL('../.oxfmt-empty-ignore', import.meta.url))
   const oxfmtIgnore = tryFile('.oxfmtignore')
-  const oxfmtCommand = oxfmtIgnore
-    ? 'oxfmt --ignore-path .gitignore --ignore-path .oxfmtignore'
-    : 'oxfmt --ignore-path .gitignore'
+  const oxfmtCommand = `oxfmt --ignore-path ${emptyIgnore}${
+    oxfmtIgnore ? ' --ignore-path .oxfmtignore' : ''
+  }`
 
   const command = {
     eslint: 'eslint --fix',

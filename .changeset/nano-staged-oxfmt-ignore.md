@@ -2,5 +2,7 @@
 "@1stg/nano-staged": patch
 ---
 
-Use `.gitignore` plus `.oxfmtignore` (when present) for the default Oxfmt
-command instead of letting Oxfmt fall back to `.prettierignore`.
+Use a shipped empty ignore file for Oxfmt so explicitly staged files are not
+filtered by `.gitignore`, while still avoiding Oxfmt's `.prettierignore`
+default. Add `.oxfmtignore` when present, and detect `type-coverage` through its
+bin entry.
