@@ -100,7 +100,7 @@ it('auto-detects typecheck from installed tools', () => {
   mockState.tsconfig = undefined
   mockState.availablePackages.clear()
   mockState.availablePackages.add('typescript')
-  mockState.packageTsconfig = '/fake/@1stg/tsconfig/tsconfig.json'
+  mockState.packageTsconfig = join(process.cwd(), 'node_modules/@1stg/tsconfig/tsconfig.json')
   const disabled = defineStaged({
     cwd: process.cwd(),
     formatter: false,
@@ -112,7 +112,7 @@ it('auto-detects typecheck from installed tools', () => {
 
 it('uses the package fallback for explicit typecheck', () => {
   mockState.availablePackages.add('typescript')
-  mockState.packageTsconfig = '/fake/@1stg/tsconfig/tsconfig.json'
+  mockState.packageTsconfig = join(process.cwd(), 'node_modules/@1stg/tsconfig/tsconfig.json')
 
   const config = defineStaged({
     cwd: process.cwd(),
@@ -123,7 +123,7 @@ it('uses the package fallback for explicit typecheck', () => {
   })
   expect(config['*.{cts,mts,ts,tsx}']).toBeTypeOf('function')
   expect((config['*.{cts,mts,ts,tsx}'] as () => string[])()[0]).toBe(
-    'tsc -p /fake/@1stg/tsconfig/tsconfig.json --noEmit',
+    'tsc -p node_modules/@1stg/tsconfig/tsconfig.json --noEmit',
   )
 })
 

@@ -40,7 +40,8 @@ const TSCONFIG_CANDIDATES = ['tsconfig.staged.json', 'tsconfig.json', 'tsconfig.
 /**
  * Resolve the `tsconfig` used by the type-check tasks.
  *
- * Commands run from the Git root, so an absolute path is safer than one relative to `cwd`.
+ * Commands run from the Git root, so the path is relative to the execution directory rather than
+ * the configured `cwd`.
  */
 const resolveTsconfig = (cwd: string, explicit?: string): string => {
   const tsconfig =
@@ -52,7 +53,7 @@ const resolveTsconfig = (cwd: string, explicit?: string): string => {
     throw new Error('@1stg/nano-staged: no tsconfig found, pass `tsconfig` or disable `typecheck`')
   }
 
-  return path.resolve(tsconfig)
+  return path.relative(process.cwd(), tsconfig) || tsconfig
 }
 
 const LINTERS = ['oxlint', 'eslint'] as const
