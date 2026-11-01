@@ -43,10 +43,10 @@ const TSCONFIG_CANDIDATES = ['tsconfig.staged.json', 'tsconfig.json', 'tsconfig.
  */
 const resolveTsconfig = (explicit?: string): string => {
   const cwd = process.cwd()
-  const tsconfig =
-    (explicit && path.resolve(cwd, explicit)) ||
-    TSCONFIG_CANDIDATES.map(file => tryFile(path.resolve(cwd, file))).find(Boolean) ||
-    tryPkg('@1stg/tsconfig')
+  const tsconfig = explicit
+    ? tryFile(path.resolve(cwd, explicit))
+    : TSCONFIG_CANDIDATES.map(file => tryFile(path.resolve(cwd, file))).find(Boolean) ||
+      tryPkg('@1stg/tsconfig')
 
   if (!tsconfig) {
     throw new Error('@1stg/nano-staged: no tsconfig found, pass `tsconfig` or disable `typecheck`')
@@ -61,10 +61,9 @@ const resolveLinter = (): NanoStagedOptions['linter'] => LINTERS.find(isPkgAvail
 
 const hasProjectTsconfig = (explicit?: string): boolean => {
   const cwd = process.cwd()
-  return Boolean(
-    (explicit && tryFile(path.resolve(cwd, explicit))) ||
-    TSCONFIG_CANDIDATES.some(file => tryFile(path.resolve(cwd, file))),
-  )
+  return explicit
+    ? Boolean(tryFile(path.resolve(cwd, explicit)))
+    : TSCONFIG_CANDIDATES.some(file => tryFile(path.resolve(cwd, file)))
 }
 
 const resolveTypecheck = (explicit?: string): Typecheck => {

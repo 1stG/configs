@@ -9,7 +9,7 @@ vi.mock('@pkgr/utils', async importOriginal => {
   return {
     ...actual,
     isPkgAvailable: (name: string) => mockState.availablePackages.has(name),
-    tryFile: () => mockState.tsconfig,
+    tryFile: (filename: string) => (filename === mockState.tsconfig ? filename : undefined),
     tryPkg: () => mockState.packageTsconfig,
   }
 })
@@ -26,6 +26,7 @@ afterEach(() => {
 
 describe('@1stg/nano-staged', () => {
   it('builds both formatter tasks', () => {
+    mockState.tsconfig = join(process.cwd(), 'tsconfig.json')
     const config = defineStaged({
       formatter: 'both',
       linter: 'oxlint',
@@ -59,6 +60,7 @@ describe('@1stg/nano-staged', () => {
 })
 
 it('supports vue-tsc type checking', () => {
+  mockState.tsconfig = join(process.cwd(), 'tsconfig.json')
   const config = defineStaged({
     formatter: false,
     linter: false,
@@ -116,6 +118,19 @@ it('uses the package fallback for explicit typecheck', () => {
   expect((config['*.{cts,mts,ts,tsx}'] as () => string[])()[0]).toBe(
     'tsc -p node_modules/@1stg/tsconfig/tsconfig.json --noEmit',
   )
+})
+
+it('disables auto typecheck when an explicit tsconfig is missing', () => {
+  mockState.availablePackages.add('typescript')
+  mockState.tsconfig = join(process.cwd(), 'tsconfig.json')
+
+  const config = defineStaged({
+    tsconfig: 'missing-tsconfig.json',
+    formatter: false,
+    linter: false,
+    stylelint: false,
+  })
+  expect(config['*.{cts,mts,ts,tsx}']).toBeUndefined()
 })
 
 it('disables auto typecheck without a project tsconfig', () => {
