@@ -149,6 +149,8 @@ export const defineConfig = ({
   } else if (formatter === 'both') {
     // `prettier-plugin-pkg` only handles package.json; other JSON stays on Oxfmt.
     config['**/!(*package).json'] = [...dataLinterTask, command.oxfmt]
+    // The negative extglob also excludes names like package.nls.json.
+    config['**/package.*.json'] = [...dataLinterTask, command.oxfmt]
     config['**/package.json'] = [...dataLinterTask, command.prettier]
     config[`*.{${PRETTIER_FILES}}`] = command.prettier
     config['.!(browserslist|nvm|yarn)rc'] = command.prettier
