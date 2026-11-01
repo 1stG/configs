@@ -21,7 +21,6 @@
     "./package.json": "./package.json"
   },
   "files": [
-    ".oxfmt-empty-ignore",
     "lib"
   ],
   "peerDependencies": {
