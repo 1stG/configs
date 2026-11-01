@@ -96,14 +96,15 @@ export const defineConfig = ({
 }: NanoStagedOptions = {}): StagedConfig => {
   const config: StagedConfig = {}
 
-  const emptyIgnore = path.relative(
-    process.cwd(),
-    fileURLToPath(new URL('../.oxfmt-empty-ignore', import.meta.url)),
-  )
   const oxfmtIgnore = tryFile('.oxfmtignore')
-  const oxfmtCommand = oxfmtIgnore
-    ? 'oxfmt --ignore-path .oxfmtignore'
-    : `oxfmt --ignore-path ${emptyIgnore}`
+  const oxfmtCommand = `oxfmt --ignore-path ${
+    oxfmtIgnore
+      ? '.oxfmtignore'
+      : path.relative(
+          process.cwd(),
+          fileURLToPath(new URL('../.oxfmt-empty-ignore', import.meta.url)),
+        )
+  }`
 
   const command = {
     eslint: 'eslint --fix',
