@@ -38,6 +38,8 @@ Use `defineConfig` only when you need options. nano-staged does not support quot
 | `imagemin`     | installed  | Optimize images with `i` when `@pkgr/imagemin` is installed.                          |
 | `commands`     | `{}`       | Override a command, e.g. `{ oxlint: 'oxlint --type-aware --fix' }`.                   |
 
+The default Oxfmt command uses `.oxfmtignore` when present, otherwise the shipped empty ignore file; it never falls back to `.prettierignore` or filters via `.gitignore`. Override `commands.oxfmt` to customize it.
+
 `'both'` formats everything [Oxfmt](../oxfmt-config) supports and leaves the
 languages that need Prettier plugins (Pug, Ruby, shell, INI, properties,
 Stylus, Sass) to `prettier --write`.

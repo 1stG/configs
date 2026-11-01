@@ -2,6 +2,7 @@ const mockState = vi.hoisted(() => ({
   availablePackages: new Set<string>(),
   tsconfig: undefined as string | undefined,
   packageTsconfig: undefined as string | undefined,
+  oxfmtIgnore: undefined as string | undefined,
 }))
 
 vi.mock('@pkgr/utils', async importOriginal => {
@@ -9,19 +10,34 @@ vi.mock('@pkgr/utils', async importOriginal => {
   return {
     ...actual,
     isPkgAvailable: (name: string) => mockState.availablePackages.has(name),
-    tryFile: (filename: string) => (filename === mockState.tsconfig ? filename : undefined),
+    tryFile: (filename: string | string[]) => {
+      const files = Array.isArray(filename) ? filename : [filename]
+      return files
+        .map(file => resolve(process.cwd(), file))
+        .find(file => file === mockState.tsconfig || file === mockState.oxfmtIgnore)
+    },
     tryPkg: () => mockState.packageTsconfig,
   }
 })
 
-import { join } from 'node:path'
+import { execFileSync } from 'node:child_process'
+import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs'
+import { tmpdir } from 'node:os'
+import { join, relative, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
 
 import { defineConfig as defineStaged } from '@1stg/nano-staged'
+
+const emptyIgnore = relative(
+  process.cwd(),
+  fileURLToPath(new URL('../packages/nano-staged/.oxfmt-empty-ignore', import.meta.url)),
+)
 
 afterEach(() => {
   mockState.availablePackages.clear()
   mockState.tsconfig = undefined
   mockState.packageTsconfig = undefined
+  mockState.oxfmtIgnore = undefined
 })
 
 describe('@1stg/nano-staged', () => {
@@ -34,9 +50,14 @@ describe('@1stg/nano-staged', () => {
       tsconfig: 'tsconfig.json',
       typecheck: 'tsc',
     })
-    expect(config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual(['oxlint --fix', 'oxfmt'])
+    expect(config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual([
+      'oxlint --fix',
+      `oxfmt --no-error-on-unmatched-pattern --ignore-path ${emptyIgnore}`,
+    ])
     expect(config['*.{ini,properties,pug,rb,sass,sh,styl,stylus}']).toBe('prettier --write')
-    expect(config['**/!(*package.json).json']).toEqual(['oxfmt'])
+    expect(config['**/!(*package.json).json']).toEqual([
+      `oxfmt --no-error-on-unmatched-pattern --ignore-path ${emptyIgnore}`,
+    ])
     expect(config['**/package.json']).toEqual(['prettier --write'])
     expect(config.Dockerfile).toBe('prettier --write')
     expect(config['*.{cts,mts,ts,tsx}']).toBeTypeOf('function')
@@ -120,7 +141,9 @@ it('auto-detects the formatter', () => {
     tsconfig: 'tsconfig.json',
     typecheck: false,
   })
-  expect(withOxfmt['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual(['oxfmt'])
+  expect(withOxfmt['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual([
+    `oxfmt --no-error-on-unmatched-pattern --ignore-path ${emptyIgnore}`,
+  ])
 
   mockState.availablePackages.clear()
   const withPrettier = defineStaged({
@@ -130,6 +153,72 @@ it('auto-detects the formatter', () => {
     typecheck: false,
   })
   expect(withPrettier['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual(['prettier --write'])
+})
+
+it('adds .oxfmtignore when present', () => {
+  mockState.oxfmtIgnore = join(process.cwd(), '.oxfmtignore')
+
+  const config = defineStaged({
+    formatter: 'oxfmt',
+    linter: false,
+    stylelint: false,
+    tsconfig: 'tsconfig.json',
+    typecheck: false,
+  })
+  expect(config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual([
+    'oxfmt --no-error-on-unmatched-pattern --ignore-path .oxfmtignore',
+  ])
+})
+
+it('detects type-coverage from its package metadata', () => {
+  mockState.availablePackages.add('typescript')
+  mockState.availablePackages.add('type-coverage/package.json')
+  mockState.tsconfig = join(process.cwd(), 'tsconfig.json')
+
+  const config = defineStaged({
+    formatter: false,
+    linter: false,
+    stylelint: false,
+    tsconfig: 'tsconfig.json',
+    typecheck: 'tsc',
+  })
+  expect((config['*.{cts,mts,ts,tsx}'] as () => string[])()).toContain(
+    'type-coverage -p tsconfig.json',
+  )
+})
+
+it('formats staged files matched by .gitignore', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'nano-staged-oxfmt-'))
+  try {
+    writeFileSync(join(dir, '.gitignore'), 'dist\n')
+    mkdirSync(join(dir, 'dist'))
+    writeFileSync(join(dir, 'dist/a.js'), 'const a=1\n')
+
+    const config = defineStaged({
+      formatter: 'oxfmt',
+      linter: false,
+      stylelint: false,
+      tsconfig: 'tsconfig.json',
+      typecheck: false,
+    })
+    const command = (config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}'] as string[])[0]
+    expect(command).toContain(emptyIgnore)
+    expect(command).not.toContain('--ignore-path .gitignore')
+    expect(() =>
+      execFileSync(
+        process.execPath,
+        [
+          join(process.cwd(), 'node_modules/oxfmt/bin/oxfmt'),
+          '--ignore-path',
+          resolve(emptyIgnore),
+          'dist/a.js',
+        ],
+        { cwd: dir },
+      ),
+    ).not.toThrow()
+  } finally {
+    rmSync(dir, { force: true, recursive: true })
+  }
 })
 
 it('supports vue-tsc type checking', () => {

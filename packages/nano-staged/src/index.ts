@@ -1,4 +1,5 @@
 import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 
 import { isPkgAvailable, tryFile, tryPkg } from '@pkgr/utils'
 
@@ -42,17 +43,15 @@ const TSCONFIG_CANDIDATES = ['tsconfig.staged.json', 'tsconfig.json', 'tsconfig.
  * relative to it stays readable and valid.
  */
 const resolveTsconfig = (explicit?: string): string => {
-  const cwd = process.cwd()
   const tsconfig = explicit
-    ? tryFile(path.resolve(cwd, explicit))
-    : TSCONFIG_CANDIDATES.map(file => tryFile(path.resolve(cwd, file))).find(Boolean) ||
-      tryPkg('@1stg/tsconfig')
+    ? tryFile(explicit)
+    : tryFile(TSCONFIG_CANDIDATES) || tryPkg('@1stg/tsconfig')
 
   if (!tsconfig) {
     throw new Error('@1stg/nano-staged: no tsconfig found, pass `tsconfig` or disable `typecheck`')
   }
 
-  return path.relative(cwd, tsconfig)
+  return path.relative(process.cwd(), tsconfig)
 }
 
 const resolveLinter = (): NanoStagedOptions['linter'] => {
@@ -67,12 +66,8 @@ const resolveLinter = (): NanoStagedOptions['linter'] => {
   return eslint ? 'eslint' : false
 }
 
-const hasProjectTsconfig = (explicit?: string): boolean => {
-  const cwd = process.cwd()
-  return explicit
-    ? Boolean(tryFile(path.resolve(cwd, explicit)))
-    : TSCONFIG_CANDIDATES.some(file => tryFile(path.resolve(cwd, file)))
-}
+const hasProjectTsconfig = (explicit?: string): boolean =>
+  Boolean(explicit ? tryFile(explicit) : tryFile(TSCONFIG_CANDIDATES))
 
 const resolveTypecheck = (explicit?: string): Typecheck => {
   const vueTscAvailable = isPkgAvailable('vue-tsc')
@@ -96,14 +91,21 @@ export const defineConfig = ({
   stylelint = isPkgAvailable('stylelint'),
   tsconfig,
   typecheck = resolveTypecheck(tsconfig),
-  typeCoverage = isPkgAvailable('type-coverage'),
+  typeCoverage = isPkgAvailable('type-coverage/package.json'),
   imagemin = isPkgAvailable('@pkgr/imagemin'),
 }: NanoStagedOptions = {}): StagedConfig => {
   const config: StagedConfig = {}
 
   const command = {
     eslint: 'eslint --fix',
-    oxfmt: 'oxfmt',
+    oxfmt: `oxfmt --no-error-on-unmatched-pattern --ignore-path ${
+      tryFile('.oxfmtignore')
+        ? '.oxfmtignore'
+        : path.relative(
+            process.cwd(),
+            fileURLToPath(new URL('../.oxfmt-empty-ignore', import.meta.url)),
+          )
+    }`,
     oxlint: 'oxlint --fix',
     prettier: 'prettier --write',
     stylelint: 'stylelint --allow-empty-input --cache --fix',
