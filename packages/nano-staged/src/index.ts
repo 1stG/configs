@@ -58,6 +58,18 @@ const LINTERS = ['oxlint', 'eslint'] as const
 
 const resolveLinter = (): NanoStagedOptions['linter'] => LINTERS.find(isPkgAvailable) ?? false
 
+const resolveTypecheck = (cwd: string): Typecheck => {
+  if (!isPkgAvailable('vue-tsc') && !isPkgAvailable('typescript')) {
+    return false
+  }
+  try {
+    resolveTsconfig(cwd)
+  } catch {
+    return false
+  }
+  return isPkgAvailable('vue-tsc') ? 'vue-tsc' : 'tsc'
+}
+
 /* eslint-disable sonarjs/cognitive-complexity -- config builder */
 
 export const defineConfig = ({
@@ -66,7 +78,7 @@ export const defineConfig = ({
   formatter = 'prettier',
   linter = resolveLinter(),
   stylelint = isPkgAvailable('stylelint'),
-  typecheck = false,
+  typecheck = resolveTypecheck(cwd),
   tsconfig,
   typeCoverage = isPkgAvailable('type-coverage'),
   imagemin = isPkgAvailable('@pkgr/imagemin'),

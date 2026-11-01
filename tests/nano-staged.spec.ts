@@ -1,6 +1,16 @@
+const mockState = vi.hoisted(() => ({
+  availablePackages: new Set<string>(),
+  tsconfig: undefined as string | undefined,
+}))
+
 vi.mock('@pkgr/utils', async importOriginal => {
   const actual = await importOriginal<typeof import('@pkgr/utils')>()
-  return { ...actual, tryFile: () => undefined, tryPkg: () => undefined }
+  return {
+    ...actual,
+    isPkgAvailable: (name: string) => mockState.availablePackages.has(name),
+    tryFile: () => mockState.tsconfig,
+    tryPkg: () => undefined,
+  }
 })
 
 import { mkdtempSync, rmSync } from 'node:fs'
@@ -8,6 +18,11 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 
 import { defineConfig as defineStaged } from '@1stg/nano-staged'
+
+afterEach(() => {
+  mockState.availablePackages.clear()
+  mockState.tsconfig = undefined
+})
 
 describe('@1stg/nano-staged', () => {
   it('builds both formatter tasks', () => {
@@ -55,6 +70,38 @@ it('supports vue-tsc type checking', () => {
     typecheck: 'vue-tsc',
   })
   expect(config['*.{ts,tsx,vue}']).toBeTypeOf('function')
+})
+
+it('auto-detects typecheck from installed tools', () => {
+  mockState.tsconfig = join(process.cwd(), 'tsconfig.json')
+  mockState.availablePackages.add('typescript')
+
+  const tsc = defineStaged({
+    cwd: process.cwd(),
+    formatter: false,
+    linter: false,
+    stylelint: false,
+  })
+  expect(tsc['*.ts?(x)']).toBeTypeOf('function')
+
+  mockState.availablePackages.clear()
+  mockState.availablePackages.add('vue-tsc')
+  const vueTsc = defineStaged({
+    cwd: process.cwd(),
+    formatter: false,
+    linter: false,
+    stylelint: false,
+  })
+  expect(vueTsc['*.{ts,tsx,vue}']).toBeTypeOf('function')
+
+  mockState.availablePackages.clear()
+  const disabled = defineStaged({
+    cwd: process.cwd(),
+    formatter: false,
+    linter: false,
+    stylelint: false,
+  })
+  expect(disabled['*.ts?(x)']).toBeUndefined()
 })
 
 it('throws without a discoverable tsconfig', () => {
