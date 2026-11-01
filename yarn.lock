@@ -213,6 +213,7 @@ __metadata:
   resolution: "@1stg/oxlint-config@workspace:packages/oxlint-config"
   dependencies:
     "@pkgr/utils": "npm:^4.1.0"
+    oxlint-config-recommended: "npm:^1.2.1"
   peerDependencies:
     oxlint: ">=1.80.0"
     oxlint-tsgolint: ^7.0.2005
@@ -8345,6 +8346,15 @@ __metadata:
   bin:
     oxfmt: bin/oxfmt
   checksum: 10c0/659b6cef1e521248372f48951920802fba67bd56b603143552c6d049969e940addc22900deb95588c4301b4f0ecfb418f96ff2eed78d7530972e9739fe4ece03
+  languageName: node
+  linkType: hard
+
+"oxlint-config-recommended@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "oxlint-config-recommended@npm:1.2.1"
+  peerDependencies:
+    oxlint: ">=1.89.0"
+  checksum: 10c0/b4ee301ff3288088c00c23e85601b9e63e4839d9408fac166a9b339421dcb09047fb49fbdd2073bd5ae48f1bfe5c82bc86b456acc4d04fd3b5b19ec302cf4b4b
   languageName: node
   linkType: hard
 

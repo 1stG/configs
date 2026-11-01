@@ -33,7 +33,8 @@
     }
   },
   "dependencies": {
-    "@pkgr/utils": "^4.1.0"
+    "@pkgr/utils": "^4.1.0",
+    "oxlint-config-recommended": "^1.2.1"
   },
   "publishConfig": {
     "access": "public"

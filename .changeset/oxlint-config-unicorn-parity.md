@@ -3,6 +3,6 @@
 "@1stg/eslint-config": minor
 ---
 
-Restore legacy Unicorn coverage. Oxlint explicitly enables the supported
-recommended rules, while ESLint runs the five Unicorn rules Oxlint does not yet
-support.
+Restore legacy Unicorn coverage. Oxlint reuses the maintained
+`oxlint-config-recommended/unicorn` preset, while ESLint runs the five Unicorn
+rules Oxlint does not yet support.
