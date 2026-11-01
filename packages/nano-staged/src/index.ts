@@ -43,16 +43,15 @@ const TSCONFIG_CANDIDATES = ['tsconfig.staged.json', 'tsconfig.json', 'tsconfig.
  * relative to it stays readable and valid.
  */
 const resolveTsconfig = (explicit?: string): string => {
-  const cwd = process.cwd()
   const tsconfig = explicit
-    ? tryFile(explicit, 'file', cwd)
-    : tryFile(TSCONFIG_CANDIDATES, 'file', cwd) || tryPkg('@1stg/tsconfig')
+    ? tryFile(explicit)
+    : tryFile(TSCONFIG_CANDIDATES) || tryPkg('@1stg/tsconfig')
 
   if (!tsconfig) {
     throw new Error('@1stg/nano-staged: no tsconfig found, pass `tsconfig` or disable `typecheck`')
   }
 
-  return path.relative(cwd, tsconfig)
+  return path.relative(process.cwd(), tsconfig)
 }
 
 const resolveLinter = (): NanoStagedOptions['linter'] => {
@@ -101,12 +100,11 @@ export const defineConfig = ({
 }: NanoStagedOptions = {}): StagedConfig => {
   const config: StagedConfig = {}
 
-  const cwd = process.cwd()
   const emptyIgnore = path.relative(
-    cwd,
+    process.cwd(),
     fileURLToPath(new URL('../.oxfmt-empty-ignore', import.meta.url)),
   )
-  const oxfmtIgnore = tryFile('.oxfmtignore', 'file', cwd)
+  const oxfmtIgnore = tryFile('.oxfmtignore')
   const oxfmtCommand = `oxfmt --ignore-path ${emptyIgnore}${
     oxfmtIgnore ? ' --ignore-path .oxfmtignore' : ''
   }`
