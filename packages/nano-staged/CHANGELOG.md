@@ -1,5 +1,13 @@
 # Change Log
 
+## 2.3.0
+
+### Minor Changes
+
+- [#455](https://github.com/1stG/configs/pull/455) [`73d0b31`](https://github.com/1stG/configs/commit/73d0b319306567657e5c35703e46aac681468c1b) Thanks [@JounQin](https://github.com/JounQin)! - Auto-detect the formatter consistently with the linter: `both` only when
+  Oxfmt and Prettier are installed, `oxfmt` or `prettier` when only one is
+  installed, otherwise disabled. Prettier is now an optional peer dependency.
+
 ## 2.2.2
 
 ### Patch Changes
