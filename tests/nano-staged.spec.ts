@@ -140,6 +140,7 @@ it('auto-detects the formatter', () => {
   ])
 
   mockState.availablePackages.clear()
+  mockState.availablePackages.add('prettier')
   const withPrettier = defineStaged({
     linter: false,
     stylelint: false,
@@ -147,6 +148,27 @@ it('auto-detects the formatter', () => {
     typecheck: false,
   })
   expect(withPrettier['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual(['prettier --write'])
+
+  mockState.availablePackages.add('oxfmt')
+  const withBoth = defineStaged({
+    linter: false,
+    stylelint: false,
+    tsconfig: 'tsconfig.json',
+    typecheck: false,
+  })
+  expect(withBoth['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual([
+    'oxfmt --no-error-on-unmatched-pattern --ignore-path .gitignore',
+  ])
+  expect(withBoth['**/package.json']).toEqual(['prettier --write'])
+
+  mockState.availablePackages.clear()
+  const withoutFormatter = defineStaged({
+    linter: false,
+    stylelint: false,
+    tsconfig: 'tsconfig.json',
+    typecheck: false,
+  })
+  expect(withoutFormatter['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toBeUndefined()
 })
 
 it('adds .oxfmtignore when present', () => {
