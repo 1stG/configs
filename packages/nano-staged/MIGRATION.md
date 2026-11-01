@@ -37,9 +37,10 @@ The tool-availability defaults are inferred from installed packages again:
 
 - `linter`: `'oxlint'` if installed, otherwise `'eslint'`, otherwise `false`
 - `stylelint`: enabled when `stylelint` is installed
+- `typecheck`: `'vue-tsc'` / `'tsc'` when installed and a project tsconfig is discoverable, otherwise disabled
 - `typeCoverage`: enabled when `type-coverage` is installed
 - `imagemin`: enabled when `@pkgr/imagemin` is installed (renamed from
   `imagemagick`)
 
-`formatter` and `typecheck` stay explicit because they are project choices, not
-just tool availability. `commands` still lets you override a single command.
+`formatter` stays explicit because it is a project choice. `commands` still
+lets you override a single command.

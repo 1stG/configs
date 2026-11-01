@@ -24,21 +24,20 @@ The default export can be re-exported directly:
 export { default } from '@1stg/nano-staged'
 ```
 
-Use `defineConfig` only when you need options.
+Use `defineConfig` only when you need options. nano-staged does not support quoting arguments, so avoid spaces in the `tsconfig` path.
 
 ## Options
 
-| Option         | Default         | Description                                                                  |
-| -------------- | --------------- | ---------------------------------------------------------------------------- |
-| `formatter`    | `'prettier'`    | `'oxfmt'`, `'prettier'`, `'both'` (Oxfmt plus Prettier fallback) or `false`. |
-| `linter`       | installed       | `'oxlint'` → `'eslint'` → `false` based on installation.                     |
-| `stylelint`    | installed       | Run `stylelint --fix` when stylelint is installed.                           |
-| `typecheck`    | `false`         | `'tsc'`, `'vue-tsc'` or `false`.                                             |
-| `tsconfig`     | discovered      | Explicit `tsconfig` path, resolved once when the config loads.               |
-| `typeCoverage` | installed       | Run `type-coverage` when installed.                                          |
-| `imagemin`     | installed       | Optimize images with `i` when `@pkgr/imagemin` is installed.                 |
-| `commands`     | `{}`            | Override a command, e.g. `{ oxlint: 'oxlint --type-aware --fix' }`.          |
-| `cwd`          | `process.cwd()` | Base directory for `tsconfig` discovery.                                     |
+| Option         | Default      | Description                                                                  |
+| -------------- | ------------ | ---------------------------------------------------------------------------- |
+| `formatter`    | `'prettier'` | `'oxfmt'`, `'prettier'`, `'both'` (Oxfmt plus Prettier fallback) or `false`. |
+| `linter`       | installed    | `'oxlint'` → `'eslint'` → `false` based on installation.                     |
+| `stylelint`    | installed    | Run `stylelint --fix` when stylelint is installed.                           |
+| `typecheck`    | installed    | `'vue-tsc'` / `'tsc'` when installed and a project tsconfig is discoverable. |
+| `tsconfig`     | discovered   | Explicit `tsconfig` path, resolved relative to the Git root.                 |
+| `typeCoverage` | installed    | Run `type-coverage` when installed.                                          |
+| `imagemin`     | installed    | Optimize images with `i` when `@pkgr/imagemin` is installed.                 |
+| `commands`     | `{}`         | Override a command, e.g. `{ oxlint: 'oxlint --type-aware --fix' }`.          |
 
 `'both'` formats everything [Oxfmt](../oxfmt-config) supports and leaves the
 languages that need Prettier plugins (Pug, Ruby, shell, INI, properties,

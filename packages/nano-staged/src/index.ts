@@ -9,17 +9,15 @@ export type Typecheck = false | 'tsc' | 'vue-tsc'
 export interface NanoStagedOptions {
   /** Command overrides, e.g. to pass a config file. */
   commands?: Partial<Record<'oxfmt' | 'oxlint' | 'prettier' | 'stylelint', string>>
-  /** Base directory used to resolve `tsconfig`. @default process.cwd() */
-  cwd?: string
   /** Formatter(s) to run. @default 'prettier' */
   formatter?: Formatter
   /** Linter to run before formatting. @default installed oxlint/eslint */
   linter?: Linter
   /** Run `stylelint --fix` on style files. @default installed stylelint */
   stylelint?: boolean
-  /** Type-check command to run. @default false */
+  /** Type-check command to run. @default installed `vue-tsc`/`typescript` */
   typecheck?: Typecheck
-  /** Explicit `tsconfig` path; discovered from `cwd` when omitted. */
+  /** Explicit `tsconfig` path; discovered from `process.cwd()` when omitted. */
   tsconfig?: string
   /** Run `type-coverage` together with the type-check. @default installed type-coverage */
   typeCoverage?: boolean
@@ -35,17 +33,20 @@ const STYLE_FILES = 'css,less,scss'
 const DATA_FILES = 'gql,graphql,html,jsonc,json5,md,mdx,toml,yaml,yml'
 const PRETTIER_FILES = 'ini,properties,pug,rb,sass,sh,styl,stylus'
 
+const TSCONFIG_CANDIDATES = ['tsconfig.staged.json', 'tsconfig.json', 'tsconfig.base.json']
+
 /**
  * Resolve the `tsconfig` used by the type-check tasks.
  *
- * @returns A path relative to `cwd`.
+ * Hooks run from the Git root, which is also `process.cwd()` when the config loads, so a path
+ * relative to it stays readable and valid.
  */
-const resolveTsconfig = (cwd: string): string => {
-  const tsconfig =
-    tryFile(path.resolve(cwd, 'tsconfig.staged.json')) ||
-    tryFile(path.resolve(cwd, 'tsconfig.json')) ||
-    tryFile(path.resolve(cwd, 'tsconfig.base.json')) ||
-    tryPkg('@1stg/tsconfig')
+const resolveTsconfig = (explicit?: string): string => {
+  const cwd = process.cwd()
+  const tsconfig = explicit
+    ? tryFile(path.resolve(cwd, explicit))
+    : TSCONFIG_CANDIDATES.map(file => tryFile(path.resolve(cwd, file))).find(Boolean) ||
+      tryPkg('@1stg/tsconfig')
 
   if (!tsconfig) {
     throw new Error('@1stg/nano-staged: no tsconfig found, pass `tsconfig` or disable `typecheck`')
@@ -58,16 +59,33 @@ const LINTERS = ['oxlint', 'eslint'] as const
 
 const resolveLinter = (): NanoStagedOptions['linter'] => LINTERS.find(isPkgAvailable) ?? false
 
+const hasProjectTsconfig = (explicit?: string): boolean => {
+  const cwd = process.cwd()
+  return explicit
+    ? Boolean(tryFile(path.resolve(cwd, explicit)))
+    : TSCONFIG_CANDIDATES.some(file => tryFile(path.resolve(cwd, file)))
+}
+
+const resolveTypecheck = (explicit?: string): Typecheck => {
+  const vueTscAvailable = isPkgAvailable('vue-tsc')
+  if (!vueTscAvailable && !isPkgAvailable('typescript')) {
+    return false
+  }
+  if (!hasProjectTsconfig(explicit)) {
+    return false
+  }
+  return vueTscAvailable ? 'vue-tsc' : 'tsc'
+}
+
 /* eslint-disable sonarjs/cognitive-complexity -- config builder */
 
 export const defineConfig = ({
   commands = {},
-  cwd = process.cwd(),
   formatter = 'prettier',
   linter = resolveLinter(),
   stylelint = isPkgAvailable('stylelint'),
-  typecheck = false,
   tsconfig,
+  typecheck = resolveTypecheck(tsconfig),
   typeCoverage = isPkgAvailable('type-coverage'),
   imagemin = isPkgAvailable('@pkgr/imagemin'),
 }: NanoStagedOptions = {}): StagedConfig => {
@@ -131,13 +149,13 @@ export const defineConfig = ({
   }
 
   if (typecheck) {
-    const tsconfigPath = tsconfig ?? resolveTsconfig(cwd)
+    const tsconfigPath = resolveTsconfig(tsconfig)
     const coverageTask = typeCoverage ? [`type-coverage -p ${tsconfigPath}`] : []
 
     if (typecheck === 'tsc') {
-      config['*.ts?(x)'] = () => [`tsc -p ${tsconfigPath} --noEmit`, ...coverageTask]
+      config['*.{cts,mts,ts,tsx}'] = () => [`tsc -p ${tsconfigPath} --noEmit`, ...coverageTask]
     } else {
-      config['*.{ts,tsx,vue}'] = () => [
+      config['*.{cts,mts,ts,tsx,vue}'] = () => [
         `vue-tsc -p ${tsconfigPath} --noEmit --incremental false`,
         ...coverageTask,
       ]
