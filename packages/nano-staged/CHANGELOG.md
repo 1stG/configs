@@ -1,5 +1,14 @@
 # Change Log
 
+## 2.1.0
+
+### Minor Changes
+
+- [#447](https://github.com/1stG/configs/pull/447) [`7093dfc`](https://github.com/1stG/configs/commit/7093dfc70645faceeb237dcdcfbd10126811f875) Thanks [@JounQin](https://github.com/JounQin)! - Auto-detect the type-check command from installed packages: `vue-tsc` first,
+  then `tsc` (via `typescript`), when a project tsconfig is discoverable; otherwise
+  disabled. Remove the `cwd` option; tsconfig discovery now always uses
+  `process.cwd()`.
+
 ## 2.0.0
 
 ### Major Changes
