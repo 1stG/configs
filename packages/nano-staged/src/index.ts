@@ -101,9 +101,14 @@ export const defineConfig = ({
 }: NanoStagedOptions = {}): StagedConfig => {
   const config: StagedConfig = {}
 
+  const oxfmtIgnore = tryFile(path.resolve('.oxfmtignore'))
+  const oxfmtCommand = oxfmtIgnore
+    ? 'oxfmt --ignore-path .gitignore --ignore-path .oxfmtignore'
+    : 'oxfmt --ignore-path .gitignore'
+
   const command = {
     eslint: 'eslint --fix',
-    oxfmt: 'oxfmt',
+    oxfmt: oxfmtCommand,
     oxlint: 'oxlint --fix',
     prettier: 'prettier --write',
     stylelint: 'stylelint --allow-empty-input --cache --fix',

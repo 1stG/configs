@@ -2,6 +2,7 @@ const mockState = vi.hoisted(() => ({
   availablePackages: new Set<string>(),
   tsconfig: undefined as string | undefined,
   packageTsconfig: undefined as string | undefined,
+  oxfmtIgnore: undefined as string | undefined,
 }))
 
 vi.mock('@pkgr/utils', async importOriginal => {
@@ -9,7 +10,8 @@ vi.mock('@pkgr/utils', async importOriginal => {
   return {
     ...actual,
     isPkgAvailable: (name: string) => mockState.availablePackages.has(name),
-    tryFile: (filename: string) => (filename === mockState.tsconfig ? filename : undefined),
+    tryFile: (filename: string) =>
+      filename === mockState.tsconfig || filename === mockState.oxfmtIgnore ? filename : undefined,
     tryPkg: () => mockState.packageTsconfig,
   }
 })
@@ -22,6 +24,7 @@ afterEach(() => {
   mockState.availablePackages.clear()
   mockState.tsconfig = undefined
   mockState.packageTsconfig = undefined
+  mockState.oxfmtIgnore = undefined
 })
 
 describe('@1stg/nano-staged', () => {
@@ -34,9 +37,12 @@ describe('@1stg/nano-staged', () => {
       tsconfig: 'tsconfig.json',
       typecheck: 'tsc',
     })
-    expect(config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual(['oxlint --fix', 'oxfmt'])
+    expect(config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual([
+      'oxlint --fix',
+      'oxfmt --ignore-path .gitignore',
+    ])
     expect(config['*.{ini,properties,pug,rb,sass,sh,styl,stylus}']).toBe('prettier --write')
-    expect(config['**/!(*package.json).json']).toEqual(['oxfmt'])
+    expect(config['**/!(*package.json).json']).toEqual(['oxfmt --ignore-path .gitignore'])
     expect(config['**/package.json']).toEqual(['prettier --write'])
     expect(config.Dockerfile).toBe('prettier --write')
     expect(config['*.{cts,mts,ts,tsx}']).toBeTypeOf('function')
@@ -120,7 +126,9 @@ it('auto-detects the formatter', () => {
     tsconfig: 'tsconfig.json',
     typecheck: false,
   })
-  expect(withOxfmt['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual(['oxfmt'])
+  expect(withOxfmt['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual([
+    'oxfmt --ignore-path .gitignore',
+  ])
 
   mockState.availablePackages.clear()
   const withPrettier = defineStaged({
@@ -130,6 +138,21 @@ it('auto-detects the formatter', () => {
     typecheck: false,
   })
   expect(withPrettier['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual(['prettier --write'])
+})
+
+it('adds .oxfmtignore when present', () => {
+  mockState.oxfmtIgnore = join(process.cwd(), '.oxfmtignore')
+
+  const config = defineStaged({
+    formatter: 'oxfmt',
+    linter: false,
+    stylelint: false,
+    tsconfig: 'tsconfig.json',
+    typecheck: false,
+  })
+  expect(config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual([
+    'oxfmt --ignore-path .gitignore --ignore-path .oxfmtignore',
+  ])
 })
 
 it('supports vue-tsc type checking', () => {
