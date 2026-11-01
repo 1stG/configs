@@ -128,17 +128,34 @@ export const defineConfig = async ({
     const tseslint = await load<{
       configs: { recommended: Linter.Config[] }
     }>('typescript-eslint')
-    configs.push(...tseslint.configs.recommended.map(withCodeFiles))
+    configs.push(...tseslint.configs.recommended.map(config => withCodeFiles(config)))
 
     if (isInstalled('eslint-plugin-sonarjs')) {
       const sonarjs = await load<PluginConfigs>('eslint-plugin-sonarjs')
-      configs.push(...toConfigs(sonarjs.configs.recommended).map(withCodeFiles))
+      configs.push(...toConfigs(sonarjs.configs.recommended).map(config => withCodeFiles(config)))
     }
 
     if (isInstalled('eslint-plugin-regexp')) {
       const regexp = await load<PluginConfigs>('eslint-plugin-regexp')
-      configs.push(...toConfigs(regexp.configs['flat/recommended']).map(withCodeFiles))
+      configs.push(
+        ...toConfigs(regexp.configs['flat/recommended']).map(config => withCodeFiles(config)),
+      )
     }
+
+    const unicorn =
+      await load<NonNullable<Linter.Config['plugins']>[string]>('eslint-plugin-unicorn')
+    configs.push(
+      withCodeFiles({
+        plugins: { unicorn },
+        rules: {
+          'unicorn/expiring-todo-comments': 'error',
+          'unicorn/no-for-loop': 'error',
+          'unicorn/no-unnecessary-polyfills': 'error',
+          'unicorn/prefer-switch': 'error',
+          'unicorn/template-indent': 'error',
+        },
+      }),
+    )
   }
 
   configs.push(...toConfigs(oxlint.configs['flat/all']))
@@ -175,6 +192,7 @@ export const defineConfig = async ({
   return configs
 }
 
+// oxlint-disable-next-line unicorn/prefer-top-level-await -- keep the Promise API for ESLint
 const config: Promise<Linter.Config[]> = defineConfig()
 
 export default config

@@ -145,22 +145,32 @@ export const defineConfig = ({
     config[`*.{${DATA_FILES}}`] = dataTask
   }
 
-  if (formatter === 'prettier') {
-    config['**/*.json'] = [...dataLinterTask, command.prettier]
-    config[`*.{${PRETTIER_FILES}}`] = command.prettier
-    config['.!(browserslist|nvm|yarn)rc'] = command.prettier
-    config['Dockerfile'] = command.prettier
-  } else if (formatter === 'oxfmt') {
-    config['**/*.json'] = [...dataLinterTask, command.oxfmt]
-  } else if (formatter === 'both') {
-    // `prettier-plugin-pkg` only handles package.json; other JSON stays on Oxfmt.
-    config['**/!(*package.json).json'] = [...dataLinterTask, command.oxfmt]
-    config['**/package.json'] = [...dataLinterTask, command.prettier]
-    config[`*.{${PRETTIER_FILES}}`] = command.prettier
-    config['.!(browserslist|nvm|yarn)rc'] = command.prettier
-    config['Dockerfile'] = command.prettier
-  } else if (dataLinterTask.length > 0) {
-    config['**/*.json'] = dataLinterTask
+  switch (formatter) {
+    case 'prettier': {
+      config['**/*.json'] = [...dataLinterTask, command.prettier]
+      config[`*.{${PRETTIER_FILES}}`] = command.prettier
+      config['.!(browserslist|nvm|yarn)rc'] = command.prettier
+      config['Dockerfile'] = command.prettier
+      break
+    }
+    case 'oxfmt': {
+      config['**/*.json'] = [...dataLinterTask, command.oxfmt]
+      break
+    }
+    case 'both': {
+      // `prettier-plugin-pkg` only handles package.json; other JSON stays on Oxfmt.
+      config['**/!(*package.json).json'] = [...dataLinterTask, command.oxfmt]
+      config['**/package.json'] = [...dataLinterTask, command.prettier]
+      config[`*.{${PRETTIER_FILES}}`] = command.prettier
+      config['.!(browserslist|nvm|yarn)rc'] = command.prettier
+      config['Dockerfile'] = command.prettier
+      break
+    }
+    default: {
+      if (dataLinterTask.length > 0) {
+        config['**/*.json'] = dataLinterTask
+      }
+    }
   }
 
   if (imagemin) {

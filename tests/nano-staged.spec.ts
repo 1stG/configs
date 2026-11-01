@@ -13,7 +13,7 @@ vi.mock('@pkgr/utils', async importOriginal => {
     tryFile: (filename: string | string[]) => {
       const files = Array.isArray(filename) ? filename : [filename]
       return files
-        .map(file => resolve(process.cwd(), file))
+        .map(file => path.resolve(process.cwd(), file))
         .find(file => file === mockState.tsconfig || file === mockState.oxfmtIgnore)
     },
     tryPkg: () => mockState.packageTsconfig,
@@ -23,9 +23,11 @@ vi.mock('@pkgr/utils', async importOriginal => {
 import { execFileSync } from 'node:child_process'
 import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
-import { join, resolve } from 'node:path'
+import path from 'node:path'
 
 import { defineConfig as defineStaged } from '@1stg/nano-staged'
+
+const { join } = path
 
 afterEach(() => {
   mockState.availablePackages.clear()
