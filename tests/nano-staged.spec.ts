@@ -36,7 +36,7 @@ describe('@1stg/nano-staged', () => {
     })
     expect(config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual(['oxlint --fix', 'oxfmt'])
     expect(config['*.{ini,properties,pug,rb,sass,sh,styl,stylus}']).toBe('prettier --write')
-    expect(config['**/!(*package).json']).toEqual(['oxfmt'])
+    expect(config['**/!(*package.json).json']).toEqual(['oxfmt'])
     expect(config['**/package.json']).toEqual(['prettier --write'])
     expect(config.Dockerfile).toBe('prettier --write')
     expect(config['*.{cts,mts,ts,tsx}']).toBeTypeOf('function')
@@ -57,6 +57,79 @@ describe('@1stg/nano-staged', () => {
     expect(config['**/*.json']).toEqual(['eslint --fix'])
     expect(config['*.{cts,mts,ts,tsx}']).toBeUndefined()
   })
+})
+
+it('runs both linters', () => {
+  const config = defineStaged({
+    formatter: false,
+    linter: 'both',
+    stylelint: false,
+    tsconfig: 'tsconfig.json',
+    typecheck: false,
+  })
+  expect(config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual(['oxlint --fix', 'eslint --fix'])
+  expect(config['*.{gql,graphql,html,jsonc,json5,md,mdx,toml,yaml,yml}']).toEqual(['eslint --fix'])
+})
+
+it('auto-detects both linters', () => {
+  mockState.availablePackages.add('oxlint')
+  mockState.availablePackages.add('eslint')
+
+  const config = defineStaged({
+    formatter: false,
+    stylelint: false,
+    tsconfig: 'tsconfig.json',
+    typecheck: false,
+  })
+  expect(config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual(['oxlint --fix', 'eslint --fix'])
+  expect(config['*.{gql,graphql,html,jsonc,json5,md,mdx,toml,yaml,yml}']).toEqual(['eslint --fix'])
+})
+
+it('auto-detects an oxlint-only setup', () => {
+  mockState.availablePackages.add('oxlint')
+
+  const config = defineStaged({
+    formatter: false,
+    stylelint: false,
+    tsconfig: 'tsconfig.json',
+    typecheck: false,
+  })
+  expect(config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual(['oxlint --fix'])
+  expect(config['*.{gql,graphql,html,jsonc,json5,md,mdx,toml,yaml,yml}']).toBeUndefined()
+})
+
+it('auto-detects an eslint-only setup', () => {
+  mockState.availablePackages.add('eslint')
+
+  const config = defineStaged({
+    formatter: false,
+    stylelint: false,
+    tsconfig: 'tsconfig.json',
+    typecheck: false,
+  })
+  expect(config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual(['eslint --fix'])
+  expect(config['*.{gql,graphql,html,jsonc,json5,md,mdx,toml,yaml,yml}']).toEqual(['eslint --fix'])
+})
+
+it('auto-detects the formatter', () => {
+  mockState.availablePackages.add('oxfmt')
+
+  const withOxfmt = defineStaged({
+    linter: false,
+    stylelint: false,
+    tsconfig: 'tsconfig.json',
+    typecheck: false,
+  })
+  expect(withOxfmt['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual(['oxfmt'])
+
+  mockState.availablePackages.clear()
+  const withPrettier = defineStaged({
+    linter: false,
+    stylelint: false,
+    tsconfig: 'tsconfig.json',
+    typecheck: false,
+  })
+  expect(withPrettier['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual(['prettier --write'])
 })
 
 it('supports vue-tsc type checking', () => {

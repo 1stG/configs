@@ -3,15 +3,15 @@ import path from 'node:path'
 import { isPkgAvailable, tryFile, tryPkg } from '@pkgr/utils'
 
 export type Formatter = false | 'oxfmt' | 'prettier' | 'both'
-export type Linter = false | 'oxlint' | 'eslint'
+export type Linter = false | 'oxlint' | 'eslint' | 'both'
 export type Typecheck = false | 'tsc' | 'vue-tsc'
 
 export interface NanoStagedOptions {
   /** Command overrides, e.g. to pass a config file. */
   commands?: Partial<Record<'oxfmt' | 'oxlint' | 'prettier' | 'stylelint', string>>
-  /** Formatter(s) to run. @default 'prettier' */
+  /** Formatter(s) to run. @default installed Oxfmt, otherwise Prettier */
   formatter?: Formatter
-  /** Linter to run before formatting. @default installed oxlint/eslint */
+  /** Linter to run before formatting. @default 'both' when both are installed */
   linter?: Linter
   /** Run `stylelint --fix` on style files. @default installed stylelint */
   stylelint?: boolean
@@ -55,9 +55,17 @@ const resolveTsconfig = (explicit?: string): string => {
   return path.relative(cwd, tsconfig)
 }
 
-const LINTERS = ['oxlint', 'eslint'] as const
-
-const resolveLinter = (): NanoStagedOptions['linter'] => LINTERS.find(isPkgAvailable) ?? false
+const resolveLinter = (): NanoStagedOptions['linter'] => {
+  const oxlint = isPkgAvailable('oxlint')
+  const eslint = isPkgAvailable('eslint')
+  if (oxlint && eslint) {
+    return 'both'
+  }
+  if (oxlint) {
+    return 'oxlint'
+  }
+  return eslint ? 'eslint' : false
+}
 
 const hasProjectTsconfig = (explicit?: string): boolean => {
   const cwd = process.cwd()
@@ -77,11 +85,13 @@ const resolveTypecheck = (explicit?: string): Typecheck => {
   return vueTscAvailable ? 'vue-tsc' : 'tsc'
 }
 
+const resolveFormatter = (): Formatter => (isPkgAvailable('oxfmt') ? 'both' : 'prettier')
+
 /* eslint-disable sonarjs/cognitive-complexity -- config builder */
 
 export const defineConfig = ({
   commands = {},
-  formatter = 'prettier',
+  formatter = resolveFormatter(),
   linter = resolveLinter(),
   stylelint = isPkgAvailable('stylelint'),
   tsconfig,
@@ -100,9 +110,12 @@ export const defineConfig = ({
     ...commands,
   }
 
-  const lintTask = linter ? [command[linter]] : []
+  const lintTask = [
+    ...(linter === 'oxlint' || linter === 'both' ? [command.oxlint] : []),
+    ...(linter === 'eslint' || linter === 'both' ? [command.eslint] : []),
+  ]
   const stylelintTask = stylelint ? [command.stylelint] : []
-  const dataLinterTask = linter === 'eslint' ? [command.eslint] : []
+  const dataLinterTask = linter === 'eslint' || linter === 'both' ? [command.eslint] : []
   let formatterCommand: string | null = null
   if (formatter === 'prettier') {
     formatterCommand = command.prettier
@@ -135,7 +148,7 @@ export const defineConfig = ({
     config['**/*.json'] = [...dataLinterTask, command.oxfmt]
   } else if (formatter === 'both') {
     // `prettier-plugin-pkg` only handles package.json; other JSON stays on Oxfmt.
-    config['**/!(*package).json'] = [...dataLinterTask, command.oxfmt]
+    config['**/!(*package.json).json'] = [...dataLinterTask, command.oxfmt]
     config['**/package.json'] = [...dataLinterTask, command.prettier]
     config[`*.{${PRETTIER_FILES}}`] = command.prettier
     config['.!(browserslist|nvm|yarn)rc'] = command.prettier

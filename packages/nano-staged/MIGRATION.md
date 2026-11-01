@@ -35,12 +35,12 @@ export default defineConfig({
 
 The tool-availability defaults are inferred from installed packages again:
 
-- `linter`: `'oxlint'` if installed, otherwise `'eslint'`, otherwise `false`
+- `formatter`: `'both'` when Oxfmt is installed, otherwise `'prettier'`
+- `linter`: `'both'` when both `oxlint` and `eslint` are installed, otherwise the installed one, otherwise `false`
 - `stylelint`: enabled when `stylelint` is installed
 - `typecheck`: `'vue-tsc'` / `'tsc'` when installed and a project tsconfig is discoverable, otherwise disabled
 - `typeCoverage`: enabled when `type-coverage` is installed
 - `imagemin`: enabled when `@pkgr/imagemin` is installed (renamed from
   `imagemagick`)
 
-`formatter` stays explicit because it is a project choice. `commands` still
-lets you override a single command.
+`commands` still lets you override a single command.
