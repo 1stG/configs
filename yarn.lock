@@ -181,14 +181,16 @@ __metadata:
   dependencies:
     "@1stg/tsconfig": "npm:^5.0.0"
     "@pkgr/utils": "npm:^4.1.0"
-    prettier: "npm:^3.9.10"
   peerDependencies:
     nano-staged: ">=0.8.0"
     oxfmt: ">=0.75.0"
+    prettier: ">=3.0.0"
     typescript: ">=6.0.0"
     vue-tsc: ^3.2.0
   peerDependenciesMeta:
     oxfmt:
+      optional: true
+    prettier:
       optional: true
     typescript:
       optional: true

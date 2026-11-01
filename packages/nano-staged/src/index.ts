@@ -79,7 +79,17 @@ const resolveTypecheck = (explicit?: string): Typecheck => {
   return vueTscAvailable ? 'vue-tsc' : 'tsc'
 }
 
-const resolveFormatter = (): Formatter => (isPkgAvailable('oxfmt') ? 'both' : 'prettier')
+const resolveFormatter = (): Formatter => {
+  const oxfmt = isPkgAvailable('oxfmt')
+  const prettier = isPkgAvailable('prettier')
+  if (oxfmt && prettier) {
+    return 'both'
+  }
+  if (oxfmt) {
+    return 'oxfmt'
+  }
+  return prettier ? 'prettier' : false
+}
 
 /* eslint-disable sonarjs/cognitive-complexity -- config builder */
 
