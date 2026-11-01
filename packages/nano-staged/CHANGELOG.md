@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.2.1
+
+### Patch Changes
+
+- [#451](https://github.com/1stG/configs/pull/451) [`a70ca8c`](https://github.com/1stG/configs/commit/a70ca8c676dc39add61c4d7bd744d09624b342db) Thanks [@JounQin](https://github.com/JounQin)! - Use a shipped empty ignore file for Oxfmt so explicitly staged files are not
+  filtered by `.gitignore`, while still avoiding Oxfmt's `.prettierignore`
+  default. Use `.oxfmtignore` instead of the empty fallback when present, detect
+  `type-coverage` through its package metadata, and let fully ignored Oxfmt tasks
+  succeed with `--no-error-on-unmatched-pattern`. Require Oxfmt `>=0.75.0` as an
+  optional peer.
+
 ## 2.2.0
 
 ### Minor Changes
