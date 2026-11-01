@@ -21,17 +21,11 @@ vi.mock('@pkgr/utils', async importOriginal => {
 })
 
 import { execFileSync } from 'node:child_process'
-import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs'
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
-import { join, relative, resolve } from 'node:path'
-import { fileURLToPath } from 'node:url'
+import { join, resolve } from 'node:path'
 
 import { defineConfig as defineStaged } from '@1stg/nano-staged'
-
-const emptyIgnore = relative(
-  process.cwd(),
-  fileURLToPath(new URL('../packages/nano-staged/.oxfmt-empty-ignore', import.meta.url)),
-)
 
 afterEach(() => {
   mockState.availablePackages.clear()
@@ -52,11 +46,11 @@ describe('@1stg/nano-staged', () => {
     })
     expect(config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual([
       'oxlint --fix',
-      `oxfmt --no-error-on-unmatched-pattern --ignore-path ${emptyIgnore}`,
+      'oxfmt --no-error-on-unmatched-pattern --ignore-path .gitignore',
     ])
     expect(config['*.{ini,properties,pug,rb,sass,sh,styl,stylus}']).toBe('prettier --write')
     expect(config['**/!(*package.json).json']).toEqual([
-      `oxfmt --no-error-on-unmatched-pattern --ignore-path ${emptyIgnore}`,
+      'oxfmt --no-error-on-unmatched-pattern --ignore-path .gitignore',
     ])
     expect(config['**/package.json']).toEqual(['prettier --write'])
     expect(config.Dockerfile).toBe('prettier --write')
@@ -142,7 +136,7 @@ it('auto-detects the formatter', () => {
     typecheck: false,
   })
   expect(withOxfmt['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual([
-    `oxfmt --no-error-on-unmatched-pattern --ignore-path ${emptyIgnore}`,
+    'oxfmt --no-error-on-unmatched-pattern --ignore-path .gitignore',
   ])
 
   mockState.availablePackages.clear()
@@ -166,7 +160,7 @@ it('adds .oxfmtignore when present', () => {
     typecheck: false,
   })
   expect(config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}']).toEqual([
-    'oxfmt --no-error-on-unmatched-pattern --ignore-path .oxfmtignore',
+    'oxfmt --no-error-on-unmatched-pattern --ignore-path .gitignore --ignore-path .oxfmtignore',
   ])
 })
 
@@ -187,7 +181,7 @@ it('detects type-coverage from its package metadata', () => {
   )
 })
 
-it('formats staged files matched by .gitignore', () => {
+it('ignores staged files matched by .gitignore', () => {
   const dir = mkdtempSync(join(tmpdir(), 'nano-staged-oxfmt-'))
   try {
     writeFileSync(join(dir, '.gitignore'), 'dist\n')
@@ -202,20 +196,21 @@ it('formats staged files matched by .gitignore', () => {
       typecheck: false,
     })
     const command = (config['*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}'] as string[])[0]
-    expect(command).toContain(emptyIgnore)
-    expect(command).not.toContain('--ignore-path .gitignore')
+    expect(command).toContain('--ignore-path .gitignore')
     expect(() =>
       execFileSync(
         process.execPath,
         [
           join(process.cwd(), 'node_modules/oxfmt/bin/oxfmt'),
+          '--no-error-on-unmatched-pattern',
           '--ignore-path',
-          resolve(emptyIgnore),
+          '.gitignore',
           'dist/a.js',
         ],
         { cwd: dir },
       ),
     ).not.toThrow()
+    expect(readFileSync(join(dir, 'dist/a.js'), 'utf8')).toBe('const a=1\n')
   } finally {
     rmSync(dir, { force: true, recursive: true })
   }

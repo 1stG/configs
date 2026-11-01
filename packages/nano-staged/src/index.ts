@@ -1,5 +1,4 @@
 import path from 'node:path'
-import { fileURLToPath } from 'node:url'
 
 import { isPkgAvailable, tryFile, tryPkg } from '@pkgr/utils'
 
@@ -98,13 +97,8 @@ export const defineConfig = ({
 
   const command = {
     eslint: 'eslint --fix',
-    oxfmt: `oxfmt --no-error-on-unmatched-pattern --ignore-path ${
-      tryFile('.oxfmtignore')
-        ? '.oxfmtignore'
-        : path.relative(
-            process.cwd(),
-            fileURLToPath(new URL('../.oxfmt-empty-ignore', import.meta.url)),
-          )
+    oxfmt: `oxfmt --no-error-on-unmatched-pattern --ignore-path .gitignore${
+      tryFile('.oxfmtignore') ? ' --ignore-path .oxfmtignore' : ''
     }`,
     oxlint: 'oxlint --fix',
     prettier: 'prettier --write',
