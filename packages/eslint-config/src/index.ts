@@ -19,6 +19,8 @@ export interface EslintConfigOptions {
   code?: boolean
   /** Extra ignore patterns. */
   ignores?: string[]
+  /** Extra configs appended last, after the generated presets. */
+  configs?: Linter.Config | Linter.Config[]
 }
 
 interface PluginConfigs {
@@ -127,6 +129,7 @@ export const defineConfig = async ({
   code = isInstalled('typescript-eslint'),
   markup = supportsMarkup && isInstalled('eslint-plugin-markup'),
   ignores = [],
+  configs: extraConfigs = [],
 }: EslintConfigOptions = {}): Promise<Linter.Config[]> => {
   const defaultIgnores = DEFAULT_IGNORES.filter(
     pattern => (!markup || pattern !== '**/*.html') && (!code || pattern !== CODE_IGNORES),
@@ -201,6 +204,8 @@ export const defineConfig = async ({
     const toml = await load<PluginConfigs>('eslint-plugin-toml')
     configs.push(...toConfigs(toml.configs['flat/recommended']))
   }
+
+  configs.push(...toConfigs(extraConfigs))
 
   return configs
 }

@@ -61,6 +61,7 @@ Use `defineConfig` only when you need options.
 | `code`     | installed `typescript-eslint` | Lint JS/TS/JSX with rules Oxlint does not cover.                    |
 | `markup`   | auto                          | Lint HTML with `eslint-plugin-markup` on Node >= 24 when installed. |
 | `ignores`  | `[]`                          | Extra ignore patterns.                                              |
+| `configs`  | `[]`                          | Extra flat configs appended last, after generated presets.          |
 
 ## Sponsors and Backers
 
