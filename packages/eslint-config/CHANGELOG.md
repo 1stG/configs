@@ -1,5 +1,11 @@
 # Change Log
 
+## 12.2.0
+
+### Minor Changes
+
+- [#459](https://github.com/1stG/configs/pull/459) [`dce17c6`](https://github.com/1stG/configs/commit/dce17c6d530c40e09bc507978b70e6af2daf543f) Thanks [@JounQin](https://github.com/JounQin)! - Allow callers to append their own flat configs with the new `configs` option.
+
 ## 12.1.0
 
 ### Minor Changes
