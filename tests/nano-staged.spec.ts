@@ -27,8 +27,6 @@ import path from 'node:path'
 
 import { defineConfig as defineStaged } from '@1stg/nano-staged'
 
-const { join } = path
-
 afterEach(() => {
   mockState.availablePackages.clear()
   mockState.tsconfig = undefined
@@ -38,7 +36,7 @@ afterEach(() => {
 
 describe('@1stg/nano-staged', () => {
   it('builds both formatter tasks', () => {
-    mockState.tsconfig = join(process.cwd(), 'tsconfig.json')
+    mockState.tsconfig = path.join(process.cwd(), 'tsconfig.json')
     const config = defineStaged({
       formatter: 'both',
       linter: 'oxlint',
@@ -174,7 +172,7 @@ it('auto-detects the formatter', () => {
 })
 
 it('adds .oxfmtignore when present', () => {
-  mockState.oxfmtIgnore = join(process.cwd(), '.oxfmtignore')
+  mockState.oxfmtIgnore = path.join(process.cwd(), '.oxfmtignore')
 
   const config = defineStaged({
     formatter: 'oxfmt',
@@ -191,7 +189,7 @@ it('adds .oxfmtignore when present', () => {
 it('detects type-coverage from its package metadata', () => {
   mockState.availablePackages.add('typescript')
   mockState.availablePackages.add('type-coverage/package.json')
-  mockState.tsconfig = join(process.cwd(), 'tsconfig.json')
+  mockState.tsconfig = path.join(process.cwd(), 'tsconfig.json')
 
   const config = defineStaged({
     formatter: false,
@@ -206,11 +204,11 @@ it('detects type-coverage from its package metadata', () => {
 })
 
 it('ignores staged files matched by .gitignore', () => {
-  const dir = mkdtempSync(join(tmpdir(), 'nano-staged-oxfmt-'))
+  const dir = mkdtempSync(path.join(tmpdir(), 'nano-staged-oxfmt-'))
   try {
-    writeFileSync(join(dir, '.gitignore'), 'dist\n')
-    mkdirSync(join(dir, 'dist'))
-    writeFileSync(join(dir, 'dist/a.js'), 'const a=1\n')
+    writeFileSync(path.join(dir, '.gitignore'), 'dist\n')
+    mkdirSync(path.join(dir, 'dist'))
+    writeFileSync(path.join(dir, 'dist/a.js'), 'const a=1\n')
 
     const config = defineStaged({
       formatter: 'oxfmt',
@@ -225,7 +223,7 @@ it('ignores staged files matched by .gitignore', () => {
       execFileSync(
         process.execPath,
         [
-          join(process.cwd(), 'node_modules/oxfmt/bin/oxfmt'),
+          path.join(process.cwd(), 'node_modules/oxfmt/bin/oxfmt'),
           '--no-error-on-unmatched-pattern',
           '--ignore-path',
           '.gitignore',
@@ -234,14 +232,14 @@ it('ignores staged files matched by .gitignore', () => {
         { cwd: dir },
       ),
     ).not.toThrow()
-    expect(readFileSync(join(dir, 'dist/a.js'), 'utf8')).toBe('const a=1\n')
+    expect(readFileSync(path.join(dir, 'dist/a.js'), 'utf8')).toBe('const a=1\n')
   } finally {
     rmSync(dir, { force: true, recursive: true })
   }
 })
 
 it('supports vue-tsc type checking', () => {
-  mockState.tsconfig = join(process.cwd(), 'tsconfig.json')
+  mockState.tsconfig = path.join(process.cwd(), 'tsconfig.json')
   const config = defineStaged({
     formatter: false,
     linter: false,
@@ -253,7 +251,7 @@ it('supports vue-tsc type checking', () => {
 })
 
 it('auto-detects typecheck from installed tools', () => {
-  mockState.tsconfig = join(process.cwd(), 'tsconfig.json')
+  mockState.tsconfig = path.join(process.cwd(), 'tsconfig.json')
   mockState.availablePackages.add('typescript')
 
   const tsc = defineStaged({
@@ -276,7 +274,7 @@ it('auto-detects typecheck from installed tools', () => {
   mockState.tsconfig = undefined
   mockState.availablePackages.clear()
   mockState.availablePackages.add('typescript')
-  mockState.packageTsconfig = join(process.cwd(), 'node_modules/@1stg/tsconfig/tsconfig.json')
+  mockState.packageTsconfig = path.join(process.cwd(), 'node_modules/@1stg/tsconfig/tsconfig.json')
   const disabled = defineStaged({
     formatter: false,
     linter: false,
@@ -287,7 +285,7 @@ it('auto-detects typecheck from installed tools', () => {
 
 it('uses the package fallback for explicit typecheck', () => {
   mockState.availablePackages.add('typescript')
-  mockState.packageTsconfig = join(process.cwd(), 'node_modules/@1stg/tsconfig/tsconfig.json')
+  mockState.packageTsconfig = path.join(process.cwd(), 'node_modules/@1stg/tsconfig/tsconfig.json')
 
   const config = defineStaged({
     formatter: false,
@@ -303,7 +301,7 @@ it('uses the package fallback for explicit typecheck', () => {
 
 it('disables auto typecheck when an explicit tsconfig is missing', () => {
   mockState.availablePackages.add('typescript')
-  mockState.tsconfig = join(process.cwd(), 'tsconfig.json')
+  mockState.tsconfig = path.join(process.cwd(), 'tsconfig.json')
 
   const config = defineStaged({
     tsconfig: 'missing-tsconfig.json',
