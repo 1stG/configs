@@ -166,7 +166,6 @@ export const defineConfig = ({
       'preserve-caught-error': 'error',
       'import/newline-after-import': 'error',
       'import/no-duplicates': 'error',
-      'react/react-in-jsx-scope': 'off',
       'typescript/consistent-type-definitions': ['error', 'interface'],
       'typescript/no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
       'unicorn/prefer-node-protocol': 'error',
@@ -191,7 +190,7 @@ export const defineConfig = ({
         },
       },
       {
-        files: ['**/*.{cjs,cts}'],
+        files: ['**/*.{cjs,cts,js}'],
         rules: {
           'typescript/no-require-imports': 'off',
           'unicorn/prefer-top-level-await': 'off',

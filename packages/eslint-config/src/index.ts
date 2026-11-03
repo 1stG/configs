@@ -102,6 +102,7 @@ const buildUnicornConfigs = async (): Promise<Linter.Config[]> => {
         ...config.rules,
         'unicorn/consistent-boolean-name': 'off',
         'unicorn/no-asterisk-prefix-in-documentation-comments': 'off',
+        'unicorn/no-useless-iterator-to-array': 'off',
         'unicorn/single-line-block-comment-style': 'off',
         // renamed from `prevent-abbreviations`, which legacy disabled.
         'unicorn/name-replacements': 'off',
