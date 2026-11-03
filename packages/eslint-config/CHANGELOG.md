@@ -1,5 +1,17 @@
 # Change Log
 
+## 12.1.0
+
+### Minor Changes
+
+- [#457](https://github.com/1stG/configs/pull/457) [`eb778e9`](https://github.com/1stG/configs/commit/eb778e937c9225f5f38c47bf5b14b90b24510e2a) Thanks [@JounQin](https://github.com/JounQin)! - Restore recommended-rule coverage by reusing `oxlint-config-recommended` for the
+  supported ESLint, typescript-eslint, and Unicorn rules. ESLint reuses
+  `eslint-plugin-unicorn` recommended; `eslint-plugin-oxlint` disables the rules
+  already covered by Oxlint. Code mode is inferred from `typescript-eslint`, so
+  consumers without it keep it disabled. Unicorn rules that conflict with Oxfmt
+  comments or would force public API renames are disabled. The legacy TypeScript
+  exception for `no-array-callback-reference` is preserved.
+
 ## 12.0.2
 
 ### Patch Changes
