@@ -142,20 +142,10 @@ export const defineConfig = async ({
       )
     }
 
-    const unicorn =
-      await load<NonNullable<Linter.Config['plugins']>[string]>('eslint-plugin-unicorn')
-    configs.push(
-      withCodeFiles({
-        plugins: { unicorn },
-        rules: {
-          'unicorn/expiring-todo-comments': 'error',
-          'unicorn/no-for-loop': 'error',
-          'unicorn/no-unnecessary-polyfills': 'error',
-          'unicorn/prefer-switch': 'error',
-          'unicorn/template-indent': 'error',
-        },
-      }),
-    )
+    const unicorn = await load<{
+      configs: { recommended: Linter.Config | Linter.Config[] }
+    }>('eslint-plugin-unicorn')
+    configs.push(...toConfigs(unicorn.configs.recommended).map(config => withCodeFiles(config)))
   }
 
   configs.push(...toConfigs(oxlint.configs['flat/all']))

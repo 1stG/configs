@@ -4,6 +4,7 @@
 ---
 
 Restore recommended-rule coverage by reusing `oxlint-config-recommended` for the
-supported ESLint, typescript-eslint, and Unicorn rules. ESLint runs the five
-Unicorn rules Oxlint does not yet support when code mode is enabled. Code mode
-is inferred from `typescript-eslint`, so consumers without it keep it disabled.
+supported ESLint, typescript-eslint, and Unicorn rules. ESLint reuses
+`eslint-plugin-unicorn` recommended; `eslint-plugin-oxlint` disables the rules
+already covered by Oxlint. Code mode is inferred from `typescript-eslint`, so
+consumers without it keep it disabled.
