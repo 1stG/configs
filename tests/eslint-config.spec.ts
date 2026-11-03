@@ -25,6 +25,12 @@ describe('@1stg/eslint-config', () => {
     expect(minimal.length).toBeLessThan(full.length)
   })
 
+  it('appends caller configs last', async () => {
+    const extra = { rules: { 'no-console': 'off' as const } }
+    const config = await defineEslint({ code: false, configs: extra })
+    expect(config.at(-1)).toBe(extra)
+  })
+
   it('accepts extra ignores', async () => {
     const config = await defineEslint({ ignores: ['**/fixtures/**'] })
     const ignores = config.find(item => item.ignores)
