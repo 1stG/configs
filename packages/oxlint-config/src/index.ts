@@ -1,6 +1,6 @@
 import { isPkgAvailable } from '@pkgr/utils'
 import type { OxlintConfig } from 'oxlint'
-import unicornConfig from 'oxlint-config-recommended/unicorn'
+import recommended from 'oxlint-config-recommended'
 
 type OxlintRules = NonNullable<OxlintConfig['rules']>
 type NoMagicNumbersRule = NonNullable<OxlintRules['no-magic-numbers']>
@@ -104,6 +104,7 @@ export const defineConfig = ({
 
   return {
     ...options,
+    extends: [recommended, ...(options.extends ?? [])],
     options: {
       ...options.options,
       ...(typeAware && { typeAware: true }),
@@ -120,7 +121,6 @@ export const defineConfig = ({
       ...extraEnv,
     },
     rules: {
-      ...unicornConfig.rules,
       'unicorn/consistent-function-scoping': 'off',
       'unicorn/no-array-reduce': 'off',
       'unicorn/no-null': 'off',
@@ -165,6 +165,7 @@ export const defineConfig = ({
       'preserve-caught-error': 'error',
       'import/newline-after-import': 'error',
       'import/no-duplicates': 'error',
+      'react/react-in-jsx-scope': 'off',
       'typescript/consistent-type-definitions': ['error', 'interface'],
       'typescript/no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
       'unicorn/prefer-node-protocol': 'error',
@@ -179,6 +180,18 @@ export const defineConfig = ({
           'typescript/no-explicit-any': 'off',
           'typescript/no-unused-vars': 'off',
           'import/no-duplicates': 'off',
+        },
+      },
+      {
+        files: ['**/*.{cjs,cts}'],
+        rules: {
+          'typescript/no-require-imports': 'off',
+        },
+      },
+      {
+        files: ['tests/**'],
+        rules: {
+          'typescript/no-extraneous-class': 'off',
         },
       },
       ...(extraOverrides ?? []),
