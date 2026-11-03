@@ -84,6 +84,30 @@ const load = async <T>(name: string): Promise<T> => {
   return (mod.default ?? mod) as T
 }
 
+const buildUnicornConfigs = async (): Promise<Linter.Config[]> => {
+  if (!isInstalled('eslint-plugin-unicorn')) {
+    return []
+  }
+
+  const unicorn = await load<{
+    configs: { recommended: Linter.Config | Linter.Config[] }
+  }>('eslint-plugin-unicorn')
+
+  return toConfigs(unicorn.configs.recommended).map(config =>
+    withCodeFiles({
+      ...config,
+      rules: {
+        ...config.rules,
+        'unicorn/consistent-boolean-name': 'off',
+        'unicorn/no-asterisk-prefix-in-documentation-comments': 'off',
+        'unicorn/single-line-block-comment-style': 'off',
+        // renamed from `prevent-abbreviations`, which legacy disabled.
+        'unicorn/name-replacements': 'off',
+      },
+    }),
+  )
+}
+
 /**
  * Build the flat ESLint config for the file types Oxlint does not parse.
  *
@@ -140,24 +164,7 @@ export const defineConfig = async ({
       configs.push(...toConfigs(regexp.configs['flat/recommended']).map(withCodeFiles))
     }
 
-    const unicorn = await load<{
-      configs: { recommended: Linter.Config | Linter.Config[] }
-    }>('eslint-plugin-unicorn')
-    configs.push(
-      ...toConfigs(unicorn.configs.recommended).map(config =>
-        withCodeFiles({
-          ...config,
-          rules: {
-            ...config.rules,
-            'unicorn/consistent-boolean-name': 'off',
-            'unicorn/no-asterisk-prefix-in-documentation-comments': 'off',
-            'unicorn/single-line-block-comment-style': 'off',
-            // renamed from `prevent-abbreviations`, which legacy disabled.
-            'unicorn/name-replacements': 'off',
-          },
-        }),
-      ),
-    )
+    configs.push(...(await buildUnicornConfigs()))
   }
 
   configs.push(...toConfigs(oxlint.configs['flat/all']))
