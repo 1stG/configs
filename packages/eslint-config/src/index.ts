@@ -128,18 +128,16 @@ export const defineConfig = async ({
     const tseslint = await load<{
       configs: { recommended: Linter.Config[] }
     }>('typescript-eslint')
-    configs.push(...tseslint.configs.recommended.map(config => withCodeFiles(config)))
+    configs.push(...tseslint.configs.recommended.map(withCodeFiles))
 
     if (isInstalled('eslint-plugin-sonarjs')) {
       const sonarjs = await load<PluginConfigs>('eslint-plugin-sonarjs')
-      configs.push(...toConfigs(sonarjs.configs.recommended).map(config => withCodeFiles(config)))
+      configs.push(...toConfigs(sonarjs.configs.recommended).map(withCodeFiles))
     }
 
     if (isInstalled('eslint-plugin-regexp')) {
       const regexp = await load<PluginConfigs>('eslint-plugin-regexp')
-      configs.push(
-        ...toConfigs(regexp.configs['flat/recommended']).map(config => withCodeFiles(config)),
-      )
+      configs.push(...toConfigs(regexp.configs['flat/recommended']).map(withCodeFiles))
     }
 
     const unicorn = await load<{

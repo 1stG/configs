@@ -184,6 +184,13 @@ export const defineConfig = ({
         },
       },
       {
+        files: ['**/*.{cts,mts,ts,tsx}'],
+        rules: {
+          // Legacy ts-base disabled this; callback references are type-safe.
+          'unicorn/no-array-callback-reference': 'off',
+        },
+      },
+      {
         files: ['**/*.{cjs,cts}'],
         rules: {
           'typescript/no-require-imports': 'off',
