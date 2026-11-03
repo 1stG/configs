@@ -30,7 +30,7 @@ interface MarkdownPlugin {
   createRemarkProcessor: (options: { lintCodeBlocks: boolean }) => Linter.Processor
 }
 
-const NODE_MAJOR = Number(process.versions.node.split('.')[0])
+const NODE_MAJOR = Number(process.versions.node.split('.', 1)[0])
 const supportsMarkup = NODE_MAJOR >= 24
 
 const CODE_IGNORES = '**/*.{cjs,cts,js,jsx,mjs,mts,ts,tsx}'
@@ -80,8 +80,36 @@ const isInstalled = (name: string): boolean => {
 
 /** Dynamic import that also unwraps a CommonJS default export. */
 const load = async <T>(name: string): Promise<T> => {
+  // oxlint-disable-next-line typescript/no-unsafe-type-assertion -- dynamic import
   const mod = (await import(name)) as T & { default?: T }
+  // oxlint-disable-next-line typescript/no-unnecessary-type-assertion -- CJS default
   return (mod.default ?? mod) as T
+}
+
+const buildUnicornConfigs = async (): Promise<Linter.Config[]> => {
+  if (!isInstalled('eslint-plugin-unicorn')) {
+    /* istanbul ignore next -- optional peer */
+    return []
+  }
+
+  const unicorn = await load<{
+    configs: { recommended: Linter.Config | Linter.Config[] }
+  }>('eslint-plugin-unicorn')
+
+  return toConfigs(unicorn.configs.recommended).map(config =>
+    withCodeFiles({
+      ...config,
+      rules: {
+        ...config.rules,
+        'unicorn/consistent-boolean-name': 'off',
+        'unicorn/no-asterisk-prefix-in-documentation-comments': 'off',
+        'unicorn/no-useless-iterator-to-array': 'off',
+        'unicorn/single-line-block-comment-style': 'off',
+        // renamed from `prevent-abbreviations`, which legacy disabled.
+        'unicorn/name-replacements': 'off',
+      },
+    }),
+  )
 }
 
 /**
@@ -139,6 +167,8 @@ export const defineConfig = async ({
       const regexp = await load<PluginConfigs>('eslint-plugin-regexp')
       configs.push(...toConfigs(regexp.configs['flat/recommended']).map(withCodeFiles))
     }
+
+    configs.push(...(await buildUnicornConfigs()))
   }
 
   configs.push(...toConfigs(oxlint.configs['flat/all']))
@@ -175,6 +205,7 @@ export const defineConfig = async ({
   return configs
 }
 
+// oxlint-disable-next-line unicorn/prefer-top-level-await -- keep the Promise API for ESLint
 const config: Promise<Linter.Config[]> = defineConfig()
 
 export default config

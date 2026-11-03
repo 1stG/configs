@@ -8,7 +8,8 @@ describe('@1stg/eslint-config', () => {
     expect(config.find(item => item.ignores)?.ignores).toContain(
       '**/*.{cjs,cts,js,jsx,mjs,mts,ts,tsx}',
     )
-    expect((await defineEslint({ code: true })).find(item => item.ignores)?.ignores).not.toContain(
+    const codeConfig = await defineEslint({ code: true })
+    expect(codeConfig.find(item => item.ignores)?.ignores).not.toContain(
       '**/*.{cjs,cts,js,jsx,mjs,mts,ts,tsx}',
     )
   })
@@ -25,7 +26,8 @@ describe('@1stg/eslint-config', () => {
   })
 
   it('accepts extra ignores', async () => {
-    const ignores = (await defineEslint({ ignores: ['**/fixtures/**'] })).find(item => item.ignores)
+    const config = await defineEslint({ ignores: ['**/fixtures/**'] })
+    const ignores = config.find(item => item.ignores)
     expect(ignores?.ignores).toContain('**/fixtures/**')
   })
 })
@@ -37,7 +39,7 @@ describe('@1stg/eslint-config markup', () => {
   })
 
   it('enables eslint-plugin-markup on Node 24', async () => {
-    if (Number(process.versions.node.split('.')[0]) < 24) {
+    if (Number(process.versions.node.split('.', 1)[0]) < 24) {
       // eslint-disable-next-line sonarjs/explicit-test-skip -- Node < 24
       return
     }

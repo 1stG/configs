@@ -1,5 +1,6 @@
 import { isPkgAvailable } from '@pkgr/utils'
 import type { OxlintConfig } from 'oxlint'
+import recommended from 'oxlint-config-recommended'
 
 type OxlintRules = NonNullable<OxlintConfig['rules']>
 type NoMagicNumbersRule = NonNullable<OxlintRules['no-magic-numbers']>
@@ -103,6 +104,7 @@ export const defineConfig = ({
 
   return {
     ...options,
+    extends: [recommended, ...(options.extends ?? [])],
     options: {
       ...options.options,
       ...(typeAware && { typeAware: true }),
@@ -119,6 +121,16 @@ export const defineConfig = ({
       ...extraEnv,
     },
     rules: {
+      'unicorn/consistent-date-clone': 'off',
+      'unicorn/consistent-function-scoping': 'off',
+      'unicorn/no-array-reduce': 'off',
+      'unicorn/no-null': 'off',
+      'unicorn/no-unreadable-array-destructuring': 'off',
+      'unicorn/prefer-module': 'off',
+      'unicorn/prefer-object-from-entries': 'off',
+      'unicorn/catch-error-name': ['error', { name: 'error', ignore: ['^e(rr)?$'] }],
+      'unicorn/filename-case': ['error', { cases: { kebabCase: true, pascalCase: true } }],
+      'unicorn/prefer-export-from': ['error', { checkUsedVariables: false }],
       ...(typeAware && {
         'typescript/await-thenable': 'error',
         'typescript/no-deprecated': 'error',
@@ -154,6 +166,7 @@ export const defineConfig = ({
       'preserve-caught-error': 'error',
       'import/newline-after-import': 'error',
       'import/no-duplicates': 'error',
+      'react/react-in-jsx-scope': 'off',
       'typescript/consistent-type-definitions': ['error', 'interface'],
       'typescript/no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
       'unicorn/prefer-node-protocol': 'error',
@@ -168,6 +181,27 @@ export const defineConfig = ({
           'typescript/no-explicit-any': 'off',
           'typescript/no-unused-vars': 'off',
           'import/no-duplicates': 'off',
+        },
+      },
+      {
+        files: ['**/*.{cts,mts,ts,tsx}'],
+        rules: {
+          // Legacy ts-base disabled this; callback references are type-safe.
+          'unicorn/no-array-callback-reference': 'off',
+        },
+      },
+      {
+        files: ['**/*.{cjs,cts,js}'],
+        rules: {
+          'typescript/no-require-imports': 'off',
+          'unicorn/prefer-top-level-await': 'off',
+        },
+      },
+      {
+        files: ['tests/**'],
+        rules: {
+          'typescript/no-extraneous-class': 'off',
+          'typescript/no-unsafe-type-assertion': 'off',
         },
       },
       ...(extraOverrides ?? []),

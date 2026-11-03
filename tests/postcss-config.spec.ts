@@ -20,6 +20,10 @@ describe('@1stg/postcss-config', () => {
     expect(await run({ env: 'development', minify: true })).not.toContain('/* x */')
   })
 
+  it('supports boolean modules', () => {
+    expect(definePostcss({ modules: true }).plugins.length).toBeGreaterThan(0)
+  })
+
   it('maps in development only', () => {
     expect(definePostcss({ env: 'development' }).map).toBe(true)
     expect(definePostcss({ env: 'production' }).map).toBe(false)
