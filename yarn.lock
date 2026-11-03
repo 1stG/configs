@@ -218,7 +218,7 @@ __metadata:
     "@pkgr/utils": "npm:^4.1.0"
     oxlint-config-recommended: "npm:^1.2.1"
   peerDependencies:
-    oxlint: ">=1.80.0"
+    oxlint: ">=1.89.0"
     oxlint-tsgolint: ^7.0.2005
   peerDependenciesMeta:
     oxlint-tsgolint:
