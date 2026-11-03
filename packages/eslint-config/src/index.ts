@@ -88,6 +88,7 @@ const load = async <T>(name: string): Promise<T> => {
 
 const buildUnicornConfigs = async (): Promise<Linter.Config[]> => {
   if (!isInstalled('eslint-plugin-unicorn')) {
+    /* istanbul ignore next -- optional peer */
     return []
   }
 
