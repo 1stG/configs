@@ -121,6 +121,7 @@ export const defineConfig = ({
       ...extraEnv,
     },
     rules: {
+      'unicorn/consistent-date-clone': 'off',
       'unicorn/consistent-function-scoping': 'off',
       'unicorn/no-array-reduce': 'off',
       'unicorn/no-null': 'off',
@@ -186,6 +187,7 @@ export const defineConfig = ({
         files: ['**/*.{cjs,cts}'],
         rules: {
           'typescript/no-require-imports': 'off',
+          'unicorn/prefer-top-level-await': 'off',
         },
       },
       {
