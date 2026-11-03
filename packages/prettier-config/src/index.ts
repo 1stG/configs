@@ -9,7 +9,7 @@ const PLUGIN_NAMES = [
   ...new Set([...Object.keys(pkg.dependencies), ...Object.keys(pkg.peerDependencies)]),
 ]
   .filter(name => name.startsWith('prettier-plugin-') || name.startsWith('@prettier/plugin-'))
-  .toSorted()
+  .toSorted((a, b) => a.localeCompare(b))
 
 const resolvePlugins = (): string[] => {
   const plugins: string[] = []

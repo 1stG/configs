@@ -63,6 +63,7 @@ export const defineConfig = ({
   ]
 
   if (modules) {
+    const modulesOptions = typeof modules === 'object' ? modules : {}
     plugins.push(
       require('postcss-modules')({
         globalModulePaths: [
@@ -72,7 +73,7 @@ export const defineConfig = ({
         generateScopedName: isProduction
           ? '[hash:base64:10]'
           : '[path][name]__[local]---[hash:base64:5]',
-        ...(typeof modules === 'object' ? modules : {}),
+        ...modulesOptions,
       }),
     )
   }

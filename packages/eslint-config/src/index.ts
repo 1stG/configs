@@ -30,7 +30,7 @@ interface MarkdownPlugin {
   createRemarkProcessor: (options: { lintCodeBlocks: boolean }) => Linter.Processor
 }
 
-const NODE_MAJOR = Number(process.versions.node.split('.')[0])
+const NODE_MAJOR = Number(process.versions.node.split('.', 1)[0])
 const supportsMarkup = NODE_MAJOR >= 24
 
 const CODE_IGNORES = '**/*.{cjs,cts,js,jsx,mjs,mts,ts,tsx}'
@@ -145,7 +145,20 @@ export const defineConfig = async ({
     const unicorn = await load<{
       configs: { recommended: Linter.Config | Linter.Config[] }
     }>('eslint-plugin-unicorn')
-    configs.push(...toConfigs(unicorn.configs.recommended).map(config => withCodeFiles(config)))
+    configs.push(
+      ...toConfigs(unicorn.configs.recommended).map(config =>
+        withCodeFiles({
+          ...config,
+          rules: {
+            ...config.rules,
+            'unicorn/consistent-boolean-name': 'off',
+            'unicorn/no-asterisk-prefix-in-documentation-comments': 'off',
+            'unicorn/single-line-block-comment-style': 'off',
+            'unicorn/name-replacements': 'off',
+          },
+        }),
+      ),
+    )
   }
 
   configs.push(...toConfigs(oxlint.configs['flat/all']))

@@ -39,7 +39,7 @@ describe('@1stg/eslint-config markup', () => {
   })
 
   it('enables eslint-plugin-markup on Node 24', async () => {
-    if (Number(process.versions.node.split('.')[0]) < 24) {
+    if (Number(process.versions.node.split('.', 1)[0]) < 24) {
       // eslint-disable-next-line sonarjs/explicit-test-skip -- Node < 24
       return
     }

@@ -66,7 +66,7 @@ const resolveLinter = (): NanoStagedOptions['linter'] => {
 }
 
 const hasProjectTsconfig = (explicit?: string): boolean =>
-  Boolean(explicit ? tryFile(explicit) : tryFile(TSCONFIG_CANDIDATES))
+  Boolean(tryFile(explicit || TSCONFIG_CANDIDATES))
 
 const resolveTypecheck = (explicit?: string): Typecheck => {
   const vueTscAvailable = isPkgAvailable('vue-tsc')
