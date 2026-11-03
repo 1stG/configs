@@ -201,6 +201,7 @@ export const defineConfig = ({
         files: ['tests/**'],
         rules: {
           'typescript/no-extraneous-class': 'off',
+          'typescript/no-unsafe-type-assertion': 'off',
         },
       },
       ...(extraOverrides ?? []),

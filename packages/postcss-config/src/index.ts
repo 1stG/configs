@@ -51,8 +51,7 @@ export const defineConfig = ({
 }: ConfigOptions = {}): Config => {
   const isProduction = env === 'production'
   const shouldMinify = cssnano === false ? false : (minify ?? isProduction)
-  const cssnanoOptions =
-    typeof cssnano === 'object' ? (cssnano as Record<string, unknown>) : undefined
+  const cssnanoOptions = typeof cssnano === 'object' ? cssnano : undefined
 
   const plugins: AcceptedPlugin[] = [
     require('postcss-preset-env')(presetEnv),
@@ -82,6 +81,7 @@ export const defineConfig = ({
     plugins.push(
       require('cssnano')({
         ...cssnanoOptions,
+        // oxlint-disable-next-line typescript/no-unsafe-type-assertion -- cssnano preset union
         preset: (cssnanoOptions?.preset ?? [
           advanced ? 'advanced' : 'default',
           {

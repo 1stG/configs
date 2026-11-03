@@ -80,7 +80,9 @@ const isInstalled = (name: string): boolean => {
 
 /** Dynamic import that also unwraps a CommonJS default export. */
 const load = async <T>(name: string): Promise<T> => {
+  // oxlint-disable-next-line typescript/no-unsafe-type-assertion -- dynamic import
   const mod = (await import(name)) as T & { default?: T }
+  // oxlint-disable-next-line typescript/no-unnecessary-type-assertion -- CJS default
   return (mod.default ?? mod) as T
 }
 

@@ -25,14 +25,12 @@ export const jsoncFiles: string[] = [
 const TRUTHY_ENV_VALUES = new Set(['1', 'true', 't', 'yes', 'y'])
 
 /** Whether the environment variable is enabled explicitly. */
-export const isEnvEnabled = (env: string): boolean =>
-  TRUTHY_ENV_VALUES.has(process.env[env] as string)
+export const isEnvEnabled = (env: string): boolean => TRUTHY_ENV_VALUES.has(process.env[env] ?? '')
 
 const FALSY_ENV_VALUES = new Set(['', '0', 'false', 'f', 'no', 'n'])
 
 /** Whether the environment variable is disabled explicitly. */
-export const isEnvDisabled = (env: string): boolean =>
-  FALSY_ENV_VALUES.has(process.env[env] as string)
+export const isEnvDisabled = (env: string): boolean => FALSY_ENV_VALUES.has(process.env[env] ?? '')
 
 export const preferPrettier = isEnvEnabled('CONFIG_PREFER_PRETTIER')
 
